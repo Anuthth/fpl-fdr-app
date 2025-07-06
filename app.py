@@ -1,4 +1,3 @@
-
 import pandas as pd
 import streamlit as st
 import numpy as np
@@ -9,39 +8,38 @@ RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 STARTING_GAMEWEEK = 1
 
-# FINAL UI: Your original 5-color FDR system
+# User's custom 5-color FDR system
 FDR_COLORS = {
-    1: '#2ECC71',  # Very Green (Easiest)
-    2: '#90EE90',  # Light Green
-    3: '#D3D3D3',  # Light Gray (Neutral)
-    4: '#F08080',  # Light Red
-    5: '#E74C3C'   # Very Red (Hardest)
+    1: '#00ff85',
+    2: '#50c369',
+    3: '#D3D3D3',
+    4: '#9d66a0',
+    5: '#6f2a74'
 }
-BLANK_FIXTURE_COLOR = '#444444' # Color for empty cells
+BLANK_FIXTURE_COLOR = '#444444'
 
-# Team Abbreviations and Name Maps
+# --- Team Lists and Mappings ---
+PREMIER_LEAGUE_TEAMS = sorted([
+    'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
+    'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
+    'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
+    'Spurs', 'West Ham', 'Wolves'
+])
+
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
     'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
     'Everton': 'EVE', 'Fulham': 'FUL', 'Leeds': 'LEE', 'Liverpool': 'LIV',
-    'Luton': 'LUT', 'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW',
-    'Nottm Forest': 'NFO', 'Sheffield Utd': 'SHU', 'Sunderland': 'SUN',
-    'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
+    'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nottm Forest': 'NFO',
+    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
     'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
-PREMIER_LEAGUE_TEAMS = [
-    'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
-    'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool', 'Luton',
-    'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sheffield Utd',
-    'Spurs', 'West Ham', 'Wolves'
-]
+
 TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
-    "Luton Town": "Luton", "Leeds United": "Leeds", "Manchester City": "Man City",
-    "Manchester United": "Man Utd", "Newcastle United": "Newcastle",
-    "Nottingham Forest": "Nottm Forest", "Tottenham Hotspur": "Spurs",
-    "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
-    "Sheffield United": "Sheffield Utd"
+    "Leeds United": "Leeds", "Manchester City": "Man City", "Manchester United": "Man Utd",
+    "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
+    "Tottenham Hotspur": "Spurs", "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
 }
 
 # --- Data Processing Functions ---
@@ -64,11 +62,9 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     """Prepares the dataframes needed for the FDR table using the 5-color system."""
     rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
     
-    # Filter for PL teams and create rating dictionary
     pl_ratings_df = ratings_df[ratings_df['Team'].isin(PREMIER_LEAGUE_TEAMS)]
     rating_dict = pl_ratings_df.set_index('Team')[rating_col].to_dict()
 
-    # Create the 1-5 FDR score function based on quintiles of PL team ratings
     rating_values = sorted(rating_dict.values())
     quintiles = np.percentile(rating_values, [0, 20, 40, 60, 80, 100])
     def get_fdr_score(team_rating):
@@ -102,11 +98,11 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     display_df = pd.DataFrame.from_dict(display_data, orient='index').reindex(columns=gw_columns)
     fdr_score_df = pd.DataFrame.from_dict(fdr_score_data, orient='index').reindex(columns=gw_columns)
     
-    # Calculate total difficulty score by SUMMING the 1-5 FDR scores
-    display_df['Score'] = fdr_score_df.sum(axis=1)
+    # CHANGED: "Score" is now "Total Difficulty"
+    display_df['Total Difficulty'] = fdr_score_df.sum(axis=1)
     
-    display_df.sort_values(by='Score', ascending=True, inplace=True)
-    cols = ['Score'] + [col for col in display_df.columns if col != 'Score']
+    display_df.sort_values(by='Total Difficulty', ascending=True, inplace=True)
+    cols = ['Total Difficulty'] + [col for col in display_df.columns if col != 'Total Difficulty']
     display_df = display_df[cols]
     
     return display_df, fdr_score_df.reindex(display_df.index)
@@ -117,15 +113,11 @@ def style_fdr_table(display_df, fdr_score_df):
     """Applies CSS styling to the FDR table using the 5-color system."""
     
     def color_cells(fdr_score):
-        """Applies background color based on the 1-5 FDR score."""
         if pd.isna(fdr_score):
             return f'background-color: {BLANK_FIXTURE_COLOR}'
         
-        # Get color from the predefined dictionary
-        color = FDR_COLORS.get(fdr_score, '#FFFFFF') # Default to white
-        
-        # Determine text color for readability
-        text_color = '#31333F' if fdr_score == 3 else '#FFFFFF' # Dark text for grey cells
+        color = FDR_COLORS.get(fdr_score, '#FFFFFF')
+        text_color = '#31333F' if fdr_score <= 3 else '#FFFFFF'
         return f'background-color: {color}; color: {text_color}'
 
     styler = display_df.style
@@ -133,13 +125,11 @@ def style_fdr_table(display_df, fdr_score_df):
     gw_cols = [col for col in display_df.columns if 'GW' in col]
     subset_scores = fdr_score_df[gw_cols]
     
-    # Apply the 5-color styling
     styler = styler.apply(lambda x: subset_scores.map(color_cells), axis=None, subset=gw_cols)
     
-    # Remove gradient from score and just format it
-    styler = styler.format({'Score': '{:.0f}'})
+    # CHANGED: Formatting the new "Total Difficulty" column
+    styler = styler.format({'Total Difficulty': '{:.0f}'})
 
-    # Set alignment for the whole table
     styler = styler.set_table_styles([
         {'selector': 'th.row_heading', 'props': [('text-align', 'left')]},
         {'selector': 'td', 'props': [('text-align', 'center')]}
@@ -152,6 +142,16 @@ def style_fdr_table(display_df, fdr_score_df):
 st.set_page_config(layout="wide")
 st.title("FPL Fixture Difficulty")
 
+# NEW: Added a collapsible glossary
+with st.expander("Glossary & How It Works"):
+    st.markdown("""
+    - **FDR (Fixture Difficulty Rating):** Each fixture is rated on a scale of 1 to 5, where 1 is the easiest and 5 is the hardest.
+    - **How it's calculated:** Team ratings are divided into five groups (quintiles). Playing a team in the easiest group of opponents gives an FDR of 1; playing a team in the hardest group gives an FDR of 5.
+    - **Total Difficulty:** This is the sum of the FDR scores for all fixtures in the selected range. A **lower** number indicates an easier run of matches.
+    - **(H)** denotes a Home fixture.
+    - **(A)** denotes an Away fixture.
+    """)
+
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
@@ -163,19 +163,34 @@ if ratings_df is not None and fixtures_df is not None:
         value=8,
         step=1
     )
+    
+    selected_teams = st.sidebar.multiselect(
+        "Select teams to display:",
+        options=PREMIER_LEAGUE_TEAMS,
+        default=PREMIER_LEAGUE_TEAMS
+    )
 
     display_df, fdr_score_df = create_fdr_data(ratings_df, fixtures_df, num_gws_to_show, STARTING_GAMEWEEK)
 
-    display_df.reset_index(inplace=True)
-    display_df.rename(columns={'index': 'Team'}, inplace=True)
-    
-    styled_table = style_fdr_table(display_df.set_index('Team'), fdr_score_df)
+    if selected_teams:
+        teams_to_show = [team for team in display_df.index if team in selected_teams]
+        display_df = display_df.loc[teams_to_show]
+        fdr_score_df = fdr_score_df.loc[teams_to_show]
+    else:
+        display_df = pd.DataFrame()
 
-    # FINAL UI: Calculate height to show all teams without scrolling
-    # (Number of rows + 1 for header) * height per row in pixels
-    table_height = (len(display_df) + 1) * 35
+    if not display_df.empty:
+        display_df.reset_index(inplace=True)
+        display_df.rename(columns={'index': 'Team'}, inplace=True)
+        
+        styled_table = style_fdr_table(display_df.set_index('Team'), fdr_score_df)
 
-    st.dataframe(styled_table, use_container_width=True, height=table_height)
+        table_height = (len(display_df) + 1) * 35
+        st.dataframe(styled_table, use_container_width=True, height=table_height)
+    elif not selected_teams:
+        st.warning("Please select at least one team from the sidebar to display the fixtures.")
+    else:
+        st.error("Data could not be generated for the selected teams.")
 
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
