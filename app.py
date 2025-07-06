@@ -63,9 +63,11 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     """Prepares the dataframes needed for the FDR table using the 5-color system."""
     rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
     
+    # Filter for PL teams and create rating dictionary
     pl_ratings_df = ratings_df[ratings_df['Team'].isin(PREMIER_LEAGUE_TEAMS)]
     rating_dict = pl_ratings_df.set_index('Team')[rating_col].to_dict()
 
+    # Create the 1-5 FDR score function based on quintiles of PL team ratings
     rating_values = sorted(rating_dict.values())
     quintiles = np.percentile(rating_values, [0, 20, 40, 60, 80, 100])
     def get_fdr_score(team_rating):
@@ -99,6 +101,7 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     display_df = pd.DataFrame.from_dict(display_data, orient='index').reindex(columns=gw_columns)
     fdr_score_df = pd.DataFrame.from_dict(fdr_score_data, orient='index').reindex(columns=gw_columns)
     
+    # Calculate total difficulty score by SUMMING the 1-5 FDR scores
     display_df['Score'] = fdr_score_df.sum(axis=1)
     
     display_df.sort_values(by='Score', ascending=True, inplace=True)
@@ -106,7 +109,6 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     display_df = display_df[cols]
     
     return display_df, fdr_score_df.reindex(display_df.index)
-
 # --- Styling Functions ---
 
 def style_fdr_table(display_df, fdr_score_df):
