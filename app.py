@@ -140,7 +140,7 @@ def style_fdr_table(display_df, fdr_score_df):
 # --- Main Streamlit App ---
 
 st.set_page_config(layout="wide")
-st.title("FPL Fixture Difficulty")
+st.title("โค้ชFPL Fixture Difficulty")
 
 # NEW: Added a collapsible glossary
 with st.expander("Glossary & How It Works"):
