@@ -139,7 +139,7 @@ def style_fdr_table(display_df, fdr_score_df):
 # --- Main Streamlit App ---
 
 st.set_page_config(layout="wide")
-st.title("FPL Fixture Difficulty")
+st.title("โค้ชFPL Fixture Difficulty")
 
 st.markdown("`Difficulty Key:` <span style='color:#00ff85'>**1**</span> | <span style='color:#50c369'>**2**</span> | <span style='color:#D3D3D3'>**3**</span> | <span style='color:#9d66a0'>**4**</span> | <span style='color:#6f2a74'>**5**</span>", unsafe_allow_html=True)
 
