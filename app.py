@@ -44,7 +44,6 @@ TEAM_NAME_MAP = {
 }
 
 # --- Data Processing Functions ---
-
 @st.cache_data
 def load_data():
     """Loads and prepares ratings and fixtures data."""
@@ -109,34 +108,7 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     display_df = display_df[cols]
     
     return display_df, fdr_score_df.reindex(display_df.index)
-# --- Styling Functions ---
 
-def style_fdr_table(display_df, fdr_score_df):
-    """Applies CSS styling to the FDR table using the 5-color system."""
-    
-    def color_cells(fdr_score):
-        """Applies background color based on the 1-5 FDR score."""
-        if pd.isna(fdr_score):
-            return f'background-color: {BLANK_FIXTURE_COLOR}'
-        
-        color = FDR_COLORS.get(fdr_score, '#FFFFFF')
-        text_color = '#31333F' if fdr_score <= 3 else '#FFFFFF'
-        return f'background-color: {color}; color: {text_color}'
-
-    styler = display_df.style
-
-    gw_cols = [col for col in display_df.columns if 'GW' in col]
-    subset_scores = fdr_score_df[gw_cols]
-    
-    styler = styler.apply(lambda x: subset_scores.map(color_cells), axis=None, subset=gw_cols)
-    styler = styler.format({'Score': '{:.0f}'})
-
-    styler = styler.set_table_styles([
-        {'selector': 'th.row_heading', 'props': [('text-align', 'left')]},
-        {'selector': 'td', 'props': [('text-align', 'center')]}
-    ])
-
-    return styler
 
 # --- Main Streamlit App ---
 
