@@ -185,4 +185,33 @@ if ratings_df is not None and fixtures_df is not None:
     else:
         display_df = pd.DataFrame()
 
-    if not display_df.empty
+    if not display_df.empty:
+        display_df.reset_index(inplace=True); display_df.rename(columns={'index': 'Team'}, inplace=True)
+        st.dataframe(style_fdr_table(display_df.set_index('Team'), fdr_score_df), use_container_width=True, height=(len(display_df) + 1) * 35)
+    elif not selected_teams:
+        st.warning("Please select at least one team from the sidebar to display the fixtures.")
+    
+    st.markdown("---") 
+
+    # --- Display Fixture Run Finder Results ---
+    st.header("✅ Easy Fixture Runs")
+    st.info(f"Showing upcoming runs of **{min_run_length} or more** consecutive games with a maximum FDR of **{max_fdr_input}**.")
+
+    fixture_runs = find_fixture_runs(fixtures_df, rating_dict, get_fdr_score_func, min_run_length, max_fdr_input, STARTING_GAMEWEEK)
+
+    if not fixture_runs:
+        st.warning("No matching fixture runs found for the selected criteria.")
+    else:
+        for team, runs in sorted(fixture_runs.items()):
+            with st.expander(f"**{team}** ({len(runs)} matching run(s) found)"):
+                for i, run in enumerate(runs):
+                    start, end = run[0]['gw'], run[-1]['gw']
+                    st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                    run_text = ""
+                    for fix in run:
+                        opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
+                        run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
+                    st.markdown(run_text)
+
+else:
+    st.error("Data could not be loaded. Please check your CSV files.")
