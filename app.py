@@ -106,7 +106,43 @@ def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw):
     display_df = display_df[cols]
     
     return display_df, fdr_score_df.reindex(display_df.index)
+# --- NEW: Function to find easy fixture runs ---
+def find_fixture_runs(fixtures_df, rating_dict, get_fdr_score_func, min_length, max_fdr, start_gw):
+    """Scans the full season to find consecutive runs of easy fixtures for all teams."""
+    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
+    for gw in range(1, 39):
+        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
+        for _, row in gw_fixtures.iterrows():
+            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
+            if home_team in PREMIER_LEAGUE_TEAMS:
+                all_fixtures[home_team].append({
+                    "gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_func(rating_dict.get(away_team))
+                })
+            if away_team in PREMIER_LEAGUE_TEAMS:
+                all_fixtures[away_team].append({
+                    "gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_func(rating_dict.get(home_team))
+                })
 
+    good_runs = {}
+    for team, fixtures in all_fixtures.items():
+        current_run = []
+        for fixture in sorted(fixtures, key=lambda x: x['gw']):
+            if fixture['gw'] < start_gw:
+                continue
+            
+            if fixture['fdr'] is not None and fixture['fdr'] <= max_fdr:
+                current_run.append(fixture)
+            else:
+                if len(current_run) >= min_length:
+                    if team not in good_runs: good_runs[team] = []
+                    good_runs[team].append(current_run)
+                current_run = []
+        
+        if len(current_run) >= min_length: # Check for a run at the end of the season
+            if team not in good_runs: good_runs[team] = []
+            good_runs[team].append(current_run)
+            
+    return good_runs
 # --- Styling Functions ---
 
 def style_fdr_table(display_df, fdr_score_df):
