@@ -170,6 +170,11 @@ if ratings_df is not None and fixtures_df is not None:
         default=PREMIER_LEAGUE_TEAMS
     )
 
+       # --- NEW: Sidebar controls for the fixture run finder ---
+    st.sidebar.header("Fixture Run Finder")
+    min_run_length = st.sidebar.number_input("Minimum run length:", min_value=2, max_value=10, value=3, step=1)
+    max_fdr_input = st.sidebar.number_input("Maximum FDR to count as 'easy':", min_value=1, max_value=5, value=2, step=1)
+
     display_df, fdr_score_df = create_fdr_data(ratings_df, fixtures_df, num_gws_to_show, STARTING_GAMEWEEK)
 
     if selected_teams:
@@ -191,6 +196,27 @@ if ratings_df is not None and fixtures_df is not None:
         st.warning("Please select at least one team from the sidebar to display the fixtures.")
     else:
         st.error("Data could not be generated for the selected teams.")
+     # --- NEW: Display Fixture Run Finder Results ---
+    st.header("✅ Easy Fixture Runs")
+    st.info(f"Showing upcoming runs of **{min_run_length} or more** consecutive games with a maximum FDR of **{max_fdr_input}**.")
 
+    fixture_runs = find_fixture_runs(fixtures_df, rating_dict, get_fdr_score_func, min_run_length, max_fdr_input, STARTING_GAMEWEEK)
+
+    if not fixture_runs:
+        st.warning("No matching fixture runs found for the selected criteria.")
+    else:
+        for team, runs in sorted(fixture_runs.items()):
+            with st.expander(f"**{team}** ({len(runs)} matching run(s) found)"):
+                for i, run in enumerate(runs):
+                    start, end = run[0]['gw'], run[-1]['gw']
+                    st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                    run_text = ""
+                    for fix in run:
+                        opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
+                        run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
+                    st.markdown(run_text)
+
+else:
+    st.error("Data could not be loaded. Please check your CSV files.")
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
