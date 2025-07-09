@@ -218,5 +218,4 @@ if ratings_df is not None and fixtures_df is not None:
 
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
-else:
-    st.error("Data could not be loaded. Please check your CSV files.")
+
