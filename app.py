@@ -55,8 +55,7 @@ def load_data():
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
 
-# --- FIX: Modified this function to accept rating_dict ---
-def create_fdr_data(fixtures_df, num_gws, start_gw, rating_dict, get_fdr_score_func):
+def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw, get_fdr_score_func, rating_dict):
     """Prepares the dataframes needed for the FDR table using the 5-color system."""
     gw_range = range(start_gw, start_gw + num_gws)
     gw_columns = [f'GW{i}' for i in gw_range]
@@ -154,6 +153,10 @@ with st.expander("Glossary & How It Works"):
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
+    # --- CRITICAL FIX: Standardize team names in the ratings dataframe ---
+    # This ensures "Manchester City" from the CSV becomes "Man City" to match the fixture list.
+    ratings_df['Team'] = ratings_df['Team'].replace(TEAM_NAME_MAP)
+
     st.sidebar.header("Controls")
     num_gws_to_show = st.sidebar.number_input("Select number of gameweeks to view:", min_value=1, max_value=12, value=8, step=1)
     selected_teams = st.sidebar.multiselect("Select teams to display:", options=PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
@@ -176,7 +179,6 @@ if ratings_df is not None and fixtures_df is not None:
         return 5
 
     # --- Display Main FDR Table ---
-    # FIX: Pass the rating_dict to the function call
     display_df, fdr_score_df = create_fdr_data(fixtures_df, num_gws_to_show, STARTING_GAMEWEEK, rating_dict, get_fdr_score_func)
     
     if selected_teams:
