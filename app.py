@@ -22,7 +22,7 @@ BLANK_FIXTURE_COLOR = '#444444'
 FDR_THRESHOLDS = {
     5: 115.0,  # Opponent rating >= 115.0 is FDR 5
     4: 90.0,   # Opponent rating >= 90.0 is FDR 4
-    3: 80.0,   # Opponent rating >= 80.0 is FDR 3
+    3: 75.0,   # Opponent rating >= 80.0 is FDR 3
     2: 70.0,   # Opponent rating >= 70.0 is FDR 2
     1: 0       # Any other rating is FDR 1
 }
