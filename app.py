@@ -17,6 +17,16 @@ FDR_COLORS = {
 }
 BLANK_FIXTURE_COLOR = '#444444'
 
+# --- UPDATED: Using your defined FDR thresholds ---
+# The difficulty rating will be based on which range the opponent's 'Final Rating' falls into.
+FDR_THRESHOLDS = {
+    5: 115.0,  # Opponent rating >= 115.0 is FDR 5
+    4: 90.0,   # Opponent rating >= 90.0 is FDR 4
+    3: 80.0,   # Opponent rating >= 80.0 is FDR 3
+    2: 70.0,   # Opponent rating >= 70.0 is FDR 2
+    1: 0       # Any other rating is FDR 1
+}
+
 # --- Team Lists and Mappings ---
 PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
@@ -41,15 +51,19 @@ TEAM_NAME_MAP = {
 
 # --- Helper and Data Processing Functions ---
 
-def get_fdr_score_from_rating(team_rating, thresholds):
-    """Returns an FDR score based on a dynamic threshold dictionary."""
+def get_fdr_score_from_rating(team_rating):
+    """Returns an FDR score based on the predefined threshold dictionary."""
     if pd.isna(team_rating):
-        return 3
+        return 3  # Default for unknown rating
     # Checks from highest to lowest threshold
-    if team_rating >= thresholds[4]: return 5
-    if team_rating >= thresholds[3]: return 4
-    if team_rating >= thresholds[2]: return 3
-    if team_rating >= thresholds[1]: return 2
+    if team_rating >= FDR_THRESHOLDS[5]:
+        return 5
+    if team_rating >= FDR_THRESHOLDS[4]:
+        return 4
+    if team_rating >= FDR_THRESHOLDS[3]:
+        return 3
+    if team_rating >= FDR_THRESHOLDS[2]:
+        return 2
     return 1
 
 @st.cache_data
@@ -66,7 +80,7 @@ def load_data():
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
 
-def create_fdr_data(fixtures_df, num_gws, start_gw, rating_dict, fdr_score_func):
+def create_fdr_data(fixtures_df, num_gws, start_gw, rating_dict):
     """Prepares the dataframes for the FDR table."""
     gw_range = range(start_gw, start_gw + num_gws)
     gw_columns = [f'GW{i}' for i in gw_range]
@@ -79,10 +93,10 @@ def create_fdr_data(fixtures_df, num_gws, start_gw, rating_dict, fdr_score_func)
         home_team, away_team, gw = row['HomeTeam_std'], row['AwayTeam_std'], f"GW{row['GW']}"
         if home_team in PREMIER_LEAGUE_TEAMS:
             display_data[home_team][gw] = f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)"
-            fdr_score_data[home_team][gw] = fdr_score_func(rating_dict.get(away_team))
+            fdr_score_data[home_team][gw] = get_fdr_score_from_rating(rating_dict.get(away_team))
         if away_team in PREMIER_LEAGUE_TEAMS:
             display_data[away_team][gw] = f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)"
-            fdr_score_data[away_team][gw] = fdr_score_func(rating_dict.get(home_team))
+            fdr_score_data[away_team][gw] = get_fdr_score_from_rating(rating_dict.get(home_team))
 
     display_df = pd.DataFrame.from_dict(display_data, orient='index').reindex(columns=gw_columns)
     fdr_score_df = pd.DataFrame.from_dict(fdr_score_data, orient='index').reindex(columns=gw_columns)
@@ -117,54 +131,30 @@ def style_fdr_table(display_df, fdr_score_df):
 st.set_page_config(layout="wide")
 st.title("FPL Fixture Difficulty")
 
+with st.expander("Glossary & How It Works"):
+    st.markdown(f"""
+    - **FDR (Fixture Difficulty Rating):** Each fixture is rated 1-5 based on the opponent's 'Final Rating'.
+    - **Your Custom Thresholds:** - **FDR 5 (Hardest):** Opponent Rating ≥ {FDR_THRESHOLDS[5]}
+        - **FDR 4:** Opponent Rating ≥ {FDR_THRESHOLDS[4]}
+        - **FDR 3:** Opponent Rating ≥ {FDR_THRESHOLDS[3]}
+        - **FDR 2:** Opponent Rating ≥ {FDR_THRESHOLDS[2]}
+        - **FDR 1 (Easiest):** All other ratings
+    - **Total Difficulty:** The sum of the FDR scores for all fixtures in the selected range. A **lower** number indicates an easier run of matches.
+    """)
+
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    # --- Setup shared logic ---
-    rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
-    rating_dict = ratings_df.set_index('Team')[rating_col].to_dict()
-    pl_team_ratings = [r for t, r in rating_dict.items() if t in PREMIER_LEAGUE_TEAMS and r is not None]
-
-    # --- NEW: Dynamic Threshold Calculation ---
-    fdr_thresholds = {}
-    if len(pl_team_ratings) > 0:
-        min_rating = min(pl_team_ratings)
-        max_rating = max(pl_team_ratings)
-        rating_range = max_rating - min_rating
-        interval_size = rating_range / 5
-        
-        # Create 4 thresholds for 5 groups
-        fdr_thresholds[1] = min_rating + interval_size       # Threshold for FDR 2
-        fdr_thresholds[2] = min_rating + (2 * interval_size)  # Threshold for FDR 3
-        fdr_thresholds[3] = min_rating + (3 * interval_size)  # Threshold for FDR 4
-        fdr_thresholds[4] = min_rating + (4 * interval_size)  # Threshold for FDR 5
-    
-    # Update the glossary dynamically
-    with st.expander("Glossary & How It Works"):
-        st.markdown("""
-        - **FDR (Fixture Difficulty Rating):** Each fixture is rated on a scale of 1 to 5.
-        - **How it's calculated:** The app automatically finds the highest and lowest team ratings in your file and divides that range into 5 equal 'difficulty zones'.
-        - **Total Difficulty:** The sum of the FDR scores for all fixtures in the selected range. A **lower** number indicates an easier run of matches.
-        """)
-        if fdr_thresholds:
-            st.markdown(f"""
-            **Calculated Thresholds:**
-            - **FDR 5 (Hardest):** Opponent Rating ≥ {fdr_thresholds[4]:.2f}
-            - **FDR 4:** Opponent Rating ≥ {fdr_thresholds[3]:.2f}
-            - **FDR 3:** Opponent Rating ≥ {fdr_thresholds[2]:.2f}
-            - **FDR 2:** Opponent Rating ≥ {fdr_thresholds[1]:.2f}
-            - **FDR 1 (Easiest):** All other ratings
-            """)
-
     st.sidebar.header("Controls")
     num_gws_to_show = st.sidebar.number_input("Select number of gameweeks to view:", min_value=1, max_value=12, value=8, step=1)
     selected_teams = st.sidebar.multiselect("Select teams to display:", options=PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
-    # Create the FDR score function with the dynamic thresholds
-    fdr_score_func = lambda rating: get_fdr_score_from_rating(rating, fdr_thresholds)
+    # --- Setup shared logic ---
+    rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
+    rating_dict = ratings_df.set_index('Team')[rating_col].to_dict()
 
     # --- Create and Display Data ---
-    display_df, fdr_score_df = create_fdr_data(fixtures_df, num_gws_to_show, STARTING_GAMEWEEK, rating_dict, fdr_score_func)
+    display_df, fdr_score_df = create_fdr_data(fixtures_df, num_gws_to_show, STARTING_GAMEWEEK, rating_dict)
     
     if selected_teams:
         teams_to_show = [team for team in display_df.index if team in selected_teams]
@@ -176,11 +166,4 @@ if ratings_df is not None and fixtures_df is not None:
         display_df.reset_index(inplace=True); display_df.rename(columns={'index': 'Team'}, inplace=True)
         st.dataframe(
             style_fdr_table(display_df.set_index('Team'), fdr_score_df), 
-            use_container_width=True, 
-            height=(len(display_df) + 1) * 35
-        )
-    elif not selected_teams:
-        st.warning("Please select at least one team from the sidebar to display the fixtures.")
-
-else:
-    st.error("Data could not be loaded. Please check your CSV files.")
+            use_container_width=
