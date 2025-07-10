@@ -166,4 +166,11 @@ if ratings_df is not None and fixtures_df is not None:
         display_df.reset_index(inplace=True); display_df.rename(columns={'index': 'Team'}, inplace=True)
         st.dataframe(
             style_fdr_table(display_df.set_index('Team'), fdr_score_df), 
-            use_container_width=
+            use_container_width=True, 
+            height=(len(display_df) + 1) * 35
+        )
+    elif not selected_teams:
+        st.warning("Please select at least one team from the sidebar to display the fixtures.")
+
+else:
+    st.error("Data could not be loaded. Please check your CSV files.")
