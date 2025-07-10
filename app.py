@@ -1,4 +1,4 @@
-import pandas as pd
+ import pandas as pd
 import streamlit as st
 import numpy as np
 from matplotlib.colors import to_hex
@@ -55,8 +55,9 @@ def load_data():
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
 
-def create_fdr_data(ratings_df, fixtures_df, num_gws, start_gw, get_fdr_score_func, rating_dict):
-    """Prepares the dataframes needed for the FDR table using the 5-color system."""
+# FIX: This function now properly receives the shared rating_dict and fdr_score function
+def create_fdr_data(fixtures_df, num_gws, start_gw, rating_dict, get_fdr_score_func):
+    """Prepares the dataframes for the main FDR table."""
     gw_range = range(start_gw, start_gw + num_gws)
     gw_columns = [f'GW{i}' for i in gw_range]
 
@@ -103,8 +104,7 @@ def find_fixture_runs(fixtures_df, rating_dict, get_fdr_score_func, min_length, 
     for team, fixtures in all_fixtures.items():
         current_run = []
         for fixture in sorted(fixtures, key=lambda x: x['gw']):
-            if fixture['gw'] < start_gw:
-                continue
+            if fixture['gw'] < start_gw: continue
             
             if fixture['fdr'] is not None and fixture['fdr'] <= max_fdr:
                 current_run.append(fixture)
@@ -153,8 +153,7 @@ with st.expander("Glossary & How It Works"):
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    # --- CRITICAL FIX: Standardize team names in the ratings dataframe ---
-    # This ensures "Manchester City" from the CSV becomes "Man City" to match the fixture list.
+    # Standardize team names in the ratings file to prevent lookup errors
     ratings_df['Team'] = ratings_df['Team'].replace(TEAM_NAME_MAP)
 
     st.sidebar.header("Controls")
@@ -165,11 +164,17 @@ if ratings_df is not None and fixtures_df is not None:
     min_run_length = st.sidebar.number_input("Minimum run length:", min_value=2, max_value=10, value=3, step=1)
     max_fdr_input = st.sidebar.number_input("Maximum FDR to count as 'easy':", min_value=1, max_value=5, value=2, step=1)
 
-    # --- Setup shared logic ---
+    # --- Setup shared logic (created ONCE) ---
     rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
     rating_dict = ratings_df.set_index('Team')[rating_col].to_dict()
     pl_team_ratings = [r for t, r in rating_dict.items() if t in PREMIER_LEAGUE_TEAMS and r is not None]
-    quintiles = np.percentile(sorted(pl_team_ratings), [0, 20, 40, 60, 80, 100])
+    
+    # Check if there are enough ratings to calculate quintiles
+    if len(pl_team_ratings) > 0:
+        quintiles = np.percentile(sorted(pl_team_ratings), [0, 20, 40, 60, 80, 100])
+    else:
+        quintiles = [0, 0, 0, 0, 0, 0] # Default if no ratings found
+
     def get_fdr_score_func(team_rating):
         if pd.isna(team_rating): return 3
         if team_rating <= quintiles[1]: return 1
