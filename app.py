@@ -164,20 +164,18 @@ if ratings_df is not None and fixtures_df is not None:
         }};
         """)
         
-        # --- FINAL FIX: Create the JS string first, then pass it to JsCode inside the loop ---
+        # --- FINAL FIX: Escaped the JS curly braces by doubling them {{ and }} ---
         comparator_template = """
-        function(valueA, valueB, nodeA, nodeB) {
+        function(valueA, valueB, nodeA, nodeB) {{
             const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3;
             const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3;
             return fdrA - fdrB;
-        }
+        }}
         """
 
         for gw in range(start_gw, end_gw + 1):
             gw_col = f"GW{gw}"
-            # Format the string template for each gameweek
             js_string = comparator_template.format(gw_col=gw_col)
-            # Create a new JsCode object for each column's comparator
             comparator_jscode = JsCode(js_string)
 
             gb.configure_column(
