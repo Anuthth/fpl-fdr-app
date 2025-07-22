@@ -99,38 +99,6 @@ def create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict):
     
     return df
 
-def find_fixture_runs(fixtures_df, rating_dict, start_gw):
-    """Scans for runs of 3+ games with an FDR of 3 or less."""
-    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 39):
-        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
-        for _, row in gw_fixtures.iterrows():
-            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-            if home_team in PREMIER_LEAGUE_TEAMS:
-                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating_dict.get(away_team))})
-            if away_team in PREMIER_LEAGUE_TEAMS:
-                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating_dict.get(home_team))})
-
-    good_runs = {}
-    for team, fixtures in all_fixtures.items():
-        current_run = []
-        for fixture in sorted(fixtures, key=lambda x: x['gw']):
-            if fixture['gw'] < start_gw: continue
-            
-            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
-                current_run.append(fixture)
-            else:
-                if len(current_run) >= 3:
-                    if team not in good_runs: good_runs[team] = []
-                    good_runs[team].append(current_run)
-                current_run = []
-        
-        if len(current_run) >= 3:
-            if team not in good_runs: good_runs[team] = []
-            good_runs[team].append(current_run)
-            
-    return good_runs
-
 # --- Main Streamlit App ---
 
 st.set_page_config(layout="wide")
@@ -141,7 +109,6 @@ with st.expander("Glossary & How It Works"):
     - **FDR (Fixture Difficulty Rating):** Each fixture is rated 1-5 based on the opponent's 'Final Rating'.
     - **Your Custom Thresholds:** FDR 5 (Rating ≥ {FDR_THRESHOLDS[5]}), FDR 4 (≥ {FDR_THRESHOLDS[4]}), FDR 3 (≥ {FDR_THRESHOLDS[3]}), FDR 2 (≥ {FDR_THRESHOLDS[2]}), FDR 1 (all others).
     - **Total Difficulty:** The sum of the FDR scores for all fixtures in the selected range. A **lower** number indicates an easier run of matches.
-    - **Easy Run:** A period of 3 or more consecutive games without facing an opponent with a difficulty of 4 or 5.
     """)
 
 ratings_df, fixtures_df = load_data()
@@ -197,21 +164,27 @@ if ratings_df is not None and fixtures_df is not None:
         }};
         """)
         
-        comparator_jscode = JsCode("""
+        # --- FINAL FIX: Create the JS string first, then pass it to JsCode inside the loop ---
+        comparator_template = """
         function(valueA, valueB, nodeA, nodeB) {
             const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3;
             const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3;
             return fdrA - fdrB;
         }
-        """)
+        """
 
         for gw in range(start_gw, end_gw + 1):
             gw_col = f"GW{gw}"
+            # Format the string template for each gameweek
+            js_string = comparator_template.format(gw_col=gw_col)
+            # Create a new JsCode object for each column's comparator
+            comparator_jscode = JsCode(js_string)
+
             gb.configure_column(
                 gw_col,
                 headerName=gw_col,
                 valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''",
-                comparator=comparator_jscode.format(gw_col=gw_col),
+                comparator=comparator_jscode,
                 cellStyle=jscode,
                 width=100
             )
@@ -233,45 +206,5 @@ if ratings_df is not None and fixtures_df is not None:
 
     elif not selected_teams:
         st.warning("Please select at least one team from the sidebar to display the fixtures.")
-
-    st.markdown("---") 
-
-    # --- Easy Run Finder Feature ---
-    st.sidebar.header("Easy Run Finder")
-    st.sidebar.info("Find upcoming periods of 3+ easy/neutral fixtures (FDR 1-3).")
-    
-    teams_to_check = st.sidebar.multiselect(
-        "Select teams to find runs for:",
-        options=PREMIER_LEAGUE_TEAMS,
-        default=[]
-    )
-    
-    st.header("✅ Easy Fixture Runs")
-    
-    if teams_to_check:
-        all_runs = find_fixture_runs(fixtures_df, rating_dict, start_gw)
-        
-        results_found_for_any_team = False
-        for team in teams_to_check:
-            team_runs = all_runs.get(team)
-            
-            if team_runs:
-                results_found_for_any_team = True
-                with st.expander(f"**{team}** ({len(team_runs)} matching run(s) found)"):
-                    for i, run in enumerate(team_runs):
-                        start, end = run[0]['gw'], run[-1]['gw']
-                        st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
-                        run_text = ""
-                        for fix in run:
-                            opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
-                            run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
-                        st.markdown(run_text)
-        
-        if not results_found_for_any_team:
-            st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
-
-    else:
-        st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
-
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
