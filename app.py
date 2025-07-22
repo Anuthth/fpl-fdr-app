@@ -24,7 +24,6 @@ FDR_COLORS = {
     4: '#9d66a0',
     5: '#6f2a74'
 }
-BLANK_FIXTURE_COLOR = '#444444'
 
 # --- Team Lists and Mappings ---
 PREMIER_LEAGUE_TEAMS = sorted([
@@ -78,7 +77,7 @@ def create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict):
     gw_range = range(start_gw, end_gw + 1)
     gw_columns = [f'GW{i}' for i in gw_range]
 
-    # This will now hold a dictionary with both display text and the FDR score
+    # Data will now be a dictionary, containing both display text and the FDR score
     combined_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
     fdr_score_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
 
@@ -93,15 +92,10 @@ def create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict):
             combined_data[away_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)", "fdr": fdr}
             fdr_score_data[away_team][gw] = fdr
     
-    # We create a multi-level column dataframe for display, then flatten it
-    # This is a trick to keep the display text and the sortable FDR value together
-    df = pd.DataFrame.from_dict({
-        (team, gw): data for team, gw_data in combined_data.items() for gw, data in gw_data.items()
-    }, orient='index')
-    df = df.unstack(level=1)
-    df.columns = df.columns.map('{0[0]}|{0[1]}'.format) # Flatten columns to 'GW1|display', 'GW1|fdr'
-
-    # Create the score dataframe for calculating total difficulty
+    # Create the dataframe where each cell is a dictionary
+    df = pd.DataFrame.from_dict(combined_data, orient='index').reindex(columns=gw_columns)
+    
+    # Create a separate score dataframe to calculate total difficulty
     fdr_score_df = pd.DataFrame.from_dict(fdr_score_data, orient='index').reindex(columns=gw_columns)
     df['Total Difficulty'] = fdr_score_df.sum(axis=1)
     df.sort_values(by='Total Difficulty', ascending=True, inplace=True)
@@ -141,81 +135,73 @@ if ratings_df is not None and fixtures_df is not None:
     rating_col = 'Hybrid Rating' if 'Hybrid Rating' in ratings_df.columns else 'Final Rating'
     rating_dict = ratings_df.set_index('Team')[rating_col].to_dict()
 
-    # Create the combined data
     fdr_df = create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict)
     
-    # Filter by selected teams
     if selected_teams:
         teams_to_show = [team for team in fdr_df.index if team in selected_teams]
         fdr_df = fdr_df.loc[teams_to_show]
 
     if not fdr_df.empty:
-        # --- NEW: AG-Grid Implementation ---
+        # --- NEW: Simplified and Corrected AG-Grid Implementation ---
         
-        # Reset index to make Team a column
+        # Reset index to make Team a column for AgGrid
         fdr_df.reset_index(inplace=True)
         fdr_df.rename(columns={'index': 'Team'}, inplace=True)
 
         gb = GridOptionsBuilder.from_dataframe(fdr_df)
         
-        # Configure the Total Difficulty column
-        gb.configure_column("Total Difficulty", width=90, headerClass='total-difficulty-header')
-        
-        # Configure the Team column
-        gb.configure_column("Team", width=150, pinned='left', headerClass='team-header', cellClass='team-cell')
+        # Configure columns that are always present
+        gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
+        gb.configure_column("Total Difficulty", width=120)
 
-        # Cell styling logic using JavaScript
-        cell_style_js = JsCode(f"""
+        # JavaScript code for styling cells based on their 'fdr' value
+        jscode = JsCode(f"""
         function(params) {{
-            if (params.data && params.colDef.field.includes('|fdr')) {{
-                const fdr = params.value;
+            if (params.value && params.value.fdr) {{
+                const fdr = params.value.fdr;
                 const colors = {FDR_COLORS};
+                const bgColor = colors[fdr] || '#444444';
                 const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF';
                 return {{
-                    'backgroundColor': colors[fdr],
+                    'backgroundColor': bgColor,
                     'color': textColor,
-                    'textAlign': 'center',
                     'fontWeight': 'bold'
                 }};
             }}
             return {{'textAlign': 'center'}};
-        }}
+        }};
         """)
-
-        # Configure all the gameweek columns
+        
+        # Configure the dynamic gameweek columns
         for gw in range(start_gw, end_gw + 1):
-            gw_col = f"GW{gw}|display"
-            fdr_col = f"GW{gw}|fdr"
+            gw_col = f"GW{gw}"
             gb.configure_column(
                 gw_col,
-                headerName=f"GW{gw}", # Set the visible header name
-                valueGetter=f"data['{gw_col}']", # Get the display text
-                comparator=JsCode(f"function(valueA, valueB, nodeA, nodeB) {{ return nodeA.data['{fdr_col}'] - nodeB.data['{fdr_col}']; }}"),
-                cellStyle=cell_style_js,
-                width=80
+                headerName=gw_col,
+                # valueGetter tells AgGrid to display the 'display' part of our dictionary
+                valueGetter="data['{gw_col}'] ? data['{gw_col}'].display : ''".format(gw_col=gw_col),
+                # comparator tells AgGrid to sort using the 'fdr' part of our dictionary
+                comparator=JsCode("function(valueA, valueB, nodeA, nodeB) { return nodeA.data['{gw_col}'].fdr - nodeB.data['{gw_col}'].fdr; }".format(gw_col=gw_col)),
+                cellStyle=jscode,
+                width=100
             )
-            # Hide the underlying FDR data column
-            gb.configure_column(fdr_col, hide=True)
         
-        # Build the grid options
-        go = gb.build()
+        gb.configure_default_column(
+            resizable=True,
+            sortable=True,
+            filter=False,
+            menuTabs=[]
+        )
         
-        # Define custom CSS for headers and team column
-        custom_css = {
-            ".ag-theme-streamlit-dark .total-difficulty-header": {"color": "#FFFFFF !important"},
-            ".ag-theme-streamlit-dark .team-header": {"color": "#FFFFFF !important"},
-            ".ag-theme-streamlit-dark .team-cell": {"text-align": "left !important"},
-        }
-
-        # Display the AgGrid table
+        gridOptions = gb.build()
+        
         AgGrid(
             fdr_df,
-            gridOptions=go,
-            custom_css=custom_css,
+            gridOptions=gridOptions,
             allow_unsafe_jscode=True,
             theme='streamlit-dark',
-            height= (len(fdr_df) + 1) * 35,
-            fit_columns_on_grid_load=True # Adjust columns to fit width
+            height=(len(fdr_df) + 1) * 35,
+            fit_columns_on_grid_load=True
         )
 
     elif not selected_teams:
