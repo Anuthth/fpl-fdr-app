@@ -77,7 +77,6 @@ def create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict):
     gw_range = range(start_gw, end_gw + 1)
     gw_columns = [f'GW{i}' for i in gw_range]
 
-    # Data will now be a dictionary, containing both display text and the FDR score
     combined_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
     fdr_score_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
 
@@ -92,15 +91,45 @@ def create_fdr_data(fixtures_df, start_gw, end_gw, rating_dict):
             combined_data[away_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)", "fdr": fdr}
             fdr_score_data[away_team][gw] = fdr
     
-    # Create the dataframe where each cell is a dictionary
     df = pd.DataFrame.from_dict(combined_data, orient='index').reindex(columns=gw_columns)
     
-    # Create a separate score dataframe to calculate total difficulty
     fdr_score_df = pd.DataFrame.from_dict(fdr_score_data, orient='index').reindex(columns=gw_columns)
     df['Total Difficulty'] = fdr_score_df.sum(axis=1)
     df.sort_values(by='Total Difficulty', ascending=True, inplace=True)
     
     return df
+
+def find_fixture_runs(fixtures_df, rating_dict, start_gw):
+    """Scans for runs of 3+ games with an FDR of 3 or less."""
+    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
+    for gw in range(1, 39):
+        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
+        for _, row in gw_fixtures.iterrows():
+            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
+            if home_team in PREMIER_LEAGUE_TEAMS:
+                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating_dict.get(away_team))})
+            if away_team in PREMIER_LEAGUE_TEAMS:
+                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating_dict.get(home_team))})
+
+    good_runs = {}
+    for team, fixtures in all_fixtures.items():
+        current_run = []
+        for fixture in sorted(fixtures, key=lambda x: x['gw']):
+            if fixture['gw'] < start_gw: continue
+            
+            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
+                current_run.append(fixture)
+            else:
+                if len(current_run) >= 3:
+                    if team not in good_runs: good_runs[team] = []
+                    good_runs[team].append(current_run)
+                current_run = []
+        
+        if len(current_run) >= 3:
+            if team not in good_runs: good_runs[team] = []
+            good_runs[team].append(current_run)
+            
+    return good_runs
 
 # --- Main Streamlit App ---
 
@@ -112,6 +141,7 @@ with st.expander("Glossary & How It Works"):
     - **FDR (Fixture Difficulty Rating):** Each fixture is rated 1-5 based on the opponent's 'Final Rating'.
     - **Your Custom Thresholds:** FDR 5 (Rating ≥ {FDR_THRESHOLDS[5]}), FDR 4 (≥ {FDR_THRESHOLDS[4]}), FDR 3 (≥ {FDR_THRESHOLDS[3]}), FDR 2 (≥ {FDR_THRESHOLDS[2]}), FDR 1 (all others).
     - **Total Difficulty:** The sum of the FDR scores for all fixtures in the selected range. A **lower** number indicates an easier run of matches.
+    - **Easy Run:** A period of 3 or more consecutive games without facing an opponent with a difficulty of 4 or 5.
     """)
 
 ratings_df, fixtures_df = load_data()
@@ -142,22 +172,17 @@ if ratings_df is not None and fixtures_df is not None:
         fdr_df = fdr_df.loc[teams_to_show]
 
     if not fdr_df.empty:
-        # --- NEW: Simplified and Corrected AG-Grid Implementation ---
-        
-        # Reset index to make Team a column for AgGrid
         fdr_df.reset_index(inplace=True)
         fdr_df.rename(columns={'index': 'Team'}, inplace=True)
 
         gb = GridOptionsBuilder.from_dataframe(fdr_df)
         
-        # Configure columns that are always present
         gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
         gb.configure_column("Total Difficulty", width=120)
 
-        # JavaScript code for styling cells based on their 'fdr' value
         jscode = JsCode(f"""
         function(params) {{
-            if (params.value && params.value.fdr) {{
+            if (params.value && params.value.fdr !== undefined) {{
                 const fdr = params.value.fdr;
                 const colors = {FDR_COLORS};
                 const bgColor = colors[fdr] || '#444444';
@@ -168,29 +193,31 @@ if ratings_df is not None and fixtures_df is not None:
                     'fontWeight': 'bold'
                 }};
             }}
-            return {{'textAlign': 'center'}};
+            return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
         }};
         """)
         
-        # Configure the dynamic gameweek columns
+        comparator_jscode = JsCode("""
+        function(valueA, valueB, nodeA, nodeB) {
+            const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3;
+            const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3;
+            return fdrA - fdrB;
+        }
+        """)
+
         for gw in range(start_gw, end_gw + 1):
             gw_col = f"GW{gw}"
             gb.configure_column(
                 gw_col,
                 headerName=gw_col,
-                # valueGetter tells AgGrid to display the 'display' part of our dictionary
-                valueGetter="data['{gw_col}'] ? data['{gw_col}'].display : ''".format(gw_col=gw_col),
-                # comparator tells AgGrid to sort using the 'fdr' part of our dictionary
-                comparator=JsCode("function(valueA, valueB, nodeA, nodeB) { return nodeA.data['{gw_col}'].fdr - nodeB.data['{gw_col}'].fdr; }".format(gw_col=gw_col)),
+                valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''",
+                comparator=comparator_jscode.format(gw_col=gw_col),
                 cellStyle=jscode,
                 width=100
             )
         
         gb.configure_default_column(
-            resizable=True,
-            sortable=True,
-            filter=False,
-            menuTabs=[]
+            resizable=True, sortable=True, filter=False, menuTabs=[]
         )
         
         gridOptions = gb.build()
@@ -206,5 +233,45 @@ if ratings_df is not None and fixtures_df is not None:
 
     elif not selected_teams:
         st.warning("Please select at least one team from the sidebar to display the fixtures.")
+
+    st.markdown("---") 
+
+    # --- Easy Run Finder Feature ---
+    st.sidebar.header("Easy Run Finder")
+    st.sidebar.info("Find upcoming periods of 3+ easy/neutral fixtures (FDR 1-3).")
+    
+    teams_to_check = st.sidebar.multiselect(
+        "Select teams to find runs for:",
+        options=PREMIER_LEAGUE_TEAMS,
+        default=[]
+    )
+    
+    st.header("✅ Easy Fixture Runs")
+    
+    if teams_to_check:
+        all_runs = find_fixture_runs(fixtures_df, rating_dict, start_gw)
+        
+        results_found_for_any_team = False
+        for team in teams_to_check:
+            team_runs = all_runs.get(team)
+            
+            if team_runs:
+                results_found_for_any_team = True
+                with st.expander(f"**{team}** ({len(team_runs)} matching run(s) found)"):
+                    for i, run in enumerate(team_runs):
+                        start, end = run[0]['gw'], run[-1]['gw']
+                        st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                        run_text = ""
+                        for fix in run:
+                            opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
+                            run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
+                        st.markdown(run_text)
+        
+        if not results_found_for_any_team:
+            st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
+
+    else:
+        st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
+
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
