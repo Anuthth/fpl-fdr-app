@@ -77,7 +77,6 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     gw_range = range(start_gw, end_gw + 1)
-    gw_columns = [f'GW{i}' for i in gw_range]
 
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
     
@@ -88,7 +87,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         home_stats = ratings_dict.get(home_team)
         away_stats = ratings_dict.get(away_team)
 
-        if home_stats and away_stats:
+        if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
             home_xg = home_stats['Off Score'] / away_stats['Def Score']
             away_xg = away_stats['Off Score'] / home_stats['Def Score']
             home_cs_prob = math.exp(-away_xg)
@@ -107,12 +106,11 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
                     "xG": away_xg, "CS": away_cs_prob
                 }
     
-    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=gw_columns)
+    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
     
-    # Calculate all summary columns
-    df['Total Difficulty'] = df.apply(lambda row: sum(cell['fdr'] for cell in row if isinstance(cell, dict)), axis=1)
-    df['Total xG'] = df.apply(lambda row: sum(cell['xG'] for cell in row if isinstance(cell, dict)), axis=1)
-    df['Total CS'] = df.apply(lambda row: sum(cell['CS'] for cell in row if isinstance(cell, dict)), axis=1)
+    df['Total Difficulty'] = df.apply(lambda row: sum(cell['fdr'] for cell in row if isinstance(cell, dict) and 'fdr' in cell), axis=1)
+    df['Total xG'] = df.apply(lambda row: sum(cell['xG'] for cell in row if isinstance(cell, dict) and 'xG' in cell), axis=1)
+    df['Total CS'] = df.apply(lambda row: sum(cell['CS'] for cell in row if isinstance(cell, dict) and 'CS' in cell), axis=1)
     
     return df
 
@@ -146,17 +144,14 @@ if ratings_df is not None and fixtures_df is not None:
         default=PREMIER_LEAGUE_TEAMS
     )
 
-    # --- Create all data once ---
     master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
     
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
         master_df = master_df.loc[teams_to_show]
 
-    # --- Create Tabs ---
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Projected Clean Sheets (CS)"])
 
-    # --- FDR Tab ---
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         fdr_df = master_df.sort_values(by='Total Difficulty', ascending=True)
@@ -173,73 +168,3 @@ if ratings_df is not None and fixtures_df is not None:
                 const fdr = cellData.fdr;
                 const colors = {FDR_COLORS};
                 const bgColor = colors[fdr] || '#444444';
-                const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF';
-                return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
-            }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        
-        for gw in range(start_gw, end_gw + 1):
-            gw_col = f"GW{gw}"
-            gb_fdr.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''", cellStyle=jscode_fdr, width=100)
-        
-        AgGrid(fdr_df, gridOptions=gb_fdr.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(fdr_df) + 1) * 35, fit_columns_on_grid_load=True)
-
-    # --- Projected Goals (xG) Tab ---
-    with tab2:
-        st.subheader("Projected Goals (Higher is better for attackers)")
-        xg_df = master_df.sort_values(by='Total xG', ascending=False)
-        xg_df.reset_index(inplace=True); xg_df.rename(columns={'index': 'Team'}, inplace=True)
-
-        gb_xg = GridOptionsBuilder.from_dataframe(xg_df)
-        gb_xg.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
-        gb_xg.configure_column("Total xG", width=120, valueFormatter="data['Total xG'].toFixed(2)")
-        gb_xg.configure_column("Total Difficulty", hide=True); gb_xg.configure_column("Total CS", hide=True)
-
-        jscode_xg = JsCode("""function(params) {{
-            const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.xG !== undefined) {{
-                const xG = cellData.xG;
-                let bgColor;
-                if (xG >= 1.8) {{ bgColor = '#00ff85'; }} else if (xG >= 1.2) {{ bgColor = '#50c369'; }}
-                else if (xG >= 0.8) {{ bgColor = '#D3D3D3'; }} else if (xG >= 0.5) {{ bgColor = '#9d66a0'; }}
-                else {{ bgColor = '#6f2a74'; }}
-                const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF';
-                return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
-            }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        
-        for gw in range(start_gw, end_gw + 1):
-            gw_col = f"GW{gw}"
-            gb_xg.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display + '<br>xG: ' + data['{gw_col}'].xG.toFixed(2) : ''", cellStyle=jscode_xg, width=110)
-        
-        AgGrid(xg_df, gridOptions=gb_xg.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(xg_df) + 1) * 45, fit_columns_on_grid_load=True, html_columns=[f'GW{i}' for i in range(start_gw, end_gw + 1)])
-        
-    # --- Projected Clean Sheets (CS) Tab ---
-    with tab3:
-        st.subheader("Projected Clean Sheets (Higher is better for defenders)")
-        cs_df = master_df.sort_values(by='Total CS', ascending=False)
-        cs_df.reset_index(inplace=True); cs_df.rename(columns={'index': 'Team'}, inplace=True)
-
-        gb_cs = GridOptionsBuilder.from_dataframe(cs_df)
-        gb_cs.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
-        gb_cs.configure_column("Total CS", width=120, valueFormatter="(data['Total CS'] * 100).toFixed(1) + '%'")
-        gb_cs.configure_column("Total Difficulty", hide=True); gb_cs.configure_column("Total xG", hide=True)
-
-        jscode_cs = JsCode("""function(params) {{
-            const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.CS !== undefined) {{
-                const cs = cellData.CS;
-                let bgColor;
-                if (cs >= 0.5) {{ bgColor = '#00ff85'; }} else if (cs >= 0.35) {{ bgColor = '#50c369'; }}
-                else if (cs >= 0.2) {{ bgColor = '#D3D3D3'; }} else if (cs >= 0.1) {{ bgColor = '#9d66a0'; }}
-                else {{ bgColor = '#6f2a74'; }}
-                const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF';
-                return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
-            }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        
-        for gw in range(start_gw, end_gw + 1):
-            gw_col = f"GW{gw}"
-            gb_cs.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display + '<br>CS: ' + (data['{gw_col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode_cs, width=110)
-        
-        AgGrid(cs_df, gridOptions=gb_cs.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(cs_df) + 1) * 45, fit_columns_on_grid_load=True, html_columns=[f'GW{i}' for i in range(start_gw, end_gw + 1)])
-
-else:
-    st.error("Data could not be loaded. Please check your CSV files.")
