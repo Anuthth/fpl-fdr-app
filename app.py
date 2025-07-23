@@ -197,16 +197,15 @@ if ratings_df is not None and fixtures_df is not None:
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150)
-        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
-        gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
+        gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
 
-        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for gw in range(start_gw, end_gw + 1):
-            # --- MODIFIED: Simplified the cell display ---
-            gw_col = f"GW{gw}"; gb.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].xG.toFixed(2) : ''", cellStyle=jscode, flex=1)
+            gw_col = f"GW{gw}"; gb.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''", cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
         
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
@@ -214,16 +213,15 @@ if ratings_df is not None and fixtures_df is not None:
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150)
-        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
-        gb.configure_column("Total Difficulty", hide=True); gb.configure_column("Total xG", hide=True)
-        
-        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.CS !== undefined) { const cs = cellData.CS; let bgColor; if (cs >= 0.5) { bgColor = '#00ff85'; } else if (cs >= 0.35) { bgColor = '#50c369'; } else if (cs >= 0.2) { bgColor = '#D3D3D3'; } else if (cs >= 0.1) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
+
+        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for gw in range(start_gw, end_gw + 1):
-            # --- MODIFIED: Simplified the cell display ---
-            gw_col = f"GW{gw}"; gb.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? (data['{gw_col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode, flex=1)
+            gw_col = f"GW{gw}"; gb.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''", cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 
     # --- Easy Run Finder Feature ---
     st.markdown("---") 
