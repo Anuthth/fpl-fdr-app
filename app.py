@@ -241,7 +241,7 @@ if ratings_df is not None and fixtures_df is not None:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", flex=1, minWidth=90, cellStyle=jscode)
             
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'cs_grid_{start_gw}_{end_gw}')
 
     # --- Easy Run Finder Feature ---
     st.markdown("---") 
