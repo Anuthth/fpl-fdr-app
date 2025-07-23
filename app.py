@@ -9,7 +9,7 @@ RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
 # --- ADDED: Scaling factor to align projections with your season simulation ---
-GOAL_SCALING_FACTOR = 1.3
+GOAL_SCALING_FACTOR = 1
 
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
