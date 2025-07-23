@@ -179,8 +179,9 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", cellStyle=jscode)
         
+          # Configure default settings for ALL columns to be the same size and sortable
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[], flex=1)
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
         
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
@@ -198,7 +199,8 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode)
         
+          # Configure default settings for ALL columns to be the same size and sortable
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[], flex=1)
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
