@@ -8,8 +8,23 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# --- ADDED: Scaling factor to align projections with your season simulation ---
-GOAL_SCALING_FACTOR = 1
+# --- NEW: Data from your season simulation for calibration ---
+SIMULATION_GF = {
+    'Man City': 92.7, 'Liverpool': 93.6, 'Arsenal': 80.1, 'Newcastle': 75.4,
+    'Chelsea': 72.8, 'Spurs': 69.2, 'Brighton': 65.7, 'Bournemouth': 64.7,
+    'Aston Villa': 64.9, 'Brentford': 65.0, 'Fulham': 60.4, 'Crystal Palace': 58.3,
+    'Man Utd': 62.8, 'Nottm Forest': 55.6, 'Everton': 52.6, 'West Ham': 57.4,
+    'Leeds': 54.8, 'Wolves': 51.9, 'Sunderland': 41.4, 'Burnley': 40.5
+}
+SIMULATION_GA = {
+    'Man City': 44.1, 'Liverpool': 51.6, 'Arsenal': 44.0, 'Newcastle': 60.6,
+    'Chelsea': 58.7, 'Spurs': 69.7, 'Brighton': 62.5, 'Bournemouth': 65.0,
+    'Aston Villa': 67.8, 'Brentford': 69.1, 'Fulham': 64.2, 'Crystal Palace': 63.0,
+    'Man Utd': 69.2, 'Nottm Forest': 65.2, 'Everton': 63.5, 'West Ham': 73.5,
+    'Leeds': 71.1, 'Wolves': 72.8, 'Sunderland': 69.4, 'Burnley': 79.6
+}
+
+
 
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
@@ -76,8 +91,33 @@ def load_data():
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
 
-def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
-    """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
+# --- NEW: Function to calculate team-specific calibration factors ---
+@st.cache_data
+def calculate_calibration_factors(ratings_df, fixtures_df):
+    ratings_dict = ratings_df.set_index('Team').to_dict('index')
+    model_xg_for = {team: 0 for team in PREMIER_LEAGUE_TEAMS}
+    model_xg_against = {team: 0 for team in PREMIER_LEAGUE_TEAMS}
+
+    for _, row in fixtures_df.iterrows():
+        home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
+        home_stats = ratings_dict.get(home_team)
+        away_stats = ratings_dict.get(away_team)
+
+        if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
+            home_xg = home_stats['Off Score'] / away_stats['Def Score']
+            away_xg = away_stats['Off Score'] / home_stats['Def Score']
+            model_xg_for[home_team] += home_xg
+            model_xg_against[home_team] += away_xg
+            model_xg_for[away_team] += away_xg
+            model_xg_against[away_team] += home_xg
+
+    off_factors = {team: SIMULATION_GF.get(team, 1) / model_xg_for.get(team, 1) for team in PREMIER_LEAGUE_TEAMS}
+    def_factors = {team: SIMULATION_GA.get(team, 1) / model_xg_against.get(team, 1) for team in PREMIER_LEAGUE_TEAMS}
+    
+    return off_factors, def_factors
+
+
+def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_factors):
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     gw_range = range(start_gw, end_gw + 1)
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
@@ -90,25 +130,17 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            # --- MODIFIED: Apply the scaling factor to the xG calculation ---
-            home_xg = (home_stats['Off Score'] / away_stats['Def Score']) * GOAL_SCALING_FACTOR
-            away_xg = (away_stats['Off Score'] / home_stats['Def Score']) * GOAL_SCALING_FACTOR
+            # Apply calibration factors to the base projection
+            home_xg = (home_stats['Off Score'] / away_stats['Def Score']) * off_factors.get(home_team, 1) * def_factors.get(away_team, 1)
+            away_xg = (away_stats['Off Score'] / home_stats['Def Score']) * off_factors.get(away_team, 1) * def_factors.get(home_team, 1)
             
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
 
             if home_team in PREMIER_LEAGUE_TEAMS:
-                projection_data[home_team][gw] = {
-                    "display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)",
-                    "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')),
-                    "xG": home_xg, "CS": home_cs_prob
-                }
+                projection_data[home_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)", "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')), "xG": home_xg, "CS": home_cs_prob}
             if away_team in PREMIER_LEAGUE_TEAMS:
-                 projection_data[away_team][gw] = {
-                    "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
-                    "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
-                    "xG": away_xg, "CS": away_cs_prob
-                }
+                 projection_data[away_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)", "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')), "xG": away_xg, "CS": away_cs_prob}
     
     df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
     
@@ -117,6 +149,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     df['xCS'] = df.apply(lambda row: sum(cell['CS'] for cell in row if isinstance(cell, dict) and 'CS' in cell), axis=1)
     
     return df
+
 
 def find_fixture_runs(fixtures_df, rating_dict, start_gw):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
