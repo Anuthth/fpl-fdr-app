@@ -140,7 +140,7 @@ def find_fixture_runs(fixtures_df, rating_dict, start_gw):
                     if team not in good_runs: good_runs[team] = []
                     good_runs[team].append(current_run)
                 current_run = []
-        
+    
         if len(current_run) >= 3:
             if team not in good_runs: good_runs[team] = []
             good_runs[team].append(current_run)
