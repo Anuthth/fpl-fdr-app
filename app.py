@@ -77,6 +77,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     gw_range = range(start_gw, end_gw + 1)
+
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
     
     for _, row in fixtures_df[fixtures_df['GW'].isin(gw_range)].iterrows():
@@ -113,6 +114,41 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     
     return df
 
+# --- Easy Run Finder Function ---
+def find_fixture_runs(fixtures_df, rating_dict, start_gw):
+    """Scans for runs of 3+ games with an FDR of 3 or less."""
+    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
+    for gw in range(1, 39):
+        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
+        for _, row in gw_fixtures.iterrows():
+            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
+            if home_team in PREMIER_LEAGUE_TEAMS:
+                rating = rating_dict.get(away_team, {}).get('Final Rating')
+                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
+            if away_team in PREMIER_LEAGUE_TEAMS:
+                rating = rating_dict.get(home_team, {}).get('Final Rating')
+                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
+
+    good_runs = {}
+    for team, fixtures in all_fixtures.items():
+        current_run = []
+        for fixture in sorted(fixtures, key=lambda x: x['gw']):
+            if fixture['gw'] < start_gw: continue
+            
+            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
+                current_run.append(fixture)
+            else:
+                if len(current_run) >= 3:
+                    if team not in good_runs: good_runs[team] = []
+                    good_runs[team].append(current_run)
+                current_run = []
+        
+        if len(current_run) >= 3:
+            if team not in good_runs: good_runs[team] = []
+            good_runs[team].append(current_run)
+            
+    return good_runs
+
 # --- Main Streamlit App ---
 
 st.set_page_config(layout="wide")
@@ -123,12 +159,13 @@ with st.expander("Glossary & How It Works"):
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
     - **xG:** Projected Goals. Higher is better for attackers.
     - **CS:** Projected Clean Sheet probability. Higher is better for defenders.
+    - **Easy Run:** A period of 3 or more consecutive games without facing an opponent with a difficulty of 4 or 5.
     """)
 
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    st.sidebar.header("Controls")
+    st.sidebar.header("Main Table Controls")
 
     start_gw, end_gw = st.sidebar.slider(
         "Select Gameweek Range:",
@@ -150,9 +187,9 @@ if ratings_df is not None and fixtures_df is not None:
         master_df = master_df.loc[teams_to_show]
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Projected Clean Sheets (CS)"])
-
-    # --- FINAL FIX: Each tab now has its own self-contained configuration ---
+    
     with tab1:
+        # Tab-specific logic for FDR
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         fdr_df = master_df.sort_values(by='Total Difficulty', ascending=True)
         fdr_df = fdr_df.reset_index().rename(columns={'index': 'Team'})
@@ -170,6 +207,7 @@ if ratings_df is not None and fixtures_df is not None:
         AgGrid(fdr_df, gridOptions=gb_fdr.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(fdr_df) + 1) * 35, fit_columns_on_grid_load=True, key='fdr_grid')
 
     with tab2:
+        # Tab-specific logic for xG
         st.subheader("Projected Goals (Higher is better for attackers)")
         xg_df = master_df.sort_values(by='Total xG', ascending=False)
         xg_df = xg_df.reset_index().rename(columns={'index': 'Team'})
@@ -187,6 +225,7 @@ if ratings_df is not None and fixtures_df is not None:
         AgGrid(xg_df, gridOptions=gb_xg.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(xg_df) + 1) * 35, fit_columns_on_grid_load=True, key='xg_grid')
         
     with tab3:
+        # Tab-specific logic for CS
         st.subheader("Projected Clean Sheets (Higher is better for defenders)")
         cs_df = master_df.sort_values(by='Total CS', ascending=False)
         cs_df = cs_df.reset_index().rename(columns={'index': 'Team'})
@@ -202,6 +241,45 @@ if ratings_df is not None and fixtures_df is not None:
         
         gb_cs.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
         AgGrid(cs_df, gridOptions=gb_cs.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(cs_df) + 1) * 35, fit_columns_on_grid_load=True, key='cs_grid')
+
+    # --- Easy Run Finder Feature ---
+    st.markdown("---") 
+    st.sidebar.header("Easy Run Finder")
+    st.sidebar.info("Find upcoming periods of 3+ easy/neutral fixtures (FDR 1-3).")
+    
+    teams_to_check = st.sidebar.multiselect(
+        "Select teams to find runs for:",
+        options=PREMIER_LEAGUE_TEAMS,
+        default=[]
+    )
+    
+    st.header("✅ Easy Fixture Runs")
+    
+    if teams_to_check:
+        rating_dict = ratings_df.set_index('Team').to_dict('index')
+        all_runs = find_fixture_runs(fixtures_df, rating_dict, start_gw)
+        
+        results_found_for_any_team = False
+        for team in teams_to_check:
+            team_runs = all_runs.get(team)
+            
+            if team_runs:
+                results_found_for_any_team = True
+                with st.expander(f"**{team}** ({len(team_runs)} matching run(s) found)"):
+                    for i, run in enumerate(team_runs):
+                        start, end = run[0]['gw'], run[-1]['gw']
+                        st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                        run_text = ""
+                        for fix in run:
+                            opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
+                            run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
+                        st.markdown(run_text)
+        
+        if not results_found_for_any_team:
+            st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
+
+    else:
+        st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
 
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
