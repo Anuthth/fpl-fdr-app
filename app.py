@@ -8,24 +8,6 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# --- NEW: Data from your season simulation for calibration ---
-SIMULATION_GF = {
-    'Man City': 92.7, 'Liverpool': 93.6, 'Arsenal': 80.1, 'Newcastle': 75.4,
-    'Chelsea': 72.8, 'Spurs': 69.2, 'Brighton': 65.7, 'Bournemouth': 64.7,
-    'Aston Villa': 64.9, 'Brentford': 65.0, 'Fulham': 60.4, 'Crystal Palace': 58.3,
-    'Man Utd': 62.8, 'Nottm Forest': 55.6, 'Everton': 52.6, 'West Ham': 57.4,
-    'Leeds': 54.8, 'Wolves': 51.9, 'Sunderland': 41.4, 'Burnley': 40.5
-}
-SIMULATION_GA = {
-    'Man City': 44.1, 'Liverpool': 51.6, 'Arsenal': 44.0, 'Newcastle': 60.6,
-    'Chelsea': 58.7, 'Spurs': 69.7, 'Brighton': 62.5, 'Bournemouth': 65.0,
-    'Aston Villa': 67.8, 'Brentford': 69.1, 'Fulham': 64.2, 'Crystal Palace': 63.0,
-    'Man Utd': 69.2, 'Nottm Forest': 65.2, 'Everton': 63.5, 'West Ham': 73.5,
-    'Leeds': 71.1, 'Wolves': 72.8, 'Sunderland': 69.4, 'Burnley': 79.6
-}
-
-
-
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 115.0,
@@ -91,33 +73,8 @@ def load_data():
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
 
-# --- NEW: Function to calculate team-specific calibration factors ---
-@st.cache_data
-def calculate_calibration_factors(ratings_df, fixtures_df):
-    ratings_dict = ratings_df.set_index('Team').to_dict('index')
-    model_xg_for = {team: 0 for team in PREMIER_LEAGUE_TEAMS}
-    model_xg_against = {team: 0 for team in PREMIER_LEAGUE_TEAMS}
-
-    for _, row in fixtures_df.iterrows():
-        home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-        home_stats = ratings_dict.get(home_team)
-        away_stats = ratings_dict.get(away_team)
-
-        if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            home_xg = home_stats['Off Score'] / away_stats['Def Score']
-            away_xg = away_stats['Off Score'] / home_stats['Def Score']
-            model_xg_for[home_team] += home_xg
-            model_xg_against[home_team] += away_xg
-            model_xg_for[away_team] += away_xg
-            model_xg_against[away_team] += home_xg
-
-    off_factors = {team: SIMULATION_GF.get(team, 1) / model_xg_for.get(team, 1) for team in PREMIER_LEAGUE_TEAMS}
-    def_factors = {team: SIMULATION_GA.get(team, 1) / model_xg_against.get(team, 1) for team in PREMIER_LEAGUE_TEAMS}
-    
-    return off_factors, def_factors
-
-
-def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_factors):
+def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
+    """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     gw_range = range(start_gw, end_gw + 1)
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
@@ -130,17 +87,23 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            # Apply calibration factors to the base projection
-            home_xg = (home_stats['Off Score'] / away_stats['Def Score']) * off_factors.get(home_team, 1) * def_factors.get(away_team, 1)
-            away_xg = (away_stats['Off Score'] / home_stats['Def Score']) * off_factors.get(away_team, 1) * def_factors.get(home_team, 1)
-            
+            home_xg = home_stats['Off Score'] / away_stats['Def Score']
+            away_xg = away_stats['Off Score'] / home_stats['Def Score']
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
 
             if home_team in PREMIER_LEAGUE_TEAMS:
-                projection_data[home_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)", "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')), "xG": home_xg, "CS": home_cs_prob}
+                projection_data[home_team][gw] = {
+                    "display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)",
+                    "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')),
+                    "xG": home_xg, "CS": home_cs_prob
+                }
             if away_team in PREMIER_LEAGUE_TEAMS:
-                 projection_data[away_team][gw] = {"display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)", "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')), "xG": away_xg, "CS": away_cs_prob}
+                 projection_data[away_team][gw] = {
+                    "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
+                    "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
+                    "xG": away_xg, "CS": away_cs_prob
+                }
     
     df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
     
@@ -149,41 +112,6 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_
     df['xCS'] = df.apply(lambda row: sum(cell['CS'] for cell in row if isinstance(cell, dict) and 'CS' in cell), axis=1)
     
     return df
-
-
-def find_fixture_runs(fixtures_df, rating_dict, start_gw):
-    """Scans for runs of 3+ games with an FDR of 3 or less."""
-    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 39):
-        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
-        for _, row in gw_fixtures.iterrows():
-            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-            if home_team in PREMIER_LEAGUE_TEAMS:
-                rating = rating_dict.get(away_team, {}).get('Final Rating')
-                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
-            if away_team in PREMIER_LEAGUE_TEAMS:
-                rating = rating_dict.get(home_team, {}).get('Final Rating')
-                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
-
-    good_runs = {}
-    for team, fixtures in all_fixtures.items():
-        current_run = []
-        for fixture in sorted(fixtures, key=lambda x: x['gw']):
-            if fixture['gw'] < start_gw: continue
-            
-            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
-                current_run.append(fixture)
-            else:
-                if len(current_run) >= 3:
-                    if team not in good_runs: good_runs[team] = []
-                    good_runs[team].append(current_run)
-                current_run = []
-        
-        if len(current_run) >= 3:
-            if team not in good_runs: good_runs[team] = []
-            good_runs[team].append(current_run)
-            
-    return good_runs
 
 # --- Main Streamlit App ---
 
@@ -195,94 +123,81 @@ with st.expander("Glossary & How It Works"):
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
-    - **Easy Run:** A period of 3 or more consecutive games without facing an opponent with a difficulty of 4 or 5.
     """)
 
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 38))
+    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 8))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
-    # --- NEW: Calculate calibration factors once ---
-    off_factors, def_factors = calculate_calibration_factors(ratings_df, fixtures_df)
-    
-    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_factors)
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
     
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
         master_df = master_df.loc[teams_to_show]
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
-
+    
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
-
-        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
-        new_order = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[new_order]
+        
+        # --- ADDED: Reorder columns for display ---
+        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[cols_to_display]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
         gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"])
-        gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
-
-        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
         
+        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'fdr_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
+        # --- ADDED: Reorder columns for display ---
         cols_to_display = ['Team', 'Total xG'] + gw_columns
         df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
         gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"])
-        gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
-
-        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].xG : 0; const xgB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
         
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
         
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
-
-        column_order = ['Team', 'xCS'] + gw_columns
-        df_display = df_display[column_order]
+        
+        # --- ADDED: Reorder columns for display ---
+        cols_to_display = ['Team', 'xCS'] + gw_columns
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        # --- FIX: Removed pinned='left' from the xCS column ---
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
-        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"])
         
         jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.CS !== undefined) { const cs = cellData.CS; let bgColor; if (cs >= 0.5) { bgColor = '#00ff85'; } else if (cs >= 0.35) { bgColor = '#50c369'; } else if (cs >= 0.2) { bgColor = '#D3D3D3'; } else if (cs >= 0.1) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
-        # --- FIX: Added the correct comparator for sorting ---
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const csA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].CS : 0; const csB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].CS : 0; return csA - csB; }}"""
-
-        
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", flex=1, minWidth=90, cellStyle=jscode)
-            
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode, flex=1)
+        
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'cs_grid_{start_gw}_{end_gw}')
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
 
     # --- Easy Run Finder Feature ---
     st.markdown("---") 
