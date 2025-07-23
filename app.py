@@ -179,6 +179,12 @@ if ratings_df is not None and fixtures_df is not None:
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
+
+        # --- PUT THE REORDERING CODE HERE ---
+        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
+        new_order = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[new_order]
+        # --- END OF NEW CODE ---
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
