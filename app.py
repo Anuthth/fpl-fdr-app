@@ -168,3 +168,73 @@ if ratings_df is not None and fixtures_df is not None:
                 const fdr = cellData.fdr;
                 const colors = {FDR_COLORS};
                 const bgColor = colors[fdr] || '#444444';
+                const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF';
+                return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
+            }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
+        
+        for gw in range(start_gw, end_gw + 1):
+            gw_col = f"GW{gw}"
+            gb_fdr.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display : ''", cellStyle=jscode_fdr, width=100)
+        
+        AgGrid(fdr_df, gridOptions=gb_fdr.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(fdr_df) + 1) * 35, fit_columns_on_grid_load=True)
+
+    with tab2:
+        st.subheader("Projected Goals (Higher is better for attackers)")
+        xg_df = master_df.sort_values(by='Total xG', ascending=False)
+        xg_df.reset_index(inplace=True); xg_df.rename(columns={'index': 'Team'}, inplace=True)
+
+        gb_xg = GridOptionsBuilder.from_dataframe(xg_df)
+        gb_xg.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
+        gb_xg.configure_column("Total xG", width=120, valueFormatter="data['Total xG'].toFixed(2)")
+        gb_xg.configure_column("Total Difficulty", hide=True); gb_xg.configure_column("Total CS", hide=True)
+
+        # --- FINAL FIX: Removed the extra curly braces from the JS code ---
+        jscode_xg = JsCode("""function(params) {
+            const cellData = params.data[params.colDef.field]; 
+            if (cellData && cellData.xG !== undefined) {
+                const xG = cellData.xG;
+                let bgColor;
+                if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; }
+                else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; }
+                else { bgColor = '#6f2a74'; }
+                const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF';
+                return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'};
+            } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        
+        for gw in range(start_gw, end_gw + 1):
+            gw_col = f"GW{gw}"
+            gb_xg.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display + '<br>xG: ' + data['{gw_col}'].xG.toFixed(2) : ''", cellStyle=jscode_xg, width=110)
+        
+        AgGrid(xg_df, gridOptions=gb_xg.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(xg_df) + 1) * 45, fit_columns_on_grid_load=True, html_columns=[f'GW{i}' for i in range(start_gw, end_gw + 1)])
+        
+    with tab3:
+        st.subheader("Projected Clean Sheets (Higher is better for defenders)")
+        cs_df = master_df.sort_values(by='Total CS', ascending=False)
+        cs_df.reset_index(inplace=True); cs_df.rename(columns={'index': 'Team'}, inplace=True)
+
+        gb_cs = GridOptionsBuilder.from_dataframe(cs_df)
+        gb_cs.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
+        gb_cs.configure_column("Total CS", width=120, valueFormatter="(data['Total CS'] * 100).toFixed(1) + '%'")
+        gb_cs.configure_column("Total Difficulty", hide=True); gb_cs.configure_column("Total xG", hide=True)
+        
+        # --- FINAL FIX: Removed the extra curly braces from the JS code ---
+        jscode_cs = JsCode("""function(params) {
+            const cellData = params.data[params.colDef.field]; 
+            if (cellData && cellData.CS !== undefined) {
+                const cs = cellData.CS;
+                let bgColor;
+                if (cs >= 0.5) { bgColor = '#00ff85'; } else if (cs >= 0.35) { bgColor = '#50c369'; }
+                else if (cs >= 0.2) { bgColor = '#D3D3D3'; } else if (cs >= 0.1) { bgColor = '#9d66a0'; }
+                else { bgColor = '#6f2a74'; }
+                const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF';
+                return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'};
+            } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        
+        for gw in range(start_gw, end_gw + 1):
+            gw_col = f"GW{gw}"
+            gb_cs.configure_column(gw_col, headerName=gw_col, valueGetter=f"data['{gw_col}'] ? data['{gw_col}'].display + '<br>CS: ' + (data['{gw_col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode_cs, width=110)
+        
+        AgGrid(cs_df, gridOptions=gb_cs.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(cs_df) + 1) * 45, fit_columns_on_grid_load=True, html_columns=[f'GW{i}' for i in range(start_gw, end_gw + 1)])
+
+else:
+    st.error("Data could not be loaded. Please check your CSV files.")
