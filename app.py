@@ -229,10 +229,8 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
         # --- PUT THE REORDERING CODE HERE ---
-        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
-        new_order = ['Team', 'Projected Clean Sheets'] + gw_columns
-        df_display = df_display[new_order]
-        # --- END OF NEW CODE ---
+        cols_to_display = ['Team', 'xCS'] + gw_columns
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
