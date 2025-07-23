@@ -206,6 +206,12 @@ if ratings_df is not None and fixtures_df is not None:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
+        # --- PUT THE REORDERING CODE HERE ---
+        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
+        new_order = ['Team', 'Projected Goals'] + gw_columns
+        df_display = df_display[new_order]
+        # --- END OF NEW CODE ---
+
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
         gb.configure_column("Total xG", width=120, valueFormatter="data['Total xG'].toFixed(2)")
@@ -224,6 +230,12 @@ if ratings_df is not None and fixtures_df is not None:
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
+
+        # --- PUT THE REORDERING CODE HERE ---
+        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
+        new_order = ['Team', 'Projected Clean Sheets'] + gw_columns
+        df_display = df_display[new_order]
+        # --- END OF NEW CODE ---
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", width=150, pinned='left', cellStyle={'textAlign': 'left'})
