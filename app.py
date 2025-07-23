@@ -156,7 +156,7 @@ if ratings_df is not None and fixtures_df is not None:
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode, flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", width=150, cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
