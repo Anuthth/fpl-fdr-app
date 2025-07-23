@@ -8,6 +8,9 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
+# --- ADDED: Scaling factor to align projections with your season simulation ---
+GOAL_SCALING_FACTOR = 1.492
+
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 115.0,
@@ -87,8 +90,10 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            home_xg = home_stats['Off Score'] / away_stats['Def Score']
-            away_xg = away_stats['Off Score'] / home_stats['Def Score']
+            # --- MODIFIED: Apply the scaling factor to the xG calculation ---
+            home_xg = (home_stats['Off Score'] / away_stats['Def Score']) * GOAL_SCALING_FACTOR
+            away_xg = (away_stats['Off Score'] / home_stats['Def Score']) * GOAL_SCALING_FACTOR
+            
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
 
