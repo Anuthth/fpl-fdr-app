@@ -144,63 +144,60 @@ if ratings_df is not None and fixtures_df is not None:
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
+        df_display = master_df.sort_values(by='Total Difficulty', ascending=True)
+        df_display = df_display.reset_index().rename(columns={'index': 'Team'})
         
-        # Reorder columns to move Total Difficulty after Team
-        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[cols_to_display]
+        column_order = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[column_order]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        # Configure columns with flex for equal sizing
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'})
-        gb.configure_column("Total Difficulty", type=["numericColumn"])
+        # --- FIX: Explicitly set flex and sortable for all columns ---
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total Difficulty", type=["numericColumn"], flex=1.5, sortable=True)
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode, flex=1, sortable=True)
         
-        # Configure default settings for ALL columns to be the same size and sortable
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[], flex=1)
+        gb.configure_default_column(resizable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
-        df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
+        df_display = master_df.sort_values(by='Total xG', ascending=False)
+        df_display = df_display.reset_index().rename(columns={'index': 'Team'})
 
-        # Reorder columns to move Total xG after Team
-        cols_to_display = ['Team', 'Total xG'] + gw_columns
-        df_display = df_display[cols_to_display]
+        column_order = ['Team', 'Total xG'] + gw_columns
+        df_display = df_display[column_order]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'})
-        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", type=["numericColumn"])
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", type=["numericColumn"], flex=1.5, sortable=True)
         
         jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", cellStyle=jscode)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", cellStyle=jscode, flex=1, sortable=True)
         
-          # Configure default settings for ALL columns to be the same size and sortable
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[], flex=1)
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
+        gb.configure_default_column(resizable=True, filter=False, menuTabs=[])
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
         
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
-        df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
-        
-        # Reorder columns to move xCS after Team
-        cols_to_display = ['Team', 'xCS'] + gw_columns
-        df_display = df_display[cols_to_display]
+        df_display = master_df.sort_values(by='xCS', ascending=False)
+        df_display = df_display.reset_index().rename(columns={'index': 'Team'})
+
+        column_order = ['Team', 'xCS'] + gw_columns
+        df_display = df_display[column_order]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'})
-        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", type=["numericColumn"])
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", type=["numericColumn"], flex=1.5, sortable=True)
         
         jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.CS !== undefined) { const cs = cellData.CS; let bgColor; if (cs >= 0.5) { bgColor = '#00ff85'; } else if (cs >= 0.35) { bgColor = '#50c369'; } else if (cs >= 0.2) { bgColor = '#D3D3D3'; } else if (cs >= 0.1) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode, flex=1, sortable=True)
         
-          # Configure default settings for ALL columns to be the same size and sortable
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[], flex=1)
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
+        gb.configure_default_column(resizable=True, filter=False, menuTabs=[])
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
