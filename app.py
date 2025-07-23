@@ -201,11 +201,14 @@ with st.expander("Glossary & How It Works"):
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    st.sidebar.header("Main Table Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 8))
+    st.sidebar.header("Controls")
+    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 38))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
-    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
+    # --- NEW: Calculate calibration factors once ---
+    off_factors, def_factors = calculate_calibration_factors(ratings_df, fixtures_df)
+    
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, off_factors, def_factors)
     
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
