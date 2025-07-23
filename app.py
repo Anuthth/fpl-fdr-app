@@ -180,6 +180,10 @@ if ratings_df is not None and fixtures_df is not None:
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
+
+        gw_columns = [col for col in df_display.columns if col.startswith('GW')]
+        new_order = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[new_order]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
@@ -199,6 +203,9 @@ if ratings_df is not None and fixtures_df is not None:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
+        cols_to_display = ['Team', 'Total xG'] + gw_columns
+        df_display = df_display[cols_to_display]
+
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
         gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"])
@@ -216,6 +223,9 @@ if ratings_df is not None and fixtures_df is not None:
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
+
+        cols_to_display = ['Team', 'xCS'] + gw_columns
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
