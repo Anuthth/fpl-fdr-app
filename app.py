@@ -8,9 +8,6 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# --- NEW: Scaling factor to align projections with your season simulation ---
-GOAL_SCALING_FACTOR = 1.492
-
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 115.0,
@@ -90,10 +87,8 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            # --- MODIFIED: Apply the scaling factor to the xG calculation ---
-            home_xg = (home_stats['Off Score'] / away_stats['Def Score']) * GOAL_SCALING_FACTOR
-            away_xg = (away_stats['Off Score'] / home_stats['Def Score']) * GOAL_SCALING_FACTOR
-            
+            home_xg = home_stats['Off Score'] / away_stats['Def Score']
+            away_xg = away_stats['Off Score'] / home_stats['Def Score']
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
 
@@ -144,61 +139,64 @@ if ratings_df is not None and fixtures_df is not None:
         master_df = master_df.loc[teams_to_show]
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
-
+    
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
-        column_order = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[column_order]
+        # --- ADDED: Reorder columns for display ---
+        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[cols_to_display]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"])
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode, flex=1)
         
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
-        column_order = ['Team', 'Total xG'] + gw_columns
-        df_display = df_display[column_order]
+        # --- ADDED: Reorder columns for display ---
+        cols_to_display = ['Team', 'Total xG'] + gw_columns
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total xG", pinned='left', valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"])
         
-        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 2.5) { bgColor = '#00ff85'; } else if (xG >= 1.8) { bgColor = '#50c369'; } else if (xG >= 1.2) { bgColor = '#D3D3D3'; } else if (xG >= 0.8) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 1.2 && xG < 1.8) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", cellStyle=jscode, flex=1)
         
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
         
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
-
-        column_order = ['Team', 'xCS'] + gw_columns
-        df_display = df_display[column_order]
+        
+        # --- ADDED: Reorder columns for display ---
+        cols_to_display = ['Team', 'xCS'] + gw_columns
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("xCS", header_name="Expected CS (xCS)", pinned='left', valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"])
         
-        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.CS !== undefined) { const cs = cellData.CS; let bgColor; if (cs >= 0.55) { bgColor = '#00ff85'; } else if (cs >= 0.40) { bgColor = '#50c369'; } else if (cs >= 0.25) { bgColor = '#D3D3D3'; } else if (cs >= 0.15) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (cs >= 0.25 && cs < 0.40) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.CS !== undefined) { const cs = cellData.CS; let bgColor; if (cs >= 0.5) { bgColor = '#00ff85'; } else if (cs >= 0.35) { bgColor = '#50c369'; } else if (cs >= 0.2) { bgColor = '#D3D3D3'; } else if (cs >= 0.1) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", flex=1)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", cellStyle=jscode, flex=1)
         
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
 else:
     st.error("Data could not be loaded. Please check your CSV files.")
