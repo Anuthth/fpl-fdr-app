@@ -27,31 +27,42 @@ FDR_COLORS = {
 }
 
 # --- Team Lists and Mappings ---
-# MODIFIED: Changed 'Spurs' to 'Tottenham' to be the standard name
+# This is the definitive list of teams you want to see in the table
 PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Tottenham', 'West Ham', 'Wolves'
+    'Spurs', 'West Ham', 'Wolves'
 ])
 
-# MODIFIED: Changed key from 'Spurs' to 'Tottenham'
+# --- FIXED: Made these dictionaries more comprehensive ---
+
+# This dictionary provides the 3-letter code for every possible team
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
     'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
-    'Everton': 'EVE', 'Fulham': 'FUL', 'Leeds': 'LEE', 'Liverpool': 'LIV',
-    'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nottm Forest': 'NFO',
-    'Sunderland': 'SUN', 'Tottenham': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
+    'Everton': 'EVE', 'Fulham': 'FUL', 'Ipswich': 'IPS', 'Leeds': 'LEE', 
+    'Leicester': 'LEI', 'Liverpool': 'LIV', 'Man City': 'MCI', 'Man Utd': 'MUN', 
+    'Newcastle': 'NEW', 'Nottm Forest': 'NFO', 'Southampton': 'SOU', 
+    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
     'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
 
-# MODIFIED: Mapped all variations to 'Tottenham'
+# This dictionary standardizes team names from your files
 TEAM_NAME_MAP = {
-    "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
-    "Leeds United": "Leeds", "Manchester City": "Man City", "Manchester United": "Man Utd",
-    "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
-    "Tottenham Hotspur": "Tottenham", "Spurs": "Tottenham", "Tottenham": "Tottenham",
-    "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
+    "A.F.C. Bournemouth": "Bournemouth", "Bournemouth": "Bournemouth",
+    "Brighton & Hove Albion": "Brighton", "Brighton": "Brighton",
+    "Ipswich Town": "Ipswich", "Ipswich": "Ipswich",
+    "Leeds United": "Leeds", "Leeds": "Leeds",
+    "Leicester City": "Leicester", "Leicester": "Leicester",
+    "Manchester City": "Man City", "Man City": "Man City",
+    "Manchester United": "Man Utd", "Man Utd": "Man Utd",
+    "Newcastle United": "Newcastle", "Newcastle": "Newcastle",
+    "Nottingham Forest": "Nottm Forest", "Nottm Forest": "Nottm Forest",
+    "Southampton FC": "Southampton", "Southampton": "Southampton",
+    "Tottenham Hotspur": "Spurs", "Spurs": "Spurs", "Tottenham": "Spurs",
+    "West Ham United": "West Ham", "West Ham": "West Ham",
+    "Wolverhampton Wanderers": "Wolves", "Wolves": "Wolves"
 }
 
 # --- Helper and Data Processing Functions ---
