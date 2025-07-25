@@ -195,6 +195,8 @@ if ratings_df is not None and fixtures_df is not None:
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
     
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
+    common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
+
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
