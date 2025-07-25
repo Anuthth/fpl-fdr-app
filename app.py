@@ -32,7 +32,7 @@ PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Spurs', 'West Ham', 'Wolves'
+    'Tottenham', 'West Ham', 'Wolves'
 ])
 
 # --- FIXED: Made these dictionaries more comprehensive ---
@@ -44,7 +44,7 @@ TEAM_ABBREVIATIONS = {
     'Everton': 'EVE', 'Fulham': 'FUL', 'Ipswich': 'IPS', 'Leeds': 'LEE', 
     'Leicester': 'LEI', 'Liverpool': 'LIV', 'Man City': 'MCI', 'Man Utd': 'MUN', 
     'Newcastle': 'NEW', 'Nottm Forest': 'NFO', 'Southampton': 'SOU', 
-    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
+    'Sunderland': 'SUN', 'Tottenham': 'TOT', 'West Ham': 'WHU',
     'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
 
@@ -60,8 +60,8 @@ TEAM_NAME_MAP = {
     "Newcastle United": "Newcastle", "Newcastle": "Newcastle",
     "Nottingham Forest": "Nottm Forest", "Nottm Forest": "Nottm Forest",
     "Southampton FC": "Southampton", "Southampton": "Southampton",
-    "Tottenham Hotspur": "Spurs", "Spurs": "Spurs", "Tottenham": "Spurs",
-    "West Ham United": "West Ham", "West Ham": "West Ham",
+    "Tottenham Hotspur": "Tottenham", "Spurs": "Tottenham", 
+    "West Ham United": "West Ham",
     "Wolverhampton Wanderers": "Wolves", "Wolves": "Wolves"
 }
 
