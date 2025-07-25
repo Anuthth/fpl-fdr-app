@@ -47,6 +47,7 @@ TEAM_NAME_MAP = {
     "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
     "Tottenham Hotspur": "Spurs", "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
 }
+
 # --- Helper and Data Processing Functions ---
 
 def get_fdr_score_from_rating(team_rating):
