@@ -47,7 +47,7 @@ TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
     "Leeds United": "Leeds", "Manchester City": "Man City", "Manchester United": "Man Utd",
     "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
-    "Tottenham Hotspur": "Tottenham", "Spurs": "Tottenham", # <-- CHANGE HERE
+    "Tottenham Hotspur": "Tottenham", # <-- CHANGE HERE
     "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
 }
 # --- Helper and Data Processing Functions ---
