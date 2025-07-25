@@ -31,7 +31,7 @@ PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Spurs', 'West Ham', 'Wolves'
+    'Tottenham', 'West Ham', 'Wolves'
 ])
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
