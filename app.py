@@ -70,11 +70,13 @@ def load_data():
     except FileNotFoundError:
         st.error("Ensure ratings and fixtures CSV files are in the same folder.")
         return None, None
-    ratings_df['Team'] = ratings_df['Team'].replace(TEAM_NAME_MAP)
+    
+    # --- FIXED: Use a more reliable mapping method for the ratings file ---
+    ratings_df['Team'] = ratings_df['Team'].map(TEAM_NAME_MAP).fillna(ratings_df['Team'])
+    
     fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
-
 def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
