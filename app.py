@@ -31,7 +31,7 @@ PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Tottenham', 'West Ham', 'Wolves'
+    'Spurs', 'West Ham', 'Wolves'
 ])
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
@@ -39,13 +39,13 @@ TEAM_ABBREVIATIONS = {
     'Everton': 'EVE', 'Fulham': 'FUL', 'Leeds': 'LEE', 'Liverpool': 'LIV',
     'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nottm Forest': 'NFO',
     'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
-    'Tottenham': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
+    'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
 TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
     "Leeds United": "Leeds", "Manchester City": "Man City", "Manchester United": "Man Utd",
     "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
-    "Tottenham": "Spurs", "Tottenham": "Spurs", "West Ham United": "West Ham", 
+    "Tottenham Hotspur": "Spurs", "Tottenham": "Spurs", "West Ham United": "West Ham", 
     "Wolverhampton Wanderers": "Wolves",
 }
 
