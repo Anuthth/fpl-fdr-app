@@ -31,7 +31,7 @@ PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Tottenhham', 'West Ham', 'Wolves'
+    'Tottenham', 'West Ham', 'Wolves'
 ])
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
@@ -45,7 +45,7 @@ TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
     "Leeds United": "Leeds", "Manchester City": "Man City", "Manchester United": "Man Utd",
     "Newcastle United": "Newcastle", "Nottingham Forest": "Nottm Forest",
-    "Tottenham Hotspur": "Tottehnham", "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
+    "Tottenham Hotspur": "Tottenham", "West Ham United": "West Ham", "Wolverhampton Wanderers": "Wolves",
 }
 
 # --- Helper and Data Processing Functions ---
