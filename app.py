@@ -219,17 +219,17 @@ if ratings_df is not None and fixtures_df is not None:
      with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
+
         column_order = ['Team', 'Total xG'] + gw_columns
         df_display = df_display[column_order]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Total xG", pinned='left', valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
         
-        jscode_xg = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
         for col in gw_columns:
-            # --- ADDED: tooltipValueGetter to show the fixture on hover ---
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", tooltipValueGetter=f"data['{col}'] ? data['{col}'].display : ''", cellStyle=jscode_xg, flex=1, minWidth=90)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", flex=1, minWidth=90, cellStyle=jscode)
         
         gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
