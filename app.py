@@ -39,7 +39,7 @@ TEAM_ABBREVIATIONS = {
     'Everton': 'EVE', 'Fulham': 'FUL', 'Leeds': 'LEE', 'Liverpool': 'LIV',
     'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nottm Forest': 'NFO',
     'Sunderland': 'SUN', 'West Ham': 'WHU', 'Wolves': 'WOL',
-    'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
+    'Tottenham': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
 TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
