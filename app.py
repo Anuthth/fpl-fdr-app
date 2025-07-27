@@ -100,7 +100,6 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     
-    # --- NEW: Calculate league averages for the Poisson model ---
     pl_ratings = ratings_df[ratings_df['Team'].isin(PREMIER_LEAGUE_TEAMS)]
     avg_off_score = pl_ratings['Off Score'].mean()
     avg_def_score = pl_ratings['Def Score'].mean()
@@ -116,14 +115,14 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            # --- MODIFIED: Using new Poisson-based xG calculation ---
+            # --- CORRECTED: Using a proper Poisson-based xG calculation ---
             home_attack_strength = home_stats['Off Score'] / avg_off_score
-            away_defense_strength = away_stats['Def Score'] / avg_def_score
-            home_xg = home_attack_strength * away_defense_strength * (LEAGUE_AVG_GOALS / 2)
+            away_defense_weakness = avg_def_score / away_stats['Def Score'] # Inverted for weakness
+            home_xg = home_attack_strength * away_defense_weakness * AVG_LEAGUE_HOME_GOALS
 
             away_attack_strength = away_stats['Off Score'] / avg_off_score
-            home_defense_strength = home_stats['Def Score'] / avg_def_score
-            away_xg = away_attack_strength * home_defense_strength * (LEAGUE_AVG_GOALS / 2)
+            home_defense_weakness = avg_def_score / home_stats['Def Score'] # Inverted for weakness
+            away_xg = away_attack_strength * home_defense_weakness * AVG_LEAGUE_AWAY_GOALS
 
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
