@@ -9,7 +9,7 @@ RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
 # --- NEW: Constant for Poisson model calibration ---
-LEAGUE_AVG_GOALS = 2.0
+LEAGUE_AVG_GOALS = 2.58
 
 
 # Your defined FDR thresholds
