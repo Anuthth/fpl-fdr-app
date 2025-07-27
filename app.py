@@ -240,36 +240,27 @@ if ratings_df is not None and fixtures_df is not None:
 
 
     with tab2:
+        with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
+        
+        gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
+        cols_to_display = ['Team', 'Total xG'] + gw_columns_in_df
+        df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total xG", pinned='left', valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"])
+        gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
+
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 1.8) { bgColor = '#00ff85'; } else if (xG >= 1.2) { bgColor = '#50c369'; } else if (xG >= 0.8) { bgColor = '#D3D3D3'; } else if (xG >= 0.5) { bgColor = '#9d66a0'; } else { bgColor = '#6f2a74'; } const textColor = (xG >= 0.8 && xG < 1.2) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].xG : 0; const xgB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
         
-        # --- FIXED: Escaped JS curly braces with double braces {{ }} ---
-        jscode = JsCode(f"""
-        function(params) {{
-            const cellData = params.data[params.colDef.field];
-            if (cellData && cellData.xG !== undefined) {{
-                const xG = cellData.xG;
-                let bgColor;
-                if (xG >= 2.5) {{ bgColor = '#00ff85'; }}
-                else if (xG >= 1.8) {{ bgColor = '#50c369'; }}
-                else if (xG >= 1.2) {{ bgColor = '#D3D3D3'; }}
-                else if (xG >= 0.8) {{ bgColor = '#9d66a0'; }}
-                else {{ bgColor = '#6f2a74'; }}
-                const textColor = (xG >= 1.2 && xG < 1.8) ? '#31333F' : '#FFFFFF';
-                return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
-            }}
-            return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
-        }};
-        """)
-        for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", flex=1, minWidth=90, cellStyle=jscode)
+        for col in gw_columns_in_df:
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1)
         
-        gb.configure_default_column(**common_gb_config)
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
