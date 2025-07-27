@@ -8,8 +8,10 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# --- NEW: Constant for Poisson model calibration ---
-LEAGUE_AVG_GOALS = 2.8
+# --- NEW: Constants for Poisson model calibration ---
+AVG_LEAGUE_HOME_GOALS = 1.55
+AVG_LEAGUE_AWAY_GOALS = 1.25
+
 
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
