@@ -242,57 +242,33 @@ if ratings_df is not None and fixtures_df is not None:
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
-        column_order = ['Team', 'Total xG'] + gw_columns
-        df_display = df_display[column_order]
-
-        # Calculate min/max for color scaling
-        all_xg_values = [cell['xG'] for _, row in master_df[gw_columns].iterrows() for cell in row if isinstance(cell, dict) and 'xG' in cell]
-        min_xg, max_xg = (min(all_xg_values), max(all_xg_values)) if all_xg_values else (0, 1)
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
         gb.configure_column("Total xG", pinned='left', valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
         
-        # --- NEW: JavaScript for continuous color gradient ---
-        jscode_xg = JsCode(f"""
+        # --- FIXED: Escaped JS curly braces with double braces {{ }} ---
+        jscode = JsCode(f"""
         function(params) {{
             const cellData = params.data[params.colDef.field];
             if (cellData && cellData.xG !== undefined) {{
                 const xG = cellData.xG;
-                const minXg = {min_xg};
-                const maxXg = {max_xg};
-                // Normalize value from 0 to 1
-                const norm = (xG - minXg) / (maxXg - minXg);
-                
-                // Define colors: bad (purple), neutral (grey), good (green)
-                const c_bad = {{r: 111, g: 42, b: 116}};
-                const c_mid = {{r: 211, g: 211, b: 211}};
-                const c_good = {{r: 0, g: 255, b: 133}};
-
-                let r, g, b;
-                // Interpolate color
-                if (norm < 0.5) {{
-                    const p = norm * 2;
-                    r = c_bad.r * (1 - p) + c_mid.r * p;
-                    g = c_bad.g * (1 - p) + c_mid.g * p;
-                    b = c_bad.b * (1 - p) + c_mid.b * p;
-                }} else {{
-                    const p = (norm - 0.5) * 2;
-                    r = c_mid.r * (1 - p) + c_good.r * p;
-                    g = c_mid.g * (1 - p) + c_good.g * p;
-                    b = c_mid.b * (1 - p) + c_good.b * p;
-                }}
-                
-                const bgColor = `rgb(${'{'}Math.round(r)}, ${'{'}Math.round(g)}, ${'{'}Math.round(b)})`;
-                const textColor = (norm > 0.4 && norm < 0.6) ? '#31333F' : '#FFFFFF';
+                let bgColor;
+                if (xG >= 2.5) {{ bgColor = '#00ff85'; }}
+                else if (xG >= 1.8) {{ bgColor = '#50c369'; }}
+                else if (xG >= 1.2) {{ bgColor = '#D3D3D3'; }}
+                else if (xG >= 0.8) {{ bgColor = '#9d66a0'; }}
+                else {{ bgColor = '#6f2a74'; }}
+                const textColor = (xG >= 1.2 && xG < 1.8) ? '#31333F' : '#FFFFFF';
                 return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}};
             }}
             return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
         }};
         """)
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", flex=1, minWidth=90, cellStyle=jscode_xg)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", flex=1, minWidth=90, cellStyle=jscode)
         
+        gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'xg_grid_{start_gw}_{end_gw}')
     with tab3:
         st.subheader("Expected Clean Sheets (Higher is better for defenders)")
