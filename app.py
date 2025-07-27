@@ -23,12 +23,13 @@ FDR_THRESHOLDS = {
 }
 
 # User's custom 5-color FDR system
+# --- NEW: Green-to-Red color scheme ---
 FDR_COLORS = {
-    1: '#00ff85',
-    2: '#50c369',
-    3: '#D3D3D3',
-    4: '#9d66a0',
-    5: '#6f2a74'
+    1: '#2ECC71',  # Bright Green (Easiest)
+    2: '#90EE90',  # Light Green
+    3: '#D3D3D3',  # Light Gray (Neutral)
+    4: '#F08080',  # Light Red
+    5: '#E74C3C'   # Strong Red (Hardest)
 }
 
 # --- Team Lists and Mappings ---
