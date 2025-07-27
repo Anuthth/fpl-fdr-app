@@ -272,7 +272,7 @@ if ratings_df is not None and fixtures_df is not None:
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
         gb.configure_column("xCS", header_name="Expected CS (xCS)", valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
         
-         jscode_cs = JsCode(f"""
+        jscode_cs = JsCode(f"""
         function(params) {{
             const cellData = params.data[params.colDef.field];
             if (cellData && cellData.CS !== undefined) {{
