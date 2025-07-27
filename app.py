@@ -261,7 +261,7 @@ if ratings_df is not None and fixtures_df is not None:
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
     with tab3:
-       st.subheader("Expected Clean Sheets (Higher is better for defenders)")
+        st.subheader("Expected Clean Sheets (Higher is better for defenders)")
         df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
         
         gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
