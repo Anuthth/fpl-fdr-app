@@ -233,6 +233,11 @@ if ratings_df is not None and fixtures_df is not None:
         master_df = master_df.loc[teams_to_show]
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
+
+    # --- MODIFIED: Remove the free hit gameweek from the list of columns to display ---
+    gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
+    if free_hit_gw:
+        gw_columns.remove(f'GW{free_hit_gw}')
     
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
     common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
