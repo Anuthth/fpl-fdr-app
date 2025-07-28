@@ -144,6 +144,8 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
                 }
     
     df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
+
+    free_hit_col = f'GW{free_hit_gw}' if free_hit_gw else None
     
     df['Total Difficulty'] = df.apply(lambda row: sum(cell['fdr'] for cell in row if isinstance(cell, dict) and 'fdr' in cell), axis=1)
     df['Total xG'] = df.apply(lambda row: sum(cell['xG'] for cell in row if isinstance(cell, dict) and 'xG' in cell), axis=1)
@@ -204,6 +206,13 @@ if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
     start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 8))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
+
+    fh_options = [None] + list(range(start_gw, end_gw + 1))
+    free_hit_gw = st.sidebar.selectbox(
+        "Select Free Hit Gameweek (optional):",
+        options=fh_options,
+        format_func=lambda x: "None" if x is None else f"GW{x}"
+    )
 
     master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
     
