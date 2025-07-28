@@ -147,9 +147,21 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
 
     free_hit_col = f'GW{free_hit_gw}' if free_hit_gw else None
     
-    df['Total Difficulty'] = df.apply(lambda row: sum(cell['fdr'] for cell in row if isinstance(cell, dict) and 'fdr' in cell), axis=1)
-    df['Total xG'] = df.apply(lambda row: sum(cell['xG'] for cell in row if isinstance(cell, dict) and 'xG' in cell), axis=1)
-    df['xCS'] = df.apply(lambda row: sum(cell['CS'] for cell in row if isinstance(cell, dict) and 'CS' in cell), axis=1)
+    total_difficulty, total_xg, total_cs = [], [], []
+    for index, row in df.iterrows():
+        fdr_sum, xg_sum, cs_sum = 0, 0, 0
+        for gw_col, cell_data in row.items():
+            if gw_col != free_hit_col and isinstance(cell_data, dict):
+                fdr_sum += cell_data.get('fdr', 0)
+                xg_sum += cell_data.get('xG', 0)
+                cs_sum += cell_data.get('CS', 0)
+        total_difficulty.append(fdr_sum)
+        total_xg.append(xg_sum)
+        total_cs.append(cs_sum)
+
+    df['Total Difficulty'] = total_difficulty
+    df['Total xG'] = total_xg
+    df['xCS'] = total_cs
     
     return df
 
