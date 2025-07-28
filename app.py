@@ -269,7 +269,7 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150, sortable=True)
         gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
         gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
 
