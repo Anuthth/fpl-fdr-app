@@ -257,10 +257,12 @@ if ratings_df is not None and fixtures_df is not None:
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
         
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+        
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode, sortable=True, comparator=JsCode(comparator_template.format(gw_col=col)))
         
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+      
         # FIX: Pass enable_browser_tooltips directly to the AgGrid call
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}', enable_browser_tooltips=True)
 
