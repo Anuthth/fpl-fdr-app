@@ -244,7 +244,7 @@ if ratings_df is not None and fixtures_df is not None:
 
 
     with tab1:
-       st.subheader("Projected Goals (Higher is better for attackers)")
+        st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
         gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
