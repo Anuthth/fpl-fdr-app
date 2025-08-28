@@ -216,8 +216,7 @@ ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 8))
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 2, 38, (2, 11))
+    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 3, 38, (3, 12))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
     fh_options = [None] + list(range(start_gw, end_gw + 1))
