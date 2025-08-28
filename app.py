@@ -254,7 +254,7 @@ if ratings_df is not None and fixtures_df is not None:
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total Difficulty",  valueFormatter="data['Total Difficulty'].toFixed(2)pinned='left', flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
+        gb.configure_column("Total Difficulty",  valueFormatter="data['Total Difficulty'].toFixed(2)",pinned='left', flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         for col in gw_columns_in_df:
