@@ -243,25 +243,26 @@ if ratings_df is not None and fixtures_df is not None:
     common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
 
 
-    with tab1:
+   with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
-        
-        # --- FIX: Get gameweek columns directly from the dataframe to avoid errors ---
-        gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
-        column_order = ['Team', 'Total Difficulty'] + gw_columns_in_df
-        df_display = df_display[column_order]
+        df_display = master_df.reset_index().rename(columns={'index': 'Team'})
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
+        
+        # --- FIX: Added initialSortModel to sort the table when it loads ---
+        gb.configure_grid_options(
+            initialSortModel=[{'colId': 'Total Difficulty', 'sort': 'asc'}]
+        )
+
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140,sortable=True)
+        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        for col in gw_columns_in_df:
+        for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode)
         
+        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
-
 
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
