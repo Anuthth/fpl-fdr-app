@@ -16,9 +16,9 @@ AVG_LEAGUE_AWAY_GOALS = 1.25
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 115.0,
-    4: 90.0,
-    3: 80.0,
-    2: 70.0,
+    4: 100.0,
+    3: 90.0,
+    2: 80.0,
     1: 0
 }
 
@@ -216,7 +216,7 @@ ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 1, 38, (1, 8))
+    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 3, 38, (3, 12))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
     fh_options = [None] + list(range(start_gw, end_gw + 1))
