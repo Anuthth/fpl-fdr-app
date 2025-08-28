@@ -247,8 +247,7 @@ if ratings_df is not None and fixtures_df is not None:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=False).reset_index().rename(columns={'index': 'Team'})
         
-        gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
-        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns_in_df
+        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
         df_display = df_display[cols_to_display]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
@@ -261,10 +260,6 @@ if ratings_df is not None and fixtures_df is not None:
         
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode, sortable=True, comparator=JsCode(comparator_template.format(gw_col=col)))
-        
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
-        # FIX: Pass enable_browser_tooltips directly to the AgGrid call
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}', enable_browser_tooltips=True)
 
 
     with tab2:
