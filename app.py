@@ -251,7 +251,7 @@ if ratings_df is not None and fixtures_df is not None:
         cols_to_display = ['Team', 'Total Difficulty'] + gw_columns_in_df
         df_display = df_display[cols_to_display]
         
-       gb = GridOptionsBuilder.from_dataframe(df_display)
+        gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150, sortable=True)
         gb.configure_column("Total Difficulty", valueFormatter="data['Total Difficulty'].toFixed(2)", flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
         gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
