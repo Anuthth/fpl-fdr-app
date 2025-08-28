@@ -235,4 +235,4 @@ else:
     else:
         st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
 else:
-     st.error("Data could not be loaded. Please check your CSV files.")
+    st.error("Data could not be loaded. Please check your CSV files.")
