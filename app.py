@@ -198,8 +198,7 @@ if ratings_df is not None and fixtures_df is not None:
         
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
 
-else:
-    st.error("Data could not be loaded. Please check your CSV files.")
+
 
  # --- Easy Run Finder Feature ---
     st.markdown("---") 
