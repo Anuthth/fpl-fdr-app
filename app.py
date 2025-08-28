@@ -243,7 +243,7 @@ if ratings_df is not None and fixtures_df is not None:
     common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
 
 
-    with tab1:
+   ith tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
@@ -251,15 +251,14 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = df_display[column_order]
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
-        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
+        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
+        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode)
         
-       
+        gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
 
     with tab2:
