@@ -244,25 +244,20 @@ if ratings_df is not None and fixtures_df is not None:
 
 
     with tab1:
-        st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.reset_index().rename(columns={'index': 'Team'})
-        
-        gb = GridOptionsBuilder.from_dataframe(df_display)
-        
-        # --- FIX: Added initialSortModel to sort the table when it loads ---
-        gb.configure_grid_options(
-            initialSortModel=[{'colId': 'Total Difficulty', 'sort': 'asc'}]
-        )
+       st.subheader("Projected Goals (Higher is better for attackers)")
+        df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
-        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
-        
-        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode)
-        
-        gb.configure_default_column(resizable=True, sortable=False, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}')
+        gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
+        cols_to_display = ['Team', 'Total xG'] + gw_columns_in_df
+        df_display = df_display[cols_to_display]
+
+        gb = GridOptionsBuilder.from_dataframe(df_display)
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150, sortable=True)
+        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
+        gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
+
+        jscode = JsCode("""function(params) { const cellData = params.data[params.colDef.field]; if (cellData && cellData.xG !== undefined) { const xG = cellData.xG; let bgColor; if (xG >= 2.0) { bgColor = '#63be7b'; } else if (xG >= 1.5) { bgColor = '#95d2a6'; } else if (xG >= 1.0) { bgColor = '#bfe4cb'; } else if (xG >= 0.5) { bgColor = '#D3D3D3'; } else { bgColor = '#D3D3D3'; } const textColor = (xG >= 0.0 && xG < 5.0) ? '#31333F' : '#FFFFFF'; return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; } return {'textAlign': 'center', 'backgroundColor': '#444444'}; };""")
+        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].xG : 0; const xgB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
 
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
