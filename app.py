@@ -27,6 +27,7 @@ FDR_COLORS = {
 }
 
 # --- Team Lists and Mappings ---
+# --- Team Lists and Mappings ---
 PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
