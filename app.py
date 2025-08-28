@@ -245,33 +245,28 @@ if ratings_df is not None and fixtures_df is not None:
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.reset_index().rename(columns={'index': 'Team'})
+        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
         column_order = ['Team', 'Total Difficulty'] + gw_columns
         df_display = df_display[column_order]
         
-        # --- FIX: Build the gridOptions dictionary manually for reliability ---
-        jscode_fdr = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
+        gb = GridOptionsBuilder.from_dataframe(df_display)
 
-        column_defs = [
-            {'field': 'Team', 'pinned': 'left', 'flex': 2, 'minWidth': 150, 'cellStyle': {'textAlign': 'left'}},
-            {'field': 'Total Difficulty', 'pinned': 'left', 'flex': 1.5, 'minWidth': 140, 'type': 'numericColumn', 'sort': 'asc'}
-        ]
-        for col in gw_columns:
-            column_defs.append({
-                'field': col, 'headerName': col, 
-                'valueGetter': f"data['{col}'] ? data['{col}'].display : ''",
-                'comparator': JsCode(comparator_template.format(gw_col=col)),
-                'cellStyle': jscode_fdr, 'flex': 1, 'minWidth': 110
-            })
-
-        gridOptions = {
-            'columnDefs': column_defs,
-            'defaultColDef': {'sortable': True, 'resizable': True, 'filter': False, 'menuTabs': []}
-        }
+        # --- FIX: Set default configuration FIRST ---
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         
-        AgGrid(df_display, gridOptions=gridOptions, allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}_{free_hit_gw}')
+        # Then, set specific column configurations
+        gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
+        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
+        gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
+        
+        jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
+        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
+        
+        for col in gw_columns:
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", comparator=JsCode(comparator_template.format(gw_col=col)), flex=1, minWidth=90, cellStyle=jscode)
+        
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}_{free_hit_gw}')
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
