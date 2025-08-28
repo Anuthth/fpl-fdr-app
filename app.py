@@ -248,7 +248,7 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = master_df.sort_values(by='Total Difficulty', ascending=False).reset_index().rename(columns={'index': 'Team'})
 
         gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
-        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns_in_df
+        column_order = ['Team', 'Total Difficulty'] + gw_columns_in_df
         df_display = df_display[column_order]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
