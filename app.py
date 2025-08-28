@@ -245,7 +245,7 @@ if ratings_df is not None and fixtures_df is not None:
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
+        df_display = master_df.sort_values(by='Total Difficulty', ascending=False).reset_index().rename(columns={'index': 'Team'})
         
         column_order = ['Team', 'Total Difficulty'] + gw_columns
         df_display = df_display[column_order]
