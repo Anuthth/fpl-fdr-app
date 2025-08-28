@@ -8,11 +8,6 @@ import math
 RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# Constants for the Poisson model
-AVG_LEAGUE_HOME_GOALS = 1.55
-AVG_LEAGUE_AWAY_GOALS = 1.25
-
-
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 115.0,
@@ -23,8 +18,6 @@ FDR_THRESHOLDS = {
 }
 
 # User's custom 5-color FDR system
-# --- NEW: Green-to-Red color scheme ---
-# User's custom 5-color FDR system
 FDR_COLORS = {
     1: '#00ff85',
     2: '#50c369',
@@ -34,17 +27,12 @@ FDR_COLORS = {
 }
 
 # --- Team Lists and Mappings ---
-# This is the definitive list of teams you want to see in the table
 PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
     'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
     'Spurs', 'West Ham', 'Wolves'
 ])
-
-# --- FIXED: Made these dictionaries more comprehensive ---
-
-# This dictionary provides the 3-letter code for every possible team
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
     'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
@@ -54,8 +42,6 @@ TEAM_ABBREVIATIONS = {
     'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
     'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
 }
-
-# This dictionary standardizes team names from your files
 TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Bournemouth": "Bournemouth",
     "Brighton & Hove Albion": "Brighton", "Brighton": "Brighton",
@@ -93,20 +79,15 @@ def load_data():
         st.error("Ensure ratings and fixtures CSV files are in the same folder.")
         return None, None
     
-    # --- FIXED: Use a more reliable mapping method for the ratings file ---
     ratings_df['Team'] = ratings_df['Team'].map(TEAM_NAME_MAP).fillna(ratings_df['Team'])
-    
     fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
-def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
+
+def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
     
-    pl_ratings = ratings_df[ratings_df['Team'].isin(PREMIER_LEAGUE_TEAMS)]
-    avg_off_score = pl_ratings['Off Score'].mean()
-    avg_def_score = pl_ratings['Def Score'].mean()
-
     gw_range = range(start_gw, end_gw + 1)
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
     
@@ -118,15 +99,8 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
         away_stats = ratings_dict.get(away_team)
 
         if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            # --- CORRECTED: Using a proper Poisson-based xG calculation ---
-            home_attack_strength = home_stats['Off Score'] / avg_off_score
-            away_defense_weakness = avg_def_score / away_stats['Def Score'] # Inverted for weakness
-            home_xg = home_attack_strength * away_defense_weakness * AVG_LEAGUE_HOME_GOALS
-
-            away_attack_strength = away_stats['Off Score'] / avg_off_score
-            home_defense_weakness = avg_def_score / home_stats['Def Score'] # Inverted for weakness
-            away_xg = away_attack_strength * home_defense_weakness * AVG_LEAGUE_AWAY_GOALS
-
+            home_xg = home_stats['Off Score'] / away_stats['Def Score']
+            away_xg = away_stats['Off Score'] / home_stats['Def Score']
             home_cs_prob = math.exp(-away_xg)
             away_cs_prob = math.exp(-home_xg)
 
@@ -165,7 +139,6 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     
     return df
 
-# --- ADDED: Missing "Easy Run Finder" function ---
 def find_fixture_runs(fixtures_df, rating_dict, start_gw):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
     all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
@@ -210,12 +183,13 @@ with st.expander("Glossary & How It Works"):
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
+    - **Easy Run:** A period of 3 or more consecutive games without facing an opponent with a difficulty of 4 or 5.
     """)
 
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    st.sidebar.header("Controls")
+    st.sidebar.header("Main Table Controls")
     start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 3, 38, (3, 12))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
@@ -226,7 +200,7 @@ if ratings_df is not None and fixtures_df is not None:
         format_func=lambda x: "None" if x is None else f"GW{x}"
     )
 
-    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
     
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
@@ -234,14 +208,11 @@ if ratings_df is not None and fixtures_df is not None:
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
 
-    # --- MODIFIED: Remove the free hit gameweek from the list of columns to display ---
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
     if free_hit_gw:
         gw_columns.remove(f'GW{free_hit_gw}')
     
-    gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
     common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
-
 
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
@@ -255,11 +226,12 @@ if ratings_df is not None and fixtures_df is not None:
         gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140)
         
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
+        # ADDED: Custom comparator for intelligent sorting
         comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode)
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", flex=1, minWidth=90, cellStyle=jscode, comparator=JsCode(comparator_template.format(gw_col=col)))
         
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+        gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'fdr_grid_{start_gw}_{end_gw}_{free_hit_gw}')
 
     with tab2:
@@ -281,7 +253,7 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns_in_df:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
         
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+        gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
         
     with tab3:
@@ -291,7 +263,6 @@ if ratings_df is not None and fixtures_df is not None:
         gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
         cols_to_display = ['Team', 'xCS'] + gw_columns_in_df
         df_display = df_display[cols_to_display]
-
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
@@ -303,8 +274,9 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90)
         
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+        gb.configure_default_column(**common_gb_config)
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
+        
     # --- Easy Run Finder Feature ---
     st.markdown("---") 
     st.sidebar.header("Easy Run Finder")
