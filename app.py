@@ -248,19 +248,30 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
         gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2,minWidth=150, sortable=True)
-        gb.configure_column("Total Difficulty", pinned='left', flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
-        gb.configure_column("Total xG", hide=True); gb.configure_column("xCS", hide=True)
+        
+        # --- FIX: Configure all columns first ---
+        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, sortable=True)
+        gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
+        gb.configure_column("Total xG", hide=True)
+        gb.configure_column("xCS", hide=True)
 
         jscode = JsCode(f"""function(params) {{ const cellData = params.data[params.colDef.field]; if (cellData && cellData.fdr !== undefined) {{ const fdr = cellData.fdr; const colors = {FDR_COLORS}; const bgColor = colors[fdr] || '#444444'; const textColor = (fdr <= 3) ? '#31333F' : '#FFFFFF'; return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}}; }} return {{'textAlign': 'center', 'backgroundColor': '#444444'}}; }};""")
         comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const fdrA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].fdr : 3; const fdrB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].fdr : 3; return fdrA - fdrB; }}"""
         
-        for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
+        # This will get the actual GW columns present in the dataframe
+        gw_columns_in_df = [col for col in df_display.columns if col.startswith('GW')]
+        for col in gw_columns_in_df:
+            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1)
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'fdr_grid_{start_gw}_{end_gw}')
 
+        # --- FIX: Reorder the columns AFTER all configurations are set ---
+        gridOptions = gb.build()
+        new_column_order = ['Team', 'Total Difficulty'] + gw_columns_in_df
+        gridOptions['columnDefs'] = [c for c in gridOptions['columnDefs'] if c['field'] in new_column_order]
+        gridOptions['columnDefs'].sort(key=lambda x: new_column_order.index(x['field']))
+
+        AgGrid(df_display, gridOptions=gridOptions, allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'fdr_grid_{start_gw}_{end_gw}')
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
         df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
