@@ -243,7 +243,7 @@ if ratings_df is not None and fixtures_df is not None:
     common_gb_config = {"resizable": True, "sortable": True, "filter": False, "menuTabs": []}
 
 
-   ith tab1:
+   with tab1:
         st.subheader("Fixture Difficulty Rating (Lower score is better)")
         df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
