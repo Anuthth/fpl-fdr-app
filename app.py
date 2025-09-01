@@ -273,6 +273,8 @@ if ratings_df is not None and fixtures_df is not None:
         df_display = df_display[cols_to_display]
 
         gb = GridOptionsBuilder.from_dataframe(df_display)
+        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
+
         gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150, sortable=True)
         gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
         gb.configure_column("Total Difficulty", hide=True); gb.configure_column("xCS", hide=True)
@@ -283,7 +285,6 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns_in_df:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
 
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
 
     with tab3:
