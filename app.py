@@ -5,7 +5,7 @@ from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
 
 # --- Configuration ---
-RATINGS_CSV_FILE = "final_team_ratings_with_components.csv"
+RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
 # Constants for the Poisson model
