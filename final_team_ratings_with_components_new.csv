@@ -1,4 +1,4 @@
-Team,League,Offensive Score,Defensive Score,Financial Score,Final Rating
+Team,League,Off Score,Def Score,Financial Score,Final Rating
 Manchester City,Premier League,80.48,74.27,85.91,79.51
 Liverpool,Premier League,83.2,73.51,82.79,79.46
 Arsenal,Premier League,76.42,75.91,88.74,79.31
@@ -43,3 +43,4 @@ Birmingham,Championship,49.89,46.51,53.82,49.6
 Stoke,Championship,49.93,46.21,52.7,49.23
 Oxford,Championship,49.3,43.94,52.05,47.98
 Portsmouth,Championship,50.48,41.95,52.04,47.67
+
