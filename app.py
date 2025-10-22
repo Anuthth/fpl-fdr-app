@@ -214,7 +214,7 @@ with st.expander("Glossary & How It Works"):
     """)
 
 ratings_df, fixtures_df = load_data()
-
+@st.cache_data
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
     start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 8, 38, (8, 22))
