@@ -14,6 +14,7 @@ AVG_LEAGUE_AWAY_GOALS = 1.25
 
 
 # Your defined FDR thresholds
+@st.cache_data
 FDR_THRESHOLDS = {
     5: 110.0,
     4: 96.0,
