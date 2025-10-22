@@ -212,12 +212,11 @@ with st.expander("Glossary & How It Works"):
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
     """)
-
-ratings_df, fixtures_df = load_data()
 @st.cache_data
+ratings_df, fixtures_df = load_data()
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 8, 38, (8, 22))
+    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 8, 38, (8, 21))
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 
     fh_options = [None] + list(range(start_gw, end_gw + 1))
