@@ -211,6 +211,7 @@ with st.expander("Glossary & How It Works"):
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
     """)
+    
 ratings_df, fixtures_df = load_data()
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
