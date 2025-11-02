@@ -295,7 +295,7 @@ if ratings_df is not None and fixtures_df is not None:
                 }}
                 return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
             }}"""
-            )
+            
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         
