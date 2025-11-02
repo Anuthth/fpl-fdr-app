@@ -266,6 +266,8 @@ if ratings_df is not None and fixtures_df is not None:
         # --- GW loop (unchanged, but will now work correctly) ---
         for col in gw_columns:
             gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].display : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90)
+
+        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'fdr_grid_{start_gw}_{end_gw}')
         
     with tab2:
         st.subheader("Projected Goals (Higher is better for attackers)")
