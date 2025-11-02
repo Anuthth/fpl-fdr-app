@@ -282,18 +282,20 @@ if ratings_df is not None and fixtures_df is not None:
             return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
         }}"""
     
-        # Configure each GW column
+        Configure each GW column
         for col in gw_columns:
-            gb.configure_column(
-                col,
-                headerName=col,
-                valueGetter=f"data['{col}_display']",  # Show the display text
-                comparator=JsCode(f"function(valueA, valueB, nodeA, nodeB) {{ return (nodeA.data['{col}_fdr'] || 3) - (nodeB.data['{col}_fdr'] || 3); }}"),  # Sort by FDR number
-                cellStyle=JsCode(jscode_template.format(col=col)),  # Color by FDR
-                flex=1,
-                minWidth=90,
-                sortable=True
-        )
+            # Create the cellStyle JsCode for this specific column
+            jscode_for_col = f"""function(params) {{
+                const fdrValue = params.data['{col}_fdr'];
+                if (fdrValue !== undefined && fdrValue !== null) {{
+                    const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
+                    const bgColor = colors[fdrValue] || '#444444';
+                    const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
+                    return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold', 'textAlign': 'center'}};
+                }}
+                return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
+            }}"""
+            )
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         
