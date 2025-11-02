@@ -289,13 +289,14 @@ if ratings_df is not None and fixtures_df is not None:
             gb.configure_column(
                 col,
                 headerName=col,
-                valueGetter=f"data['{col}_display']",  # Show the display text
-                comparator=JsCode(f"function(valueA, valueB, nodeA, nodeB) {{ return (nodeA.data['{col}_fdr'] || 3) - (nodeB.data['{col}_fdr'] || 3); }}"),  # Sort by FDR number
+                field=f'{col}_fdr',  # Sort by the FDR number field
+                valueFormatter=JsCode(value_formatter),  # But display the text
                 cellStyle=JsCode(jscode_for_col),  # Color by FDR
                 flex=1,
                 minWidth=90,
-                sortable=True
-            )
+                sortable=True,
+                type=["numericColumn"]  # Treat as numeric for proper sorting
+                )
         
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         
