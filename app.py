@@ -282,7 +282,7 @@ if ratings_df is not None and fixtures_df is not None:
             return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
         }}"""
     
-        Configure each GW column
+        #Configure each GW column
         for col in gw_columns:
             # Create the cellStyle JsCode for this specific column
             jscode_for_col = f"""function(params) {{
