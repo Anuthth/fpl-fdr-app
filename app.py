@@ -17,7 +17,7 @@ AVG_LEAGUE_AWAY_GOALS = 1.25
 FDR_THRESHOLDS = {
     5: 115.0,
     4: 109.0,
-    3: 100.0,
+    3: 99.0,
     2: 90.0,
     1: 0
 }
