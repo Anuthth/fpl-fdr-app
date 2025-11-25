@@ -4,6 +4,18 @@ import numpy as np
 from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
 
+# Enable the hamburger menu with cache clearing
+st.set_page_config(
+    page_title="Team Rating Calculator",
+    page_icon="⚽",
+    layout="wide",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# Team Rating Calculator\nCreated by CoachFPL"
+    }
+)
+
 # --- Configuration ---
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
