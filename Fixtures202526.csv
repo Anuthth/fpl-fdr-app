@@ -202,12 +202,12 @@ GW,Home Team,Away Team
 21,A.F.C. Bournemouth,Tottenham Hotspur
 21,Arsenal,Liverpool
 21,Brentford,Sunderland
-21,Burnley,Crystal Palace
-21,Chelsea,Aston Villa
-21,Everton,Fulham
-21,Leeds United,Manchester City
-21,Manchester United,Brighton & Hove Albion
-21,Newcastle United,Wolverhampton Wanderers
+21,Burnley,Manchester United
+21,Crystal Palace,Aston Villa
+21,Fulhma,Chelsea
+21,Newcastle United,Leeds United
+21,Manchester City,Brighton & Hove Albion
+21,Everton,Wolverhampton Wanderers
 21,West Ham United,Nottingham Forest
 22,Aston Villa,Everton
 22,Brighton & Hove Albion,A.F.C. Bournemouth
@@ -379,3 +379,4 @@ GW,Home Team,Away Team
 38,Sunderland,Chelsea
 38,Tottenham Hotspur,Everton
 38,West Ham United,Leeds United
+
