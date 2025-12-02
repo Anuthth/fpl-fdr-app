@@ -229,16 +229,16 @@ GW,Home Team,Away Team
 23,Manchester City,Wolverhampton Wanderers
 23,Newcastle United,Aston Villa
 23,West Ham United,Sunderland
-24,A.F.C. Bournemouth,Brentford
-24,Arsenal,Liverpool
-24,Aston Villa,Brighton & Hove Albion
-24,Burnley,Tottenham Hotspur
-24,Crystal Palace,Sunderland
-24,Everton,Chelsea
-24,Fulham,Nottingham Forest
-24,Manchester City,Wolverhampton Wanderers
-24,Newcastle United,Manchester United
-24,West Ham United,Leeds United
+24,Wolverhampton Wanderers,A.F.C. Bournemouth
+24,Leeds United,Arsenal
+24,Brighton & Hove Albion,Everton
+24,Tottenham Hotspur,Manchester City
+24,Nottingham Forest,Crystal Palace
+24,Chelsea,West Ham United
+24,Manchester United,Fulham
+24,Sunderland,Burnley
+24,Liverpool,Newcastle United
+24,Aston Villa,Brentford
 25,A.F.C. Bournemouth,Aston Villa
 25,Arsenal,Sunderland
 25,Brighton & Hove Albion,Crystal Palace
@@ -379,5 +379,6 @@ GW,Home Team,Away Team
 38,Sunderland,Chelsea
 38,Tottenham Hotspur,Everton
 38,West Ham United,Leeds United
+
 
 
