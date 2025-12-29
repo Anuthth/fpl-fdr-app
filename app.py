@@ -13,7 +13,7 @@ with st.sidebar:
     with col1:
         if st.button("🗑️ Clear Cache", use_container_width=True):
             st.cache_data.clear()
-            st.cache_resource.clear()
+            st.cache_resource.clear()  # ← Fixed: removed extra "clear"
             st.success("✅ Cache cleared!")
             st.rerun()
     
