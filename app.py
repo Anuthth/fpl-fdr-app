@@ -238,7 +238,11 @@ with st.expander("Glossary & How It Works"):
 ratings_df, fixtures_df = load_data()
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    start_gw, end_gw = st.sidebar.slider("Select Gameweek Range:", 19, 38, (19, 28))
+    col_start, col_end = st.sidebar.columns(2)
+with col_start:
+    start_gw = st.number_input("Start GW:", min_value=19, max_value=38, value=19)
+with col_end:
+    end_gw = st.number_input("End GW:", min_value=19, max_value=38, value=38)
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
     fh_options = [None] + list(range(start_gw, end_gw + 1))
     free_hit_gw = st.sidebar.selectbox(
