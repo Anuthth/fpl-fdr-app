@@ -13,7 +13,10 @@ with st.sidebar:
     with col1:
         if st.button("🗑️ Clear Cache", use_container_width=True):
             st.cache_data.clear()
-            st.cache_resource.clear()  # ← Fixed: removed extra "clear"
+            st.cache_resource.clear()
+            # Clear session state to force refresh
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
             st.success("✅ Cache cleared!")
             st.rerun()
     
@@ -116,7 +119,9 @@ def load_data():
     fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
     fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
     return ratings_df, fixtures_df
-def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
+
+@st.cache_data
+def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None):
     """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
 
@@ -183,6 +188,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df):
     return df
 
 # --- ADDED: Missing "Easy Run Finder" function ---
+@st.cache_data
 def find_fixture_runs(fixtures_df, rating_dict, start_gw):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
     all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
@@ -241,7 +247,7 @@ if ratings_df is not None and fixtures_df is not None:
         format_func=lambda x: "None" if x is None else f"GW{x}"
     )
 
-    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df)
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
 
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
