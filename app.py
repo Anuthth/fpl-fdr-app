@@ -238,18 +238,20 @@ with st.expander("Glossary & How It Works"):
 ratings_df, fixtures_df = load_data()
 if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
-    col_start, col_end = st.sidebar.columns(2)
+col_start, col_end = st.sidebar.columns(2)
 with col_start:
     start_gw = st.number_input("Start GW:", min_value=20, max_value=38, value=20)
 with col_end:
     end_gw = st.number_input("End GW:", min_value=20, max_value=38, value=29)
+
+# These should be at the sidebar level, not inside col_end
 selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
 fh_options = [None] + list(range(start_gw, end_gw + 1))
 free_hit_gw = st.sidebar.selectbox(
     "Select Free Hit Gameweek (optional):",
     options=fh_options,
     format_func=lambda x: "None" if x is None else f"GW{x}"
- )
+))
 
     master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
 
