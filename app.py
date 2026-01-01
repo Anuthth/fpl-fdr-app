@@ -412,5 +412,4 @@ if ratings_df is not None and fixtures_df is not None:
             st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
         else:
             st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
-    else:
-        st.error("Data could not be loaded. Please check your CSV files.")
+    
