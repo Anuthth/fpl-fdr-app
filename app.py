@@ -230,12 +230,9 @@ with st.sidebar:
 ratings_df, fixtures_df = load_data()
 
 if ratings_df is not None and fixtures_df is not None:
-    st.sidebar.header("Controls")
-    col_start, col_end = st.sidebar.columns(2)
-    with col_start:
-        start_gw = st.number_input("Start GW:", min_value=21, max_value=38, value=21)
-    with col_end:
-        end_gw = st.number_input("End GW:", min_value=21, max_value=38, value=30)
+    st.sidebar.write("Debug Info:")
+    st.sidebar.write(f"GW Range in fixtures: {fixtures_df['GW'].min()} to {fixtures_df['GW'].max()}")
+    st.sidebar.write(f"Number of GW21 fixtures: {len(fixtures_df[fixtures_df['GW'] == 21])}")
 
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
     fh_options = [None] + list(range(start_gw, end_gw + 1))
