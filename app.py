@@ -193,13 +193,14 @@ def find_fixture_runs(fixtures_df, rating_dict, start_gw):
 
     return good_runs
 
-# --- Main Streamlit App ---
 
 # --- Main Streamlit App ---
 
 st.set_page_config(layout="wide")
 st.title("FPL Fixture Planner")
-
+if 'cache_cleared' not in st.session_state:
+    st.cache_data.clear()
+    st.session_state.cache_cleared = True
 with st.expander("Glossary & How It Works"):
     st.markdown("""
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
