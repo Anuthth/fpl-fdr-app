@@ -237,7 +237,17 @@ if ratings_df is not None and fixtures_df is not None:
     with col_end:
         end_gw = st.number_input("End GW:", min_value=21, max_value=38, value=30)
 
-        master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
+    # ADD THESE TWO LINES HERE - they were missing!
+    selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
+    fh_options = [None] + list(range(start_gw, end_gw + 1))
+    free_hit_gw = st.sidebar.selectbox(
+        "Select Free Hit Gameweek (optional):",
+        options=fh_options,
+        format_func=lambda x: "None" if x is None else f"GW{x}"
+    )
+
+    # NOW create the master dataframe
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
 
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
