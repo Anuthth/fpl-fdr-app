@@ -234,7 +234,7 @@ if ratings_df is not None and fixtures_df is not None:
     with col_start:
         start_gw = st.number_input("Start GW:", min_value=21, max_value=38, value=21)
     with col_end:
-        end_gw = st.number_input("End GW:", min_value=21, max_value=38, value=30)
+        end_gw = st.number_input("End GW:", min_value=22, max_value=38, value=30)
 
     selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
     fh_options = [None] + list(range(start_gw, end_gw + 1))
