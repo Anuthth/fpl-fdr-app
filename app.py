@@ -251,7 +251,7 @@ free_hit_gw = st.sidebar.selectbox(
     format_func=lambda x: "None" if x is None else f"GW{x}"
 )
 
-master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
+    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
 
     if selected_teams:
         teams_to_show = [team for team in master_df.index if team in selected_teams]
