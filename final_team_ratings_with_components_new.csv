@@ -1,0 +1,45 @@
+Team,League (2025-26),xG vs Avg,xGC vs Avg,Off Score,Def Score,Fin Score,Final Rating
+Arsenal,Premier League,1.7,0.75,65.23,74.29,100.0,127.67
+Manchester City,Premier League,1.83,0.99,70.68,63.81,99.62,124.04
+Liverpool,Premier League,1.74,1.08,66.98,58.82,99.17,117.81
+Manchester United,Premier League,1.54,1.31,67.76,47.72,97.21,110.0
+Newcastle,Premier League,1.41,1.17,61.51,53.67,96.59,109.61
+Chelsea,Premier League,1.63,1.26,62.95,49.95,98.99,108.73
+Brighton,Premier League,1.38,1.22,60.27,51.78,94.84,106.89
+Brentford,Premier League,1.37,1.28,60.38,49.1,94.02,104.84
+Aston Villa,Premier League,1.36,1.28,59.88,48.88,95.67,104.83
+Bournemouth,Premier League,1.45,1.38,63.57,44.54,93.98,103.87
+Crystal Palace,Premier League,1.26,1.22,55.07,51.52,94.5,102.96
+Leeds,Premier League,1.29,1.35,56.52,45.94,92.61,99.5
+Sunderland,Premier League,1.09,1.2,47.25,52.85,92.5,97.82
+Tottenham,Premier League,1.22,1.4,53.38,43.99,98.06,97.57
+Fulham,Premier League,1.2,1.32,52.18,46.83,93.27,97.28
+Nottingham Forest,Premier League,1.08,1.29,46.59,48.22,95.97,95.16
+Everton,Premier League,1.07,1.26,45.84,49.87,93.71,95.11
+West Ham,Premier League,1.11,1.56,48.34,38.72,93.75,89.07
+Wolves,Premier League,0.89,1.46,36.93,41.69,93.12,82.97
+Burnley,Premier League,0.9,1.67,37.03,35.58,91.22,78.2
+Coventry,Championship,2.05,0.89,24.23,18.58,86.3,37.74
+Bristol City,Championship,1.39,1.13,18.38,16.83,84.08,32.21
+Middlesbrough,Championship,1.18,0.92,15.62,18.24,86.63,31.5
+Leicester City,Championship,1.28,1.24,16.91,15.32,89.43,30.61
+Blackburn,Championship,1.17,1.08,15.39,17.76,80.16,30.42
+West Brom,Championship,1.12,1.07,14.6,17.79,85.19,30.34
+Birmingham,Championship,1.06,1.04,13.68,18.4,86.61,30.25
+Stoke,Championship,1.15,1.14,15.2,16.68,83.26,29.81
+Watford,Championship,1.22,1.22,16.19,15.58,83.13,29.72
+Ipswich Town,Championship,1.18,1.3,15.55,14.38,90.01,29.05
+Millwall,Championship,1.09,1.15,14.25,16.61,82.12,29.0
+Swansea,Championship,1.04,1.12,13.35,17.07,84.38,28.89
+Preston,Championship,1.05,1.14,13.53,16.72,80.41,28.41
+Hull,Championship,1.26,1.55,16.63,11.75,83.33,27.36
+Norwich,Championship,1.22,1.54,16.0,11.73,86.64,27.2
+QPR,Championship,1.05,1.27,13.51,14.84,81.02,27.13
+Portsmouth,Championship,1.04,1.26,13.49,15.1,78.93,27.12
+Oxford,Championship,1.09,1.38,14.15,13.44,79.1,26.43
+Wrexham,Championship,1.33,1.81,17.27,9.58,83.36,26.29
+Sheffield Utd,Championship,0.89,1.27,10.99,14.8,88.12,25.98
+Southampton,Championship,1.1,1.6,14.22,11.23,89.81,25.9
+Derby,Championship,0.85,1.23,10.45,15.46,82.39,25.55
+Sheffield Wednesday,Championship,1.09,1.75,14.19,10.11,65.95,22.94
+Charlton Ath,Championship,0.94,0.95,11.64,19.6,0.0,21.87
