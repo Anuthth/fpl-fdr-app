@@ -257,26 +257,38 @@ if ratings_df is not None and fixtures_df is not None:
 
     tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
 
-    # --- Tab 1: FDR ---
+       # --- Tab 1: FDR with DGW/BGW ---
     with tab1:
-        st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
+        st.subheader("Fixture Difficulty Rating (Lower is easier)")
         
-        column_order = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[column_order]
+        # Add legend for DGW/BGW
+        st.markdown("""
+        **Legend:**
+        - **BGW** = Blank Gameweek (no fixture)
+        - **DGW** = Double Gameweek (2+ fixtures)
+        - *Numbers in cells show FDR (1=easiest, 5=hardest)*
+        """)
         
-        # CREATE SEPARATE COLUMNS FOR DISPLAY TEXT AND FDR VALUES
-        df_for_grid = df_display[['Team', 'Total Difficulty']].copy()
+        df_display = master_df.sort_values(by='Total Difficulty').reset_index().rename(columns={'index': 'Team'})
+        
+        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[cols_to_display]
+        
+        # Prepare data for grid
+        df_for_grid = df_display.copy()
         
         for col in gw_columns:
-            df_for_grid[col] = df_display[col]  # Keep original nested data
-            
-            # Create helper columns for display and FDR
             df_for_grid[f'{col}_display'] = df_display[col].apply(
                 lambda x: x['display'] if isinstance(x, dict) and 'display' in x else ''
             )
             df_for_grid[f'{col}_fdr'] = df_display[col].apply(
-                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x else 3
+                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x and x['fdr'] is not None else 3
+            )
+            df_for_grid[f'{col}_is_bgw'] = df_display[col].apply(
+                lambda x: x.get('is_bgw', False) if isinstance(x, dict) else False
+            )
+            df_for_grid[f'{col}_is_dgw'] = df_display[col].apply(
+                lambda x: x.get('is_dgw', False) if isinstance(x, dict) else False
             )
         
         gb = GridOptionsBuilder.from_dataframe(df_for_grid)
@@ -286,6 +298,8 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns:
             gb.configure_column(f'{col}_display', hide=True)
             gb.configure_column(f'{col}_fdr', hide=True)
+            gb.configure_column(f'{col}_is_bgw', hide=True)
+            gb.configure_column(f'{col}_is_dgw', hide=True)
         
         for col in gw_columns:
             value_formatter = f"""function(params) {{
@@ -293,13 +307,49 @@ if ratings_df is not None and fixtures_df is not None:
             }}"""
             
             jscode_for_col = f"""function(params) {{
+                const isBGW = params.data['{col}_is_bgw'];
+                const isDGW = params.data['{col}_is_dgw'];
                 const fdrValue = params.data['{col}_fdr'];
+                
+                // BGW styling - dark gray
+                if (isBGW) {{
+                    return {{
+                        'backgroundColor': '#2c2c2c',
+                        'color': '#999999',
+                        'fontWeight': 'bold',
+                        'textAlign': 'center',
+                        'fontStyle': 'italic'
+                    }};
+                }}
+                
+                // DGW styling - add border/indicator
+                if (isDGW) {{
+                    const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
+                    const bgColor = colors[fdrValue] || '#444444';
+                    const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
+                    return {{
+                        'backgroundColor': bgColor,
+                        'color': textColor,
+                        'fontWeight': 'bold',
+                        'textAlign': 'center',
+                        'border': '3px solid #FFD700',  // Gold border for DGW
+                        'boxShadow': 'inset 0 0 5px rgba(255, 215, 0, 0.5)'
+                    }};
+                }}
+                
+                // Regular fixture styling
                 if (fdrValue !== undefined && fdrValue !== null) {{
                     const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
                     const bgColor = colors[fdrValue] || '#444444';
                     const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
-                    return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold', 'textAlign': 'center'}};
+                    return {{
+                        'backgroundColor': bgColor,
+                        'color': textColor,
+                        'fontWeight': 'bold',
+                        'textAlign': 'center'
+                    }};
                 }}
+                
                 return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
             }}"""
             
@@ -346,7 +396,6 @@ if ratings_df is not None and fixtures_df is not None:
         gb.configure_column("Total Difficulty", hide=True)
         gb.configure_column("xCS", hide=True)
 
-        # FIXED JS CODE HERE
         jscode = JsCode("""function(params) { 
             const cellData = params.data[params.colDef.field]; 
             if (cellData && cellData.xG !== undefined) { 
@@ -405,7 +454,6 @@ if ratings_df is not None and fixtures_df is not None:
 
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
-        
     # --- Easy Run Finder Feature ---
     st.markdown("---") 
     st.sidebar.header("Easy Run Finder")
