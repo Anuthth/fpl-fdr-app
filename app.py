@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
+import math
 
 # --- Configuration ---
 st.set_page_config(layout="wide", page_title="FPL Fixture Planner")
@@ -9,7 +10,11 @@ st.set_page_config(layout="wide", page_title="FPL Fixture Planner")
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# FDR Thresholds (From your original settings)
+# Constants for the Poisson model (Restored from original)
+AVG_LEAGUE_HOME_GOALS = 1.55
+AVG_LEAGUE_AWAY_GOALS = 1.25
+
+# FDR Thresholds
 FDR_THRESHOLDS = {
     5: 120.0,
     4: 108.0,
@@ -18,7 +23,7 @@ FDR_THRESHOLDS = {
     1: 0
 }
 
-# FDR Colors (Reverted to your Green/Purple scheme)
+# FDR Colors (Green/Purple Scheme)
 FDR_COLORS = {
     1: '#00ff85',  # Bright Green
     2: '#50c369',  # Medium Green
@@ -89,13 +94,13 @@ def load_data():
     return fixtures, ratings
 
 def calculate_match_fdr(home_team, away_team, ratings_dict):
-    """Calculates FDR score."""
+    """Calculates FDR score used for coloring."""
     h_att = ratings_dict.get(home_team, {}).get('Att', 1.0)
     h_def = ratings_dict.get(home_team, {}).get('Def', 1.0)
     a_att = ratings_dict.get(away_team, {}).get('Att', 1.0)
     a_def = ratings_dict.get(away_team, {}).get('Def', 1.0)
 
-    # Simplified Strength Calculation
+    # Strength Calculation suitable for the 90-120 threshold range
     home_fdr_score = (a_att * a_def * 100) 
     away_fdr_score = (h_att * h_def * 100) * 1.1 
     
@@ -110,6 +115,65 @@ def get_fdr_category(score):
 
 def get_color_for_category(cat):
     return FDR_COLORS.get(cat, '#ffffff')
+
+def find_fixture_runs(fixtures_df, ratings_dict, start_gw, min_length=3):
+    """
+    Identifies runs of 'easy' fixtures (FDR Category 1-3).
+    Restored from original logic.
+    """
+    runs = {}
+    
+    # Pre-calculate all match difficulties
+    processed_matches = []
+    for _, row in fixtures_df.iterrows():
+        gw = row['GW']
+        if gw < start_gw: continue
+        
+        home = CSV_TO_SHORT_NAME.get(row['Home Team'], row['Home Team'])
+        away = CSV_TO_SHORT_NAME.get(row['Away Team'], row['Away Team'])
+        
+        if home not in PREMIER_LEAGUE_TEAMS or away not in PREMIER_LEAGUE_TEAMS: continue
+        
+        h_score, a_score = calculate_match_fdr(home, away, ratings_dict)
+        h_cat = get_fdr_category(h_score)
+        a_cat = get_fdr_category(a_score)
+        
+        processed_matches.append({'Team': home, 'gw': gw, 'opp': away, 'loc': 'H', 'fdr': h_cat})
+        processed_matches.append({'Team': away, 'gw': gw, 'opp': home, 'loc': 'A', 'fdr': a_cat})
+        
+    df = pd.DataFrame(processed_matches)
+    
+    for team in PREMIER_LEAGUE_TEAMS:
+        team_fixtures = df[df['Team'] == team].sort_values('gw')
+        current_run = []
+        team_runs = []
+        
+        # Simple logic: Sequential GWs with FDR <= 3
+        # Note: Handling DGWs in runs is complex, simplifying to checking if ANY match in GW is hard breaks the run
+        
+        # Group by GW to handle DGWs
+        gws = team_fixtures['gw'].unique()
+        
+        for gw in gws:
+            matches = team_fixtures[team_fixtures['gw'] == gw]
+            # If any match in this GW is hard (4 or 5), run breaks
+            is_easy = all(m <= 3 for m in matches['fdr'])
+            
+            if is_easy:
+                current_run.extend(matches.to_dict('records'))
+            else:
+                if len(set(m['gw'] for m in current_run)) >= min_length:
+                    team_runs.append(current_run)
+                current_run = []
+                
+        # Check end of list
+        if len(set(m['gw'] for m in current_run)) >= min_length:
+            team_runs.append(current_run)
+            
+        if team_runs:
+            runs[team] = team_runs
+            
+    return runs
 
 def process_fixtures(fixtures_df, ratings_df):
     """
@@ -199,6 +263,7 @@ fixtures_df, ratings_df = load_data()
 
 if fixtures_df is not None and ratings_df is not None:
     
+    # --- Sidebar ---
     st.sidebar.header("Settings")
     
     min_gw = int(fixtures_df['GW'].min())
@@ -206,11 +271,40 @@ if fixtures_df is not None and ratings_df is not None:
     selected_teams = st.sidebar.multiselect("Filter Teams", PREMIER_LEAGUE_TEAMS)
     sort_choice = st.sidebar.selectbox("Sort By", ["Alphabetical", "Fixture Difficulty"])
 
+    # --- Easy Run Finder (Restored) ---
+    st.sidebar.markdown("---")
+    st.sidebar.header("Easy Run Finder")
+    st.sidebar.info("Find upcoming periods of 3+ easy/neutral fixtures (FDR 1-3).")
+    
+    run_teams = st.sidebar.multiselect("Select teams to find runs for:", PREMIER_LEAGUE_TEAMS, key='runs')
+    
+    if run_teams:
+        st.header("✅ Easy Fixture Runs")
+        ratings_dict = ratings_df.set_index('Team').to_dict('index')
+        all_runs = find_fixture_runs(fixtures_df, ratings_dict, gw_range[0])
+        
+        results_found = False
+        for team in run_teams:
+            team_runs = all_runs.get(team)
+            if team_runs:
+                results_found = True
+                with st.expander(f"**{team}** ({len(team_runs)} run(s) found)"):
+                    for i, run in enumerate(team_runs):
+                        start, end = run[0]['gw'], run[-1]['gw']
+                        st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                        for fix in run:
+                            opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
+                            st.write(f"- GW{fix['gw']}: {opp_abbr} ({fix['loc']}) - FDR {fix['fdr']}")
+                            
+        if not results_found:
+            st.warning("No runs found for selected teams.")
+        st.markdown("---")
+
+    # --- Grid Processing ---
     final_df = process_fixtures(fixtures_df, ratings_df)
     
     # Filter Columns
     cols = ['Team'] + [f"GW{i}" for i in range(gw_range[0], gw_range[1] + 1)]
-    # Keep color cols for visible GWs only
     color_cols = [f"GW{i}_color" for i in range(gw_range[0], gw_range[1] + 1)]
     
     display_df = final_df[cols + color_cols].copy()
@@ -223,16 +317,16 @@ if fixtures_df is not None and ratings_df is not None:
 
     # --- AgGrid ---
     gb = GridOptionsBuilder.from_dataframe(display_df)
-    gb.configure_column("Team", pinned="left", width=120)
+    gb.configure_column("Team", pinned="left", width=120, cellStyle={'fontWeight': 'bold'})
     
-    # Hide the technical color columns
+    # Hide color columns
     for c in color_cols:
         gb.configure_column(c, hide=True)
     
-    # Apply styling to GW columns
+    # Apply DGW Styles
     for i in range(gw_range[0], gw_range[1] + 1):
         col = f"GW{i}"
-        gb.configure_column(col, width=100, cellStyle=JsCode("""
+        gb.configure_column(col, width=110, cellStyle=JsCode("""
             function(params) {
                 var colorCol = params.colDef.field + "_color";
                 var color = params.data[colorCol];
@@ -243,7 +337,9 @@ if fixtures_df is not None and ratings_df is not None:
                     'display': 'flex',
                     'align-items': 'center',
                     'justify-content': 'center',
-                    'font-size': '12px'
+                    'font-size': '12px',
+                    'white-space': 'normal',
+                    'line-height': '1.2'
                 };
             }
         """))
@@ -254,7 +350,7 @@ if fixtures_df is not None and ratings_df is not None:
     st.markdown("### FDR Key")
     legend_cols = st.columns(6)
     for i, (k, label) in enumerate([(1, "Easy"), (2, "Good"), (3, "Neutral"), (4, "Hard"), (5, "Very Hard"), ('BGW', "Blank")]):
-        legend_cols[i].markdown(f"<div style='background:{FDR_COLORS[k]};padding:5px;text-align:center;border-radius:4px;'>{label}</div>", unsafe_allow_html=True)
+        legend_cols[i].markdown(f"<div style='background:{FDR_COLORS[k]};padding:5px;text-align:center;border-radius:4px;color:black;'>{label}</div>", unsafe_allow_html=True)
 
 else:
     st.info("Upload 'Fixtures202526.csv' and 'final_team_ratings_with_components_new.csv'.")
