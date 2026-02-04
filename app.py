@@ -9,11 +9,7 @@ st.set_page_config(layout="wide", page_title="FPL Fixture Planner")
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
-# Constants for the Poisson model
-AVG_LEAGUE_HOME_GOALS = 1.55
-AVG_LEAGUE_AWAY_GOALS = 1.25
-
-# FDR Thresholds
+# FDR Thresholds (From your original settings)
 FDR_THRESHOLDS = {
     5: 120.0,
     4: 108.0,
@@ -22,18 +18,17 @@ FDR_THRESHOLDS = {
     1: 0
 }
 
-# FDR Colors
+# FDR Colors (Reverted to your Green/Purple scheme)
 FDR_COLORS = {
-    1: '#375523',  # Dark Green (Easiest)
-    2: '#01fc7a',  # Bright Green
-    3: '#e7e7e7',  # Grey (Neutral)
-    4: '#ff1751',  # Pink/Red (Hard)
-    5: '#80072d',  # Dark Red (Hardest)
-    'BGW': '#555555' # Dark Grey for Blanks
+    1: '#00ff85',  # Bright Green
+    2: '#50c369',  # Medium Green
+    3: '#D3D3D3',  # Grey
+    4: '#9d66a0',  # Purple
+    5: '#6f2a74',  # Dark Purple
+    'BGW': '#e0e0e0' # Light Grey for Blanks
 }
 
 # --- Team Mappings ---
-# Maps CSV full names to internal short names
 CSV_TO_SHORT_NAME = {
     'Arsenal': 'Arsenal', 
     'Aston Villa': 'Aston Villa', 
@@ -62,10 +57,8 @@ CSV_TO_SHORT_NAME = {
     'Southampton': 'Southampton'
 }
 
-# List of teams for dropdowns (using short names)
 PREMIER_LEAGUE_TEAMS = sorted(list(set(CSV_TO_SHORT_NAME.values())))
 
-# Abbreviations for display in grid (Short Name -> Abbr)
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
     'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
@@ -87,46 +80,29 @@ def load_data():
 
     try:
         ratings = pd.read_csv(RATINGS_CSV_FILE)
-        # Normalize columns if needed
         if 'Team' not in ratings.columns:
             ratings.rename(columns={'team_name': 'Team'}, inplace=True)
     except FileNotFoundError:
         st.warning(f"Could not find {RATINGS_CSV_FILE}. Using default neutral ratings.")
-        # Create dummy ratings
-        ratings = pd.DataFrame({
-            'Team': PREMIER_LEAGUE_TEAMS,
-            'Att': 1.0,
-            'Def': 1.0
-        })
+        ratings = pd.DataFrame({'Team': PREMIER_LEAGUE_TEAMS, 'Att': 1.0, 'Def': 1.0})
     
     return fixtures, ratings
 
 def calculate_match_fdr(home_team, away_team, ratings_dict):
-    """Calculates FDR for Home and Away perspectives."""
+    """Calculates FDR score."""
     h_att = ratings_dict.get(home_team, {}).get('Att', 1.0)
     h_def = ratings_dict.get(home_team, {}).get('Def', 1.0)
     a_att = ratings_dict.get(away_team, {}).get('Att', 1.0)
     a_def = ratings_dict.get(away_team, {}).get('Def', 1.0)
 
-    # Simplified Poisson-like strength calculation
-    # Home Difficulty = Away Attack strength * Home Defense weakness (inverted)
-    # Actually, standard FDR is about how hard the OPPONENT is.
-    
-    # FDR for Home Team (facing Away Team): Based on Away Team's Strength
-    # Away Team Strength = A_Att * A_Def * (Base Difficulty)
-    # Let's use a simpler heuristic based on the user's thresholds
-    # High score = Hard match.
-    
-    # Score for Home Team = Away Team Strength factor
-    home_fdr_score = (a_att * a_def * 100) # Arbitrary scaling to fit 0-150 range
-    
-    # Score for Away Team = Home Team Strength factor * Home Advantage
-    away_fdr_score = (h_att * h_def * 100) * 1.1 # 10% boost for home advantage difficulty
+    # Simplified Strength Calculation
+    home_fdr_score = (a_att * a_def * 100) 
+    away_fdr_score = (h_att * h_def * 100) * 1.1 
     
     return home_fdr_score, away_fdr_score
 
 def get_fdr_category(score):
-    """Maps a numeric score to 1-5 category."""
+    """Maps score to 1-5 category."""
     for cat, threshold in FDR_THRESHOLDS.items():
         if score >= threshold:
             return cat
@@ -137,229 +113,148 @@ def get_color_for_category(cat):
 
 def process_fixtures(fixtures_df, ratings_df):
     """
-    Transforms raw fixtures into a grid-ready structure handling DGWs and BGWs.
+    Aggregates fixtures to handle DGWs and BGWs correctly.
     """
-    # 1. Create Lookup for Ratings
-    # Standardize team names in ratings if needed
     ratings_df['Team'] = ratings_df['Team'].map(lambda x: CSV_TO_SHORT_NAME.get(x, x))
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
 
-    # 2. Parse Fixtures into a list of Match Objects
     all_matches = []
     
     for _, row in fixtures_df.iterrows():
         gw = row['GW']
-        home_full = row['Home Team']
-        away_full = row['Away Team']
+        home = CSV_TO_SHORT_NAME.get(row['Home Team'], row['Home Team'])
+        away = CSV_TO_SHORT_NAME.get(row['Away Team'], row['Away Team'])
         
-        home_short = CSV_TO_SHORT_NAME.get(home_full, home_full)
-        away_short = CSV_TO_SHORT_NAME.get(away_full, away_full)
-        
-        # skip if mapping fails to find a valid team (optional safety)
-        if home_short not in PREMIER_LEAGUE_TEAMS or away_short not in PREMIER_LEAGUE_TEAMS:
+        if home not in PREMIER_LEAGUE_TEAMS or away not in PREMIER_LEAGUE_TEAMS:
             continue
 
-        h_score, a_score = calculate_match_fdr(home_short, away_short, ratings_dict)
+        h_score, a_score = calculate_match_fdr(home, away, ratings_dict)
         h_cat = get_fdr_category(h_score)
         a_cat = get_fdr_category(a_score)
         
-        # Record match for Home Team
+        # Add Home Record
         all_matches.append({
-            'Team': home_short,
-            'GW': gw,
-            'Opponent': away_short,
-            'Loc': 'H',
-            'FDR': h_score,
-            'Cat': h_cat,
-            'Color': get_color_for_category(h_cat)
+            'Team': home, 'GW': gw, 'Opponent': away, 'Loc': 'H',
+            'Cat': h_cat, 'Color': get_color_for_category(h_cat)
         })
-        
-        # Record match for Away Team
+        # Add Away Record
         all_matches.append({
-            'Team': away_short,
-            'GW': gw,
-            'Opponent': home_short,
-            'Loc': 'A',
-            'FDR': a_score,
-            'Cat': a_cat,
-            'Color': get_color_for_category(a_cat)
+            'Team': away, 'GW': gw, 'Opponent': home, 'Loc': 'A',
+            'Cat': a_cat, 'Color': get_color_for_category(a_cat)
         })
 
-    # 3. Aggregate by Team and GW
     matches_df = pd.DataFrame(all_matches)
     
-    # We need a grid of all Teams x all GWs (1-38) to catch BGWs
+    # Create the display grid
     teams = PREMIER_LEAGUE_TEAMS
     gws = range(1, 39)
-    
     grid_data = []
     
     for team in teams:
-        row_dict = {'Team': team}
-        color_row_dict = {'Team': team}
+        row = {'Team': team}
+        # Hidden dict for colors
+        colors = {'Team': team}
         
         team_matches = matches_df[matches_df['Team'] == team]
         
         for gw in gws:
             gw_matches = team_matches[team_matches['GW'] == gw]
             count = len(gw_matches)
-            
             col_name = f"GW{gw}"
-            color_col_name = f"GW{gw}_color"
+            color_name = f"GW{gw}_color"
             
             if count == 0:
-                # BGW
-                row_dict[col_name] = "-"
-                color_row_dict[color_col_name] = FDR_COLORS['BGW']
+                row[col_name] = "-"
+                colors[color_name] = FDR_COLORS['BGW']
             elif count == 1:
-                # Normal GW
                 m = gw_matches.iloc[0]
-                opp_abbr = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3].upper())
-                row_dict[col_name] = f"{opp_abbr}({m['Loc']})"
-                color_row_dict[color_col_name] = m['Color']
+                opp = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3])
+                row[col_name] = f"{opp}({m['Loc']})"
+                colors[color_name] = m['Color']
             else:
-                # DGW (or TGW)
+                # DGW Logic: Join text and split colors
                 texts = []
-                colors = []
+                match_colors = []
                 for _, m in gw_matches.iterrows():
-                    opp_abbr = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3].upper())
-                    texts.append(f"{opp_abbr}({m['Loc']})")
-                    colors.append(m['Color'])
+                    opp = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3])
+                    texts.append(f"{opp}({m['Loc']})")
+                    match_colors.append(m['Color'])
                 
-                # Join text
-                row_dict[col_name] = ", ".join(texts)
+                row[col_name] = ", ".join(texts)
                 
-                # Create CSS Gradient for background
-                if len(colors) == 2:
-                    grad = f"linear-gradient(90deg, {colors[0]} 50%, {colors[1]} 50%)"
-                elif len(colors) >= 3:
-                    # Just in case of TGW, split 3 ways
-                    grad = f"linear-gradient(90deg, {colors[0]} 33%, {colors[1]} 33% 66%, {colors[2]} 66%)"
-                else:
-                    grad = colors[0]
-                    
-                color_row_dict[color_col_name] = grad
+                # Create gradient for DGW
+                c1 = match_colors[0]
+                c2 = match_colors[1] if len(match_colors) > 1 else c1
+                colors[color_name] = f"linear-gradient(90deg, {c1} 50%, {c2} 50%)"
 
-        # Merge color data into the main row dict for the dataframe
-        # We put colors in separate columns to hide them later
-        full_row = {**row_dict, **color_row_dict}
-        grid_data.append(full_row)
+        grid_data.append({**row, **colors})
 
-    final_df = pd.DataFrame(grid_data)
-    return final_df
+    return pd.DataFrame(grid_data)
 
-# --- Main App Logic ---
+# --- Main App ---
 
-st.title("⚽ FPL Fixture Planner (DGW & BGW Support)")
+st.title("⚽ FPL Fixture Planner")
 
 fixtures_df, ratings_df = load_data()
 
 if fixtures_df is not None and ratings_df is not None:
     
-    # --- Sidebar Controls ---
     st.sidebar.header("Settings")
     
-    # GW Range Slider
     min_gw = int(fixtures_df['GW'].min())
-    max_gw = int(fixtures_df['GW'].max())
     gw_range = st.sidebar.slider("Gameweek Range", min_gw, 38, (min_gw, min(min_gw + 10, 38)))
-    
-    # Team Filter
-    selected_teams = st.sidebar.multiselect("Filter Teams", PREMIER_LEAGUE_TEAMS, default=[])
-    
-    # Sort Logic
-    sort_options = ["Fixture Difficulty (Easy to Hard)", "Alphabetical"]
-    sort_choice = st.sidebar.selectbox("Sort By", sort_options)
+    selected_teams = st.sidebar.multiselect("Filter Teams", PREMIER_LEAGUE_TEAMS)
+    sort_choice = st.sidebar.selectbox("Sort By", ["Alphabetical", "Fixture Difficulty"])
 
-    # --- Processing ---
     final_df = process_fixtures(fixtures_df, ratings_df)
     
-    # Filter Columns (GW Range)
-    cols_to_keep = ['Team']
-    cols_to_hide = [] # We want to keep color columns in the DF but hide them in grid
+    # Filter Columns
+    cols = ['Team'] + [f"GW{i}" for i in range(gw_range[0], gw_range[1] + 1)]
+    # Keep color cols for visible GWs only
+    color_cols = [f"GW{i}_color" for i in range(gw_range[0], gw_range[1] + 1)]
     
-    for gw in range(gw_range[0], gw_range[1] + 1):
-        cols_to_keep.append(f"GW{gw}")
-        cols_to_keep.append(f"GW{gw}_color")
-        cols_to_hide.append(f"GW{gw}_color")
-        
-    display_df = final_df[cols_to_keep].copy()
+    display_df = final_df[cols + color_cols].copy()
     
-    # Filter Rows (Teams)
     if selected_teams:
         display_df = display_df[display_df['Team'].isin(selected_teams)]
         
-    # Sorting (Simplified - Logic for sorting by difficulty is complex with DGWs, 
-    # so we'll stick to simple alphabetical or just preserve index for now unless easy mode requested)
     if sort_choice == "Alphabetical":
         display_df = display_df.sort_values('Team')
-    
-    # --- AgGrid Setup ---
+
+    # --- AgGrid ---
     gb = GridOptionsBuilder.from_dataframe(display_df)
+    gb.configure_column("Team", pinned="left", width=120)
     
-    # Pin Team Column
-    gb.configure_column("Team", pinned="left", width=120, cellStyle={'fontWeight': 'bold'})
+    # Hide the technical color columns
+    for c in color_cols:
+        gb.configure_column(c, hide=True)
     
-    # Hide Color Columns
-    for col in cols_to_hide:
-        gb.configure_column(col, hide=True)
-        
-    # Configure GW Columns with JS Injection for Styling
-    # We iterate over the visible GW columns
-    visible_gw_cols = [c for c in cols_to_keep if "color" not in c and c != "Team"]
-    
-    for col in visible_gw_cols:
-        # The JS function looks for the column name + "_color" in the data row
-        # and applies it as the background.
-        js_style = JsCode("""
-        function(params) {
-            var colorCol = params.colDef.field + "_color";
-            var colorVal = params.data[colorCol];
-            if (colorVal) {
+    # Apply styling to GW columns
+    for i in range(gw_range[0], gw_range[1] + 1):
+        col = f"GW{i}"
+        gb.configure_column(col, width=100, cellStyle=JsCode("""
+            function(params) {
+                var colorCol = params.colDef.field + "_color";
+                var color = params.data[colorCol];
                 return {
-                    'background': colorVal, 
-                    'color': 'black', 
+                    'background': color,
+                    'color': 'black',
                     'border-right': '1px solid #ddd',
-                    'font-size': '12px',
-                    'text-align': 'center'
+                    'display': 'flex',
+                    'align-items': 'center',
+                    'justify-content': 'center',
+                    'font-size': '12px'
                 };
             }
-            return null;
-        }
-        """)
-        
-        gb.configure_column(col, 
-                            cellStyle=js_style, 
-                            width=100,
-                            suppressMenu=True,
-                            sortable=False)
+        """))
 
-    gridOptions = gb.build()
-    
-    # Render Grid
-    st.markdown("### Fixture Grid")
-    st.markdown("Double Gameweeks are split-colored. Blank Gameweeks are grey.")
-    
-    AgGrid(
-        display_df,
-        gridOptions=gridOptions,
-        allow_unsafe_jscode=True,
-        height=600,
-        theme="streamlit", # or 'balham'
-        fit_columns_on_grid_load=False
-    )
-    
-    # --- Legend ---
-    st.markdown("#### FDR Key")
-    cols = st.columns(6)
-    keys = [(1, "Easy"), (2, "Good"), (3, "Neutral"), (4, "Hard"), (5, "Very Hard"), ('BGW', "Blank")]
-    
-    for i, (cat, label) in enumerate(keys):
-        color = FDR_COLORS[cat]
-        cols[i].markdown(
-            f"<div style='background-color: {color}; padding: 10px; border-radius: 5px; text-align: center; color: black; border: 1px solid #ccc;'>{label}</div>", 
-            unsafe_allow_html=True
-        )
+    AgGrid(display_df, gridOptions=gb.build(), allow_unsafe_jscode=True, height=600, theme='streamlit')
+
+    # Legend
+    st.markdown("### FDR Key")
+    legend_cols = st.columns(6)
+    for i, (k, label) in enumerate([(1, "Easy"), (2, "Good"), (3, "Neutral"), (4, "Hard"), (5, "Very Hard"), ('BGW', "Blank")]):
+        legend_cols[i].markdown(f"<div style='background:{FDR_COLORS[k]};padding:5px;text-align:center;border-radius:4px;'>{label}</div>", unsafe_allow_html=True)
 
 else:
-    st.info("Please ensure both 'Fixtures202526.csv' and 'final_team_ratings_with_components_new.csv' are in the directory.")
+    st.info("Upload 'Fixtures202526.csv' and 'final_team_ratings_with_components_new.csv'.")
