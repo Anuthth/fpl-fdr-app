@@ -259,6 +259,7 @@ GW,Home Team,Away Team
 26,Sunderland,Liverpool
 26,Tottenham Hotspur,Newcastle United
 26,West Ham United,Manchester United
+26,Wolverhampton Wanderers,Arsenal
 27,Aston Villa,Leeds United
 27,Brentford,Brighton & Hove Albion
 27,Chelsea,Burnley
@@ -308,7 +309,6 @@ GW,Home Team,Away Team
 31,Manchester City,Crystal Palace
 31,Newcastle United,Sunderland
 31,Tottenham Hotspur,Nottingham Forest
-31,Wolverhampton Wanderers,Arsenal
 32,Arsenal,A.F.C. Bournemouth
 32,Brentford,Everton
 32,Burnley,Brighton & Hove Albion
@@ -379,6 +379,7 @@ GW,Home Team,Away Team
 38,Sunderland,Chelsea
 38,Tottenham Hotspur,Everton
 38,West Ham United,Leeds United
+
 
 
 
