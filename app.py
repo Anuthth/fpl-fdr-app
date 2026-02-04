@@ -436,5 +436,65 @@ if ratings_df is not None and fixtures_df is not None:
 
         if not results_found:
             st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
-    else:
-        st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
+
+    # --- Grid Processing ---
+    final_df = process_fixtures_for_grid(fixtures_df, ratings_df)
+    
+    # Prepare Columns
+    visible_cols = ['Team'] + [f"GW{i}" for i in range(start_gw, end_gw + 1)]
+    color_cols = [f"GW{i}_color" for i in range(start_gw, end_gw + 1)]
+    
+    display_df = final_df.copy()
+    
+    if selected_teams:
+        display_df = display_df[display_df['Team'].isin(selected_teams)]
+        
+    if sort_choice == "Alphabetical":
+        display_df = display_df.sort_values('Team')
+    
+    # --- AgGrid Construction ---
+    gb = GridOptionsBuilder.from_dataframe(display_df[visible_cols + color_cols])
+    gb.configure_column("Team", pinned="left", width=120, cellStyle={'fontWeight': 'bold'})
+    
+    # Hide color columns
+    for c in color_cols:
+        gb.configure_column(c, hide=True)
+        
+    # Apply Styling
+    for i in range(start_gw, end_gw + 1):
+        col_name = f"GW{i}"
+        
+        # --- THIS IS THE CSS UPDATE YOU REQUESTED ---
+        js_style = JsCode("""
+        function(params) {
+            var colorCol = params.colDef.field + "_color";
+            var colorVal = params.data[colorCol];
+            return {
+                'background': colorVal,
+                'color': 'black',
+                'border-right': '1px solid #ddd',
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'center',
+                'font-size': '11px',       
+                'white-space': 'normal',    // Allow wrapping
+                'line-height': '1.1',       // Tight line height
+                'text-align': 'center',
+                'padding': '2px'
+            };
+        }
+        """)
+        
+        gb.configure_column(col_name, width=110, cellStyle=js_style)
+
+    gridOptions = gb.build()
+    
+    AgGrid(
+        display_df[visible_cols + color_cols], 
+        gridOptions=gridOptions, 
+        allow_unsafe_jscode=True, 
+        height=600,
+        theme='streamlit'
+    )
+else:
+    st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
