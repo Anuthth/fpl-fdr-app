@@ -102,12 +102,9 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
     gw_range = range(start_gw, end_gw + 1)
     projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
 
-    # First, collect all fixtures for each team in each gameweek
-    gw_fixtures_count = {team: {gw: [] for gw in gw_range} for team in PREMIER_LEAGUE_TEAMS}
-    
     for _, row in fixtures_df[fixtures_df['GW'].isin(gw_range)].iterrows():
         home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-        gw = row['GW']
+        gw = f"GW{row['GW']}"
 
         home_stats = ratings_dict.get(home_team)
         away_stats = ratings_dict.get(away_team)
@@ -125,60 +122,16 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
             away_cs_prob = math.exp(-home_xg)
 
             if home_team in PREMIER_LEAGUE_TEAMS:
-                gw_fixtures_count[home_team][gw].append({
+                projection_data[home_team][gw] = {
                     "display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)",
                     "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')),
-                    "xG": home_xg,
-                    "CS": home_cs_prob
-                })
+                    "xG": home_xg, "CS": home_cs_prob
+                }
             if away_team in PREMIER_LEAGUE_TEAMS:
-                gw_fixtures_count[away_team][gw].append({
+                 projection_data[away_team][gw] = {
                     "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
                     "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
-                    "xG": away_xg,
-                    "CS": away_cs_prob
-                })
-
-    # Now process the fixtures to create projection_data with DGW/BGW flags
-    for team in PREMIER_LEAGUE_TEAMS:
-        for gw in gw_range:
-            gw_col = f"GW{gw}"
-            fixtures = gw_fixtures_count[team][gw]
-            
-            if len(fixtures) == 0:
-                # Blank Gameweek
-                projection_data[team][gw_col] = {
-                    "display": "BGW",
-                    "fdr": None,
-                    "xG": 0,
-                    "CS": 0,
-                    "is_bgw": True,
-                    "is_dgw": False
-                }
-            elif len(fixtures) == 1:
-                # Single fixture
-                projection_data[team][gw_col] = {
-                    **fixtures[0],
-                    "is_bgw": False,
-                    "is_dgw": False
-                }
-            else:
-                # Double (or more) Gameweek
-                # Combine display, sum xG and CS, average FDR
-                combined_display = " + ".join([f["display"] for f in fixtures])
-                avg_fdr = round(sum(f["fdr"] for f in fixtures) / len(fixtures))
-                total_xg = sum(f["xG"] for f in fixtures)
-                # For CS probability in DGW, calculate as 1-(1-CS1)*(1-CS2) for independent events
-                cs_prob = 1 - np.prod([1 - f["CS"] for f in fixtures])
-                
-                projection_data[team][gw_col] = {
-                    "display": f"DGW: {combined_display}",
-                    "fdr": avg_fdr,
-                    "xG": total_xg,
-                    "CS": cs_prob,
-                    "is_bgw": False,
-                    "is_dgw": True,
-                    "num_fixtures": len(fixtures)
+                    "xG": away_xg, "CS": away_cs_prob
                 }
 
     df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
@@ -190,9 +143,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
         fdr_sum, xg_sum, cs_sum = 0, 0, 0
         for gw_col, cell_data in row.items():
             if gw_col != free_hit_col and isinstance(cell_data, dict):
-                fdr_value = cell_data.get('fdr')
-                if fdr_value is not None:  # Don't count BGW in total difficulty
-                    fdr_sum += fdr_value
+                fdr_sum += cell_data.get('fdr', 0)
                 xg_sum += cell_data.get('xG', 0)
                 cs_sum += cell_data.get('CS', 0)
         total_difficulty.append(fdr_sum)
@@ -220,81 +171,112 @@ def find_fixture_runs(fixtures_df, rating_dict, start_gw):
                 rating = rating_dict.get(home_team, {}).get('Final Rating')
                 all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
 
-    all_runs = {}
+    good_runs = {}
     for team, fixtures in all_fixtures.items():
-        runs = []
         current_run = []
-        for fixture in fixtures:
-            if fixture['gw'] < start_gw:
-                continue
-            if fixture['fdr'] <= 3:
+        for fixture in sorted(fixtures, key=lambda x: x['gw']):
+            if fixture['gw'] < start_gw: continue
+
+            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
                 current_run.append(fixture)
             else:
                 if len(current_run) >= 3:
-                    runs.append(current_run)
+                    if team not in good_runs: good_runs[team] = []
+                    good_runs[team].append(current_run)
                 current_run = []
+
         if len(current_run) >= 3:
-            runs.append(current_run)
-        if runs:
-            all_runs[team] = runs
+            if team not in good_runs: good_runs[team] = []
+            good_runs[team].append(current_run)
 
-    return all_runs
+    return good_runs
 
-# --- Streamlit UI ---
-def main():
-    st.set_page_config(page_title="FPL FDR Planner", layout="wide")
-    st.title("⚽ FPL Fixture Difficulty Planner (with DGW/BGW)")
+# --- Main Streamlit App ---
 
-    ratings_df, fixtures_df = load_data()
-    if ratings_df is None or fixtures_df is None:
-        return
+st.set_page_config(layout="wide")
+st.title("FPL Fixture Planner")
 
-    st.sidebar.header("Gameweek Range")
-    start_gw = st.sidebar.number_input("Start GW:", min_value=1, max_value=38, value=1)
-    end_gw = st.sidebar.number_input("End GW:", min_value=start_gw, max_value=38, value=10)
+# In your sidebar section
+with st.sidebar:
+    st.header("⚙️ Settings")
+    
+    # Manual clear cache button
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("🗑️ Clear Cache", use_container_width=True):
+            st.cache_data.clear()
+            st.cache_resource.clear()
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.success("✅ Cache cleared!")
+            st.rerun()
+    
+    with col2:
+        if st.button("🔄 Rerun", use_container_width=True):
+            st.rerun()
 
-    free_hit_checkbox = st.sidebar.checkbox("Exclude a GW (e.g. Free Hit)")
-    free_hit_gw = None
-    if free_hit_checkbox:
-        free_hit_gw = st.sidebar.number_input("GW to exclude:", min_value=start_gw, max_value=end_gw, value=start_gw)
+with st.expander("Glossary & How It Works"):
+    st.markdown(f"""
+    - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
+    - **xG:** Projected Goals. Higher is better for attackers.
+    - **xCS:** Expected Clean Sheets. Higher is better for defenders.
+    """)
+    
+ratings_df, fixtures_df = load_data()
 
+if ratings_df is not None and fixtures_df is not None:
+    st.sidebar.header("Controls")
+    col_start, col_end = st.sidebar.columns(2)
+    with col_start:
+        start_gw = st.number_input("Start GW:", min_value=25, max_value=38, value=25)
+    with col_end:
+        end_gw = st.number_input("End GW:", min_value=25, max_value=38, value=34)
+        
+    selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
+    
+    fh_options = [None] + list(range(start_gw, end_gw + 1))
+    free_hit_gw = st.sidebar.selectbox(
+        "Select Free Hit Gameweek (optional):",
+        options=fh_options,
+        format_func=lambda x: "None" if x is None else f"GW{x}"
+    )
+
+    # --- Generate Data ---
     master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
+
+    if selected_teams:
+        teams_to_show = [team for team in master_df.index if team in selected_teams]
+        master_df = master_df.loc[teams_to_show]
+
+    # --- Determine Columns to Display ---
     gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
+    if free_hit_gw:
+        gw_key = f'GW{free_hit_gw}'
+        if gw_key in gw_columns:
+            gw_columns.remove(gw_key)
 
-    tab1, tab2, tab3 = st.tabs(["📊 FDR", "⚽ xG", "🛡️ xCS"])
+    tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
 
-    # --- Tab 1: FDR with DGW/BGW ---
+    # --- Tab 1: FDR ---
     with tab1:
-        st.subheader("Fixture Difficulty Rating (Lower is easier)")
+        st.subheader("Fixture Difficulty Rating (Lower score is better)")
+        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
         
-        # Add legend for DGW/BGW
-        st.markdown("""
-        **Legend:**
-        - **BGW** = Blank Gameweek (no fixture)
-        - **DGW** = Double Gameweek (2+ fixtures)
-        - *Numbers in cells show FDR (1=easiest, 5=hardest)*
-        """)
+        column_order = ['Team', 'Total Difficulty'] + gw_columns
+        df_display = df_display[column_order]
         
-        df_display = master_df.sort_values(by='Total Difficulty').reset_index().rename(columns={'index': 'Team'})
-        
-        cols_to_display = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[cols_to_display]
-        
-        # Prepare data for grid
-        df_for_grid = df_display.copy()
+        # CREATE SEPARATE COLUMNS FOR DISPLAY TEXT AND FDR VALUES
+        df_for_grid = df_display[['Team', 'Total Difficulty']].copy()
         
         for col in gw_columns:
+            df_for_grid[col] = df_display[col]  # Keep original nested data
+            
+            # Create helper columns for display and FDR
             df_for_grid[f'{col}_display'] = df_display[col].apply(
                 lambda x: x['display'] if isinstance(x, dict) and 'display' in x else ''
             )
             df_for_grid[f'{col}_fdr'] = df_display[col].apply(
-                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x and x['fdr'] is not None else 3
-            )
-            df_for_grid[f'{col}_is_bgw'] = df_display[col].apply(
-                lambda x: x.get('is_bgw', False) if isinstance(x, dict) else False
-            )
-            df_for_grid[f'{col}_is_dgw'] = df_display[col].apply(
-                lambda x: x.get('is_dgw', False) if isinstance(x, dict) else False
+                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x else 3
             )
         
         gb = GridOptionsBuilder.from_dataframe(df_for_grid)
@@ -304,8 +286,6 @@ def main():
         for col in gw_columns:
             gb.configure_column(f'{col}_display', hide=True)
             gb.configure_column(f'{col}_fdr', hide=True)
-            gb.configure_column(f'{col}_is_bgw', hide=True)
-            gb.configure_column(f'{col}_is_dgw', hide=True)
         
         for col in gw_columns:
             value_formatter = f"""function(params) {{
@@ -313,49 +293,13 @@ def main():
             }}"""
             
             jscode_for_col = f"""function(params) {{
-                const isBGW = params.data['{col}_is_bgw'];
-                const isDGW = params.data['{col}_is_dgw'];
                 const fdrValue = params.data['{col}_fdr'];
-                
-                // BGW styling - dark gray
-                if (isBGW) {{
-                    return {{
-                        'backgroundColor': '#2c2c2c',
-                        'color': '#999999',
-                        'fontWeight': 'bold',
-                        'textAlign': 'center',
-                        'fontStyle': 'italic'
-                    }};
-                }}
-                
-                // DGW styling - add border/indicator
-                if (isDGW) {{
-                    const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
-                    const bgColor = colors[fdrValue] || '#444444';
-                    const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
-                    return {{
-                        'backgroundColor': bgColor,
-                        'color': textColor,
-                        'fontWeight': 'bold',
-                        'textAlign': 'center',
-                        'border': '3px solid #FFD700',  // Gold border for DGW
-                        'boxShadow': 'inset 0 0 5px rgba(255, 215, 0, 0.5)'
-                    }};
-                }}
-                
-                // Regular fixture styling
                 if (fdrValue !== undefined && fdrValue !== null) {{
                     const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
                     const bgColor = colors[fdrValue] || '#444444';
                     const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
-                    return {{
-                        'backgroundColor': bgColor,
-                        'color': textColor,
-                        'fontWeight': 'bold',
-                        'textAlign': 'center'
-                    }};
+                    return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold', 'textAlign': 'center'}};
                 }}
-                
                 return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
             }}"""
             
@@ -402,6 +346,7 @@ def main():
         gb.configure_column("Total Difficulty", hide=True)
         gb.configure_column("xCS", hide=True)
 
+        # FIXED JS CODE HERE
         jscode = JsCode("""function(params) { 
             const cellData = params.data[params.colDef.field]; 
             if (cellData && cellData.xG !== undefined) { 
@@ -493,6 +438,3 @@ def main():
             st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
     else:
         st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
-
-if __name__ == "__main__":
-    main()
