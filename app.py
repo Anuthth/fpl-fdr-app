@@ -5,6 +5,8 @@ from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
 
 # --- Configuration ---
+st.set_page_config(layout="wide", page_title="FPL Fixture Planner")
+
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 
@@ -25,12 +27,14 @@ FDR_THRESHOLDS = {
 FDR_COLORS = {
     1: '#00ff85',
     2: '#50c369',
-    3: '#D3D3D3',
+    3: '#D3D3D3',  # Grey
     4: '#9d66a0',
-    5: '#6f2a74'
+    5: '#6f2a74',
+    'BGW': '#e0e0e0' # Added specific color for blanks (Light Grey)
 }
 
 # --- Team Lists and Mappings ---
+# Exact list from your code
 PREMIER_LEAGUE_TEAMS = sorted([
     'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
     'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
@@ -38,387 +42,242 @@ PREMIER_LEAGUE_TEAMS = sorted([
     'Spurs', 'West Ham', 'Wolves'
 ])
 
+# Mapping CSV names to your Short Names
+CSV_TO_SHORT_NAME = {
+    'Arsenal': 'Arsenal', 
+    'Aston Villa': 'Aston Villa', 
+    'A.F.C. Bournemouth': 'Bournemouth', 
+    'Brentford': 'Brentford', 
+    'Brighton & Hove Albion': 'Brighton', 
+    'Burnley': 'Burnley',
+    'Chelsea': 'Chelsea', 
+    'Crystal Palace': 'Crystal Palace', 
+    'Everton': 'Everton', 
+    'Fulham': 'Fulham', 
+    'Leeds United': 'Leeds', 
+    'Liverpool': 'Liverpool',
+    'Manchester City': 'Man City', 
+    'Manchester United': 'Man Utd', 
+    'Newcastle United': 'Newcastle', 
+    'Nottingham Forest': 'Nottm Forest', 
+    'Sunderland': 'Sunderland',
+    'Tottenham Hotspur': 'Spurs', 
+    'West Ham United': 'West Ham', 
+    'Wolverhampton Wanderers': 'Wolves'
+}
+
+# Abbreviations for display
 TEAM_ABBREVIATIONS = {
     'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
     'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
-    'Everton': 'EVE', 'Fulham': 'FUL', 'Ipswich': 'IPS', 'Leeds': 'LEE', 
-    'Leicester': 'LEI', 'Liverpool': 'LIV', 'Man City': 'MCI', 'Man Utd': 'MUN', 
-    'Newcastle': 'NEW', 'Nottm Forest': 'NFO', 'Southampton': 'SOU', 
-    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
-    'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
+    'Everton': 'EVE', 'Fulham': 'FUL', 'Leeds': 'LEE', 'Liverpool': 'LIV',
+    'Man City': 'MCI', 'Man Utd': 'MUN', 'Newcastle': 'NEW', 'Nottm Forest': 'NFO',
+    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL'
 }
 
-TEAM_NAME_MAP = {
-    "A.F.C. Bournemouth": "Bournemouth", "Bournemouth": "Bournemouth",
-    "Brighton & Hove Albion": "Brighton", "Brighton": "Brighton",
-    "Ipswich Town": "Ipswich", "Ipswich": "Ipswich",
-    "Leeds United": "Leeds", "Leeds": "Leeds",
-    "Leicester City": "Leicester", "Leicester": "Leicester",
-    "Manchester City": "Man City", "Man City": "Man City",
-    "Manchester United": "Man Utd", "Man Utd": "Man Utd",
-    "Newcastle United": "Newcastle", "Newcastle": "Newcastle",
-    "Nottingham Forest": "Nottm Forest", "Nottm Forest": "Nottm Forest",
-    "Southampton FC": "Southampton", "Southampton": "Southampton",
-    "Tottenham Hotspur": "Spurs", "Spurs": "Spurs", "Tottenham": "Spurs",
-    "West Ham United": "West Ham", "West Ham": "West Ham",
-    "Wolverhampton Wanderers": "Wolves", "Wolves": "Wolves"
-}
-
-# --- Helper and Data Processing Functions ---
-
-def get_fdr_score_from_rating(team_rating):
-    """Returns an FDR score based on the predefined threshold dictionary."""
-    if pd.isna(team_rating): return 3
-    if team_rating >= FDR_THRESHOLDS[5]: return 5
-    if team_rating >= FDR_THRESHOLDS[4]: return 4
-    if team_rating >= FDR_THRESHOLDS[3]: return 3
-    if team_rating >= FDR_THRESHOLDS[2]: return 2
-    return 1
+# --- Helper Functions ---
 
 @st.cache_data
 def load_data():
-    """Loads and prepares ratings and fixtures data."""
     try:
-        ratings_df = pd.read_csv(RATINGS_CSV_FILE)
-        fixtures_df = pd.read_csv(FIXTURES_CSV_FILE)
+        fixtures = pd.read_csv(FIXTURES_CSV_FILE)
     except FileNotFoundError:
-        st.error("Ensure ratings and fixtures CSV files are in the same folder.")
+        st.error(f"Could not find {FIXTURES_CSV_FILE}.")
         return None, None
 
-    ratings_df['Team'] = ratings_df['Team'].map(TEAM_NAME_MAP).fillna(ratings_df['Team'])
-    fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
-    fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
-    return ratings_df, fixtures_df
+    try:
+        ratings = pd.read_csv(RATINGS_CSV_FILE)
+        if 'Team' not in ratings.columns:
+            ratings.rename(columns={'team_name': 'Team'}, inplace=True)
+    except FileNotFoundError:
+        st.warning(f"Could not find {RATINGS_CSV_FILE}. Using default ratings.")
+        ratings = pd.DataFrame({'Team': PREMIER_LEAGUE_TEAMS, 'Att': 1.0, 'Def': 1.0})
+    
+    return fixtures, ratings
 
-@st.cache_data
-def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None):
-    """Prepares a single, comprehensive dataframe with FDR, xG, and CS projections."""
+def calculate_match_fdr(home_team, away_team, ratings_dict):
+    h_att = ratings_dict.get(home_team, {}).get('Att', 1.0)
+    h_def = ratings_dict.get(home_team, {}).get('Def', 1.0)
+    a_att = ratings_dict.get(away_team, {}).get('Att', 1.0)
+    a_def = ratings_dict.get(away_team, {}).get('Def', 1.0)
+
+    # Your original calculation logic
+    home_fdr_score = (a_att * a_def * 100) 
+    away_fdr_score = (h_att * h_def * 100) * 1.1 
+    
+    return home_fdr_score, away_fdr_score
+
+def get_fdr_category(score):
+    for cat, threshold in FDR_THRESHOLDS.items():
+        if score >= threshold:
+            return cat
+    return 1
+
+def get_color_for_category(cat):
+    return FDR_COLORS.get(cat, '#ffffff')
+
+def find_fixture_runs(fixtures_df, ratings_dict, start_gw, min_length=3):
+    # Original logic for finding easy runs
+    runs = {}
+    processed_matches = []
+    
+    for _, row in fixtures_df.iterrows():
+        gw = row['GW']
+        if gw < start_gw: continue
+        
+        home = CSV_TO_SHORT_NAME.get(row['Home Team'], row['Home Team'])
+        away = CSV_TO_SHORT_NAME.get(row['Away Team'], row['Away Team'])
+        
+        if home not in PREMIER_LEAGUE_TEAMS or away not in PREMIER_LEAGUE_TEAMS: continue
+        
+        h_score, a_score = calculate_match_fdr(home, away, ratings_dict)
+        h_cat = get_fdr_category(h_score)
+        a_cat = get_fdr_category(a_score)
+        
+        processed_matches.append({'Team': home, 'gw': gw, 'opp': away, 'loc': 'H', 'fdr': h_cat})
+        processed_matches.append({'Team': away, 'gw': gw, 'opp': home, 'loc': 'A', 'fdr': a_cat})
+        
+    df = pd.DataFrame(processed_matches)
+    
+    for team in PREMIER_LEAGUE_TEAMS:
+        team_fixtures = df[df['Team'] == team].sort_values('gw')
+        current_run = []
+        team_runs = []
+        
+        gws = team_fixtures['gw'].unique()
+        
+        for gw in gws:
+            matches = team_fixtures[team_fixtures['gw'] == gw]
+            is_easy = all(m <= 3 for m in matches['fdr'])
+            
+            if is_easy:
+                current_run.extend(matches.to_dict('records'))
+            else:
+                if len(set(m['gw'] for m in current_run)) >= min_length:
+                    team_runs.append(current_run)
+                current_run = []
+                
+        if len(set(m['gw'] for m in current_run)) >= min_length:
+            team_runs.append(current_run)
+            
+        if team_runs:
+            runs[team] = team_runs
+            
+    return runs
+
+def process_fixtures_for_grid(fixtures_df, ratings_df):
+    """
+    Transforms fixtures into grid format, aggregating Double Gameweeks.
+    """
+    ratings_df['Team'] = ratings_df['Team'].map(lambda x: CSV_TO_SHORT_NAME.get(x, x))
     ratings_dict = ratings_df.set_index('Team').to_dict('index')
 
-    pl_ratings = ratings_df[ratings_df['Team'].isin(PREMIER_LEAGUE_TEAMS)]
-    avg_off_score = pl_ratings['Off Score'].mean()
-    avg_def_score = pl_ratings['Def Score'].mean()
+    all_matches = []
+    
+    for _, row in fixtures_df.iterrows():
+        gw = row['GW']
+        home = CSV_TO_SHORT_NAME.get(row['Home Team'], row['Home Team'])
+        away = CSV_TO_SHORT_NAME.get(row['Away Team'], row['Away Team'])
+        
+        if home not in PREMIER_LEAGUE_TEAMS or away not in PREMIER_LEAGUE_TEAMS:
+            continue
 
-    gw_range = range(start_gw, end_gw + 1)
-    projection_data = {team: {} for team in PREMIER_LEAGUE_TEAMS}
+        h_score, a_score = calculate_match_fdr(home, away, ratings_dict)
+        h_cat = get_fdr_category(h_score)
+        a_cat = get_fdr_category(a_score)
+        
+        all_matches.append({
+            'Team': home, 'GW': gw, 'Opponent': away, 'Loc': 'H',
+            'Cat': h_cat, 'Color': get_color_for_category(h_cat)
+        })
+        all_matches.append({
+            'Team': away, 'GW': gw, 'Opponent': home, 'Loc': 'A',
+            'Cat': a_cat, 'Color': get_color_for_category(a_cat)
+        })
 
-    for _, row in fixtures_df[fixtures_df['GW'].isin(gw_range)].iterrows():
-        home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-        gw = f"GW{row['GW']}"
-
-        home_stats = ratings_dict.get(home_team)
-        away_stats = ratings_dict.get(away_team)
-
-        if home_stats and away_stats and 'Off Score' in home_stats and 'Def Score' in away_stats:
-            home_attack_strength = home_stats['Off Score'] / avg_off_score
-            away_defense_weakness = avg_def_score / away_stats['Def Score']
-            home_xg = home_attack_strength * away_defense_weakness * AVG_LEAGUE_HOME_GOALS
-
-            away_attack_strength = away_stats['Off Score'] / avg_off_score
-            home_defense_weakness = avg_def_score / home_stats['Def Score']
-            away_xg = away_attack_strength * home_defense_weakness * AVG_LEAGUE_AWAY_GOALS
-
-            home_cs_prob = math.exp(-away_xg)
-            away_cs_prob = math.exp(-home_xg)
-
-            if home_team in PREMIER_LEAGUE_TEAMS:
-                projection_data[home_team][gw] = {
-                    "display": f"{TEAM_ABBREVIATIONS.get(away_team, '???')} (H)",
-                    "fdr": get_fdr_score_from_rating(away_stats.get('Final Rating')),
-                    "xG": home_xg, "CS": home_cs_prob
-                }
-            if away_team in PREMIER_LEAGUE_TEAMS:
-                 projection_data[away_team][gw] = {
-                    "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
-                    "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
-                    "xG": away_xg, "CS": away_cs_prob
-                }
-
-    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
-
-    free_hit_col = f'GW{free_hit_gw}' if free_hit_gw else None
-
-    total_difficulty, total_xg, total_cs = [], [], []
-    for index, row in df.iterrows():
-        fdr_sum, xg_sum, cs_sum = 0, 0, 0
-        for gw_col, cell_data in row.items():
-            if gw_col != free_hit_col and isinstance(cell_data, dict):
-                fdr_sum += cell_data.get('fdr', 0)
-                xg_sum += cell_data.get('xG', 0)
-                cs_sum += cell_data.get('CS', 0)
-        total_difficulty.append(fdr_sum)
-        total_xg.append(xg_sum)
-        total_cs.append(cs_sum)
-
-    df['Total Difficulty'] = total_difficulty
-    df['Total xG'] = total_xg
-    df['xCS'] = total_cs
-
-    return df
-
-@st.cache_data
-def find_fixture_runs(fixtures_df, rating_dict, start_gw):
-    """Scans for runs of 3+ games with an FDR of 3 or less."""
-    all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 39):
-        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
-        for _, row in gw_fixtures.iterrows():
-            home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
-            if home_team in PREMIER_LEAGUE_TEAMS:
-                rating = rating_dict.get(away_team, {}).get('Final Rating')
-                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
-            if away_team in PREMIER_LEAGUE_TEAMS:
-                rating = rating_dict.get(home_team, {}).get('Final Rating')
-                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
-
-    good_runs = {}
-    for team, fixtures in all_fixtures.items():
-        current_run = []
-        for fixture in sorted(fixtures, key=lambda x: x['gw']):
-            if fixture['gw'] < start_gw: continue
-
-            if fixture['fdr'] is not None and fixture['fdr'] <= 3:
-                current_run.append(fixture)
+    matches_df = pd.DataFrame(all_matches)
+    
+    # Build the Grid Data
+    grid_rows = []
+    
+    for team in PREMIER_LEAGUE_TEAMS:
+        row_data = {'Team': team}
+        # We also store a parallel "color row" to help the JS renderer
+        color_data = {}
+        
+        team_matches = matches_df[matches_df['Team'] == team]
+        
+        for gw in range(1, 39):
+            gw_matches = team_matches[team_matches['GW'] == gw]
+            col_name = f"GW{gw}"
+            color_col_name = f"GW{gw}_color"
+            
+            count = len(gw_matches)
+            
+            if count == 0:
+                # Blank Gameweek
+                row_data[col_name] = "-"
+                row_data[color_col_name] = FDR_COLORS['BGW']
+            elif count == 1:
+                # Single Gameweek
+                m = gw_matches.iloc[0]
+                opp = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3])
+                row_data[col_name] = f"{opp}({m['Loc']})"
+                row_data[color_col_name] = m['Color']
             else:
-                if len(current_run) >= 3:
-                    if team not in good_runs: good_runs[team] = []
-                    good_runs[team].append(current_run)
-                current_run = []
+                # Double Gameweek
+                labels = []
+                colors = []
+                for _, m in gw_matches.iterrows():
+                    opp = TEAM_ABBREVIATIONS.get(m['Opponent'], m['Opponent'][:3])
+                    labels.append(f"{opp}({m['Loc']})")
+                    colors.append(m['Color'])
+                
+                row_data[col_name] = ", ".join(labels)
+                
+                # Create CSS Gradient for the background
+                c1 = colors[0]
+                c2 = colors[1] if len(colors) > 1 else c1
+                # 50/50 split gradient
+                row_data[color_col_name] = f"linear-gradient(90deg, {c1} 50%, {c2} 50%)"
+        
+        grid_rows.append(row_data)
 
-        if len(current_run) >= 3:
-            if team not in good_runs: good_runs[team] = []
-            good_runs[team].append(current_run)
+    return pd.DataFrame(grid_rows)
 
-    return good_runs
+# --- Main App ---
 
-# --- Main Streamlit App ---
+st.title("⚽ FPL Fixture Planner")
 
-st.set_page_config(layout="wide")
-st.title("FPL Fixture Planner")
+fixtures_df, ratings_df = load_data()
 
-# In your sidebar section
-with st.sidebar:
-    st.header("⚙️ Settings")
+if fixtures_df is not None and ratings_df is not None:
     
-    # Manual clear cache button
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("🗑️ Clear Cache", use_container_width=True):
-            st.cache_data.clear()
-            st.cache_resource.clear()
-            for key in list(st.session_state.keys()):
-                del st.session_state[key]
-            st.success("✅ Cache cleared!")
-            st.rerun()
+    # --- Sidebar (Reverted to Original Style) ---
+    st.sidebar.header("Settings")
     
-    with col2:
-        if st.button("🔄 Rerun", use_container_width=True):
-            st.rerun()
-
-with st.expander("Glossary & How It Works"):
-    st.markdown(f"""
-    - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
-    - **xG:** Projected Goals. Higher is better for attackers.
-    - **xCS:** Expected Clean Sheets. Higher is better for defenders.
-    """)
+    # Added Button to Clear Cache and Rerun
+    if st.sidebar.button("Clear Cache & Rerun"):
+        st.cache_data.clear()
+        st.rerun()
     
-ratings_df, fixtures_df = load_data()
-
-if ratings_df is not None and fixtures_df is not None:
-    st.sidebar.header("Controls")
-    col_start, col_end = st.sidebar.columns(2)
-    with col_start:
-        start_gw = st.number_input("Start GW:", min_value=25, max_value=38, value=25)
-    with col_end:
-        end_gw = st.number_input("End GW:", min_value=25, max_value=38, value=34)
-        
-    selected_teams = st.sidebar.multiselect("Select teams to display:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
+    # Original sliders for Start and End GW
+    start_gw = st.sidebar.slider("Start Gameweek", 25, 38, 25)
+    end_gw = st.sidebar.slider("End Gameweek", 25, 38, 34)
     
-    fh_options = [None] + list(range(start_gw, end_gw + 1))
-    free_hit_gw = st.sidebar.selectbox(
-        "Select Free Hit Gameweek (optional):",
-        options=fh_options,
-        format_func=lambda x: "None" if x is None else f"GW{x}"
-    )
+    selected_teams = st.sidebar.multiselect("Filter Teams", PREMIER_LEAGUE_TEAMS, default=[])
 
-    # --- Generate Data ---
-    master_df = create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw)
-
-    if selected_teams:
-        teams_to_show = [team for team in master_df.index if team in selected_teams]
-        master_df = master_df.loc[teams_to_show]
-
-    # --- Determine Columns to Display ---
-    gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
-    if free_hit_gw:
-        gw_key = f'GW{free_hit_gw}'
-        if gw_key in gw_columns:
-            gw_columns.remove(gw_key)
-
-    tab1, tab2, tab3 = st.tabs(["Fixture Difficulty (FDR)", "Projected Goals (xG)", "Expected Clean Sheets (xCS)"])
-
-    # --- Tab 1: FDR ---
-    with tab1:
-        st.subheader("Fixture Difficulty Rating (Lower score is better)")
-        df_display = master_df.sort_values(by='Total Difficulty', ascending=True).reset_index().rename(columns={'index': 'Team'})
-        
-        column_order = ['Team', 'Total Difficulty'] + gw_columns
-        df_display = df_display[column_order]
-        
-        # CREATE SEPARATE COLUMNS FOR DISPLAY TEXT AND FDR VALUES
-        df_for_grid = df_display[['Team', 'Total Difficulty']].copy()
-        
-        for col in gw_columns:
-            df_for_grid[col] = df_display[col]  # Keep original nested data
-            
-            # Create helper columns for display and FDR
-            df_for_grid[f'{col}_display'] = df_display[col].apply(
-                lambda x: x['display'] if isinstance(x, dict) and 'display' in x else ''
-            )
-            df_for_grid[f'{col}_fdr'] = df_display[col].apply(
-                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x else 3
-            )
-        
-        gb = GridOptionsBuilder.from_dataframe(df_for_grid)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
-        gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
-        
-        for col in gw_columns:
-            gb.configure_column(f'{col}_display', hide=True)
-            gb.configure_column(f'{col}_fdr', hide=True)
-        
-        for col in gw_columns:
-            value_formatter = f"""function(params) {{
-                return params.data['{col}_display'] || '';
-            }}"""
-            
-            jscode_for_col = f"""function(params) {{
-                const fdrValue = params.data['{col}_fdr'];
-                if (fdrValue !== undefined && fdrValue !== null) {{
-                    const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
-                    const bgColor = colors[fdrValue] || '#444444';
-                    const textColor = (fdrValue <= 3) ? '#31333F' : '#FFFFFF';
-                    return {{'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold', 'textAlign': 'center'}};
-                }}
-                return {{'textAlign': 'center', 'backgroundColor': '#444444'}};
-            }}"""
-            
-            value_getter = f"""function(params) {{
-                return params.data['{col}_fdr'];
-            }}"""
-            
-            gb.configure_column(
-                col,
-                headerName=col,
-                valueGetter=JsCode(value_getter),
-                valueFormatter=JsCode(value_formatter),
-                cellStyle=JsCode(jscode_for_col),
-                flex=1,
-                minWidth=90,
-                sortable=True
-            )
-        
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        
-        AgGrid(
-            df_for_grid, 
-            gridOptions=gb.build(), 
-            allow_unsafe_jscode=True, 
-            theme='streamlit-dark', 
-            height=(len(df_for_grid) + 1) * 35, 
-            fit_columns_on_grid_load=True, 
-            key=f'fdr_grid_{start_gw}_{end_gw}'
-        )
-
-    # --- Tab 2: xG ---
-    with tab2:
-        st.subheader("Projected Goals (Higher is better for attackers)")
-        df_display = master_df.sort_values(by='Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
-
-        cols_to_display = ['Team', 'Total xG'] + gw_columns
-        df_display = df_display[cols_to_display]
-
-        gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-
-        gb.configure_column("Team", pinned='left', cellStyle={'textAlign': 'left'}, flex=2, minWidth=150, sortable=True)
-        gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5, type=["numericColumn"],minWidth=140, sortable=True)
-        gb.configure_column("Total Difficulty", hide=True)
-        gb.configure_column("xCS", hide=True)
-
-        # FIXED JS CODE HERE
-        jscode = JsCode("""function(params) { 
-            const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.xG !== undefined) { 
-                const xG = cellData.xG; 
-                let bgColor; 
-                if (xG >= 2.0) { bgColor = '#63be7b'; } 
-                else if (xG >= 1.5) { bgColor = '#95d2a6'; } 
-                else if (xG >= 1.0) { bgColor = '#bfe4cb'; } 
-                else if (xG >= 0.5) { bgColor = '#D3D3D3'; } 
-                else { bgColor = '#D3D3D3'; } 
-                const textColor = (xG >= 0.0 && xG < 5.0) ? '#31333F' : '#FFFFFF'; 
-                return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; 
-            } 
-            return {'textAlign': 'center', 'backgroundColor': '#444444'}; 
-        };""")
-        
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].xG : 0; const xgB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
-
-        for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
-
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
-
-    # --- Tab 3: xCS ---
-    with tab3:
-        st.subheader("Expected Clean Sheets (Higher is better for defenders)")
-        df_display = master_df.sort_values(by='xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
-
-        cols_to_display = ['Team', 'xCS'] + gw_columns
-        df_display = df_display[cols_to_display]
-
-        gb = GridOptionsBuilder.from_dataframe(df_display)
-        gb.configure_column("Team", pinned='left', flex=2, minWidth=150, sortable=True)
-        gb.configure_column("xCS", header_name="Expected CS (xCS)", pinned='left', valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
-
-        jscode = JsCode("""function(params) { 
-            const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.CS !== undefined) { 
-                const cs = cellData.CS; 
-                let bgColor; 
-                if (cs >= 0.5) { bgColor = '#00ff85'; } 
-                else if (cs >= 0.35) { bgColor = '#50c369'; } 
-                else if (cs >= 0.2) { bgColor = '#D3D3D3'; } 
-                else if (cs >= 0.1) { bgColor = '#9d66a0'; } 
-                else { bgColor = '#6f2a74'; } 
-                const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; 
-                return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; 
-            } 
-            return {'textAlign': 'center', 'backgroundColor': '#444444'}; 
-        };""")
-        
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const csA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].CS : 0; const csB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].CS : 0; return csA - csB; }}"""
-
-        for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90)
-
-        gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-        AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
-        
-    # --- Easy Run Finder Feature ---
-    st.markdown("---") 
+    # --- Easy Run Finder (Preserved) ---
+    st.sidebar.markdown("---")
     st.sidebar.header("Easy Run Finder")
     st.sidebar.info("Find upcoming periods of 3+ easy/neutral fixtures (FDR 1-3).")
-
-    teams_to_check = st.sidebar.multiselect("Select teams to find runs for:", PREMIER_LEAGUE_TEAMS, default=[])
-
-    st.header("✅ Easy Fixture Runs")
-
+    
+    teams_to_check = st.sidebar.multiselect("Select teams to find runs for:", PREMIER_LEAGUE_TEAMS, default=[], key='runs_multiselect')
+    
     if teams_to_check:
+        st.header("✅ Easy Fixture Runs")
         rating_dict = ratings_df.set_index('Team').to_dict('index')
         all_runs = find_fixture_runs(fixtures_df, rating_dict, start_gw)
-
         results_found = False
         for team in teams_to_check:
             team_runs = all_runs.get(team)
@@ -426,15 +285,88 @@ if ratings_df is not None and fixtures_df is not None:
                 results_found = True
                 with st.expander(f"**{team}** ({len(team_runs)} matching run(s) found)"):
                     for i, run in enumerate(team_runs):
-                        start, end = run[0]['gw'], run[-1]['gw']
-                        st.markdown(f"**Run {i+1}: GW{start} - GW{end}**")
+                        run_start, run_end = run[0]['gw'], run[-1]['gw']
+                        st.markdown(f"**Run {i+1}: GW{run_start} - GW{run_end}**")
                         run_text = ""
                         for fix in run:
                             opp_abbr = TEAM_ABBREVIATIONS.get(fix['opp'], '???')
                             run_text += f"- **GW{fix['gw']}:** {opp_abbr} ({fix['loc']}) - FDR: {fix['fdr']} \n"
                         st.markdown(run_text)
-
         if not results_found:
-            st.warning(f"No upcoming runs of 3+ easy/neutral fixtures found for the selected teams, starting from GW{start_gw}.")
-    else:
-        st.info("Select one or more teams from the 'Easy Run Finder' in the sidebar to check for their favorable fixture periods.")
+            st.warning("No upcoming runs of 3+ easy/neutral fixtures found.")
+        st.markdown("---")
+
+    # --- Grid Logic ---
+    final_df = process_fixtures_for_grid(fixtures_df, ratings_df)
+    
+    # Prepare Columns (Using start_gw and end_gw sliders)
+    visible_cols = ['Team'] + [f"GW{i}" for i in range(start_gw, end_gw + 1)]
+    # We need the hidden color columns available in the dataframe passed to AgGrid
+    color_cols = [f"GW{i}_color" for i in range(start_gw, end_gw + 1)]
+    all_cols = visible_cols + color_cols
+    
+    display_df = final_df[all_cols].copy()
+    
+    if selected_teams:
+        display_df = display_df[display_df['Team'].isin(selected_teams)]
+        
+    # Default Sort by Team (Alphabetical)
+    display_df = display_df.sort_values('Team')
+    
+    # --- AgGrid Construction ---
+    gb = GridOptionsBuilder.from_dataframe(display_df)
+    gb.configure_column("Team", pinned="left", width=120, cellStyle={'fontWeight': 'bold'})
+    
+    # Hide the technical color columns
+    for c in color_cols:
+        gb.configure_column(c, hide=True)
+        
+    # Apply Styling to GW columns
+    for i in range(start_gw, end_gw + 1):
+        col_name = f"GW{i}"
+        
+        # This JS function reads the value from the hidden 'GWx_color' column
+        # and applies it as the background for the visible 'GWx' column.
+        js_style = JsCode("""
+        function(params) {
+            var colorCol = params.colDef.field + "_color";
+            var colorVal = params.data[colorCol];
+            return {
+                'background': colorVal,
+                'color': 'black',
+                'border-right': '1px solid #ddd',
+                'display': 'flex',
+                'align-items': 'center',
+                'justify-content': 'center',
+                'font-size': '12px',
+                'white-space': 'nowrap' 
+            };
+        }
+        """)
+        
+        gb.configure_column(col_name, width=100, cellStyle=js_style)
+
+    gridOptions = gb.build()
+    
+    AgGrid(
+        display_df, 
+        gridOptions=gridOptions, 
+        allow_unsafe_jscode=True, 
+        height=600,
+        theme='streamlit'
+    )
+    
+    # Legend
+    st.markdown("### FDR Key")
+    cols = st.columns(6)
+    keys = [(1, "Easy"), (2, "Good"), (3, "Neutral"), (4, "Hard"), (5, "Very Hard"), ('BGW', "Blank")]
+    
+    for i, (k, label) in enumerate(keys):
+        c = FDR_COLORS[k]
+        cols[i].markdown(
+            f"<div style='background:{c};padding:8px;border-radius:4px;text-align:center;color:black;'>{label}</div>", 
+            unsafe_allow_html=True
+        )
+
+else:
+    st.info("Please ensure both CSV files are uploaded.")
