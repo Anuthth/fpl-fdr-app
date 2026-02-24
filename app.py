@@ -137,23 +137,23 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
                     "xG": away_xg, "CS": away_cs_prob
                 }
 
-    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'{i}' for i in _range])
+    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
 
-    free_hit_col = f'{free_hit_}' if free_hit_ else None
+    free_hit_col = f'GW{free_hit_gw}' if free_hit_gw else None
 
     total_difficulty, total_xg, total_cs = [], [], []
     for index, row in df.iterrows():
         fdr_sum, xg_sum, cs_sum = 0, 0, 0
-        for _col, cell_data in row.items():
-            if _col != free_hit_col:
+        for gw_col, cell_data in row.items():
+            if gw_col != free_hit_col:
                 if isinstance(cell_data, dict):
                     fdr_sum += cell_data.get('fdr', 0)
                     xg_sum += cell_data.get('xG', 0)
                     cs_sum += cell_data.get('CS', 0)
                 else:
-                    # B PENALTY logic applied here:
-                    # If there's no fixture data for this , penalize the team by adding to the difficulty sum
-                    fdr_sum += B_PENALTY_FDR
+                    # BGW PENALTY logic applied here:
+                    # If there's no fixture data for this GW, penalize the team by adding to the difficulty sum
+                    fdr_sum += BGW_PENALTY_FDR
                     
         total_difficulty.append(fdr_sum)
         total_xg.append(xg_sum)
@@ -166,25 +166,25 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
     return df
 
 @st.cache_data
-def find_fixture_runs(fixtures_df, rating_dict, start_):
+def find_fixture_runs(fixtures_df, rating_dict, start_gw):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
     all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 38):
-        _fixtures = fixtures_df[fixtures_df[''] == ]
-        for _, row in _fixtures.iterrows():
+    for gw in range(1, 39):
+        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
+        for _, row in gw_fixtures.iterrows():
             home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
             if home_team in PREMIER_LEAGUE_TEAMS:
                 rating = rating_dict.get(away_team, {}).get('Final Rating')
-                all_fixtures[home_team].append({"": , "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
+                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
             if away_team in PREMIER_LEAGUE_TEAMS:
                 rating = rating_dict.get(home_team, {}).get('Final Rating')
-                all_fixtures[away_team].append({"": , "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
+                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
 
     good_runs = {}
     for team, fixtures in all_fixtures.items():
         current_run = []
-        for fixture in sorted(fixtures, key=lambda x: x['']):
-            if fixture[''] < start_: continue
+        for fixture in sorted(fixtures, key=lambda x: x['gw']):
+            if fixture['gw'] < start_gw: continue
 
             if fixture['fdr'] is not None and fixture['fdr'] <= 3:
                 current_run.append(fixture)
@@ -229,7 +229,7 @@ with st.expander("Glossary & How It Works"):
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
-    - **B Penalty:** Teams without a fixture in a gameweek are penalized heavily in Total Difficulty calculations.
+    - **BGW Penalty:** Teams without a fixture in a gameweek are penalized heavily in Total Difficulty calculations.
     """)
     
 ratings_df, fixtures_df = load_data()
@@ -238,7 +238,7 @@ if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
     col_start, col_end = st.sidebar.columns(2)
     with col_start:
-        start_ = st.number_input("Start GW:", min_value=28, max_value=38, value=28)
+        start_gw = st.number_input("Start GW:", min_value=28, max_value=38, value=28)
     with col_end:
         end_gw = st.number_input("End GW:", min_value=28, max_value=38, value=38)
         
