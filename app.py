@@ -169,7 +169,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
 def find_fixture_runs(fixtures_df, rating_dict, start_):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
     all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for in range(1, 39):
+    for gw in range(1, 38):
         _fixtures = fixtures_df[fixtures_df[''] == ]
         for _, row in _fixtures.iterrows():
             home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
