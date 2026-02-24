@@ -13,7 +13,7 @@ AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
 
 # Penalty added to "Total Difficulty" for a Blank Gameweek (BGW)
-BGW_PENALTY_FDR = 5.0
+BGW_PENALTY_FDR = 6.0
 
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
