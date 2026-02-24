@@ -131,7 +131,7 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
                     "xG": home_xg, "CS": home_cs_prob
                 }
             if away_team in PREMIER_LEAGUE_TEAMS:
-                 projection_data[away_team][] = {
+                 projection_data[away_team][gw] = {
                     "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
                     "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
                     "xG": away_xg, "CS": away_cs_prob
