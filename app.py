@@ -12,6 +12,9 @@ FIXTURES_CSV_FILE = "Fixtures202526.csv"
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
 
+# Penalty added to "Total Difficulty" for a Blank Gameweek (BGW)
+BGW_PENALTY_FDR = 5.0
+
 # Your defined FDR thresholds
 FDR_THRESHOLDS = {
     5: 120.0,
@@ -128,24 +131,30 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
                     "xG": home_xg, "CS": home_cs_prob
                 }
             if away_team in PREMIER_LEAGUE_TEAMS:
-                 projection_data[away_team][gw] = {
+                 projection_data[away_team][] = {
                     "display": f"{TEAM_ABBREVIATIONS.get(home_team, '???')} (A)",
                     "fdr": get_fdr_score_from_rating(home_stats.get('Final Rating')),
                     "xG": away_xg, "CS": away_cs_prob
                 }
 
-    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'GW{i}' for i in gw_range])
+    df = pd.DataFrame.from_dict(projection_data, orient='index').reindex(columns=[f'{i}' for i in _range])
 
-    free_hit_col = f'GW{free_hit_gw}' if free_hit_gw else None
+    free_hit_col = f'{free_hit_}' if free_hit_ else None
 
     total_difficulty, total_xg, total_cs = [], [], []
     for index, row in df.iterrows():
         fdr_sum, xg_sum, cs_sum = 0, 0, 0
-        for gw_col, cell_data in row.items():
-            if gw_col != free_hit_col and isinstance(cell_data, dict):
-                fdr_sum += cell_data.get('fdr', 0)
-                xg_sum += cell_data.get('xG', 0)
-                cs_sum += cell_data.get('CS', 0)
+        for _col, cell_data in row.items():
+            if _col != free_hit_col:
+                if isinstance(cell_data, dict):
+                    fdr_sum += cell_data.get('fdr', 0)
+                    xg_sum += cell_data.get('xG', 0)
+                    cs_sum += cell_data.get('CS', 0)
+                else:
+                    # B PENALTY logic applied here:
+                    # If there's no fixture data for this , penalize the team by adding to the difficulty sum
+                    fdr_sum += B_PENALTY_FDR
+                    
         total_difficulty.append(fdr_sum)
         total_xg.append(xg_sum)
         total_cs.append(cs_sum)
@@ -157,25 +166,25 @@ def create_all_data(fixtures_df, start_gw, end_gw, ratings_df, free_hit_gw=None)
     return df
 
 @st.cache_data
-def find_fixture_runs(fixtures_df, rating_dict, start_gw):
+def find_fixture_runs(fixtures_df, rating_dict, start_):
     """Scans for runs of 3+ games with an FDR of 3 or less."""
     all_fixtures = {team: [] for team in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 39):
-        gw_fixtures = fixtures_df[fixtures_df['GW'] == gw]
-        for _, row in gw_fixtures.iterrows():
+    for  in range(1, 39):
+        _fixtures = fixtures_df[fixtures_df[''] == ]
+        for _, row in _fixtures.iterrows():
             home_team, away_team = row['HomeTeam_std'], row['AwayTeam_std']
             if home_team in PREMIER_LEAGUE_TEAMS:
                 rating = rating_dict.get(away_team, {}).get('Final Rating')
-                all_fixtures[home_team].append({"gw": gw, "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
+                all_fixtures[home_team].append({"": , "opp": away_team, "loc": "H", "fdr": get_fdr_score_from_rating(rating)})
             if away_team in PREMIER_LEAGUE_TEAMS:
                 rating = rating_dict.get(home_team, {}).get('Final Rating')
-                all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
+                all_fixtures[away_team].append({"": , "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
 
     good_runs = {}
     for team, fixtures in all_fixtures.items():
         current_run = []
-        for fixture in sorted(fixtures, key=lambda x: x['gw']):
-            if fixture['gw'] < start_gw: continue
+        for fixture in sorted(fixtures, key=lambda x: x['']):
+            if fixture[''] < start_: continue
 
             if fixture['fdr'] is not None and fixture['fdr'] <= 3:
                 current_run.append(fixture)
@@ -220,6 +229,7 @@ with st.expander("Glossary & How It Works"):
     - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
     - **xG:** Projected Goals. Higher is better for attackers.
     - **xCS:** Expected Clean Sheets. Higher is better for defenders.
+    - **B Penalty:** Teams without a fixture in a gameweek are penalized heavily in Total Difficulty calculations.
     """)
     
 ratings_df, fixtures_df = load_data()
@@ -228,7 +238,7 @@ if ratings_df is not None and fixtures_df is not None:
     st.sidebar.header("Controls")
     col_start, col_end = st.sidebar.columns(2)
     with col_start:
-        start_gw = st.number_input("Start GW:", min_value=28, max_value=38, value=28)
+        start_ = st.number_input("Start GW:", min_value=28, max_value=38, value=28)
     with col_end:
         end_gw = st.number_input("End GW:", min_value=28, max_value=38, value=38)
         
@@ -271,12 +281,12 @@ if ratings_df is not None and fixtures_df is not None:
         for col in gw_columns:
             df_for_grid[col] = df_display[col]  # Keep original nested data
             
-            # Create helper columns for display and FDR
+            # Create helper columns for display and FDR (Assign BGW if missing)
             df_for_grid[f'{col}_display'] = df_display[col].apply(
-                lambda x: x['display'] if isinstance(x, dict) and 'display' in x else ''
+                lambda x: x['display'] if isinstance(x, dict) and 'display' in x else 'BGW'
             )
             df_for_grid[f'{col}_fdr'] = df_display[col].apply(
-                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x else 3
+                lambda x: x['fdr'] if isinstance(x, dict) and 'fdr' in x else BGW_PENALTY_FDR
             )
         
         gb = GridOptionsBuilder.from_dataframe(df_for_grid)
@@ -293,6 +303,10 @@ if ratings_df is not None and fixtures_df is not None:
             }}"""
             
             jscode_for_col = f"""function(params) {{
+                const display = params.data['{col}_display'];
+                if (display === 'BGW') {{
+                    return {{'backgroundColor': '#1E1E1E', 'color': '#FF4B4B', 'fontWeight': 'bold', 'textAlign': 'center', 'border': '1px solid #FF4B4B'}};
+                }}
                 const fdrValue = params.data['{col}_fdr'];
                 if (fdrValue !== undefined && fdrValue !== null) {{
                     const colors = {{1: '#00ff85', 2: '#50c369', 3: '#D3D3D3', 4: '#9d66a0', 5: '#6f2a74'}};
@@ -346,10 +360,9 @@ if ratings_df is not None and fixtures_df is not None:
         gb.configure_column("Total Difficulty", hide=True)
         gb.configure_column("xCS", hide=True)
 
-        # FIXED JS CODE HERE
         jscode = JsCode("""function(params) { 
             const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.xG !== undefined) { 
+            if (cellData && typeof cellData === 'object' && cellData.xG !== undefined) { 
                 const xG = cellData.xG; 
                 let bgColor; 
                 if (xG >= 2.0) { bgColor = '#63be7b'; } 
@@ -360,13 +373,13 @@ if ratings_df is not None and fixtures_df is not None:
                 const textColor = (xG >= 0.0 && xG < 5.0) ? '#31333F' : '#FFFFFF'; 
                 return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; 
             } 
-            return {'textAlign': 'center', 'backgroundColor': '#444444'}; 
+            return {'textAlign': 'center', 'backgroundColor': '#1E1E1E', 'color': '#FF4B4B', 'fontWeight': 'bold', 'border': '1px solid #FF4B4B'}; 
         };""")
         
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].xG : 0; const xgB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
+        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const xgA = (nodeA.data['{gw_col}'] && typeof nodeA.data['{gw_col}'] === 'object') ? nodeA.data['{gw_col}'].xG : 0; const xgB = (nodeB.data['{gw_col}'] && typeof nodeB.data['{gw_col}'] === 'object') ? nodeB.data['{gw_col}'].xG : 0; return xgA - xgB; }}"""
 
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? data['{col}'].xG.toFixed(2) : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
+            gb.configure_column(col, headerName=col, valueGetter=f"(data['{col}'] && typeof data['{col}'] === 'object') ? data['{col}'].xG.toFixed(2) : 'BGW'", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90 )
 
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, fit_columns_on_grid_load=True, key=f'xg_grid_{start_gw}_{end_gw}')
 
@@ -384,7 +397,7 @@ if ratings_df is not None and fixtures_df is not None:
 
         jscode = JsCode("""function(params) { 
             const cellData = params.data[params.colDef.field]; 
-            if (cellData && cellData.CS !== undefined) { 
+            if (cellData && typeof cellData === 'object' && cellData.CS !== undefined) { 
                 const cs = cellData.CS; 
                 let bgColor; 
                 if (cs >= 0.5) { bgColor = '#00ff85'; } 
@@ -395,13 +408,13 @@ if ratings_df is not None and fixtures_df is not None:
                 const textColor = (cs >= 0.2 && cs < 0.35) ? '#31333F' : '#FFFFFF'; 
                 return {'backgroundColor': bgColor, 'color': textColor, 'fontWeight': 'bold'}; 
             } 
-            return {'textAlign': 'center', 'backgroundColor': '#444444'}; 
+            return {'textAlign': 'center', 'backgroundColor': '#1E1E1E', 'color': '#FF4B4B', 'fontWeight': 'bold', 'border': '1px solid #FF4B4B'}; 
         };""")
         
-        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const csA = nodeA.data['{gw_col}'] ? nodeA.data['{gw_col}'].CS : 0; const csB = nodeB.data['{gw_col}'] ? nodeB.data['{gw_col}'].CS : 0; return csA - csB; }}"""
+        comparator_template = """function(valueA, valueB, nodeA, nodeB) {{ const csA = (nodeA.data['{gw_col}'] && typeof nodeA.data['{gw_col}'] === 'object') ? nodeA.data['{gw_col}'].CS : 0; const csB = (nodeB.data['{gw_col}'] && typeof nodeB.data['{gw_col}'] === 'object') ? nodeB.data['{gw_col}'].CS : 0; return csA - csB; }}"""
 
         for col in gw_columns:
-            gb.configure_column(col, headerName=col, valueGetter=f"data['{col}'] ? (data['{col}'].CS * 100).toFixed(0) + '%' : ''", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90)
+            gb.configure_column(col, headerName=col, valueGetter=f"(data['{col}'] && typeof data['{col}'] === 'object') ? (data['{col}'].CS * 100).toFixed(0) + '%' : 'BGW'", comparator=JsCode(comparator_template.format(gw_col=col)), cellStyle=jscode, flex=1, minWidth=90)
 
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True, theme='streamlit-dark', height=(len(df_display) + 1) * 35, key=f'cs_grid_{start_gw}_{end_gw}')
