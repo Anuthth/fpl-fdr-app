@@ -4,6 +4,7 @@ import numpy as np
 from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
 import requests
+import plotly.graph_objects as go
 
 # ── FPL API ───────────────────────────────────────────────────────────────────
 BASE_URL      = "https://fantasy.premierleague.com/api"
@@ -68,7 +69,7 @@ def club_style(team_name):
 # ── Configuration ─────────────────────────────────────────────────────────────
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
-REVIEW_CSV_FILE   = "projections.csv"
+PROJECTIONS_CSV_FILE   = "projections.csv"
 
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
@@ -139,9 +140,9 @@ def load_csv_data():
     return ratings_df, fixtures_df
 
 @st.cache_data
-def load_review_csv():
+def load_projections_csv():
     try:
-        df = pd.read_csv(REVIEW_CSV_FILE)
+        df = pd.read_csv(PROJECTIONS_CSV_FILE)
         df.columns = [c.lstrip("\ufeff") for c in df.columns]
         df["Team"] = df["Team"].map(lambda t: TEAM_NAME_MAP.get(t, t))
         return df
@@ -318,14 +319,14 @@ def get_fdr_for_team_gw(team_name, gw, master_df_full):
         return cell.get("display","?"), cell.get("fdr", 3)
     return "BGW", 6
 
-def get_captain_picks(review_df, gw, master_df_full, bootstrap):
+def get_captain_picks(proj_df, gw, master_df_full, bootstrap):
     """Top 2 EV + 1 differential. Returns list of dicts including photo_url."""
     pts_col  = f"{gw}_Pts"
     mins_col = f"{gw}_xMins"
-    if pts_col not in review_df.columns:
+    if pts_col not in proj_df.columns:
         return []
 
-    df = review_df.copy()
+    df = proj_df.copy()
     df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
     df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
     df["Elite%"] = pd.to_numeric(df["Elite%"],  errors="coerce")
@@ -373,7 +374,7 @@ def get_captain_picks(review_df, gw, master_df_full, bootstrap):
         })
     return result
 
-def get_captain_matrix(review_df, gws, master_df_full, bootstrap):
+def get_captain_matrix(proj_df, gws, master_df_full, bootstrap):
     """All players within 0.5 EV of top pick per GW. Includes photo + club colour."""
     # Build name→code lookup
     code_lookup = {}
@@ -387,9 +388,9 @@ def get_captain_matrix(review_df, gws, master_df_full, bootstrap):
     for gw in gws:
         pts_col  = f"{gw}_Pts"
         mins_col = f"{gw}_xMins"
-        if pts_col not in review_df.columns: continue
+        if pts_col not in proj_df.columns: continue
 
-        df = review_df.copy()
+        df = proj_df.copy()
         df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
         df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
 
@@ -498,7 +499,7 @@ if use_live:
         st.sidebar.warning(f"⚠️ Live failed: {e}")
 
 ratings_df, fixtures_df = load_csv_data()
-review_df = load_review_csv()
+proj_df = load_projections_csv()
 
 if live_ok and bootstrap and raw_fixtures:
     fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
@@ -530,10 +531,10 @@ free_hit_gw = st.sidebar.selectbox("Free Hit GW:", fh_opts,
                                     format_func=lambda x: "None" if x is None else f"GW{x}")
 
 # Build full master_df (GW29–38 for captain lookups)
-if review_df is not None:
-    review_gws  = sorted([int(c.split("_")[0]) for c in review_df.columns
+if proj_df is not None:
+    proj_gws  = sorted([int(c.split("_")[0]) for c in proj_df.columns
                            if c.endswith("_Pts") and c.split("_")[0].isdigit()])
-    future_gws  = [g for g in review_gws if g >= current_gw]
+    future_gws  = [g for g in proj_gws if g >= current_gw]
     all_start   = min(future_gws) if future_gws else start_gw
     all_end     = 38
     master_df_full = create_all_data(
@@ -676,13 +677,13 @@ with tab3:
 # ── Tab 4: Captain Picks ──────────────────────────────────────────────────────
 with tab4:
     st.subheader("🎯 Captain Picks")
-    if review_df is None:
+    if proj_df is None:
         st.error("❌ projections.csv not found. Place it in the app folder.")
     elif master_df_full is None:
         st.error("❌ Could not build fixture data.")
     else:
         gw_sel = st.selectbox("Select GW:", future_gws, key="cap_gw")
-        picks  = get_captain_picks(review_df, gw_sel, master_df_full, bootstrap)
+        picks  = get_captain_picks(proj_df, gw_sel, master_df_full, bootstrap)
 
         if not picks:
             st.warning(f"No data for GW{gw_sel}.")
@@ -736,7 +737,7 @@ with tab4:
 # ── Tab 5: Captain Matrix ─────────────────────────────────────────────────────
 with tab5:
     st.subheader("🏅 Captain Matrix — Within 0.5 EV of Top Pick")
-    if review_df is None:
+    if proj_df is None:
         st.error("❌ projections.csv not found. Place it in the app folder.")
     elif master_df_full is None:
         st.error("❌ Fixture data unavailable.")
@@ -748,7 +749,7 @@ with tab5:
             key="matrix_gws"
         )
         if matrix_gws:
-            matrix = get_captain_matrix(review_df, matrix_gws, master_df_full, bootstrap)
+            matrix = get_captain_matrix(proj_df, matrix_gws, master_df_full, bootstrap)
 
             # Build pure-inline HTML table with photos + club colours
             col_w = max(130, min(190, 1100 // len(matrix_gws)))
@@ -908,8 +909,6 @@ with tab7:
     elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
         st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
     else:
-        import plotly.graph_objects as go
-
         plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
         plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
             plot_df["Team"].str[:3].str.upper())
