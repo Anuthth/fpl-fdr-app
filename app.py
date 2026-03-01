@@ -1086,87 +1086,99 @@ with tab7:
 # HELPERS — Team Stats & Player Stats from FPL API
 # =============================================================================
 
-def build_team_stats_df(bootstrap):
+def build_team_stats_df(bootstrap, raw_fixtures):
     """
-    Build team stats table from FPL API bootstrap teams data.
-    Fields available: played, win, draw, loss, points, form,
-    strength_overall_home/away, strength_attack_home/away, strength_defence_home/away
-    We also compute GF/GA/GD from elements aggregation.
+    Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
+    xG/xGC from elements aggregation (most accurate source).
+    CS from main GKP per team.
     """
     teams_df = pd.DataFrame(bootstrap["teams"])
     elements = pd.DataFrame(bootstrap["elements"])
     id2name  = dict(zip(teams_df["id"], teams_df["name"]))
 
-    # Aggregate player totals per team for GF/GA proxies
-    elem_cols = [c for c in ["team","goals_scored","goals_conceded","clean_sheets",
-                              "expected_goals","expected_goals_conceded"] if c in elements.columns]
-    agg = elements[elem_cols].copy()
-    for c in elem_cols[1:]:
-        agg[c] = pd.to_numeric(agg[c], errors="coerce").fillna(0)
+    # ── Derive table stats from completed fixtures ────────────────────────────
+    records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+               for tid in teams_df["id"]}
 
-    # Sum goals scored and conceded per team (divide by 11 approximate — we use team-level data instead)
-    # FPL API teams object has direct W/D/L/points but NOT GF/GA directly
-    # We derive GF ≈ sum of player goals for that team
-    gf_by_team = agg.groupby("team")["goals_scored"].sum()
-    xg_by_team = agg.groupby("team")["expected_goals"].sum()
-    xgc_by_team = agg.groupby("team")["expected_goals_conceded"].sum() / 11  # conceded is per-player duplicate
+    for f in raw_fixtures:
+        if not f.get("finished", False): continue
+        hs = f.get("team_h_score")
+        as_ = f.get("team_a_score")
+        if hs is None or as_ is None: continue
+        hs, as_ = int(hs), int(as_)
+        h, a = f["team_h"], f["team_a"]
+        for tid in (h, a):
+            if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+        records[h]["MP"] += 1; records[a]["MP"] += 1
+        records[h]["GF"] += hs; records[h]["GA"] += as_
+        records[a]["GF"] += as_; records[a]["GA"] += hs
+        if hs > as_:
+            records[h]["W"] += 1; records[h]["Pts"] += 3
+            records[a]["L"] += 1
+        elif hs < as_:
+            records[a]["W"] += 1; records[a]["Pts"] += 3
+            records[h]["L"] += 1
+        else:
+            records[h]["D"] += 1; records[h]["Pts"] += 1
+            records[a]["D"] += 1; records[a]["Pts"] += 1
 
+    # ── xG for team = sum of player xG ───────────────────────────────────────
+    for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
+        if c in elements.columns:
+            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
+    xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
+                  if "expected_goals" in elements.columns else {}
+
+    # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
     rows = []
     for _, t in teams_df.iterrows():
         name = TEAM_NAME_MAP.get(t["name"], t["name"])
         if name not in PREMIER_LEAGUE_TEAMS:
             continue
-        tid    = t["id"]
-        played = int(t.get("played", 0))
-        wins   = int(t.get("win", 0))
-        draws  = int(t.get("draw", 0))
-        losses = int(t.get("loss", 0))
-        pts    = int(t.get("points", 0))
-        form   = t.get("form", "")
-        gf     = int(gf_by_team.get(tid, 0))
-        xg     = round(float(xg_by_team.get(tid, 0)), 1)
+        tid = t["id"]
+        rec = records.get(tid, {})
+        gf  = rec.get("GF", 0)
+        ga  = rec.get("GA", 0)
 
-        # xGC: use expected_goals_conceded from GKP/DEF elements of that team
-        gkp_def = elements[(elements["team"] == tid) & (elements["element_type"].isin([1, 2]))]
-        if not gkp_def.empty and "expected_goals_conceded" in gkp_def.columns:
-            xgc = round(pd.to_numeric(gkp_def["expected_goals_conceded"], errors="coerce").max(), 1)
+        # xG for team
+        xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
+
+        # xGC: expected_goals_conceded from main GKP
+        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
+        if not gkps.empty and "expected_goals_conceded" in gkps.columns:
+            gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
+            gkps["expected_goals_conceded"] = pd.to_numeric(
+                gkps["expected_goals_conceded"], errors="coerce").fillna(0)
+            xgc = round(float(gkps.sort_values("minutes", ascending=False)
+                               .iloc[0]["expected_goals_conceded"]), 1)
         else:
             xgc = None
 
-        # GA: goals conceded — best proxy is goals_conceded from GKP with most minutes
-        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)]
-        if not gkps.empty and "goals_conceded" in gkps.columns:
-            gkps = gkps.copy()
-            gkps["minutes"] = pd.to_numeric(gkps["minutes"], errors="coerce").fillna(0)
-            gkps["goals_conceded"] = pd.to_numeric(gkps["goals_conceded"], errors="coerce").fillna(0)
-            ga = int(gkps.sort_values("minutes", ascending=False).iloc[0]["goals_conceded"])
+        # CS: clean sheets from main GKP
+        if not gkps.empty and "clean_sheets" in gkps.columns:
+            gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
+            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
         else:
-            ga = None
+            cs = 0
 
-        gd     = (gf - ga) if ga is not None else None
+        gd     = gf - ga
         xgdiff = round(xg - xgc, 1) if xgc is not None else None
 
-        # Clean sheets — take from best GKP
-        if not gkps.empty and "clean_sheets" in gkps.columns:
-            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0].get("clean_sheets", 0))
-        else:
-            cs = None
-
         rows.append({
-            "Team":    name,
-            "MP":      played,
-            "W":       wins,
-            "D":       draws,
-            "L":       losses,
-            "GF":      gf,
-            "GA":      ga,
-            "GD":      gd,
-            "CS":      cs,
-            "xG":      xg,
-            "xGC":     xgc,
-            "xGDiff":  xgdiff,
-            "Pts":     pts,
-            "Form":    form,
+            "Team":   name,
+            "MP":     rec.get("MP", 0),
+            "W":      rec.get("W",  0),
+            "D":      rec.get("D",  0),
+            "L":      rec.get("L",  0),
+            "GF":     gf,
+            "GA":     ga,
+            "GD":     gd,
+            "CS":     cs,
+            "xG":     xg,
+            "xGC":    xgc if xgc is not None else 0.0,
+            "xGDiff": xgdiff if xgdiff is not None else 0.0,
+            "Pts":    rec.get("Pts", 0),
         })
 
     df = pd.DataFrame(rows)
@@ -1174,7 +1186,6 @@ def build_team_stats_df(bootstrap):
         df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
         df.insert(0, "Rk", range(1, len(df)+1))
     return df
-
 
 def build_player_stats_df(bootstrap):
     """
