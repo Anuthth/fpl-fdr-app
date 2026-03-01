@@ -640,9 +640,21 @@ with tab1:
     legend_html += '</div>'
     st.markdown(legend_html, unsafe_allow_html=True)
 
-    df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
+    c1, c2, c3 = st.columns([2, 2, 6])
+    with c1:
+        fdr_sort = st.selectbox("Sort by column:", ["Total_Difficulty", "Team"] + gw_columns, key="fdr_sort_select", label_visibility="collapsed")
+    with c2:
+        fdr_asc = st.toggle("Ascending", value=True, key="fdr_asc_toggle")
+
+    df_d = master_df.reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
     df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
+    
+    # Custom Sort
+    if fdr_sort in gw_columns:
+        df_d = df_d.sort_values(by=fdr_sort, key=lambda col: col.map(lambda x: x.get("fdr", 6) if isinstance(x, dict) else 6), ascending=fdr_asc)
+    else:
+        df_d = df_d.sort_values(by=fdr_sort, ascending=fdr_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -673,9 +685,21 @@ with tab2:
     lh += '</div>'
     st.markdown(lh, unsafe_allow_html=True)
 
-    df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
+    c1, c2, c3 = st.columns([2, 2, 6])
+    with c1:
+        xg_sort = st.selectbox("Sort by column:", ["Total_xG", "Team"] + gw_columns, key="xg_sort_select", label_visibility="collapsed")
+    with c2:
+        xg_asc = st.toggle("Ascending", value=False, key="xg_asc_toggle")
+
+    df_d = master_df.reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","Total xG"] + gw_columns].copy()
     df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
+
+    # Custom Sort
+    if xg_sort in gw_columns:
+        df_d = df_d.sort_values(by=xg_sort, key=lambda col: col.map(lambda x: x.get("xG", 0) if isinstance(x, dict) else -1), ascending=xg_asc)
+    else:
+        df_d = df_d.sort_values(by=xg_sort, ascending=xg_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -707,9 +731,21 @@ with tab3:
     lh += '</div>'
     st.markdown(lh, unsafe_allow_html=True)
 
-    df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
+    c1, c2, c3 = st.columns([2, 2, 6])
+    with c1:
+        xcs_sort = st.selectbox("Sort by column:", ["Total_xCS", "Team"] + gw_columns, key="xcs_sort_select", label_visibility="collapsed")
+    with c2:
+        xcs_asc = st.toggle("Ascending", value=False, key="xcs_asc_toggle")
+
+    df_d = master_df.reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","xCS"] + gw_columns].copy()
     df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
+
+    # Custom Sort
+    if xcs_sort in gw_columns:
+        df_d = df_d.sort_values(by=xcs_sort, key=lambda col: col.map(lambda x: x.get("CS", 0) if isinstance(x, dict) else -1), ascending=xcs_asc)
+    else:
+        df_d = df_d.sort_values(by=xcs_sort, ascending=xcs_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -1211,10 +1247,8 @@ def build_player_stats_df(bootstrap):
         starts   = float(p.get("starts", 0))
         nineties = mins / 90 if mins >= 45 else 0
         
-        # ── THE FIX IS HERE ──
         raw_team_name = id2name.get(p.get("team"), "")
         team = TEAM_NAME_MAP.get(raw_team_name, raw_team_name) 
-        # ─────────────────────
         
         pos  = POS.get(p.get("element_type"), "?")
 
@@ -1230,8 +1264,7 @@ def build_player_stats_df(bootstrap):
         def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
                       float(p.get("tackles", 0)) +
                       float(p.get("recoveries", 0)))
-        defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
-
+        
         price       = round(float(p.get("now_cost", 0)) / 10, 1)
         own         = float(p.get("selected_by_percent", 0))
         total_pts   = float(p.get("total_points", 0))
@@ -1254,7 +1287,6 @@ def build_player_stats_df(bootstrap):
             "NpxGI":     npxgi,
             "xGC":       round(xgc, 2),
             "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
-            "Defcon/90": defcon_90,
             "PPM":       ppm,
             "Own%":      own,
             # hidden 90s divisor for toggle
@@ -1276,17 +1308,17 @@ def _per90(df, cols_to_divide):
 
 
 # ── Colour helpers ────────────────────────────────────────────────────────────
-# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
+# Minimal minimal 3-tier palette: dark clean backgrounds, strong text colours
 
 def _tier_color(val, low, high, col_type="positive"):
     """
     Returns (background, text_color) using a 3-tier system:
-      positive: low=grey, mid=teal, high=green
-      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
-      diff:     positive=green, zero=grey, negative=red
+      positive: grey -> teal -> green
+      negative: green -> amber -> red
+      diff:     green -> grey -> red
     """
     if val is None or (isinstance(val, float) and np.isnan(val)):
-        return "#1a1a1a", "#444444"
+        return "transparent", "#444444"
 
     fv = float(val)
     # normalise 0→1
@@ -1297,44 +1329,46 @@ def _tier_color(val, low, high, col_type="positive"):
         t = max(0.0, min(1.0, (fv - low) / span))
 
     if col_type == "positive":
-        # dark grey → teal → bright green
         if t < 0.33:
-            return "#1e1e1e", "#666666"
+            return "transparent", "#777777"
         elif t < 0.66:
-            return "#0d2b2b", "#4ecdc4"
+            return "rgba(78, 205, 196, 0.15)", "#4ecdc4"
         else:
-            return "#0a2818", "#5fffb0"
+            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
+            
     elif col_type == "negative":
-        # green (low GA is good) → amber → red
         if t < 0.33:
-            return "#0a2818", "#5fffb0"
+            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
         elif t < 0.66:
-            return "#2b1a00", "#ffaa33"
+            return "rgba(255, 170, 51, 0.15)", "#ffaa33"
         else:
-            return "#2b0a0a", "#ff6060"
+            return "rgba(255, 96, 96, 0.15)", "#ff6060"
+            
     elif col_type == "diff":
         if fv > 0.5:
-            return "#0a2818", "#5fffb0"
+            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
         elif fv < -0.5:
-            return "#2b0a0a", "#ff6060"
+            return "rgba(255, 96, 96, 0.15)", "#ff6060"
         else:
-            return "#1e1e1e", "#888888"
+            return "transparent", "#888888"
+            
     elif col_type == "blue":
-        # for CS, Defcon — blue scale
         if t < 0.33:
-            return "#1e1e1e", "#555555"
+            return "transparent", "#777777"
         elif t < 0.66:
-            return "#0a1a2b", "#5aabff"
+            return "rgba(90, 171, 255, 0.15)", "#5aabff"
         else:
-            return "#051022", "#99ccff"
+            return "rgba(153, 204, 255, 0.15)", "#99ccff"
+            
     elif col_type == "gold":
         if t < 0.33:
-            return "#1e1e1e", "#555555"
+            return "transparent", "#777777"
         elif t < 0.66:
-            return "#221a00", "#ccaa33"
+            return "rgba(204, 170, 51, 0.15)", "#ccaa33"
         else:
-            return "#2b1f00", "#ffd966"
-    return "#1e1e1e", "#888888"
+            return "rgba(255, 217, 102, 0.15)", "#ffd966"
+            
+    return "transparent", "#888888"
 
 
 # Pre-compute column ranges for consistent colouring across sort orders
@@ -1370,8 +1404,8 @@ _PLAYER_RANGES = {
 def _stat_cell(val, col, ranges):
     """Styled <td> with 3-tier colour, clean white text, minimal look."""
     if val is None or (isinstance(val, float) and np.isnan(val)):
-        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
-                'border-bottom:1px solid #161616">—</td>')
+        return ('<td style="padding:6px 10px;text-align:center;color:#555;'
+                'border-bottom:1px solid #1e1e1e">—</td>')
 
     fv = float(val)
 
@@ -1379,7 +1413,7 @@ def _stat_cell(val, col, ranges):
         low, high, col_type = ranges[col]
         bg, tc = _tier_color(fv, low, high, col_type)
     else:
-        bg, tc = "#1e1e1e", "#888888"
+        bg, tc = "transparent", "#888888"
 
     # Format display value
     if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
@@ -1391,7 +1425,7 @@ def _stat_cell(val, col, ranges):
         disp = f"{fv:.2f}"
 
     return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
-            f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
+            f'font-size:12px;font-weight:600;border-bottom:1px solid #1e1e1e">{disp}</td>')
 
 
 def _build_stats_html(df, ranges):
@@ -1401,8 +1435,8 @@ def _build_stats_html(df, ranges):
     header = ""
     for c in cols:
         align = "left" if c in ("Player","Team") else "center"
-        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
-                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
+        header += (f'<th style="padding:7px 10px;text-align:{align};color:#666;font-size:10px;'
+                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #2a2a2a;'
                    f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
 
     rows_html = ""
@@ -1411,50 +1445,50 @@ def _build_stats_html(df, ranges):
         for c in cols:
             val = row[c]
             if c == "Rk":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
-                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#4a4a4a;'
+                          f'font-size:11px;border-bottom:1px solid #1e1e1e">{val}</td>')
             elif c == "Team":
                 bg, fg = club_style(str(val))
                 dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
                        f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
                 cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
-                          f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
+                          f'border-bottom:1px solid #1e1e1e;white-space:nowrap">{dot}{val}</td>')
             elif c == "Player":
                 cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
-                          f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
+                          f'border-bottom:1px solid #1e1e1e;white-space:nowrap">{val}</td>')
             elif c == "Pos":
                 pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
                 pc = pos_c.get(str(val), "#888")
-                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
+                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #1e1e1e">'
                           f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
                           f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
             elif c == "W":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
             elif c == "D":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
             elif c == "L":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
             elif c in ("MP","Starts","Mins","Min/Start"):
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
-                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
+                          f'border-bottom:1px solid #1e1e1e">{val if val is not None else "—"}</td>')
             elif c == "Price":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
-                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
+                          f'font-weight:600;border-bottom:1px solid #1e1e1e">£{val:.1f}m</td>')
             else:
                 try:
                     cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
                 except:
                     cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
-                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
+                              f'font-size:12px;border-bottom:1px solid #1e1e1e">{val}</td>')
 
-        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
+        rows_html += (f'<tr style="transition:background .1s" onmouseover="this.style.background=\'#161b22\'" '
                       f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
 
     return (
-        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
+        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #2a2a2a;margin-top:8px">'
         '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
         f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
         f'<tbody>{rows_html}</tbody></table></div>'
@@ -1565,8 +1599,8 @@ with tab9:
         with cc3:
             min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
         with cc4:
-            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","PPM","Own%","Mins","Price"]
-                            if c in ps_df.columns]
+            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","Defcon","PPM","Own%","Mins","Price"]
+                            if c in ps_df.columns or (per90 and c=="Defcon/90") or (not per90 and c=="Defcon")]
             sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
         with cc5:
             per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
