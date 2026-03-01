@@ -1379,77 +1379,75 @@ def _build_stats_html(df):
 # =============================================================================
 with tab8:
     st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#555">live from FPL API · auto-updated</span></div>',
+        '<span style="font-size:12px;color:#444">live from FPL API · derived from completed fixtures</span></div>',
         unsafe_allow_html=True
     )
 
     if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar to see team stats.")
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
     else:
-        ts_df = build_team_stats_df(bootstrap)
+        ts_df = build_team_stats_df(bootstrap, raw_fixtures)
 
         if ts_df.empty:
-            st.warning("Could not build team stats from API data.")
+            st.warning("Could not build team stats.")
         else:
-            # Sort selector
-            sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS"] if c in ts_df.columns]
-            sc1, sc2 = st.columns([1, 3])
-            with sc1:
+            c1, _ = st.columns([1, 3])
+            with c1:
+                sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS","xGC","GA"] if c in ts_df.columns]
                 sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
 
             asc_ts = sort_ts in ("GA","xGC","L")
-            display_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
-            display_ts["Rk"] = range(1, len(display_ts)+1)
-            # reorder cols
-            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts","Form"]
-            display_ts = display_ts[[c for c in ordered_ts if c in display_ts.columns]]
+            d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
+            d_ts["Rk"] = range(1, len(d_ts)+1)
+            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts"]
+            d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
 
-            st.markdown(_build_stats_html(display_ts), unsafe_allow_html=True)
+            st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
 
-            # xG vs GF over/under-performance scatter
+            # xG vs GF scatter
             if "xG" in ts_df.columns and "GF" in ts_df.columns:
                 st.markdown("---")
                 st.markdown(
                     '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                    'xG vs Goals Scored — Over / Under Performers</span>',
+                    'xG vs Goals Scored — Over/Under Performers</span>',
                     unsafe_allow_html=True
                 )
-                st.caption("Above the line = scoring more than xG suggests (clinical). Below = wasting chances.")
-
+                st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
                 valid = ts_df.dropna(subset=["xG","GF"])
                 if not valid.empty:
                     mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
                     fig_ts = go.Figure()
                     fig_ts.add_trace(go.Scatter(
                         x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
-                        line=dict(color="rgba(255,255,255,0.10)", dash="dot", width=1),
+                        line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
                         hoverinfo="skip"
                     ))
                     for _, r in valid.iterrows():
                         bg, fg = club_style(r["Team"])
                         abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
+                        diff   = r["GF"] - r["xG"]
                         fig_ts.add_trace(go.Scatter(
                             x=[r["xG"]], y=[r["GF"]],
                             mode="markers+text",
                             marker=dict(size=38, color=bg, symbol="circle",
-                                        line=dict(color="rgba(255,255,255,0.15)",width=1)),
+                                        line=dict(color="rgba(255,255,255,0.12)", width=1)),
                             text=[f"<b>{abbr}</b>"],
                             textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
                             textposition="middle center",
                             showlegend=False,
                             hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
                                            f"<br>GF: {int(r['GF'])}"
-                                           f"<br>Diff: {r['GF']-r['xG']:+.1f}<extra></extra>")
+                                           f"<br>Diff: {diff:+.1f}<extra></extra>")
                         ))
                     fig_ts.update_layout(
                         paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                        xaxis=dict(title="xG (Expected Goals For)", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                        yaxis=dict(title="GF (Goals Scored)", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                        margin=dict(l=50,r=20,t=10,b=50), height=430, hovermode="closest"
+                        xaxis=dict(title="xG", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                        yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                        margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
                     )
                     st.plotly_chart(fig_ts, use_container_width=True)
 
