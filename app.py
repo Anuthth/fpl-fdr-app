@@ -1080,6 +1080,189 @@ with tab7:
             except Exception as e:
                 st.warning(f"Injury data unavailable: {e}")
 
+# ── Colour helpers ────────────────────────────────────────────────────────────
+# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
+
+def _tier_color(val, low, high, col_type="positive"):
+    """
+    Returns (background, text_color) using a 3-tier system:
+      positive: low=grey, mid=teal, high=green
+      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
+      diff:     positive=green, zero=grey, negative=red
+    """
+    if val is None or (isinstance(val, float) and np.isnan(val)):
+        return "#1a1a1a", "#444444"
+
+    fv = float(val)
+    # normalise 0→1
+    span = high - low
+    if span == 0:
+        t = 0.5
+    else:
+        t = max(0.0, min(1.0, (fv - low) / span))
+
+    if col_type == "positive":
+        # dark grey → teal → bright green
+        if t < 0.33:
+            return "#1e1e1e", "#666666"
+        elif t < 0.66:
+            return "#0d2b2b", "#4ecdc4"
+        else:
+            return "#0a2818", "#5fffb0"
+    elif col_type == "negative":
+        # green (low GA is good) → amber → red
+        if t < 0.33:
+            return "#0a2818", "#5fffb0"
+        elif t < 0.66:
+            return "#2b1a00", "#ffaa33"
+        else:
+            return "#2b0a0a", "#ff6060"
+    elif col_type == "diff":
+        if fv > 0.5:
+            return "#0a2818", "#5fffb0"
+        elif fv < -0.5:
+            return "#2b0a0a", "#ff6060"
+        else:
+            return "#1e1e1e", "#888888"
+    elif col_type == "blue":
+        # for CS, Defcon — blue scale
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#0a1a2b", "#5aabff"
+        else:
+            return "#051022", "#99ccff"
+    elif col_type == "gold":
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#221a00", "#ccaa33"
+        else:
+            return "#2b1f00", "#ffd966"
+    return "#1e1e1e", "#888888"
+
+
+# Pre-compute column ranges for consistent colouring across sort orders
+_TEAM_RANGES = {
+    "GF":     (15, 70, "positive"),
+    "GA":     (15, 65, "negative"),
+    "GD":     (-40, 50, "diff"),
+    "CS":     (0,  18, "blue"),
+    "xG":     (15, 65, "positive"),
+    "xGC":    (15, 65, "negative"),
+    "xGDiff": (-35, 35, "diff"),
+    "Pts":    (0,  90, "blue"),
+    "W":      (0,  30, "positive"),
+    "L":      (0,  25, "negative"),
+    "D":      (0,  15, "positive"),
+}
+
+_PLAYER_RANGES = {
+    "xG":        (0, 20,  "positive"),
+    "xA":        (0, 12,  "positive"),
+    "xGI":       (0, 25,  "positive"),
+    "NpxG":      (0, 18,  "positive"),
+    "NpxGI":     (0, 22,  "positive"),
+    "xGC":       (0, 50,  "negative"),
+    "Defcon/90": (0, 10,  "blue"),
+    "Defcon":    (0, 200, "blue"),
+    "PPM":       (0, 20,  "gold"),
+    "Own%":      (0, 70,  "gold"),
+    "Price":     (3.5, 15,"gold"),
+}
+
+
+def _stat_cell(val, col, ranges):
+    """Styled <td> with 3-tier colour, clean white text, minimal look."""
+    if val is None or (isinstance(val, float) and np.isnan(val)):
+        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
+                'border-bottom:1px solid #161616">—</td>')
+
+    fv = float(val)
+
+    if col in ranges:
+        low, high, col_type = ranges[col]
+        bg, tc = _tier_color(fv, low, high, col_type)
+    else:
+        bg, tc = "#1e1e1e", "#888888"
+
+    # Format display value
+    if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
+               "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
+        disp = f"{fv:.2f}"
+    elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
+        disp = f"{int(round(fv))}"
+    else:
+        disp = f"{fv:.2f}"
+
+    return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
+            f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
+
+
+def _build_stats_html(df, ranges):
+    """Render minimal dark stats HTML table."""
+    cols = [c for c in df.columns if not c.startswith("_")]
+
+    header = ""
+    for c in cols:
+        align = "left" if c in ("Player","Team") else "center"
+        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
+                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
+                   f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
+
+    rows_html = ""
+    for _, row in df.iterrows():
+        cells = ""
+        for c in cols:
+            val = row[c]
+            if c == "Rk":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
+                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "Team":
+                bg, fg = club_style(str(val))
+                dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
+                       f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
+                cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
+            elif c == "Player":
+                cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
+            elif c == "Pos":
+                pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
+                pc = pos_c.get(str(val), "#888")
+                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
+                          f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
+                          f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
+            elif c == "W":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "D":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "L":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c in ("MP","Starts","Mins","Min/Start"):
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
+                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
+            elif c == "Price":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
+                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
+            else:
+                try:
+                    cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
+                except:
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
+                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
+
+        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
+                      f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
+
+    return (
+        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
+        '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+        f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+        f'<tbody>{rows_html}</tbody></table></div>'
 
 
 # =============================================================================
