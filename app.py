@@ -1598,12 +1598,12 @@ with tab9:
             team_f    = st.selectbox("Team:", team_opts, key="ps_team")
         with cc3:
             min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
+        with cc5:
+            per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
         with cc4:
             sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","Defcon","PPM","Own%","Mins","Price"]
                             if c in ps_df.columns or (per90 and c=="Defcon/90") or (not per90 and c=="Defcon")]
             sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
-        with cc5:
-            per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
 
         # ── Filter ─────────────────────────────────────────────────────────────
         filt = ps_df[ps_df["Mins"] >= min_mins].copy()
