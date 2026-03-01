@@ -68,7 +68,7 @@ def club_style(team_name):
 # ── Configuration ─────────────────────────────────────────────────────────────
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
-REVIEW_CSV_FILE   = "review.csv"
+REVIEW_CSV_FILE   = "projections.csv"
 
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
@@ -567,7 +567,8 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
 
 # ── Tab 1: FDR ────────────────────────────────────────────────────────────────
 with tab1:
-    st.subheader("Fixture Difficulty Rating (Lower = easier)")
+    st.subheader("Fixture Difficulty Rating")
+    st.caption("🟢 1–2 Easy  |  ⬜ 3 Neutral  |  🟣 4–5 Hard  |  🔴 BGW = Blank (no fixture). Sorted easiest → hardest.")
     df_display = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
     df_display = df_display[["Team","Total Difficulty"] + gw_columns]
 
@@ -606,8 +607,8 @@ with tab1:
 
 # ── Tab 2: xG ─────────────────────────────────────────────────────────────────
 with tab2:
-    st.subheader("Expected Goals — attack strength × opponent defensive weakness")
-    st.caption("Home advantage multiplier applied. DGW values are additive.")
+    st.subheader("Expected Goals (xG)")
+    st.caption("Attack strength ÷ opponent defence × league average goals. Home advantage built in. Darker green = more goals expected. 🔴 = Blank gameweek.")
     df_display = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
     df_display = df_display[["Team","Total xG"] + gw_columns]
 
@@ -639,8 +640,8 @@ with tab2:
 
 # ── Tab 3: xCS ────────────────────────────────────────────────────────────────
 with tab3:
-    st.subheader("Expected Clean Sheet % — P(concede 0 goals) via Poisson")
-    st.caption("50%+ = green. Shown as percentage. Higher = better for defenders & GKPs.")
+    st.subheader("Expected Clean Sheet % (xCS)")
+    st.caption("Probability of keeping a clean sheet = e^(−xG conceded). 🟢 ≥50 %  →  🟣 <15 %. Higher = better for defenders & keepers.")
     df_display = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
     df_display = df_display[["Team","xCS"] + gw_columns]
 
@@ -676,7 +677,7 @@ with tab3:
 with tab4:
     st.subheader("🎯 Captain Picks")
     if review_df is None:
-        st.error("❌ review.csv not found.")
+        st.error("❌ projections.csv not found. Place it in the app folder.")
     elif master_df_full is None:
         st.error("❌ Could not build fixture data.")
     else:
@@ -736,7 +737,7 @@ with tab4:
 with tab5:
     st.subheader("🏅 Captain Matrix — Within 0.5 EV of Top Pick")
     if review_df is None:
-        st.error("❌ review.csv not found.")
+        st.error("❌ projections.csv not found. Place it in the app folder.")
     elif master_df_full is None:
         st.error("❌ Fixture data unavailable.")
     else:
@@ -893,79 +894,181 @@ with tab6:
 
 # ── Tab 7: Team Ratings ───────────────────────────────────────────────────────
 with tab7:
-    st.subheader("📈 Team Power Rankings — from your custom ratings file")
-    st.caption("Only Premier League teams. Sorted by Overall Rating (highest = strongest).")
+    st.subheader("📊 Team Strength Map")
+    st.caption(
+        "X axis → Better Defence (right = harder to score against).  "
+        "Y axis ↑ Better Attack (top = more goals scored).  "
+        "Top-right = elite. Dashed lines show last 6 GW trend (recent form)."
+    )
 
-    # ratings_df already has Team normalised
     pl_ratings = ratings_df[ratings_df["Team"].isin(PREMIER_LEAGUE_TEAMS)].copy()
 
     if pl_ratings.empty:
         st.warning("No PL teams found in ratings file.")
+    elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
+        st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
     else:
-        # Sort by Final Rating desc
-        sort_col = "Final Rating" if "Final Rating" in pl_ratings.columns else pl_ratings.columns[1]
-        pl_ratings = pl_ratings.sort_values(sort_col, ascending=False).reset_index(drop=True)
-        pl_ratings.index = pl_ratings.index + 1   # rank 1-based
-        pl_ratings.index.name = "Rank"
+        import plotly.graph_objects as go
 
-        # Add club colour column for visual flair
-        pl_ratings["Club Colour"] = pl_ratings["Team"].apply(
-            lambda t: CLUB_COLORS.get(t, {}).get("bg", "#444"))
+        plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
+        plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
+            plot_df["Team"].str[:3].str.upper())
+        plot_df["club_bg"]   = plot_df["Team"].apply(
+            lambda t: CLUB_COLORS.get(t, {"bg":"#444444"})["bg"])
+        plot_df["club_text"] = plot_df["Team"].apply(
+            lambda t: CLUB_COLORS.get(t, {"text":"#ffffff"}).get("text","#ffffff"))
 
-        # Show all numeric columns from the file
-        num_cols = [c for c in pl_ratings.columns
-                    if pl_ratings[c].dtype in [float, int, np.float64, np.int64]]
-        display_cols = ["Team"] + num_cols
+        # Axis bounds with padding
+        pad_x = (plot_df["Def Score"].max() - plot_df["Def Score"].min()) * 0.12
+        pad_y = (plot_df["Off Score"].max() - plot_df["Off Score"].min()) * 0.18
+        x_min = plot_df["Def Score"].min() - pad_x
+        x_max = plot_df["Def Score"].max() + pad_x
+        y_min = plot_df["Off Score"].min() - pad_y
+        y_max = plot_df["Off Score"].max() + pad_y
 
-        # Build styled HTML table with club colour stripe
-        rows_html = ""
-        for rank, row in pl_ratings.reset_index().iterrows():
-            team  = row["Team"]
-            bg, fg = club_style(team)
-            stripe = f'<td style="width:6px;background:{bg};padding:0"></td>'
-            rank_td = f'<td style="padding:8px 12px;color:#aaa;text-align:center;font-size:13px">{rank+1}</td>'
-            team_td = (f'<td style="padding:8px 12px;font-weight:bold;color:#fff;'
-                       f'font-size:13px;white-space:nowrap">'
-                       f'<span style="display:inline-block;width:10px;height:10px;'
-                       f'border-radius:50%;background:{bg};margin-right:6px;'
-                       f'vertical-align:middle"></span>{team}</td>')
-            cells = stripe + rank_td + team_td
-            for col in num_cols:
-                val = row[col]
-                if pd.isna(val):
-                    cells += '<td style="padding:8px 12px;color:#555;text-align:center">—</td>'
-                else:
-                    # Colour scale: for Final Rating / Off Score / Def Score
-                    cells += f'<td style="padding:8px 12px;text-align:center;color:#ddd;font-size:13px">{val:.1f}</td>'
-            rows_html += f"<tr style='border-bottom:1px solid #2a2a2a'>{cells}</tr>"
+        x_avg = plot_df["Def Score"].mean()
+        y_avg = plot_df["Off Score"].mean()
 
-        # Build header
-        header_cells = (
-            '<th style="width:6px;padding:0"></th>'
-            '<th style="padding:8px 12px;color:#888;font-size:12px;text-align:center">Rank</th>'
-            '<th style="padding:8px 12px;color:#888;font-size:12px;text-align:left">Team</th>'
+        fig = go.Figure()
+
+        # Subtle quadrant lines
+        for shape_args in [
+            dict(x0=x_avg, x1=x_avg, y0=y_min, y1=y_max),
+            dict(x0=x_min, x1=x_max, y0=y_avg, y1=y_avg),
+        ]:
+            fig.add_shape(type="line", **shape_args,
+                          line=dict(color="rgba(255,255,255,0.10)", width=1, dash="dot"))
+
+        # ── Pin-style markers ──────────────────────────────────────────────────
+        # We draw each team as: a filled rectangle annotation (the badge)
+        # + a tiny SVG triangle below it using a custom marker
+        # Plotly doesn't natively support "pin" symbols, but we can combine
+        # a large square marker with text, plus a small downward triangle marker
+        # at the same position to create the pin look.
+
+        MARKER_SIZE  = 36   # badge square
+        PIN_SIZE     = 10   # triangle point below
+        PIN_OFFSET   = 0.0  # will be computed per-axis in data coords
+
+        # Compute a fixed pixel offset in data units for the pin tip
+        # (approximate: we nudge Y downward slightly)
+        y_range = y_max - y_min
+        y_nudge = y_range * 0.025   # tiny offset for the pin tip
+
+        for _, row in plot_df.iterrows():
+            bg   = row["club_bg"]
+            fg   = row["club_text"]
+            abbr = row["Abbr"]
+            team = row["Team"]
+            x    = row["Def Score"]
+            y    = row["Off Score"]
+
+            # 1. The badge (large rounded square, coloured by club)
+            fig.add_trace(go.Scatter(
+                x=[x], y=[y],
+                mode="markers+text",
+                marker=dict(
+                    size=MARKER_SIZE,
+                    color=bg,
+                    symbol="square",
+                    line=dict(color="rgba(255,255,255,0.18)", width=1),
+                ),
+                text=[f"<b>{abbr}</b>"],
+                textfont=dict(color=fg, size=10, family="Arial Black, sans-serif"),
+                textposition="middle center",
+                name=team,
+                showlegend=False,
+                hoverinfo="skip",
+            ))
+
+            # 2. The pin triangle (small triangle below badge)
+            fig.add_trace(go.Scatter(
+                x=[x], y=[y - y_nudge],
+                mode="markers",
+                marker=dict(
+                    size=PIN_SIZE,
+                    color=bg,
+                    symbol="triangle-down",
+                    line=dict(color="rgba(0,0,0,0)", width=0),
+                ),
+                showlegend=False,
+                hovertemplate=(
+                    f"<b>{team}</b><br>"
+                    f"Attack: {y:.2f}<br>"
+                    f"Defence: {x:.2f}<extra></extra>"
+                ),
+            ))
+
+        # Subtle quadrant corner labels
+        ann_style = dict(showarrow=False, font=dict(size=9, color="rgba(255,255,255,0.18)"))
+        fig.add_annotation(x=x_max, y=y_max, text="ELITE", xanchor="right", yanchor="top",    **ann_style)
+        fig.add_annotation(x=x_min, y=y_max, text="ATTACK", xanchor="left",  yanchor="top",   **ann_style)
+        fig.add_annotation(x=x_max, y=y_min, text="SOLID",  xanchor="right", yanchor="bottom", **ann_style)
+        fig.add_annotation(x=x_min, y=y_min, text="WEAK",   xanchor="left",  yanchor="bottom", **ann_style)
+
+        fig.update_layout(
+            paper_bgcolor="#0d1117",
+            plot_bgcolor="#0d1117",
+            font=dict(color="#cccccc", family="sans-serif", size=12),
+            xaxis=dict(
+                title=dict(text="Better Defence →", font=dict(size=12, color="#888")),
+                range=[x_min, x_max],
+                showgrid=False, zeroline=False, showline=False,
+                tickfont=dict(size=10, color="#555"),
+            ),
+            yaxis=dict(
+                title=dict(text="Better Attack ↑", font=dict(size=12, color="#888")),
+                range=[y_min, y_max],
+                showgrid=False, zeroline=False, showline=False,
+                tickfont=dict(size=10, color="#555"),
+            ),
+            margin=dict(l=55, r=25, t=15, b=55),
+            height=580,
+            hovermode="closest",
         )
-        for col in num_cols:
-            header_cells += f'<th style="padding:8px 12px;color:#888;font-size:12px;text-align:center">{col}</th>'
 
-        html = f"""
-        <div style="overflow-x:auto;border-radius:8px;border:1px solid #333;margin-top:8px">
-        <table style="border-collapse:collapse;width:100%;font-family:sans-serif">
-        <thead style="background:#1a1a1a">
-        <tr>{header_cells}</tr>
-        </thead>
-        <tbody>{rows_html}</tbody>
-        </table>
-        </div>"""
-        st.markdown(html, unsafe_allow_html=True)
+        st.plotly_chart(fig, use_container_width=True)
 
-        # Mini bar charts for key metrics
+        # ── Ranking table ──────────────────────────────────────────────────────
         st.markdown("---")
-        chart_cols = [c for c in ["Off Score","Def Score","Final Rating"] if c in pl_ratings.columns]
-        if chart_cols:
-            chart_pick = st.selectbox("Show chart for:", chart_cols)
-            chart_data = pl_ratings.set_index("Team")[[chart_pick]].sort_values(chart_pick, ascending=True)
-            st.bar_chart(chart_data)
+        rank_df = plot_df[["Team","Abbr","Off Score","Def Score"]].copy()
+        off_max = rank_df["Off Score"].max()
+        def_max = rank_df["Def Score"].max()
+        rank_df["Overall"] = (
+            (rank_df["Off Score"] / off_max + rank_df["Def Score"] / def_max) / 2 * 100
+        ).round(1)
+        rank_df = rank_df.sort_values("Overall", ascending=False).reset_index(drop=True)
+
+        rows_html = ""
+        for i, row in rank_df.iterrows():
+            bg, fg = club_style(row["Team"])
+            medal  = ["🥇","🥈","🥉"][i] if i < 3 else f"{i+1}"
+            dot = (f'<span style="display:inline-block;width:10px;height:10px;border-radius:2px;'
+                   f'background:{bg};margin-right:8px;vertical-align:middle"></span>')
+            rows_html += (
+                f'<tr style="border-bottom:1px solid #1e1e1e">'
+                f'<td style="width:4px;background:{bg};padding:0"></td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#777;font-size:13px">{medal}</td>'
+                f'<td style="padding:6px 10px;font-weight:bold;color:#fff;font-size:13px">{dot}{row["Team"]}</td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#63be7b;font-size:13px">{row["Off Score"]:.2f}</td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#6CABDD;font-size:13px">{row["Def Score"]:.2f}</td>'
+                f'<td style="padding:6px 10px;text-align:center;font-weight:bold;color:#f4a261;font-size:13px">{row["Overall"]:.1f}</td>'
+                f'</tr>'
+            )
+
+        st.markdown(
+            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #222;margin-top:4px">'
+            '<table style="border-collapse:collapse;width:100%;font-family:sans-serif;background:#0d1117">'
+            '<thead style="background:#161b22"><tr>'
+            '<th style="width:4px;padding:0"></th>'
+            '<th style="padding:6px 10px;color:#555;font-size:11px;font-weight:normal;text-align:center">#</th>'
+            '<th style="padding:6px 10px;color:#555;font-size:11px;font-weight:normal;text-align:left">Team</th>'
+            '<th style="padding:6px 10px;color:#63be7b;font-size:11px;font-weight:normal;text-align:center">⚔️ Attack</th>'
+            '<th style="padding:6px 10px;color:#6CABDD;font-size:11px;font-weight:normal;text-align:center">🛡️ Defence</th>'
+            '<th style="padding:6px 10px;color:#f4a261;font-size:11px;font-weight:normal;text-align:center">Overall %</th>'
+            f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
+            unsafe_allow_html=True
+        )
 
 # ── Easy Run Finder ───────────────────────────────────────────────────────────
 st.markdown("---")
