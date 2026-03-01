@@ -33,6 +33,33 @@ def get_current_gw(bootstrap):
             return ev["id"]
     return 1
 
+# --- Configuration ---
+RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
+FIXTURES_CSV_FILE = "Fixtures202526.csv"
+REVIEW_CSV_FILE   = "review.csv"
+
+AVG_LEAGUE_HOME_GOALS = 1.55
+AVG_LEAGUE_AWAY_GOALS = 1.25
+BGW_PENALTY_FDR = 6.0
+FDR_THRESHOLDS  = {5: 120.0, 4: 108.0, 3: 99.0, 2: 90.0, 1: 0}
+
+PREMIER_LEAGUE_TEAMS = sorted([
+    'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
+    'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
+    'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
+    'Spurs', 'West Ham', 'Wolves'
+])
+
+TEAM_ABBREVIATIONS = {
+    'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
+    'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
+    'Everton': 'EVE', 'Fulham': 'FUL', 'Ipswich': 'IPS', 'Leeds': 'LEE',
+    'Leicester': 'LEI', 'Liverpool': 'LIV', 'Man City': 'MCI', 'Man Utd': 'MUN',
+    'Newcastle': 'NEW', 'Nottm Forest': 'NFO', 'Southampton': 'SOU',
+    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
+    'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
+}
+
 TEAM_NAME_MAP = {
     "A.F.C. Bournemouth": "Bournemouth", "Bournemouth": "Bournemouth",
     "Brighton & Hove Albion": "Brighton", "Brighton": "Brighton",
@@ -43,6 +70,7 @@ TEAM_NAME_MAP = {
     "Manchester United": "Man Utd", "Man Utd": "Man Utd",
     "Newcastle United": "Newcastle", "Newcastle": "Newcastle",
     "Nottingham Forest": "Nottm Forest", "Nottm Forest": "Nottm Forest",
+    "Nott'm Forest": "Nottm Forest",
     "Southampton FC": "Southampton", "Southampton": "Southampton",
     "Tottenham Hotspur": "Spurs", "Spurs": "Spurs", "Tottenham": "Spurs",
     "West Ham United": "West Ham", "West Ham": "West Ham",
@@ -51,6 +79,45 @@ TEAM_NAME_MAP = {
     "Burnley FC": "Burnley", "Burnley": "Burnley",
     "Brentford FC": "Brentford", "Brentford": "Brentford",
 }
+
+FDR_BG = {1:'#00ff85', 2:'#50c369', 3:'#D3D3D3', 4:'#9d66a0', 5:'#6f2a74', 6:'#1E1E1E'}
+FDR_FG = {1:'#31333F', 2:'#31333F', 3:'#31333F', 4:'#FFFFFF', 5:'#FFFFFF', 6:'#FF4B4B'}
+
+# ── FDR helpers ───────────────────────────────────────────────────────────────
+
+def get_fdr_score_from_rating(team_rating):
+    if pd.isna(team_rating): return 3
+    if team_rating >= FDR_THRESHOLDS[5]: return 5
+    if team_rating >= FDR_THRESHOLDS[4]: return 4
+    if team_rating >= FDR_THRESHOLDS[3]: return 3
+    if team_rating >= FDR_THRESHOLDS[2]: return 2
+    return 1
+
+# ── Data loaders ──────────────────────────────────────────────────────────────
+
+@st.cache_data
+def load_csv_data():
+    try:
+        ratings_df  = pd.read_csv(RATINGS_CSV_FILE)
+        fixtures_df = pd.read_csv(FIXTURES_CSV_FILE)
+    except FileNotFoundError:
+        st.error("CSV files not found.")
+        return None, None
+    ratings_df['Team'] = ratings_df['Team'].map(TEAM_NAME_MAP).fillna(ratings_df['Team'])
+    fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
+    fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
+    return ratings_df, fixtures_df
+
+@st.cache_data
+def load_review_csv():
+    try:
+        df = pd.read_csv(REVIEW_CSV_FILE)
+        df.columns = [c.lstrip('\ufeff') for c in df.columns]
+        # Normalise team names to match PREMIER_LEAGUE_TEAMS
+        df['Team'] = df['Team'].map(lambda t: TEAM_NAME_MAP.get(t, t))
+        return df
+    except FileNotFoundError:
+        return None
 
 def build_live_fixtures_df(bootstrap, raw_fixtures):
     teams = pd.DataFrame(bootstrap["teams"])
@@ -94,205 +161,7 @@ def build_dgw_bgw(raw_fixtures, bootstrap, start_gw, end_gw):
         if bgw_gws: bgw[name] = bgw_gws
     return dgw, bgw
 
-# ── Review CSV helpers ─────────────────────────────────────────────────────────
-
-@st.cache_data
-def load_review_csv(path="review.csv"):
-    try:
-        df = pd.read_csv(path)
-        df.columns = [c.lstrip('\ufeff') for c in df.columns]
-        return df
-    except FileNotFoundError:
-        return None
-
-def _team_id_lookup(bootstrap):
-    """Build a comprehensive team name → API id mapping."""
-    teams_df = pd.DataFrame(bootstrap["teams"])
-    lookup = {}
-    review_overrides = {
-        "Nott'm Forest": "Nottingham Forest",
-        "Man Utd": "Manchester United",
-        "Man City": "Manchester City",
-        "Spurs": "Tottenham Hotspur",
-    }
-    for _, row in teams_df.iterrows():
-        lookup[row["name"]] = row["id"]
-        lookup[row["short_name"]] = row["id"]
-        mapped = TEAM_NAME_MAP.get(row["name"], row["name"])
-        lookup[mapped] = row["id"]
-    for alias, full in review_overrides.items():
-        for _, row in teams_df.iterrows():
-            if row["name"] == full:
-                lookup[alias] = row["id"]
-    return lookup
-
-def _get_fixture_for_team(team_name, gw_fixtures, bootstrap):
-    """Return (fixture_str, fdr_int) for a team in a given GW's fixtures."""
-    teams_df    = pd.DataFrame(bootstrap["teams"])
-    id_to_short = dict(zip(teams_df["id"], teams_df["short_name"]))
-    id_lookup   = _team_id_lookup(bootstrap)
-
-    tid = id_lookup.get(team_name)
-    if tid is None:
-        return "?", 3
-
-    for f in gw_fixtures:
-        if f["team_h"] == tid:
-            opp = id_to_short.get(f["team_a"], "?")
-            return f"{opp} (H)", f["team_h_difficulty"]
-        if f["team_a"] == tid:
-            opp = id_to_short.get(f["team_h"], "?")
-            return f"{opp} (A)", f["team_a_difficulty"]
-    return "BGW", 6
-
-def get_captain_picks_from_review(review_df, gw, raw_fixtures, bootstrap):
-    pts_col  = f"{gw}_Pts"
-    mins_col = f"{gw}_xMins"
-    if pts_col not in review_df.columns:
-        return pd.DataFrame()
-
-    df = review_df.copy()
-    df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
-    df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
-    df["Elite%"] = pd.to_numeric(df["Elite%"],  errors="coerce")
-
-    active = df[df[mins_col] > 45].copy()
-    top2   = active.nlargest(2, pts_col).copy()
-    top2["Type"] = ["🏆 Top EV", "🥈 2nd EV"]
-
-    diff_pool = active[(active["Elite%"] < 0.10) & (~active["Name"].isin(top2["Name"]))]
-    diff = diff_pool.nlargest(1, pts_col).copy()
-    diff["Type"] = ["🎯 Differential"]
-
-    picks = pd.concat([top2, diff], ignore_index=True)
-
-    gw_fixtures = [f for f in raw_fixtures if f["event"] == gw]
-    fix_info    = picks["Team"].apply(lambda t: _get_fixture_for_team(t, gw_fixtures, bootstrap))
-    picks["Fixture"] = [f[0] for f in fix_info]
-    picks["FDR"]     = [f[1] for f in fix_info]
-    picks["EV"]      = picks[pts_col].round(2)
-    picks["Elite%"]  = picks["Elite%"].apply(lambda x: f"{x*100:.1f}%")
-
-    return picks[["Type", "Name", "Team", "Pos", "EV", "Fixture", "FDR", "Elite%"]]
-
-def get_captain_matrix(review_df, gws, raw_fixtures, bootstrap):
-    matrix = {}
-    for gw in gws:
-        pts_col  = f"{gw}_Pts"
-        mins_col = f"{gw}_xMins"
-        if pts_col not in review_df.columns:
-            continue
-        df = review_df.copy()
-        df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
-        df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
-        df["Elite%"] = pd.to_numeric(df["Elite%"],  errors="coerce")
-
-        active = df[df[mins_col] > 45]
-        top_ev = active[pts_col].max()
-        if pd.isna(top_ev):
-            continue
-
-        within      = active[active[pts_col] >= top_ev - 0.5].nlargest(10, pts_col)
-        gw_fixtures = [f for f in raw_fixtures if f["event"] == gw]
-
-        rows = []
-        for _, r in within.iterrows():
-            fix, fdr = _get_fixture_for_team(r["Team"], gw_fixtures, bootstrap)
-            rows.append({
-                "Name": r["Name"], "EV": round(r[pts_col], 2),
-                "Elite%": round(r["Elite%"] * 100, 1),
-                "Fixture": fix, "FDR": fdr,
-            })
-        matrix[gw] = rows
-    return matrix
-
-# ── Price changes & injury ────────────────────────────────────────────────────
-
-def get_price_changes(bootstrap):
-    players  = pd.DataFrame(bootstrap["elements"])
-    cols = [c for c in ["web_name", "team", "element_type", "now_cost",
-                         "cost_change_event", "cost_change_start"] if c in players.columns]
-    df = players[cols].copy()
-    df = df[df["cost_change_event"] != 0].copy()
-    df["Price (£m)"] = df["now_cost"] / 10.0
-    df["Change"]     = df["cost_change_event"] / 10.0
-
-    teams_df    = pd.DataFrame(bootstrap["teams"])
-    id_to_short = dict(zip(teams_df["id"], teams_df["short_name"]))
-    POSITION_MAP = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    df["Team"]     = df["team"].map(id_to_short)
-    df["Position"] = df["element_type"].map(POSITION_MAP)
-    df.rename(columns={"web_name": "Player"}, inplace=True)
-    return df[["Player", "Team", "Position", "Price (£m)", "Change"]].sort_values("Change", ascending=False)
-
-def get_injury_status(bootstrap):
-    players = pd.DataFrame(bootstrap["elements"])
-    cols = [c for c in ["web_name", "team", "element_type", "status", "news",
-                         "chance_of_playing_next_round"] if c in players.columns]
-    df = players[cols].copy()
-    df = df[df["status"].isin(["d", "i", "s", "u"])].copy()
-
-    teams_df    = pd.DataFrame(bootstrap["teams"])
-    id_to_short = dict(zip(teams_df["id"], teams_df["short_name"]))
-    POSITION_MAP = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    STATUS_MAP   = {"d": "⚠️ Doubt", "i": "🔴 Injured", "s": "🟡 Suspended", "u": "❌ Unavailable"}
-
-    df["Team"]     = df["team"].map(id_to_short)
-    df["Position"] = df["element_type"].map(POSITION_MAP)
-    df["Status"]   = df["status"].map(STATUS_MAP)
-    df["Play%"]    = df["chance_of_playing_next_round"].apply(
-        lambda x: f"{int(x)}%" if pd.notna(x) else "?"
-    )
-    df.rename(columns={"web_name": "Player", "news": "News"}, inplace=True)
-    return df[["Player", "Team", "Position", "Status", "Play%", "News"]].sort_values("Status").reset_index(drop=True)
-
-# --- Configuration ---
-RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
-FIXTURES_CSV_FILE = "Fixtures202526.csv"
-REVIEW_CSV_FILE   = "review.csv"
-
-AVG_LEAGUE_HOME_GOALS = 1.55
-AVG_LEAGUE_AWAY_GOALS = 1.25
-BGW_PENALTY_FDR = 6.0
-FDR_THRESHOLDS  = {5: 120.0, 4: 108.0, 3: 99.0, 2: 90.0, 1: 0}
-
-PREMIER_LEAGUE_TEAMS = sorted([
-    'Arsenal', 'Aston Villa', 'Bournemouth', 'Brentford', 'Brighton', 'Burnley',
-    'Chelsea', 'Crystal Palace', 'Everton', 'Fulham', 'Leeds', 'Liverpool',
-    'Man City', 'Man Utd', 'Newcastle', 'Nottm Forest', 'Sunderland',
-    'Spurs', 'West Ham', 'Wolves'
-])
-
-TEAM_ABBREVIATIONS = {
-    'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Bournemouth': 'BOU', 'Brentford': 'BRE',
-    'Brighton': 'BHA', 'Burnley': 'BUR', 'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
-    'Everton': 'EVE', 'Fulham': 'FUL', 'Ipswich': 'IPS', 'Leeds': 'LEE',
-    'Leicester': 'LEI', 'Liverpool': 'LIV', 'Man City': 'MCI', 'Man Utd': 'MUN',
-    'Newcastle': 'NEW', 'Nottm Forest': 'NFO', 'Southampton': 'SOU',
-    'Sunderland': 'SUN', 'Spurs': 'TOT', 'West Ham': 'WHU', 'Wolves': 'WOL',
-    'Tottenham Hotspur': 'TOT', 'Manchester City': 'MCI', 'Manchester United': 'MUN'
-}
-
-def get_fdr_score_from_rating(team_rating):
-    if pd.isna(team_rating): return 3
-    if team_rating >= FDR_THRESHOLDS[5]: return 5
-    if team_rating >= FDR_THRESHOLDS[4]: return 4
-    if team_rating >= FDR_THRESHOLDS[3]: return 3
-    if team_rating >= FDR_THRESHOLDS[2]: return 2
-    return 1
-
-@st.cache_data
-def load_csv_data():
-    try:
-        ratings_df  = pd.read_csv(RATINGS_CSV_FILE)
-        fixtures_df = pd.read_csv(FIXTURES_CSV_FILE)
-    except FileNotFoundError:
-        st.error("CSV files not found.")
-        return None, None
-    ratings_df['Team'] = ratings_df['Team'].map(TEAM_NAME_MAP).fillna(ratings_df['Team'])
-    fixtures_df['HomeTeam_std'] = fixtures_df['Home Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Home Team'])
-    fixtures_df['AwayTeam_std'] = fixtures_df['Away Team'].map(TEAM_NAME_MAP).fillna(fixtures_df['Away Team'])
-    return ratings_df, fixtures_df
+# ── Core data processing ──────────────────────────────────────────────────────
 
 @st.cache_data
 def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hit_gw=None):
@@ -385,7 +254,6 @@ def find_fixture_runs(fixtures_df_dict, rating_dict, start_gw):
             if away_team in PREMIER_LEAGUE_TEAMS:
                 rating = rating_dict.get(home_team, {}).get('Final Rating')
                 all_fixtures[away_team].append({"gw": gw, "opp": home_team, "loc": "A", "fdr": get_fdr_score_from_rating(rating)})
-
     good_runs = {}
     for team, fixtures in all_fixtures.items():
         current_run = []
@@ -400,6 +268,142 @@ def find_fixture_runs(fixtures_df_dict, rating_dict, start_gw):
         if len(current_run) >= 3:
             good_runs.setdefault(team, []).append(current_run)
     return good_runs
+
+# ── Captain helpers — using YOUR FDR ratings ──────────────────────────────────
+
+def get_fdr_for_team_gw(team_name, gw, master_df):
+    """
+    Look up FDR for a team in a given GW from the already-computed master_df.
+    master_df is indexed by team name, columns are GW29, GW30 etc.
+    Returns (fixture_str, fdr_int).
+    """
+    gw_col = f"GW{gw}"
+    std_name = TEAM_NAME_MAP.get(team_name, team_name)
+
+    if std_name not in master_df.index:
+        return "?", 3
+    cell = master_df.loc[std_name, gw_col] if gw_col in master_df.columns else None
+    if isinstance(cell, dict):
+        return cell.get('display', '?'), cell.get('fdr', 3)
+    return "BGW", 6
+
+def get_captain_picks(review_df, gw, master_df_full):
+    """
+    3 captain picks for a GW:
+      - Top 2 by projected points (xMins > 45)
+      - 1 Differential: good points but low Elite% (< 10%)
+    FDR comes from YOUR custom ratings via master_df_full.
+    """
+    pts_col  = f"{gw}_Pts"
+    mins_col = f"{gw}_xMins"
+    if pts_col not in review_df.columns:
+        return pd.DataFrame()
+
+    df = review_df.copy()
+    df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
+    df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
+    df["Elite%"] = pd.to_numeric(df["Elite%"],  errors="coerce")
+
+    active = df[df[mins_col] > 45].copy()
+
+    top2 = active.nlargest(2, pts_col).copy()
+    top2["Type"] = ["🏆 Top Pick", "🥈 2nd Pick"]
+
+    diff_pool = active[(active["Elite%"] < 0.10) & (~active["Name"].isin(top2["Name"]))]
+    diff = diff_pool.nlargest(1, pts_col).copy()
+    diff["Type"] = ["🎯 Differential"]
+
+    picks = pd.concat([top2, diff], ignore_index=True)
+
+    # Attach fixture + FDR from YOUR rating system
+    fixture_col, fdr_col = [], []
+    for _, r in picks.iterrows():
+        fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
+        fixture_col.append(fix)
+        fdr_col.append(fdr)
+
+    picks["Fixture"] = fixture_col
+    picks["FDR"]     = fdr_col
+    picks["EV"]      = picks[pts_col].round(2)
+
+    # Keep Elite% internally for differential logic but DON'T show it
+    return picks[["Type", "Name", "Team", "Pos", "EV", "Fixture", "FDR"]]
+
+def get_captain_matrix(review_df, gws, master_df_full):
+    """
+    For each GW: all players within 0.5 EV of the top pick (xMins > 45).
+    FDR from YOUR rating system. Returns dict: gw -> list of row dicts.
+    """
+    matrix = {}
+    for gw in gws:
+        pts_col  = f"{gw}_Pts"
+        mins_col = f"{gw}_xMins"
+        if pts_col not in review_df.columns:
+            continue
+
+        df = review_df.copy()
+        df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
+        df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
+
+        active = df[df[mins_col] > 45]
+        top_ev = active[pts_col].max()
+        if pd.isna(top_ev):
+            continue
+
+        within = active[active[pts_col] >= top_ev - 0.5].nlargest(10, pts_col)
+
+        rows = []
+        for _, r in within.iterrows():
+            fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
+            rows.append({
+                "Name": r["Name"],
+                "EV":   round(float(r[pts_col]), 2),
+                "Fixture": fix,
+                "FDR":  fdr,
+            })
+        matrix[gw] = rows
+    return matrix
+
+# ── Live radar helpers ─────────────────────────────────────────────────────────
+
+def get_price_changes(bootstrap):
+    players = pd.DataFrame(bootstrap["elements"])
+    cols = [c for c in ["web_name","team","element_type","now_cost",
+                         "cost_change_event"] if c in players.columns]
+    df = players[cols].copy()
+    df = df[df["cost_change_event"] != 0].copy()
+    df["Price (£m)"] = df["now_cost"] / 10.0
+    df["Change"]     = df["cost_change_event"] / 10.0
+    teams_df    = pd.DataFrame(bootstrap["teams"])
+    id_to_short = dict(zip(teams_df["id"], teams_df["short_name"]))
+    POSITION_MAP = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
+    df["Team"]     = df["team"].map(id_to_short)
+    df["Position"] = df["element_type"].map(POSITION_MAP)
+    df.rename(columns={"web_name":"Player"}, inplace=True)
+    return df[["Player","Team","Position","Price (£m)","Change"]].sort_values("Change", ascending=False)
+
+def get_injury_status(bootstrap):
+    players = pd.DataFrame(bootstrap["elements"])
+    cols = [c for c in ["web_name","team","element_type","status","news",
+                         "chance_of_playing_next_round"] if c in players.columns]
+    df = players[cols].copy()
+    df = df[df["status"].isin(["d","i","s","u"])].copy()
+    teams_df    = pd.DataFrame(bootstrap["teams"])
+    id_to_short = dict(zip(teams_df["id"], teams_df["short_name"]))
+    POSITION_MAP = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
+    STATUS_MAP   = {"i":"🔴 Injured","d":"⚠️ Doubt","s":"🟡 Suspended","u":"❌ Unavailable"}
+    STATUS_ORDER = {"🔴 Injured":0,"⚠️ Doubt":1,"🟡 Suspended":2,"❌ Unavailable":3}
+    df["Team"]     = df["team"].map(id_to_short)
+    df["Position"] = df["element_type"].map(POSITION_MAP)
+    df["Status"]   = df["status"].map(STATUS_MAP)
+    df["Play%"]    = df["chance_of_playing_next_round"].apply(
+        lambda x: f"{int(x)}%" if pd.notna(x) else "?")
+    df.rename(columns={"web_name":"Player","news":"News"}, inplace=True)
+    # Sort by status severity first, then by Play% ascending (most at risk first)
+    df["_sort"] = df["Status"].map(STATUS_ORDER).fillna(9)
+    df["_play_num"] = df["chance_of_playing_next_round"].fillna(50)
+    df = df.sort_values(["_sort","_play_num"]).reset_index(drop=True)
+    return df[["Player","Team","Position","Status","Play%","News"]]
 
 # =============================================================================
 # MAIN APP
@@ -423,6 +427,7 @@ with st.sidebar:
         if st.button("🔄 Rerun", use_container_width=True):
             st.rerun()
 
+# Load data
 bootstrap    = None
 raw_fixtures = None
 live_ok      = False
@@ -439,20 +444,19 @@ if use_live:
         st.sidebar.warning(f"⚠️ Live failed ({e}). Using CSV.")
 
 ratings_df, fixtures_df = load_csv_data()
-review_df = load_review_csv(REVIEW_CSV_FILE)
+review_df = load_review_csv()
 
 if live_ok and bootstrap and raw_fixtures:
     fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
 
 with st.expander("Glossary & How It Works"):
     st.markdown(f"""
-    - **FDR:** Fixture Difficulty Rating (1-5). Lower is better.
+    - **FDR:** Fixture Difficulty Rating (1-5). Lower = easier.
     - **xG:** Projected Goals. Higher = better for attackers.
     - **xCS:** Expected Clean Sheets. Higher = better for defenders.
-    - **EV:** Expected Value (projected points from FPL Review CSV).
-    - **Elite%:** % of elite FPL managers owning the player.
-    - **Differential:** Good EV, low Elite% (under 10%).
-    - **Captain Matrix:** All captains within 0.5 EV of the top pick per GW.
+    - **EV:** Expected projected points.
+    - **Differential:** A high-value pick with low ownership among top managers.
+    - **Captain Matrix:** Best captains per GW within 0.5 EV of the top pick.
     - **Live Data:** {"🟢 Active" if live_ok else "🔴 Off — CSV mode"}
     """)
 
@@ -463,13 +467,30 @@ if ratings_df is not None and fixtures_df is not None:
     with col_start:
         start_gw = st.number_input("Start GW:", min_value=1, max_value=38, value=default_gw)
     with col_end:
-        end_gw = st.number_input("End GW:", min_value=1, max_value=38, value=min(default_gw + 4, 38))
+        end_gw = st.number_input("End GW:", min_value=1, max_value=38, value=min(default_gw+4, 38))
 
     selected_teams = st.sidebar.multiselect("Select teams:", PREMIER_LEAGUE_TEAMS, default=PREMIER_LEAGUE_TEAMS)
-    fh_options  = [None] + list(range(start_gw, end_gw + 1))
+    fh_options  = [None] + list(range(start_gw, end_gw+1))
     free_hit_gw = st.sidebar.selectbox("Free Hit GW:", options=fh_options,
                                         format_func=lambda x: "None" if x is None else f"GW{x}")
 
+    # Build FULL master_df (all teams, all future GWs) for FDR lookups in captain tabs
+    # We need fixture data for all remaining GWs, not just selected range
+    if review_df is not None:
+        review_gws = sorted([int(c.split("_")[0]) for c in review_df.columns
+                              if c.endswith("_Pts") and c.split("_")[0].isdigit()])
+        future_gws = [g for g in review_gws if g >= current_gw]
+        all_start = min(future_gws) if future_gws else start_gw
+        all_end   = max(future_gws) if future_gws else end_gw
+        # Build full master_df for all remaining GWs (for FDR lookups)
+        master_df_full = create_all_data(
+            fixtures_df.to_dict('records'), all_start, all_end,
+            ratings_df.to_dict('records'), None
+        )
+    else:
+        master_df_full = None
+
+    # Build display master_df for the selected GW range
     master_df = create_all_data(
         fixtures_df.to_dict('records'), start_gw, end_gw,
         ratings_df.to_dict('records'), free_hit_gw
@@ -477,7 +498,7 @@ if ratings_df is not None and fixtures_df is not None:
     if selected_teams:
         master_df = master_df.loc[[t for t in master_df.index if t in selected_teams]]
 
-    gw_columns = [f'GW{i}' for i in range(start_gw, end_gw + 1)]
+    gw_columns = [f'GW{i}' for i in range(start_gw, end_gw+1)]
     if free_hit_gw and f'GW{free_hit_gw}' in gw_columns:
         gw_columns.remove(f'GW{free_hit_gw}')
 
@@ -490,10 +511,10 @@ if ratings_df is not None and fixtures_df is not None:
     # ── Tab 1: FDR ────────────────────────────────────────────────────────────
     with tab1:
         st.subheader("Fixture Difficulty Rating (Lower = easier)")
-        df_display = master_df.sort_values('Total Difficulty').reset_index().rename(columns={'index': 'Team'})
-        df_display = df_display[['Team', 'Total Difficulty'] + gw_columns]
+        df_display = master_df.sort_values('Total Difficulty').reset_index().rename(columns={'index':'Team'})
+        df_display = df_display[['Team','Total Difficulty'] + gw_columns]
 
-        df_for_grid = df_display[['Team', 'Total Difficulty']].copy()
+        df_for_grid = df_display[['Team','Total Difficulty']].copy()
         for col in gw_columns:
             df_for_grid[col] = df_display[col]
             df_for_grid[f'{col}_display'] = df_display[col].apply(
@@ -529,8 +550,8 @@ if ratings_df is not None and fixtures_df is not None:
     # ── Tab 2: xG ─────────────────────────────────────────────────────────────
     with tab2:
         st.subheader("Projected Goals (Higher = better for attackers)")
-        df_display = master_df.sort_values('Total xG', ascending=False).reset_index().rename(columns={'index': 'Team'})
-        df_display = df_display[['Team', 'Total xG'] + gw_columns]
+        df_display = master_df.sort_values('Total xG', ascending=False).reset_index().rename(columns={'index':'Team'})
+        df_display = df_display[['Team','Total xG'] + gw_columns]
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
@@ -547,8 +568,8 @@ if ratings_df is not None and fixtures_df is not None:
     # ── Tab 3: xCS ────────────────────────────────────────────────────────────
     with tab3:
         st.subheader("Expected Clean Sheets (Higher = better for defenders)")
-        df_display = master_df.sort_values('xCS', ascending=False).reset_index().rename(columns={'index': 'Team'})
-        df_display = df_display[['Team', 'xCS'] + gw_columns]
+        df_display = master_df.sort_values('xCS', ascending=False).reset_index().rename(columns={'index':'Team'})
+        df_display = df_display[['Team','xCS'] + gw_columns]
         gb = GridOptionsBuilder.from_dataframe(df_display)
         gb.configure_column("Team", pinned='left', flex=2, minWidth=150)
         gb.configure_column("xCS", pinned='left', valueFormatter="data['xCS'].toFixed(2)", flex=1.5, type=["numericColumn"], minWidth=140)
@@ -563,122 +584,158 @@ if ratings_df is not None and fixtures_df is not None:
 
     # ── Tab 4: Captain Picks ──────────────────────────────────────────────────
     with tab4:
-        st.subheader("🎯 Captain Picks — from FPL Review EV")
+        st.subheader("🎯 Captain Picks")
         if review_df is None:
             st.error("❌ review.csv not found. Place it in the same folder as app.py.")
-        elif not live_ok:
-            st.warning("⚠️ Enable Live FPL Data for fixture info.")
+        elif master_df_full is None:
+            st.error("❌ Could not build fixture data.")
         else:
-            review_gws  = sorted([int(c.split("_")[0]) for c in review_df.columns
-                                   if c.endswith("_Pts") and c.split("_")[0].isdigit()])
-            future_gws  = [g for g in review_gws if g >= current_gw]
-            if not future_gws:
-                st.warning("No upcoming GWs in review.csv.")
+            future_gws_sel = [g for g in review_gws if g >= current_gw]
+            if not future_gws_sel:
+                st.warning("No upcoming GWs found in data file.")
             else:
-                gw_sel = st.selectbox("Select GW:", future_gws, key="cap_picks_gw")
-                picks  = get_captain_picks_from_review(review_df, gw_sel, raw_fixtures, bootstrap)
+                gw_sel = st.selectbox("Select GW:", future_gws_sel, key="cap_picks_gw")
+                picks  = get_captain_picks(review_df, gw_sel, master_df_full)
 
                 if picks.empty:
                     st.warning(f"No data for GW{gw_sel}.")
                 else:
                     st.markdown(f"**GW{gw_sel} Captain Recommendations**")
-                    st.caption("Top 2 EV + 1 Differential (Elite% < 10%). EV = projected points from FPL Review.")
-
-                    FDR_BG = {1:'#00ff85',2:'#50c369',3:'#D3D3D3',4:'#9d66a0',5:'#6f2a74',6:'#1E1E1E'}
-                    FDR_FG = {1:'#31333F',2:'#31333F',3:'#31333F',4:'white',5:'white',6:'#FF4B4B'}
+                    st.caption("Top 2 picks + 1 Differential. FDR based on your custom team ratings.")
 
                     def colour_row(row):
                         type_styles = {
-                            "🏆 Top EV":       "background-color:#1a472a;color:#00ff85;font-weight:bold",
-                            "🥈 2nd EV":       "background-color:#1a3a47;color:#50c369;font-weight:bold",
+                            "🏆 Top Pick":     "background-color:#1a472a;color:#00ff85;font-weight:bold",
+                            "🥈 2nd Pick":     "background-color:#1a3a47;color:#50c369;font-weight:bold",
                             "🎯 Differential": "background-color:#3d2b1f;color:#f4a261;font-weight:bold",
                         }
                         base = [""] * len(row)
                         idx  = list(row.index)
                         base[idx.index("Type")] = type_styles.get(row["Type"], "")
                         fdr_val = int(row.get("FDR", 3))
-                        base[idx.index("FDR")] = (f"background-color:{FDR_BG.get(fdr_val,'#444')};"
-                                                   f"color:{FDR_FG.get(fdr_val,'white')};font-weight:bold")
+                        bg = FDR_BG.get(fdr_val, '#444')
+                        fg = FDR_FG.get(fdr_val, 'white')
+                        base[idx.index("FDR")] = f"background-color:{bg};color:{fg};font-weight:bold;text-align:center"
                         return base
 
                     st.dataframe(picks.style.apply(colour_row, axis=1),
                                  use_container_width=True, hide_index=True)
-
-                    st.markdown("---")
-                    chart_data = picks.set_index("Name")[["EV"]]
-                    st.bar_chart(chart_data)
 
     # ── Tab 5: Captain Matrix ─────────────────────────────────────────────────
     with tab5:
         st.subheader("🏅 Captain Matrix — Within 0.5 EV of Top Pick")
         if review_df is None:
             st.error("❌ review.csv not found.")
-        elif not live_ok:
-            st.warning("⚠️ Enable Live FPL Data.")
+        elif master_df_full is None:
+            st.error("❌ Could not build fixture data.")
         else:
-            review_gws = sorted([int(c.split("_")[0]) for c in review_df.columns
-                                  if c.endswith("_Pts") and c.split("_")[0].isdigit()])
-            future_gws = [g for g in review_gws if g >= current_gw]
-            matrix_gws = st.multiselect("Show GWs:", future_gws,
-                                         default=future_gws[:6] if len(future_gws) >= 6 else future_gws,
-                                         key="matrix_gws")
+            future_gws_matrix = [g for g in review_gws if g >= current_gw]
+            matrix_gws = st.multiselect(
+                "Show GWs:", future_gws_matrix,
+                default=future_gws_matrix[:6] if len(future_gws_matrix) >= 6 else future_gws_matrix,
+                key="matrix_gws"
+            )
             if matrix_gws:
-                matrix = get_captain_matrix(review_df, matrix_gws, raw_fixtures, bootstrap)
+                matrix = get_captain_matrix(review_df, matrix_gws, master_df_full)
 
-                FDR_BG = {1:'#00ff85',2:'#50c369',3:'#D3D3D3',4:'#9d66a0',5:'#6f2a74',6:'#1E1E1E'}
-                FDR_FG = {1:'#31333F',2:'#31333F',3:'#31333F',4:'white',5:'white',6:'#FF4B4B'}
+                # Build HTML table with pure inline styles (no CSS classes that get stripped)
+                n = len(matrix_gws)
+                col_w = max(120, min(200, 900 // n))
 
-                html = """<style>
-                .cm{border-collapse:collapse;width:100%;font-family:sans-serif;font-size:13px}
-                .cm th{background:#2a2a2a;color:#bbb;padding:8px 10px;border:1px solid #444;text-align:center;min-width:80px}
-                .cm td{padding:6px 8px;border:1px solid #333;vertical-align:top}
-                .cm tr:first-child td{border-top:2px solid #555}
-                .fdr-badge{border-radius:3px;padding:2px 5px;font-weight:bold;font-size:11px;display:inline-block}
-                .ev-num{font-weight:bold;color:#00ff85;margin-left:4px}
-                .elite-pct{color:#888;font-size:11px}
-                .top-name{font-weight:bold;color:white}
-                .top-row td{border-top:2px solid #00ff8544}
-                </style><table class="cm"><thead><tr>"""
-
-                for gw in matrix_gws:
-                    html += f"<th>GW{gw}</th>"
-                html += "</tr></thead><tbody>"
+                # Header row
+                header_cells = "".join(
+                    f'<th style="background:#2a2a2a;color:#bbb;padding:8px 10px;'
+                    f'border:1px solid #444;text-align:center;min-width:{col_w}px;font-family:sans-serif;font-size:13px">GW{gw}</th>'
+                    for gw in matrix_gws
+                )
 
                 max_rows = max((len(matrix.get(gw, [])) for gw in matrix_gws), default=0)
 
+                body_rows = ""
                 for ri in range(max_rows):
-                    row_class = " class='top-row'" if ri == 0 else ""
-                    html += f"<tr{row_class}>"
+                    top_border = "border-top:2px solid rgba(0,255,133,0.3);" if ri == 0 else ""
+                    row_html = ""
                     for gw in matrix_gws:
-                        rows = matrix.get(gw, [])
-                        if ri < len(rows):
-                            r   = rows[ri]
-                            bg  = FDR_BG.get(r["FDR"], '#444')
-                            fg  = FDR_FG.get(r["FDR"], 'white')
-                            top = " class='top-name'" if ri == 0 else ""
-                            html += f"""<td>
-                                <span{top}>{r['Name']}</span>
-                                <span class='ev-num'>{r['EV']}</span><br>
-                                <span class='fdr-badge' style='background:{bg};color:{fg}'>{r['Fixture']}</span>
-                                <span class='elite-pct'> {r['Elite%']}%</span>
-                            </td>"""
+                        rows_for_gw = matrix.get(gw, [])
+                        if ri < len(rows_for_gw):
+                            r    = rows_for_gw[ri]
+                            fdr  = r["FDR"]
+                            bg   = FDR_BG.get(fdr, '#444')
+                            fg   = FDR_FG.get(fdr, 'white')
+                            name_style = "font-weight:bold;color:white;font-size:13px" if ri == 0 else "color:#ccc;font-size:13px"
+                            ev_style   = f"font-weight:bold;color:#00ff85;font-size:12px;margin-left:4px"
+                            badge_style = (f"background:{bg};color:{fg};border-radius:3px;"
+                                           f"padding:1px 5px;font-weight:bold;font-size:11px;"
+                                           f"display:inline-block;margin-top:3px")
+                            row_html += (
+                                f'<td style="padding:6px 8px;border:1px solid #333;{top_border}vertical-align:top;background:#1a1a1a">'
+                                f'<span style="{name_style}">{r["Name"]}</span>'
+                                f'<span style="{ev_style}">{r["EV"]}</span><br>'
+                                f'<span style="{badge_style}">{r["Fixture"]}</span>'
+                                f'</td>'
+                            )
                         else:
-                            html += "<td></td>"
-                    html += "</tr>"
+                            row_html += f'<td style="padding:6px 8px;border:1px solid #333;{top_border}background:#1a1a1a"></td>'
+                    body_rows += f"<tr>{row_html}</tr>"
 
-                html += "</tbody></table>"
+                html = (
+                    f'<div style="overflow-x:auto">'
+                    f'<table style="border-collapse:collapse;width:100%">'
+                    f'<thead><tr>{header_cells}</tr></thead>'
+                    f'<tbody>{body_rows}</tbody>'
+                    f'</table></div>'
+                )
                 st.markdown(html, unsafe_allow_html=True)
-                st.caption("Top row = highest EV pick. All picks within 0.5 EV. Colour = live FDR. % = Elite manager ownership.")
+                st.caption("Top row = highest EV pick. All picks within 0.5 EV of top. Colour = your custom FDR.")
 
     # ── Tab 6: Live Radar ─────────────────────────────────────────────────────
     with tab6:
-        st.subheader("📡 Live FPL Radar")
+        st.subheader("📡 Live Radar")
         if not live_ok:
-            st.warning("⚠️ Enable Live FPL Data.")
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
         else:
             col_a, col_b = st.columns(2)
 
             with col_a:
+                # Ownership Movers FIRST
+                st.markdown("### 📈 Ownership Movers")
+                players_live = pd.DataFrame(bootstrap["elements"])
+                movers = players_live[["web_name","selected_by_percent",
+                                        "transfers_in_event","transfers_out_event"]].copy()
+                for c in movers.columns[1:]:
+                    movers[c] = pd.to_numeric(movers[c], errors="coerce")
+
+                st.markdown("**🔼 Most IN this GW**")
+                top_in = movers.nlargest(7,"transfers_in_event")[["web_name","selected_by_percent","transfers_in_event"]]
+                top_in.columns = ["Player","Sel%","Transfers In"]
+                st.dataframe(top_in, hide_index=True, use_container_width=True)
+
+                st.markdown("**🔽 Most OUT this GW**")
+                top_out = movers.nlargest(7,"transfers_out_event")[["web_name","selected_by_percent","transfers_out_event"]]
+                top_out.columns = ["Player","Sel%","Transfers Out"]
+                st.dataframe(top_out, hide_index=True, use_container_width=True)
+
+                st.markdown("---")
+                # Price changes below movers
+                st.markdown("### 💰 Price Changes")
+                try:
+                    price_df = get_price_changes(bootstrap)
+                    if price_df.empty:
+                        st.info("No price changes this GW.")
+                    else:
+                        rises = price_df[price_df["Change"] > 0]
+                        falls = price_df[price_df["Change"] < 0]
+                        if not rises.empty:
+                            st.markdown("**🔼 Rising**")
+                            st.dataframe(rises.reset_index(drop=True), use_container_width=True, hide_index=True)
+                        if not falls.empty:
+                            st.markdown("**🔽 Falling**")
+                            st.dataframe(falls.reset_index(drop=True), use_container_width=True, hide_index=True)
+                except Exception as e:
+                    st.warning(f"Price data unavailable: {e}")
+
+            with col_b:
+                # DGW/BGW radar
                 st.markdown("### ⚠️ DGW / BGW Radar")
                 radar_end = st.number_input("Show up to GW:", min_value=current_gw,
                                              max_value=38, value=min(current_gw+5, 38), key="radar_gw")
@@ -697,56 +754,23 @@ if ratings_df is not None and fixtures_df is not None:
                     st.info("No BGWs detected.")
 
                 st.markdown("---")
-                st.markdown("### 💰 Price Changes (This GW)")
-                try:
-                    price_df = get_price_changes(bootstrap)
-                    if price_df.empty:
-                        st.info("No price changes this GW.")
-                    else:
-                        rises = price_df[price_df["Change"] > 0]
-                        falls = price_df[price_df["Change"] < 0]
-                        if not rises.empty:
-                            st.markdown("**🔼 Price Rises**")
-                            st.dataframe(rises.reset_index(drop=True), use_container_width=True, hide_index=True)
-                        if not falls.empty:
-                            st.markdown("**🔽 Price Falls**")
-                            st.dataframe(falls.reset_index(drop=True), use_container_width=True, hide_index=True)
-                except Exception as e:
-                    st.warning(f"Price data unavailable: {e}")
-
-            with col_b:
+                # Injuries — sorted by severity then play% ascending (most at risk first)
                 st.markdown("### 🚑 Injuries & Availability")
                 try:
                     injury_df = get_injury_status(bootstrap)
                     if injury_df.empty:
                         st.success("No injuries or doubts reported.")
                     else:
-                        for status_label in ["🔴 Injured", "⚠️ Doubt", "🟡 Suspended", "❌ Unavailable"]:
+                        for status_label in ["🔴 Injured","⚠️ Doubt","🟡 Suspended","❌ Unavailable"]:
                             sub = injury_df[injury_df["Status"] == status_label]
                             if not sub.empty:
-                                st.markdown(f"**{status_label}**")
-                                st.dataframe(sub[["Player","Team","Position","Play%","News"]].reset_index(drop=True),
-                                             use_container_width=True, hide_index=True)
+                                st.markdown(f"**{status_label}** ({len(sub)})")
+                                st.dataframe(
+                                    sub[["Player","Team","Position","Play%","News"]].reset_index(drop=True),
+                                    use_container_width=True, hide_index=True
+                                )
                 except Exception as e:
                     st.warning(f"Injury data unavailable: {e}")
-
-                st.markdown("---")
-                st.markdown("### 📈 Ownership Movers")
-                players_live = pd.DataFrame(bootstrap["elements"])
-                movers = players_live[["web_name","selected_by_percent",
-                                        "transfers_in_event","transfers_out_event"]].copy()
-                for c in movers.columns[1:]:
-                    movers[c] = pd.to_numeric(movers[c], errors="coerce")
-
-                st.markdown("**🔼 Most IN**")
-                top_in = movers.nlargest(7,"transfers_in_event")[["web_name","selected_by_percent","transfers_in_event"]]
-                top_in.columns = ["Player","Sel%","Transfers In"]
-                st.dataframe(top_in, hide_index=True, use_container_width=True)
-
-                st.markdown("**🔽 Most OUT**")
-                top_out = movers.nlargest(7,"transfers_out_event")[["web_name","selected_by_percent","transfers_out_event"]]
-                top_out.columns = ["Player","Sel%","Transfers Out"]
-                st.dataframe(top_out, hide_index=True, use_container_width=True)
 
     # ── Easy Run Finder ───────────────────────────────────────────────────────
     st.markdown("---")
