@@ -3,7 +3,13 @@ import streamlit as st
 import numpy as np
 from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
+from fpl_api import FPLData, render_fpl_api_tab
 
+@st.cache_resource
+def get_fpl():
+    return FPLData()
+
+fpl = get_fpl()
 # --- Configuration ---
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
