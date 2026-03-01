@@ -1210,8 +1210,12 @@ def build_player_stats_df(bootstrap):
         mins     = float(p.get("minutes", 0))
         starts   = float(p.get("starts", 0))
         nineties = mins / 90 if mins >= 45 else 0
-
-        team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
+        
+        # ── THE FIX IS HERE ──
+        raw_team_name = id2name.get(p.get("team"), "")
+        team = TEAM_NAME_MAP.get(raw_team_name, raw_team_name) 
+        # ─────────────────────
+        
         pos  = POS.get(p.get("element_type"), "?")
 
         xg  = float(p.get("expected_goals", 0))
