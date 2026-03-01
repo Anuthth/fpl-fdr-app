@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-from st_aggrid import AgGrid, GridOptionsBuilder, JsCode
 import math
 import requests
 import plotly.graph_objects as go
@@ -280,34 +279,6 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
     return df
 
 @st.cache_data
-def find_fixture_runs(fixtures_df_dict, rating_dict, start_gw):
-    fixtures_df  = pd.DataFrame(fixtures_df_dict)
-    all_fixtures = {t: [] for t in PREMIER_LEAGUE_TEAMS}
-    for gw in range(1, 39):
-        for _, row in fixtures_df[fixtures_df["GW"] == gw].iterrows():
-            home = row.get("HomeTeam_std") or row.get("Home Team","")
-            away = row.get("AwayTeam_std") or row.get("Away Team","")
-            if home in PREMIER_LEAGUE_TEAMS:
-                r = rating_dict.get(away,{}).get("Final Rating")
-                all_fixtures[home].append({"gw":gw,"opp":away,"loc":"H","fdr":get_fdr_score_from_rating(r)})
-            if away in PREMIER_LEAGUE_TEAMS:
-                r = rating_dict.get(home,{}).get("Final Rating")
-                all_fixtures[away].append({"gw":gw,"opp":home,"loc":"A","fdr":get_fdr_score_from_rating(r)})
-    good_runs = {}
-    for team, fixs in all_fixtures.items():
-        cur = []
-        for f in sorted(fixs, key=lambda x: x["gw"]):
-            if f["gw"] < start_gw: continue
-            if f["fdr"] is not None and f["fdr"] <= 3:
-                cur.append(f)
-            else:
-                if len(cur) >= 3: good_runs.setdefault(team,[]).append(cur)
-                cur = []
-        if len(cur) >= 3: good_runs.setdefault(team,[]).append(cur)
-    return good_runs
-
-# ── Captain helpers ───────────────────────────────────────────────────────────
-
 def get_fdr_for_team_gw(team_name, gw, master_df_full):
     """Return (fixture_str, fdr_int) from your custom ratings."""
     gw_col   = f"GW{gw}"
@@ -561,121 +532,336 @@ if free_hit_gw and f"GW{free_hit_gw}" in gw_columns:
 # TABS
 # =============================================================================
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
-    "📊 FDR", "⚽ xG", "🧤 xCS",
-    "🎯 Captain Picks", "🏅 Captain Matrix",
-    "📡 Live Radar", "📈 Team Ratings",
+    "📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings",
+    "🎯 Captain Picks", "🏅 Captain Matrix", "📡 Live Radar",
 ])
+
+# ── Shared helper: build clean HTML heatmap table ─────────────────────────────
+def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt):
+    """
+    Render a minimal dark heatmap HTML table.
+    value_key: key inside cell dict ('fdr', 'xG', 'CS')
+    label_fn: cell dict -> display string
+    color_fn: numeric value -> (bg, fg) tuple
+    """
+    # Header
+    th = lambda s, extra="": f'<th style="padding:8px 10px;text-align:center;color:#666;font-size:11px;font-weight:600;letter-spacing:.5px;border-bottom:1px solid #2a2a2a;{extra}">{s}</th>'
+    header = (
+        th("TEAM", "text-align:left;min-width:130px;color:#888") +
+        th(total_col, "color:#aaa;min-width:80px")
+    )
+    for col in gw_cols:
+        header += th(col.replace("GW","<span style='color:#555;font-size:9px'>GW</span>"), "min-width:80px")
+
+    rows = ""
+    for _, row in df_display.iterrows():
+        team = row["Team"]
+        bg_club, _ = club_style(team)
+        # dot
+        dot = f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:{bg_club};margin-right:7px;vertical-align:middle;flex-shrink:0"></span>'
+        total_val = row[total_col.replace(" ","_").replace("%","CS").replace("xG","xG")]
+        # handle column name
+        try:
+            total_num = float(total_val)
+        except:
+            total_num = 0
+        total_display = total_fmt(total_num)
+
+        td_team  = f'<td style="padding:8px 10px;font-weight:600;color:#e0e0e0;font-size:13px;border-bottom:1px solid #1e1e1e;white-space:nowrap">{dot}{team}</td>'
+        td_total = f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;border-bottom:1px solid #1e1e1e;font-weight:600">{total_display}</td>'
+
+        cells = td_team + td_total
+        for col in gw_cols:
+            cell = row[col]
+            if isinstance(cell, dict):
+                val = cell.get(value_key, 0)
+                lbl = label_fn(cell)
+                cbg, cfg = color_fn(val)
+                cells += (f'<td style="padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
+                          f'font-size:12px;font-weight:700;border-bottom:1px solid #161616;'
+                          f'border-right:1px solid #1e1e1e">{lbl}</td>')
+            else:
+                cells += ('<td style="padding:6px 8px;text-align:center;background:#111;color:#c0392b;'
+                          'font-size:11px;font-weight:700;border-bottom:1px solid #161616;'
+                          'border-right:1px solid #1e1e1e;letter-spacing:.5px">BGW</td>')
+
+        rows += f'<tr style="transition:background .15s" onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">{cells}</tr>'
+
+    return (
+        '<div style="overflow-x:auto;margin-top:6px">'
+        '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+        f'<thead><tr style="background:#161b22">{header}</tr></thead>'
+        f'<tbody>{rows}</tbody>'
+        '</table></div>'
+    )
+
+def _fdr_color(v):
+    c = {1:"#00ff85",2:"#50c369",3:"#2e2e2e",4:"#9d66a0",5:"#6f2a74"}
+    fg = {1:"#0d1117",2:"#0d1117",3:"#999999",4:"#ffffff",5:"#ffffff"}
+    vr = round(v)
+    return c.get(vr,"#333"), fg.get(vr,"#fff")
+
+def _xg_color(v):
+    if v >= 2.2: return "#1a7a4a","#ffffff"
+    if v >= 1.8: return "#2da65c","#ffffff"
+    if v >= 1.4: return "#50c369","#0d1117"
+    if v >= 1.0: return "#2e4a38","#a8d8a8"
+    return "#1c1c1c","#555555"
+
+def _xcs_color(v):
+    # v is 0-1 probability
+    if v >= 0.50: return "#00ff85","#0d1117"
+    if v >= 0.40: return "#50c369","#0d1117"
+    if v >= 0.28: return "#2e4a38","#a8d8a8"
+    if v >= 0.18: return "#2e2e2e","#888888"
+    if v >= 0.10: return "#4a2060","#cc99ee"
+    return "#6f2a74","#ffffff"
 
 # ── Tab 1: FDR ────────────────────────────────────────────────────────────────
 with tab1:
-    st.subheader("Fixture Difficulty Rating")
-    st.caption("🟢 1–2 Easy  |  ⬜ 3 Neutral  |  🟣 4–5 Hard  |  🔴 BGW = Blank (no fixture). Sorted easiest → hardest.")
-    df_display = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
-    df_display = df_display[["Team","Total Difficulty"] + gw_columns]
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Fixture Difficulty</span>'
+        '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
+        unsafe_allow_html=True
+    )
+    # Legend
+    legend_items = [
+        ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
+        ("#2e2e2e","#999","3 Neutral"),
+        ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
+        ("#111","#c0392b","BGW"),
+    ]
+    legend_html = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+    for bg, fg, lbl in legend_items:
+        legend_html += (f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;'
+                        f'font-size:11px;font-weight:700">{lbl}</span>')
+    legend_html += '</div>'
+    st.markdown(legend_html, unsafe_allow_html=True)
 
-    df_for_grid = df_display[["Team","Total Difficulty"]].copy()
-    for col in gw_columns:
-        df_for_grid[col] = df_display[col]
-        df_for_grid[f"{col}_display"] = df_display[col].apply(
-            lambda x: x["display"] if isinstance(x, dict) else "BGW")
-        df_for_grid[f"{col}_fdr"] = df_display[col].apply(
-            lambda x: x["fdr"] if isinstance(x, dict) else BGW_PENALTY_FDR)
+    df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
+    df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
+    df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
 
-    gb = GridOptionsBuilder.from_dataframe(df_for_grid)
-    gb.configure_column("Team", pinned="left", flex=2, minWidth=150, sortable=True)
-    gb.configure_column("Total Difficulty", flex=1.5, type=["numericColumn"], minWidth=140, sortable=True)
-    for col in gw_columns:
-        gb.configure_column(f"{col}_display", hide=True)
-        gb.configure_column(f"{col}_fdr", hide=True)
-    for col in gw_columns:
-        gb.configure_column(col, headerName=col,
-            valueGetter=JsCode(f"function(p){{return p.data['{col}_fdr'];}}"),
-            valueFormatter=JsCode(f"function(p){{return p.data['{col}_display']||'';}}"),
-            cellStyle=JsCode(f"""function(p){{
-                var d=p.data['{col}_display'];
-                if(d==='BGW')return{{'backgroundColor':'#1E1E1E','color':'#FF4B4B','fontWeight':'bold','textAlign':'center','border':'1px solid #FF4B4B'}};
-                var v=p.data['{col}_fdr'];
-                var c={{1:'#00ff85',2:'#50c369',3:'#D3D3D3',4:'#9d66a0',5:'#6f2a74'}};
-                var bg=c[Math.round(v)]||'#444';
-                var fg=(v<=3)?'#31333F':'#FFFFFF';
-                return{{'backgroundColor':bg,'color':fg,'fontWeight':'bold','textAlign':'center'}};
-            }}"""),
-            flex=1, minWidth=90, sortable=True)
-    gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-    AgGrid(df_for_grid, gridOptions=gb.build(), allow_unsafe_jscode=True,
-           theme="streamlit-dark", height=(len(df_for_grid)+1)*35,
-           fit_columns_on_grid_load=True, key=f"fdr_{start_gw}_{end_gw}")
+    html = _heatmap_table(
+        df_d, gw_columns,
+        value_key="fdr",
+        label_fn=lambda c: c.get("display","?"),
+        color_fn=_fdr_color,
+        total_col="Total_Difficulty",
+        total_fmt=lambda v: f"{v:.0f}",
+    )
+    st.markdown(html, unsafe_allow_html=True)
 
 # ── Tab 2: xG ─────────────────────────────────────────────────────────────────
 with tab2:
-    st.subheader("Expected Goals (xG)")
-    st.caption("Attack strength ÷ opponent defence × league average goals. Home advantage built in. Darker green = more goals expected. 🔴 = Blank gameweek.")
-    df_display = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
-    df_display = df_display[["Team","Total xG"] + gw_columns]
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Expected Goals (xG)</span>'
+        '<span style="font-size:12px;color:#555">higher = better for attackers · sorted by total</span></div>',
+        unsafe_allow_html=True
+    )
+    legend_items_xg = [
+        ("#1a7a4a","#fff","≥ 2.2"), ("#2da65c","#fff","≥ 1.8"),
+        ("#50c369","#0d1117","≥ 1.4"), ("#2e4a38","#a8d8a8","≥ 1.0"),
+        ("#1c1c1c","#555","< 1.0"), ("#111","#c0392b","BGW"),
+    ]
+    lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+    for bg, fg, lbl in legend_items_xg:
+        lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
+    lh += '</div>'
+    st.markdown(lh, unsafe_allow_html=True)
 
-    gb = GridOptionsBuilder.from_dataframe(df_display)
-    gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-    gb.configure_column("Team", pinned="left", flex=2, minWidth=150)
-    gb.configure_column("Total xG", valueFormatter="data['Total xG'].toFixed(2)", flex=1.5,
-                         type=["numericColumn"], minWidth=140)
+    df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
+    df_d = df_d[["Team","Total xG"] + gw_columns].copy()
+    df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
 
-    # 5-tier green gradient for xG
-    jscode = JsCode("""function(p){
-        var c=p.data[p.colDef.field];
-        if(c&&typeof c==='object'&&c.xG!==undefined){
-            var x=c.xG;
-            var bg=x>=2.2?'#1a7a4a':x>=1.8?'#2da65c':x>=1.4?'#63be7b':x>=1.0?'#a8d8a8':'#D3D3D3';
-            var fg=x>=1.0?'#FFFFFF':'#31333F';
-            return{'backgroundColor':bg,'color':fg,'fontWeight':'bold','textAlign':'center'};
-        }
-        return{'textAlign':'center','backgroundColor':'#1E1E1E','color':'#FF4B4B',
-               'fontWeight':'bold','border':'1px solid #FF4B4B'};
-    }""")
-    for col in gw_columns:
-        gb.configure_column(col, headerName=col,
-            valueGetter=f"(data['{col}']&&typeof data['{col}']==='object')?data['{col}'].xG.toFixed(2):'BGW'",
-            cellStyle=jscode, flex=1, minWidth=90)
-    AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True,
-           theme="streamlit-dark", height=(len(df_display)+1)*35,
-           fit_columns_on_grid_load=True, key=f"xg_{start_gw}_{end_gw}")
+    html = _heatmap_table(
+        df_d, gw_columns,
+        value_key="xG",
+        label_fn=lambda c: f"{c.get('xG',0):.2f}",
+        color_fn=_xg_color,
+        total_col="Total_xG",
+        total_fmt=lambda v: f"{v:.2f}",
+    )
+    st.markdown(html, unsafe_allow_html=True)
 
 # ── Tab 3: xCS ────────────────────────────────────────────────────────────────
 with tab3:
-    st.subheader("Expected Clean Sheet % (xCS)")
-    st.caption("Probability of keeping a clean sheet = e^(−xG conceded). 🟢 ≥50 %  →  🟣 <15 %. Higher = better for defenders & keepers.")
-    df_display = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
-    df_display = df_display[["Team","xCS"] + gw_columns]
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Clean Sheet % (xCS)</span>'
+        '<span style="font-size:12px;color:#555">higher = better for defenders & keepers · sorted by total</span></div>',
+        unsafe_allow_html=True
+    )
+    legend_items_cs = [
+        ("#00ff85","#0d1117","≥ 50%"), ("#50c369","#0d1117","≥ 40%"),
+        ("#2e4a38","#a8d8a8","≥ 28%"), ("#2e2e2e","#888","≥ 18%"),
+        ("#4a2060","#cc99ee","≥ 10%"), ("#6f2a74","#fff","< 10%"),
+        ("#111","#c0392b","BGW"),
+    ]
+    lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+    for bg, fg, lbl in legend_items_cs:
+        lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
+    lh += '</div>'
+    st.markdown(lh, unsafe_allow_html=True)
 
-    gb = GridOptionsBuilder.from_dataframe(df_display)
-    gb.configure_column("Team", pinned="left", flex=2, minWidth=150)
-    gb.configure_column("xCS", pinned="left",
-                         valueFormatter="(data['xCS']*100).toFixed(1)+'%'",
-                         flex=1.5, type=["numericColumn"], minWidth=140)
+    df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
+    df_d = df_d[["Team","xCS"] + gw_columns].copy()
+    df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
 
-    jscode = JsCode("""function(p){
-        var c=p.data[p.colDef.field];
-        if(c&&typeof c==='object'&&c.CS!==undefined){
-            var s=c.CS;
-            var bg=s>=0.50?'#00ff85':s>=0.40?'#50c369':s>=0.30?'#a8d8a8':s>=0.20?'#D3D3D3':s>=0.10?'#9d66a0':'#6f2a74';
-            var fg=(s>=0.20&&s<0.30)?'#31333F':'#FFFFFF';
-            if(s>=0.50||s<0.10) fg='#31333F';
-            if(s<0.10) fg='#FFFFFF';
-            if(s>=0.50) fg='#31333F';
-            return{'backgroundColor':bg,'color':fg,'fontWeight':'bold','textAlign':'center'};
-        }
-        return{'textAlign':'center','backgroundColor':'#1E1E1E','color':'#FF4B4B',
-               'fontWeight':'bold','border':'1px solid #FF4B4B'};
-    }""")
-    for col in gw_columns:
-        gb.configure_column(col, headerName=col,
-            valueGetter=f"(data['{col}']&&typeof data['{col}']==='object')?(data['{col}'].CS*100).toFixed(0)+'%':'BGW'",
-            cellStyle=jscode, flex=1, minWidth=90)
-    gb.configure_default_column(resizable=True, sortable=True, filter=False, menuTabs=[])
-    AgGrid(df_display, gridOptions=gb.build(), allow_unsafe_jscode=True,
-           theme="streamlit-dark", height=(len(df_display)+1)*35, key=f"cs_{start_gw}_{end_gw}")
+    html = _heatmap_table(
+        df_d, gw_columns,
+        value_key="CS",
+        label_fn=lambda c: f"{c.get('CS',0)*100:.0f}%",
+        color_fn=_xcs_color,
+        total_col="Total_xCS",
+        total_fmt=lambda v: f"{v*100:.0f}%",
+    )
+    st.markdown(html, unsafe_allow_html=True)
 
-# ── Tab 4: Captain Picks ──────────────────────────────────────────────────────
+# ── Tab 4: Team Ratings ───────────────────────────────────────────────────────
 with tab4:
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Strength Map</span>'
+        '<span style="font-size:12px;color:#555">right = better defence · up = better attack</span></div>',
+        unsafe_allow_html=True
+    )
+
+    pl_ratings = ratings_df[ratings_df["Team"].isin(PREMIER_LEAGUE_TEAMS)].copy()
+
+    if pl_ratings.empty:
+        st.warning("No PL teams found in ratings file.")
+    elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
+        st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
+    else:
+        plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
+        plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
+            plot_df["Team"].str[:3].str.upper())
+        plot_df["club_bg"]   = plot_df["Team"].apply(
+            lambda t: CLUB_COLORS.get(t, {"bg":"#444444"})["bg"])
+        plot_df["club_text"] = plot_df["Team"].apply(
+            lambda t: CLUB_COLORS.get(t, {"text":"#ffffff"}).get("text","#ffffff"))
+
+        pad_x = (plot_df["Def Score"].max() - plot_df["Def Score"].min()) * 0.14
+        pad_y = (plot_df["Off Score"].max() - plot_df["Off Score"].min()) * 0.20
+        x_min = plot_df["Def Score"].min() - pad_x
+        x_max = plot_df["Def Score"].max() + pad_x
+        y_min = plot_df["Off Score"].min() - pad_y
+        y_max = plot_df["Off Score"].max() + pad_y
+        x_avg = plot_df["Def Score"].mean()
+        y_avg = plot_df["Off Score"].mean()
+        y_range = y_max - y_min
+
+        fig = go.Figure()
+
+        # Quadrant lines
+        for shape_args in [
+            dict(x0=x_avg, x1=x_avg, y0=y_min, y1=y_max),
+            dict(x0=x_min, x1=x_max, y0=y_avg, y1=y_avg),
+        ]:
+            fig.add_shape(type="line", **shape_args,
+                          line=dict(color="rgba(255,255,255,0.08)", width=1, dash="dot"))
+
+        # ── Circle badges ──────────────────────────────────────────────────────
+        # Two layers: large circle (club colour) + abbreviation text centred
+        for _, row in plot_df.iterrows():
+            bg   = row["club_bg"]
+            fg   = row["club_text"]
+            abbr = row["Abbr"]
+            team = row["Team"]
+            x    = row["Def Score"]
+            y    = row["Off Score"]
+
+            # Circle marker with text
+            fig.add_trace(go.Scatter(
+                x=[x], y=[y],
+                mode="markers+text",
+                marker=dict(
+                    size=42,
+                    color=bg,
+                    symbol="circle",
+                    line=dict(color="rgba(255,255,255,0.15)", width=1.5),
+                ),
+                text=[f"<b>{abbr}</b>"],
+                textfont=dict(color=fg, size=10, family="'Arial Black', Arial, sans-serif"),
+                textposition="middle center",
+                name=team,
+                showlegend=False,
+                hovertemplate=(
+                    f"<b>{team}</b><br>"
+                    f"⚔️ Attack: {y:.2f}<br>"
+                    f"🛡️ Defence: {x:.2f}<extra></extra>"
+                ),
+            ))
+
+        # Corner watermarks
+        ann = dict(showarrow=False, font=dict(size=9, color="rgba(255,255,255,0.12)"))
+        fig.add_annotation(x=x_max, y=y_max, text="ELITE",           xanchor="right", yanchor="top",    **ann)
+        fig.add_annotation(x=x_min, y=y_max, text="ATTACK",          xanchor="left",  yanchor="top",    **ann)
+        fig.add_annotation(x=x_max, y=y_min, text="SOLID DEFENCE",   xanchor="right", yanchor="bottom", **ann)
+        fig.add_annotation(x=x_min, y=y_min, text="STRUGGLING",      xanchor="left",  yanchor="bottom", **ann)
+
+        fig.update_layout(
+            paper_bgcolor="#0d1117",
+            plot_bgcolor="#0d1117",
+            font=dict(color="#cccccc", family="sans-serif", size=12),
+            xaxis=dict(
+                title=dict(text="Better Defence →", font=dict(size=12, color="#555")),
+                range=[x_min, x_max], showgrid=False, zeroline=False, showline=False,
+                tickfont=dict(size=10, color="#444"),
+            ),
+            yaxis=dict(
+                title=dict(text="Better Attack ↑", font=dict(size=12, color="#555")),
+                range=[y_min, y_max], showgrid=False, zeroline=False, showline=False,
+                tickfont=dict(size=10, color="#444"),
+            ),
+            margin=dict(l=55, r=25, t=15, b=55),
+            height=560,
+            hovermode="closest",
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        # ── Ranking table ──────────────────────────────────────────────────────
+        rank_df = plot_df[["Team","Abbr","Off Score","Def Score"]].copy()
+        off_max = rank_df["Off Score"].max()
+        def_max = rank_df["Def Score"].max()
+        rank_df["Overall"] = ((rank_df["Off Score"]/off_max + rank_df["Def Score"]/def_max)/2*100).round(1)
+        rank_df = rank_df.sort_values("Overall", ascending=False).reset_index(drop=True)
+
+        rows_html = ""
+        for i, row in rank_df.iterrows():
+            bg, fg = club_style(row["Team"])
+            medal  = ["🥇","🥈","🥉"][i] if i < 3 else f"{i+1}"
+            dot = (f'<span style="display:inline-block;width:9px;height:9px;border-radius:50%;'
+                   f'background:{bg};margin-right:8px;vertical-align:middle"></span>')
+            rows_html += (
+                f'<tr onmouseover="this.style.background=\'#161b22\'" onmouseout="this.style.background=\'transparent\'">'
+                f'<td style="width:4px;background:{bg};padding:0"></td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:13px">{medal}</td>'
+                f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:13px">{dot}{row["Team"]}</td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#50c369;font-size:13px;font-weight:600">{row["Off Score"]:.2f}</td>'
+                f'<td style="padding:6px 10px;text-align:center;color:#6CABDD;font-size:13px;font-weight:600">{row["Def Score"]:.2f}</td>'
+                f'<td style="padding:6px 10px;text-align:center;font-weight:700;color:#f4a261;font-size:13px">{row["Overall"]:.1f}</td>'
+                f'</tr>'
+            )
+        st.markdown(
+            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:12px">'
+            '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+            '<thead style="background:#161b22"><tr>'
+            '<th style="width:4px;padding:0"></th>'
+            '<th style="padding:6px 10px;color:#444;font-size:11px;font-weight:600;text-align:center">#</th>'
+            '<th style="padding:6px 10px;color:#666;font-size:11px;font-weight:600;text-align:left">TEAM</th>'
+            '<th style="padding:6px 10px;color:#50c369;font-size:11px;font-weight:600;text-align:center">⚔️ ATTACK</th>'
+            '<th style="padding:6px 10px;color:#6CABDD;font-size:11px;font-weight:600;text-align:center">🛡️ DEFENCE</th>'
+            '<th style="padding:6px 10px;color:#f4a261;font-size:11px;font-weight:600;text-align:center">OVERALL %</th>'
+            f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
+            unsafe_allow_html=True
+        )
+
+# ── Tab 5: Captain Picks (was tab4) ──────────────────────────────────────────
+with tab5:
     st.subheader("🎯 Captain Picks")
     if proj_df is None:
         st.error("❌ projections.csv not found. Place it in the app folder.")
@@ -734,8 +920,8 @@ with tab4:
                 </div>"""
                 col.markdown(card, unsafe_allow_html=True)
 
-# ── Tab 5: Captain Matrix ─────────────────────────────────────────────────────
-with tab5:
+# ── Tab 6: Captain Matrix ─────────────────────────────────────────────────────
+with tab6:
     st.subheader("🏅 Captain Matrix — Within 0.5 EV of Top Pick")
     if proj_df is None:
         st.error("❌ projections.csv not found. Place it in the app folder.")
@@ -815,8 +1001,8 @@ with tab5:
             st.markdown(html, unsafe_allow_html=True)
             st.caption("Top row = highest EV. Colour = club colours. Badge = your custom FDR. EV = projected points.")
 
-# ── Tab 6: Live Radar ─────────────────────────────────────────────────────────
-with tab6:
+# ── Tab 7: Live Radar ─────────────────────────────────────────────────────────
+with tab7:
     st.subheader("📡 Live Radar")
     if not live_ok:
         st.warning("⚠️ Enable Live FPL Data in the sidebar.")
@@ -892,206 +1078,3 @@ with tab6:
                                          use_container_width=True, hide_index=True)
             except Exception as e:
                 st.warning(f"Injury data unavailable: {e}")
-
-# ── Tab 7: Team Ratings ───────────────────────────────────────────────────────
-with tab7:
-    st.subheader("📊 Team Strength Map")
-    st.caption(
-        "X axis → Better Defence (right = harder to score against).  "
-        "Y axis ↑ Better Attack (top = more goals scored).  "
-        "Top-right = elite. Dashed lines show last 6 GW trend (recent form)."
-    )
-
-    pl_ratings = ratings_df[ratings_df["Team"].isin(PREMIER_LEAGUE_TEAMS)].copy()
-
-    if pl_ratings.empty:
-        st.warning("No PL teams found in ratings file.")
-    elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
-        st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
-    else:
-        plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
-        plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
-            plot_df["Team"].str[:3].str.upper())
-        plot_df["club_bg"]   = plot_df["Team"].apply(
-            lambda t: CLUB_COLORS.get(t, {"bg":"#444444"})["bg"])
-        plot_df["club_text"] = plot_df["Team"].apply(
-            lambda t: CLUB_COLORS.get(t, {"text":"#ffffff"}).get("text","#ffffff"))
-
-        # Axis bounds with padding
-        pad_x = (plot_df["Def Score"].max() - plot_df["Def Score"].min()) * 0.12
-        pad_y = (plot_df["Off Score"].max() - plot_df["Off Score"].min()) * 0.18
-        x_min = plot_df["Def Score"].min() - pad_x
-        x_max = plot_df["Def Score"].max() + pad_x
-        y_min = plot_df["Off Score"].min() - pad_y
-        y_max = plot_df["Off Score"].max() + pad_y
-
-        x_avg = plot_df["Def Score"].mean()
-        y_avg = plot_df["Off Score"].mean()
-
-        fig = go.Figure()
-
-        # Subtle quadrant lines
-        for shape_args in [
-            dict(x0=x_avg, x1=x_avg, y0=y_min, y1=y_max),
-            dict(x0=x_min, x1=x_max, y0=y_avg, y1=y_avg),
-        ]:
-            fig.add_shape(type="line", **shape_args,
-                          line=dict(color="rgba(255,255,255,0.10)", width=1, dash="dot"))
-
-        # ── Pin-style markers ──────────────────────────────────────────────────
-        # We draw each team as: a filled rectangle annotation (the badge)
-        # + a tiny SVG triangle below it using a custom marker
-        # Plotly doesn't natively support "pin" symbols, but we can combine
-        # a large square marker with text, plus a small downward triangle marker
-        # at the same position to create the pin look.
-
-        MARKER_SIZE  = 36   # badge square
-        PIN_SIZE     = 10   # triangle point below
-        PIN_OFFSET   = 0.0  # will be computed per-axis in data coords
-
-        # Compute a fixed pixel offset in data units for the pin tip
-        # (approximate: we nudge Y downward slightly)
-        y_range = y_max - y_min
-        y_nudge = y_range * 0.025   # tiny offset for the pin tip
-
-        for _, row in plot_df.iterrows():
-            bg   = row["club_bg"]
-            fg   = row["club_text"]
-            abbr = row["Abbr"]
-            team = row["Team"]
-            x    = row["Def Score"]
-            y    = row["Off Score"]
-
-            # 1. The badge (large rounded square, coloured by club)
-            fig.add_trace(go.Scatter(
-                x=[x], y=[y],
-                mode="markers+text",
-                marker=dict(
-                    size=MARKER_SIZE,
-                    color=bg,
-                    symbol="square",
-                    line=dict(color="rgba(255,255,255,0.18)", width=1),
-                ),
-                text=[f"<b>{abbr}</b>"],
-                textfont=dict(color=fg, size=10, family="Arial Black, sans-serif"),
-                textposition="middle center",
-                name=team,
-                showlegend=False,
-                hoverinfo="skip",
-            ))
-
-            # 2. The pin triangle (small triangle below badge)
-            fig.add_trace(go.Scatter(
-                x=[x], y=[y - y_nudge],
-                mode="markers",
-                marker=dict(
-                    size=PIN_SIZE,
-                    color=bg,
-                    symbol="triangle-down",
-                    line=dict(color="rgba(0,0,0,0)", width=0),
-                ),
-                showlegend=False,
-                hovertemplate=(
-                    f"<b>{team}</b><br>"
-                    f"Attack: {y:.2f}<br>"
-                    f"Defence: {x:.2f}<extra></extra>"
-                ),
-            ))
-
-        # Subtle quadrant corner labels
-        ann_style = dict(showarrow=False, font=dict(size=9, color="rgba(255,255,255,0.18)"))
-        fig.add_annotation(x=x_max, y=y_max, text="ELITE", xanchor="right", yanchor="top",    **ann_style)
-        fig.add_annotation(x=x_min, y=y_max, text="ATTACK", xanchor="left",  yanchor="top",   **ann_style)
-        fig.add_annotation(x=x_max, y=y_min, text="SOLID",  xanchor="right", yanchor="bottom", **ann_style)
-        fig.add_annotation(x=x_min, y=y_min, text="WEAK",   xanchor="left",  yanchor="bottom", **ann_style)
-
-        fig.update_layout(
-            paper_bgcolor="#0d1117",
-            plot_bgcolor="#0d1117",
-            font=dict(color="#cccccc", family="sans-serif", size=12),
-            xaxis=dict(
-                title=dict(text="Better Defence →", font=dict(size=12, color="#888")),
-                range=[x_min, x_max],
-                showgrid=False, zeroline=False, showline=False,
-                tickfont=dict(size=10, color="#555"),
-            ),
-            yaxis=dict(
-                title=dict(text="Better Attack ↑", font=dict(size=12, color="#888")),
-                range=[y_min, y_max],
-                showgrid=False, zeroline=False, showline=False,
-                tickfont=dict(size=10, color="#555"),
-            ),
-            margin=dict(l=55, r=25, t=15, b=55),
-            height=580,
-            hovermode="closest",
-        )
-
-        st.plotly_chart(fig, use_container_width=True)
-
-        # ── Ranking table ──────────────────────────────────────────────────────
-        st.markdown("---")
-        rank_df = plot_df[["Team","Abbr","Off Score","Def Score"]].copy()
-        off_max = rank_df["Off Score"].max()
-        def_max = rank_df["Def Score"].max()
-        rank_df["Overall"] = (
-            (rank_df["Off Score"] / off_max + rank_df["Def Score"] / def_max) / 2 * 100
-        ).round(1)
-        rank_df = rank_df.sort_values("Overall", ascending=False).reset_index(drop=True)
-
-        rows_html = ""
-        for i, row in rank_df.iterrows():
-            bg, fg = club_style(row["Team"])
-            medal  = ["🥇","🥈","🥉"][i] if i < 3 else f"{i+1}"
-            dot = (f'<span style="display:inline-block;width:10px;height:10px;border-radius:2px;'
-                   f'background:{bg};margin-right:8px;vertical-align:middle"></span>')
-            rows_html += (
-                f'<tr style="border-bottom:1px solid #1e1e1e">'
-                f'<td style="width:4px;background:{bg};padding:0"></td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#777;font-size:13px">{medal}</td>'
-                f'<td style="padding:6px 10px;font-weight:bold;color:#fff;font-size:13px">{dot}{row["Team"]}</td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#63be7b;font-size:13px">{row["Off Score"]:.2f}</td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#6CABDD;font-size:13px">{row["Def Score"]:.2f}</td>'
-                f'<td style="padding:6px 10px;text-align:center;font-weight:bold;color:#f4a261;font-size:13px">{row["Overall"]:.1f}</td>'
-                f'</tr>'
-            )
-
-        st.markdown(
-            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #222;margin-top:4px">'
-            '<table style="border-collapse:collapse;width:100%;font-family:sans-serif;background:#0d1117">'
-            '<thead style="background:#161b22"><tr>'
-            '<th style="width:4px;padding:0"></th>'
-            '<th style="padding:6px 10px;color:#555;font-size:11px;font-weight:normal;text-align:center">#</th>'
-            '<th style="padding:6px 10px;color:#555;font-size:11px;font-weight:normal;text-align:left">Team</th>'
-            '<th style="padding:6px 10px;color:#63be7b;font-size:11px;font-weight:normal;text-align:center">⚔️ Attack</th>'
-            '<th style="padding:6px 10px;color:#6CABDD;font-size:11px;font-weight:normal;text-align:center">🛡️ Defence</th>'
-            '<th style="padding:6px 10px;color:#f4a261;font-size:11px;font-weight:normal;text-align:center">Overall %</th>'
-            f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
-            unsafe_allow_html=True
-        )
-
-# ── Easy Run Finder ───────────────────────────────────────────────────────────
-st.markdown("---")
-st.sidebar.header("Easy Run Finder")
-st.sidebar.info("Find 3+ consecutive easy fixtures (FDR 1–3).")
-teams_to_check = st.sidebar.multiselect("Teams to check:", PREMIER_LEAGUE_TEAMS, default=[], key="run_teams")
-
-st.header("✅ Easy Fixture Runs")
-if teams_to_check:
-    rating_dict = ratings_df.set_index("Team").to_dict("index")
-    all_runs    = find_fixture_runs(fixtures_df.to_dict("records"), rating_dict, start_gw)
-    found = False
-    for team in teams_to_check:
-        runs = all_runs.get(team)
-        if runs:
-            found = True
-            with st.expander(f"**{team}** — {len(runs)} run(s)"):
-                for i, run in enumerate(runs):
-                    s, e = run[0]["gw"], run[-1]["gw"]
-                    st.markdown(f"**Run {i+1}: GW{s} – GW{e}**")
-                    for fx in run:
-                        opp = TEAM_ABBREVIATIONS.get(fx["opp"],"???")
-                        st.markdown(f"- **GW{fx['gw']}:** {opp} ({fx['loc']}) — FDR {fx['fdr']}")
-    if not found:
-        st.warning(f"No easy runs found from GW{start_gw}.")
-else:
-    st.info("Select teams from the sidebar.")
