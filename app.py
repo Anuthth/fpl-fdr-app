@@ -1263,7 +1263,7 @@ def _build_stats_html(df, ranges):
         '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
         f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
         f'<tbody>{rows_html}</tbody></table></div>'
-
+)
 
 # =============================================================================
 # HELPERS — Team Stats & Player Stats from FPL API
