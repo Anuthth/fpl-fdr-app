@@ -1086,99 +1086,87 @@ with tab7:
 # HELPERS — Team Stats & Player Stats from FPL API
 # =============================================================================
 
-def build_team_stats_df(bootstrap, raw_fixtures):
+def build_team_stats_df(bootstrap):
     """
-    Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
-    xG/xGC from elements aggregation (most accurate source).
-    CS from main GKP per team.
+    Build team stats table from FPL API bootstrap teams data.
+    Fields available: played, win, draw, loss, points, form,
+    strength_overall_home/away, strength_attack_home/away, strength_defence_home/away
+    We also compute GF/GA/GD from elements aggregation.
     """
     teams_df = pd.DataFrame(bootstrap["teams"])
     elements = pd.DataFrame(bootstrap["elements"])
     id2name  = dict(zip(teams_df["id"], teams_df["name"]))
 
-    # ── Derive table stats from completed fixtures ────────────────────────────
-    records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-               for tid in teams_df["id"]}
+    # Aggregate player totals per team for GF/GA proxies
+    elem_cols = [c for c in ["team","goals_scored","goals_conceded","clean_sheets",
+                              "expected_goals","expected_goals_conceded"] if c in elements.columns]
+    agg = elements[elem_cols].copy()
+    for c in elem_cols[1:]:
+        agg[c] = pd.to_numeric(agg[c], errors="coerce").fillna(0)
 
-    for f in raw_fixtures:
-        if not f.get("finished", False): continue
-        hs = f.get("team_h_score")
-        as_ = f.get("team_a_score")
-        if hs is None or as_ is None: continue
-        hs, as_ = int(hs), int(as_)
-        h, a = f["team_h"], f["team_a"]
-        for tid in (h, a):
-            if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-        records[h]["MP"] += 1; records[a]["MP"] += 1
-        records[h]["GF"] += hs; records[h]["GA"] += as_
-        records[a]["GF"] += as_; records[a]["GA"] += hs
-        if hs > as_:
-            records[h]["W"] += 1; records[h]["Pts"] += 3
-            records[a]["L"] += 1
-        elif hs < as_:
-            records[a]["W"] += 1; records[a]["Pts"] += 3
-            records[h]["L"] += 1
-        else:
-            records[h]["D"] += 1; records[h]["Pts"] += 1
-            records[a]["D"] += 1; records[a]["Pts"] += 1
+    # Sum goals scored and conceded per team (divide by 11 approximate — we use team-level data instead)
+    # FPL API teams object has direct W/D/L/points but NOT GF/GA directly
+    # We derive GF ≈ sum of player goals for that team
+    gf_by_team = agg.groupby("team")["goals_scored"].sum()
+    xg_by_team = agg.groupby("team")["expected_goals"].sum()
+    xgc_by_team = agg.groupby("team")["expected_goals_conceded"].sum() / 11  # conceded is per-player duplicate
 
-    # ── xG for team = sum of player xG ───────────────────────────────────────
-    for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
-        if c in elements.columns:
-            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
-
-    xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
-                  if "expected_goals" in elements.columns else {}
-
-    # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
     rows = []
     for _, t in teams_df.iterrows():
         name = TEAM_NAME_MAP.get(t["name"], t["name"])
         if name not in PREMIER_LEAGUE_TEAMS:
             continue
-        tid = t["id"]
-        rec = records.get(tid, {})
-        gf  = rec.get("GF", 0)
-        ga  = rec.get("GA", 0)
+        tid    = t["id"]
+        played = int(t.get("played", 0))
+        wins   = int(t.get("win", 0))
+        draws  = int(t.get("draw", 0))
+        losses = int(t.get("loss", 0))
+        pts    = int(t.get("points", 0))
+        form   = t.get("form", "")
+        gf     = int(gf_by_team.get(tid, 0))
+        xg     = round(float(xg_by_team.get(tid, 0)), 1)
 
-        # xG for team
-        xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
-
-        # xGC: expected_goals_conceded from main GKP
-        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
-        if not gkps.empty and "expected_goals_conceded" in gkps.columns:
-            gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
-            gkps["expected_goals_conceded"] = pd.to_numeric(
-                gkps["expected_goals_conceded"], errors="coerce").fillna(0)
-            xgc = round(float(gkps.sort_values("minutes", ascending=False)
-                               .iloc[0]["expected_goals_conceded"]), 1)
+        # xGC: use expected_goals_conceded from GKP/DEF elements of that team
+        gkp_def = elements[(elements["team"] == tid) & (elements["element_type"].isin([1, 2]))]
+        if not gkp_def.empty and "expected_goals_conceded" in gkp_def.columns:
+            xgc = round(pd.to_numeric(gkp_def["expected_goals_conceded"], errors="coerce").max(), 1)
         else:
             xgc = None
 
-        # CS: clean sheets from main GKP
-        if not gkps.empty and "clean_sheets" in gkps.columns:
-            gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
-            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
+        # GA: goals conceded — best proxy is goals_conceded from GKP with most minutes
+        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)]
+        if not gkps.empty and "goals_conceded" in gkps.columns:
+            gkps = gkps.copy()
+            gkps["minutes"] = pd.to_numeric(gkps["minutes"], errors="coerce").fillna(0)
+            gkps["goals_conceded"] = pd.to_numeric(gkps["goals_conceded"], errors="coerce").fillna(0)
+            ga = int(gkps.sort_values("minutes", ascending=False).iloc[0]["goals_conceded"])
         else:
-            cs = 0
+            ga = None
 
-        gd     = gf - ga
+        gd     = (gf - ga) if ga is not None else None
         xgdiff = round(xg - xgc, 1) if xgc is not None else None
 
+        # Clean sheets — take from best GKP
+        if not gkps.empty and "clean_sheets" in gkps.columns:
+            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0].get("clean_sheets", 0))
+        else:
+            cs = None
+
         rows.append({
-            "Team":   name,
-            "MP":     rec.get("MP", 0),
-            "W":      rec.get("W",  0),
-            "D":      rec.get("D",  0),
-            "L":      rec.get("L",  0),
-            "GF":     gf,
-            "GA":     ga,
-            "GD":     gd,
-            "CS":     cs,
-            "xG":     xg,
-            "xGC":    xgc if xgc is not None else 0.0,
-            "xGDiff": xgdiff if xgdiff is not None else 0.0,
-            "Pts":    rec.get("Pts", 0),
+            "Team":    name,
+            "MP":      played,
+            "W":       wins,
+            "D":       draws,
+            "L":       losses,
+            "GF":      gf,
+            "GA":      ga,
+            "GD":      gd,
+            "CS":      cs,
+            "xG":      xg,
+            "xGC":     xgc,
+            "xGDiff":  xgdiff,
+            "Pts":     pts,
+            "Form":    form,
         })
 
     df = pd.DataFrame(rows)
@@ -1391,75 +1379,77 @@ def _build_stats_html(df):
 # =============================================================================
 with tab8:
     st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#444">live from FPL API · derived from completed fixtures</span></div>',
+        '<span style="font-size:12px;color:#555">live from FPL API · auto-updated</span></div>',
         unsafe_allow_html=True
     )
 
     if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        st.warning("⚠️ Enable Live FPL Data in the sidebar to see team stats.")
     else:
-        ts_df = build_team_stats_df(bootstrap, raw_fixtures)
+        ts_df = build_team_stats_df(bootstrap)
 
         if ts_df.empty:
-            st.warning("Could not build team stats.")
+            st.warning("Could not build team stats from API data.")
         else:
-            c1, _ = st.columns([1, 3])
-            with c1:
-                sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS","xGC","GA"] if c in ts_df.columns]
+            # Sort selector
+            sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS"] if c in ts_df.columns]
+            sc1, sc2 = st.columns([1, 3])
+            with sc1:
                 sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
 
             asc_ts = sort_ts in ("GA","xGC","L")
-            d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
-            d_ts["Rk"] = range(1, len(d_ts)+1)
-            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts"]
-            d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
+            display_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
+            display_ts["Rk"] = range(1, len(display_ts)+1)
+            # reorder cols
+            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts","Form"]
+            display_ts = display_ts[[c for c in ordered_ts if c in display_ts.columns]]
 
-            st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
+            st.markdown(_build_stats_html(display_ts), unsafe_allow_html=True)
 
-            # xG vs GF scatter
+            # xG vs GF over/under-performance scatter
             if "xG" in ts_df.columns and "GF" in ts_df.columns:
                 st.markdown("---")
                 st.markdown(
                     '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                    'xG vs Goals Scored — Over/Under Performers</span>',
+                    'xG vs Goals Scored — Over / Under Performers</span>',
                     unsafe_allow_html=True
                 )
-                st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
+                st.caption("Above the line = scoring more than xG suggests (clinical). Below = wasting chances.")
+
                 valid = ts_df.dropna(subset=["xG","GF"])
                 if not valid.empty:
                     mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
                     fig_ts = go.Figure()
                     fig_ts.add_trace(go.Scatter(
                         x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
-                        line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
+                        line=dict(color="rgba(255,255,255,0.10)", dash="dot", width=1),
                         hoverinfo="skip"
                     ))
                     for _, r in valid.iterrows():
                         bg, fg = club_style(r["Team"])
                         abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
-                        diff   = r["GF"] - r["xG"]
                         fig_ts.add_trace(go.Scatter(
                             x=[r["xG"]], y=[r["GF"]],
                             mode="markers+text",
                             marker=dict(size=38, color=bg, symbol="circle",
-                                        line=dict(color="rgba(255,255,255,0.12)", width=1)),
+                                        line=dict(color="rgba(255,255,255,0.15)",width=1)),
                             text=[f"<b>{abbr}</b>"],
                             textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
                             textposition="middle center",
                             showlegend=False,
                             hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
                                            f"<br>GF: {int(r['GF'])}"
-                                           f"<br>Diff: {diff:+.1f}<extra></extra>")
+                                           f"<br>Diff: {r['GF']-r['xG']:+.1f}<extra></extra>")
                         ))
                     fig_ts.update_layout(
                         paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                        xaxis=dict(title="xG", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                        yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                        margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
+                        xaxis=dict(title="xG (Expected Goals For)", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
+                        yaxis=dict(title="GF (Goals Scored)", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
+                        margin=dict(l=50,r=20,t=10,b=50), height=430, hovermode="closest"
                     )
                     st.plotly_chart(fig_ts, use_container_width=True)
 
