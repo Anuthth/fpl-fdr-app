@@ -1082,91 +1082,104 @@ with tab7:
 
 
 
+
 # =============================================================================
-# HELPERS — Team Stats & Player Stats from FPL API
+# HELPERS — Team Stats & Player Stats  (100% FPL API, no external files)
 # =============================================================================
 
-def build_team_stats_df(bootstrap):
+def build_team_stats_df(bootstrap, raw_fixtures):
     """
-    Build team stats table from FPL API bootstrap teams data.
-    Fields available: played, win, draw, loss, points, form,
-    strength_overall_home/away, strength_attack_home/away, strength_defence_home/away
-    We also compute GF/GA/GD from elements aggregation.
+    Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
+    xG/xGC from elements aggregation (most accurate source).
+    CS from main GKP per team.
     """
     teams_df = pd.DataFrame(bootstrap["teams"])
     elements = pd.DataFrame(bootstrap["elements"])
     id2name  = dict(zip(teams_df["id"], teams_df["name"]))
 
-    # Aggregate player totals per team for GF/GA proxies
-    elem_cols = [c for c in ["team","goals_scored","goals_conceded","clean_sheets",
-                              "expected_goals","expected_goals_conceded"] if c in elements.columns]
-    agg = elements[elem_cols].copy()
-    for c in elem_cols[1:]:
-        agg[c] = pd.to_numeric(agg[c], errors="coerce").fillna(0)
+    # ── Derive table stats from completed fixtures ────────────────────────────
+    records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+               for tid in teams_df["id"]}
 
-    # Sum goals scored and conceded per team (divide by 11 approximate — we use team-level data instead)
-    # FPL API teams object has direct W/D/L/points but NOT GF/GA directly
-    # We derive GF ≈ sum of player goals for that team
-    gf_by_team = agg.groupby("team")["goals_scored"].sum()
-    xg_by_team = agg.groupby("team")["expected_goals"].sum()
-    xgc_by_team = agg.groupby("team")["expected_goals_conceded"].sum() / 11  # conceded is per-player duplicate
+    for f in raw_fixtures:
+        if not f.get("finished", False): continue
+        hs = f.get("team_h_score")
+        as_ = f.get("team_a_score")
+        if hs is None or as_ is None: continue
+        hs, as_ = int(hs), int(as_)
+        h, a = f["team_h"], f["team_a"]
+        for tid in (h, a):
+            if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+        records[h]["MP"] += 1; records[a]["MP"] += 1
+        records[h]["GF"] += hs; records[h]["GA"] += as_
+        records[a]["GF"] += as_; records[a]["GA"] += hs
+        if hs > as_:
+            records[h]["W"] += 1; records[h]["Pts"] += 3
+            records[a]["L"] += 1
+        elif hs < as_:
+            records[a]["W"] += 1; records[a]["Pts"] += 3
+            records[h]["L"] += 1
+        else:
+            records[h]["D"] += 1; records[h]["Pts"] += 1
+            records[a]["D"] += 1; records[a]["Pts"] += 1
 
+    # ── xG for team = sum of player xG ───────────────────────────────────────
+    for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
+        if c in elements.columns:
+            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
+    xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
+                  if "expected_goals" in elements.columns else {}
+
+    # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
     rows = []
     for _, t in teams_df.iterrows():
         name = TEAM_NAME_MAP.get(t["name"], t["name"])
         if name not in PREMIER_LEAGUE_TEAMS:
             continue
-        tid    = t["id"]
-        played = int(t.get("played", 0))
-        wins   = int(t.get("win", 0))
-        draws  = int(t.get("draw", 0))
-        losses = int(t.get("loss", 0))
-        pts    = int(t.get("points", 0))
-        form   = t.get("form", "")
-        gf     = int(gf_by_team.get(tid, 0))
-        xg     = round(float(xg_by_team.get(tid, 0)), 1)
+        tid = t["id"]
+        rec = records.get(tid, {})
+        gf  = rec.get("GF", 0)
+        ga  = rec.get("GA", 0)
 
-        # xGC: use expected_goals_conceded from GKP/DEF elements of that team
-        gkp_def = elements[(elements["team"] == tid) & (elements["element_type"].isin([1, 2]))]
-        if not gkp_def.empty and "expected_goals_conceded" in gkp_def.columns:
-            xgc = round(pd.to_numeric(gkp_def["expected_goals_conceded"], errors="coerce").max(), 1)
+        # xG for team
+        xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
+
+        # xGC: expected_goals_conceded from main GKP
+        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
+        if not gkps.empty and "expected_goals_conceded" in gkps.columns:
+            gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
+            gkps["expected_goals_conceded"] = pd.to_numeric(
+                gkps["expected_goals_conceded"], errors="coerce").fillna(0)
+            xgc = round(float(gkps.sort_values("minutes", ascending=False)
+                               .iloc[0]["expected_goals_conceded"]), 1)
         else:
             xgc = None
 
-        # GA: goals conceded — best proxy is goals_conceded from GKP with most minutes
-        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)]
-        if not gkps.empty and "goals_conceded" in gkps.columns:
-            gkps = gkps.copy()
-            gkps["minutes"] = pd.to_numeric(gkps["minutes"], errors="coerce").fillna(0)
-            gkps["goals_conceded"] = pd.to_numeric(gkps["goals_conceded"], errors="coerce").fillna(0)
-            ga = int(gkps.sort_values("minutes", ascending=False).iloc[0]["goals_conceded"])
+        # CS: clean sheets from main GKP
+        if not gkps.empty and "clean_sheets" in gkps.columns:
+            gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
+            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
         else:
-            ga = None
+            cs = 0
 
-        gd     = (gf - ga) if ga is not None else None
+        gd     = gf - ga
         xgdiff = round(xg - xgc, 1) if xgc is not None else None
 
-        # Clean sheets — take from best GKP
-        if not gkps.empty and "clean_sheets" in gkps.columns:
-            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0].get("clean_sheets", 0))
-        else:
-            cs = None
-
         rows.append({
-            "Team":    name,
-            "MP":      played,
-            "W":       wins,
-            "D":       draws,
-            "L":       losses,
-            "GF":      gf,
-            "GA":      ga,
-            "GD":      gd,
-            "CS":      cs,
-            "xG":      xg,
-            "xGC":     xgc,
-            "xGDiff":  xgdiff,
-            "Pts":     pts,
-            "Form":    form,
+            "Team":   name,
+            "MP":     rec.get("MP", 0),
+            "W":      rec.get("W",  0),
+            "D":      rec.get("D",  0),
+            "L":      rec.get("L",  0),
+            "GF":     gf,
+            "GA":     ga,
+            "GD":     gd,
+            "CS":     cs,
+            "xG":     xg,
+            "xGC":    xgc if xgc is not None else 0.0,
+            "xGDiff": xgdiff if xgdiff is not None else 0.0,
+            "Pts":    rec.get("Pts", 0),
         })
 
     df = pd.DataFrame(rows)
@@ -1177,379 +1190,490 @@ def build_team_stats_df(bootstrap):
 
 
 def build_player_stats_df(bootstrap):
-    """
-    Build player analytics table from FPL API elements.
-    Columns: Player, Team, Pos, Price, MP, Starts, Mins, Min/Start,
-             xG, xA, xGI, xGC, NpxG (no pens), Defcon/90, PPM, Own%
-    """
+    """Full player analytics from FPL API elements — raw totals."""
     elements = pd.DataFrame(bootstrap["elements"])
     teams_df = pd.DataFrame(bootstrap["teams"])
     id2name  = dict(zip(teams_df["id"], teams_df["name"]))
     POS      = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
 
+    # Coerce all numeric strings
+    num_cols = ["minutes","starts","expected_goals","expected_assists",
+                "expected_goal_involvements","expected_goals_conceded",
+                "penalties_scored","now_cost","selected_by_percent",
+                "total_points","clearances_blocks_interceptions","tackles","recoveries"]
+    for c in num_cols:
+        if c in elements.columns:
+            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
     rows = []
     for _, p in elements.iterrows():
-        mins    = float(p.get("minutes", 0) or 0)
-        starts  = float(p.get("starts", 0) or 0)
-        nineties = mins / 90 if mins > 0 else 0
+        mins     = float(p.get("minutes", 0))
+        starts   = float(p.get("starts", 0))
+        nineties = mins / 90 if mins >= 45 else 0
 
-        team_raw = id2name.get(p.get("team"), "")
-        team     = TEAM_NAME_MAP.get(team_raw, team_raw)
-        pos      = POS.get(p.get("element_type"), "?")
+        team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
+        pos  = POS.get(p.get("element_type"), "?")
 
-        # xG / xA / xGI from FPL API (stored as strings, coerce to float)
-        xg  = float(p.get("expected_goals", 0) or 0)
-        xa  = float(p.get("expected_assists", 0) or 0)
-        xgi = float(p.get("expected_goal_involvements", 0) or 0)
-        xgc = float(p.get("expected_goals_conceded", 0) or 0)
+        xg  = float(p.get("expected_goals", 0))
+        xa  = float(p.get("expected_assists", 0))
+        xgi = float(p.get("expected_goal_involvements", 0))
+        xgc = float(p.get("expected_goals_conceded", 0))
 
-        # NpxG — FPL doesn't separate penalties, so we subtract goals from pens as a proxy
-        # best available: expected_goals minus penalties scored * 0.76 (avg xG per pen)
-        pens_scored = float(p.get("penalties_scored", 0) or 0)
-        npxg = max(0, round(xg - pens_scored * 0.76, 2))
+        pens  = float(p.get("penalties_scored", 0))
+        npxg  = max(0.0, round(xg - pens * 0.76, 2))
+        npxgi = max(0.0, round(npxg + xa, 2))
 
-        # Defcon/90: clearances_blocks_interceptions + tackles + recoveries
-        def_fields = ["clearances_blocks_interceptions", "tackles", "recoveries"]
-        defcon_raw = sum(float(p.get(f, 0) or 0) for f in def_fields if f in p.index)
-        defcon_90  = round(defcon_raw / nineties, 2) if nineties >= 0.5 else None
+        def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
+                      float(p.get("tackles", 0)) +
+                      float(p.get("recoveries", 0)))
+        defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
 
-        # Value
-        price = round(float(p.get("now_cost", 0)) / 10, 1)
-        own   = float(p.get("selected_by_percent", 0) or 0)
-        ppm   = round(float(p.get("total_points", 0)) / price, 1) if price > 0 else None
-
-        min_start = round(mins / starts, 0) if starts > 0 else None
+        price       = round(float(p.get("now_cost", 0)) / 10, 1)
+        own         = float(p.get("selected_by_percent", 0))
+        total_pts   = float(p.get("total_points", 0))
+        ppm         = round(total_pts / price, 1) if price > 0 else None
+        min_start   = round(mins / starts, 0) if starts > 0 else None
 
         rows.append({
             "Player":    p.get("web_name", ""),
             "Team":      team,
             "Pos":       pos,
             "Price":     price,
-            "MP":        int(p.get("appearances", 0) or 0),   # may be absent
             "Starts":    int(starts),
             "Mins":      int(mins),
             "Min/Start": int(min_start) if min_start else None,
+            # raw totals
             "xG":        round(xg, 2),
             "xA":        round(xa, 2),
             "xGI":       round(xgi, 2),
             "NpxG":      npxg,
+            "NpxGI":     npxgi,
             "xGC":       round(xgc, 2),
+            "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
             "Defcon/90": defcon_90,
             "PPM":       ppm,
             "Own%":      own,
+            # hidden 90s divisor for toggle
+            "_90s":      round(nineties, 2),
         })
 
     df = pd.DataFrame(rows)
-    # Drop players with 0 minutes
-    df = df[df["Mins"] > 0].copy()
+    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
     return df
 
 
-def _stat_cell(val, col):
-    """Return a styled <td> for a numeric stat value."""
+def _per90(df, cols_to_divide):
+    """Return a copy of df with specified cols divided by _90s."""
+    out = df.copy()
+    for c in cols_to_divide:
+        if c in out.columns and "_90s" in out.columns:
+            out[c] = (out[c] / out["_90s"].replace(0, np.nan)).round(2)
+    return out
+
+
+# ── Colour helpers ────────────────────────────────────────────────────────────
+# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
+
+def _tier_color(val, low, high, col_type="positive"):
+    """
+    Returns (background, text_color) using a 3-tier system:
+      positive: low=grey, mid=teal, high=green
+      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
+      diff:     positive=green, zero=grey, negative=red
+    """
     if val is None or (isinstance(val, float) and np.isnan(val)):
-        return '<td style="padding:6px 9px;text-align:center;color:#333;border-bottom:1px solid #161616">—</td>'
+        return "#1a1a1a", "#444444"
+
+    fv = float(val)
+    # normalise 0→1
+    span = high - low
+    if span == 0:
+        t = 0.5
+    else:
+        t = max(0.0, min(1.0, (fv - low) / span))
+
+    if col_type == "positive":
+        # dark grey → teal → bright green
+        if t < 0.33:
+            return "#1e1e1e", "#666666"
+        elif t < 0.66:
+            return "#0d2b2b", "#4ecdc4"
+        else:
+            return "#0a2818", "#5fffb0"
+    elif col_type == "negative":
+        # green (low GA is good) → amber → red
+        if t < 0.33:
+            return "#0a2818", "#5fffb0"
+        elif t < 0.66:
+            return "#2b1a00", "#ffaa33"
+        else:
+            return "#2b0a0a", "#ff6060"
+    elif col_type == "diff":
+        if fv > 0.5:
+            return "#0a2818", "#5fffb0"
+        elif fv < -0.5:
+            return "#2b0a0a", "#ff6060"
+        else:
+            return "#1e1e1e", "#888888"
+    elif col_type == "blue":
+        # for CS, Defcon — blue scale
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#0a1a2b", "#5aabff"
+        else:
+            return "#051022", "#99ccff"
+    elif col_type == "gold":
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#221a00", "#ccaa33"
+        else:
+            return "#2b1f00", "#ffd966"
+    return "#1e1e1e", "#888888"
+
+
+# Pre-compute column ranges for consistent colouring across sort orders
+_TEAM_RANGES = {
+    "GF":     (15, 70, "positive"),
+    "GA":     (15, 65, "negative"),
+    "GD":     (-40, 50, "diff"),
+    "CS":     (0,  18, "blue"),
+    "xG":     (15, 65, "positive"),
+    "xGC":    (15, 65, "negative"),
+    "xGDiff": (-35, 35, "diff"),
+    "Pts":    (0,  90, "blue"),
+    "W":      (0,  30, "positive"),
+    "L":      (0,  25, "negative"),
+    "D":      (0,  15, "positive"),
+}
+
+_PLAYER_RANGES = {
+    "xG":        (0, 20,  "positive"),
+    "xA":        (0, 12,  "positive"),
+    "xGI":       (0, 25,  "positive"),
+    "NpxG":      (0, 18,  "positive"),
+    "NpxGI":     (0, 22,  "positive"),
+    "xGC":       (0, 50,  "negative"),
+    "Defcon/90": (0, 10,  "blue"),
+    "Defcon":    (0, 200, "blue"),
+    "PPM":       (0, 20,  "gold"),
+    "Own%":      (0, 70,  "gold"),
+    "Price":     (3.5, 15,"gold"),
+}
+
+
+def _stat_cell(val, col, ranges):
+    """Styled <td> with 3-tier colour, clean white text, minimal look."""
+    if val is None or (isinstance(val, float) and np.isnan(val)):
+        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
+                'border-bottom:1px solid #161616">—</td>')
 
     fv = float(val)
 
-    # Colour scheme per column type
-    if col in ("xG","xA","xGI","NpxG","NpxGI","xGC"):
-        intensity = min(fv / 1.8, 1.0)
-        r = int(20 + (1-intensity)*20)
-        g = int(60 + intensity*160)
-        b = int(40 + (1-intensity)*20)
-        bg = f"rgb({r},{g},{b})"
-        tc = "#c8ffd4" if intensity > 0.5 else "#6bb87a"
-    elif col == "xGDiff":
-        if fv > 0:
-            bg = f"rgb(15,{int(50+min(fv/10,1)*120)},30)"; tc = "#80ff80"
-        else:
-            bg = f"rgb({int(80+min(abs(fv)/10,1)*100)},15,15)"; tc = "#ff8080"
-    elif col == "GD":
-        if fv > 0:
-            bg = f"rgb(15,{int(50+min(fv/15,1)*120)},30)"; tc = "#80ff80"
-        else:
-            bg = f"rgb({int(60+min(abs(fv)/15,1)*100)},15,15)"; tc = "#ff9090"
-    elif col == "GA":
-        intensity = min(fv/50, 1.0)
-        r = int(40 + intensity*100); bg = f"rgb({r},15,15)"; tc = "#ffaaaa"
-    elif col == "GF":
-        intensity = min(fv/50, 1.0)
-        g = int(50 + intensity*140); bg = f"rgb(15,{g},20)"; tc = "#aaffaa"
-    elif col == "Pts":
-        intensity = min(fv/75, 1.0)
-        b = int(80 + intensity*160); bg = f"rgb(10,20,{b})"; tc = "#aad4ff"
-    elif col == "CS":
-        intensity = min(fv/15, 1.0)
-        b = int(60 + intensity*140); bg = f"rgb(15,40,{b})"; tc = "#99ccff"
-    elif col == "Price":
-        bg = "#0d1117"; tc = "#f4a261"
-    elif col == "Own%":
-        intensity = min(fv/20, 1.0)
-        b = int(40 + intensity*120); bg = f"rgb(40,{int(30+intensity*40)},{b})"; tc = "#e0c46e"
-    elif col == "PPM":
-        intensity = min(fv/15, 1.0)
-        g = int(60 + intensity*150); bg = f"rgb(15,{g},50)"; tc = "#c8ffd4"
-    elif col == "Defcon/90":
-        intensity = min(fv/8, 1.0)
-        b = int(60 + intensity*160); bg = f"rgb(10,30,{b})"; tc = "#99ccff"
-    elif col in ("MP","Starts","Mins","Min/Start"):
-        bg = "#0d1117"; tc = "#888888"
+    if col in ranges:
+        low, high, col_type = ranges[col]
+        bg, tc = _tier_color(fv, low, high, col_type)
     else:
-        bg = "#0d1117"; tc = "#cccccc"
+        bg, tc = "#1e1e1e", "#888888"
 
-    try:
-        disp = f"{fv:.1f}" if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","PPM","Defcon/90","Own%","Price") else f"{int(fv)}"
-    except:
-        disp = str(val)
+    # Format display value
+    if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
+               "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
+        disp = f"{fv:.2f}"
+    elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
+        disp = f"{int(round(fv))}"
+    else:
+        disp = f"{fv:.2f}"
 
-    return (f'<td style="padding:6px 9px;text-align:center;background:{bg};color:{tc};'
+    return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
             f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
 
 
-def _build_stats_html(df):
-    """Render a minimal dark stats HTML table."""
-    cols = df.columns.tolist()
+def _build_stats_html(df, ranges):
+    """Render minimal dark stats HTML table."""
+    cols = [c for c in df.columns if not c.startswith("_")]
 
-    # Header row
     header = ""
     for c in cols:
         align = "left" if c in ("Player","Team") else "center"
-        header += (f'<th style="padding:7px 9px;text-align:{align};color:#555;font-size:10px;'
-                   f'font-weight:700;letter-spacing:.6px;border-bottom:2px solid #2a2a2a;'
-                   f'white-space:nowrap;background:#161b22">{c.upper()}</th>')
+        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
+                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
+                   f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
 
-    # Body rows
     rows_html = ""
     for _, row in df.iterrows():
         cells = ""
         for c in cols:
             val = row[c]
             if c == "Rk":
-                cells += (f'<td style="padding:6px 9px;text-align:center;color:#444;'
-                          f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
+                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
             elif c == "Team":
                 bg, fg = club_style(str(val))
                 dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
-                       f'background:{bg};margin-right:6px;vertical-align:middle"></span>')
-                cells += (f'<td style="padding:6px 9px;font-weight:700;color:#e0e0e0;font-size:12px;'
+                       f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
+                cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
                           f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
             elif c == "Player":
-                cells += (f'<td style="padding:6px 9px;font-weight:600;color:#e0e0e0;font-size:12px;'
+                cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
                           f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
             elif c == "Pos":
-                pos_colors = {"GKP":"#f4a261","DEF":"#6CABDD","MID":"#50c369","FWD":"#EF0107"}
-                pc = pos_colors.get(str(val), "#888")
-                cells += (f'<td style="padding:4px 9px;text-align:center;border-bottom:1px solid #161616">'
-                          f'<span style="background:{pc}22;color:{pc};border-radius:3px;'
+                pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
+                pc = pos_c.get(str(val), "#888")
+                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
+                          f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
                           f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
             elif c == "W":
-                cells += (f'<td style="padding:6px 9px;text-align:center;color:#50c369;font-size:12px;'
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
                           f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
             elif c == "D":
-                cells += (f'<td style="padding:6px 9px;text-align:center;color:#888;font-size:12px;'
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
                           f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
             elif c == "L":
-                cells += (f'<td style="padding:6px 9px;text-align:center;color:#e74c3c;font-size:12px;'
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
                           f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-            elif c == "Form":
-                cells += (f'<td style="padding:6px 9px;text-align:center;color:#aaa;font-size:11px;'
-                          f'font-style:italic;border-bottom:1px solid #161616">{val}</td>')
+            elif c in ("MP","Starts","Mins","Min/Start"):
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
+                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
+            elif c == "Price":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
+                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
             else:
                 try:
-                    cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c)
+                    cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
                 except:
-                    cells += (f'<td style="padding:6px 9px;text-align:center;color:#555;font-size:12px;'
-                              f'border-bottom:1px solid #161616">{val}</td>')
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
+                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
 
-        rows_html += (f'<tr onmouseover="this.style.background=\'#161b22\'" '
+        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
                       f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
 
     return (
         '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
         '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
-        f'<thead><tr>{header}</tr></thead>'
-        f'<tbody>{rows_html}</tbody>'
-        '</table></div>'
+        f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+        f'<tbody>{rows_html}</tbody></table></div>'
     )
 
 
 # =============================================================================
-# TAB 8 — Team Stats (live FPL API)
+# TAB 8 — Team Stats
 # =============================================================================
 with tab8:
     st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#555">live from FPL API · auto-updated</span></div>',
+        '<span style="font-size:12px;color:#444">live from FPL API · derived from completed fixtures</span></div>',
         unsafe_allow_html=True
     )
 
     if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar to see team stats.")
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
     else:
-        ts_df = build_team_stats_df(bootstrap)
+        ts_df = build_team_stats_df(bootstrap, raw_fixtures)
 
         if ts_df.empty:
-            st.warning("Could not build team stats from API data.")
+            st.warning("Could not build team stats.")
         else:
-            # Sort selector
-            sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS"] if c in ts_df.columns]
-            sc1, sc2 = st.columns([1, 3])
-            with sc1:
+            c1, _ = st.columns([1, 3])
+            with c1:
+                sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS","xGC","GA"] if c in ts_df.columns]
                 sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
 
             asc_ts = sort_ts in ("GA","xGC","L")
-            display_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
-            display_ts["Rk"] = range(1, len(display_ts)+1)
-            # reorder cols
-            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts","Form"]
-            display_ts = display_ts[[c for c in ordered_ts if c in display_ts.columns]]
+            d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
+            d_ts["Rk"] = range(1, len(d_ts)+1)
+            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts"]
+            d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
 
-            st.markdown(_build_stats_html(display_ts), unsafe_allow_html=True)
+            st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
 
-            # xG vs GF over/under-performance scatter
+            # xG vs GF scatter
             if "xG" in ts_df.columns and "GF" in ts_df.columns:
                 st.markdown("---")
                 st.markdown(
                     '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                    'xG vs Goals Scored — Over / Under Performers</span>',
+                    'xG vs Goals Scored — Over/Under Performers</span>',
                     unsafe_allow_html=True
                 )
-                st.caption("Above the line = scoring more than xG suggests (clinical). Below = wasting chances.")
-
+                st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
                 valid = ts_df.dropna(subset=["xG","GF"])
                 if not valid.empty:
                     mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
                     fig_ts = go.Figure()
                     fig_ts.add_trace(go.Scatter(
                         x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
-                        line=dict(color="rgba(255,255,255,0.10)", dash="dot", width=1),
+                        line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
                         hoverinfo="skip"
                     ))
                     for _, r in valid.iterrows():
                         bg, fg = club_style(r["Team"])
                         abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
+                        diff   = r["GF"] - r["xG"]
                         fig_ts.add_trace(go.Scatter(
                             x=[r["xG"]], y=[r["GF"]],
                             mode="markers+text",
                             marker=dict(size=38, color=bg, symbol="circle",
-                                        line=dict(color="rgba(255,255,255,0.15)",width=1)),
+                                        line=dict(color="rgba(255,255,255,0.12)", width=1)),
                             text=[f"<b>{abbr}</b>"],
                             textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
                             textposition="middle center",
                             showlegend=False,
                             hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
                                            f"<br>GF: {int(r['GF'])}"
-                                           f"<br>Diff: {r['GF']-r['xG']:+.1f}<extra></extra>")
+                                           f"<br>Diff: {diff:+.1f}<extra></extra>")
                         ))
                     fig_ts.update_layout(
                         paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                        xaxis=dict(title="xG (Expected Goals For)", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                        yaxis=dict(title="GF (Goals Scored)", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                        margin=dict(l=50,r=20,t=10,b=50), height=430, hovermode="closest"
+                        xaxis=dict(title="xG", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                        yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
+                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                        margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
                     )
                     st.plotly_chart(fig_ts, use_container_width=True)
 
 
 # =============================================================================
-# TAB 9 — Player Stats (live FPL API)
+# TAB 9 — Player Stats
 # =============================================================================
 with tab9:
     st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
-        '<span style="font-size:12px;color:#555">live from FPL API · auto-updated</span></div>',
+        '<span style="font-size:12px;color:#444">live from FPL API · auto-updated</span></div>',
         unsafe_allow_html=True
     )
 
     if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar to see player stats.")
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
     else:
         ps_df = build_player_stats_df(bootstrap)
 
-        # ── Filters ────────────────────────────────────────────────────────────
-        fc1, fc2, fc3, fc4 = st.columns([1, 1, 1, 1])
-        with fc1:
-            pos_opts = ["All"] + ["GKP","DEF","MID","FWD"]
-            pos_f    = st.selectbox("Position:", pos_opts, key="ps_pos")
-        with fc2:
+        # ── Controls row ───────────────────────────────────────────────────────
+        cc1, cc2, cc3, cc4, cc5 = st.columns([1, 1, 1, 1, 1])
+        with cc1:
+            pos_f = st.selectbox("Position:", ["All","GKP","DEF","MID","FWD"], key="ps_pos")
+        with cc2:
             team_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
             team_f    = st.selectbox("Team:", team_opts, key="ps_team")
-        with fc3:
-            min_mins  = st.number_input("Min minutes:", min_value=0, max_value=3420,
-                                         value=450, step=90, key="ps_mins")
-        with fc4:
-            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxG","PPM","Defcon/90","Own%","Mins","Price"]
+        with cc3:
+            min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
+        with cc4:
+            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","PPM","Own%","Mins","Price"]
                             if c in ps_df.columns]
             sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
+        with cc5:
+            per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
 
-        # Apply filters
-        filtered = ps_df[ps_df["Mins"] >= min_mins].copy()
-        if pos_f  != "All": filtered = filtered[filtered["Pos"]  == pos_f]
-        if team_f != "All": filtered = filtered[filtered["Team"] == team_f]
+        # ── Filter ─────────────────────────────────────────────────────────────
+        filt = ps_df[ps_df["Mins"] >= min_mins].copy()
+        if pos_f  != "All": filt = filt[filt["Pos"]  == pos_f]
+        if team_f != "All": filt = filt[filt["Team"] == team_f]
 
-        filtered = filtered.sort_values(sort_ps, ascending=False).reset_index(drop=True)
-        filtered.insert(0, "Rk", range(1, len(filtered)+1))
+        # ── Per-90 toggle ──────────────────────────────────────────────────────
+        PER90_COLS = ["xG","xA","xGI","NpxG","NpxGI","xGC","Defcon"]
+        display_ps = filt.copy()
 
-        # Column order
-        ordered_ps = ["Rk","Player","Team","Pos","Price","Starts","Mins","Min/Start",
-                      "xG","xA","xGI","NpxG","xGC","Defcon/90","PPM","Own%"]
-        filtered = filtered[[c for c in ordered_ps if c in filtered.columns]]
+        if per90:
+            for c in PER90_COLS:
+                if c in display_ps.columns and "_90s" in display_ps.columns:
+                    display_ps[c] = (display_ps[c] / display_ps["_90s"].replace(0, np.nan)).round(2)
+            # Rename Defcon column header
+            if "Defcon" in display_ps.columns:
+                display_ps.rename(columns={"Defcon":"Defcon/90"}, inplace=True)
+            per90_label = " /90"
+        else:
+            if "Defcon" in display_ps.columns:
+                display_ps.rename(columns={"Defcon":"Defcon"}, inplace=True)
+            per90_label = ""
 
-        st.markdown(_build_stats_html(filtered), unsafe_allow_html=True)
+        # Determine actual sort column (may have been renamed)
+        sort_col_actual = sort_ps
+        if per90 and sort_ps == "Defcon/90" and "Defcon/90" in display_ps.columns:
+            sort_col_actual = "Defcon/90"
+
+        if sort_col_actual not in display_ps.columns:
+            sort_col_actual = "xGI" if "xGI" in display_ps.columns else display_ps.columns[4]
+
+        display_ps = display_ps.sort_values(sort_col_actual, ascending=False).reset_index(drop=True)
+        display_ps.insert(0, "Rk", range(1, len(display_ps)+1))
+
+        # Column display order
+        base_cols   = ["Rk","Player","Team","Pos","Price","Starts","Mins","Min/Start"]
+        stat_cols   = ["xG","xA","xGI","NpxG","NpxGI","xGC"]
+        if per90:
+            stat_cols = [c for c in stat_cols if c in display_ps.columns]
+            def_col   = ["Defcon/90"] if "Defcon/90" in display_ps.columns else []
+        else:
+            stat_cols = [c for c in stat_cols if c in display_ps.columns]
+            def_col   = ["Defcon"] if "Defcon" in display_ps.columns else []
+
+        final_cols  = base_cols + stat_cols + def_col + ["PPM","Own%"]
+        final_cols  = [c for c in final_cols if c in display_ps.columns]
+        display_ps  = display_ps[final_cols]
+
+        # Build dynamic ranges for /90 mode
+        active_ranges = _PLAYER_RANGES.copy()
+        if per90:
+            for c in PER90_COLS:
+                if c in _PLAYER_RANGES:
+                    lo, hi, ct = _PLAYER_RANGES[c]
+                    active_ranges[c] = (round(lo/30, 2), round(hi/30, 2), ct)
+            active_ranges["Defcon/90"] = (0, 10, "blue")
+
+        st.markdown(_build_stats_html(display_ps, active_ranges), unsafe_allow_html=True)
+
+        mode_label = "per 90 mins" if per90 else "season totals"
         st.caption(
-            f"{len(filtered)} players shown · min {min_mins} mins · "
-            "Defcon/90 = (clearances+blocks+interceptions + tackles + recoveries) ÷ 90s · "
-            "NpxG = xG minus penalty goals × 0.76 · PPM = total points ÷ price"
+            f"{len(display_ps)} players · {mode_label} · min {min_mins} mins · "
+            "Defcon = clearances+blocks+interceptions + tackles + recoveries · "
+            "NpxG = xG minus penalties × 0.76 · PPM = points ÷ price"
         )
 
-        # ── Value Map: xGI vs Price ─────────────────────────────────────────────
-        if "xGI" in filtered.columns and "Price" in filtered.columns:
+        # ── Value scatter ──────────────────────────────────────────────────────
+        xgi_col = "xGI"
+        if xgi_col in display_ps.columns and "Price" in display_ps.columns:
             st.markdown("---")
             st.markdown(
                 '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                'Value Map — xGI vs Price</span>',
+                f'Value Map — xGI{"" if not per90 else "/90"} vs Price</span>',
                 unsafe_allow_html=True
             )
             st.caption("Top-left = best value. Bubble size = ownership %. Colour = position.")
 
-            scatter_ps = filtered[filtered["xGI"].fillna(0) > 0].dropna(subset=["xGI","Price"])
-            if not scatter_ps.empty:
-                POS_COLORS = {"GKP":"#f4a261","DEF":"#6CABDD","MID":"#50c369","FWD":"#EF0107"}
+            sc = display_ps[display_ps[xgi_col].fillna(0) > 0].dropna(subset=[xgi_col,"Price"])
+            if not sc.empty:
+                POS_C = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
                 fig_ps = go.Figure()
-                for _, r in scatter_ps.iterrows():
-                    pc  = POS_COLORS.get(str(r.get("Pos","")), "#888")
+                for _, r in sc.iterrows():
+                    pc  = POS_C.get(str(r.get("Pos","")), "#888")
                     own = float(r["Own%"]) if pd.notna(r.get("Own%")) else 3
                     fig_ps.add_trace(go.Scatter(
-                        x=[r["Price"]], y=[r["xGI"]],
+                        x=[r["Price"]], y=[r[xgi_col]],
                         mode="markers",
-                        marker=dict(size=max(7, min(own*1.3, 30)),
-                                    color=pc, opacity=0.75,
-                                    line=dict(color="rgba(255,255,255,0.12)",width=0.5)),
+                        marker=dict(size=max(7, min(own*1.3, 28)), color=pc, opacity=0.72,
+                                    line=dict(color="rgba(255,255,255,0.10)", width=0.5)),
                         showlegend=False,
                         hovertemplate=(
                             f"<b>{r['Player']}</b> · {r.get('Team','')}<br>"
-                            f"xGI: {r['xGI']:.2f}  |  £{r['Price']:.1f}m  |  {own:.1f}%<extra></extra>"
+                            f"xGI: {r[xgi_col]:.2f}  |  £{r['Price']:.1f}m  |  {own:.1f}%<extra></extra>"
                         )
                     ))
-                # Position legend traces
-                for pos_lbl, pc in POS_COLORS.items():
-                    fig_ps.add_trace(go.Scatter(
-                        x=[None], y=[None], mode="markers",
-                        marker=dict(size=10, color=pc),
-                        name=pos_lbl, showlegend=True
-                    ))
+                for lbl, pc in POS_C.items():
+                    fig_ps.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
+                                                marker=dict(size=10, color=pc),
+                                                name=lbl, showlegend=True))
+                y_title = f"xGI{'/90' if per90 else ''}"
                 fig_ps.update_layout(
                     paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
                     xaxis=dict(title="Price (£m)", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                    yaxis=dict(title="xGI (xG + xA)", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555",size=11)),
-                    legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#888",size=11),
-                                orientation="h", y=1.05),
-                    margin=dict(l=50,r=20,t=30,b=50), height=450, hovermode="closest"
+                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                    yaxis=dict(title=y_title, showgrid=False, zeroline=False,
+                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                    legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#888", size=11),
+                                orientation="h", y=1.06),
+                    margin=dict(l=50, r=20, t=30, b=50), height=440, hovermode="closest"
                 )
                 st.plotly_chart(fig_ps, use_container_width=True)
