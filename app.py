@@ -973,10 +973,10 @@ def _solio_credit_bar():
         f'{img_tag}'
         '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
         '</div>' 
-        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
+        '<a href="https://www.solioanalytics.com" target="_blank" ' 
         'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
         'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
+        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
         '</div>'
     )
 
@@ -1813,4 +1813,4 @@ with tab9:
                                 orientation="h", y=1.06),
                     margin=dict(l=50, r=20, t=30, b=50), height=440, hovermode="closest"
                 )
-                st.plotly_chart(fig_ps, use_container_width=True)
+                st.plotly_chart(fig_ps, use_container_width=
