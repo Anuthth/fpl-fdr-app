@@ -316,13 +316,38 @@ def _build_code_lookup(bootstrap):
         lookup[p.get("second_name","").lower()] = p["code"]
     return lookup
 
+def _normalize(s):
+    """Strip accents and lowercase for fuzzy matching."""
+    import unicodedata
+    return unicodedata.normalize('NFD', str(s)).encode('ascii', 'ignore').decode().lower().strip()
+
 def _fuzzy_code(name, lookup):
+    """Match player name to FPL photo code — handles accents, prefixes (H.Name), partial names."""
+    # 1. Exact match
     if name in lookup:
         return lookup[name]
-    token = name.split(".")[-1].strip().lower()
+
+    name_norm = _normalize(name)
+
+    # 2. Accent-stripped exact match against normalised lookup keys
     for key, val in lookup.items():
-        if token and len(token) > 2 and token in key.lower():
+        if _normalize(key) == name_norm:
             return val
+
+    # 3. Last token match (handles "H.Ekitiké" → "ekitike", or "Ekitiké" → "ekitike")
+    token = name_norm.split(".")[-1].strip()
+    if len(token) > 3:
+        for key, val in lookup.items():
+            if token in _normalize(key):
+                return val
+
+    # 4. Surname-only match (last word after space)
+    surname = name_norm.split()[-1] if " " in name_norm else name_norm
+    if len(surname) > 3:
+        for key, val in lookup.items():
+            if surname in _normalize(key):
+                return val
+
     return None
 
 def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
