@@ -625,7 +625,7 @@ if use_live:
     margin-bottom: 4px;
   }}
   #cdtime {{
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 800;
     color: #5fffb0;
     font-variant-numeric: tabular-nums;
