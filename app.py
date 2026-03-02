@@ -10,14 +10,14 @@ BASE_URL      = "https://fantasy.premierleague.com/api"
 BOOTSTRAP_URL = f"{BASE_URL}/bootstrap-static/"
 FIXTURES_URL  = f"{BASE_URL}/fixtures/"
 
-@st.cache_data(ttl=1800, show_spinner="📡 Fetching live FPL data...")
+@st.cache_data(ttl=300, show_spinner="📡 Fetching live FPL data...")
 def _fetch_bootstrap():
     headers = {"User-Agent": "Mozilla/5.0"}
     r = requests.get(BOOTSTRAP_URL, headers=headers, timeout=15)
     r.raise_for_status()
     return r.json()
 
-@st.cache_data(ttl=1800, show_spinner="📡 Fetching fixtures...")
+@st.cache_data(ttl=300, show_spinner="📡 Fetching fixtures...")
 def _fetch_live_fixtures():
     headers = {"User-Agent": "Mozilla/5.0"}
     r = requests.get(FIXTURES_URL, headers=headers, timeout=15)
@@ -25,13 +25,37 @@ def _fetch_live_fixtures():
     return r.json()
 
 def get_current_gw(bootstrap):
-    for ev in bootstrap["events"]:
-        if ev["is_current"]:
+    """
+    Returns the active or next upcoming GW.
+    Logic:
+      1. If any GW has is_current=True AND is not finished → that's the live GW
+      2. If current GW is finished → return the next GW (deadline passed / upcoming)
+      3. If is_next=True → return that
+      4. Fallback: highest finished GW + 1
+    """
+    events = bootstrap.get("events", [])
+
+    # Check is_current first
+    for ev in events:
+        if ev.get("is_current"):
+            # If current GW is fully finished, advance to next
+            if ev.get("finished"):
+                nxt = ev["id"] + 1
+                return min(nxt, 38)
             return ev["id"]
-    for ev in bootstrap["events"]:
-        if ev["is_next"]:
+
+    # Fall back to is_next
+    for ev in events:
+        if ev.get("is_next"):
             return ev["id"]
-    return 29
+
+    # Last resort: find highest finished GW + 1
+    finished = [ev["id"] for ev in events if ev.get("finished")]
+    if finished:
+        return min(max(finished) + 1, 38)
+
+    return 1
+
 
 def player_photo_url(code):
     return f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{code}.png"
@@ -489,20 +513,8 @@ def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
 
 # ── Live radar helpers ─────────────────────────────────────────────────────────
 
-def get_price_changes(bootstrap):
-    players = pd.DataFrame(bootstrap["elements"])
-    df = players[[c for c in ["web_name","team","element_type","now_cost","cost_change_event"]
-                  if c in players.columns]].copy()
-    df = df[df["cost_change_event"] != 0].copy()
-    df["Price (£m)"] = df["now_cost"] / 10.0
-    df["Change"]     = df["cost_change_event"] / 10.0
-    teams_df    = pd.DataFrame(bootstrap["teams"])
-    id2short    = dict(zip(teams_df["id"], teams_df["short_name"]))
-    POS         = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
-    df["Team"]     = df["team"].map(id2short)
-    df["Position"] = df["element_type"].map(POS)
-    df.rename(columns={"web_name":"Player"}, inplace=True)
-    return df[["Player","Team","Position","Price (£m)","Change"]].sort_values("Change", ascending=False)
+
+
 
 def get_injury_status(bootstrap):
     players = pd.DataFrame(bootstrap["elements"])
@@ -557,9 +569,69 @@ if use_live:
         raw_fixtures = _fetch_live_fixtures()
         live_ok      = True
         current_gw   = get_current_gw(bootstrap)
-        st.sidebar.success(f"✅ Live | GW{current_gw}")
+        events       = bootstrap.get("events", [])
+        ev_info      = next((ev for ev in events if ev.get("is_current") or ev.get("is_next")), None)
+        is_live_gw   = ev_info and ev_info.get("is_current") and not ev_info.get("finished")
+        status_label = "Live" if is_live_gw else "Next GW"
+        st.sidebar.success(f"GW{current_gw} | {status_label}")
+
+        # -- Deadline countdown Bangkok (GMT+7) --------------------------------
+        from datetime import datetime, timezone, timedelta
+        BKK     = timezone(timedelta(hours=7))
+        now_utc = datetime.now(timezone.utc)
+
+        next_deadline    = None
+        next_deadline_gw = None
+        for ev in sorted(events, key=lambda e: e["id"]):
+            dl_raw = ev.get("deadline_time", "")
+            if not dl_raw:
+                continue
+            try:
+                dl_utc = datetime.fromisoformat(dl_raw.replace("Z", "+00:00"))
+                if dl_utc > now_utc:
+                    next_deadline    = dl_utc
+                    next_deadline_gw = ev["id"]
+                    break
+            except Exception:
+                continue
+
+        if next_deadline:
+            diff      = next_deadline - now_utc
+            total_sec = int(diff.total_seconds())
+            days      = total_sec // 86400
+            hrs       = (total_sec % 86400) // 3600
+            mins      = (total_sec % 3600) // 60
+            dl_bkk    = next_deadline.astimezone(BKK)
+            dl_fmt    = dl_bkk.strftime("%a %d %b  %H:%M")
+
+            if days > 0:
+                bg, border, col = "#0a1a0a", "#1e3a1e", "#5fffb0"
+                time_str = f"{days}d {hrs}h {mins}m"
+                lbl = f"GW{next_deadline_gw} DEADLINE"
+            elif hrs > 3:
+                bg, border, col = "#0a1525", "#1a3a5a", "#5aabff"
+                time_str = f"{hrs}h {mins}m"
+                lbl = f"GW{next_deadline_gw} DEADLINE"
+            else:
+                bg, border, col = "#2b1a00", "#ff8800", "#ff6060"
+                time_str = f"{hrs}h {mins}m"
+                lbl = f"GW{next_deadline_gw} DEADLINE SOON"
+
+            st.sidebar.markdown(
+                f'<div style="background:{bg};border:1px solid {border};'
+                f'border-radius:6px;padding:10px 12px;margin:4px 0">'
+                f'<div style="font-size:10px;color:#555;font-weight:700;'
+                f'letter-spacing:.7px;margin-bottom:3px">{lbl}</div>'
+                f'<div style="font-size:12px;color:#999;margin-bottom:2px">'
+                f'{dl_fmt} (Bangkok)</div>'
+                f'<div style="font-size:24px;font-weight:800;color:{col}">'
+                f'{time_str}</div>'
+                f'</div>',
+                unsafe_allow_html=True
+            )
+
     except Exception as e:
-        st.sidebar.warning(f"⚠️ Live failed: {e}")
+        st.sidebar.warning(f"Live failed: {e}")
 
 ratings_df, fixtures_df = load_csv_data()
 proj_df = load_projections_csv()
@@ -973,10 +1045,10 @@ def _solio_credit_bar():
         f'{img_tag}'
         '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
         '</div>' 
-        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
+        '<a href="https://www.solioanalytics.com" target="_blank" ' 
         'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
         'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
+        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
         '</div>'
     )
 
@@ -1193,24 +1265,6 @@ with tab7:
             tout = movers.nlargest(8,"transfers_out_event")[["web_name","selected_by_percent","transfers_out_event"]]
             tout.columns = ["Player","Sel%","Out"]
             st.dataframe(tout, hide_index=True, use_container_width=True)
-
-            st.markdown("---")
-            st.markdown("### 💰 Price Changes")
-            try:
-                pdf = get_price_changes(bootstrap)
-                if pdf.empty:
-                    st.info("No price changes this GW.")
-                else:
-                    rises = pdf[pdf["Change"] > 0]
-                    falls = pdf[pdf["Change"] < 0]
-                    if not rises.empty:
-                        st.markdown("**🔼 Rising**")
-                        st.dataframe(rises.reset_index(drop=True), use_container_width=True, hide_index=True)
-                    if not falls.empty:
-                        st.markdown("**🔽 Falling**")
-                        st.dataframe(falls.reset_index(drop=True), use_container_width=True, hide_index=True)
-            except Exception as e:
-                st.warning(f"Price data unavailable: {e}")
 
         with col_b:
             st.markdown("### ⚠️ DGW / BGW Radar")
