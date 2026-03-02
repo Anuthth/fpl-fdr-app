@@ -687,7 +687,7 @@ if use_live:
 </script>
 """
             with st.sidebar:
-                components.html(countdown_html, height=110)
+                components.html(countdown_html, height=130)
 
     except Exception as e:
         st.sidebar.warning(f"Live failed: {e}")
