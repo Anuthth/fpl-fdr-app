@@ -376,7 +376,7 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     if eo_df is not None and eo_col in eo_df.columns:
         eo_map = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
         diff_pool["_eo"] = diff_pool["Name"].map(eo_map).fillna(999.0)
-        diff_pool = diff_pool[diff_pool["_eo"] < 10.0]   # < 10%
+        diff_pool = diff_pool[diff_pool["_eo"] < 0.10]   # < 10% EO (raw value, multiply by 100 for display)
     diff = diff_pool.nlargest(1, pts_col).copy()
     diff["PickType"] = ["🎯 Differential"]
 
@@ -404,7 +404,7 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
 
         eo_val = eo_map_display.get(r["Name"])
         # EO already in % — just round and display directly
-        eo_pct = round(float(eo_val), 1) if eo_val is not None and not np.isnan(float(eo_val)) else None
+        eo_pct = round(float(eo_val) * 100, 1) if eo_val is not None and not np.isnan(float(eo_val)) else None
 
         result.append({
             "PickType": r["PickType"],
@@ -472,7 +472,7 @@ def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
             bg, fg = club_style(r["Team"])
             eo_raw = eo_map.get(r["Name"], 0)
             # EO already in % — display directly
-            eo_pct = round(float(eo_raw), 1) if eo_raw else 0.0
+            eo_pct = round(float(eo_raw) * 100, 1) if eo_raw else 0.0
             rows.append({
                 "Name":    r["Name"],
                 "Team":    r["Team"],
@@ -973,10 +973,10 @@ def _solio_credit_bar():
         f'{img_tag}'
         '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
         '</div>' 
-        '<a href="https://www.solioanalytics.com" target="_blank" ' 
+        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
         'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
         'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
+        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
         '</div>'
     )
 
@@ -1020,15 +1020,32 @@ with tab5:
                 club_bg, club_fg = club_style(p["Team"])
                 eo_str = f"{p['EO%']}%" if p.get("EO%") is not None else "—"
 
-                img_html = ""
+                # initials fallback avatar (shown when photo 404s or missing)
+                initials = "".join(w[0].upper() for w in p["Name"].replace(".", " ").split() if w)[:2]
+                avatar_html = (
+                    f'<div style="width:80px;height:100px;border-radius:8px;margin-bottom:8px;'
+                    f'background:rgba(0,0,0,0.25);display:flex;align-items:center;'
+                    f'justify-content:center;font-size:28px;font-weight:800;'
+                    f'color:{club_fg};opacity:0.7;margin-left:auto;margin-right:auto;'
+                    f'border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
+                )
+
                 if p["photo"]:
+                    ev_safe = str(p["EV"]).replace(".", "_")
                     img_html = (
+                        f'<div style="width:80px;margin:0 auto 8px auto">'
                         f'<img src="{p["photo"]}" '
-                        f'style="width:80px;height:100px;object-fit:cover;object-position:top;' 
-                        f'border-radius:8px;margin-bottom:8px;' 
-                        f'border:2px solid rgba(255,255,255,0.15)" '
-                        f'onerror="this.style.display=\'none\'">' 
+                        f'style="width:80px;height:100px;object-fit:cover;object-position:top;'
+                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block" '
+                        f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                        f'<div style="width:80px;height:100px;border-radius:8px;'
+                        f'background:rgba(0,0,0,0.25);display:none;align-items:center;'
+                        f'justify-content:center;font-size:28px;font-weight:800;'
+                        f'color:{club_fg};border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
+                        f'</div>'
                     )
+                else:
+                    img_html = f'<div style="margin:0 auto 8px auto;width:80px">{avatar_html}</div>'
 
                 card = (
                     f'<div style="border-radius:10px;overflow:hidden;margin:4px;' 
@@ -1100,14 +1117,26 @@ with tab6:
                         name_style = "font-weight:800;font-size:13px" if is_top else "font-weight:600;font-size:12px"
                         eo_str = f"{r['EO%']}%" if r.get("EO%") is not None else "—"
 
-                        img_tag = ""
+                        initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2]
                         if r["photo"]:
                             img_tag = (
+                                f'<div style="width:36px;height:46px;flex-shrink:0;position:relative">'
                                 f'<img src="{r["photo"]}" '
-                                f'style="width:36px;height:46px;object-fit:cover;object-position:top;' 
-                                f'border-radius:4px;flex-shrink:0;' 
-                                f'border:1px solid rgba(255,255,255,0.2)" '
-                                f'onerror="this.style.display=\'none\'">' 
+                                f'style="width:36px;height:46px;object-fit:cover;object-position:top;'
+                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block" '
+                                f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                                f'<div style="width:36px;height:46px;border-radius:4px;display:none;'
+                                f'align-items:center;justify-content:center;font-size:13px;font-weight:800;'
+                                f'color:{fg};background:rgba(0,0,0,0.3);'
+                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
+                                f'</div>'
+                            )
+                        else:
+                            img_tag = (
+                                f'<div style="width:36px;height:46px;flex-shrink:0;border-radius:4px;'
+                                f'background:rgba(0,0,0,0.3);display:flex;align-items:center;'
+                                f'justify-content:center;font-size:13px;font-weight:800;color:{fg};'
+                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
                             )
 
                         row_html += (
