@@ -1488,38 +1488,6 @@ with tab7:
     # Show how-to hint
     with st.expander("📂 How to add notes"):
         st.markdown(f"""
-Edit **`cheatsheet.json`** in your app folder. Example structure:
-
-```json
-{{
-  "gw{view_gw}": {{
-    "disclaimer": "Written before press conferences. Make moves close to deadline.",
-    "general": [
-      "With FA Cup fixtures before GW{view_gw}, rolling the transfer is advisable.",
-      "DGW information is still unclear — hold wildcards."
-    ],
-    "transfers": [
-      "If you have **1 FT**: Hold Haaland if bench is reliable.",
-      "If you have **2 FTs**: Consider Haaland → Ekitike + upgrade elsewhere."
-    ],
-    "holds": [
-      "Hold Wilson — expected short-term absence.",
-      "Hold Andersen — minor knock, should recover."
-    ],
-    "chips": [
-      "Wildcard: Wait for DGW clarity. Using now is premature.",
-      "Triple Captain: No standout candidate this week."
-    ],
-    "captaincy": [
-      "Salah (vs WOL A) — top pick.",
-      "Bruno Fernandes — strong home fixture.",
-      "Ekitike — differential, great EO at 30%."
-    ]
-  }}
-}}
-```
-Save the file and **Rerun** the app.
-""")
 
 
 with tab8:
