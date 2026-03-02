@@ -69,7 +69,7 @@ def club_style(team_name):
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
 PROJECTIONS_CSV_FILE = "projections.csv"
-EO_CSV_FILE          = "EO_.csv"          # Solio expected ownership file
+EO_CSV_FILE          = "EO%.csv"          # Solio expected ownership file
 
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
