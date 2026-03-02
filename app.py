@@ -1659,7 +1659,7 @@ def build_team_stats_df(bootstrap, raw_fixtures):
 
 
 def build_player_stats_df(bootstrap):
-    """Full player analytics from FPL API elements — raw totals."""
+    """Full player analytics from FPL API elements  raw totals."""
     elements = pd.DataFrame(bootstrap["elements"])
     teams_df = pd.DataFrame(bootstrap["teams"])
     id2name  = dict(zip(teams_df["id"], teams_df["name"]))
