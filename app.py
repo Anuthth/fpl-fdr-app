@@ -1813,4 +1813,4 @@ with tab9:
                                 orientation="h", y=1.06),
                     margin=dict(l=50, r=20, t=30, b=50), height=440, hovermode="closest"
                 )
-                st.plotly_chart(fig_ps, use_container_width=
+                st.plotly_chart(fig_ps, use_container_width=True)
