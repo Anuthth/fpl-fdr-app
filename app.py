@@ -352,8 +352,10 @@ def _fuzzy_code(name, lookup):
 
 def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     """
-    Top 2 EV picks + 1 Differential using Solio EO file for ownership.
-    Differential = highest EV player with EO < 10%.
+    Top 2 EV picks + 1 Differential using Solio EO file.
+    Uses Solio ID column to look up FPL photo code directly — no fuzzy matching.
+    EO values in Solio are already in % (0.3 = 0.3%, 1.74 = 1.74%).
+    Differential threshold: EO < 10%.
     """
     pts_col  = f"{gw}_Pts"
     mins_col = f"{gw}_xMins"
@@ -369,18 +371,24 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     top2 = active.nlargest(2, pts_col).copy()
     top2["PickType"] = ["🏆 Top Pick", "🥈 2nd Pick"]
 
+    # EO values are already in % — differential = EO < 10%
     diff_pool = active[~active["Name"].isin(top2["Name"])].copy()
     if eo_df is not None and eo_col in eo_df.columns:
         eo_map = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
-        diff_pool["_eo"] = diff_pool["Name"].map(eo_map).fillna(1.0)
-        diff_pool = diff_pool[diff_pool["_eo"] < 0.10]
+        diff_pool["_eo"] = diff_pool["Name"].map(eo_map).fillna(999.0)
+        diff_pool = diff_pool[diff_pool["_eo"] < 10.0]   # < 10%
     diff = diff_pool.nlargest(1, pts_col).copy()
     diff["PickType"] = ["🎯 Differential"]
 
     picks = pd.concat([top2, diff], ignore_index=True)
-    code_lookup = _build_code_lookup(bootstrap)
 
-    # Build EO map for display
+    # Build FPL id→code map for direct photo lookup using Solio ID column
+    id_to_code = {}
+    if bootstrap:
+        for p in bootstrap["elements"]:
+            id_to_code[int(p["id"])] = p["code"]
+
+    # EO map for display
     eo_map_display = {}
     if eo_df is not None and eo_col in eo_df.columns:
         eo_map_display = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
@@ -388,10 +396,16 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     result = []
     for _, r in picks.iterrows():
         fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
-        code  = _fuzzy_code(r["Name"], code_lookup)
+
+        # Use Solio ID column for direct photo lookup
+        solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
+        code  = id_to_code.get(solio_id) if solio_id else _fuzzy_code(r["Name"], _build_code_lookup(bootstrap))
         photo = player_photo_url(code) if code else None
+
         eo_val = eo_map_display.get(r["Name"])
-        eo_pct = round(float(eo_val) * 100, 1) if eo_val is not None and not np.isnan(float(eo_val)) else None
+        # EO already in % — just round and display directly
+        eo_pct = round(float(eo_val), 1) if eo_val is not None and not np.isnan(float(eo_val)) else None
+
         result.append({
             "PickType": r["PickType"],
             "Name":     r["Name"],
@@ -406,10 +420,24 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     return result
 
 def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
-    """All players within 0.5 EV of top pick per GW, with Solio EO%."""
-    code_lookup = _build_code_lookup(bootstrap)
-    matrix = {}
+    """All players within 0.5 EV of top pick per GW, with Solio EO%.
+    Uses Solio ID column for direct FPL photo lookup."""
+    id_to_code = {}
+    if bootstrap:
+        for p in bootstrap["elements"]:
+            id_to_code[int(p["id"])] = p["code"]
 
+    # Fallback fuzzy lookup
+    code_lookup = _build_code_lookup(bootstrap)
+
+    # Build Solio ID→Name map for direct ID lookup
+    id_to_name_solio = {}
+    if "ID" in proj_df.columns:
+        for _, r in proj_df.iterrows():
+            if pd.notna(r.get("ID")):
+                id_to_name_solio[int(r["ID"])] = r["Name"]
+
+    matrix = {}
     for gw in gws:
         pts_col  = f"{gw}_Pts"
         mins_col = f"{gw}_xMins"
@@ -435,11 +463,16 @@ def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
         rows = []
         for _, r in within.iterrows():
             fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
-            code  = _fuzzy_code(r["Name"], code_lookup)
+
+            # Direct ID-based photo lookup
+            solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
+            code  = id_to_code.get(solio_id) if solio_id else _fuzzy_code(r["Name"], code_lookup)
             photo = player_photo_url(code) if code else None
+
             bg, fg = club_style(r["Team"])
             eo_raw = eo_map.get(r["Name"], 0)
-            eo_pct = round(float(eo_raw) * 100, 1) if eo_raw else 0.0
+            # EO already in % — display directly
+            eo_pct = round(float(eo_raw), 1) if eo_raw else 0.0
             rows.append({
                 "Name":    r["Name"],
                 "Team":    r["Team"],
