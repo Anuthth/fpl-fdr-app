@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
 import numpy as np
 import math
 import requests
@@ -596,39 +597,97 @@ if use_live:
                 continue
 
         if next_deadline:
-            diff      = next_deadline - now_utc
-            total_sec = int(diff.total_seconds())
-            days      = total_sec // 86400
-            hrs       = (total_sec % 86400) // 3600
-            mins      = (total_sec % 3600) // 60
             dl_bkk    = next_deadline.astimezone(BKK)
             dl_fmt    = dl_bkk.strftime("%a %d %b  %H:%M")
+            # Pass deadline as Unix timestamp (ms) to JS
+            deadline_ms = int(next_deadline.timestamp() * 1000)
+            gw_label    = f"GW{next_deadline_gw}"
 
-            if days > 0:
-                bg, border, col = "#0a1a0a", "#1e3a1e", "#5fffb0"
-                time_str = f"{days}d {hrs}h {mins}m"
-                lbl = f"GW{next_deadline_gw} DEADLINE"
-            elif hrs > 3:
-                bg, border, col = "#0a1525", "#1a3a5a", "#5aabff"
-                time_str = f"{hrs}h {mins}m"
-                lbl = f"GW{next_deadline_gw} DEADLINE"
-            else:
-                bg, border, col = "#2b1a00", "#ff8800", "#ff6060"
-                time_str = f"{hrs}h {mins}m"
-                lbl = f"GW{next_deadline_gw} DEADLINE SOON"
+            countdown_html = f"""
+<style>
+  #cdbox {{
+    background: #0a1a0a;
+    border: 1px solid #1e3a1e;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: 'Inter', sans-serif;
+  }}
+  #cdlabel {{
+    font-size: 10px;
+    color: #555;
+    font-weight: 700;
+    letter-spacing: .7px;
+    margin-bottom: 3px;
+  }}
+  #cddate {{
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+  }}
+  #cdtime {{
+    font-size: 26px;
+    font-weight: 800;
+    color: #5fffb0;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 1px;
+  }}
+</style>
+<div id="cdbox">
+  <div id="cdlabel">{gw_label} DEADLINE</div>
+  <div id="cddate">{dl_fmt} (Bangkok)</div>
+  <div id="cdtime">--d --h --m --s</div>
+</div>
+<script>
+  const deadline = {deadline_ms};
+  const el = document.getElementById('cdtime');
+  const box = document.getElementById('cdbox');
+  const lbl = document.getElementById('cdlabel');
 
-            st.sidebar.markdown(
-                f'<div style="background:{bg};border:1px solid {border};'
-                f'border-radius:6px;padding:10px 12px;margin:4px 0">'
-                f'<div style="font-size:10px;color:#555;font-weight:700;'
-                f'letter-spacing:.7px;margin-bottom:3px">{lbl}</div>'
-                f'<div style="font-size:12px;color:#999;margin-bottom:2px">'
-                f'{dl_fmt} (Bangkok)</div>'
-                f'<div style="font-size:24px;font-weight:800;color:{col}">'
-                f'{time_str}</div>'
-                f'</div>',
-                unsafe_allow_html=True
-            )
+  function update() {{
+    const now  = Date.now();
+    const diff = Math.max(0, deadline - now);
+    const s    = Math.floor(diff / 1000);
+    const days = Math.floor(s / 86400);
+    const hrs  = Math.floor((s % 86400) / 3600);
+    const mins = Math.floor((s % 3600) / 60);
+    const secs = s % 60;
+
+    const pad = n => String(n).padStart(2, '0');
+
+    if (diff === 0) {{
+      el.style.color = '#ff6060';
+      el.textContent = 'DEADLINE PASSED';
+      box.style.background = '#2b0a0a';
+      box.style.borderColor = '#ff4444';
+      return;
+    }}
+
+    if (days > 0) {{
+      el.textContent = days + 'd ' + pad(hrs) + 'h ' + pad(mins) + 'm ' + pad(secs) + 's';
+      el.style.color = '#5fffb0';
+      box.style.background = '#0a1a0a';
+      box.style.borderColor = '#1e3a1e';
+    }} else if (hrs > 3) {{
+      el.textContent = pad(hrs) + 'h ' + pad(mins) + 'm ' + pad(secs) + 's';
+      el.style.color = '#5aabff';
+      box.style.background = '#0a1525';
+      box.style.borderColor = '#1a3a5a';
+    }} else {{
+      el.textContent = pad(hrs) + 'h ' + pad(mins) + 'm ' + pad(secs) + 's';
+      el.style.color = '#ff6060';
+      box.style.background = '#2b1a00';
+      box.style.borderColor = '#ff8800';
+      lbl.textContent = '{gw_label} DEADLINE SOON';
+      lbl.style.color = '#ff8800';
+    }}
+  }}
+
+  update();
+  setInterval(update, 1000);
+</script>
+"""
+            with st.sidebar:
+                components.html(countdown_html, height=95)
 
     except Exception as e:
         st.sidebar.warning(f"Live failed: {e}")
@@ -1045,10 +1104,10 @@ def _solio_credit_bar():
         f'{img_tag}'
         '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
         '</div>' 
-        '<a href="https://www.solioanalytics.com" target="_blank" ' 
+        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
         'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
         'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
+        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
         '</div>'
     )
 
