@@ -1350,161 +1350,177 @@ with tab6:
 
 
 # ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
+# ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
 with tab7:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📋 Cheatsheet</span>'
-        '<span style="font-size:12px;color:#444">GW notes & strategy summary</span></div>',
+        '<span style="font-size:12px;color:#444">GW strategy notes</span></div>',
         unsafe_allow_html=True
     )
 
-    # ── Storage key format: "cheatsheet_gw{N}" ────────────────────────────────
-    CHEATSHEET_TEMPLATE = """\
-⚠️ Disclaimer: This note is written prior to full press conferences. Make your move close to the deadline to maximise available information.
+    # Load from cheatsheet.json in same folder as app.py
+    import json, os
 
-📋 General:
-- 
+    CHEATSHEET_FILE = "cheatsheet.json"
 
-🔄 Transfers:
-- If you have 1 FT: 
-- If you have 2 FTs: 
+    def load_cheatsheet():
+        if os.path.exists(CHEATSHEET_FILE):
+            try:
+                with open(CHEATSHEET_FILE, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                return {}
+        return {}
 
-⛔ Holds:
-- 
+    cs_data = load_cheatsheet()
 
-💊 Chips:
-- 
+    view_gw = st.selectbox(
+        "Select Gameweek",
+        options=list(range(1, 39)),
+        index=current_gw - 1,
+        key="cs_view_gw",
+        label_visibility="collapsed",
+    )
 
-🎯 Captaincy:
-- 
-"""
+    gw_key   = f"gw{view_gw}"
+    gw_notes = cs_data.get(gw_key, {})
 
-    col_edit, col_view = st.columns([1, 1], gap="large")
-
-    with col_edit:
-        st.markdown("#### ✏️ Edit Notes")
-
-        edit_gw = st.number_input(
-            "Gameweek", min_value=1, max_value=38,
-            value=current_gw, step=1, key="cs_edit_gw"
+    if not gw_notes:
+        st.markdown(
+            f'<div style="background:#111;border:1px dashed #222;border-radius:8px;'
+            f'padding:32px;text-align:center;color:#444;font-size:14px">'
+            f'No cheatsheet found for GW{view_gw}.<br>'
+            f'<span style="font-size:12px;color:#333">Add a <code style="color:#555">gw{view_gw}</code> '
+            f'entry in <code style="color:#555">cheatsheet.json</code></span>'
+            f'</div>',
+            unsafe_allow_html=True
         )
-        storage_key = f"cheatsheet_gw{edit_gw}"
+    else:
+        # Render each section
+        SECTION_ICONS = {
+            "disclaimer":  ("⚠️", "#2b1a00", "#1px solid #ffaa33", "#ffcc80"),
+            "general":     ("📋", None, None, None),
+            "transfers":   ("🔄", None, None, None),
+            "holds":       ("⛔", None, None, None),
+            "chips":       ("💊", None, None, None),
+            "captaincy":   ("🎯", None, None, None),
+            "notes":       ("📌", None, None, None),
+        }
 
-        # Load existing note from session state (acts as in-memory store)
-        ss_key = f"cs_text_{edit_gw}"
-        if ss_key not in st.session_state:
-            # Try to load from a local notes dict stored in session
-            if "cs_notes" not in st.session_state:
-                st.session_state["cs_notes"] = {}
-            st.session_state[ss_key] = st.session_state["cs_notes"].get(
-                storage_key, CHEATSHEET_TEMPLATE
-            )
+        html_parts = []
 
-        note_text = st.text_area(
-            f"GW{edit_gw} Notes",
-            value=st.session_state[ss_key],
-            height=380,
-            key=f"cs_area_{edit_gw}",
-            label_visibility="collapsed",
-            placeholder="Write your GW notes here...",
-        )
-
-        c1, c2 = st.columns(2)
-        with c1:
-            if st.button("💾 Save", use_container_width=True, key="cs_save"):
-                if "cs_notes" not in st.session_state:
-                    st.session_state["cs_notes"] = {}
-                st.session_state["cs_notes"][storage_key] = note_text
-                st.session_state[ss_key] = note_text
-                st.success(f"✅ GW{edit_gw} notes saved!")
-        with c2:
-            if st.button("🗑️ Reset", use_container_width=True, key="cs_reset"):
-                st.session_state[ss_key] = CHEATSHEET_TEMPLATE
-                if "cs_notes" in st.session_state:
-                    st.session_state["cs_notes"].pop(storage_key, None)
-                st.rerun()
-
-    with col_view:
-        st.markdown("#### 👁️ Preview")
-
-        view_gw = st.number_input(
-            "View GW", min_value=1, max_value=38,
-            value=current_gw, step=1, key="cs_view_gw"
-        )
-        view_key = f"cheatsheet_gw{view_gw}"
-        saved_notes = {}
-        if "cs_notes" in st.session_state:
-            saved_notes = st.session_state["cs_notes"]
-
-        view_text = saved_notes.get(view_key, "")
-
-        if not view_text.strip():
-            st.markdown(
-                f'<div style="background:#111;border:1px solid #222;border-radius:8px;'
-                f'padding:20px;text-align:center;color:#444;font-size:13px">'
-                f'No notes saved for GW{view_gw} yet.</div>',
-                unsafe_allow_html=True
-            )
-        else:
-            # Render each line as styled HTML
-            lines_out = []
-            for line in view_text.splitlines():
-                stripped = line.strip()
-                if not stripped:
-                    lines_out.append('<div style="height:8px"></div>')
-                elif stripped.startswith("⚠️"):
-                    lines_out.append(
-                        f'<div style="background:#2b1a00;border-left:3px solid #ffaa33;'
-                        f'padding:8px 12px;border-radius:4px;color:#ffcc80;'
-                        f'font-size:12px;margin-bottom:8px">{stripped}</div>'
-                    )
-                elif stripped.startswith(("📋","🔄","⛔","💊","🎯","📌","🔑","💡")):
-                    lines_out.append(
-                        f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
-                        f'margin:12px 0 4px 0">{stripped}</div>'
-                    )
-                elif stripped.startswith("- "):
-                    content = stripped[2:]
-                    lines_out.append(
-                        f'<div style="display:flex;gap:8px;padding:4px 0;'
-                        f'color:#ccc;font-size:13px">'
-                        f'<span style="color:#444;flex-shrink:0">•</span>'
-                        f'<span>{content}</span></div>'
-                    )
-                else:
-                    lines_out.append(
-                        f'<div style="color:#aaa;font-size:13px;padding:2px 0">{stripped}</div>'
-                    )
-
-            preview_html = (
-                f'<div style="background:#0d1117;border:1px solid #1e1e1e;'
-                f'border-radius:8px;padding:16px 18px">'
-                f'<div style="font-size:11px;color:#444;font-weight:700;'
-                f'letter-spacing:.6px;margin-bottom:10px">GW{view_gw} CHEATSHEET</div>'
-                + "".join(lines_out) +
-                f'</div>'
-            )
-            st.markdown(preview_html, unsafe_allow_html=True)
-
-        # Show saved GWs
-        if "cs_notes" in st.session_state and st.session_state["cs_notes"]:
-            saved_gws = sorted([
-                int(k.replace("cheatsheet_gw",""))
-                for k in st.session_state["cs_notes"].keys()
-                if k.startswith("cheatsheet_gw")
-            ])
-            if saved_gws:
-                st.markdown(
-                    f'<div style="margin-top:12px;font-size:11px;color:#444">'
-                    f'Saved GWs: '
-                    + "".join(
-                        f'<span style="background:#1a2a1a;color:#5fffb0;border-radius:3px;'
-                        f'padding:1px 6px;margin:0 2px;font-weight:700">GW{g}</span>'
-                        for g in saved_gws
-                    )
-                    + '</div>',
-                    unsafe_allow_html=True
+        # If there's a top-level disclaimer string, show it first
+        if "disclaimer" in gw_notes:
+            disc = gw_notes["disclaimer"]
+            if isinstance(disc, str):
+                html_parts.append(
+                    f'<div style="background:#2b1a00;border-left:3px solid #ffaa33;'
+                    f'border-radius:4px;padding:10px 14px;color:#ffcc80;'
+                    f'font-size:12px;margin-bottom:14px;line-height:1.6">{disc}</div>'
                 )
+
+        # Render sections (skip disclaimer - already handled)
+        SECTION_ORDER = ["general","transfers","holds","chips","captaincy","notes"]
+        SECTION_LABELS = {
+            "general":   "📋 General",
+            "transfers": "🔄 Transfers",
+            "holds":     "⛔ Holds",
+            "chips":     "💊 Chips",
+            "captaincy": "🎯 Captaincy",
+            "notes":     "📌 Notes",
+        }
+
+        for section in SECTION_ORDER:
+            if section not in gw_notes:
+                continue
+            items = gw_notes[section]
+            label = SECTION_LABELS.get(section, section.title())
+
+            html_parts.append(
+                f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
+                f'margin:14px 0 6px 0;letter-spacing:.3px">{label}</div>'
+            )
+
+            if isinstance(items, str):
+                items = [items]
+
+            for item in items:
+                # Bold text between **...**
+                import re
+                item_html = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#fff">\1</strong>', item)
+                html_parts.append(
+                    f'<div style="display:flex;gap:10px;padding:5px 0;'
+                    f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
+                    f'<span style="color:#333;flex-shrink:0;margin-top:1px">•</span>'
+                    f'<span>{item_html}</span></div>'
+                )
+
+        # Any extra string keys not in standard order
+        extra_keys = [k for k in gw_notes if k not in ["disclaimer"] + SECTION_ORDER]
+        for section in extra_keys:
+            items = gw_notes[section]
+            label = section.replace("_", " ").title()
+            html_parts.append(
+                f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
+                f'margin:14px 0 6px 0">{label}</div>'
+            )
+            if isinstance(items, str):
+                items = [items]
+            for item in items:
+                html_parts.append(
+                    f'<div style="display:flex;gap:10px;padding:5px 0;'
+                    f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
+                    f'<span style="color:#333;flex-shrink:0">•</span>'
+                    f'<span>{item}</span></div>'
+                )
+
+        card_html = (
+            f'<div style="background:#0d1117;border:1px solid #1e1e1e;'
+            f'border-radius:10px;padding:20px 22px;max-width:800px">'
+            f'<div style="font-size:10px;color:#333;font-weight:700;'
+            f'letter-spacing:.8px;margin-bottom:12px">GW{view_gw} CHEATSHEET</div>'
+            + "".join(html_parts) +
+            f'</div>'
+        )
+        st.markdown(card_html, unsafe_allow_html=True)
+
+    # Show how-to hint
+    with st.expander("📂 How to add notes"):
+        st.markdown(f"""
+Edit **`cheatsheet.json`** in your app folder. Example structure:
+
+```json
+{{
+  "gw{view_gw}": {{
+    "disclaimer": "Written before press conferences. Make moves close to deadline.",
+    "general": [
+      "With FA Cup fixtures before GW{view_gw}, rolling the transfer is advisable.",
+      "DGW information is still unclear — hold wildcards."
+    ],
+    "transfers": [
+      "If you have **1 FT**: Hold Haaland if bench is reliable.",
+      "If you have **2 FTs**: Consider Haaland → Ekitike + upgrade elsewhere."
+    ],
+    "holds": [
+      "Hold Wilson — expected short-term absence.",
+      "Hold Andersen — minor knock, should recover."
+    ],
+    "chips": [
+      "Wildcard: Wait for DGW clarity. Using now is premature.",
+      "Triple Captain: No standout candidate this week."
+    ],
+    "captaincy": [
+      "Salah (vs WOL A) — top pick.",
+      "Bruno Fernandes — strong home fixture.",
+      "Ekitike — differential, great EO at 30%."
+    ]
+  }}
+}}
+```
+Save the file and **Rerun** the app.
+""")
+
 
 with tab8:
     st.subheader("📡 Live Radar")
