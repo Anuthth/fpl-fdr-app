@@ -68,7 +68,8 @@ def club_style(team_name):
 # ── Configuration ─────────────────────────────────────────────────────────────
 RATINGS_CSV_FILE = "final_team_ratings_with_components_new.csv"
 FIXTURES_CSV_FILE = "Fixtures202526.csv"
-PROJECTIONS_CSV_FILE   = "projections.csv"
+PROJECTIONS_CSV_FILE = "projections.csv"
+EO_CSV_FILE          = "EO_.csv"          # Solio expected ownership file
 
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
@@ -140,10 +141,23 @@ def load_csv_data():
 
 @st.cache_data
 def load_projections_csv():
+    """Load Solio projections.csv — columns: Pos,ID,Name,BV,SV,Team,{GW}_xMins,{GW}_Pts"""
     try:
         df = pd.read_csv(PROJECTIONS_CSV_FILE)
-        df.columns = [c.lstrip("\ufeff") for c in df.columns]
-        df["Team"] = df["Team"].map(lambda t: TEAM_NAME_MAP.get(t, t))
+        df.columns = [c.strip().lstrip("\ufeff") for c in df.columns]
+        if "Team" in df.columns:
+            df["Team"] = df["Team"].map(lambda t: TEAM_NAME_MAP.get(str(t).strip(), str(t).strip()))
+        return df
+    except FileNotFoundError:
+        return None
+
+def load_eo_csv():
+    """Load Solio EO_.csv — columns: Pos,ID,Name,BV,SV,Team,{GW}_xMins,{GW}_eo"""
+    try:
+        df = pd.read_csv(EO_CSV_FILE)
+        df.columns = [c.strip().lstrip("\ufeff") for c in df.columns]
+        if "Team" in df.columns:
+            df["Team"] = df["Team"].map(lambda t: TEAM_NAME_MAP.get(str(t).strip(), str(t).strip()))
         return df
     except FileNotFoundError:
         return None
@@ -290,76 +304,93 @@ def get_fdr_for_team_gw(team_name, gw, master_df_full):
         return cell.get("display","?"), cell.get("fdr", 3)
     return "BGW", 6
 
-def get_captain_picks(proj_df, gw, master_df_full, bootstrap):
-    """Top 2 EV + 1 differential. Returns list of dicts including photo_url."""
+def _build_code_lookup(bootstrap):
+    """Build name → FPL photo code dict."""
+    lookup = {}
+    if not bootstrap:
+        return lookup
+    for p in bootstrap["elements"]:
+        lookup[p["web_name"]] = p["code"]
+        full = f"{p.get('first_name','')} {p.get('second_name','')}".strip()
+        lookup[full] = p["code"]
+        lookup[p.get("second_name","").lower()] = p["code"]
+    return lookup
+
+def _fuzzy_code(name, lookup):
+    if name in lookup:
+        return lookup[name]
+    token = name.split(".")[-1].strip().lower()
+    for key, val in lookup.items():
+        if token and len(token) > 2 and token in key.lower():
+            return val
+    return None
+
+def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
+    """
+    Top 2 EV picks + 1 Differential using Solio EO file for ownership.
+    Differential = highest EV player with EO < 10%.
+    """
     pts_col  = f"{gw}_Pts"
     mins_col = f"{gw}_xMins"
+    eo_col   = f"{gw}_eo"
     if pts_col not in proj_df.columns:
         return []
 
     df = proj_df.copy()
     df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
     df[mins_col] = pd.to_numeric(df[mins_col], errors="coerce")
-    df["Elite%"] = pd.to_numeric(df["Elite%"],  errors="coerce")
-
     active = df[df[mins_col] > 45].copy()
-    top2   = active.nlargest(2, pts_col).copy()
-    top2["PickType"] = ["🏆 Top Pick","🥈 2nd Pick"]
 
-    diff_pool = active[(active["Elite%"] < 0.10) & (~active["Name"].isin(top2["Name"]))]
+    top2 = active.nlargest(2, pts_col).copy()
+    top2["PickType"] = ["🏆 Top Pick", "🥈 2nd Pick"]
+
+    diff_pool = active[~active["Name"].isin(top2["Name"])].copy()
+    if eo_df is not None and eo_col in eo_df.columns:
+        eo_map = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
+        diff_pool["_eo"] = diff_pool["Name"].map(eo_map).fillna(1.0)
+        diff_pool = diff_pool[diff_pool["_eo"] < 0.10]
     diff = diff_pool.nlargest(1, pts_col).copy()
     diff["PickType"] = ["🎯 Differential"]
 
     picks = pd.concat([top2, diff], ignore_index=True)
+    code_lookup = _build_code_lookup(bootstrap)
 
-    # Build name→code lookup from bootstrap
-    code_lookup = {}
-    if bootstrap:
-        for p in bootstrap["elements"]:
-            code_lookup[p["web_name"]] = p["code"]
-            # also store first+last name combos
-            full = f"{p.get('first_name','')} {p.get('second_name','')}".strip()
-            code_lookup[full] = p["code"]
+    # Build EO map for display
+    eo_map_display = {}
+    if eo_df is not None and eo_col in eo_df.columns:
+        eo_map_display = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
 
     result = []
     for _, r in picks.iterrows():
         fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
-        # Try to find player photo code
-        code = code_lookup.get(r["Name"])
-        if code is None:
-            # fuzzy: match by last name token
-            for key, val in code_lookup.items():
-                if r["Name"].split(".")[-1].strip().lower() in key.lower():
-                    code = val
-                    break
+        code  = _fuzzy_code(r["Name"], code_lookup)
         photo = player_photo_url(code) if code else None
+        eo_val = eo_map_display.get(r["Name"])
+        eo_pct = round(float(eo_val) * 100, 1) if eo_val is not None and not np.isnan(float(eo_val)) else None
         result.append({
             "PickType": r["PickType"],
             "Name":     r["Name"],
             "Team":     r["Team"],
             "Pos":      r["Pos"],
             "EV":       round(float(r[pts_col]), 2),
+            "EO%":      eo_pct,
             "Fixture":  fix,
             "FDR":      fdr,
             "photo":    photo,
         })
     return result
 
-def get_captain_matrix(proj_df, gws, master_df_full, bootstrap):
-    """All players within 0.5 EV of top pick per GW. Includes photo + club colour."""
-    # Build name→code lookup
-    code_lookup = {}
-    if bootstrap:
-        for p in bootstrap["elements"]:
-            code_lookup[p["web_name"]] = p["code"]
-            full = f"{p.get('first_name','')} {p.get('second_name','')}".strip()
-            code_lookup[full] = p["code"]
-
+def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
+    """All players within 0.5 EV of top pick per GW, with Solio EO%."""
+    code_lookup = _build_code_lookup(bootstrap)
     matrix = {}
+
     for gw in gws:
         pts_col  = f"{gw}_Pts"
         mins_col = f"{gw}_xMins"
-        if pts_col not in proj_df.columns: continue
+        eo_col   = f"{gw}_eo"
+        if pts_col not in proj_df.columns:
+            continue
 
         df = proj_df.copy()
         df[pts_col]  = pd.to_numeric(df[pts_col],  errors="coerce")
@@ -367,25 +398,28 @@ def get_captain_matrix(proj_df, gws, master_df_full, bootstrap):
 
         active = df[df[mins_col] > 45]
         top_ev = active[pts_col].max()
-        if pd.isna(top_ev): continue
+        if pd.isna(top_ev):
+            continue
 
         within = active[active[pts_col] >= top_ev - 0.5].nlargest(10, pts_col)
+
+        eo_map = {}
+        if eo_df is not None and eo_col in eo_df.columns:
+            eo_map = pd.to_numeric(eo_df.set_index("Name")[eo_col], errors="coerce").to_dict()
 
         rows = []
         for _, r in within.iterrows():
             fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
-            code = code_lookup.get(r["Name"])
-            if code is None:
-                for key, val in code_lookup.items():
-                    if r["Name"].split(".")[-1].strip().lower() in key.lower():
-                        code = val
-                        break
+            code  = _fuzzy_code(r["Name"], code_lookup)
             photo = player_photo_url(code) if code else None
             bg, fg = club_style(r["Team"])
+            eo_raw = eo_map.get(r["Name"], 0)
+            eo_pct = round(float(eo_raw) * 100, 1) if eo_raw else 0.0
             rows.append({
                 "Name":    r["Name"],
                 "Team":    r["Team"],
                 "EV":      round(float(r[pts_col]), 2),
+                "EO%":     eo_pct,
                 "Fixture": fix,
                 "FDR":     fdr,
                 "photo":   photo,
@@ -471,6 +505,7 @@ if use_live:
 
 ratings_df, fixtures_df = load_csv_data()
 proj_df = load_projections_csv()
+eo_df   = load_eo_csv()
 
 if live_ok and bootstrap and raw_fixtures:
     fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
@@ -640,21 +675,9 @@ with tab1:
     legend_html += '</div>'
     st.markdown(legend_html, unsafe_allow_html=True)
 
-    c1, c2, c3 = st.columns([2, 2, 6])
-    with c1:
-        fdr_sort = st.selectbox("Sort by column:", ["Total_Difficulty", "Team"] + gw_columns, key="fdr_sort_select", label_visibility="collapsed")
-    with c2:
-        fdr_asc = st.toggle("Ascending", value=True, key="fdr_asc_toggle")
-
-    df_d = master_df.reset_index().rename(columns={"index":"Team"})
+    df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
     df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
-    
-    # Custom Sort
-    if fdr_sort in gw_columns:
-        df_d = df_d.sort_values(by=fdr_sort, key=lambda col: col.map(lambda x: x.get("fdr", 6) if isinstance(x, dict) else 6), ascending=fdr_asc)
-    else:
-        df_d = df_d.sort_values(by=fdr_sort, ascending=fdr_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -685,21 +708,9 @@ with tab2:
     lh += '</div>'
     st.markdown(lh, unsafe_allow_html=True)
 
-    c1, c2, c3 = st.columns([2, 2, 6])
-    with c1:
-        xg_sort = st.selectbox("Sort by column:", ["Total_xG", "Team"] + gw_columns, key="xg_sort_select", label_visibility="collapsed")
-    with c2:
-        xg_asc = st.toggle("Ascending", value=False, key="xg_asc_toggle")
-
-    df_d = master_df.reset_index().rename(columns={"index":"Team"})
+    df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","Total xG"] + gw_columns].copy()
     df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
-
-    # Custom Sort
-    if xg_sort in gw_columns:
-        df_d = df_d.sort_values(by=xg_sort, key=lambda col: col.map(lambda x: x.get("xG", 0) if isinstance(x, dict) else -1), ascending=xg_asc)
-    else:
-        df_d = df_d.sort_values(by=xg_sort, ascending=xg_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -731,21 +742,9 @@ with tab3:
     lh += '</div>'
     st.markdown(lh, unsafe_allow_html=True)
 
-    c1, c2, c3 = st.columns([2, 2, 6])
-    with c1:
-        xcs_sort = st.selectbox("Sort by column:", ["Total_xCS", "Team"] + gw_columns, key="xcs_sort_select", label_visibility="collapsed")
-    with c2:
-        xcs_asc = st.toggle("Ascending", value=False, key="xcs_asc_toggle")
-
-    df_d = master_df.reset_index().rename(columns={"index":"Team"})
+    df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
     df_d = df_d[["Team","xCS"] + gw_columns].copy()
     df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
-
-    # Custom Sort
-    if xcs_sort in gw_columns:
-        df_d = df_d.sort_values(by=xcs_sort, key=lambda col: col.map(lambda x: x.get("CS", 0) if isinstance(x, dict) else -1), ascending=xcs_asc)
-    else:
-        df_d = df_d.sort_values(by=xcs_sort, ascending=xcs_asc)
 
     html = _heatmap_table(
         df_d, gw_columns,
@@ -897,148 +896,192 @@ with tab4:
             unsafe_allow_html=True
         )
 
-# ── Tab 5: Captain Picks (was tab4) ──────────────────────────────────────────
+# ── Solio branding helper ─────────────────────────────────────────────────────
+def _solio_credit_bar():
+    import base64
+    logo_b64 = ""
+    try:
+        with open("Solio_Logo_Neg_RGB.png", "rb") as f:
+            logo_b64 = base64.b64encode(f.read()).decode()
+        img_tag = (f'<img src="data:image/png;base64,{logo_b64}" '
+                   f'style="height:22px;vertical-align:middle;margin-right:10px;opacity:0.9">')
+    except:
+        img_tag = '<span style="font-weight:800;color:#fff;font-size:13px;margin-right:10px;letter-spacing:1px">SOLIO</span>'
+    return (
+        '<div style="display:flex;align-items:center;justify-content:space-between;' 
+        'background:#111;border:1px solid #222;border-radius:6px;' 
+        'padding:8px 14px;margin-bottom:14px">' 
+        '<div style="display:flex;align-items:center">' 
+        f'{img_tag}'
+        '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
+        '</div>' 
+        '<a href="https://www.solioanalytics.com" target="_blank" ' 
+        'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
+        'padding:4px 12px;border-radius:4px;text-decoration:none;' 
+        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
+        '</div>'
+    )
+
+SOLIO_NO_FILE_MSG = (
+    "\ud83d\udcc2 **{filename} not found.**\n\n"
+    "Download from [Solio Analytics](https://www.solioanalytics.com) "
+    "and place it in your app folder alongside `app.py`."
+)
+
+# ── Tab 5: Captain Picks ──────────────────────────────────────────────────────
 with tab5:
-    st.subheader("🎯 Captain Picks")
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🎯 Captain Picks</span>' 
+        '<span style="font-size:12px;color:#444">Top 2 EV + 1 Differential per gameweek</span></div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
+
     if proj_df is None:
-        st.error("❌ projections.csv not found. Place it in the app folder.")
+        st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
     elif master_df_full is None:
-        st.error("❌ Could not build fixture data.")
+        st.error("Could not build fixture data.")
     else:
         gw_sel = st.selectbox("Select GW:", future_gws, key="cap_gw")
-        picks  = get_captain_picks(proj_df, gw_sel, master_df_full, bootstrap)
+        picks  = get_captain_picks(proj_df, eo_df, gw_sel, master_df_full, bootstrap)
 
         if not picks:
-            st.warning(f"No data for GW{gw_sel}.")
+            st.warning(f"No projection data for GW{gw_sel}.")
         else:
-            st.caption(f"GW{gw_sel} recommendations — Top 2 picks + 1 Differential. FDR from your custom ratings.")
-
             TYPE_STYLE = {
-                "🏆 Top Pick":     ("background:#1a472a","color:#00ff85"),
-                "🥈 2nd Pick":     ("background:#1a3a47","color:#50c369"),
-                "🎯 Differential": ("background:#3d2b1f","color:#f4a261"),
+                "🏆 Top Pick":     ("#0a2818", "#5fffb0"),
+                "🥈 2nd Pick":     ("#0a1a2b", "#5aabff"),
+                "🎯 Differential": ("#2b1a00", "#ffaa33"),
             }
-
-            # Render as card row
-            cols = st.columns(len(picks))
-            for col, p in zip(cols, picks):
-                bg_label, fg_label = TYPE_STYLE.get(p["PickType"], ("background:#222","color:#fff"))
+            card_cols = st.columns(len(picks))
+            for col, p in zip(card_cols, picks):
+                label_bg, label_fg = TYPE_STYLE.get(p["PickType"], ("#222", "#fff"))
                 fdr_bg = FDR_BG.get(p["FDR"], "#444")
                 fdr_fg = FDR_FG.get(p["FDR"], "#fff")
                 club_bg, club_fg = club_style(p["Team"])
+                eo_str = f"{p['EO%']}%" if p.get("EO%") is not None else "—"
 
                 img_html = ""
                 if p["photo"]:
-                    img_html = (f'<img src="{p["photo"]}" '
-                                f'style="width:80px;height:100px;object-fit:cover;'
-                                f'border-radius:8px;margin-bottom:6px;'
-                                f'border:2px solid {club_bg}" '
-                                f'onerror="this.style.display=\'none\'">')
+                    img_html = (
+                        f'<img src="{p["photo"]}" '
+                        f'style="width:80px;height:100px;object-fit:cover;object-position:top;' 
+                        f'border-radius:8px;margin-bottom:8px;' 
+                        f'border:2px solid rgba(255,255,255,0.15)" '
+                        f'onerror="this.style.display=\'none\'">' 
+                    )
 
-                card = f"""
-                <div style="border-radius:10px;overflow:hidden;margin:4px;
-                            box-shadow:0 2px 8px rgba(0,0,0,0.4)">
-                  <div style="{bg_label};{fg_label};padding:6px 10px;
-                              font-size:12px;font-weight:bold;text-align:center">
-                    {p['PickType']}
-                  </div>
-                  <div style="background:{club_bg};color:{club_fg};
-                              padding:12px;text-align:center">
-                    {img_html}
-                    <div style="font-size:16px;font-weight:bold;margin-top:4px">{p['Name']}</div>
-                    <div style="font-size:12px;opacity:0.85">{p['Team']} · {p['Pos']}</div>
-                    <div style="font-size:22px;font-weight:bold;margin:6px 0">{p['EV']} pts</div>
-                    <span style="background:{fdr_bg};color:{fdr_fg};
-                                 border-radius:4px;padding:2px 8px;
-                                 font-size:12px;font-weight:bold">
-                      {p['Fixture']}
-                    </span>
-                  </div>
-                </div>"""
+                card = (
+                    f'<div style="border-radius:10px;overflow:hidden;margin:4px;' 
+                    f'border:1px solid #222;box-shadow:0 2px 12px rgba(0,0,0,0.5)">' 
+                    f'<div style="background:{label_bg};color:{label_fg};padding:7px 12px;' 
+                    f'font-size:11px;font-weight:700;text-align:center;' 
+                    f'letter-spacing:.6px;border-bottom:1px solid #222">{p["PickType"]}</div>' 
+                    f'<div style="background:{club_bg};color:{club_fg};padding:16px 12px;text-align:center">' 
+                    f'{img_html}' 
+                    f'<div style="font-size:17px;font-weight:800;letter-spacing:.3px">{p["Name"]}</div>' 
+                    f'<div style="font-size:11px;opacity:0.75;margin-top:2px">{p["Team"]} &middot; {p["Pos"]}</div>' 
+                    f'<div style="font-size:26px;font-weight:800;margin:10px 0 6px">{p["EV"]} ' 
+                    f'<span style="font-size:13px;font-weight:400;opacity:0.8">pts</span></div>' 
+                    f'<div style="display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap">' 
+                    f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:4px;' 
+                    f'padding:2px 9px;font-size:12px;font-weight:700">{p["Fixture"]}</span>' 
+                    f'<span style="background:rgba(0,0,0,0.25);color:{club_fg};border-radius:4px;' 
+                    f'padding:2px 9px;font-size:12px;opacity:0.85">EO {eo_str}</span>' 
+                    f'</div></div></div>'
+                )
                 col.markdown(card, unsafe_allow_html=True)
 
 # ── Tab 6: Captain Matrix ─────────────────────────────────────────────────────
 with tab6:
-    st.subheader("🏅 Captain Matrix — Within 0.5 EV of Top Pick")
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🏅 Captain Matrix</span>' 
+        '<span style="font-size:12px;color:#444">within 0.5 EV of top pick per gameweek</span></div>',
+        unsafe_allow_html=True
+    )
+    st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
+
     if proj_df is None:
-        st.error("❌ projections.csv not found. Place it in the app folder.")
+        st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
     elif master_df_full is None:
-        st.error("❌ Fixture data unavailable.")
+        st.error("Fixture data unavailable.")
     else:
-        # Default: current GW → GW38
         matrix_gws = st.multiselect(
             "Show GWs:", future_gws,
-            default=future_gws,   # ALL future GWs by default
+            default=future_gws,
             key="matrix_gws"
         )
         if matrix_gws:
-            matrix = get_captain_matrix(proj_df, matrix_gws, master_df_full, bootstrap)
-
-            # Build pure-inline HTML table with photos + club colours
-            col_w = max(130, min(190, 1100 // len(matrix_gws)))
+            matrix = get_captain_matrix(proj_df, eo_df, matrix_gws, master_df_full, bootstrap)
+            col_w  = max(140, min(200, 1100 // len(matrix_gws)))
 
             header = "".join(
-                f'<th style="background:#1a1a1a;color:#aaa;padding:8px 6px;'
-                f'border:1px solid #333;text-align:center;min-width:{col_w}px;'
-                f'font-size:13px;font-family:sans-serif">GW{gw}</th>'
+                f'<th style="background:#0d1117;color:#555;padding:9px 6px;' 
+                f'border-bottom:2px solid #222;text-align:center;min-width:{col_w}px;' 
+                f'font-size:11px;font-weight:700;letter-spacing:.6px;' 
+                f'font-family:sans-serif">GW{gw}</th>'
                 for gw in matrix_gws
             )
 
-            max_rows = max((len(matrix.get(gw,[])) for gw in matrix_gws), default=0)
+            max_rows = max((len(matrix.get(gw, [])) for gw in matrix_gws), default=0)
             body = ""
             for ri in range(max_rows):
                 row_html = ""
                 for gw in matrix_gws:
-                    rows = matrix.get(gw, [])
-                    if ri < len(rows):
-                        r = rows[ri]
-                        bg    = r["club_bg"]
-                        fg    = r["club_fg"]
-                        fdr_b = FDR_BG.get(r["FDR"], "#444")
-                        fdr_f = FDR_FG.get(r["FDR"], "#fff")
-                        top_b = "border-top:2px solid rgba(255,255,255,0.3);" if ri == 0 else ""
-                        name_w = "font-weight:bold" if ri == 0 else ""
+                    rows_gw = matrix.get(gw, [])
+                    if ri < len(rows_gw):
+                        r      = rows_gw[ri]
+                        bg     = r["club_bg"]
+                        fg     = r["club_fg"]
+                        fdr_b  = FDR_BG.get(r["FDR"], "#444")
+                        fdr_f  = FDR_FG.get(r["FDR"], "#fff")
+                        is_top = ri == 0
+                        top_border = "border-top:2px solid rgba(255,255,255,0.2);" if is_top else ""
+                        name_style = "font-weight:800;font-size:13px" if is_top else "font-weight:600;font-size:12px"
+                        eo_str = f"{r['EO%']}%" if r.get("EO%") is not None else "—"
 
                         img_tag = ""
                         if r["photo"]:
                             img_tag = (
                                 f'<img src="{r["photo"]}" '
-                                f'style="width:40px;height:50px;object-fit:cover;'
-                                f'border-radius:4px;vertical-align:middle;'
-                                f'margin-right:6px;border:1px solid rgba(255,255,255,0.3)" '
-                                f'onerror="this.style.display=\'none\'">'
+                                f'style="width:36px;height:46px;object-fit:cover;object-position:top;' 
+                                f'border-radius:4px;flex-shrink:0;' 
+                                f'border:1px solid rgba(255,255,255,0.2)" '
+                                f'onerror="this.style.display=\'none\'">' 
                             )
 
                         row_html += (
-                            f'<td style="padding:6px 6px;border:1px solid #2a2a2a;'
-                            f'{top_b}background:{bg};vertical-align:middle">'
-                            f'<div style="display:flex;align-items:center">'
-                            f'{img_tag}'
-                            f'<div>'
-                            f'<div style="color:{fg};{name_w};font-size:12px;'
-                            f'font-family:sans-serif;white-space:nowrap">{r["Name"]}</div>'
-                            f'<div style="display:flex;align-items:center;gap:4px;margin-top:2px">'
-                            f'<span style="background:{fdr_b};color:{fdr_f};border-radius:3px;'
-                            f'padding:1px 5px;font-size:11px;font-weight:bold">{r["Fixture"]}</span>'
-                            f'<span style="color:{fg};font-weight:bold;font-size:13px">{r["EV"]}</span>'
+                            f'<td style="padding:7px 8px;border:1px solid #1a1a1a;' 
+                            f'{top_border}background:{bg};vertical-align:middle">' 
+                            f'<div style="display:flex;align-items:center;gap:8px">' 
+                            f'{img_tag}' 
+                            f'<div style="min-width:0">' 
+                            f'<div style="color:{fg};{name_style};' 
+                            f'font-family:sans-serif;white-space:nowrap;overflow:hidden;' 
+                            f'text-overflow:ellipsis">{r["Name"]}</div>' 
+                            f'<div style="display:flex;align-items:center;gap:4px;margin-top:3px;flex-wrap:wrap">' 
+                            f'<span style="background:{fdr_b};color:{fdr_f};border-radius:3px;' 
+                            f'padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap">{r["Fixture"]}</span>' 
+                            f'<span style="color:{fg};font-weight:700;font-size:13px">{r["EV"]}</span>' 
+                            f'<span style="color:{fg};font-size:11px;opacity:0.65">EO {eo_str}</span>' 
                             f'</div></div></div></td>'
                         )
                     else:
-                        row_html += '<td style="border:1px solid #2a2a2a;background:#111"></td>'
+                        row_html += f'<td style="border:1px solid #1a1a1a;background:#0a0a0a;min-width:{col_w}px"></td>'
                 body += f"<tr>{row_html}</tr>"
 
             html = (
-                f'<div style="overflow-x:auto;border-radius:8px;'
-                f'border:1px solid #333;margin-top:8px">'
-                f'<table style="border-collapse:collapse;width:100%">'
-                f'<thead><tr>{header}</tr></thead>'
-                f'<tbody>{body}</tbody>'
+                f'<div style="overflow-x:auto;border-radius:8px;border:1px solid #1e1e1e;margin-top:4px">' 
+                f'<table style="border-collapse:collapse;width:100%;background:#0d1117">' 
+                f'<thead><tr style="background:#0d1117">{header}</tr></thead>' 
+                f'<tbody>{body}</tbody>' 
                 f'</table></div>'
             )
             st.markdown(html, unsafe_allow_html=True)
-            st.caption("Top row = highest EV. Colour = club colours. Badge = your custom FDR. EV = projected points.")
+            st.caption("Top row = highest EV · Colour = club · FDR badge = custom ratings · EO = Solio expected ownership")
 
-# ── Tab 7: Live Radar ─────────────────────────────────────────────────────────
 with tab7:
     st.subheader("📡 Live Radar")
     if not live_ok:
@@ -1246,10 +1289,8 @@ def build_player_stats_df(bootstrap):
         mins     = float(p.get("minutes", 0))
         starts   = float(p.get("starts", 0))
         nineties = mins / 90 if mins >= 45 else 0
-        
-        raw_team_name = id2name.get(p.get("team"), "")
-        team = TEAM_NAME_MAP.get(raw_team_name, raw_team_name) 
-        
+
+        team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
         pos  = POS.get(p.get("element_type"), "?")
 
         xg  = float(p.get("expected_goals", 0))
@@ -1264,7 +1305,8 @@ def build_player_stats_df(bootstrap):
         def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
                       float(p.get("tackles", 0)) +
                       float(p.get("recoveries", 0)))
-        
+        defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
+
         price       = round(float(p.get("now_cost", 0)) / 10, 1)
         own         = float(p.get("selected_by_percent", 0))
         total_pts   = float(p.get("total_points", 0))
@@ -1287,6 +1329,7 @@ def build_player_stats_df(bootstrap):
             "NpxGI":     npxgi,
             "xGC":       round(xgc, 2),
             "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
+            "Defcon/90": defcon_90,
             "PPM":       ppm,
             "Own%":      own,
             # hidden 90s divisor for toggle
@@ -1308,17 +1351,17 @@ def _per90(df, cols_to_divide):
 
 
 # ── Colour helpers ────────────────────────────────────────────────────────────
-# Minimal minimal 3-tier palette: dark clean backgrounds, strong text colours
+# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
 
 def _tier_color(val, low, high, col_type="positive"):
     """
     Returns (background, text_color) using a 3-tier system:
-      positive: grey -> teal -> green
-      negative: green -> amber -> red
-      diff:     green -> grey -> red
+      positive: low=grey, mid=teal, high=green
+      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
+      diff:     positive=green, zero=grey, negative=red
     """
     if val is None or (isinstance(val, float) and np.isnan(val)):
-        return "transparent", "#444444"
+        return "#1a1a1a", "#444444"
 
     fv = float(val)
     # normalise 0→1
@@ -1329,46 +1372,44 @@ def _tier_color(val, low, high, col_type="positive"):
         t = max(0.0, min(1.0, (fv - low) / span))
 
     if col_type == "positive":
+        # dark grey → teal → bright green
         if t < 0.33:
-            return "transparent", "#777777"
+            return "#1e1e1e", "#666666"
         elif t < 0.66:
-            return "rgba(78, 205, 196, 0.15)", "#4ecdc4"
+            return "#0d2b2b", "#4ecdc4"
         else:
-            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
-            
+            return "#0a2818", "#5fffb0"
     elif col_type == "negative":
+        # green (low GA is good) → amber → red
         if t < 0.33:
-            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
+            return "#0a2818", "#5fffb0"
         elif t < 0.66:
-            return "rgba(255, 170, 51, 0.15)", "#ffaa33"
+            return "#2b1a00", "#ffaa33"
         else:
-            return "rgba(255, 96, 96, 0.15)", "#ff6060"
-            
+            return "#2b0a0a", "#ff6060"
     elif col_type == "diff":
         if fv > 0.5:
-            return "rgba(95, 255, 176, 0.15)", "#5fffb0"
+            return "#0a2818", "#5fffb0"
         elif fv < -0.5:
-            return "rgba(255, 96, 96, 0.15)", "#ff6060"
+            return "#2b0a0a", "#ff6060"
         else:
-            return "transparent", "#888888"
-            
+            return "#1e1e1e", "#888888"
     elif col_type == "blue":
+        # for CS, Defcon — blue scale
         if t < 0.33:
-            return "transparent", "#777777"
+            return "#1e1e1e", "#555555"
         elif t < 0.66:
-            return "rgba(90, 171, 255, 0.15)", "#5aabff"
+            return "#0a1a2b", "#5aabff"
         else:
-            return "rgba(153, 204, 255, 0.15)", "#99ccff"
-            
+            return "#051022", "#99ccff"
     elif col_type == "gold":
         if t < 0.33:
-            return "transparent", "#777777"
+            return "#1e1e1e", "#555555"
         elif t < 0.66:
-            return "rgba(204, 170, 51, 0.15)", "#ccaa33"
+            return "#221a00", "#ccaa33"
         else:
-            return "rgba(255, 217, 102, 0.15)", "#ffd966"
-            
-    return "transparent", "#888888"
+            return "#2b1f00", "#ffd966"
+    return "#1e1e1e", "#888888"
 
 
 # Pre-compute column ranges for consistent colouring across sort orders
@@ -1404,8 +1445,8 @@ _PLAYER_RANGES = {
 def _stat_cell(val, col, ranges):
     """Styled <td> with 3-tier colour, clean white text, minimal look."""
     if val is None or (isinstance(val, float) and np.isnan(val)):
-        return ('<td style="padding:6px 10px;text-align:center;color:#555;'
-                'border-bottom:1px solid #1e1e1e">—</td>')
+        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
+                'border-bottom:1px solid #161616">—</td>')
 
     fv = float(val)
 
@@ -1413,7 +1454,7 @@ def _stat_cell(val, col, ranges):
         low, high, col_type = ranges[col]
         bg, tc = _tier_color(fv, low, high, col_type)
     else:
-        bg, tc = "transparent", "#888888"
+        bg, tc = "#1e1e1e", "#888888"
 
     # Format display value
     if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
@@ -1425,7 +1466,7 @@ def _stat_cell(val, col, ranges):
         disp = f"{fv:.2f}"
 
     return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
-            f'font-size:12px;font-weight:600;border-bottom:1px solid #1e1e1e">{disp}</td>')
+            f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
 
 
 def _build_stats_html(df, ranges):
@@ -1435,8 +1476,8 @@ def _build_stats_html(df, ranges):
     header = ""
     for c in cols:
         align = "left" if c in ("Player","Team") else "center"
-        header += (f'<th style="padding:7px 10px;text-align:{align};color:#666;font-size:10px;'
-                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #2a2a2a;'
+        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
+                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
                    f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
 
     rows_html = ""
@@ -1445,50 +1486,50 @@ def _build_stats_html(df, ranges):
         for c in cols:
             val = row[c]
             if c == "Rk":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#4a4a4a;'
-                          f'font-size:11px;border-bottom:1px solid #1e1e1e">{val}</td>')
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
+                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
             elif c == "Team":
                 bg, fg = club_style(str(val))
                 dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
                        f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
                 cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
-                          f'border-bottom:1px solid #1e1e1e;white-space:nowrap">{dot}{val}</td>')
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
             elif c == "Player":
                 cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
-                          f'border-bottom:1px solid #1e1e1e;white-space:nowrap">{val}</td>')
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
             elif c == "Pos":
                 pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
                 pc = pos_c.get(str(val), "#888")
-                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #1e1e1e">'
+                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
                           f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
                           f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
             elif c == "W":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
             elif c == "D":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
             elif c == "L":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #1e1e1e">{val}</td>')
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
             elif c in ("MP","Starts","Mins","Min/Start"):
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
-                          f'border-bottom:1px solid #1e1e1e">{val if val is not None else "—"}</td>')
+                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
             elif c == "Price":
                 cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
-                          f'font-weight:600;border-bottom:1px solid #1e1e1e">£{val:.1f}m</td>')
+                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
             else:
                 try:
                     cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
                 except:
                     cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
-                              f'font-size:12px;border-bottom:1px solid #1e1e1e">{val}</td>')
+                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
 
-        rows_html += (f'<tr style="transition:background .1s" onmouseover="this.style.background=\'#161b22\'" '
+        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
                       f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
 
     return (
-        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #2a2a2a;margin-top:8px">'
+        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
         '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
         f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
         f'<tbody>{rows_html}</tbody></table></div>'
@@ -1598,12 +1639,12 @@ with tab9:
             team_f    = st.selectbox("Team:", team_opts, key="ps_team")
         with cc3:
             min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
+        with cc4:
+            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","PPM","Own%","Mins","Price"]
+                            if c in ps_df.columns]
+            sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
         with cc5:
             per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
-        with cc4:
-            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","Defcon","PPM","Own%","Mins","Price"]
-                            if c in ps_df.columns or (per90 and c=="Defcon/90") or (not per90 and c=="Defcon")]
-            sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
 
         # ── Filter ─────────────────────────────────────────────────────────────
         filt = ps_df[ps_df["Mins"] >= min_mins].copy()
