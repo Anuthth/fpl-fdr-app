@@ -755,70 +755,115 @@ if free_hit_gw and f"GW{free_hit_gw}" in gw_columns:
 # =============================================================================
 # TABS
 # =============================================================================
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs([
     "📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings",
-    "🎯 Captain Picks", "🏅 Captain Matrix", "📡 Live Radar",
+    "🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "📡 Live Radar",
     "🏟️ Team Stats", "👤 Player Stats",
 ])
 
 # ── Shared helper: build clean HTML heatmap table ─────────────────────────────
-def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt):
+def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht"):
     """
-    Render a minimal dark heatmap HTML table.
-    value_key: key inside cell dict ('fdr', 'xG', 'CS')
-    label_fn: cell dict -> display string
-    color_fn: numeric value -> (bg, fg) tuple
+    Render a dark heatmap HTML table with clickable column sorting.
+    Click any column header to sort asc/desc. Arrow indicates direction.
     """
-    # Header
-    th = lambda s, extra="": f'<th style="padding:8px 10px;text-align:center;color:#666;font-size:11px;font-weight:600;letter-spacing:.5px;border-bottom:1px solid #2a2a2a;{extra}">{s}</th>'
+    th_base = "padding:8px 10px;text-align:center;color:#666;font-size:11px;font-weight:600;letter-spacing:.5px;border-bottom:1px solid #2a2a2a;cursor:pointer;user-select:none;"
+
     header = (
-        th("TEAM", "text-align:left;min-width:130px;color:#888") +
-        th(total_col, "color:#aaa;min-width:80px")
+        f'<th style="{th_base}text-align:left;min-width:130px;color:#888" '
+        f'onclick="sortHT(\'{table_id}\',0,\'str\')">TEAM ↕</th>'
+        f'<th style="{th_base}color:#aaa;min-width:80px" '
+        f'onclick="sortHT(\'{table_id}\',1,\'num\')">{total_col} ↕</th>'
     )
-    for col in gw_cols:
-        header += th(col.replace("GW","<span style='color:#555;font-size:9px'>GW</span>"), "min-width:80px")
+    for ci, col in enumerate(gw_cols):
+        gw_label = col.replace("GW","<span style='color:#555;font-size:9px'>GW</span>")
+        header += (f'<th style="{th_base}min-width:70px" '
+                   f'onclick="sortHT(\'{table_id}\',{ci+2},\'num\')">{gw_label} ↕</th>')
 
     rows = ""
     for _, row in df_display.iterrows():
         team = row["Team"]
         bg_club, _ = club_style(team)
-        # dot
-        dot = f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:{bg_club};margin-right:7px;vertical-align:middle;flex-shrink:0"></span>'
-        total_val = row[total_col.replace(" ","_").replace("%","CS").replace("xG","xG")]
-        # handle column name
+        dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
+               f'background:{bg_club};margin-right:7px;vertical-align:middle;flex-shrink:0"></span>')
         try:
-            total_num = float(total_val)
+            total_num = float(row[total_col])
         except:
             total_num = 0
         total_display = total_fmt(total_num)
 
-        td_team  = f'<td style="padding:8px 10px;font-weight:600;color:#e0e0e0;font-size:13px;border-bottom:1px solid #1e1e1e;white-space:nowrap">{dot}{team}</td>'
-        td_total = f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;border-bottom:1px solid #1e1e1e;font-weight:600">{total_display}</td>'
+        td_team  = (f'<td style="padding:8px 10px;font-weight:600;color:#e0e0e0;font-size:13px;'
+                    f'border-bottom:1px solid #1e1e1e;white-space:nowrap" data-val="{team}">{dot}{team}</td>')
+        td_total = (f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;'
+                    f'border-bottom:1px solid #1e1e1e;font-weight:600" data-val="{total_num}">{total_display}</td>')
 
         cells = td_team + td_total
         for col in gw_cols:
             cell = row[col]
             if isinstance(cell, dict):
-                val = cell.get(value_key, 0)
-                lbl = label_fn(cell)
+                val  = cell.get(value_key, 0)
+                lbl  = label_fn(cell)
                 cbg, cfg = color_fn(val)
                 cells += (f'<td style="padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
                           f'font-size:12px;font-weight:700;border-bottom:1px solid #161616;'
-                          f'border-right:1px solid #1e1e1e">{lbl}</td>')
+                          f'border-right:1px solid #1e1e1e" data-val="{val}">{lbl}</td>')
             else:
                 cells += ('<td style="padding:6px 8px;text-align:center;background:#111;color:#c0392b;'
                           'font-size:11px;font-weight:700;border-bottom:1px solid #161616;'
-                          'border-right:1px solid #1e1e1e;letter-spacing:.5px">BGW</td>')
+                          'border-right:1px solid #1e1e1e;letter-spacing:.5px" data-val="-1">BGW</td>')
 
-        rows += f'<tr style="transition:background .15s" onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">{cells}</tr>'
+        rows += (f'<tr onmouseover="this.style.background=\'#1a1a1a\'" '
+                 f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
+
+    sort_js = f"""
+<script>
+(function() {{
+  var _sortState = {{}};
+  window.sortHT = function(tid, col, dtype) {{
+    var tbl = document.getElementById(tid);
+    if (!tbl) return;
+    var tbody = tbl.querySelector('tbody');
+    var rows  = Array.from(tbody.querySelectorAll('tr'));
+    var key   = tid + '_' + col;
+    var asc   = _sortState[key] !== true;
+    _sortState[key] = asc;
+
+    rows.sort(function(a, b) {{
+      var av = a.cells[col] ? a.cells[col].getAttribute('data-val') : '';
+      var bv = b.cells[col] ? b.cells[col].getAttribute('data-val') : '';
+      if (dtype === 'num') {{
+        av = parseFloat(av) || -999;
+        bv = parseFloat(bv) || -999;
+        return asc ? av - bv : bv - av;
+      }} else {{
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      }}
+    }});
+
+    // Update arrow indicators on all headers
+    var ths = tbl.querySelectorAll('thead th');
+    ths.forEach(function(th, i) {{
+      var txt = th.innerHTML.replace(/ [↑↓↕]/g, '');
+      th.innerHTML = txt + (i === col ? (asc ? ' ↑' : ' ↓') : ' ↕');
+    }});
+
+    rows.forEach(function(r) {{ tbody.appendChild(r); }});
+  }};
+}})();
+</script>
+"""
 
     return (
-        '<div style="overflow-x:auto;margin-top:6px">'
-        '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+        f'<div style="overflow-x:auto;margin-top:6px">'
+        f'<table id="{table_id}" style="border-collapse:collapse;width:100%;'
+        f'font-family:\'Inter\',sans-serif;background:#0d1117">'
         f'<thead><tr style="background:#161b22">{header}</tr></thead>'
         f'<tbody>{rows}</tbody>'
-        '</table></div>'
+        f'</table></div>'
+        f'{sort_js}'
     )
+
+
 
 def _fdr_color(v):
     c = {1:"#00ff85",2:"#50c369",3:"#2e2e2e",4:"#9d66a0",5:"#6f2a74"}
@@ -875,6 +920,7 @@ with tab1:
         color_fn=_fdr_color,
         total_col="Total_Difficulty",
         total_fmt=lambda v: f"{v:.0f}",
+        table_id="tbl_fdr",
     )
     st.markdown(html, unsafe_allow_html=True)
 
@@ -908,6 +954,7 @@ with tab2:
         color_fn=_xg_color,
         total_col="Total_xG",
         total_fmt=lambda v: f"{v:.2f}",
+        table_id="tbl_xg",
     )
     st.markdown(html, unsafe_allow_html=True)
 
@@ -942,6 +989,7 @@ with tab3:
         color_fn=_xcs_color,
         total_col="Total_xCS",
         total_fmt=lambda v: f"{v*100:.0f}%",
+        table_id="tbl_xcs",
     )
     st.markdown(html, unsafe_allow_html=True)
 
@@ -1104,10 +1152,10 @@ def _solio_credit_bar():
         f'{img_tag}'
         '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
         '</div>' 
-        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
+        '<a href="https://www.solioanalytics.com" target="_blank" ' 
         'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
         'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
+        'letter-spacing:.5px;white-space:nowrap">SUBSCRIBE ↗</a>' 
         '</div>'
     )
 
@@ -1300,7 +1348,165 @@ with tab6:
             st.markdown(html, unsafe_allow_html=True)
             st.caption("Top row = highest EV · Colour = club · FDR badge = custom ratings · EO = Solio expected ownership")
 
+
+# ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
 with tab7:
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📋 Cheatsheet</span>'
+        '<span style="font-size:12px;color:#444">GW notes & strategy summary</span></div>',
+        unsafe_allow_html=True
+    )
+
+    # ── Storage key format: "cheatsheet_gw{N}" ────────────────────────────────
+    CHEATSHEET_TEMPLATE = """\
+⚠️ Disclaimer: This note is written prior to full press conferences. Make your move close to the deadline to maximise available information.
+
+📋 General:
+- 
+
+🔄 Transfers:
+- If you have 1 FT: 
+- If you have 2 FTs: 
+
+⛔ Holds:
+- 
+
+💊 Chips:
+- 
+
+🎯 Captaincy:
+- 
+"""
+
+    col_edit, col_view = st.columns([1, 1], gap="large")
+
+    with col_edit:
+        st.markdown("#### ✏️ Edit Notes")
+
+        edit_gw = st.number_input(
+            "Gameweek", min_value=1, max_value=38,
+            value=current_gw, step=1, key="cs_edit_gw"
+        )
+        storage_key = f"cheatsheet_gw{edit_gw}"
+
+        # Load existing note from session state (acts as in-memory store)
+        ss_key = f"cs_text_{edit_gw}"
+        if ss_key not in st.session_state:
+            # Try to load from a local notes dict stored in session
+            if "cs_notes" not in st.session_state:
+                st.session_state["cs_notes"] = {}
+            st.session_state[ss_key] = st.session_state["cs_notes"].get(
+                storage_key, CHEATSHEET_TEMPLATE
+            )
+
+        note_text = st.text_area(
+            f"GW{edit_gw} Notes",
+            value=st.session_state[ss_key],
+            height=380,
+            key=f"cs_area_{edit_gw}",
+            label_visibility="collapsed",
+            placeholder="Write your GW notes here...",
+        )
+
+        c1, c2 = st.columns(2)
+        with c1:
+            if st.button("💾 Save", use_container_width=True, key="cs_save"):
+                if "cs_notes" not in st.session_state:
+                    st.session_state["cs_notes"] = {}
+                st.session_state["cs_notes"][storage_key] = note_text
+                st.session_state[ss_key] = note_text
+                st.success(f"✅ GW{edit_gw} notes saved!")
+        with c2:
+            if st.button("🗑️ Reset", use_container_width=True, key="cs_reset"):
+                st.session_state[ss_key] = CHEATSHEET_TEMPLATE
+                if "cs_notes" in st.session_state:
+                    st.session_state["cs_notes"].pop(storage_key, None)
+                st.rerun()
+
+    with col_view:
+        st.markdown("#### 👁️ Preview")
+
+        view_gw = st.number_input(
+            "View GW", min_value=1, max_value=38,
+            value=current_gw, step=1, key="cs_view_gw"
+        )
+        view_key = f"cheatsheet_gw{view_gw}"
+        saved_notes = {}
+        if "cs_notes" in st.session_state:
+            saved_notes = st.session_state["cs_notes"]
+
+        view_text = saved_notes.get(view_key, "")
+
+        if not view_text.strip():
+            st.markdown(
+                f'<div style="background:#111;border:1px solid #222;border-radius:8px;'
+                f'padding:20px;text-align:center;color:#444;font-size:13px">'
+                f'No notes saved for GW{view_gw} yet.</div>',
+                unsafe_allow_html=True
+            )
+        else:
+            # Render each line as styled HTML
+            lines_out = []
+            for line in view_text.splitlines():
+                stripped = line.strip()
+                if not stripped:
+                    lines_out.append('<div style="height:8px"></div>')
+                elif stripped.startswith("⚠️"):
+                    lines_out.append(
+                        f'<div style="background:#2b1a00;border-left:3px solid #ffaa33;'
+                        f'padding:8px 12px;border-radius:4px;color:#ffcc80;'
+                        f'font-size:12px;margin-bottom:8px">{stripped}</div>'
+                    )
+                elif stripped.startswith(("📋","🔄","⛔","💊","🎯","📌","🔑","💡")):
+                    lines_out.append(
+                        f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
+                        f'margin:12px 0 4px 0">{stripped}</div>'
+                    )
+                elif stripped.startswith("- "):
+                    content = stripped[2:]
+                    lines_out.append(
+                        f'<div style="display:flex;gap:8px;padding:4px 0;'
+                        f'color:#ccc;font-size:13px">'
+                        f'<span style="color:#444;flex-shrink:0">•</span>'
+                        f'<span>{content}</span></div>'
+                    )
+                else:
+                    lines_out.append(
+                        f'<div style="color:#aaa;font-size:13px;padding:2px 0">{stripped}</div>'
+                    )
+
+            preview_html = (
+                f'<div style="background:#0d1117;border:1px solid #1e1e1e;'
+                f'border-radius:8px;padding:16px 18px">'
+                f'<div style="font-size:11px;color:#444;font-weight:700;'
+                f'letter-spacing:.6px;margin-bottom:10px">GW{view_gw} CHEATSHEET</div>'
+                + "".join(lines_out) +
+                f'</div>'
+            )
+            st.markdown(preview_html, unsafe_allow_html=True)
+
+        # Show saved GWs
+        if "cs_notes" in st.session_state and st.session_state["cs_notes"]:
+            saved_gws = sorted([
+                int(k.replace("cheatsheet_gw",""))
+                for k in st.session_state["cs_notes"].keys()
+                if k.startswith("cheatsheet_gw")
+            ])
+            if saved_gws:
+                st.markdown(
+                    f'<div style="margin-top:12px;font-size:11px;color:#444">'
+                    f'Saved GWs: '
+                    + "".join(
+                        f'<span style="background:#1a2a1a;color:#5fffb0;border-radius:3px;'
+                        f'padding:1px 6px;margin:0 2px;font-weight:700">GW{g}</span>'
+                        for g in saved_gws
+                    )
+                    + '</div>',
+                    unsafe_allow_html=True
+                )
+
+with tab8:
     st.subheader("📡 Live Radar")
     if not live_ok:
         st.warning("⚠️ Enable Live FPL Data in the sidebar.")
@@ -1739,7 +1945,7 @@ def _build_stats_html(df, ranges):
 # =============================================================================
 # TAB 8 — Team Stats
 # =============================================================================
-with tab8:
+with tab9:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
@@ -1817,7 +2023,7 @@ with tab8:
 # =============================================================================
 # TAB 9 — Player Stats
 # =============================================================================
-with tab9:
+with tab10:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
