@@ -2092,15 +2092,42 @@ with tab9:
                     st.success("Manual squad loaded!")
 
         # Auto-load from FPL API
+        # Picks for GW N are only available AFTER GW N deadline.
+        # Before the deadline → fetch from the last finished GW.
         if team_id and "squad_data" not in st.session_state:
             try:
                 with st.spinner(f"Loading FPL team {team_id}..."):
+                    from datetime import datetime, timezone
                     entry_d = fetch_fpl_entry(int(team_id))
-                    picks_d = fetch_fpl_picks(int(team_id), current_gw)
+                    now_utc = datetime.now(timezone.utc)
+                    events  = bootstrap.get("events", [])
+
+                    picks_gw       = current_gw
+                    picks_gw_label = f"GW{current_gw}"
+                    for ev in events:
+                        if ev["id"] == current_gw:
+                            dl_raw = ev.get("deadline_time", "")
+                            if dl_raw:
+                                try:
+                                    dl_utc = datetime.fromisoformat(dl_raw.replace("Z", "+00:00"))
+                                    if now_utc < dl_utc:
+                                        finished_gws = sorted(
+                                            [e["id"] for e in events if e.get("finished")],
+                                            reverse=True
+                                        )
+                                        if finished_gws:
+                                            picks_gw = finished_gws[0]
+                                            picks_gw_label = f"GW{picks_gw} (last confirmed squad — GW{current_gw} deadline not yet passed)"
+                                except Exception:
+                                    pass
+                            break
+
+                    picks_d = fetch_fpl_picks(int(team_id), picks_gw)
                     squad_d = build_squad_from_picks(picks_d, bootstrap)
-                    st.session_state["squad_data"] = squad_d
-                    st.session_state["entry_data"] = entry_d
-                    st.session_state["picks_raw"]  = picks_d
+                    st.session_state["squad_data"]     = squad_d
+                    st.session_state["entry_data"]     = entry_d
+                    st.session_state["picks_raw"]      = picks_d
+                    st.session_state["picks_gw_label"] = picks_gw_label
             except Exception as exc:
                 st.error(f"Could not load team {team_id}: {exc}")
 
@@ -2110,6 +2137,10 @@ with tab9:
             )
 
             # Manager banner
+            picks_gw_label = st.session_state.get("picks_gw_label", f"GW{current_gw}")
+            if f"(last confirmed" in picks_gw_label:
+                st.info(f"⚠️ Showing **{picks_gw_label}** — update your squad after the deadline passes.")
+
             if "entry_data" in st.session_state:
                 ed       = st.session_state["entry_data"]
                 pr       = st.session_state.get("picks_raw", {})
