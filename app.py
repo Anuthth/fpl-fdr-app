@@ -755,10 +755,10 @@ if free_hit_gw and f"GW{free_hit_gw}" in gw_columns:
 # =============================================================================
 # TABS
 # =============================================================================
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12 = st.tabs([
     "📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings",
     "🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "📡 Live Radar",
-    "🏟️ Team Stats", "👤 Player Stats",
+    "👕 My Team", "📅 GW Planner", "🏟️ Team Stats", "👤 Player Stats",
 ])
 
 # ── Shared helper: build clean HTML heatmap table ─────────────────────────────
@@ -1925,7 +1925,480 @@ def _build_stats_html(df, ranges):
 # =============================================================================
 # TAB 8 — Team Stats
 # =============================================================================
+
+# ── FPL Team fetch helpers ─────────────────────────────────────────────────────
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_entry(team_id: int):
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_picks(team_id: int, gw: int):
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+def build_squad_from_picks(picks_data, bootstrap):
+    el_map = {p["id"]: p for p in bootstrap["elements"]}
+    teams  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
+    POS    = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    squad  = []
+    for pick in picks_data["picks"]:
+        el = el_map.get(pick["element"], {})
+        squad.append({
+            "id":         pick["element"],
+            "name":       el.get("web_name", "?"),
+            "team":       teams.get(el.get("team"), "?"),
+            "pos":        POS.get(el.get("element_type"), "?"),
+            "price":      el.get("now_cost", 0) / 10,
+            "sel%":       el.get("selected_by_percent", "0"),
+            "position":   pick["position"],
+            "multiplier": pick["multiplier"],
+            "is_captain": pick["is_captain"],
+            "is_vice":    pick["is_vice_captain"],
+            "code":       el.get("code"),
+        })
+    return squad
+
+def enrich_squad_solio(squad, proj_df, eo_df, gw):
+    pts_col = f"{gw}_Pts"
+    eo_col  = f"{gw}_eo"
+    ev_map, eo_map = {}, {}
+    if proj_df is not None and pts_col in proj_df.columns:
+        ev_map = pd.to_numeric(proj_df.set_index("ID")[pts_col], errors="coerce").to_dict()
+    if eo_df is not None and eo_col in eo_df.columns:
+        eo_map = pd.to_numeric(eo_df.set_index("ID")[eo_col], errors="coerce").to_dict()
+    for p in squad:
+        pid = p["id"]
+        ev  = ev_map.get(pid)
+        eo  = eo_map.get(pid)
+        p["ev"]  = round(float(ev), 2) if ev is not None and not (isinstance(ev, float) and np.isnan(ev)) else None
+        p["eo%"] = round(float(eo) * 100, 1) if eo is not None and not (isinstance(eo, float) and np.isnan(eo)) else None
+    return squad
+
+def _squad_player_card(p, gw, master_df_full):
+    club_bg, club_fg = club_style(p["team"])
+    fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
+    fdr_bg = FDR_BG.get(fdr, "#444")
+    fdr_fg = FDR_FG.get(fdr, "#fff")
+    badge = ""
+    if p["is_captain"]:
+        badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
+    elif p["is_vice"]:
+        badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
+    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2]
+    if p.get("code"):
+        photo_url = player_photo_url(p["code"])
+        img_html = (
+            f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;'
+            f'object-position:top;border-radius:4px;display:block" '
+            f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+            f'<div style="width:44px;height:56px;border-radius:4px;display:none;'
+            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
+            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+        )
+    else:
+        img_html = (
+            f'<div style="width:44px;height:56px;border-radius:4px;display:flex;'
+            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
+            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+        )
+    ev_str = f"{p['ev']} pts" if p.get("ev") else "—"
+    eo_str = f"EO {p['eo%']}%" if p.get("eo%") else ""
+    opacity = "0.5" if p["position"] > 11 else "1"
+    return (
+        f'<div style="position:relative;background:{club_bg};border-radius:8px;'
+        f'padding:8px 10px;display:flex;align-items:center;gap:10px;opacity:{opacity};'
+        f'border:1px solid rgba(255,255,255,0.06);margin-bottom:4px">'
+        f'{badge}<div style="flex-shrink:0">{img_html}</div>'
+        f'<div style="min-width:0;flex:1">'
+        f'<div style="color:{club_fg};font-weight:700;font-size:13px;white-space:nowrap;'
+        f'overflow:hidden;text-overflow:ellipsis">{p["name"]}</div>'
+        f'<div style="color:{club_fg};font-size:11px;opacity:0.7">{p["team"]} · {p["pos"]}</div>'
+        f'<div style="display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap">'
+        f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{fix}</span>'
+        f'<span style="color:{club_fg};font-size:12px;font-weight:700">{ev_str}</span>'
+        f'<span style="color:{club_fg};font-size:11px;opacity:0.65">{eo_str}</span>'
+        f'</div></div></div>'
+    )
+
+# ── Tab 9: My Team ─────────────────────────────────────────────────────────────
 with tab9:
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">👕 My Team</span>'
+        '<span style="font-size:12px;color:#444">Live squad · fixtures · EV · captaincy</span></div>',
+        unsafe_allow_html=True
+    )
+
+    if not live_ok:
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+    else:
+        col_tid, col_tgw = st.columns([2, 1])
+        with col_tid:
+            team_id_input = st.number_input(
+                "FPL Team ID", min_value=1, max_value=99999999,
+                value=int(st.session_state.get("fpl_team_id", 1)),
+                step=1, key="fpl_team_id_input",
+                help="Find your ID at: fantasy.premierleague.com/entry/{ID}/event/..."
+            )
+        with col_tgw:
+            avail_gws = future_gws if future_gws else list(range(current_gw, 39))
+            team_gw   = st.selectbox("View GW fixtures", avail_gws, key="myteam_gw")
+
+        if st.button("🔄 Load Team", key="load_team_btn"):
+            st.session_state["fpl_team_id"] = team_id_input
+            for k in ["squad_data", "entry_data", "picks_raw"]:
+                st.session_state.pop(k, None)
+
+        team_id = st.session_state.get("fpl_team_id")
+
+        # Manual squad fallback
+        with st.expander("✏️ Pick squad manually (if Team ID unavailable)", expanded=False):
+            all_el    = pd.DataFrame(bootstrap["elements"])
+            teams_bdf = pd.DataFrame(bootstrap["teams"])
+            id2sname  = dict(zip(teams_bdf["id"], teams_bdf["short_name"]))
+            all_el["label"] = all_el["web_name"] + " (" + all_el["team"].map(id2sname) + ")"
+            opts = all_el.sort_values("web_name")["label"].tolist()
+            pid_map = dict(zip(all_el["label"], all_el["id"]))
+
+            man_xi    = st.multiselect("Starting XI (11)", opts, max_selections=11, key="man_xi")
+            man_bench = st.multiselect("Bench (4)", opts, max_selections=4, key="man_bench")
+
+            if st.button("✅ Use Manual Squad", key="use_manual_sq"):
+                el_map_m = {p["id"]: p for p in bootstrap["elements"]}
+                POS_M    = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
+                t_short  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
+                msq = []
+                for idx, lbl in enumerate(man_xi + man_bench, 1):
+                    pid = pid_map.get(lbl)
+                    if not pid: continue
+                    el  = el_map_m.get(pid, {})
+                    msq.append({
+                        "id": pid, "name": el.get("web_name","?"),
+                        "team": t_short.get(el.get("team"),"?"),
+                        "pos": POS_M.get(el.get("element_type"),"?"),
+                        "price": el.get("now_cost",0)/10,
+                        "sel%": el.get("selected_by_percent","0"),
+                        "position": idx, "multiplier": 1,
+                        "is_captain": idx==1, "is_vice": idx==2,
+                        "code": el.get("code"),
+                    })
+                if msq:
+                    st.session_state["squad_data"] = msq
+                    st.success("Manual squad loaded!")
+
+        # Auto-load from FPL API
+        if team_id and "squad_data" not in st.session_state:
+            try:
+                with st.spinner(f"Loading FPL team {team_id}..."):
+                    entry_d = fetch_fpl_entry(int(team_id))
+                    picks_d = fetch_fpl_picks(int(team_id), current_gw)
+                    squad_d = build_squad_from_picks(picks_d, bootstrap)
+                    st.session_state["squad_data"] = squad_d
+                    st.session_state["entry_data"] = entry_d
+                    st.session_state["picks_raw"]  = picks_d
+            except Exception as exc:
+                st.error(f"Could not load team {team_id}: {exc}")
+
+        if "squad_data" in st.session_state:
+            squad = enrich_squad_solio(
+                list(st.session_state["squad_data"]), proj_df, eo_df, team_gw
+            )
+
+            # Manager banner
+            if "entry_data" in st.session_state:
+                ed       = st.session_state["entry_data"]
+                pr       = st.session_state.get("picks_raw", {})
+                eh       = pr.get("entry_history", {})
+                manager  = ed.get("name", f"Team {team_id}")
+                rank     = ed.get("summary_overall_rank", "—")
+                pts_tot  = ed.get("summary_overall_points", "—")
+                bank_val = eh.get("bank", 0) / 10
+                tv_val   = eh.get("value", 0) / 10
+                chips_used  = [c["name"] for c in ed.get("chips", [])]
+                chips_left  = [c for c in ["bboost","3xc","wildcard","freehit"] if c not in chips_used]
+                chip_labels = {"bboost":"BB","3xc":"TC","wildcard":"WC","freehit":"FH"}
+                chips_html  = "".join(
+                    f'<span style="background:#1a2a1a;color:#5fffb0;font-size:11px;'
+                    f'font-weight:700;padding:2px 7px;border-radius:3px">{chip_labels.get(c,c)}</span>'
+                    for c in chips_left
+                )
+                rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
+                st.markdown(
+                    f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
+                    f'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">'
+                    f'<div><div style="font-size:16px;font-weight:800;color:#e0e0e0">{manager}</div>'
+                    f'<div style="font-size:11px;color:#555">Rank {rank_fmt} · {pts_tot} pts</div></div>'
+                    f'<div><div style="font-size:11px;color:#555">Team Value</div>'
+                    f'<div style="font-size:14px;font-weight:700;color:#5fffb0">£{tv_val:.1f}m</div></div>'
+                    f'<div><div style="font-size:11px;color:#555">Bank</div>'
+                    f'<div style="font-size:14px;font-weight:700;color:#ffaa33">£{bank_val:.1f}m</div></div>'
+                    f'<div><div style="font-size:11px;color:#555;margin-bottom:3px">Chips left</div>'
+                    f'<div style="display:flex;gap:4px">{chips_html}</div></div>'
+                    f'</div>',
+                    unsafe_allow_html=True
+                )
+
+            xi    = sorted([p for p in squad if p["position"] <= 11], key=lambda p: p["position"])
+            bench = sorted([p for p in squad if p["position"] >  11], key=lambda p: p["position"])
+
+            # Captain recommendation
+            xi_ev = [p for p in xi if p.get("ev")]
+            if xi_ev:
+                top_cap  = max(xi_ev, key=lambda p: p["ev"])
+                diff_cap = next((p for p in sorted(xi_ev, key=lambda p: -p["ev"])
+                                 if (p.get("eo%") or 999) < 10), None)
+                cap_rec = (
+                    f'<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
+                    f'padding:10px 14px;margin-bottom:10px;display:flex;gap:24px;flex-wrap:wrap">'
+                    f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">CAPTAIN REC</div>'
+                    f'<div style="font-size:15px;font-weight:800;color:#5fffb0;margin-top:2px">🏆 {top_cap["name"]}</div>'
+                    f'<div style="font-size:11px;color:#888">{top_cap["ev"]} pts · EO {top_cap.get("eo%","—")}%</div></div>'
+                )
+                if diff_cap and diff_cap["id"] != top_cap["id"]:
+                    cap_rec += (
+                        f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">DIFFERENTIAL</div>'
+                        f'<div style="font-size:15px;font-weight:800;color:#ffaa33;margin-top:2px">🎯 {diff_cap["name"]}</div>'
+                        f'<div style="font-size:11px;color:#888">{diff_cap["ev"]} pts · EO {diff_cap.get("eo%","—")}%</div></div>'
+                    )
+                cap_rec += '</div>'
+                st.markdown(cap_rec, unsafe_allow_html=True)
+
+            # XI by position row
+            pos_order = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
+            xi_by_pos = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
+            for p in sorted(xi, key=lambda p: (pos_order.get(p["pos"],4), p["position"])):
+                xi_by_pos[p["pos"]].append(p)
+
+            st.markdown('<div style="font-size:11px;color:#444;font-weight:700;letter-spacing:.6px;margin-bottom:6px">STARTING XI</div>', unsafe_allow_html=True)
+            xi_html = ""
+            for pos in ["GKP","DEF","MID","FWD"]:
+                grp = xi_by_pos[pos]
+                if not grp: continue
+                cards = "".join(_squad_player_card(p, team_gw, master_df_full) for p in grp)
+                xi_html += (
+                    f'<div style="margin-bottom:8px">'
+                    f'<div style="font-size:9px;color:#333;font-weight:700;letter-spacing:.7px;margin-bottom:4px">{pos}</div>'
+                    f'<div style="display:grid;grid-template-columns:repeat({len(grp)},1fr);gap:6px">{cards}</div>'
+                    f'</div>'
+                )
+            st.markdown(xi_html, unsafe_allow_html=True)
+
+            st.markdown('<div style="font-size:11px;color:#333;font-weight:700;letter-spacing:.6px;margin:10px 0 6px">BENCH</div>', unsafe_allow_html=True)
+            bench_html = "".join(_squad_player_card(p, team_gw, master_df_full) for p in bench)
+            st.markdown(
+                f'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">{bench_html}</div>',
+                unsafe_allow_html=True
+            )
+
+
+# ── Tab 10: GW Planner ────────────────────────────────────────────────────────
+with tab10:
+    st.markdown(
+        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📅 GW Planner</span>'
+        '<span style="font-size:12px;color:#444">Projected XI · transfer suggestions</span></div>',
+        unsafe_allow_html=True
+    )
+
+    if not live_ok:
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+    elif proj_df is None:
+        st.info("📂 projections.csv not found — required for GW Planner.")
+    elif "squad_data" not in st.session_state:
+        st.info("👕 Load your team in the **My Team** tab first.")
+    else:
+        avail_gws_p = future_gws if future_gws else list(range(current_gw, 39))
+        plan_gw     = st.selectbox("Plan for GW:", avail_gws_p, key="plan_gw")
+        pts_col_p   = f"{plan_gw}_Pts"
+        mins_col_p  = f"{plan_gw}_xMins"
+        eo_col_p    = f"{plan_gw}_eo"
+
+        squad_p = enrich_squad_solio(
+            list(st.session_state["squad_data"]), proj_df, eo_df, plan_gw
+        )
+        xi_p    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p["position"])
+
+        # ── Projected XI ──────────────────────────────────────────────────────
+        st.markdown("#### 🔢 Projected XI")
+
+        if pts_col_p not in proj_df.columns:
+            st.warning(f"No Solio projections available for GW{plan_gw} yet.")
+        else:
+            # Auto-build best XI by EV respecting formation rules
+            def _best_xi(players):
+                POS_MIN = {"GKP":1,"DEF":3,"MID":2,"FWD":1}
+                POS_MAX = {"GKP":1,"DEF":5,"MID":5,"FWD":3}
+                selected, counts = [], {"GKP":0,"DEF":0,"MID":0,"FWD":0}
+                for pos in ["GKP","DEF","MID","FWD"]:
+                    pool = sorted([p for p in players if p["pos"]==pos], key=lambda p: p.get("ev") or 0, reverse=True)
+                    for p in pool[:POS_MIN[pos]]:
+                        selected.append(p); counts[pos] += 1
+                remaining = sorted([p for p in players if p not in selected], key=lambda p: p.get("ev") or 0, reverse=True)
+                for p in remaining:
+                    if len(selected) >= 11: break
+                    if counts[p["pos"]] < POS_MAX[p["pos"]]:
+                        selected.append(p); counts[p["pos"]] += 1
+                return selected
+
+            sug_xi    = _best_xi(squad_p)
+            cap_p     = max(sug_xi, key=lambda p: p.get("ev") or 0) if sug_xi else None
+            total_ev  = sum(p.get("ev") or 0 for p in sug_xi)
+            cap_bonus = (cap_p["ev"] if cap_p and cap_p.get("ev") else 0)
+            total_cap = total_ev + cap_bonus  # captain doubles
+
+            # Summary card
+            cap_rec_html = ""
+            if cap_p:
+                cap_rec_html = (
+                    f'<div><div style="font-size:10px;color:#555;font-weight:700">CAPTAIN REC</div>'
+                    f'<div style="font-size:16px;font-weight:800;color:#fff;margin-top:2px">'
+                    f'{cap_p["name"]} ({cap_p["ev"]} pts)</div></div>'
+                )
+            st.markdown(
+                '<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
+                'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap">'
+                '<div><div style="font-size:10px;color:#555;font-weight:700">PROJECTED PTS (XI)</div>'
+                f'<div style="font-size:22px;font-weight:800;color:#5fffb0">{total_ev:.1f}</div></div>'
+                '<div><div style="font-size:10px;color:#555;font-weight:700">WITH CAPTAIN</div>'
+                f'<div style="font-size:22px;font-weight:800;color:#ffaa33">{total_cap:.1f}</div></div>'
+                + cap_rec_html + '</div>',
+                unsafe_allow_html=True
+            )
+
+            # XI table
+            pos_ord   = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
+            sug_sort  = sorted(sug_xi,  key=lambda p: (pos_ord.get(p["pos"],4), -(p.get("ev") or 0)))
+            bench_sug = sorted([p for p in squad_p if p not in sug_xi], key=lambda p: -(p.get("ev") or 0))
+
+            def _plan_row(p, is_cap=False, is_bench=False):
+                cb, cf = club_style(p["team"])
+                fix_r, fdr_r = get_fdr_for_team_gw(p["team"], plan_gw, master_df_full)
+                fb = FDR_BG.get(fdr_r,"#444"); ff = FDR_FG.get(fdr_r,"#fff")
+                ev_s = str(p["ev"]) if p.get("ev") else "—"
+                eo_s = f"{p['eo%']}%" if p.get("eo%") else "—"
+                cb_badge = ' <span style="background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:2px;padding:0 4px">C</span>' if is_cap else ""
+                op = "0.45" if is_bench else "1"
+                return (
+                    f'<tr style="opacity:{op}">'
+                    f'<td style="padding:6px 8px;color:#e0e0e0;font-size:12px;font-weight:600;border-bottom:1px solid #1a1a1a">{p["name"]}{cb_badge}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1a1a1a"><span style="background:{cb};color:{cf};font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px">{p["team"]}</span></td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">{p["pos"]}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1a1a1a"><span style="background:{fb};color:{ff};font-size:11px;font-weight:700;padding:1px 6px;border-radius:3px">{fix_r}</span></td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#5fffb0;font-weight:700;font-size:13px;border-bottom:1px solid #1a1a1a">{ev_s}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">{eo_s}</td>'
+                    f'</tr>'
+                )
+
+            th_plan = 'style="padding:6px 8px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
+            rows_xi_p    = "".join(_plan_row(p, is_cap=(p==cap_p)) for p in sug_sort)
+            rows_bench_p = "".join(_plan_row(p, is_bench=True) for p in bench_sug)
+            st.markdown(
+                f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                f'<thead><tr>'
+                f'<th {th_plan} style="text-align:left">PLAYER</th>'
+                f'<th {th_plan}>CLUB</th><th {th_plan}>POS</th>'
+                f'<th {th_plan}>FIXTURE</th><th {th_plan}>EV</th><th {th_plan}>EO%</th>'
+                f'</tr></thead><tbody>'
+                f'<tr><td colspan="6" style="padding:4px 8px;font-size:9px;color:#333;font-weight:700;letter-spacing:.6px">STARTING XI</td></tr>'
+                f'{rows_xi_p}'
+                f'<tr><td colspan="6" style="padding:8px 8px 4px;font-size:9px;color:#222;font-weight:700;letter-spacing:.6px">BENCH</td></tr>'
+                f'{rows_bench_p}'
+                f'</tbody></table></div>',
+                unsafe_allow_html=True
+            )
+
+        # ── Transfer Suggestions ───────────────────────────────────────────────
+        st.markdown("#### 🔄 Transfer Suggestions")
+
+        if pts_col_p not in proj_df.columns:
+            st.warning(f"No Solio projections for GW{plan_gw}.")
+        else:
+            ft_opt    = st.radio("Free transfers:", ["1 FT","2 FTs","Hit (-4)"], horizontal=True, key="plan_ft")
+            n_suggest = 2 if ft_opt == "2 FTs" else 1
+
+            squad_ids = {p["id"] for p in squad_p}
+            df_out    = proj_df.copy()
+            df_out[pts_col_p]  = pd.to_numeric(df_out[pts_col_p],  errors="coerce")
+            df_out[mins_col_p] = pd.to_numeric(df_out[mins_col_p], errors="coerce")
+            df_out["SV"]       = pd.to_numeric(df_out["SV"],       errors="coerce")
+
+            outside = df_out[(df_out[mins_col_p] > 45) & (~df_out["ID"].isin(squad_ids))].copy()
+            if eo_df is not None and eo_col_p in eo_df.columns:
+                eo_map_t = pd.to_numeric(eo_df.set_index("ID")[eo_col_p], errors="coerce").to_dict()
+                outside["EO%"] = outside["ID"].map(eo_map_t).fillna(0) * 100
+            else:
+                outside["EO%"] = 0
+
+            pos_map = {"GKP":"G","DEF":"D","MID":"M","FWD":"F"}
+            xi_worst = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p.get("ev") or 0)
+
+            suggestions = []
+            for sell in xi_worst[:6]:
+                sell_ev    = sell.get("ev") or 0
+                sell_price = sell["price"]
+                sell_pos   = sell["pos"]
+                same_pos   = outside[outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])]
+                in_budget  = same_pos[same_pos["SV"] <= sell_price + 0.1]
+                if in_budget.empty:
+                    in_budget = same_pos
+                if in_budget.empty:
+                    continue
+                best_buy = in_budget.nlargest(1, pts_col_p)
+                if best_buy.empty: continue
+                buy_row  = best_buy.iloc[0]
+                buy_ev   = round(float(buy_row[pts_col_p]), 2)
+                gain     = round(buy_ev - sell_ev, 2)
+                if gain <= 0: continue
+                suggestions.append({
+                    "out_name": sell["name"], "out_team": sell["team"], "out_ev": sell_ev,
+                    "in_name":  buy_row["Name"], "in_team": buy_row["Team"],
+                    "in_ev": buy_ev, "gain": gain,
+                    "in_eo": round(float(buy_row.get("EO%", 0)), 1),
+                    "in_price": buy_row["SV"],
+                })
+
+            if not suggestions:
+                st.success("✅ Your squad looks optimal — no clear upgrades found.")
+            else:
+                suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:max(n_suggest * 2, 4)]
+                th_s = 'style="padding:7px 10px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
+                rows_sg = ""
+                for sg in suggestions:
+                    ob, of = club_style(sg["out_team"])
+                    ib, if_ = club_style(sg["in_team"])
+                    gc = "#5fffb0" if sg["gain"] > 0 else "#ff6060"
+                    rows_sg += (
+                        f'<tr>'
+                        f'<td style="padding:7px 10px;border-bottom:1px solid #1a1a1a">'
+                        f'<span style="background:{ob};color:{of};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["out_name"]}</span>'
+                        f'<span style="color:#444;padding:0 6px">→</span>'
+                        f'<span style="background:{ib};color:{if_};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["in_name"]}</span>'
+                        f'</td>'
+                        f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:12px;border-bottom:1px solid #1a1a1a">{sg["out_ev"]} → {sg["in_ev"]}</td>'
+                        f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:13px;color:{gc};border-bottom:1px solid #1a1a1a">+{sg["gain"]}</td>'
+                        f'<td style="padding:7px 10px;text-align:center;color:#666;font-size:11px;border-bottom:1px solid #1a1a1a">{sg["in_eo"]}%</td>'
+                        f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">£{sg["in_price"]:.1f}m</td>'
+                        f'</tr>'
+                    )
+                st.markdown(
+                    f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                    f'<thead><tr>'
+                    f'<th {th_s} style="text-align:left">TRANSFER</th>'
+                    f'<th {th_s}>EV OUT→IN</th><th {th_s}>EV GAIN</th>'
+                    f'<th {th_s}>EO%</th><th {th_s}>PRICE</th>'
+                    f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
+                    unsafe_allow_html=True
+                )
+                if ft_opt == "Hit (-4)":
+                    st.caption("⚠️ Hit cost: -4 pts. Only worth making if total EV gain exceeds 4.")
+
+
+with tab11:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
@@ -2003,7 +2476,7 @@ with tab9:
 # =============================================================================
 # TAB 9 — Player Stats
 # =============================================================================
-with tab10:
+with tab12:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
