@@ -343,6 +343,8 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
 @st.cache_data
 def get_fdr_for_team_gw(team_name, gw, master_df_full):
     """Return (fixture_str, fdr_int) from your custom ratings."""
+    if master_df_full is None:
+        return "?", 3
     gw_col   = f"GW{gw}"
     std_name = TEAM_NAME_MAP.get(team_name, team_name)
     if std_name not in master_df_full.index or gw_col not in master_df_full.columns:
@@ -761,7 +763,12 @@ if proj_df is not None:
     )
 else:
     future_gws = []
-    master_df_full = None
+    # Still build master_df_full so fixture lookups work in My Team / GW Planner
+    _fb_start = current_gw if live_ok else start_gw
+    master_df_full = create_all_data(
+        fixtures_df.to_dict("records"), _fb_start, 38,
+        ratings_df.to_dict("records"), None
+    )
 
 # Display master_df (selected GW range)
 master_df = create_all_data(
@@ -2291,17 +2298,24 @@ with tab9:
                 hist_d      = st.session_state.get("history_data", {})
                 from collections import Counter
                 chip_counts = Counter(c["name"] for c in hist_d.get("chips", []))
+                # Also count any chip currently active this GW (not yet in history)
+                active_chip = pr.get("active_chip")
+                if active_chip:
+                    chip_counts[active_chip] += 1
                 # Wildcards: 2 per season. All others: 1 each.
                 chips_left  = [
                     c for c in ["bboost", "3xc", "wildcard", "freehit"]
                     if chip_counts.get(c, 0) < (2 if c == "wildcard" else 1)
                 ]
                 chip_labels = {"bboost":"BB","3xc":"TC","wildcard":"WC","freehit":"FH"}
-                chips_html  = "".join(
-                    f'<span style="background:#1a2a1a;color:#5fffb0;font-size:11px;'
-                    f'font-weight:700;padding:2px 7px;border-radius:3px">{chip_labels.get(c,c)}</span>'
-                    for c in chips_left
-                )
+                if chips_left:
+                    chips_html = "".join(
+                        f'<span style="background:#1a2a1a;color:#5fffb0;font-size:11px;'
+                        f'font-weight:700;padding:2px 7px;border-radius:3px">{chip_labels.get(c,c)}</span>'
+                        for c in chips_left
+                    )
+                else:
+                    chips_html = '<span style="color:#555;font-size:11px">None remaining</span>'
                 rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
                 st.markdown(
                     f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
@@ -2448,8 +2462,19 @@ with tab10:
         if pts_col_p not in proj_df.columns:
             st.warning(f"No Solio projections for GW{plan_gw}.")
         else:
-            ft_opt    = st.radio("Free transfers:", ["1 FT","2 FTs","3 FTs","4 FTs","5 FTs","Hit (-4)"], horizontal=True, key="plan_ft")
-            n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5,"Hit (-4)":5}[ft_opt]
+            # Detect available free transfers from last loaded picks
+            _pr       = st.session_state.get("picks_raw", {})
+            _eh       = _pr.get("entry_history", {})
+            _last_transfers = _eh.get("event_transfers", 0)
+            _last_cost      = _eh.get("event_transfers_cost", 0)
+            # 0 transfers last GW → rolled over → 2 FTs; otherwise 1 FT
+            avail_ft  = 2 if (_last_transfers == 0 and _last_cost == 0) else 1
+            avail_ft  = max(1, min(avail_ft, 2))  # cap 1-2
+
+            ft_options = ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"]
+            default_ft_idx = min(avail_ft - 1, len(ft_options) - 1)
+            ft_opt    = st.radio("Free transfers:", ft_options, index=default_ft_idx, horizontal=True, key="plan_ft")
+            n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5}[ft_opt]
 
             squad_ids = {p["id"] for p in squad_p}
             df_out    = proj_df.copy()
@@ -2528,14 +2553,14 @@ with tab10:
                     f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
                     unsafe_allow_html=True
                 )
-                if ft_opt == "Hit (-4)":
+                hit_transfers = max(0, len(suggestions) - avail_ft)
+                if hit_transfers > 0:
                     total_gain = sum(sg["gain"] for sg in suggestions)
-                    n_hits = len(suggestions)
-                    hit_cost = n_hits * 4
+                    hit_cost = hit_transfers * 4
                     net = round(total_gain - hit_cost, 2)
                     net_color = "#5fffb0" if net > 0 else "#ff6060"
                     st.markdown(
-                        f'⚠️ Hit cost: **-{hit_cost} pts** ({n_hits} transfers × 4). '
+                        f'⚠️ Hit cost: **-{hit_cost} pts** ({hit_transfers} extra transfer{"s" if hit_transfers>1 else ""} × 4). '
                         f'Total EV gain: **+{total_gain:.1f}**. '
                         f'Net: <span style="color:{net_color};font-weight:700">{net:+.1f} pts</span>',
                         unsafe_allow_html=True
