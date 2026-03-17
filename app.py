@@ -2295,27 +2295,6 @@ with tab9:
                 bank_val = eh.get("bank", 0) / 10
                 tv_val   = eh.get("value", 0) / 10
                 # Chips played come from the history endpoint (entry endpoint doesn't reliably include them)
-                hist_d      = st.session_state.get("history_data", {})
-                from collections import Counter
-                chip_counts = Counter(c["name"] for c in hist_d.get("chips", []))
-                # Also count any chip currently active this GW (not yet in history)
-                active_chip = pr.get("active_chip")
-                if active_chip:
-                    chip_counts[active_chip] += 1
-                # Wildcards: 2 per season. All others: 1 each.
-                chips_left  = [
-                    c for c in ["bboost", "3xc", "wildcard", "freehit"]
-                    if chip_counts.get(c, 0) < (2 if c == "wildcard" else 1)
-                ]
-                chip_labels = {"bboost":"BB","3xc":"TC","wildcard":"WC","freehit":"FH"}
-                if chips_left:
-                    chips_html = "".join(
-                        f'<span style="background:#1a2a1a;color:#5fffb0;font-size:11px;'
-                        f'font-weight:700;padding:2px 7px;border-radius:3px">{chip_labels.get(c,c)}</span>'
-                        for c in chips_left
-                    )
-                else:
-                    chips_html = '<span style="color:#555;font-size:11px">None remaining</span>'
                 rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
                 st.markdown(
                     f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
@@ -2326,8 +2305,6 @@ with tab9:
                     f'<div style="font-size:14px;font-weight:700;color:#5fffb0">£{tv_val:.1f}m</div></div>'
                     f'<div><div style="font-size:11px;color:#555">Bank</div>'
                     f'<div style="font-size:14px;font-weight:700;color:#ffaa33">£{bank_val:.1f}m</div></div>'
-                    f'<div><div style="font-size:11px;color:#555;margin-bottom:3px">Chips left</div>'
-                    f'<div style="display:flex;gap:4px">{chips_html}</div></div>'
                     f'</div>',
                     unsafe_allow_html=True
                 )
@@ -2462,19 +2439,10 @@ with tab10:
         if pts_col_p not in proj_df.columns:
             st.warning(f"No Solio projections for GW{plan_gw}.")
         else:
-            # Detect available free transfers from last loaded picks
-            _pr       = st.session_state.get("picks_raw", {})
-            _eh       = _pr.get("entry_history", {})
-            _last_transfers = _eh.get("event_transfers", 0)
-            _last_cost      = _eh.get("event_transfers_cost", 0)
-            # 0 transfers last GW → rolled over → 2 FTs; otherwise 1 FT
-            avail_ft  = 2 if (_last_transfers == 0 and _last_cost == 0) else 1
-            avail_ft  = max(1, min(avail_ft, 2))  # cap 1-2
-
-            ft_options = ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"]
-            default_ft_idx = min(avail_ft - 1, len(ft_options) - 1)
-            ft_opt    = st.radio("Free transfers:", ft_options, index=default_ft_idx, horizontal=True, key="plan_ft")
+            ft_opt    = st.radio("Free transfers:", ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"],
+                                 index=0, horizontal=True, key="plan_ft")
             n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5}[ft_opt]
+            avail_ft  = n_suggest  # no automatic detection; user selects
 
             squad_ids = {p["id"] for p in squad_p}
             df_out    = proj_df.copy()
@@ -2497,11 +2465,17 @@ with tab10:
             xi_worst   = sell_pool  # alias for backwards compat
 
             suggestions = []
+            used_buy_ids = set()  # prevent the same player being suggested as buy twice
             for sell in xi_worst[:max(n_suggest * 2, 8)]:
+                if len(suggestions) >= n_suggest:
+                    break
                 sell_ev    = sell.get("ev") or 0
                 sell_price = sell["price"]
                 sell_pos   = sell["pos"]
-                same_pos   = outside[outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])]
+                same_pos   = outside[
+                    (outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])) &
+                    (~outside["ID"].isin(used_buy_ids))
+                ]
                 in_budget  = same_pos[same_pos["SV"] <= sell_price + 0.1]
                 if in_budget.empty:
                     in_budget = same_pos
@@ -2513,6 +2487,7 @@ with tab10:
                 buy_ev   = round(float(buy_row[pts_col_p]), 2)
                 gain     = round(buy_ev - sell_ev, 2)
                 if gain <= 0: continue
+                used_buy_ids.add(buy_row["ID"])
                 suggestions.append({
                     "out_name": sell["name"], "out_team": sell["team"], "out_ev": sell_ev,
                     "in_name":  buy_row["Name"], "in_team": buy_row["Team"],
@@ -2553,18 +2528,6 @@ with tab10:
                     f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
                     unsafe_allow_html=True
                 )
-                hit_transfers = max(0, len(suggestions) - avail_ft)
-                if hit_transfers > 0:
-                    total_gain = sum(sg["gain"] for sg in suggestions)
-                    hit_cost = hit_transfers * 4
-                    net = round(total_gain - hit_cost, 2)
-                    net_color = "#5fffb0" if net > 0 else "#ff6060"
-                    st.markdown(
-                        f'⚠️ Hit cost: **-{hit_cost} pts** ({hit_transfers} extra transfer{"s" if hit_transfers>1 else ""} × 4). '
-                        f'Total EV gain: **+{total_gain:.1f}**. '
-                        f'Net: <span style="color:{net_color};font-weight:700">{net:+.1f} pts</span>',
-                        unsafe_allow_html=True
-                    )
 
 
 with tab11:
