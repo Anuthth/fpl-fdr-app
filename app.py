@@ -61,17 +61,6 @@ def get_current_gw(bootstrap):
 def player_photo_url(code):
     return f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{code}.png"
 
-@st.cache_data(ttl=3600, show_spinner=False)
-def _verified_photo_url(code):
-    """Return photo URL if it exists on PL CDN, else None. Cached 1 hour."""
-    if not code:
-        return None
-    url = player_photo_url(code)
-    try:
-        r = requests.head(url, timeout=5, headers={"User-Agent": "Mozilla/5.0"})
-        return url if r.status_code == 200 else None
-    except Exception:
-        return None
 
 # ── Club brand colours (primary bg, text) ────────────────────────────────────
 CLUB_COLORS = {
@@ -437,7 +426,7 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
         # Use Solio ID column for direct photo lookup, fall back to fuzzy name match
         solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
         code  = (id_to_code.get(solio_id) if solio_id else None) or _fuzzy_code(r["Name"], _build_code_lookup(bootstrap))
-        photo = _verified_photo_url(code)
+        photo = player_photo_url(code) if code else None
 
         eo_val = eo_map_display.get(r["Name"])
         # EO already in % — just round and display directly
@@ -504,7 +493,7 @@ def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
             # Direct ID-based photo lookup, fall back to fuzzy name match
             solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
             code  = (id_to_code.get(solio_id) if solio_id else None) or _fuzzy_code(r["Name"], code_lookup)
-            photo = _verified_photo_url(code)
+            photo = player_photo_url(code) if code else None
 
             bg, fg = club_style(r["Team"])
             eo_raw = eo_map.get(r["Name"], 0)
@@ -1217,7 +1206,12 @@ with tab5:
                         f'<div style="width:80px;margin:0 auto 8px auto">'
                         f'<img src="{p["photo"]}" '
                         f'style="width:80px;height:100px;object-fit:cover;object-position:top;'
-                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block">'
+                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block" '
+                        f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                        f'<div style="width:80px;height:100px;border-radius:8px;'
+                        f'background:rgba(0,0,0,0.25);display:none;align-items:center;'
+                        f'justify-content:center;font-size:28px;font-weight:800;'
+                        f'color:{club_fg};border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
                         f'</div>'
                     )
                 else:
@@ -1305,7 +1299,12 @@ with tab6:
                                 f'<div style="width:36px;height:46px;flex-shrink:0">'
                                 f'<img src="{r["photo"]}" '
                                 f'style="width:36px;height:46px;object-fit:cover;object-position:top;'
-                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block">'
+                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block" '
+                                f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                                f'<div style="width:36px;height:46px;border-radius:4px;'
+                                f'background:rgba(0,0,0,0.3);display:none;align-items:center;'
+                                f'justify-content:center;font-size:13px;font-weight:800;color:{fg};'
+                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
                                 f'</div>'
                             )
                         else:
@@ -1988,11 +1987,16 @@ def _squad_player_card(p, gw, master_df_full):
     elif p["is_vice"]:
         badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
     initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
-    photo_url = _verified_photo_url(p.get("code"))
+    code = p.get("code")
+    photo_url = player_photo_url(code) if code else None
     if photo_url:
         img_html = (
             f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;'
-            f'object-position:top;border-radius:4px;display:block">'
+            f'object-position:top;border-radius:4px;display:block" '
+            f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+            f'<div style="width:44px;height:56px;border-radius:4px;display:none;'
+            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
+            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
         )
     else:
         img_html = (
