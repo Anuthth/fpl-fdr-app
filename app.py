@@ -61,6 +61,18 @@ def get_current_gw(bootstrap):
 def player_photo_url(code):
     return f"https://resources.premierleague.com/premierleague/photos/players/110x140/p{code}.png"
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def _verified_photo_url(code):
+    """Return photo URL if it exists on PL CDN, else None. Cached 1 hour."""
+    if not code:
+        return None
+    url = player_photo_url(code)
+    try:
+        r = requests.head(url, timeout=5, headers={"User-Agent": "Mozilla/5.0"})
+        return url if r.status_code == 200 else None
+    except Exception:
+        return None
+
 # ── Club brand colours (primary bg, text) ────────────────────────────────────
 CLUB_COLORS = {
     "Arsenal":        {"bg": "#EF0107", "text": "#FFFFFF", "accent": "#063672"},
@@ -422,10 +434,10 @@ def get_captain_picks(proj_df, eo_df, gw, master_df_full, bootstrap):
     for _, r in picks.iterrows():
         fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
 
-        # Use Solio ID column for direct photo lookup
+        # Use Solio ID column for direct photo lookup, fall back to fuzzy name match
         solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
-        code  = id_to_code.get(solio_id) if solio_id else _fuzzy_code(r["Name"], _build_code_lookup(bootstrap))
-        photo = player_photo_url(code) if code else None
+        code  = (id_to_code.get(solio_id) if solio_id else None) or _fuzzy_code(r["Name"], _build_code_lookup(bootstrap))
+        photo = _verified_photo_url(code)
 
         eo_val = eo_map_display.get(r["Name"])
         # EO already in % — just round and display directly
@@ -489,10 +501,10 @@ def get_captain_matrix(proj_df, eo_df, gws, master_df_full, bootstrap):
         for _, r in within.iterrows():
             fix, fdr = get_fdr_for_team_gw(r["Team"], gw, master_df_full)
 
-            # Direct ID-based photo lookup
+            # Direct ID-based photo lookup, fall back to fuzzy name match
             solio_id = int(r["ID"]) if "ID" in r.index and pd.notna(r["ID"]) else None
-            code  = id_to_code.get(solio_id) if solio_id else _fuzzy_code(r["Name"], code_lookup)
-            photo = player_photo_url(code) if code else None
+            code  = (id_to_code.get(solio_id) if solio_id else None) or _fuzzy_code(r["Name"], code_lookup)
+            photo = _verified_photo_url(code)
 
             bg, fg = club_style(r["Team"])
             eo_raw = eo_map.get(r["Name"], 0)
@@ -1199,32 +1211,23 @@ with tab5:
                 club_bg, club_fg = club_style(p["Team"])
                 eo_str = f"{p['EO%']}%" if p.get("EO%") is not None else "—"
 
-                # initials fallback avatar (shown when photo 404s or missing)
-                initials = "".join(w[0].upper() for w in p["Name"].replace(".", " ").split() if w)[:2]
-                avatar_html = (
-                    f'<div style="width:80px;height:100px;border-radius:8px;margin-bottom:8px;'
-                    f'background:rgba(0,0,0,0.25);display:flex;align-items:center;'
-                    f'justify-content:center;font-size:28px;font-weight:800;'
-                    f'color:{club_fg};opacity:0.7;margin-left:auto;margin-right:auto;'
-                    f'border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
-                )
-
+                initials = "".join(w[0].upper() for w in p["Name"].replace(".", " ").split() if w)[:2] or "?"
                 if p["photo"]:
-                    ev_safe = str(p["EV"]).replace(".", "_")
                     img_html = (
                         f'<div style="width:80px;margin:0 auto 8px auto">'
                         f'<img src="{p["photo"]}" '
                         f'style="width:80px;height:100px;object-fit:cover;object-position:top;'
-                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block" '
-                        f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-                        f'<div style="width:80px;height:100px;border-radius:8px;'
-                        f'background:rgba(0,0,0,0.25);display:none;align-items:center;'
-                        f'justify-content:center;font-size:28px;font-weight:800;'
-                        f'color:{club_fg};border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
+                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block">'
                         f'</div>'
                     )
                 else:
-                    img_html = f'<div style="margin:0 auto 8px auto;width:80px">{avatar_html}</div>'
+                    img_html = (
+                        f'<div style="width:80px;height:100px;border-radius:8px;margin:0 auto 8px auto;'
+                        f'background:rgba(0,0,0,0.25);display:flex;align-items:center;'
+                        f'justify-content:center;font-size:28px;font-weight:800;'
+                        f'color:{club_fg};opacity:0.7;'
+                        f'border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
+                    )
 
                 card = (
                     f'<div style="border-radius:10px;overflow:hidden;margin:4px;' 
@@ -1296,18 +1299,13 @@ with tab6:
                         name_style = "font-weight:800;font-size:13px" if is_top else "font-weight:600;font-size:12px"
                         eo_str = f"{r['EO%']}%" if r.get("EO%") is not None else "—"
 
-                        initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2]
+                        initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2] or "?"
                         if r["photo"]:
                             img_tag = (
-                                f'<div style="width:36px;height:46px;flex-shrink:0;position:relative">'
+                                f'<div style="width:36px;height:46px;flex-shrink:0">'
                                 f'<img src="{r["photo"]}" '
                                 f'style="width:36px;height:46px;object-fit:cover;object-position:top;'
-                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block" '
-                                f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-                                f'<div style="width:36px;height:46px;border-radius:4px;display:none;'
-                                f'align-items:center;justify-content:center;font-size:13px;font-weight:800;'
-                                f'color:{fg};background:rgba(0,0,0,0.3);'
-                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
+                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block">'
                                 f'</div>'
                             )
                         else:
@@ -1989,16 +1987,12 @@ def _squad_player_card(p, gw, master_df_full):
         badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
     elif p["is_vice"]:
         badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
-    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2]
-    if p.get("code"):
-        photo_url = player_photo_url(p["code"])
+    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
+    photo_url = _verified_photo_url(p.get("code"))
+    if photo_url:
         img_html = (
             f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;'
-            f'object-position:top;border-radius:4px;display:block" '
-            f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-            f'<div style="width:44px;height:56px;border-radius:4px;display:none;'
-            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
-            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+            f'object-position:top;border-radius:4px;display:block">'
         )
     else:
         img_html = (
