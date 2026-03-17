@@ -1932,6 +1932,14 @@ def fetch_fpl_entry(team_id: int):
     return r.json()
 
 @st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_history(team_id: int):
+    """Return chips played from /history/ endpoint: [{"name":"wildcard","event":5,...},...]"""
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/history/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+@st.cache_data(ttl=300, show_spinner=False)
 def fetch_fpl_picks(team_id: int, gw: int):
     url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
     r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
@@ -2120,11 +2128,13 @@ with tab9:
                                     pass
                             break
 
-                    picks_d = fetch_fpl_picks(int(team_id), picks_gw)
-                    squad_d = build_squad_from_picks(picks_d, bootstrap)
+                    picks_d  = fetch_fpl_picks(int(team_id), picks_gw)
+                    history_d = fetch_fpl_history(int(team_id))
+                    squad_d  = build_squad_from_picks(picks_d, bootstrap)
                     st.session_state["squad_data"]     = squad_d
                     st.session_state["entry_data"]     = entry_d
                     st.session_state["picks_raw"]      = picks_d
+                    st.session_state["history_data"]   = history_d
                     st.session_state["picks_gw_label"] = picks_gw_label
             except Exception as exc:
                 st.error(f"Could not load team {team_id}: {exc}")
@@ -2148,8 +2158,15 @@ with tab9:
                 pts_tot  = ed.get("summary_overall_points", "—")
                 bank_val = eh.get("bank", 0) / 10
                 tv_val   = eh.get("value", 0) / 10
-                chips_used  = [c["name"] for c in ed.get("chips", [])]
-                chips_left  = [c for c in ["bboost","3xc","wildcard","freehit"] if c not in chips_used]
+                # Chips played come from the history endpoint (entry endpoint doesn't reliably include them)
+                hist_d      = st.session_state.get("history_data", {})
+                from collections import Counter
+                chip_counts = Counter(c["name"] for c in hist_d.get("chips", []))
+                # Wildcards: 2 per season. All others: 1 each.
+                chips_left  = [
+                    c for c in ["bboost", "3xc", "wildcard", "freehit"]
+                    if chip_counts.get(c, 0) < (2 if c == "wildcard" else 1)
+                ]
                 chip_labels = {"bboost":"BB","3xc":"TC","wildcard":"WC","freehit":"FH"}
                 chips_html  = "".join(
                     f'<span style="background:#1a2a1a;color:#5fffb0;font-size:11px;'
@@ -2203,24 +2220,52 @@ with tab9:
             for p in sorted(xi, key=lambda p: (pos_order.get(p["pos"],4), p["position"])):
                 xi_by_pos[p["pos"]].append(p)
 
-            st.markdown('<div style="font-size:11px;color:#444;font-weight:700;letter-spacing:.6px;margin-bottom:6px">STARTING XI</div>', unsafe_allow_html=True)
             xi_html = ""
             for pos in ["GKP","DEF","MID","FWD"]:
                 grp = xi_by_pos[pos]
                 if not grp: continue
                 cards = "".join(_squad_player_card(p, team_gw, master_df_full) for p in grp)
                 xi_html += (
-                    f'<div style="margin-bottom:8px">'
-                    f'<div style="font-size:9px;color:#333;font-weight:700;letter-spacing:.7px;margin-bottom:4px">{pos}</div>'
+                    f'<div style="margin-bottom:10px;text-align:center">'
+                    f'<div style="font-size:9px;color:rgba(255,255,255,0.35);font-weight:700;'
+                    f'letter-spacing:.7px;margin-bottom:5px">{pos}</div>'
                     f'<div style="display:grid;grid-template-columns:repeat({len(grp)},1fr);gap:6px">{cards}</div>'
                     f'</div>'
                 )
-            st.markdown(xi_html, unsafe_allow_html=True)
+            # Pitch pitch markings overlay (center line between MID and FWD rows)
+            pitch_html = (
+                '<div style="'
+                'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 56px,#1e7024 56px,#1e7024 112px);'
+                'border-radius:12px;border:3px solid rgba(255,255,255,0.18);'
+                'padding:16px 12px 12px;margin:4px 0 8px;position:relative;overflow:hidden">'
+                # top penalty arc
+                '<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);'
+                'width:60%;height:50px;border:1px solid rgba(255,255,255,0.1);'
+                'border-radius:0 0 50% 50%;border-top:none;pointer-events:none"></div>'
+                # center line
+                '<div style="position:absolute;top:50%;left:5%;right:5%;height:1px;'
+                'background:rgba(255,255,255,0.12);pointer-events:none"></div>'
+                # center circle
+                '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
+                'width:60px;height:60px;border:1px solid rgba(255,255,255,0.1);'
+                'border-radius:50%;pointer-events:none"></div>'
+                # bottom penalty arc
+                '<div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);'
+                'width:60%;height:50px;border:1px solid rgba(255,255,255,0.1);'
+                'border-radius:50% 50% 0 0;border-bottom:none;pointer-events:none"></div>'
+                f'{xi_html}'
+                '</div>'
+            )
+            st.markdown(pitch_html, unsafe_allow_html=True)
 
-            st.markdown('<div style="font-size:11px;color:#333;font-weight:700;letter-spacing:.6px;margin:10px 0 6px">BENCH</div>', unsafe_allow_html=True)
             bench_html = "".join(_squad_player_card(p, team_gw, master_df_full) for p in bench)
             st.markdown(
-                f'<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">{bench_html}</div>',
+                '<div style="font-size:11px;color:#555;font-weight:700;letter-spacing:.6px;margin:6px 0 5px">BENCH</div>',
+                unsafe_allow_html=True
+            )
+            st.markdown(
+                f'<div style="background:#111;border-radius:8px;border:1px solid #1e1e1e;'
+                f'padding:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px">{bench_html}</div>',
                 unsafe_allow_html=True
             )
 
@@ -2312,32 +2357,39 @@ with tab10:
                 eo_s = f"{p['eo%']}%" if p.get("eo%") else "—"
                 cb_badge = ' <span style="background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:2px;padding:0 4px">C</span>' if is_cap else ""
                 op = "0.45" if is_bench else "1"
+                bd = "border-bottom:1px solid rgba(255,255,255,0.07)"
                 return (
                     f'<tr style="opacity:{op}">'
-                    f'<td style="padding:6px 8px;color:#e0e0e0;font-size:12px;font-weight:600;border-bottom:1px solid #1a1a1a">{p["name"]}{cb_badge}</td>'
-                    f'<td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1a1a1a"><span style="background:{cb};color:{cf};font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px">{p["team"]}</span></td>'
-                    f'<td style="padding:6px 8px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">{p["pos"]}</td>'
-                    f'<td style="padding:6px 8px;text-align:center;border-bottom:1px solid #1a1a1a"><span style="background:{fb};color:{ff};font-size:11px;font-weight:700;padding:1px 6px;border-radius:3px">{fix_r}</span></td>'
-                    f'<td style="padding:6px 8px;text-align:center;color:#5fffb0;font-weight:700;font-size:13px;border-bottom:1px solid #1a1a1a">{ev_s}</td>'
-                    f'<td style="padding:6px 8px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">{eo_s}</td>'
+                    f'<td style="padding:6px 8px;color:#e0e0e0;font-size:12px;font-weight:600;{bd};background:transparent">{p["name"]}{cb_badge}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;{bd};background:transparent"><span style="background:{cb};color:{cf};font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px">{p["team"]}</span></td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#aaa;font-size:11px;{bd};background:transparent">{p["pos"]}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;{bd};background:transparent"><span style="background:{fb};color:{ff};font-size:11px;font-weight:700;padding:1px 6px;border-radius:3px">{fix_r}</span></td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#5fffb0;font-weight:700;font-size:13px;{bd};background:transparent">{ev_s}</td>'
+                    f'<td style="padding:6px 8px;text-align:center;color:#aaa;font-size:11px;{bd};background:transparent">{eo_s}</td>'
                     f'</tr>'
                 )
 
-            th_plan = 'style="padding:6px 8px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
+            th_plan = 'style="padding:6px 8px;text-align:center;color:rgba(255,255,255,0.45);font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid rgba(255,255,255,0.12);background:transparent"'
             rows_xi_p    = "".join(_plan_row(p, is_cap=(p==cap_p)) for p in sug_sort)
             rows_bench_p = "".join(_plan_row(p, is_bench=True) for p in bench_sug)
             st.markdown(
-                f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                '<div style="'
+                'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 56px,#1e7024 56px,#1e7024 112px);'
+                'border-radius:12px;border:3px solid rgba(255,255,255,0.18);'
+                'padding:12px;margin:4px 0 8px;overflow:hidden">'
+                f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;'
+                f'background:rgba(0,0,0,0.62);border-radius:8px;font-family:sans-serif">'
                 f'<thead><tr>'
                 f'<th {th_plan} style="text-align:left">PLAYER</th>'
                 f'<th {th_plan}>CLUB</th><th {th_plan}>POS</th>'
                 f'<th {th_plan}>FIXTURE</th><th {th_plan}>EV</th><th {th_plan}>EO%</th>'
                 f'</tr></thead><tbody>'
-                f'<tr><td colspan="6" style="padding:4px 8px;font-size:9px;color:#333;font-weight:700;letter-spacing:.6px">STARTING XI</td></tr>'
+                f'<tr><td colspan="6" style="padding:4px 8px;font-size:9px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:.6px;background:transparent">STARTING XI</td></tr>'
                 f'{rows_xi_p}'
-                f'<tr><td colspan="6" style="padding:8px 8px 4px;font-size:9px;color:#222;font-weight:700;letter-spacing:.6px">BENCH</td></tr>'
+                f'<tr><td colspan="6" style="padding:8px 8px 4px;font-size:9px;color:rgba(255,255,255,0.2);font-weight:700;letter-spacing:.6px;background:transparent">BENCH</td></tr>'
                 f'{rows_bench_p}'
-                f'</tbody></table></div>',
+                f'</tbody></table></div>'
+                '</div>',
                 unsafe_allow_html=True
             )
 
@@ -2348,7 +2400,7 @@ with tab10:
             st.warning(f"No Solio projections for GW{plan_gw}.")
         else:
             ft_opt    = st.radio("Free transfers:", ["1 FT","2 FTs","Hit (-4)"], horizontal=True, key="plan_ft")
-            n_suggest = 2 if ft_opt == "2 FTs" else 1
+            n_suggest = {"1 FT": 1, "2 FTs": 2, "Hit (-4)": 4}[ft_opt]
 
             squad_ids = {p["id"] for p in squad_p}
             df_out    = proj_df.copy()
@@ -2394,7 +2446,7 @@ with tab10:
             if not suggestions:
                 st.success("✅ Your squad looks optimal — no clear upgrades found.")
             else:
-                suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:max(n_suggest * 2, 4)]
+                suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:n_suggest]
                 th_s = 'style="padding:7px 10px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
                 rows_sg = ""
                 for sg in suggestions:
