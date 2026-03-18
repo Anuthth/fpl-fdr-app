@@ -1295,12 +1295,15 @@ with tab6:
         )
         if matrix_gws:
             matrix = get_captain_matrix(proj_df, eo_df, matrix_gws, master_df_full, bootstrap)
-            col_w  = max(140, min(200, 1100 // len(matrix_gws)))
+
+            # Compact no-scroll layout: fixed-width columns, small cells, no photos
+            n_cols  = len(matrix_gws)
+            col_pct = f"{100 / n_cols:.2f}%"
 
             header = "".join(
-                f'<th style="background:#0d1117;color:#555;padding:9px 6px;' 
-                f'border-bottom:2px solid #222;text-align:center;min-width:{col_w}px;' 
-                f'font-size:11px;font-weight:700;letter-spacing:.6px;' 
+                f'<th style="background:#0d1117;color:#aaa;padding:6px 4px;'
+                f'border-bottom:2px solid #222;text-align:center;width:{col_pct};'
+                f'font-size:10px;font-weight:700;letter-spacing:.5px;'
                 f'font-family:sans-serif">GW{gw}</th>'
                 for gw in matrix_gws
             )
@@ -1318,57 +1321,56 @@ with tab6:
                         fdr_b  = FDR_BG.get(r["FDR"], "#444")
                         fdr_f  = FDR_FG.get(r["FDR"], "#fff")
                         is_top = ri == 0
-                        top_border = "border-top:2px solid rgba(255,255,255,0.2);" if is_top else ""
-                        name_style = "font-weight:800;font-size:13px" if is_top else "font-weight:600;font-size:12px"
-                        eo_str = f"{r['EO%']}%" if r.get("EO%") is not None else "—"
-
+                        name_w = "font-weight:800" if is_top else "font-weight:600"
+                        eo_str = f"EO {r['EO%']}%" if r.get("EO%") is not None else ""
+                        # Shorten name: last word or max 9 chars
+                        parts = r["Name"].replace(".", " ").split()
+                        short_name = parts[-1] if parts else r["Name"]
+                        if len(short_name) > 9:
+                            short_name = short_name[:8] + "…"
+                        # Compact photo (24x30) or initials fallback
                         initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2] or "?"
-                        if r["photo"]:
+                        if r.get("photo"):
                             img_tag = (
-                                f'<div style="width:36px;height:46px;flex-shrink:0">'
                                 f'<img src="{r["photo"]}" '
-                                f'style="width:36px;height:46px;object-fit:cover;object-position:top;'
-                                f'border-radius:4px;border:1px solid rgba(255,255,255,0.2);display:block" '
-                                f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-                                f'<div style="width:36px;height:46px;border-radius:4px;'
-                                f'background:rgba(0,0,0,0.3);display:none;align-items:center;'
-                                f'justify-content:center;font-size:13px;font-weight:800;color:{fg};'
-                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
-                                f'</div>'
+                                f'style="width:24px;height:30px;object-fit:cover;object-position:top;'
+                                f'border-radius:3px;flex-shrink:0;vertical-align:middle" '
+                                f'onerror="this.style.display=\'none\'">'
                             )
                         else:
                             img_tag = (
-                                f'<div style="width:36px;height:46px;flex-shrink:0;border-radius:4px;'
-                                f'background:rgba(0,0,0,0.3);display:flex;align-items:center;'
-                                f'justify-content:center;font-size:13px;font-weight:800;color:{fg};'
-                                f'border:1px solid rgba(255,255,255,0.2)">{initials_m}</div>'
+                                f'<span style="display:inline-flex;width:24px;height:30px;flex-shrink:0;'
+                                f'border-radius:3px;background:rgba(0,0,0,0.3);align-items:center;'
+                                f'justify-content:center;font-size:9px;font-weight:800;color:{fg}">{initials_m}</span>'
                             )
 
                         row_html += (
-                            f'<td style="padding:7px 8px;border:1px solid #1a1a1a;' 
-                            f'{top_border}background:{bg};vertical-align:middle">' 
-                            f'<div style="display:flex;align-items:center;gap:8px">' 
-                            f'{img_tag}' 
-                            f'<div style="min-width:0">' 
-                            f'<div style="color:{fg};{name_style};' 
-                            f'font-family:sans-serif;white-space:nowrap;overflow:hidden;' 
-                            f'text-overflow:ellipsis">{r["Name"]}</div>' 
-                            f'<div style="display:flex;align-items:center;gap:4px;margin-top:3px;flex-wrap:wrap">' 
-                            f'<span style="background:{fdr_b};color:{fdr_f};border-radius:3px;' 
-                            f'padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap">{r["Fixture"]}</span>' 
-                            f'<span style="color:{fg};font-weight:700;font-size:13px">{r["EV"]}</span>' 
-                            f'<span style="color:{fg};font-size:11px;opacity:0.65">EO {eo_str}</span>' 
-                            f'</div></div></div></td>'
+                            f'<td style="padding:4px 5px;border:1px solid #1a1a1a;'
+                            f'background:{bg};vertical-align:middle;width:{col_pct}">'
+                            f'<div style="display:flex;align-items:center;gap:4px">'
+                            f'{img_tag}'
+                            f'<div style="min-width:0;flex:1;overflow:hidden">'
+                            f'<div style="color:{fg};{name_w};font-size:10.5px;'
+                            f'font-family:sans-serif;white-space:nowrap;overflow:hidden;'
+                            f'text-overflow:ellipsis;line-height:1.2">{short_name}</div>'
+                            f'<div style="display:flex;align-items:center;gap:2px;margin-top:2px">'
+                            f'<span style="background:{fdr_b};color:{fdr_f};border-radius:2px;'
+                            f'padding:0px 3px;font-size:8.5px;font-weight:700;white-space:nowrap">{r["Fixture"]}</span>'
+                            f'<span style="color:{fg};font-weight:800;font-size:10px;white-space:nowrap">{r["EV"]}</span>'
+                            f'</div>'
+                            f'<div style="color:{fg};font-size:8px;opacity:0.6;white-space:nowrap">{eo_str}</div>'
+                            f'</div></div>'
+                            f'</td>'
                         )
                     else:
-                        row_html += f'<td style="border:1px solid #1a1a1a;background:#0a0a0a;min-width:{col_w}px"></td>'
+                        row_html += f'<td style="border:1px solid #1a1a1a;background:#0a0a0a;width:{col_pct}"></td>'
                 body += f"<tr>{row_html}</tr>"
 
             html = (
-                f'<div style="overflow-x:auto;border-radius:8px;border:1px solid #1e1e1e;margin-top:4px">' 
-                f'<table style="border-collapse:collapse;width:100%;background:#0d1117">' 
-                f'<thead><tr style="background:#0d1117">{header}</tr></thead>' 
-                f'<tbody>{body}</tbody>' 
+                f'<div style="border-radius:8px;border:1px solid #1e1e1e;margin-top:4px">'
+                f'<table style="border-collapse:collapse;width:100%;table-layout:fixed;background:#0d1117">'
+                f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+                f'<tbody>{body}</tbody>'
                 f'</table></div>'
             )
             st.markdown(html, unsafe_allow_html=True)
