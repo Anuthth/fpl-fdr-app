@@ -884,13 +884,20 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
 """
 
     return (
-        f'<div style="overflow-x:auto;margin-top:6px">'
+        f'<!DOCTYPE html><html><head>'
+        f'<style>body{{margin:0;padding:0;background:#0d1117;}}'
+        f'table{{border-collapse:collapse;width:100%;font-family:\'Inter\',Arial,sans-serif;background:#0d1117;}}'
+        f'th{{cursor:pointer;user-select:none;}}'
+        f'th:hover{{color:#fff!important;}}'
+        f'</style></head><body>'
+        f'<div style="overflow-x:auto;margin:0">'
         f'<table id="{table_id}" style="border-collapse:collapse;width:100%;'
         f'font-family:\'Inter\',sans-serif;background:#0d1117">'
         f'<thead><tr style="background:#161b22">{header}</tr></thead>'
         f'<tbody>{rows}</tbody>'
         f'</table></div>'
         f'{sort_js}'
+        f'</body></html>'
     )
 
 
@@ -952,7 +959,8 @@ with tab1:
         total_fmt=lambda v: f"{v:.0f}",
         table_id="tbl_fdr",
     )
-    st.markdown(html, unsafe_allow_html=True)
+    _tbl_h = 50 + len(df_d) * 42
+    components.html(html, height=_tbl_h, scrolling=False)
 
 # ── Tab 2: xG ─────────────────────────────────────────────────────────────────
 with tab2:
@@ -986,7 +994,8 @@ with tab2:
         total_fmt=lambda v: f"{v:.2f}",
         table_id="tbl_xg",
     )
-    st.markdown(html, unsafe_allow_html=True)
+    _tbl_h = 50 + len(df_d) * 42
+    components.html(html, height=_tbl_h, scrolling=False)
 
 # ── Tab 3: xCS ────────────────────────────────────────────────────────────────
 with tab3:
@@ -1021,7 +1030,8 @@ with tab3:
         total_fmt=lambda v: f"{v*100:.0f}%",
         table_id="tbl_xcs",
     )
-    st.markdown(html, unsafe_allow_html=True)
+    _tbl_h = 50 + len(df_d) * 42
+    components.html(html, height=_tbl_h, scrolling=False)
 
 # ── Tab 4: Team Ratings ───────────────────────────────────────────────────────
 with tab4:
