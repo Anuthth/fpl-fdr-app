@@ -2192,6 +2192,67 @@ def _build_stats_html(df, ranges):
 
 
 # =============================================================================
+# CSV DATA LOADERS — Team & Player Stats
+# =============================================================================
+
+@st.cache_data(show_spinner=False)
+def load_csv_team_stats():
+    df = pd.read_csv("pl_teams_stats_2025_2026.csv")
+    df = df[["Team Name", "Expected goals", "xG conceded", "xG difference"]].copy()
+    df.columns = ["Team", "xG", "xGC", "xGDiff"]
+    for c in ["xG", "xGC", "xGDiff"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+
+
+@st.cache_data(show_spinner=False)
+def load_csv_player_stats():
+    df = pd.read_csv("pl_players_stats_2025_2026.csv")
+    col_map = {
+        "Player Name":                     "Player",
+        "Team":                            "Team",
+        "Country":                         "Country",
+        "Matches Played":                  "MP",
+        "Minutes Played":                  "Mins",
+        "Top scorer":                      "Goals",
+        "Assists":                         "Assists",
+        "Goals + Assists":                 "G+A",
+        "Goals per 90":                    "G/90",
+        "Big chances missed":              "BCM",
+        "Shots per 90":                    "Sh/90",
+        "Shots on target per 90":          "SoT/90",
+        "Big chances created":             "BCC",
+        "Chances created":                 "CC",
+        "Expected goals (xG)":             "xG",
+        "Expected goals (xG) per 90":      "xG/90",
+        "Expected goals on target (xGOT)": "xGOT",
+        "Expected assist (xA)":            "xA",
+        "Expected assist (xA) per 90":     "xA/90",
+        "xG + xA per 90":                  "xG+xA/90",
+    }
+    df = df[[c for c in col_map if c in df.columns]].rename(columns=col_map)
+    num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90", "BCM", "Sh/90",
+                "SoT/90", "BCC", "CC", "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+    for c in num_cols:
+        if c in df.columns:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+
+
+def add_fpl_positions(player_df, bootstrap):
+    """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
+    elements = pd.DataFrame(bootstrap["elements"])
+    POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    name_to_pos = {
+        f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
+        for _, r in elements.iterrows()
+    }
+    df = player_df.copy()
+    df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
+    return df
+
+
+# =============================================================================
 # TAB 8 — Team Stats
 # =============================================================================
 
@@ -2777,77 +2838,27 @@ with tab11:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#444">via Fotmob · Premier League 2025/26</span></div>',
+        '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
         unsafe_allow_html=True
     )
 
-    try:
-        _fm_league = fetch_fotmob_league()
-        ts_df = build_fotmob_team_stats_df(_fm_league)
-    except Exception as _e:
-        ts_df = pd.DataFrame()
-        st.warning(f"⚠️ Could not load Fotmob data: {_e}")
+    ts_df = load_csv_team_stats()
 
     if ts_df.empty:
-        st.info("No team stats available from Fotmob yet.")
+        st.info("No team stats available.")
     else:
-        c1, _ = st.columns([1, 3])
-        with c1:
-            sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","xGC","GA"] if c in ts_df.columns]
-            sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
-
-        asc_ts = sort_ts in ("GA", "xGC", "L")
-        d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
-        d_ts["Rk"] = range(1, len(d_ts) + 1)
-        ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","xG","xGC","xGDiff","Pts"]
-        d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
-
-        st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
-
-        # xG vs GF scatter
-        if "xG" in ts_df.columns and "GF" in ts_df.columns:
-            st.markdown("---")
-            st.markdown(
-                '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                'xG vs Goals Scored — Over/Under Performers</span>',
-                unsafe_allow_html=True
-            )
-            st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
-            valid = ts_df.dropna(subset=["xG", "GF"])
-            if not valid.empty:
-                mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
-                fig_ts = go.Figure()
-                fig_ts.add_trace(go.Scatter(
-                    x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
-                    line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
-                    hoverinfo="skip"
-                ))
-                for _, r in valid.iterrows():
-                    bg, fg = club_style(r["Team"])
-                    abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
-                    diff   = r["GF"] - r["xG"]
-                    fig_ts.add_trace(go.Scatter(
-                        x=[r["xG"]], y=[r["GF"]],
-                        mode="markers+text",
-                        marker=dict(size=38, color=bg, symbol="circle",
-                                    line=dict(color="rgba(255,255,255,0.12)", width=1)),
-                        text=[f"<b>{abbr}</b>"],
-                        textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
-                        textposition="middle center",
-                        showlegend=False,
-                        hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
-                                       f"<br>GF: {int(r['GF'])}"
-                                       f"<br>Diff: {diff:+.1f}<extra></extra>")
-                    ))
-                fig_ts.update_layout(
-                    paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                    xaxis=dict(title="xG", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                    yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                    margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
-                )
-                st.plotly_chart(fig_ts, use_container_width=True)
+        st.dataframe(
+            ts_df,
+            use_container_width=True,
+            hide_index=True,
+            column_config={
+                "Team":    st.column_config.TextColumn("Team"),
+                "xG":      st.column_config.NumberColumn("xG", format="%.1f"),
+                "xGC":     st.column_config.NumberColumn("xGC", format="%.1f"),
+                "xGDiff":  st.column_config.NumberColumn("xG Diff", format="%.1f"),
+            },
+        )
+        st.caption("Click any column header to sort · xGC = xG conceded · xG Diff = xG − xGC")
 
 
 # =============================================================================
@@ -2857,138 +2868,64 @@ with tab12:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
-        '<span style="font-size:12px;color:#444">via Fotmob · Premier League 2025/26</span></div>',
+        '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
         unsafe_allow_html=True
     )
 
-    try:
-        # Reuse cached league data fetched in tab11 if already loaded
-        if "_fm_league" not in dir():
-            _fm_league = fetch_fotmob_league()
-        ps_df = build_fotmob_player_stats_df(_fm_league)
-    except Exception as _e:
-        ps_df = pd.DataFrame()
-        st.warning(f"⚠️ Could not load Fotmob player data: {_e}")
+    ps_df = load_csv_player_stats()
+    ps_df = add_fpl_positions(ps_df, bootstrap)
 
-    if ps_df.empty:
-        st.info("No player stats available from Fotmob yet.")
-    else:
-        # ── Controls row ───────────────────────────────────────────────────────
-        cc1, cc2, cc3, cc4, cc5 = st.columns([1, 1, 1, 1, 1])
-        with cc1:
-            pos_f = st.selectbox("Position:", ["All","GKP","DEF","MID","FWD"], key="ps_pos")
-        with cc2:
-            team_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
-            team_f    = st.selectbox("Team:", team_opts, key="ps_team")
-        with cc3:
-            min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
-        with cc4:
-            sort_opts_ps = [c for c in ["xGI","Goals","Assists","xG","xA","xGC","CS","Defcon/90","Mins"]
-                            if c in ps_df.columns]
-            sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
-        with cc5:
-            per90 = st.toggle("Per 90 mins", value=False, key="ps_per90")
+    # ── Filters ────────────────────────────────────────────────────────────────
+    fc1, fc2 = st.columns([1, 1])
+    with fc1:
+        club_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
+        club_f = st.selectbox("Club:", club_opts, key="csv_ps_club")
+    with fc2:
+        pos_f = st.selectbox("Position:", ["All", "GKP", "DEF", "MID", "FWD"], key="csv_ps_pos")
 
-        # ── Filter ─────────────────────────────────────────────────────────────
-        filt = ps_df[ps_df["Mins"] >= min_mins].copy()
-        if pos_f  != "All": filt = filt[filt["Pos"]  == pos_f]
-        if team_f != "All": filt = filt[filt["Team"] == team_f]
+    filt_ps = ps_df.copy()
+    if club_f != "All":
+        filt_ps = filt_ps[filt_ps["Team"] == club_f]
+    if pos_f != "All":
+        filt_ps = filt_ps[filt_ps["Pos"] == pos_f]
+    filt_ps = filt_ps.reset_index(drop=True)
 
-        # ── Per-90 toggle ──────────────────────────────────────────────────────
-        PER90_COLS = ["xG","xA","xGI","xGC","Defcon","Goals","Assists","CS"]
-        display_ps = filt.copy()
+    col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
+                 "Goals", "Assists", "G+A", "G/90",
+                 "Sh/90", "SoT/90", "BCC", "CC", "BCM",
+                 "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+    show_cols = [c for c in col_order if c in filt_ps.columns]
 
-        if per90:
-            for c in PER90_COLS:
-                if c in display_ps.columns and "_90s" in display_ps.columns:
-                    display_ps[c] = (display_ps[c] / display_ps["_90s"].replace(0, np.nan)).round(2)
-            if "Defcon" in display_ps.columns:
-                display_ps.rename(columns={"Defcon": "Defcon/90"}, inplace=True)
-        else:
-            pass  # keep raw totals
+    st.dataframe(
+        filt_ps[show_cols],
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Player":     st.column_config.TextColumn("Player"),
+            "Team":       st.column_config.TextColumn("Team"),
+            "Country":    st.column_config.TextColumn("Country"),
+            "Pos":        st.column_config.TextColumn("Pos"),
+            "MP":         st.column_config.NumberColumn("MP"),
+            "Mins":       st.column_config.NumberColumn("Mins"),
+            "Goals":      st.column_config.NumberColumn("Goals"),
+            "Assists":    st.column_config.NumberColumn("Assists"),
+            "G+A":        st.column_config.NumberColumn("G+A"),
+            "G/90":       st.column_config.NumberColumn("G/90", format="%.2f"),
+            "Sh/90":      st.column_config.NumberColumn("Sh/90", format="%.2f"),
+            "SoT/90":     st.column_config.NumberColumn("SoT/90", format="%.2f"),
+            "BCC":        st.column_config.NumberColumn("BCC"),
+            "CC":         st.column_config.NumberColumn("CC"),
+            "BCM":        st.column_config.NumberColumn("BCM"),
+            "xG":         st.column_config.NumberColumn("xG", format="%.1f"),
+            "xG/90":      st.column_config.NumberColumn("xG/90", format="%.2f"),
+            "xGOT":       st.column_config.NumberColumn("xGOT", format="%.1f"),
+            "xA":         st.column_config.NumberColumn("xA", format="%.1f"),
+            "xA/90":      st.column_config.NumberColumn("xA/90", format="%.2f"),
+            "xG+xA/90":   st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
+        },
+    )
+    st.caption(
+        f"{len(filt_ps)} players · Click any column header to sort · "
+        "BCC = big chances created · BCM = big chances missed · xGOT = xG on target"
+    )
 
-        # Resolve sort column after potential rename
-        sort_col_actual = sort_ps
-        if per90 and sort_ps == "Defcon/90" and "Defcon/90" in display_ps.columns:
-            sort_col_actual = "Defcon/90"
-        if sort_col_actual not in display_ps.columns:
-            sort_col_actual = "xGI" if "xGI" in display_ps.columns else display_ps.columns[3]
-
-        display_ps = display_ps.sort_values(sort_col_actual, ascending=False).reset_index(drop=True)
-        display_ps.insert(0, "Rk", range(1, len(display_ps) + 1))
-
-        # Column display order
-        base_cols  = ["Rk","Player","Team","Pos","Mins"]
-        stat_cols  = ["Goals","Assists","xG","xA","xGI","xGC","CS"]
-        def_col    = (["Defcon/90"] if per90 and "Defcon/90" in display_ps.columns
-                      else ["Defcon"]  if "Defcon"    in display_ps.columns else [])
-        final_cols = base_cols + [c for c in stat_cols if c in display_ps.columns] + def_col
-        final_cols = [c for c in final_cols if c in display_ps.columns]
-        display_ps = display_ps[final_cols]
-
-        # Dynamic ranges for /90 mode
-        active_ranges = _PLAYER_RANGES.copy()
-        if per90:
-            for c in ["xG","xA","xGI","xGC","Goals","Assists","CS"]:
-                if c in _PLAYER_RANGES:
-                    lo, hi, ct = _PLAYER_RANGES[c]
-                    active_ranges[c] = (round(lo / 30, 2), round(hi / 30, 2), ct)
-            active_ranges["Defcon/90"] = (0, 10, "blue")
-
-        st.markdown(_build_stats_html(display_ps, active_ranges), unsafe_allow_html=True)
-
-        mode_label = "per 90 mins" if per90 else "season totals"
-        st.caption(
-            f"{len(display_ps)} players · {mode_label} · min {min_mins} mins · "
-            "Defcon = interceptions + tackles won + defensive clearances · "
-            "xGI = xG + xA · CS = clean sheets (GKs & defenders)"
-        )
-
-        # ── xG vs xA scatter ──────────────────────────────────────────────────
-        if "xG" in display_ps.columns and "xA" in display_ps.columns:
-            st.markdown("---")
-            st.markdown(
-                '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                f'Threat Map — xG vs xA{"" if not per90 else " (per 90)"}</span>',
-                unsafe_allow_html=True
-            )
-            st.caption("Top-right = complete attackers. Bubble size = minutes played. Colour = position.")
-
-            sc = display_ps[
-                (display_ps["xG"].fillna(0) > 0) | (display_ps["xA"].fillna(0) > 0)
-            ].dropna(subset=["xG","xA"])
-
-            if not sc.empty:
-                POS_C = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
-                fig_ps = go.Figure()
-                max_mins = sc["Mins"].max() if "Mins" in sc.columns and sc["Mins"].max() > 0 else 1
-                for _, r in sc.iterrows():
-                    pc   = POS_C.get(str(r.get("Pos","")), "#888")
-                    mins = float(r.get("Mins", 0) or 0)
-                    bubble = max(6, min(int(mins / max_mins * 30), 28))
-                    fig_ps.add_trace(go.Scatter(
-                        x=[r["xA"]], y=[r["xG"]],
-                        mode="markers",
-                        marker=dict(size=bubble, color=pc, opacity=0.75,
-                                    line=dict(color="rgba(255,255,255,0.10)", width=0.5)),
-                        showlegend=False,
-                        hovertemplate=(
-                            f"<b>{r['Player']}</b> · {r.get('Team','')}<br>"
-                            f"xG: {r['xG']:.2f}  |  xA: {r['xA']:.2f}  |  {int(mins)} mins<extra></extra>"
-                        )
-                    ))
-                for lbl, pc in POS_C.items():
-                    fig_ps.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
-                                                marker=dict(size=10, color=pc),
-                                                name=lbl, showlegend=True))
-                fig_ps.update_layout(
-                    paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                    xaxis=dict(title=f"xA{'/90' if per90 else ''}", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                    yaxis=dict(title=f"xG{'/90' if per90 else ''}", showgrid=False, zeroline=False,
-                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                    legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#888", size=11),
-                                orientation="h", y=1.06),
-                    margin=dict(l=50, r=20, t=30, b=50), height=440, hovermode="closest"
-                )
-                st.plotly_chart(fig_ps, use_container_width=True)
