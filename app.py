@@ -1692,6 +1692,233 @@ def build_team_stats_df(bootstrap, raw_fixtures):
     return df
 
 
+# =============================================================================
+# FOTMOB SCRAPING — Team Stats & Player Stats
+# =============================================================================
+
+FOTMOB_PL_ID = 47  # Premier League on Fotmob
+
+_FOTMOB_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "https://www.fotmob.com/",
+}
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fotmob_league():
+    """Fetch Premier League overview from Fotmob (table + season info)."""
+    r = requests.get(
+        f"https://www.fotmob.com/api/leagues?id={FOTMOB_PL_ID}",
+        headers=_FOTMOB_HEADERS, timeout=15,
+    )
+    r.raise_for_status()
+    return r.json()
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fotmob_deep_stat(season_id: str, stat: str):
+    """Fetch top-100 player list for a single stat from Fotmob."""
+    url = (
+        f"https://www.fotmob.com/api/leagueseasondeepstats"
+        f"?id={FOTMOB_PL_ID}&season={season_id}&type=players&stat={stat}"
+    )
+    r = requests.get(url, headers=_FOTMOB_HEADERS, timeout=15)
+    r.raise_for_status()
+    return r.json()
+
+
+def _fotmob_pos(pos_str: str) -> str:
+    p = (pos_str or "").lower()
+    if "goal" in p:                              return "GKP"
+    if "defend" in p:                            return "DEF"
+    if "mid" in p:                               return "MID"
+    if "attack" in p or "forward" in p or "wing" in p: return "FWD"
+    return "?"
+
+
+def _fotmob_season_id(league_data: dict):
+    """Extract the active season ID string from Fotmob league JSON."""
+    details = league_data.get("details", {})
+    sid = details.get("selectedSeason")
+    if sid:
+        return str(sid)
+    for s in league_data.get("seasons", []):
+        if s.get("isSelected") or s.get("selected"):
+            return str(s.get("id") or s.get("seasonId", ""))
+    return None
+
+
+def _parse_fotmob_items(data: dict) -> list:
+    """Robustly extract the player list from a deep-stat API response."""
+    ss = data.get("statsSection", {})
+    # path 1: statsSubSections[0].items
+    sub = ss.get("statsSubSections", [])
+    if sub:
+        items = sub[0].get("items", [])
+        if items:
+            return items
+    # path 2: topLists
+    top = ss.get("topLists", [])
+    if top:
+        return top
+    # path 3: flat fallback
+    return data.get("items", data.get("topLists", []))
+
+
+def build_fotmob_team_stats_df(league_data: dict) -> pd.DataFrame:
+    """Build team stats table from Fotmob league-table data."""
+    try:
+        tables = league_data.get("table", [])
+        if not tables:
+            return pd.DataFrame()
+
+        table_all = (
+            tables[0]
+            .get("data", {})
+            .get("table", {})
+            .get("all", [])
+        )
+        if not table_all:
+            return pd.DataFrame()
+
+        rows = []
+        for t in table_all:
+            scores = t.get("scoresStr", "0-0")
+            try:
+                gf, ga = map(int, scores.split("-"))
+            except (ValueError, AttributeError):
+                gf, ga = 0, 0
+
+            xg_raw  = t.get("xg")
+            xgc_raw = t.get("xgc")
+
+            # Normalise team name through existing map
+            raw_name = t.get("name", "")
+            name = TEAM_NAME_MAP.get(raw_name, raw_name)
+
+            rows.append({
+                "Team": name,
+                "MP":   int(t.get("played", 0)),
+                "W":    int(t.get("wins",   0)),
+                "D":    int(t.get("draws",  0)),
+                "L":    int(t.get("losses", 0)),
+                "GF":   gf,
+                "GA":   ga,
+                "GD":   int(t.get("goalConDiff", gf - ga)),
+                "Pts":  int(t.get("pts", 0)),
+                "xG":   round(float(xg_raw),  1) if xg_raw  is not None else 0.0,
+                "xGC":  round(float(xgc_raw), 1) if xgc_raw is not None else 0.0,
+            })
+
+        df = pd.DataFrame(rows)
+        if not df.empty:
+            df["xGDiff"] = (df["xG"] - df["xGC"]).round(1)
+            df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
+            df.insert(0, "Rk", range(1, len(df) + 1))
+        return df
+    except Exception:
+        return pd.DataFrame()
+
+
+def build_fotmob_player_stats_df(league_data: dict) -> pd.DataFrame:
+    """
+    Build player stats by merging multiple Fotmob deep-stat pages.
+    Stats fetched: expected_goals, expected_assists, goals, assists,
+    minutes_played, interceptions, tackles_won, clearances_defensive,
+    clean_sheets, expected_goals_conceded.
+    """
+    season_id = _fotmob_season_id(league_data)
+    if not season_id:
+        return pd.DataFrame()
+
+    # stat_key → DataFrame column name
+    STAT_MAP = {
+        "expected_goals":          "xG",
+        "expected_assists":        "xA",
+        "goals":                   "Goals",
+        "assists":                 "Assists",
+        "minutes_played":          "_mins_raw",
+        "interceptions":           "Interceptions",
+        "tackles_won":             "Tackles",
+        "clearances_defensive":    "Clearances",
+        "clean_sheets":            "CS",
+        "expected_goals_conceded": "xGC",
+    }
+
+    players: dict = {}  # pid → {field: value}
+
+    for stat_key, field in STAT_MAP.items():
+        try:
+            items = _parse_fotmob_items(fetch_fotmob_deep_stat(season_id, stat_key))
+        except Exception:
+            continue
+
+        for item in items:
+            pid = str(item.get("id", ""))
+            if not pid:
+                continue
+            if pid not in players:
+                raw_team = item.get("teamName", "")
+                players[pid] = {
+                    "Player": item.get("name", ""),
+                    "Team":   TEAM_NAME_MAP.get(raw_team, raw_team),
+                    "Pos":    _fotmob_pos(item.get("position", "")),
+                    "Mins":   0,
+                }
+            players[pid][field] = item.get("statValue", 0)
+            # Keep max minutes seen across all stat calls
+            mp = int(item.get("minutesPlayed", 0) or 0)
+            if mp > players[pid].get("Mins", 0):
+                players[pid]["Mins"] = mp
+
+    if not players:
+        return pd.DataFrame()
+
+    rows = []
+    for p in players.values():
+        # Prefer the dedicated minutes_played stat value
+        mins = float(p.get("_mins_raw") or p.get("Mins") or 0)
+        p["Mins"] = int(mins)
+        nineties = mins / 90.0 if mins > 0 else 0.0
+
+        xg  = float(p.get("xG",  0) or 0)
+        xa  = float(p.get("xA",  0) or 0)
+        xgi = round(xg + xa, 2)
+        xgc = float(p.get("xGC", 0) or 0)
+
+        inter  = float(p.get("Interceptions", 0) or 0)
+        tackle = float(p.get("Tackles",       0) or 0)
+        clear  = float(p.get("Clearances",    0) or 0)
+        defcon = round(inter + tackle + clear, 1)
+        defcon90 = round(defcon / nineties, 2) if nineties >= 0.5 else None
+
+        rows.append({
+            "Player":    p.get("Player", ""),
+            "Team":      p.get("Team",   ""),
+            "Pos":       p.get("Pos",    "?"),
+            "Mins":      p["Mins"],
+            "Goals":     int(p.get("Goals",   0) or 0),
+            "Assists":   int(p.get("Assists", 0) or 0),
+            "xG":        round(xg,  2),
+            "xA":        round(xa,  2),
+            "xGI":       xgi,
+            "xGC":       round(xgc, 2),
+            "CS":        int(p.get("CS", 0) or 0),
+            "Defcon":    defcon,
+            "Defcon/90": defcon90,
+            "_90s":      round(nineties, 2),
+        })
+
+    df = pd.DataFrame(rows)
+    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
+    return df
+
+
 def build_player_stats_df(bootstrap):
     """Full player analytics from FPL API elements — raw totals."""
     elements = pd.DataFrame(bootstrap["elements"])
@@ -1863,6 +2090,10 @@ _PLAYER_RANGES = {
     "PPM":       (0, 20,  "gold"),
     "Own%":      (0, 70,  "gold"),
     "Price":     (3.5, 15,"gold"),
+    # Fotmob-specific
+    "Goals":     (0, 25,  "positive"),
+    "Assists":   (0, 15,  "positive"),
+    "CS":        (0, 15,  "blue"),
 }
 
 
@@ -2546,75 +2777,77 @@ with tab11:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#444">live from FPL API · derived from completed fixtures</span></div>',
+        '<span style="font-size:12px;color:#444">via Fotmob · Premier League 2025/26</span></div>',
         unsafe_allow_html=True
     )
 
-    if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+    try:
+        _fm_league = fetch_fotmob_league()
+        ts_df = build_fotmob_team_stats_df(_fm_league)
+    except Exception as _e:
+        ts_df = pd.DataFrame()
+        st.warning(f"⚠️ Could not load Fotmob data: {_e}")
+
+    if ts_df.empty:
+        st.info("No team stats available from Fotmob yet.")
     else:
-        ts_df = build_team_stats_df(bootstrap, raw_fixtures)
+        c1, _ = st.columns([1, 3])
+        with c1:
+            sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","xGC","GA"] if c in ts_df.columns]
+            sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
 
-        if ts_df.empty:
-            st.warning("Could not build team stats.")
-        else:
-            c1, _ = st.columns([1, 3])
-            with c1:
-                sort_opts_ts = [c for c in ["Pts","GF","xG","xGDiff","GD","W","CS","xGC","GA"] if c in ts_df.columns]
-                sort_ts = st.selectbox("Sort by:", sort_opts_ts, key="ts_sort")
+        asc_ts = sort_ts in ("GA", "xGC", "L")
+        d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
+        d_ts["Rk"] = range(1, len(d_ts) + 1)
+        ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","xG","xGC","xGDiff","Pts"]
+        d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
 
-            asc_ts = sort_ts in ("GA","xGC","L")
-            d_ts = ts_df.sort_values(sort_ts, ascending=asc_ts).reset_index(drop=True)
-            d_ts["Rk"] = range(1, len(d_ts)+1)
-            ordered_ts = ["Rk","Team","MP","W","D","L","GF","GA","GD","CS","xG","xGC","xGDiff","Pts"]
-            d_ts = d_ts[[c for c in ordered_ts if c in d_ts.columns]]
+        st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
 
-            st.markdown(_build_stats_html(d_ts, _TEAM_RANGES), unsafe_allow_html=True)
-
-            # xG vs GF scatter
-            if "xG" in ts_df.columns and "GF" in ts_df.columns:
-                st.markdown("---")
-                st.markdown(
-                    '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                    'xG vs Goals Scored — Over/Under Performers</span>',
-                    unsafe_allow_html=True
-                )
-                st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
-                valid = ts_df.dropna(subset=["xG","GF"])
-                if not valid.empty:
-                    mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
-                    fig_ts = go.Figure()
+        # xG vs GF scatter
+        if "xG" in ts_df.columns and "GF" in ts_df.columns:
+            st.markdown("---")
+            st.markdown(
+                '<span style="font-size:14px;font-weight:600;color:#aaa">'
+                'xG vs Goals Scored — Over/Under Performers</span>',
+                unsafe_allow_html=True
+            )
+            st.caption("Above the line = scoring more than expected (clinical). Below = wasting chances.")
+            valid = ts_df.dropna(subset=["xG", "GF"])
+            if not valid.empty:
+                mx = max(valid["xG"].max(), valid["GF"].max()) * 1.08
+                fig_ts = go.Figure()
+                fig_ts.add_trace(go.Scatter(
+                    x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
+                    line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
+                    hoverinfo="skip"
+                ))
+                for _, r in valid.iterrows():
+                    bg, fg = club_style(r["Team"])
+                    abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
+                    diff   = r["GF"] - r["xG"]
                     fig_ts.add_trace(go.Scatter(
-                        x=[0, mx], y=[0, mx], mode="lines", showlegend=False,
-                        line=dict(color="rgba(255,255,255,0.08)", dash="dot", width=1),
-                        hoverinfo="skip"
+                        x=[r["xG"]], y=[r["GF"]],
+                        mode="markers+text",
+                        marker=dict(size=38, color=bg, symbol="circle",
+                                    line=dict(color="rgba(255,255,255,0.12)", width=1)),
+                        text=[f"<b>{abbr}</b>"],
+                        textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
+                        textposition="middle center",
+                        showlegend=False,
+                        hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
+                                       f"<br>GF: {int(r['GF'])}"
+                                       f"<br>Diff: {diff:+.1f}<extra></extra>")
                     ))
-                    for _, r in valid.iterrows():
-                        bg, fg = club_style(r["Team"])
-                        abbr   = TEAM_ABBREVIATIONS.get(r["Team"], r["Team"][:3].upper())
-                        diff   = r["GF"] - r["xG"]
-                        fig_ts.add_trace(go.Scatter(
-                            x=[r["xG"]], y=[r["GF"]],
-                            mode="markers+text",
-                            marker=dict(size=38, color=bg, symbol="circle",
-                                        line=dict(color="rgba(255,255,255,0.12)", width=1)),
-                            text=[f"<b>{abbr}</b>"],
-                            textfont=dict(color=fg, size=9, family="Arial Black, sans-serif"),
-                            textposition="middle center",
-                            showlegend=False,
-                            hovertemplate=(f"<b>{r['Team']}</b><br>xG: {r['xG']:.1f}"
-                                           f"<br>GF: {int(r['GF'])}"
-                                           f"<br>Diff: {diff:+.1f}<extra></extra>")
-                        ))
-                    fig_ts.update_layout(
-                        paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                        xaxis=dict(title="xG", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                        yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
-                                   tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                        margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
-                    )
-                    st.plotly_chart(fig_ts, use_container_width=True)
+                fig_ts.update_layout(
+                    paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
+                    xaxis=dict(title="xG", showgrid=False, zeroline=False,
+                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                    yaxis=dict(title="Goals Scored", showgrid=False, zeroline=False,
+                               tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
+                    margin=dict(l=50, r=20, t=10, b=50), height=420, hovermode="closest"
+                )
+                st.plotly_chart(fig_ts, use_container_width=True)
 
 
 # =============================================================================
@@ -2624,15 +2857,22 @@ with tab12:
     st.markdown(
         '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
         '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
-        '<span style="font-size:12px;color:#444">live from FPL API · auto-updated</span></div>',
+        '<span style="font-size:12px;color:#444">via Fotmob · Premier League 2025/26</span></div>',
         unsafe_allow_html=True
     )
 
-    if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-    else:
-        ps_df = build_player_stats_df(bootstrap)
+    try:
+        # Reuse cached league data fetched in tab11 if already loaded
+        if "_fm_league" not in dir():
+            _fm_league = fetch_fotmob_league()
+        ps_df = build_fotmob_player_stats_df(_fm_league)
+    except Exception as _e:
+        ps_df = pd.DataFrame()
+        st.warning(f"⚠️ Could not load Fotmob player data: {_e}")
 
+    if ps_df.empty:
+        st.info("No player stats available from Fotmob yet.")
+    else:
         # ── Controls row ───────────────────────────────────────────────────────
         cc1, cc2, cc3, cc4, cc5 = st.columns([1, 1, 1, 1, 1])
         with cc1:
@@ -2643,7 +2883,7 @@ with tab12:
         with cc3:
             min_mins  = st.number_input("Min mins:", 0, 3420, 450, 90, key="ps_mins")
         with cc4:
-            sort_opts_ps = [c for c in ["xGI","xG","xA","NpxGI","NpxG","xGC","Defcon/90","PPM","Own%","Mins","Price"]
+            sort_opts_ps = [c for c in ["xGI","Goals","Assists","xG","xA","xGC","CS","Defcon/90","Mins"]
                             if c in ps_df.columns]
             sort_ps = st.selectbox("Sort by:", sort_opts_ps, key="ps_sort")
         with cc5:
@@ -2655,54 +2895,44 @@ with tab12:
         if team_f != "All": filt = filt[filt["Team"] == team_f]
 
         # ── Per-90 toggle ──────────────────────────────────────────────────────
-        PER90_COLS = ["xG","xA","xGI","NpxG","NpxGI","xGC","Defcon"]
+        PER90_COLS = ["xG","xA","xGI","xGC","Defcon","Goals","Assists","CS"]
         display_ps = filt.copy()
 
         if per90:
             for c in PER90_COLS:
                 if c in display_ps.columns and "_90s" in display_ps.columns:
                     display_ps[c] = (display_ps[c] / display_ps["_90s"].replace(0, np.nan)).round(2)
-            # Rename Defcon column header
             if "Defcon" in display_ps.columns:
-                display_ps.rename(columns={"Defcon":"Defcon/90"}, inplace=True)
-            per90_label = " /90"
+                display_ps.rename(columns={"Defcon": "Defcon/90"}, inplace=True)
         else:
-            if "Defcon" in display_ps.columns:
-                display_ps.rename(columns={"Defcon":"Defcon"}, inplace=True)
-            per90_label = ""
+            pass  # keep raw totals
 
-        # Determine actual sort column (may have been renamed)
+        # Resolve sort column after potential rename
         sort_col_actual = sort_ps
         if per90 and sort_ps == "Defcon/90" and "Defcon/90" in display_ps.columns:
             sort_col_actual = "Defcon/90"
-
         if sort_col_actual not in display_ps.columns:
-            sort_col_actual = "xGI" if "xGI" in display_ps.columns else display_ps.columns[4]
+            sort_col_actual = "xGI" if "xGI" in display_ps.columns else display_ps.columns[3]
 
         display_ps = display_ps.sort_values(sort_col_actual, ascending=False).reset_index(drop=True)
-        display_ps.insert(0, "Rk", range(1, len(display_ps)+1))
+        display_ps.insert(0, "Rk", range(1, len(display_ps) + 1))
 
         # Column display order
-        base_cols   = ["Rk","Player","Team","Pos","Price","Starts","Mins","Min/Start"]
-        stat_cols   = ["xG","xA","xGI","NpxG","NpxGI","xGC"]
-        if per90:
-            stat_cols = [c for c in stat_cols if c in display_ps.columns]
-            def_col   = ["Defcon/90"] if "Defcon/90" in display_ps.columns else []
-        else:
-            stat_cols = [c for c in stat_cols if c in display_ps.columns]
-            def_col   = ["Defcon"] if "Defcon" in display_ps.columns else []
+        base_cols  = ["Rk","Player","Team","Pos","Mins"]
+        stat_cols  = ["Goals","Assists","xG","xA","xGI","xGC","CS"]
+        def_col    = (["Defcon/90"] if per90 and "Defcon/90" in display_ps.columns
+                      else ["Defcon"]  if "Defcon"    in display_ps.columns else [])
+        final_cols = base_cols + [c for c in stat_cols if c in display_ps.columns] + def_col
+        final_cols = [c for c in final_cols if c in display_ps.columns]
+        display_ps = display_ps[final_cols]
 
-        final_cols  = base_cols + stat_cols + def_col + ["PPM","Own%"]
-        final_cols  = [c for c in final_cols if c in display_ps.columns]
-        display_ps  = display_ps[final_cols]
-
-        # Build dynamic ranges for /90 mode
+        # Dynamic ranges for /90 mode
         active_ranges = _PLAYER_RANGES.copy()
         if per90:
-            for c in PER90_COLS:
+            for c in ["xG","xA","xGI","xGC","Goals","Assists","CS"]:
                 if c in _PLAYER_RANGES:
                     lo, hi, ct = _PLAYER_RANGES[c]
-                    active_ranges[c] = (round(lo/30, 2), round(hi/30, 2), ct)
+                    active_ranges[c] = (round(lo / 30, 2), round(hi / 30, 2), ct)
             active_ranges["Defcon/90"] = (0, 10, "blue")
 
         st.markdown(_build_stats_html(display_ps, active_ranges), unsafe_allow_html=True)
@@ -2710,49 +2940,52 @@ with tab12:
         mode_label = "per 90 mins" if per90 else "season totals"
         st.caption(
             f"{len(display_ps)} players · {mode_label} · min {min_mins} mins · "
-            "Defcon = clearances+blocks+interceptions + tackles + recoveries · "
-            "NpxG = xG minus penalties × 0.76 · PPM = points ÷ price"
+            "Defcon = interceptions + tackles won + defensive clearances · "
+            "xGI = xG + xA · CS = clean sheets (GKs & defenders)"
         )
 
-        # ── Value scatter ──────────────────────────────────────────────────────
-        xgi_col = "xGI"
-        if xgi_col in display_ps.columns and "Price" in display_ps.columns:
+        # ── xG vs xA scatter ──────────────────────────────────────────────────
+        if "xG" in display_ps.columns and "xA" in display_ps.columns:
             st.markdown("---")
             st.markdown(
                 '<span style="font-size:14px;font-weight:600;color:#aaa">'
-                f'Value Map — xGI{"" if not per90 else "/90"} vs Price</span>',
+                f'Threat Map — xG vs xA{"" if not per90 else " (per 90)"}</span>',
                 unsafe_allow_html=True
             )
-            st.caption("Top-left = best value. Bubble size = ownership %. Colour = position.")
+            st.caption("Top-right = complete attackers. Bubble size = minutes played. Colour = position.")
 
-            sc = display_ps[display_ps[xgi_col].fillna(0) > 0].dropna(subset=[xgi_col,"Price"])
+            sc = display_ps[
+                (display_ps["xG"].fillna(0) > 0) | (display_ps["xA"].fillna(0) > 0)
+            ].dropna(subset=["xG","xA"])
+
             if not sc.empty:
                 POS_C = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
                 fig_ps = go.Figure()
+                max_mins = sc["Mins"].max() if "Mins" in sc.columns and sc["Mins"].max() > 0 else 1
                 for _, r in sc.iterrows():
-                    pc  = POS_C.get(str(r.get("Pos","")), "#888")
-                    own = float(r["Own%"]) if pd.notna(r.get("Own%")) else 3
+                    pc   = POS_C.get(str(r.get("Pos","")), "#888")
+                    mins = float(r.get("Mins", 0) or 0)
+                    bubble = max(6, min(int(mins / max_mins * 30), 28))
                     fig_ps.add_trace(go.Scatter(
-                        x=[r["Price"]], y=[r[xgi_col]],
+                        x=[r["xA"]], y=[r["xG"]],
                         mode="markers",
-                        marker=dict(size=max(7, min(own*1.3, 28)), color=pc, opacity=0.72,
+                        marker=dict(size=bubble, color=pc, opacity=0.75,
                                     line=dict(color="rgba(255,255,255,0.10)", width=0.5)),
                         showlegend=False,
                         hovertemplate=(
                             f"<b>{r['Player']}</b> · {r.get('Team','')}<br>"
-                            f"xGI: {r[xgi_col]:.2f}  |  £{r['Price']:.1f}m  |  {own:.1f}%<extra></extra>"
+                            f"xG: {r['xG']:.2f}  |  xA: {r['xA']:.2f}  |  {int(mins)} mins<extra></extra>"
                         )
                     ))
                 for lbl, pc in POS_C.items():
                     fig_ps.add_trace(go.Scatter(x=[None], y=[None], mode="markers",
                                                 marker=dict(size=10, color=pc),
                                                 name=lbl, showlegend=True))
-                y_title = f"xGI{'/90' if per90 else ''}"
                 fig_ps.update_layout(
                     paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
-                    xaxis=dict(title="Price (£m)", showgrid=False, zeroline=False,
+                    xaxis=dict(title=f"xA{'/90' if per90 else ''}", showgrid=False, zeroline=False,
                                tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
-                    yaxis=dict(title=y_title, showgrid=False, zeroline=False,
+                    yaxis=dict(title=f"xG{'/90' if per90 else ''}", showgrid=False, zeroline=False,
                                tickfont=dict(color="#444"), title_font=dict(color="#555", size=11)),
                     legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#888", size=11),
                                 orientation="h", y=1.06),
