@@ -2875,19 +2875,45 @@ with tab12:
     ps_df = load_csv_player_stats()
     ps_df = add_fpl_positions(ps_df, bootstrap)
 
-    # ── Filters ────────────────────────────────────────────────────────────────
-    fc1, fc2 = st.columns([1, 1])
+    # ── Primary filters ────────────────────────────────────────────────────────
+    fc1, fc2, fc3 = st.columns([2, 1, 1])
     with fc1:
+        name_f = st.text_input("Search player:", placeholder="e.g. Salah", key="csv_ps_name")
+    with fc2:
         club_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
         club_f = st.selectbox("Club:", club_opts, key="csv_ps_club")
-    with fc2:
+    with fc3:
         pos_f = st.selectbox("Position:", ["All", "GKP", "DEF", "MID", "FWD"], key="csv_ps_pos")
 
+    # ── Numeric column filters (expander) ──────────────────────────────────────
+    num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90",
+                "Sh/90", "SoT/90", "BCC", "CC", "BCM",
+                "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+    num_cols = [c for c in num_cols if c in ps_df.columns]
+
+    slider_vals = {}
+    with st.expander("Column filters", expanded=False):
+        exp_cols = st.columns(3)
+        for i, col in enumerate(num_cols):
+            col_min = float(ps_df[col].min())
+            col_max = float(ps_df[col].max())
+            with exp_cols[i % 3]:
+                fmt = "%.0f" if col in ("MP", "Mins", "Goals", "Assists", "G+A", "BCC", "CC", "BCM") else "%.2f"
+                slider_vals[col] = st.slider(
+                    col, col_min, col_max, (col_min, col_max),
+                    format=fmt, key=f"csv_ps_sl_{col}"
+                )
+
+    # ── Apply all filters ──────────────────────────────────────────────────────
     filt_ps = ps_df.copy()
+    if name_f:
+        filt_ps = filt_ps[filt_ps["Player"].str.contains(name_f, case=False, na=False)]
     if club_f != "All":
         filt_ps = filt_ps[filt_ps["Team"] == club_f]
     if pos_f != "All":
         filt_ps = filt_ps[filt_ps["Pos"] == pos_f]
+    for col, (lo, hi) in slider_vals.items():
+        filt_ps = filt_ps[(filt_ps[col] >= lo) & (filt_ps[col] <= hi)]
     filt_ps = filt_ps.reset_index(drop=True)
 
     col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
