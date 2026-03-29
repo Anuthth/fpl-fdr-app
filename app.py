@@ -750,6 +750,19 @@ fh_opts = [None] + list(range(start_gw, end_gw+1))
 free_hit_gw = st.sidebar.selectbox("Free Hit GW:", fh_opts,
                                     format_func=lambda x: "None" if x is None else f"GW{x}")
 
+st.sidebar.divider()
+st.sidebar.markdown('<span style="font-size:11px;color:#666;font-weight:700;letter-spacing:.5px">NAVIGATE</span>', unsafe_allow_html=True)
+_NAV_GROUPS = ["📊 Planning", "🎯 Captain & Picks", "👕 My FPL", "🏟️ Stats"]
+if "nav_cat" not in st.session_state:
+    st.session_state["nav_cat"] = _NAV_GROUPS[0]
+nav_cat = st.sidebar.radio(
+    "Section",
+    _NAV_GROUPS,
+    index=_NAV_GROUPS.index(st.session_state.get("nav_cat", _NAV_GROUPS[0])),
+    key="nav_cat",
+    label_visibility="collapsed",
+)
+
 # Build full master_df (GW29–38 for captain lookups)
 if proj_df is not None:
     proj_gws  = sorted([int(c.split("_")[0]) for c in proj_df.columns
@@ -785,11 +798,15 @@ if free_hit_gw and f"GW{free_hit_gw}" in gw_columns:
 # =============================================================================
 # TABS
 # =============================================================================
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12 = st.tabs([
-    "📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings",
-    "🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "📡 Live Radar",
-    "👕 My Team", "📅 GW Planner", "🏟️ Team Stats", "👤 Player Stats",
-])
+# ── Conditional tab groups based on sidebar navigation ────────────────────────
+if nav_cat == "📊 Planning":
+    tab1, tab2, tab3, tab4 = st.tabs(["📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings"])
+elif nav_cat == "🎯 Captain & Picks":
+    tab5, tab6, tab7 = st.tabs(["🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet"])
+elif nav_cat == "👕 My FPL":
+    tab8, tab9, tab10 = st.tabs(["📡 Live Radar", "👕 My Team", "📅 GW Planner"])
+else:  # 🏟️ Stats
+    tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
 # ── Shared helper: build clean HTML heatmap table ─────────────────────────────
 def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht"):
