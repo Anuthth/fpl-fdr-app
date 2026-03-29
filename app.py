@@ -941,2034 +941,2046 @@ def _xcs_color(v):
     if v >= 0.10: return "#4a2060","#cc99ee"
     return "#6f2a74","#ffffff"
 
-# ── Tab 1: FDR ────────────────────────────────────────────────────────────────
-with tab1:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Fixture Difficulty</span>'
-        '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
-        unsafe_allow_html=True
-    )
-    # Legend
-    legend_items = [
-        ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
-        ("#2e2e2e","#999","3 Neutral"),
-        ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
-        ("#111","#c0392b","BGW"),
-    ]
-    legend_html = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
-    for bg, fg, lbl in legend_items:
-        legend_html += (f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;'
-                        f'font-size:11px;font-weight:700">{lbl}</span>')
-    legend_html += '</div>'
-    st.markdown(legend_html, unsafe_allow_html=True)
 
-    df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
-    df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
-    df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
-
-    html = _heatmap_table(
-        df_d, gw_columns,
-        value_key="fdr",
-        label_fn=lambda c: c.get("display","?"),
-        color_fn=_fdr_color,
-        total_col="Total_Difficulty",
-        total_fmt=lambda v: f"{v:.0f}",
-        table_id="tbl_fdr",
-    )
-    _tbl_h = 50 + len(df_d) * 42
-    components.html(html, height=_tbl_h, scrolling=False)
-
-# ── Tab 2: xG ─────────────────────────────────────────────────────────────────
-with tab2:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Expected Goals (xG)</span>'
-        '<span style="font-size:12px;color:#555">higher = better for attackers · sorted by total</span></div>',
-        unsafe_allow_html=True
-    )
-    legend_items_xg = [
-        ("#1a7a4a","#fff","≥ 2.2"), ("#2da65c","#fff","≥ 1.8"),
-        ("#50c369","#0d1117","≥ 1.4"), ("#2e4a38","#a8d8a8","≥ 1.0"),
-        ("#1c1c1c","#555","< 1.0"), ("#111","#c0392b","BGW"),
-    ]
-    lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
-    for bg, fg, lbl in legend_items_xg:
-        lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
-    lh += '</div>'
-    st.markdown(lh, unsafe_allow_html=True)
-
-    df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
-    df_d = df_d[["Team","Total xG"] + gw_columns].copy()
-    df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
-
-    html = _heatmap_table(
-        df_d, gw_columns,
-        value_key="xG",
-        label_fn=lambda c: f"{c.get('xG',0):.2f}",
-        color_fn=_xg_color,
-        total_col="Total_xG",
-        total_fmt=lambda v: f"{v:.2f}",
-        table_id="tbl_xg",
-    )
-    _tbl_h = 50 + len(df_d) * 42
-    components.html(html, height=_tbl_h, scrolling=False)
-
-# ── Tab 3: xCS ────────────────────────────────────────────────────────────────
-with tab3:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Clean Sheet % (xCS)</span>'
-        '<span style="font-size:12px;color:#555">higher = better for defenders & keepers · sorted by total</span></div>',
-        unsafe_allow_html=True
-    )
-    legend_items_cs = [
-        ("#00ff85","#0d1117","≥ 50%"), ("#50c369","#0d1117","≥ 40%"),
-        ("#2e4a38","#a8d8a8","≥ 28%"), ("#2e2e2e","#888","≥ 18%"),
-        ("#4a2060","#cc99ee","≥ 10%"), ("#6f2a74","#fff","< 10%"),
-        ("#111","#c0392b","BGW"),
-    ]
-    lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
-    for bg, fg, lbl in legend_items_cs:
-        lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
-    lh += '</div>'
-    st.markdown(lh, unsafe_allow_html=True)
-
-    df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
-    df_d = df_d[["Team","xCS"] + gw_columns].copy()
-    df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
-
-    html = _heatmap_table(
-        df_d, gw_columns,
-        value_key="CS",
-        label_fn=lambda c: f"{c.get('CS',0)*100:.0f}%",
-        color_fn=_xcs_color,
-        total_col="Total_xCS",
-        total_fmt=lambda v: f"{v*100:.0f}%",
-        table_id="tbl_xcs",
-    )
-    _tbl_h = 50 + len(df_d) * 42
-    components.html(html, height=_tbl_h, scrolling=False)
-
-# ── Tab 4: Team Ratings ───────────────────────────────────────────────────────
-with tab4:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Strength Map</span>'
-        '<span style="font-size:12px;color:#555">right = better defence · up = better attack</span></div>',
-        unsafe_allow_html=True
-    )
-
-    pl_ratings = ratings_df[ratings_df["Team"].isin(PREMIER_LEAGUE_TEAMS)].copy()
-
-    if pl_ratings.empty:
-        st.warning("No PL teams found in ratings file.")
-    elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
-        st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
-    else:
-        plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
-        plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
-            plot_df["Team"].str[:3].str.upper())
-        plot_df["club_bg"]   = plot_df["Team"].apply(
-            lambda t: CLUB_COLORS.get(t, {"bg":"#444444"})["bg"])
-        plot_df["club_text"] = plot_df["Team"].apply(
-            lambda t: CLUB_COLORS.get(t, {"text":"#ffffff"}).get("text","#ffffff"))
-
-        pad_x = (plot_df["Def Score"].max() - plot_df["Def Score"].min()) * 0.14
-        pad_y = (plot_df["Off Score"].max() - plot_df["Off Score"].min()) * 0.20
-        x_min = plot_df["Def Score"].min() - pad_x
-        x_max = plot_df["Def Score"].max() + pad_x
-        y_min = plot_df["Off Score"].min() - pad_y
-        y_max = plot_df["Off Score"].max() + pad_y
-        x_avg = plot_df["Def Score"].mean()
-        y_avg = plot_df["Off Score"].mean()
-        y_range = y_max - y_min
-
-        fig = go.Figure()
-
-        # Quadrant lines
-        for shape_args in [
-            dict(x0=x_avg, x1=x_avg, y0=y_min, y1=y_max),
-            dict(x0=x_min, x1=x_max, y0=y_avg, y1=y_avg),
-        ]:
-            fig.add_shape(type="line", **shape_args,
-                          line=dict(color="rgba(255,255,255,0.08)", width=1, dash="dot"))
-
-        # ── Circle badges ──────────────────────────────────────────────────────
-        # Two layers: large circle (club colour) + abbreviation text centred
-        for _, row in plot_df.iterrows():
-            bg   = row["club_bg"]
-            fg   = row["club_text"]
-            abbr = row["Abbr"]
-            team = row["Team"]
-            x    = row["Def Score"]
-            y    = row["Off Score"]
-
-            # Circle marker with text
-            fig.add_trace(go.Scatter(
-                x=[x], y=[y],
-                mode="markers+text",
-                marker=dict(
-                    size=42,
-                    color=bg,
-                    symbol="circle",
-                    line=dict(color="rgba(255,255,255,0.15)", width=1.5),
-                ),
-                text=[f"<b>{abbr}</b>"],
-                textfont=dict(color=fg, size=10, family="'Arial Black', Arial, sans-serif"),
-                textposition="middle center",
-                name=team,
-                showlegend=False,
-                hovertemplate=(
-                    f"<b>{team}</b><br>"
-                    f"⚔️ Attack: {y:.2f}<br>"
-                    f"🛡️ Defence: {x:.2f}<extra></extra>"
-                ),
-            ))
-
-        # Corner watermarks
-        ann = dict(showarrow=False, font=dict(size=9, color="rgba(255,255,255,0.12)"))
-        fig.add_annotation(x=x_max, y=y_max, text="ELITE",           xanchor="right", yanchor="top",    **ann)
-        fig.add_annotation(x=x_min, y=y_max, text="ATTACK",          xanchor="left",  yanchor="top",    **ann)
-        fig.add_annotation(x=x_max, y=y_min, text="SOLID DEFENCE",   xanchor="right", yanchor="bottom", **ann)
-        fig.add_annotation(x=x_min, y=y_min, text="STRUGGLING",      xanchor="left",  yanchor="bottom", **ann)
-
-        fig.update_layout(
-            paper_bgcolor="#0d1117",
-            plot_bgcolor="#0d1117",
-            font=dict(color="#cccccc", family="sans-serif", size=12),
-            xaxis=dict(
-                title=dict(text="Better Defence →", font=dict(size=12, color="#555")),
-                range=[x_min, x_max], showgrid=False, zeroline=False, showline=False,
-                tickfont=dict(size=10, color="#444"),
-            ),
-            yaxis=dict(
-                title=dict(text="Better Attack ↑", font=dict(size=12, color="#555")),
-                range=[y_min, y_max], showgrid=False, zeroline=False, showline=False,
-                tickfont=dict(size=10, color="#444"),
-            ),
-            margin=dict(l=55, r=25, t=15, b=55),
-            height=560,
-            hovermode="closest",
-        )
-        st.plotly_chart(fig, use_container_width=True)
-
-        # ── Ranking table ──────────────────────────────────────────────────────
-        rank_df = plot_df[["Team","Abbr","Off Score","Def Score"]].copy()
-        off_max = rank_df["Off Score"].max()
-        def_max = rank_df["Def Score"].max()
-        rank_df["Overall"] = ((rank_df["Off Score"]/off_max + rank_df["Def Score"]/def_max)/2*100).round(1)
-        rank_df = rank_df.sort_values("Overall", ascending=False).reset_index(drop=True)
-
-        rows_html = ""
-        for i, row in rank_df.iterrows():
-            bg, fg = club_style(row["Team"])
-            medal  = ["🥇","🥈","🥉"][i] if i < 3 else f"{i+1}"
-            dot = (f'<span style="display:inline-block;width:9px;height:9px;border-radius:50%;'
-                   f'background:{bg};margin-right:8px;vertical-align:middle"></span>')
-            rows_html += (
-                f'<tr onmouseover="this.style.background=\'#161b22\'" onmouseout="this.style.background=\'transparent\'">'
-                f'<td style="width:4px;background:{bg};padding:0"></td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:13px">{medal}</td>'
-                f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:13px">{dot}{row["Team"]}</td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#50c369;font-size:13px;font-weight:600">{row["Off Score"]:.2f}</td>'
-                f'<td style="padding:6px 10px;text-align:center;color:#6CABDD;font-size:13px;font-weight:600">{row["Def Score"]:.2f}</td>'
-                f'<td style="padding:6px 10px;text-align:center;font-weight:700;color:#f4a261;font-size:13px">{row["Overall"]:.1f}</td>'
-                f'</tr>'
-            )
+# ────────────────────────────────────────────────────────────────────────────
+if nav_cat == "📊 Planning":
+    # ── Tab 1: FDR ────────────────────────────────────────────────────────────────
+    with tab1:
         st.markdown(
-            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:12px">'
-            '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
-            '<thead style="background:#161b22"><tr>'
-            '<th style="width:4px;padding:0"></th>'
-            '<th style="padding:6px 10px;color:#444;font-size:11px;font-weight:600;text-align:center">#</th>'
-            '<th style="padding:6px 10px;color:#666;font-size:11px;font-weight:600;text-align:left">TEAM</th>'
-            '<th style="padding:6px 10px;color:#50c369;font-size:11px;font-weight:600;text-align:center">⚔️ ATTACK</th>'
-            '<th style="padding:6px 10px;color:#6CABDD;font-size:11px;font-weight:600;text-align:center">🛡️ DEFENCE</th>'
-            '<th style="padding:6px 10px;color:#f4a261;font-size:11px;font-weight:600;text-align:center">OVERALL %</th>'
-            f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Fixture Difficulty</span>'
+            '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
+            unsafe_allow_html=True
+        )
+        # Legend
+        legend_items = [
+            ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
+            ("#2e2e2e","#999","3 Neutral"),
+            ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
+            ("#111","#c0392b","BGW"),
+        ]
+        legend_html = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+        for bg, fg, lbl in legend_items:
+            legend_html += (f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;'
+                            f'font-size:11px;font-weight:700">{lbl}</span>')
+        legend_html += '</div>'
+        st.markdown(legend_html, unsafe_allow_html=True)
+
+        df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
+        df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
+        df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
+
+        html = _heatmap_table(
+            df_d, gw_columns,
+            value_key="fdr",
+            label_fn=lambda c: c.get("display","?"),
+            color_fn=_fdr_color,
+            total_col="Total_Difficulty",
+            total_fmt=lambda v: f"{v:.0f}",
+            table_id="tbl_fdr",
+        )
+        _tbl_h = 50 + len(df_d) * 42
+        components.html(html, height=_tbl_h, scrolling=False)
+
+    # ── Tab 2: xG ─────────────────────────────────────────────────────────────────
+    with tab2:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Expected Goals (xG)</span>'
+            '<span style="font-size:12px;color:#555">higher = better for attackers · sorted by total</span></div>',
+            unsafe_allow_html=True
+        )
+        legend_items_xg = [
+            ("#1a7a4a","#fff","≥ 2.2"), ("#2da65c","#fff","≥ 1.8"),
+            ("#50c369","#0d1117","≥ 1.4"), ("#2e4a38","#a8d8a8","≥ 1.0"),
+            ("#1c1c1c","#555","< 1.0"), ("#111","#c0392b","BGW"),
+        ]
+        lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+        for bg, fg, lbl in legend_items_xg:
+            lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
+        lh += '</div>'
+        st.markdown(lh, unsafe_allow_html=True)
+
+        df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
+        df_d = df_d[["Team","Total xG"] + gw_columns].copy()
+        df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
+
+        html = _heatmap_table(
+            df_d, gw_columns,
+            value_key="xG",
+            label_fn=lambda c: f"{c.get('xG',0):.2f}",
+            color_fn=_xg_color,
+            total_col="Total_xG",
+            total_fmt=lambda v: f"{v:.2f}",
+            table_id="tbl_xg",
+        )
+        _tbl_h = 50 + len(df_d) * 42
+        components.html(html, height=_tbl_h, scrolling=False)
+
+    # ── Tab 3: xCS ────────────────────────────────────────────────────────────────
+    with tab3:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Clean Sheet % (xCS)</span>'
+            '<span style="font-size:12px;color:#555">higher = better for defenders & keepers · sorted by total</span></div>',
+            unsafe_allow_html=True
+        )
+        legend_items_cs = [
+            ("#00ff85","#0d1117","≥ 50%"), ("#50c369","#0d1117","≥ 40%"),
+            ("#2e4a38","#a8d8a8","≥ 28%"), ("#2e2e2e","#888","≥ 18%"),
+            ("#4a2060","#cc99ee","≥ 10%"), ("#6f2a74","#fff","< 10%"),
+            ("#111","#c0392b","BGW"),
+        ]
+        lh = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+        for bg, fg, lbl in legend_items_cs:
+            lh += f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700">{lbl}</span>'
+        lh += '</div>'
+        st.markdown(lh, unsafe_allow_html=True)
+
+        df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
+        df_d = df_d[["Team","xCS"] + gw_columns].copy()
+        df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
+
+        html = _heatmap_table(
+            df_d, gw_columns,
+            value_key="CS",
+            label_fn=lambda c: f"{c.get('CS',0)*100:.0f}%",
+            color_fn=_xcs_color,
+            total_col="Total_xCS",
+            total_fmt=lambda v: f"{v*100:.0f}%",
+            table_id="tbl_xcs",
+        )
+        _tbl_h = 50 + len(df_d) * 42
+        components.html(html, height=_tbl_h, scrolling=False)
+
+    # ── Tab 4: Team Ratings ───────────────────────────────────────────────────────
+    with tab4:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Strength Map</span>'
+            '<span style="font-size:12px;color:#555">right = better defence · up = better attack</span></div>',
             unsafe_allow_html=True
         )
 
-# ── Solio branding helper ─────────────────────────────────────────────────────
-def _solio_credit_bar():
-    import base64
-    logo_b64 = ""
-    try:
-        with open("Solio_Logo_Neg_RGB.png", "rb") as f:
-            logo_b64 = base64.b64encode(f.read()).decode()
-        img_tag = (f'<img src="data:image/png;base64,{logo_b64}" '
-                   f'style="height:22px;vertical-align:middle;margin-right:10px;opacity:0.9">')
-    except:
-        img_tag = '<span style="font-weight:800;color:#fff;font-size:13px;margin-right:10px;letter-spacing:1px">SOLIO</span>'
-    return (
-        '<div style="display:flex;align-items:center;justify-content:space-between;' 
-        'background:#111;border:1px solid #222;border-radius:6px;' 
-        'padding:8px 14px;margin-bottom:14px">' 
-        '<div style="display:flex;align-items:center">' 
-        f'{img_tag}'
-        '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
-        '</div>' 
-        '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
-        'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
-        'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
-        '</div>'
-    )
+        pl_ratings = ratings_df[ratings_df["Team"].isin(PREMIER_LEAGUE_TEAMS)].copy()
 
-SOLIO_NO_FILE_MSG = (
-    "\ud83d\udcc2 **{filename} not found.**\n\n"
-    "Download from [Solio Analytics](https://www.solioanalytics.com) "
-    "and place it in your app folder alongside `app.py`."
-)
-
-# ── Tab 5: Captain Picks ──────────────────────────────────────────────────────
-with tab5:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🎯 Captain Picks</span>' 
-        '<span style="font-size:12px;color:#444">Top 2 EV + 1 Differential per gameweek</span></div>',
-        unsafe_allow_html=True
-    )
-    st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
-
-    if proj_df is None:
-        st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
-    elif master_df_full is None:
-        st.error("Could not build fixture data.")
-    else:
-        gw_sel = st.selectbox("Select GW:", future_gws, key="cap_gw")
-        picks  = get_captain_picks(proj_df, eo_df, gw_sel, master_df_full, bootstrap)
-
-        if not picks:
-            st.warning(f"No projection data for GW{gw_sel}.")
+        if pl_ratings.empty:
+            st.warning("No PL teams found in ratings file.")
+        elif "Off Score" not in pl_ratings.columns or "Def Score" not in pl_ratings.columns:
+            st.warning("Ratings file must have 'Off Score' and 'Def Score' columns.")
         else:
-            TYPE_STYLE = {
-                "🏆 Top Pick":     ("#0a2818", "#5fffb0"),
-                "🥈 2nd Pick":     ("#0a1a2b", "#5aabff"),
-                "🎯 Differential": ("#2b1a00", "#ffaa33"),
-            }
-            card_cols = st.columns(len(picks))
-            for col, p in zip(card_cols, picks):
-                label_bg, label_fg = TYPE_STYLE.get(p["PickType"], ("#222", "#fff"))
-                fdr_bg = FDR_BG.get(p["FDR"], "#444")
-                fdr_fg = FDR_FG.get(p["FDR"], "#fff")
-                club_bg, club_fg = club_style(p["Team"])
-                eo_str = f"{p['EO%']}%" if p.get("EO%") is not None else "—"
+            plot_df = pl_ratings[["Team","Off Score","Def Score"]].copy()
+            plot_df["Abbr"] = plot_df["Team"].map(TEAM_ABBREVIATIONS).fillna(
+                plot_df["Team"].str[:3].str.upper())
+            plot_df["club_bg"]   = plot_df["Team"].apply(
+                lambda t: CLUB_COLORS.get(t, {"bg":"#444444"})["bg"])
+            plot_df["club_text"] = plot_df["Team"].apply(
+                lambda t: CLUB_COLORS.get(t, {"text":"#ffffff"}).get("text","#ffffff"))
 
-                initials = "".join(w[0].upper() for w in p["Name"].replace(".", " ").split() if w)[:2] or "?"
-                if p["photo"]:
-                    img_html = (
-                        f'<div style="width:80px;margin:0 auto 8px auto">'
-                        f'<img src="{p["photo"]}" '
-                        f'style="width:80px;height:100px;object-fit:cover;object-position:top;'
-                        f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block" '
-                        f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
-                        f'<div style="width:80px;height:100px;border-radius:8px;'
-                        f'background:rgba(0,0,0,0.25);display:none;align-items:center;'
-                        f'justify-content:center;font-size:28px;font-weight:800;'
-                        f'color:{club_fg};border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
-                        f'</div>'
-                    )
-                else:
-                    img_html = (
-                        f'<div style="width:80px;height:100px;border-radius:8px;margin:0 auto 8px auto;'
-                        f'background:rgba(0,0,0,0.25);display:flex;align-items:center;'
-                        f'justify-content:center;font-size:28px;font-weight:800;'
-                        f'color:{club_fg};opacity:0.7;'
-                        f'border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
-                    )
+            pad_x = (plot_df["Def Score"].max() - plot_df["Def Score"].min()) * 0.14
+            pad_y = (plot_df["Off Score"].max() - plot_df["Off Score"].min()) * 0.20
+            x_min = plot_df["Def Score"].min() - pad_x
+            x_max = plot_df["Def Score"].max() + pad_x
+            y_min = plot_df["Off Score"].min() - pad_y
+            y_max = plot_df["Off Score"].max() + pad_y
+            x_avg = plot_df["Def Score"].mean()
+            y_avg = plot_df["Off Score"].mean()
+            y_range = y_max - y_min
 
-                card = (
-                    f'<div style="border-radius:10px;overflow:hidden;margin:4px;' 
-                    f'border:1px solid #222;box-shadow:0 2px 12px rgba(0,0,0,0.5)">' 
-                    f'<div style="background:{label_bg};color:{label_fg};padding:7px 12px;' 
-                    f'font-size:11px;font-weight:700;text-align:center;' 
-                    f'letter-spacing:.6px;border-bottom:1px solid #222">{p["PickType"]}</div>' 
-                    f'<div style="background:{club_bg};color:{club_fg};padding:16px 12px;text-align:center">' 
-                    f'{img_html}' 
-                    f'<div style="font-size:17px;font-weight:800;letter-spacing:.3px">{p["Name"]}</div>' 
-                    f'<div style="font-size:11px;opacity:0.75;margin-top:2px">{p["Team"]} &middot; {p["Pos"]}</div>' 
-                    f'<div style="font-size:26px;font-weight:800;margin:10px 0 6px">{p["EV"]} ' 
-                    f'<span style="font-size:13px;font-weight:400;opacity:0.8">pts</span></div>' 
-                    f'<div style="display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap">' 
-                    f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:4px;' 
-                    f'padding:2px 9px;font-size:12px;font-weight:700">{p["Fixture"]}</span>' 
-                    f'<span style="background:rgba(0,0,0,0.25);color:{club_fg};border-radius:4px;' 
-                    f'padding:2px 9px;font-size:12px;opacity:0.85">EO {eo_str}</span>' 
-                    f'</div></div></div>'
+            fig = go.Figure()
+
+            # Quadrant lines
+            for shape_args in [
+                dict(x0=x_avg, x1=x_avg, y0=y_min, y1=y_max),
+                dict(x0=x_min, x1=x_max, y0=y_avg, y1=y_avg),
+            ]:
+                fig.add_shape(type="line", **shape_args,
+                              line=dict(color="rgba(255,255,255,0.08)", width=1, dash="dot"))
+
+            # ── Circle badges ──────────────────────────────────────────────────────
+            # Two layers: large circle (club colour) + abbreviation text centred
+            for _, row in plot_df.iterrows():
+                bg   = row["club_bg"]
+                fg   = row["club_text"]
+                abbr = row["Abbr"]
+                team = row["Team"]
+                x    = row["Def Score"]
+                y    = row["Off Score"]
+
+                # Circle marker with text
+                fig.add_trace(go.Scatter(
+                    x=[x], y=[y],
+                    mode="markers+text",
+                    marker=dict(
+                        size=42,
+                        color=bg,
+                        symbol="circle",
+                        line=dict(color="rgba(255,255,255,0.15)", width=1.5),
+                    ),
+                    text=[f"<b>{abbr}</b>"],
+                    textfont=dict(color=fg, size=10, family="'Arial Black', Arial, sans-serif"),
+                    textposition="middle center",
+                    name=team,
+                    showlegend=False,
+                    hovertemplate=(
+                        f"<b>{team}</b><br>"
+                        f"⚔️ Attack: {y:.2f}<br>"
+                        f"🛡️ Defence: {x:.2f}<extra></extra>"
+                    ),
+                ))
+
+            # Corner watermarks
+            ann = dict(showarrow=False, font=dict(size=9, color="rgba(255,255,255,0.12)"))
+            fig.add_annotation(x=x_max, y=y_max, text="ELITE",           xanchor="right", yanchor="top",    **ann)
+            fig.add_annotation(x=x_min, y=y_max, text="ATTACK",          xanchor="left",  yanchor="top",    **ann)
+            fig.add_annotation(x=x_max, y=y_min, text="SOLID DEFENCE",   xanchor="right", yanchor="bottom", **ann)
+            fig.add_annotation(x=x_min, y=y_min, text="STRUGGLING",      xanchor="left",  yanchor="bottom", **ann)
+
+            fig.update_layout(
+                paper_bgcolor="#0d1117",
+                plot_bgcolor="#0d1117",
+                font=dict(color="#cccccc", family="sans-serif", size=12),
+                xaxis=dict(
+                    title=dict(text="Better Defence →", font=dict(size=12, color="#555")),
+                    range=[x_min, x_max], showgrid=False, zeroline=False, showline=False,
+                    tickfont=dict(size=10, color="#444"),
+                ),
+                yaxis=dict(
+                    title=dict(text="Better Attack ↑", font=dict(size=12, color="#555")),
+                    range=[y_min, y_max], showgrid=False, zeroline=False, showline=False,
+                    tickfont=dict(size=10, color="#444"),
+                ),
+                margin=dict(l=55, r=25, t=15, b=55),
+                height=560,
+                hovermode="closest",
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
+            # ── Ranking table ──────────────────────────────────────────────────────
+            rank_df = plot_df[["Team","Abbr","Off Score","Def Score"]].copy()
+            off_max = rank_df["Off Score"].max()
+            def_max = rank_df["Def Score"].max()
+            rank_df["Overall"] = ((rank_df["Off Score"]/off_max + rank_df["Def Score"]/def_max)/2*100).round(1)
+            rank_df = rank_df.sort_values("Overall", ascending=False).reset_index(drop=True)
+
+            rows_html = ""
+            for i, row in rank_df.iterrows():
+                bg, fg = club_style(row["Team"])
+                medal  = ["🥇","🥈","🥉"][i] if i < 3 else f"{i+1}"
+                dot = (f'<span style="display:inline-block;width:9px;height:9px;border-radius:50%;'
+                       f'background:{bg};margin-right:8px;vertical-align:middle"></span>')
+                rows_html += (
+                    f'<tr onmouseover="this.style.background=\'#161b22\'" onmouseout="this.style.background=\'transparent\'">'
+                    f'<td style="width:4px;background:{bg};padding:0"></td>'
+                    f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:13px">{medal}</td>'
+                    f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:13px">{dot}{row["Team"]}</td>'
+                    f'<td style="padding:6px 10px;text-align:center;color:#50c369;font-size:13px;font-weight:600">{row["Off Score"]:.2f}</td>'
+                    f'<td style="padding:6px 10px;text-align:center;color:#6CABDD;font-size:13px;font-weight:600">{row["Def Score"]:.2f}</td>'
+                    f'<td style="padding:6px 10px;text-align:center;font-weight:700;color:#f4a261;font-size:13px">{row["Overall"]:.1f}</td>'
+                    f'</tr>'
                 )
-                col.markdown(card, unsafe_allow_html=True)
-
-# ── Tab 6: Captain Matrix ─────────────────────────────────────────────────────
-with tab6:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🏅 Captain Matrix</span>' 
-        '<span style="font-size:12px;color:#444">within 0.5 EV of top pick per gameweek</span></div>',
-        unsafe_allow_html=True
-    )
-    st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
-
-    if proj_df is None:
-        st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
-    elif master_df_full is None:
-        st.error("Fixture data unavailable.")
-    else:
-        matrix_gws = st.multiselect(
-            "Show GWs:", future_gws,
-            default=future_gws,
-            key="matrix_gws"
-        )
-        if matrix_gws:
-            matrix = get_captain_matrix(proj_df, eo_df, matrix_gws, master_df_full, bootstrap)
-
-            # Compact no-scroll layout: fixed-width columns, small cells, no photos
-            n_cols  = len(matrix_gws)
-            col_pct = f"{100 / n_cols:.2f}%"
-
-            header = "".join(
-                f'<th style="background:#0d1117;color:#aaa;padding:6px 4px;'
-                f'border-bottom:2px solid #222;text-align:center;width:{col_pct};'
-                f'font-size:10px;font-weight:700;letter-spacing:.5px;'
-                f'font-family:sans-serif">GW{gw}</th>'
-                for gw in matrix_gws
+            st.markdown(
+                '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:12px">'
+                '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+                '<thead style="background:#161b22"><tr>'
+                '<th style="width:4px;padding:0"></th>'
+                '<th style="padding:6px 10px;color:#444;font-size:11px;font-weight:600;text-align:center">#</th>'
+                '<th style="padding:6px 10px;color:#666;font-size:11px;font-weight:600;text-align:left">TEAM</th>'
+                '<th style="padding:6px 10px;color:#50c369;font-size:11px;font-weight:600;text-align:center">⚔️ ATTACK</th>'
+                '<th style="padding:6px 10px;color:#6CABDD;font-size:11px;font-weight:600;text-align:center">🛡️ DEFENCE</th>'
+                '<th style="padding:6px 10px;color:#f4a261;font-size:11px;font-weight:600;text-align:center">OVERALL %</th>'
+                f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
+                unsafe_allow_html=True
             )
 
-            max_rows = max((len(matrix.get(gw, [])) for gw in matrix_gws), default=0)
-            body = ""
-            for ri in range(max_rows):
-                row_html = ""
-                for gw in matrix_gws:
-                    rows_gw = matrix.get(gw, [])
-                    if ri < len(rows_gw):
-                        r      = rows_gw[ri]
-                        bg     = r["club_bg"]
-                        fg     = r["club_fg"]
-                        fdr_b  = FDR_BG.get(r["FDR"], "#444")
-                        fdr_f  = FDR_FG.get(r["FDR"], "#fff")
-                        is_top = ri == 0
-                        name_w = "font-weight:800" if is_top else "font-weight:600"
-                        eo_str = f"EO {r['EO%']}%" if r.get("EO%") is not None else ""
-                        # Shorten name: last word or max 9 chars
-                        parts = r["Name"].replace(".", " ").split()
-                        short_name = parts[-1] if parts else r["Name"]
-                        if len(short_name) > 9:
-                            short_name = short_name[:8] + "…"
-                        # Compact photo (24x30) or initials fallback
-                        initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2] or "?"
-                        if r.get("photo"):
-                            img_tag = (
-                                f'<img src="{r["photo"]}" '
-                                f'style="width:24px;height:30px;object-fit:cover;object-position:top;'
-                                f'border-radius:3px;flex-shrink:0;vertical-align:middle" '
-                                f'onerror="this.style.display=\'none\'">'
-                            )
-                        else:
-                            img_tag = (
-                                f'<span style="display:inline-flex;width:24px;height:30px;flex-shrink:0;'
-                                f'border-radius:3px;background:rgba(0,0,0,0.3);align-items:center;'
-                                f'justify-content:center;font-size:9px;font-weight:800;color:{fg}">{initials_m}</span>'
-                            )
+    # ── Solio branding helper ─────────────────────────────────────────────────────
+    def _solio_credit_bar():
+        import base64
+        logo_b64 = ""
+        try:
+            with open("Solio_Logo_Neg_RGB.png", "rb") as f:
+                logo_b64 = base64.b64encode(f.read()).decode()
+            img_tag = (f'<img src="data:image/png;base64,{logo_b64}" '
+                       f'style="height:22px;vertical-align:middle;margin-right:10px;opacity:0.9">')
+        except:
+            img_tag = '<span style="font-weight:800;color:#fff;font-size:13px;margin-right:10px;letter-spacing:1px">SOLIO</span>'
+        return (
+            '<div style="display:flex;align-items:center;justify-content:space-between;' 
+            'background:#111;border:1px solid #222;border-radius:6px;' 
+            'padding:8px 14px;margin-bottom:14px">' 
+            '<div style="display:flex;align-items:center">' 
+            f'{img_tag}'
+            '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
+            '</div>' 
+            '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
+            'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
+            'padding:4px 12px;border-radius:4px;text-decoration:none;' 
+            'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
+            '</div>'
+        )
 
-                        row_html += (
-                            f'<td style="padding:4px 5px;border:1px solid #1a1a1a;'
-                            f'background:{bg};vertical-align:middle;width:{col_pct}">'
-                            f'<div style="display:flex;align-items:center;gap:4px">'
-                            f'{img_tag}'
-                            f'<div style="min-width:0;flex:1;overflow:hidden">'
-                            f'<div style="color:{fg};{name_w};font-size:10.5px;'
-                            f'font-family:sans-serif;white-space:nowrap;overflow:hidden;'
-                            f'text-overflow:ellipsis;line-height:1.2">{short_name}</div>'
-                            f'<div style="display:flex;align-items:center;gap:2px;margin-top:2px">'
-                            f'<span style="background:{fdr_b};color:{fdr_f};border-radius:2px;'
-                            f'padding:0px 3px;font-size:8.5px;font-weight:700;white-space:nowrap">{r["Fixture"]}</span>'
-                            f'<span style="color:{fg};font-weight:800;font-size:10px;white-space:nowrap">{r["EV"]}</span>'
+    SOLIO_NO_FILE_MSG = (
+        "\ud83d\udcc2 **{filename} not found.**\n\n"
+        "Download from [Solio Analytics](https://www.solioanalytics.com) "
+        "and place it in your app folder alongside `app.py`."
+    )
+
+
+# ────────────────────────────────────────────────────────────────────────────
+elif nav_cat == "🎯 Captain & Picks":
+    # ── Tab 5: Captain Picks ──────────────────────────────────────────────────────
+    with tab5:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🎯 Captain Picks</span>' 
+            '<span style="font-size:12px;color:#444">Top 2 EV + 1 Differential per gameweek</span></div>',
+            unsafe_allow_html=True
+        )
+        st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
+
+        if proj_df is None:
+            st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
+        elif master_df_full is None:
+            st.error("Could not build fixture data.")
+        else:
+            gw_sel = st.selectbox("Select GW:", future_gws, key="cap_gw")
+            picks  = get_captain_picks(proj_df, eo_df, gw_sel, master_df_full, bootstrap)
+
+            if not picks:
+                st.warning(f"No projection data for GW{gw_sel}.")
+            else:
+                TYPE_STYLE = {
+                    "🏆 Top Pick":     ("#0a2818", "#5fffb0"),
+                    "🥈 2nd Pick":     ("#0a1a2b", "#5aabff"),
+                    "🎯 Differential": ("#2b1a00", "#ffaa33"),
+                }
+                card_cols = st.columns(len(picks))
+                for col, p in zip(card_cols, picks):
+                    label_bg, label_fg = TYPE_STYLE.get(p["PickType"], ("#222", "#fff"))
+                    fdr_bg = FDR_BG.get(p["FDR"], "#444")
+                    fdr_fg = FDR_FG.get(p["FDR"], "#fff")
+                    club_bg, club_fg = club_style(p["Team"])
+                    eo_str = f"{p['EO%']}%" if p.get("EO%") is not None else "—"
+
+                    initials = "".join(w[0].upper() for w in p["Name"].replace(".", " ").split() if w)[:2] or "?"
+                    if p["photo"]:
+                        img_html = (
+                            f'<div style="width:80px;margin:0 auto 8px auto">'
+                            f'<img src="{p["photo"]}" '
+                            f'style="width:80px;height:100px;object-fit:cover;object-position:top;'
+                            f'border-radius:8px;border:2px solid rgba(255,255,255,0.15);display:block" '
+                            f'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">'
+                            f'<div style="width:80px;height:100px;border-radius:8px;'
+                            f'background:rgba(0,0,0,0.25);display:none;align-items:center;'
+                            f'justify-content:center;font-size:28px;font-weight:800;'
+                            f'color:{club_fg};border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
                             f'</div>'
-                            f'<div style="color:{fg};font-size:8px;opacity:0.6;white-space:nowrap">{eo_str}</div>'
-                            f'</div></div>'
-                            f'</td>'
                         )
                     else:
-                        row_html += f'<td style="border:1px solid #1a1a1a;background:#0a0a0a;width:{col_pct}"></td>'
-                body += f"<tr>{row_html}</tr>"
+                        img_html = (
+                            f'<div style="width:80px;height:100px;border-radius:8px;margin:0 auto 8px auto;'
+                            f'background:rgba(0,0,0,0.25);display:flex;align-items:center;'
+                            f'justify-content:center;font-size:28px;font-weight:800;'
+                            f'color:{club_fg};opacity:0.7;'
+                            f'border:2px solid rgba(255,255,255,0.15)">{initials}</div>'
+                        )
 
-            html = (
-                f'<div style="border-radius:8px;border:1px solid #1e1e1e;margin-top:4px">'
-                f'<table style="border-collapse:collapse;width:100%;table-layout:fixed;background:#0d1117">'
-                f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
-                f'<tbody>{body}</tbody>'
-                f'</table></div>'
-            )
-            st.markdown(html, unsafe_allow_html=True)
-            st.caption("Top row = highest EV · Colour = club · FDR badge = custom ratings · EO = Solio expected ownership")
+                    card = (
+                        f'<div style="border-radius:10px;overflow:hidden;margin:4px;' 
+                        f'border:1px solid #222;box-shadow:0 2px 12px rgba(0,0,0,0.5)">' 
+                        f'<div style="background:{label_bg};color:{label_fg};padding:7px 12px;' 
+                        f'font-size:11px;font-weight:700;text-align:center;' 
+                        f'letter-spacing:.6px;border-bottom:1px solid #222">{p["PickType"]}</div>' 
+                        f'<div style="background:{club_bg};color:{club_fg};padding:16px 12px;text-align:center">' 
+                        f'{img_html}' 
+                        f'<div style="font-size:17px;font-weight:800;letter-spacing:.3px">{p["Name"]}</div>' 
+                        f'<div style="font-size:11px;opacity:0.75;margin-top:2px">{p["Team"]} &middot; {p["Pos"]}</div>' 
+                        f'<div style="font-size:26px;font-weight:800;margin:10px 0 6px">{p["EV"]} ' 
+                        f'<span style="font-size:13px;font-weight:400;opacity:0.8">pts</span></div>' 
+                        f'<div style="display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap">' 
+                        f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:4px;' 
+                        f'padding:2px 9px;font-size:12px;font-weight:700">{p["Fixture"]}</span>' 
+                        f'<span style="background:rgba(0,0,0,0.25);color:{club_fg};border-radius:4px;' 
+                        f'padding:2px 9px;font-size:12px;opacity:0.85">EO {eo_str}</span>' 
+                        f'</div></div></div>'
+                    )
+                    col.markdown(card, unsafe_allow_html=True)
 
-
-# ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
-# ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
-with tab7:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📋 Cheatsheet</span>'
-        '<span style="font-size:12px;color:#444">GW strategy notes</span></div>',
-        unsafe_allow_html=True
-    )
-
-    # Load from cheatsheet.json in same folder as app.py
-    import json, os
-
-    CHEATSHEET_FILE = "cheatsheet.json"
-
-    def load_cheatsheet():
-        if os.path.exists(CHEATSHEET_FILE):
-            try:
-                with open(CHEATSHEET_FILE, "r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                return {}
-        return {}
-
-    cs_data = load_cheatsheet()
-
-    view_gw = st.selectbox(
-        "Select Gameweek",
-        options=list(range(1, 39)),
-        index=current_gw - 1,
-        key="cs_view_gw",
-        label_visibility="collapsed",
-    )
-
-    gw_key   = f"gw{view_gw}"
-    gw_notes = cs_data.get(gw_key, {})
-
-    if not gw_notes:
+    # ── Tab 6: Captain Matrix ─────────────────────────────────────────────────────
+    with tab6:
         st.markdown(
-            f'<div style="background:#111;border:1px dashed #222;border-radius:8px;'
-            f'padding:32px;text-align:center;color:#444;font-size:14px">'
-            f'No cheatsheet found for GW{view_gw}.<br>'
-            f'<span style="font-size:12px;color:#333">Add a <code style="color:#555">gw{view_gw}</code> '
-            f'entry in <code style="color:#555">cheatsheet.json</code></span>'
-            f'</div>',
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">' 
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🏅 Captain Matrix</span>' 
+            '<span style="font-size:12px;color:#444">within 0.5 EV of top pick per gameweek</span></div>',
             unsafe_allow_html=True
         )
-    else:
-        # Render each section
-        SECTION_ICONS = {
-            "disclaimer":  ("⚠️", "#2b1a00", "#1px solid #ffaa33", "#ffcc80"),
-            "general":     ("📋", None, None, None),
-            "transfers":   ("🔄", None, None, None),
-            "holds":       ("⛔", None, None, None),
-            "chips":       ("💊", None, None, None),
-            "captaincy":   ("🎯", None, None, None),
-            "notes":       ("📌", None, None, None),
-        }
+        st.markdown(_solio_credit_bar(), unsafe_allow_html=True)
 
-        html_parts = []
-
-        # If there's a top-level disclaimer string, show it first
-        if "disclaimer" in gw_notes:
-            disc = gw_notes["disclaimer"]
-            if isinstance(disc, str):
-                html_parts.append(
-                    f'<div style="background:#2b1a00;border-left:3px solid #ffaa33;'
-                    f'border-radius:4px;padding:10px 14px;color:#ffcc80;'
-                    f'font-size:12px;margin-bottom:14px;line-height:1.6">{disc}</div>'
-                )
-
-        # Render sections (skip disclaimer - already handled)
-        SECTION_ORDER = ["general","transfers","holds","chips","captaincy","notes"]
-        SECTION_LABELS = {
-            "general":   "📋 General",
-            "transfers": "🔄 Transfers",
-            "holds":     "⛔ Holds",
-            "chips":     "💊 Chips",
-            "captaincy": "🎯 Captaincy",
-            "notes":     "📌 Notes",
-        }
-
-        for section in SECTION_ORDER:
-            if section not in gw_notes:
-                continue
-            items = gw_notes[section]
-            label = SECTION_LABELS.get(section, section.title())
-
-            html_parts.append(
-                f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
-                f'margin:14px 0 6px 0;letter-spacing:.3px">{label}</div>'
+        if proj_df is None:
+            st.info(SOLIO_NO_FILE_MSG.format(filename="projections.csv"))
+        elif master_df_full is None:
+            st.error("Fixture data unavailable.")
+        else:
+            matrix_gws = st.multiselect(
+                "Show GWs:", future_gws,
+                default=future_gws,
+                key="matrix_gws"
             )
+            if matrix_gws:
+                matrix = get_captain_matrix(proj_df, eo_df, matrix_gws, master_df_full, bootstrap)
 
-            if isinstance(items, str):
-                items = [items]
+                # Compact no-scroll layout: fixed-width columns, small cells, no photos
+                n_cols  = len(matrix_gws)
+                col_pct = f"{100 / n_cols:.2f}%"
 
-            for item in items:
-                # Bold text between **...**
-                import re
-                item_html = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#fff">\1</strong>', item)
-                html_parts.append(
-                    f'<div style="display:flex;gap:10px;padding:5px 0;'
-                    f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
-                    f'<span style="color:#333;flex-shrink:0;margin-top:1px">•</span>'
-                    f'<span>{item_html}</span></div>'
+                header = "".join(
+                    f'<th style="background:#0d1117;color:#aaa;padding:6px 4px;'
+                    f'border-bottom:2px solid #222;text-align:center;width:{col_pct};'
+                    f'font-size:10px;font-weight:700;letter-spacing:.5px;'
+                    f'font-family:sans-serif">GW{gw}</th>'
+                    for gw in matrix_gws
                 )
 
-        # Any extra string keys not in standard order
-        extra_keys = [k for k in gw_notes if k not in ["disclaimer"] + SECTION_ORDER]
-        for section in extra_keys:
-            items = gw_notes[section]
-            label = section.replace("_", " ").title()
-            html_parts.append(
-                f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
-                f'margin:14px 0 6px 0">{label}</div>'
-            )
-            if isinstance(items, str):
-                items = [items]
-            for item in items:
-                html_parts.append(
-                    f'<div style="display:flex;gap:10px;padding:5px 0;'
-                    f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
-                    f'<span style="color:#333;flex-shrink:0">•</span>'
-                    f'<span>{item}</span></div>'
-                )
+                max_rows = max((len(matrix.get(gw, [])) for gw in matrix_gws), default=0)
+                body = ""
+                for ri in range(max_rows):
+                    row_html = ""
+                    for gw in matrix_gws:
+                        rows_gw = matrix.get(gw, [])
+                        if ri < len(rows_gw):
+                            r      = rows_gw[ri]
+                            bg     = r["club_bg"]
+                            fg     = r["club_fg"]
+                            fdr_b  = FDR_BG.get(r["FDR"], "#444")
+                            fdr_f  = FDR_FG.get(r["FDR"], "#fff")
+                            is_top = ri == 0
+                            name_w = "font-weight:800" if is_top else "font-weight:600"
+                            eo_str = f"EO {r['EO%']}%" if r.get("EO%") is not None else ""
+                            # Shorten name: last word or max 9 chars
+                            parts = r["Name"].replace(".", " ").split()
+                            short_name = parts[-1] if parts else r["Name"]
+                            if len(short_name) > 9:
+                                short_name = short_name[:8] + "…"
+                            # Compact photo (24x30) or initials fallback
+                            initials_m = "".join(w[0].upper() for w in r["Name"].replace(".", " ").split() if w)[:2] or "?"
+                            if r.get("photo"):
+                                img_tag = (
+                                    f'<img src="{r["photo"]}" '
+                                    f'style="width:24px;height:30px;object-fit:cover;object-position:top;'
+                                    f'border-radius:3px;flex-shrink:0;vertical-align:middle" '
+                                    f'onerror="this.style.display=\'none\'">'
+                                )
+                            else:
+                                img_tag = (
+                                    f'<span style="display:inline-flex;width:24px;height:30px;flex-shrink:0;'
+                                    f'border-radius:3px;background:rgba(0,0,0,0.3);align-items:center;'
+                                    f'justify-content:center;font-size:9px;font-weight:800;color:{fg}">{initials_m}</span>'
+                                )
 
-        card_html = (
-            f'<div style="background:#0d1117;border:1px solid #1e1e1e;'
-            f'border-radius:10px;padding:20px 22px;max-width:800px">'
-            f'<div style="font-size:10px;color:#333;font-weight:700;'
-            f'letter-spacing:.8px;margin-bottom:12px">GW{view_gw} CHEATSHEET</div>'
-            + "".join(html_parts) +
-            f'</div>'
+                            row_html += (
+                                f'<td style="padding:4px 5px;border:1px solid #1a1a1a;'
+                                f'background:{bg};vertical-align:middle;width:{col_pct}">'
+                                f'<div style="display:flex;align-items:center;gap:4px">'
+                                f'{img_tag}'
+                                f'<div style="min-width:0;flex:1;overflow:hidden">'
+                                f'<div style="color:{fg};{name_w};font-size:10.5px;'
+                                f'font-family:sans-serif;white-space:nowrap;overflow:hidden;'
+                                f'text-overflow:ellipsis;line-height:1.2">{short_name}</div>'
+                                f'<div style="display:flex;align-items:center;gap:2px;margin-top:2px">'
+                                f'<span style="background:{fdr_b};color:{fdr_f};border-radius:2px;'
+                                f'padding:0px 3px;font-size:8.5px;font-weight:700;white-space:nowrap">{r["Fixture"]}</span>'
+                                f'<span style="color:{fg};font-weight:800;font-size:10px;white-space:nowrap">{r["EV"]}</span>'
+                                f'</div>'
+                                f'<div style="color:{fg};font-size:8px;opacity:0.6;white-space:nowrap">{eo_str}</div>'
+                                f'</div></div>'
+                                f'</td>'
+                            )
+                        else:
+                            row_html += f'<td style="border:1px solid #1a1a1a;background:#0a0a0a;width:{col_pct}"></td>'
+                    body += f"<tr>{row_html}</tr>"
+
+                html = (
+                    f'<div style="border-radius:8px;border:1px solid #1e1e1e;margin-top:4px">'
+                    f'<table style="border-collapse:collapse;width:100%;table-layout:fixed;background:#0d1117">'
+                    f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+                    f'<tbody>{body}</tbody>'
+                    f'</table></div>'
+                )
+                st.markdown(html, unsafe_allow_html=True)
+                st.caption("Top row = highest EV · Colour = club · FDR badge = custom ratings · EO = Solio expected ownership")
+
+
+    # ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
+    # ── Tab 7: Cheatsheet ─────────────────────────────────────────────────────────
+    with tab7:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📋 Cheatsheet</span>'
+            '<span style="font-size:12px;color:#444">GW strategy notes</span></div>',
+            unsafe_allow_html=True
         )
-        st.markdown(card_html, unsafe_allow_html=True)
 
-    # Show how-to hint
-with tab8:
-    st.subheader("📡 Live Radar")
-    if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-    else:
-        col_a, col_b = st.columns(2)
+        # Load from cheatsheet.json in same folder as app.py
+        import json, os
 
-        with col_a:
-            st.markdown("### 📈 Ownership Movers")
-            players_live = pd.DataFrame(bootstrap["elements"])
-            movers = players_live[["web_name","selected_by_percent",
-                                    "transfers_in_event","transfers_out_event"]].copy()
-            for c in movers.columns[1:]:
-                movers[c] = pd.to_numeric(movers[c], errors="coerce")
+        CHEATSHEET_FILE = "cheatsheet.json"
 
-            st.markdown("**🔼 Most transferred IN**")
-            tin = movers.nlargest(8,"transfers_in_event")[["web_name","selected_by_percent","transfers_in_event"]]
-            tin.columns = ["Player","Sel%","In"]
-            st.dataframe(tin, hide_index=True, use_container_width=True)
+        def load_cheatsheet():
+            if os.path.exists(CHEATSHEET_FILE):
+                try:
+                    with open(CHEATSHEET_FILE, "r", encoding="utf-8") as f:
+                        return json.load(f)
+                except Exception:
+                    return {}
+            return {}
 
-            st.markdown("**🔽 Most transferred OUT**")
-            tout = movers.nlargest(8,"transfers_out_event")[["web_name","selected_by_percent","transfers_out_event"]]
-            tout.columns = ["Player","Sel%","Out"]
-            st.dataframe(tout, hide_index=True, use_container_width=True)
+        cs_data = load_cheatsheet()
 
-        with col_b:
-            st.markdown("### ⚠️ DGW / BGW Radar")
-            radar_end = st.number_input("Show up to GW:", min_value=current_gw,
-                                         max_value=38, value=min(current_gw+5, 38), key="radar_gw")
-            dgw, bgw = build_dgw_bgw(raw_fixtures, bootstrap, current_gw, radar_end)
-            if dgw:
-                st.markdown("**🟢 Double Gameweeks**")
-                for name, gws in sorted(dgw.items()):
-                    st.write(f"- **{name}**: GW{', GW'.join(map(str,gws))}")
-            else:
-                st.info("No DGWs detected.")
-            if bgw:
-                st.markdown("**🔴 Blank Gameweeks**")
-                for name, gws in sorted(bgw.items()):
-                    st.write(f"- **{name}**: GW{', GW'.join(map(str,gws))}")
-            else:
-                st.info("No BGWs detected.")
+        view_gw = st.selectbox(
+            "Select Gameweek",
+            options=list(range(1, 39)),
+            index=current_gw - 1,
+            key="cs_view_gw",
+            label_visibility="collapsed",
+        )
 
-            st.markdown("---")
-            st.markdown("### 🚑 Injuries & Availability")
-            try:
-                inj = get_injury_status(bootstrap)
-                if inj.empty:
-                    st.success("No injuries or doubts reported.")
+        gw_key   = f"gw{view_gw}"
+        gw_notes = cs_data.get(gw_key, {})
+
+        if not gw_notes:
+            st.markdown(
+                f'<div style="background:#111;border:1px dashed #222;border-radius:8px;'
+                f'padding:32px;text-align:center;color:#444;font-size:14px">'
+                f'No cheatsheet found for GW{view_gw}.<br>'
+                f'<span style="font-size:12px;color:#333">Add a <code style="color:#555">gw{view_gw}</code> '
+                f'entry in <code style="color:#555">cheatsheet.json</code></span>'
+                f'</div>',
+                unsafe_allow_html=True
+            )
+        else:
+            # Render each section
+            SECTION_ICONS = {
+                "disclaimer":  ("⚠️", "#2b1a00", "#1px solid #ffaa33", "#ffcc80"),
+                "general":     ("📋", None, None, None),
+                "transfers":   ("🔄", None, None, None),
+                "holds":       ("⛔", None, None, None),
+                "chips":       ("💊", None, None, None),
+                "captaincy":   ("🎯", None, None, None),
+                "notes":       ("📌", None, None, None),
+            }
+
+            html_parts = []
+
+            # If there's a top-level disclaimer string, show it first
+            if "disclaimer" in gw_notes:
+                disc = gw_notes["disclaimer"]
+                if isinstance(disc, str):
+                    html_parts.append(
+                        f'<div style="background:#2b1a00;border-left:3px solid #ffaa33;'
+                        f'border-radius:4px;padding:10px 14px;color:#ffcc80;'
+                        f'font-size:12px;margin-bottom:14px;line-height:1.6">{disc}</div>'
+                    )
+
+            # Render sections (skip disclaimer - already handled)
+            SECTION_ORDER = ["general","transfers","holds","chips","captaincy","notes"]
+            SECTION_LABELS = {
+                "general":   "📋 General",
+                "transfers": "🔄 Transfers",
+                "holds":     "⛔ Holds",
+                "chips":     "💊 Chips",
+                "captaincy": "🎯 Captaincy",
+                "notes":     "📌 Notes",
+            }
+
+            for section in SECTION_ORDER:
+                if section not in gw_notes:
+                    continue
+                items = gw_notes[section]
+                label = SECTION_LABELS.get(section, section.title())
+
+                html_parts.append(
+                    f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
+                    f'margin:14px 0 6px 0;letter-spacing:.3px">{label}</div>'
+                )
+
+                if isinstance(items, str):
+                    items = [items]
+
+                for item in items:
+                    # Bold text between **...**
+                    import re
+                    item_html = re.sub(r'\*\*(.+?)\*\*', r'<strong style="color:#fff">\1</strong>', item)
+                    html_parts.append(
+                        f'<div style="display:flex;gap:10px;padding:5px 0;'
+                        f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
+                        f'<span style="color:#333;flex-shrink:0;margin-top:1px">•</span>'
+                        f'<span>{item_html}</span></div>'
+                    )
+
+            # Any extra string keys not in standard order
+            extra_keys = [k for k in gw_notes if k not in ["disclaimer"] + SECTION_ORDER]
+            for section in extra_keys:
+                items = gw_notes[section]
+                label = section.replace("_", " ").title()
+                html_parts.append(
+                    f'<div style="color:#5aabff;font-size:13px;font-weight:700;'
+                    f'margin:14px 0 6px 0">{label}</div>'
+                )
+                if isinstance(items, str):
+                    items = [items]
+                for item in items:
+                    html_parts.append(
+                        f'<div style="display:flex;gap:10px;padding:5px 0;'
+                        f'color:#ccc;font-size:13px;line-height:1.5;border-bottom:1px solid #111">'
+                        f'<span style="color:#333;flex-shrink:0">•</span>'
+                        f'<span>{item}</span></div>'
+                    )
+
+            card_html = (
+                f'<div style="background:#0d1117;border:1px solid #1e1e1e;'
+                f'border-radius:10px;padding:20px 22px;max-width:800px">'
+                f'<div style="font-size:10px;color:#333;font-weight:700;'
+                f'letter-spacing:.8px;margin-bottom:12px">GW{view_gw} CHEATSHEET</div>'
+                + "".join(html_parts) +
+                f'</div>'
+            )
+            st.markdown(card_html, unsafe_allow_html=True)
+
+        # Show how-to hint
+
+# ────────────────────────────────────────────────────────────────────────────
+elif nav_cat == "👕 My FPL":
+    with tab8:
+        st.subheader("📡 Live Radar")
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        else:
+            col_a, col_b = st.columns(2)
+
+            with col_a:
+                st.markdown("### 📈 Ownership Movers")
+                players_live = pd.DataFrame(bootstrap["elements"])
+                movers = players_live[["web_name","selected_by_percent",
+                                        "transfers_in_event","transfers_out_event"]].copy()
+                for c in movers.columns[1:]:
+                    movers[c] = pd.to_numeric(movers[c], errors="coerce")
+
+                st.markdown("**🔼 Most transferred IN**")
+                tin = movers.nlargest(8,"transfers_in_event")[["web_name","selected_by_percent","transfers_in_event"]]
+                tin.columns = ["Player","Sel%","In"]
+                st.dataframe(tin, hide_index=True, use_container_width=True)
+
+                st.markdown("**🔽 Most transferred OUT**")
+                tout = movers.nlargest(8,"transfers_out_event")[["web_name","selected_by_percent","transfers_out_event"]]
+                tout.columns = ["Player","Sel%","Out"]
+                st.dataframe(tout, hide_index=True, use_container_width=True)
+
+            with col_b:
+                st.markdown("### ⚠️ DGW / BGW Radar")
+                radar_end = st.number_input("Show up to GW:", min_value=current_gw,
+                                             max_value=38, value=min(current_gw+5, 38), key="radar_gw")
+                dgw, bgw = build_dgw_bgw(raw_fixtures, bootstrap, current_gw, radar_end)
+                if dgw:
+                    st.markdown("**🟢 Double Gameweeks**")
+                    for name, gws in sorted(dgw.items()):
+                        st.write(f"- **{name}**: GW{', GW'.join(map(str,gws))}")
                 else:
-                    for label in ["🔴 Injured","⚠️ Doubt","🟡 Suspended","❌ Unavailable"]:
-                        sub = inj[inj["Status"] == label]
-                        if not sub.empty:
-                            st.markdown(f"**{label}** ({len(sub)})")
-                            st.dataframe(sub[["Player","Team","Position","Play%","News"]].reset_index(drop=True),
-                                         use_container_width=True, hide_index=True)
-            except Exception as e:
-                st.warning(f"Injury data unavailable: {e}")
+                    st.info("No DGWs detected.")
+                if bgw:
+                    st.markdown("**🔴 Blank Gameweeks**")
+                    for name, gws in sorted(bgw.items()):
+                        st.write(f"- **{name}**: GW{', GW'.join(map(str,gws))}")
+                else:
+                    st.info("No BGWs detected.")
+
+                st.markdown("---")
+                st.markdown("### 🚑 Injuries & Availability")
+                try:
+                    inj = get_injury_status(bootstrap)
+                    if inj.empty:
+                        st.success("No injuries or doubts reported.")
+                    else:
+                        for label in ["🔴 Injured","⚠️ Doubt","🟡 Suspended","❌ Unavailable"]:
+                            sub = inj[inj["Status"] == label]
+                            if not sub.empty:
+                                st.markdown(f"**{label}** ({len(sub)})")
+                                st.dataframe(sub[["Player","Team","Position","Play%","News"]].reset_index(drop=True),
+                                             use_container_width=True, hide_index=True)
+                except Exception as e:
+                    st.warning(f"Injury data unavailable: {e}")
 
 
 
 
-# =============================================================================
-# HELPERS — Team Stats & Player Stats  (100% FPL API, no external files)
-# =============================================================================
+    # =============================================================================
+    # HELPERS — Team Stats & Player Stats  (100% FPL API, no external files)
+    # =============================================================================
 
-def build_team_stats_df(bootstrap, raw_fixtures):
-    """
-    Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
-    xG/xGC from elements aggregation (most accurate source).
-    CS from main GKP per team.
-    """
-    teams_df = pd.DataFrame(bootstrap["teams"])
-    elements = pd.DataFrame(bootstrap["elements"])
-    id2name  = dict(zip(teams_df["id"], teams_df["name"]))
+    def build_team_stats_df(bootstrap, raw_fixtures):
+        """
+        Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
+        xG/xGC from elements aggregation (most accurate source).
+        CS from main GKP per team.
+        """
+        teams_df = pd.DataFrame(bootstrap["teams"])
+        elements = pd.DataFrame(bootstrap["elements"])
+        id2name  = dict(zip(teams_df["id"], teams_df["name"]))
 
-    # ── Derive table stats from completed fixtures ────────────────────────────
-    records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-               for tid in teams_df["id"]}
+        # ── Derive table stats from completed fixtures ────────────────────────────
+        records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+                   for tid in teams_df["id"]}
 
-    for f in raw_fixtures:
-        if not f.get("finished", False): continue
-        hs = f.get("team_h_score")
-        as_ = f.get("team_a_score")
-        if hs is None or as_ is None: continue
-        hs, as_ = int(hs), int(as_)
-        h, a = f["team_h"], f["team_a"]
-        for tid in (h, a):
-            if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-        records[h]["MP"] += 1; records[a]["MP"] += 1
-        records[h]["GF"] += hs; records[h]["GA"] += as_
-        records[a]["GF"] += as_; records[a]["GA"] += hs
-        if hs > as_:
-            records[h]["W"] += 1; records[h]["Pts"] += 3
-            records[a]["L"] += 1
-        elif hs < as_:
-            records[a]["W"] += 1; records[a]["Pts"] += 3
-            records[h]["L"] += 1
-        else:
-            records[h]["D"] += 1; records[h]["Pts"] += 1
-            records[a]["D"] += 1; records[a]["Pts"] += 1
+        for f in raw_fixtures:
+            if not f.get("finished", False): continue
+            hs = f.get("team_h_score")
+            as_ = f.get("team_a_score")
+            if hs is None or as_ is None: continue
+            hs, as_ = int(hs), int(as_)
+            h, a = f["team_h"], f["team_a"]
+            for tid in (h, a):
+                if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+            records[h]["MP"] += 1; records[a]["MP"] += 1
+            records[h]["GF"] += hs; records[h]["GA"] += as_
+            records[a]["GF"] += as_; records[a]["GA"] += hs
+            if hs > as_:
+                records[h]["W"] += 1; records[h]["Pts"] += 3
+                records[a]["L"] += 1
+            elif hs < as_:
+                records[a]["W"] += 1; records[a]["Pts"] += 3
+                records[h]["L"] += 1
+            else:
+                records[h]["D"] += 1; records[h]["Pts"] += 1
+                records[a]["D"] += 1; records[a]["Pts"] += 1
 
-    # ── xG for team = sum of player xG ───────────────────────────────────────
-    for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
-        if c in elements.columns:
-            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+        # ── xG for team = sum of player xG ───────────────────────────────────────
+        for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
+            if c in elements.columns:
+                elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
 
-    xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
-                  if "expected_goals" in elements.columns else {}
+        xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
+                      if "expected_goals" in elements.columns else {}
 
-    # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
-    rows = []
-    for _, t in teams_df.iterrows():
-        name = TEAM_NAME_MAP.get(t["name"], t["name"])
-        if name not in PREMIER_LEAGUE_TEAMS:
-            continue
-        tid = t["id"]
-        rec = records.get(tid, {})
-        gf  = rec.get("GF", 0)
-        ga  = rec.get("GA", 0)
-
-        # xG for team
-        xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
-
-        # xGC: expected_goals_conceded from main GKP
-        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
-        if not gkps.empty and "expected_goals_conceded" in gkps.columns:
-            gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
-            gkps["expected_goals_conceded"] = pd.to_numeric(
-                gkps["expected_goals_conceded"], errors="coerce").fillna(0)
-            xgc = round(float(gkps.sort_values("minutes", ascending=False)
-                               .iloc[0]["expected_goals_conceded"]), 1)
-        else:
-            xgc = None
-
-        # CS: clean sheets from main GKP
-        if not gkps.empty and "clean_sheets" in gkps.columns:
-            gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
-            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
-        else:
-            cs = 0
-
-        gd     = gf - ga
-        xgdiff = round(xg - xgc, 1) if xgc is not None else None
-
-        rows.append({
-            "Team":   name,
-            "MP":     rec.get("MP", 0),
-            "W":      rec.get("W",  0),
-            "D":      rec.get("D",  0),
-            "L":      rec.get("L",  0),
-            "GF":     gf,
-            "GA":     ga,
-            "GD":     gd,
-            "CS":     cs,
-            "xG":     xg,
-            "xGC":    xgc if xgc is not None else 0.0,
-            "xGDiff": xgdiff if xgdiff is not None else 0.0,
-            "Pts":    rec.get("Pts", 0),
-        })
-
-    df = pd.DataFrame(rows)
-    if not df.empty:
-        df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
-        df.insert(0, "Rk", range(1, len(df)+1))
-    return df
-
-
-# =============================================================================
-# FOTMOB SCRAPING — Team Stats & Player Stats
-# =============================================================================
-
-FOTMOB_PL_ID = 47  # Premier League on Fotmob
-
-_FOTMOB_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/120.0.0.0 Safari/537.36"
-    ),
-    "Accept": "application/json, text/plain, */*",
-    "Referer": "https://www.fotmob.com/",
-}
-
-
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_fotmob_league():
-    """Fetch Premier League overview from Fotmob (table + season info)."""
-    r = requests.get(
-        f"https://www.fotmob.com/api/leagues?id={FOTMOB_PL_ID}",
-        headers=_FOTMOB_HEADERS, timeout=15,
-    )
-    r.raise_for_status()
-    return r.json()
-
-
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_fotmob_deep_stat(season_id: str, stat: str):
-    """Fetch top-100 player list for a single stat from Fotmob."""
-    url = (
-        f"https://www.fotmob.com/api/leagueseasondeepstats"
-        f"?id={FOTMOB_PL_ID}&season={season_id}&type=players&stat={stat}"
-    )
-    r = requests.get(url, headers=_FOTMOB_HEADERS, timeout=15)
-    r.raise_for_status()
-    return r.json()
-
-
-def _fotmob_pos(pos_str: str) -> str:
-    p = (pos_str or "").lower()
-    if "goal" in p:                              return "GKP"
-    if "defend" in p:                            return "DEF"
-    if "mid" in p:                               return "MID"
-    if "attack" in p or "forward" in p or "wing" in p: return "FWD"
-    return "?"
-
-
-def _fotmob_season_id(league_data: dict):
-    """Extract the active season ID string from Fotmob league JSON."""
-    details = league_data.get("details", {})
-    sid = details.get("selectedSeason")
-    if sid:
-        return str(sid)
-    for s in league_data.get("seasons", []):
-        if s.get("isSelected") or s.get("selected"):
-            return str(s.get("id") or s.get("seasonId", ""))
-    return None
-
-
-def _parse_fotmob_items(data: dict) -> list:
-    """Robustly extract the player list from a deep-stat API response."""
-    ss = data.get("statsSection", {})
-    # path 1: statsSubSections[0].items
-    sub = ss.get("statsSubSections", [])
-    if sub:
-        items = sub[0].get("items", [])
-        if items:
-            return items
-    # path 2: topLists
-    top = ss.get("topLists", [])
-    if top:
-        return top
-    # path 3: flat fallback
-    return data.get("items", data.get("topLists", []))
-
-
-def build_fotmob_team_stats_df(league_data: dict) -> pd.DataFrame:
-    """Build team stats table from Fotmob league-table data."""
-    try:
-        tables = league_data.get("table", [])
-        if not tables:
-            return pd.DataFrame()
-
-        table_all = (
-            tables[0]
-            .get("data", {})
-            .get("table", {})
-            .get("all", [])
-        )
-        if not table_all:
-            return pd.DataFrame()
-
+        # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
         rows = []
-        for t in table_all:
-            scores = t.get("scoresStr", "0-0")
-            try:
-                gf, ga = map(int, scores.split("-"))
-            except (ValueError, AttributeError):
-                gf, ga = 0, 0
+        for _, t in teams_df.iterrows():
+            name = TEAM_NAME_MAP.get(t["name"], t["name"])
+            if name not in PREMIER_LEAGUE_TEAMS:
+                continue
+            tid = t["id"]
+            rec = records.get(tid, {})
+            gf  = rec.get("GF", 0)
+            ga  = rec.get("GA", 0)
 
-            xg_raw  = t.get("xg")
-            xgc_raw = t.get("xgc")
+            # xG for team
+            xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
 
-            # Normalise team name through existing map
-            raw_name = t.get("name", "")
-            name = TEAM_NAME_MAP.get(raw_name, raw_name)
+            # xGC: expected_goals_conceded from main GKP
+            gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
+            if not gkps.empty and "expected_goals_conceded" in gkps.columns:
+                gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
+                gkps["expected_goals_conceded"] = pd.to_numeric(
+                    gkps["expected_goals_conceded"], errors="coerce").fillna(0)
+                xgc = round(float(gkps.sort_values("minutes", ascending=False)
+                                   .iloc[0]["expected_goals_conceded"]), 1)
+            else:
+                xgc = None
+
+            # CS: clean sheets from main GKP
+            if not gkps.empty and "clean_sheets" in gkps.columns:
+                gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
+                cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
+            else:
+                cs = 0
+
+            gd     = gf - ga
+            xgdiff = round(xg - xgc, 1) if xgc is not None else None
 
             rows.append({
-                "Team": name,
-                "MP":   int(t.get("played", 0)),
-                "W":    int(t.get("wins",   0)),
-                "D":    int(t.get("draws",  0)),
-                "L":    int(t.get("losses", 0)),
-                "GF":   gf,
-                "GA":   ga,
-                "GD":   int(t.get("goalConDiff", gf - ga)),
-                "Pts":  int(t.get("pts", 0)),
-                "xG":   round(float(xg_raw),  1) if xg_raw  is not None else 0.0,
-                "xGC":  round(float(xgc_raw), 1) if xgc_raw is not None else 0.0,
+                "Team":   name,
+                "MP":     rec.get("MP", 0),
+                "W":      rec.get("W",  0),
+                "D":      rec.get("D",  0),
+                "L":      rec.get("L",  0),
+                "GF":     gf,
+                "GA":     ga,
+                "GD":     gd,
+                "CS":     cs,
+                "xG":     xg,
+                "xGC":    xgc if xgc is not None else 0.0,
+                "xGDiff": xgdiff if xgdiff is not None else 0.0,
+                "Pts":    rec.get("Pts", 0),
             })
 
         df = pd.DataFrame(rows)
         if not df.empty:
-            df["xGDiff"] = (df["xG"] - df["xGC"]).round(1)
             df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
-            df.insert(0, "Rk", range(1, len(df) + 1))
+            df.insert(0, "Rk", range(1, len(df)+1))
         return df
-    except Exception:
-        return pd.DataFrame()
 
 
-def build_fotmob_player_stats_df(league_data: dict) -> pd.DataFrame:
-    """
-    Build player stats by merging multiple Fotmob deep-stat pages.
-    Stats fetched: expected_goals, expected_assists, goals, assists,
-    minutes_played, interceptions, tackles_won, clearances_defensive,
-    clean_sheets, expected_goals_conceded.
-    """
-    season_id = _fotmob_season_id(league_data)
-    if not season_id:
-        return pd.DataFrame()
+    # =============================================================================
+    # FOTMOB SCRAPING — Team Stats & Player Stats
+    # =============================================================================
 
-    # stat_key → DataFrame column name
-    STAT_MAP = {
-        "expected_goals":          "xG",
-        "expected_assists":        "xA",
-        "goals":                   "Goals",
-        "assists":                 "Assists",
-        "minutes_played":          "_mins_raw",
-        "interceptions":           "Interceptions",
-        "tackles_won":             "Tackles",
-        "clearances_defensive":    "Clearances",
-        "clean_sheets":            "CS",
-        "expected_goals_conceded": "xGC",
+    FOTMOB_PL_ID = 47  # Premier League on Fotmob
+
+    _FOTMOB_HEADERS = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/json, text/plain, */*",
+        "Referer": "https://www.fotmob.com/",
     }
 
-    players: dict = {}  # pid → {field: value}
 
-    for stat_key, field in STAT_MAP.items():
-        try:
-            items = _parse_fotmob_items(fetch_fotmob_deep_stat(season_id, stat_key))
-        except Exception:
-            continue
-
-        for item in items:
-            pid = str(item.get("id", ""))
-            if not pid:
-                continue
-            if pid not in players:
-                raw_team = item.get("teamName", "")
-                players[pid] = {
-                    "Player": item.get("name", ""),
-                    "Team":   TEAM_NAME_MAP.get(raw_team, raw_team),
-                    "Pos":    _fotmob_pos(item.get("position", "")),
-                    "Mins":   0,
-                }
-            players[pid][field] = item.get("statValue", 0)
-            # Keep max minutes seen across all stat calls
-            mp = int(item.get("minutesPlayed", 0) or 0)
-            if mp > players[pid].get("Mins", 0):
-                players[pid]["Mins"] = mp
-
-    if not players:
-        return pd.DataFrame()
-
-    rows = []
-    for p in players.values():
-        # Prefer the dedicated minutes_played stat value
-        mins = float(p.get("_mins_raw") or p.get("Mins") or 0)
-        p["Mins"] = int(mins)
-        nineties = mins / 90.0 if mins > 0 else 0.0
-
-        xg  = float(p.get("xG",  0) or 0)
-        xa  = float(p.get("xA",  0) or 0)
-        xgi = round(xg + xa, 2)
-        xgc = float(p.get("xGC", 0) or 0)
-
-        inter  = float(p.get("Interceptions", 0) or 0)
-        tackle = float(p.get("Tackles",       0) or 0)
-        clear  = float(p.get("Clearances",    0) or 0)
-        defcon = round(inter + tackle + clear, 1)
-        defcon90 = round(defcon / nineties, 2) if nineties >= 0.5 else None
-
-        rows.append({
-            "Player":    p.get("Player", ""),
-            "Team":      p.get("Team",   ""),
-            "Pos":       p.get("Pos",    "?"),
-            "Mins":      p["Mins"],
-            "Goals":     int(p.get("Goals",   0) or 0),
-            "Assists":   int(p.get("Assists", 0) or 0),
-            "xG":        round(xg,  2),
-            "xA":        round(xa,  2),
-            "xGI":       xgi,
-            "xGC":       round(xgc, 2),
-            "CS":        int(p.get("CS", 0) or 0),
-            "Defcon":    defcon,
-            "Defcon/90": defcon90,
-            "_90s":      round(nineties, 2),
-        })
-
-    df = pd.DataFrame(rows)
-    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
-    return df
-
-
-def build_player_stats_df(bootstrap):
-    """Full player analytics from FPL API elements — raw totals."""
-    elements = pd.DataFrame(bootstrap["elements"])
-    teams_df = pd.DataFrame(bootstrap["teams"])
-    id2name  = dict(zip(teams_df["id"], teams_df["name"]))
-    POS      = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
-
-    # Coerce all numeric strings
-    num_cols = ["minutes","starts","expected_goals","expected_assists",
-                "expected_goal_involvements","expected_goals_conceded",
-                "penalties_scored","now_cost","selected_by_percent",
-                "total_points","clearances_blocks_interceptions","tackles","recoveries"]
-    for c in num_cols:
-        if c in elements.columns:
-            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
-
-    rows = []
-    for _, p in elements.iterrows():
-        mins     = float(p.get("minutes", 0))
-        starts   = float(p.get("starts", 0))
-        nineties = mins / 90 if mins >= 45 else 0
-
-        team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
-        pos  = POS.get(p.get("element_type"), "?")
-
-        xg  = float(p.get("expected_goals", 0))
-        xa  = float(p.get("expected_assists", 0))
-        xgi = float(p.get("expected_goal_involvements", 0))
-        xgc = float(p.get("expected_goals_conceded", 0))
-
-        pens  = float(p.get("penalties_scored", 0))
-        npxg  = max(0.0, round(xg - pens * 0.76, 2))
-        npxgi = max(0.0, round(npxg + xa, 2))
-
-        def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
-                      float(p.get("tackles", 0)) +
-                      float(p.get("recoveries", 0)))
-        defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
-
-        price       = round(float(p.get("now_cost", 0)) / 10, 1)
-        own         = float(p.get("selected_by_percent", 0))
-        total_pts   = float(p.get("total_points", 0))
-        ppm         = round(total_pts / price, 1) if price > 0 else None
-        min_start   = round(mins / starts, 0) if starts > 0 else None
-
-        rows.append({
-            "Player":    p.get("web_name", ""),
-            "Team":      team,
-            "Pos":       pos,
-            "Price":     price,
-            "Starts":    int(starts),
-            "Mins":      int(mins),
-            "Min/Start": int(min_start) if min_start else None,
-            # raw totals
-            "xG":        round(xg, 2),
-            "xA":        round(xa, 2),
-            "xGI":       round(xgi, 2),
-            "NpxG":      npxg,
-            "NpxGI":     npxgi,
-            "xGC":       round(xgc, 2),
-            "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
-            "Defcon/90": defcon_90,
-            "PPM":       ppm,
-            "Own%":      own,
-            # hidden 90s divisor for toggle
-            "_90s":      round(nineties, 2),
-        })
-
-    df = pd.DataFrame(rows)
-    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
-    return df
-
-
-def _per90(df, cols_to_divide):
-    """Return a copy of df with specified cols divided by _90s."""
-    out = df.copy()
-    for c in cols_to_divide:
-        if c in out.columns and "_90s" in out.columns:
-            out[c] = (out[c] / out["_90s"].replace(0, np.nan)).round(2)
-    return out
-
-
-# ── Colour helpers ────────────────────────────────────────────────────────────
-# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
-
-def _tier_color(val, low, high, col_type="positive"):
-    """
-    Returns (background, text_color) using a 3-tier system:
-      positive: low=grey, mid=teal, high=green
-      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
-      diff:     positive=green, zero=grey, negative=red
-    """
-    if val is None or (isinstance(val, float) and np.isnan(val)):
-        return "#1a1a1a", "#444444"
-
-    fv = float(val)
-    # normalise 0→1
-    span = high - low
-    if span == 0:
-        t = 0.5
-    else:
-        t = max(0.0, min(1.0, (fv - low) / span))
-
-    if col_type == "positive":
-        # dark grey → teal → bright green
-        if t < 0.33:
-            return "#1e1e1e", "#666666"
-        elif t < 0.66:
-            return "#0d2b2b", "#4ecdc4"
-        else:
-            return "#0a2818", "#5fffb0"
-    elif col_type == "negative":
-        # green (low GA is good) → amber → red
-        if t < 0.33:
-            return "#0a2818", "#5fffb0"
-        elif t < 0.66:
-            return "#2b1a00", "#ffaa33"
-        else:
-            return "#2b0a0a", "#ff6060"
-    elif col_type == "diff":
-        if fv > 0.5:
-            return "#0a2818", "#5fffb0"
-        elif fv < -0.5:
-            return "#2b0a0a", "#ff6060"
-        else:
-            return "#1e1e1e", "#888888"
-    elif col_type == "blue":
-        # for CS, Defcon — blue scale
-        if t < 0.33:
-            return "#1e1e1e", "#555555"
-        elif t < 0.66:
-            return "#0a1a2b", "#5aabff"
-        else:
-            return "#051022", "#99ccff"
-    elif col_type == "gold":
-        if t < 0.33:
-            return "#1e1e1e", "#555555"
-        elif t < 0.66:
-            return "#221a00", "#ccaa33"
-        else:
-            return "#2b1f00", "#ffd966"
-    return "#1e1e1e", "#888888"
-
-
-# Pre-compute column ranges for consistent colouring across sort orders
-_TEAM_RANGES = {
-    "GF":     (15, 70, "positive"),
-    "GA":     (15, 65, "negative"),
-    "GD":     (-40, 50, "diff"),
-    "CS":     (0,  18, "blue"),
-    "xG":     (15, 65, "positive"),
-    "xGC":    (15, 65, "negative"),
-    "xGDiff": (-35, 35, "diff"),
-    "Pts":    (0,  90, "blue"),
-    "W":      (0,  30, "positive"),
-    "L":      (0,  25, "negative"),
-    "D":      (0,  15, "positive"),
-}
-
-_PLAYER_RANGES = {
-    "xG":        (0, 20,  "positive"),
-    "xA":        (0, 12,  "positive"),
-    "xGI":       (0, 25,  "positive"),
-    "NpxG":      (0, 18,  "positive"),
-    "NpxGI":     (0, 22,  "positive"),
-    "xGC":       (0, 50,  "negative"),
-    "Defcon/90": (0, 10,  "blue"),
-    "Defcon":    (0, 200, "blue"),
-    "PPM":       (0, 20,  "gold"),
-    "Own%":      (0, 70,  "gold"),
-    "Price":     (3.5, 15,"gold"),
-    # Fotmob-specific
-    "Goals":     (0, 25,  "positive"),
-    "Assists":   (0, 15,  "positive"),
-    "CS":        (0, 15,  "blue"),
-}
-
-
-def _stat_cell(val, col, ranges):
-    """Styled <td> with 3-tier colour, clean white text, minimal look."""
-    if val is None or (isinstance(val, float) and np.isnan(val)):
-        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
-                'border-bottom:1px solid #161616">—</td>')
-
-    fv = float(val)
-
-    if col in ranges:
-        low, high, col_type = ranges[col]
-        bg, tc = _tier_color(fv, low, high, col_type)
-    else:
-        bg, tc = "#1e1e1e", "#888888"
-
-    # Format display value
-    if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
-               "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
-        disp = f"{fv:.2f}"
-    elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
-        disp = f"{int(round(fv))}"
-    else:
-        disp = f"{fv:.2f}"
-
-    return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
-            f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
-
-
-def _build_stats_html(df, ranges):
-    """Render minimal dark stats HTML table."""
-    cols = [c for c in df.columns if not c.startswith("_")]
-
-    header = ""
-    for c in cols:
-        align = "left" if c in ("Player","Team") else "center"
-        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
-                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
-                   f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
-
-    rows_html = ""
-    for _, row in df.iterrows():
-        cells = ""
-        for c in cols:
-            val = row[c]
-            if c == "Rk":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
-                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
-            elif c == "Team":
-                bg, fg = club_style(str(val))
-                dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
-                       f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
-                cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
-                          f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
-            elif c == "Player":
-                cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
-                          f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
-            elif c == "Pos":
-                pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
-                pc = pos_c.get(str(val), "#888")
-                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
-                          f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
-                          f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
-            elif c == "W":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-            elif c == "D":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-            elif c == "L":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
-                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-            elif c in ("MP","Starts","Mins","Min/Start"):
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
-                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
-            elif c == "Price":
-                cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
-                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
-            else:
-                try:
-                    cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
-                except:
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
-                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
-
-        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
-                      f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
-
-    return (
-        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
-        '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
-        f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
-        f'<tbody>{rows_html}</tbody></table></div>'
-    )
-
-
-# =============================================================================
-# CSV DATA LOADERS — Team & Player Stats
-# =============================================================================
-
-@st.cache_data(show_spinner=False)
-def load_csv_team_stats():
-    df = pd.read_csv("pl_teams_stats_2025_2026.csv")
-    df = df[["Team Name", "Expected goals", "xG conceded", "xG difference"]].copy()
-    df.columns = ["Team", "xG", "xGC", "xGDiff"]
-    for c in ["xG", "xGC", "xGDiff"]:
-        df[c] = pd.to_numeric(df[c], errors="coerce")
-    return df
-
-
-@st.cache_data(show_spinner=False)
-def load_csv_player_stats():
-    df = pd.read_csv("pl_players_stats_2025_2026.csv")
-    col_map = {
-        "Player Name":                     "Player",
-        "Team":                            "Team",
-        "Country":                         "Country",
-        "Matches Played":                  "MP",
-        "Minutes Played":                  "Mins",
-        "Top scorer":                      "Goals",
-        "Assists":                         "Assists",
-        "Goals + Assists":                 "G+A",
-        "Goals per 90":                    "G/90",
-        "Big chances missed":              "BCM",
-        "Shots per 90":                    "Sh/90",
-        "Shots on target per 90":          "SoT/90",
-        "Big chances created":             "BCC",
-        "Chances created":                 "CC",
-        "Expected goals (xG)":             "xG",
-        "Expected goals (xG) per 90":      "xG/90",
-        "Expected goals on target (xGOT)": "xGOT",
-        "Expected assist (xA)":            "xA",
-        "Expected assist (xA) per 90":     "xA/90",
-        "xG + xA per 90":                  "xG+xA/90",
-    }
-    df = df[[c for c in col_map if c in df.columns]].rename(columns=col_map)
-    num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90", "BCM", "Sh/90",
-                "SoT/90", "BCC", "CC", "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
-    for c in num_cols:
-        if c in df.columns:
-            df[c] = pd.to_numeric(df[c], errors="coerce")
-    return df
-
-
-def add_fpl_positions(player_df, bootstrap):
-    """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
-    elements = pd.DataFrame(bootstrap["elements"])
-    POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    name_to_pos = {
-        f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
-        for _, r in elements.iterrows()
-    }
-    df = player_df.copy()
-    df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
-    return df
-
-
-# =============================================================================
-# TAB 8 — Team Stats
-# =============================================================================
-
-# ── FPL Team fetch helpers ─────────────────────────────────────────────────────
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_fpl_entry(team_id: int):
-    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/"
-    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-    r.raise_for_status()
-    return r.json()
-
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_fpl_history(team_id: int):
-    """Return chips played from /history/ endpoint: [{"name":"wildcard","event":5,...},...]"""
-    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/history/"
-    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-    r.raise_for_status()
-    return r.json()
-
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_fpl_picks(team_id: int, gw: int):
-    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
-    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-    r.raise_for_status()
-    return r.json()
-
-def build_squad_from_picks(picks_data, bootstrap):
-    el_map = {p["id"]: p for p in bootstrap["elements"]}
-    teams  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
-    POS    = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    squad  = []
-    for pick in picks_data["picks"]:
-        el = el_map.get(pick["element"], {})
-        squad.append({
-            "id":         pick["element"],
-            "name":       el.get("web_name", "?"),
-            "team":       teams.get(el.get("team"), "?"),
-            "pos":        POS.get(el.get("element_type"), "?"),
-            "price":      el.get("now_cost", 0) / 10,
-            "sel%":       el.get("selected_by_percent", "0"),
-            "position":   pick["position"],
-            "multiplier": pick["multiplier"],
-            "is_captain": pick["is_captain"],
-            "is_vice":    pick["is_vice_captain"],
-            "code":       el.get("code"),
-        })
-    return squad
-
-def enrich_squad_solio(squad, proj_df, eo_df, gw):
-    pts_col = f"{gw}_Pts"
-    eo_col  = f"{gw}_eo"
-    ev_map, eo_map = {}, {}
-    if proj_df is not None and pts_col in proj_df.columns:
-        ev_map = pd.to_numeric(proj_df.set_index("ID")[pts_col], errors="coerce").to_dict()
-    if eo_df is not None and eo_col in eo_df.columns:
-        eo_map = pd.to_numeric(eo_df.set_index("ID")[eo_col], errors="coerce").to_dict()
-    for p in squad:
-        pid = p["id"]
-        ev  = ev_map.get(pid)
-        eo  = eo_map.get(pid)
-        p["ev"]  = round(float(ev), 2) if ev is not None and not (isinstance(ev, float) and np.isnan(ev)) else None
-        p["eo%"] = round(float(eo) * 100, 1) if eo is not None and not (isinstance(eo, float) and np.isnan(eo)) else None
-    return squad
-
-def _squad_player_card(p, gw, master_df_full):
-    club_bg, club_fg = club_style(p["team"])
-    fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
-    fdr_bg = FDR_BG.get(fdr, "#444")
-    fdr_fg = FDR_FG.get(fdr, "#fff")
-    badge = ""
-    if p["is_captain"]:
-        badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
-    elif p["is_vice"]:
-        badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
-    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
-    photo_url = _verified_photo_url(p.get("code"))
-    if photo_url:
-        img_html = f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;object-position:top;border-radius:4px;display:block">'
-    else:
-        img_html = (
-            f'<div style="width:44px;height:56px;border-radius:4px;display:flex;'
-            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
-            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+    @st.cache_data(ttl=300, show_spinner=False)
+    def fetch_fotmob_league():
+        """Fetch Premier League overview from Fotmob (table + season info)."""
+        r = requests.get(
+            f"https://www.fotmob.com/api/leagues?id={FOTMOB_PL_ID}",
+            headers=_FOTMOB_HEADERS, timeout=15,
         )
-    ev_str = f"{p['ev']} pts" if p.get("ev") else "—"
-    eo_str = f"EO {p['eo%']}%" if p.get("eo%") else ""
-    opacity = "0.5" if p["position"] > 11 else "1"
-    return (
-        f'<div style="position:relative;background:{club_bg};border-radius:8px;'
-        f'padding:8px 10px;display:flex;align-items:center;gap:10px;opacity:{opacity};'
-        f'border:1px solid rgba(255,255,255,0.06);margin-bottom:4px">'
-        f'{badge}<div style="flex-shrink:0">{img_html}</div>'
-        f'<div style="min-width:0;flex:1">'
-        f'<div style="color:{club_fg};font-weight:700;font-size:13px;white-space:nowrap;'
-        f'overflow:hidden;text-overflow:ellipsis">{p["name"]}</div>'
-        f'<div style="color:{club_fg};font-size:11px;opacity:0.7">{p["team"]} · {p["pos"]}</div>'
-        f'<div style="display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap">'
-        f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{fix}</span>'
-        f'<span style="color:{club_fg};font-size:12px;font-weight:700">{ev_str}</span>'
-        f'<span style="color:{club_fg};font-size:11px;opacity:0.65">{eo_str}</span>'
-        f'</div></div></div>'
-    )
+        r.raise_for_status()
+        return r.json()
 
 
-def _pitch_token(p, gw, master_df_full, is_bench=False):
-    """FPL-style compact pitch token: photo/initials + club badge + fixture + EV."""
-    club_bg, club_fg = club_style(p["team"])
-    fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
-    fdr_bg  = FDR_BG.get(fdr, "#444")
-    fdr_fg  = FDR_FG.get(fdr, "#fff")
-    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
-    photo_url = _verified_photo_url(p.get("code"))
+    @st.cache_data(ttl=300, show_spinner=False)
+    def fetch_fotmob_deep_stat(season_id: str, stat: str):
+        """Fetch top-100 player list for a single stat from Fotmob."""
+        url = (
+            f"https://www.fotmob.com/api/leagueseasondeepstats"
+            f"?id={FOTMOB_PL_ID}&season={season_id}&type=players&stat={stat}"
+        )
+        r = requests.get(url, headers=_FOTMOB_HEADERS, timeout=15)
+        r.raise_for_status()
+        return r.json()
 
-    # Photo or initials in a circle
-    if photo_url:
-        avatar = (
-            f'<div style="width:54px;height:54px;border-radius:50%;overflow:hidden;'
-            f'border:2.5px solid rgba(255,255,255,0.5);margin:0 auto 3px;background:{club_bg}">'
-            f'<img src="{photo_url}" style="width:100%;height:100%;object-fit:cover;object-position:top">'
+
+    def _fotmob_pos(pos_str: str) -> str:
+        p = (pos_str or "").lower()
+        if "goal" in p:                              return "GKP"
+        if "defend" in p:                            return "DEF"
+        if "mid" in p:                               return "MID"
+        if "attack" in p or "forward" in p or "wing" in p: return "FWD"
+        return "?"
+
+
+    def _fotmob_season_id(league_data: dict):
+        """Extract the active season ID string from Fotmob league JSON."""
+        details = league_data.get("details", {})
+        sid = details.get("selectedSeason")
+        if sid:
+            return str(sid)
+        for s in league_data.get("seasons", []):
+            if s.get("isSelected") or s.get("selected"):
+                return str(s.get("id") or s.get("seasonId", ""))
+        return None
+
+
+    def _parse_fotmob_items(data: dict) -> list:
+        """Robustly extract the player list from a deep-stat API response."""
+        ss = data.get("statsSection", {})
+        # path 1: statsSubSections[0].items
+        sub = ss.get("statsSubSections", [])
+        if sub:
+            items = sub[0].get("items", [])
+            if items:
+                return items
+        # path 2: topLists
+        top = ss.get("topLists", [])
+        if top:
+            return top
+        # path 3: flat fallback
+        return data.get("items", data.get("topLists", []))
+
+
+    def build_fotmob_team_stats_df(league_data: dict) -> pd.DataFrame:
+        """Build team stats table from Fotmob league-table data."""
+        try:
+            tables = league_data.get("table", [])
+            if not tables:
+                return pd.DataFrame()
+
+            table_all = (
+                tables[0]
+                .get("data", {})
+                .get("table", {})
+                .get("all", [])
+            )
+            if not table_all:
+                return pd.DataFrame()
+
+            rows = []
+            for t in table_all:
+                scores = t.get("scoresStr", "0-0")
+                try:
+                    gf, ga = map(int, scores.split("-"))
+                except (ValueError, AttributeError):
+                    gf, ga = 0, 0
+
+                xg_raw  = t.get("xg")
+                xgc_raw = t.get("xgc")
+
+                # Normalise team name through existing map
+                raw_name = t.get("name", "")
+                name = TEAM_NAME_MAP.get(raw_name, raw_name)
+
+                rows.append({
+                    "Team": name,
+                    "MP":   int(t.get("played", 0)),
+                    "W":    int(t.get("wins",   0)),
+                    "D":    int(t.get("draws",  0)),
+                    "L":    int(t.get("losses", 0)),
+                    "GF":   gf,
+                    "GA":   ga,
+                    "GD":   int(t.get("goalConDiff", gf - ga)),
+                    "Pts":  int(t.get("pts", 0)),
+                    "xG":   round(float(xg_raw),  1) if xg_raw  is not None else 0.0,
+                    "xGC":  round(float(xgc_raw), 1) if xgc_raw is not None else 0.0,
+                })
+
+            df = pd.DataFrame(rows)
+            if not df.empty:
+                df["xGDiff"] = (df["xG"] - df["xGC"]).round(1)
+                df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
+                df.insert(0, "Rk", range(1, len(df) + 1))
+            return df
+        except Exception:
+            return pd.DataFrame()
+
+
+    def build_fotmob_player_stats_df(league_data: dict) -> pd.DataFrame:
+        """
+        Build player stats by merging multiple Fotmob deep-stat pages.
+        Stats fetched: expected_goals, expected_assists, goals, assists,
+        minutes_played, interceptions, tackles_won, clearances_defensive,
+        clean_sheets, expected_goals_conceded.
+        """
+        season_id = _fotmob_season_id(league_data)
+        if not season_id:
+            return pd.DataFrame()
+
+        # stat_key → DataFrame column name
+        STAT_MAP = {
+            "expected_goals":          "xG",
+            "expected_assists":        "xA",
+            "goals":                   "Goals",
+            "assists":                 "Assists",
+            "minutes_played":          "_mins_raw",
+            "interceptions":           "Interceptions",
+            "tackles_won":             "Tackles",
+            "clearances_defensive":    "Clearances",
+            "clean_sheets":            "CS",
+            "expected_goals_conceded": "xGC",
+        }
+
+        players: dict = {}  # pid → {field: value}
+
+        for stat_key, field in STAT_MAP.items():
+            try:
+                items = _parse_fotmob_items(fetch_fotmob_deep_stat(season_id, stat_key))
+            except Exception:
+                continue
+
+            for item in items:
+                pid = str(item.get("id", ""))
+                if not pid:
+                    continue
+                if pid not in players:
+                    raw_team = item.get("teamName", "")
+                    players[pid] = {
+                        "Player": item.get("name", ""),
+                        "Team":   TEAM_NAME_MAP.get(raw_team, raw_team),
+                        "Pos":    _fotmob_pos(item.get("position", "")),
+                        "Mins":   0,
+                    }
+                players[pid][field] = item.get("statValue", 0)
+                # Keep max minutes seen across all stat calls
+                mp = int(item.get("minutesPlayed", 0) or 0)
+                if mp > players[pid].get("Mins", 0):
+                    players[pid]["Mins"] = mp
+
+        if not players:
+            return pd.DataFrame()
+
+        rows = []
+        for p in players.values():
+            # Prefer the dedicated minutes_played stat value
+            mins = float(p.get("_mins_raw") or p.get("Mins") or 0)
+            p["Mins"] = int(mins)
+            nineties = mins / 90.0 if mins > 0 else 0.0
+
+            xg  = float(p.get("xG",  0) or 0)
+            xa  = float(p.get("xA",  0) or 0)
+            xgi = round(xg + xa, 2)
+            xgc = float(p.get("xGC", 0) or 0)
+
+            inter  = float(p.get("Interceptions", 0) or 0)
+            tackle = float(p.get("Tackles",       0) or 0)
+            clear  = float(p.get("Clearances",    0) or 0)
+            defcon = round(inter + tackle + clear, 1)
+            defcon90 = round(defcon / nineties, 2) if nineties >= 0.5 else None
+
+            rows.append({
+                "Player":    p.get("Player", ""),
+                "Team":      p.get("Team",   ""),
+                "Pos":       p.get("Pos",    "?"),
+                "Mins":      p["Mins"],
+                "Goals":     int(p.get("Goals",   0) or 0),
+                "Assists":   int(p.get("Assists", 0) or 0),
+                "xG":        round(xg,  2),
+                "xA":        round(xa,  2),
+                "xGI":       xgi,
+                "xGC":       round(xgc, 2),
+                "CS":        int(p.get("CS", 0) or 0),
+                "Defcon":    defcon,
+                "Defcon/90": defcon90,
+                "_90s":      round(nineties, 2),
+            })
+
+        df = pd.DataFrame(rows)
+        df = df[df["Mins"] > 0].copy().reset_index(drop=True)
+        return df
+
+
+    def build_player_stats_df(bootstrap):
+        """Full player analytics from FPL API elements — raw totals."""
+        elements = pd.DataFrame(bootstrap["elements"])
+        teams_df = pd.DataFrame(bootstrap["teams"])
+        id2name  = dict(zip(teams_df["id"], teams_df["name"]))
+        POS      = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
+
+        # Coerce all numeric strings
+        num_cols = ["minutes","starts","expected_goals","expected_assists",
+                    "expected_goal_involvements","expected_goals_conceded",
+                    "penalties_scored","now_cost","selected_by_percent",
+                    "total_points","clearances_blocks_interceptions","tackles","recoveries"]
+        for c in num_cols:
+            if c in elements.columns:
+                elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
+        rows = []
+        for _, p in elements.iterrows():
+            mins     = float(p.get("minutes", 0))
+            starts   = float(p.get("starts", 0))
+            nineties = mins / 90 if mins >= 45 else 0
+
+            team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
+            pos  = POS.get(p.get("element_type"), "?")
+
+            xg  = float(p.get("expected_goals", 0))
+            xa  = float(p.get("expected_assists", 0))
+            xgi = float(p.get("expected_goal_involvements", 0))
+            xgc = float(p.get("expected_goals_conceded", 0))
+
+            pens  = float(p.get("penalties_scored", 0))
+            npxg  = max(0.0, round(xg - pens * 0.76, 2))
+            npxgi = max(0.0, round(npxg + xa, 2))
+
+            def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
+                          float(p.get("tackles", 0)) +
+                          float(p.get("recoveries", 0)))
+            defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
+
+            price       = round(float(p.get("now_cost", 0)) / 10, 1)
+            own         = float(p.get("selected_by_percent", 0))
+            total_pts   = float(p.get("total_points", 0))
+            ppm         = round(total_pts / price, 1) if price > 0 else None
+            min_start   = round(mins / starts, 0) if starts > 0 else None
+
+            rows.append({
+                "Player":    p.get("web_name", ""),
+                "Team":      team,
+                "Pos":       pos,
+                "Price":     price,
+                "Starts":    int(starts),
+                "Mins":      int(mins),
+                "Min/Start": int(min_start) if min_start else None,
+                # raw totals
+                "xG":        round(xg, 2),
+                "xA":        round(xa, 2),
+                "xGI":       round(xgi, 2),
+                "NpxG":      npxg,
+                "NpxGI":     npxgi,
+                "xGC":       round(xgc, 2),
+                "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
+                "Defcon/90": defcon_90,
+                "PPM":       ppm,
+                "Own%":      own,
+                # hidden 90s divisor for toggle
+                "_90s":      round(nineties, 2),
+            })
+
+        df = pd.DataFrame(rows)
+        df = df[df["Mins"] > 0].copy().reset_index(drop=True)
+        return df
+
+
+    def _per90(df, cols_to_divide):
+        """Return a copy of df with specified cols divided by _90s."""
+        out = df.copy()
+        for c in cols_to_divide:
+            if c in out.columns and "_90s" in out.columns:
+                out[c] = (out[c] / out["_90s"].replace(0, np.nan)).round(2)
+        return out
+
+
+    # ── Colour helpers ────────────────────────────────────────────────────────────
+    # Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
+
+    def _tier_color(val, low, high, col_type="positive"):
+        """
+        Returns (background, text_color) using a 3-tier system:
+          positive: low=grey, mid=teal, high=green
+          negative: low=grey, mid=orange, high=red   (used for GA, xGC)
+          diff:     positive=green, zero=grey, negative=red
+        """
+        if val is None or (isinstance(val, float) and np.isnan(val)):
+            return "#1a1a1a", "#444444"
+
+        fv = float(val)
+        # normalise 0→1
+        span = high - low
+        if span == 0:
+            t = 0.5
+        else:
+            t = max(0.0, min(1.0, (fv - low) / span))
+
+        if col_type == "positive":
+            # dark grey → teal → bright green
+            if t < 0.33:
+                return "#1e1e1e", "#666666"
+            elif t < 0.66:
+                return "#0d2b2b", "#4ecdc4"
+            else:
+                return "#0a2818", "#5fffb0"
+        elif col_type == "negative":
+            # green (low GA is good) → amber → red
+            if t < 0.33:
+                return "#0a2818", "#5fffb0"
+            elif t < 0.66:
+                return "#2b1a00", "#ffaa33"
+            else:
+                return "#2b0a0a", "#ff6060"
+        elif col_type == "diff":
+            if fv > 0.5:
+                return "#0a2818", "#5fffb0"
+            elif fv < -0.5:
+                return "#2b0a0a", "#ff6060"
+            else:
+                return "#1e1e1e", "#888888"
+        elif col_type == "blue":
+            # for CS, Defcon — blue scale
+            if t < 0.33:
+                return "#1e1e1e", "#555555"
+            elif t < 0.66:
+                return "#0a1a2b", "#5aabff"
+            else:
+                return "#051022", "#99ccff"
+        elif col_type == "gold":
+            if t < 0.33:
+                return "#1e1e1e", "#555555"
+            elif t < 0.66:
+                return "#221a00", "#ccaa33"
+            else:
+                return "#2b1f00", "#ffd966"
+        return "#1e1e1e", "#888888"
+
+
+    # Pre-compute column ranges for consistent colouring across sort orders
+    _TEAM_RANGES = {
+        "GF":     (15, 70, "positive"),
+        "GA":     (15, 65, "negative"),
+        "GD":     (-40, 50, "diff"),
+        "CS":     (0,  18, "blue"),
+        "xG":     (15, 65, "positive"),
+        "xGC":    (15, 65, "negative"),
+        "xGDiff": (-35, 35, "diff"),
+        "Pts":    (0,  90, "blue"),
+        "W":      (0,  30, "positive"),
+        "L":      (0,  25, "negative"),
+        "D":      (0,  15, "positive"),
+    }
+
+    _PLAYER_RANGES = {
+        "xG":        (0, 20,  "positive"),
+        "xA":        (0, 12,  "positive"),
+        "xGI":       (0, 25,  "positive"),
+        "NpxG":      (0, 18,  "positive"),
+        "NpxGI":     (0, 22,  "positive"),
+        "xGC":       (0, 50,  "negative"),
+        "Defcon/90": (0, 10,  "blue"),
+        "Defcon":    (0, 200, "blue"),
+        "PPM":       (0, 20,  "gold"),
+        "Own%":      (0, 70,  "gold"),
+        "Price":     (3.5, 15,"gold"),
+        # Fotmob-specific
+        "Goals":     (0, 25,  "positive"),
+        "Assists":   (0, 15,  "positive"),
+        "CS":        (0, 15,  "blue"),
+    }
+
+
+    def _stat_cell(val, col, ranges):
+        """Styled <td> with 3-tier colour, clean white text, minimal look."""
+        if val is None or (isinstance(val, float) and np.isnan(val)):
+            return ('<td style="padding:6px 10px;text-align:center;color:#333;'
+                    'border-bottom:1px solid #161616">—</td>')
+
+        fv = float(val)
+
+        if col in ranges:
+            low, high, col_type = ranges[col]
+            bg, tc = _tier_color(fv, low, high, col_type)
+        else:
+            bg, tc = "#1e1e1e", "#888888"
+
+        # Format display value
+        if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
+                   "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
+            disp = f"{fv:.2f}"
+        elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
+            disp = f"{int(round(fv))}"
+        else:
+            disp = f"{fv:.2f}"
+
+        return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
+                f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
+
+
+    def _build_stats_html(df, ranges):
+        """Render minimal dark stats HTML table."""
+        cols = [c for c in df.columns if not c.startswith("_")]
+
+        header = ""
+        for c in cols:
+            align = "left" if c in ("Player","Team") else "center"
+            header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
+                       f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
+                       f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
+
+        rows_html = ""
+        for _, row in df.iterrows():
+            cells = ""
+            for c in cols:
+                val = row[c]
+                if c == "Rk":
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
+                              f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
+                elif c == "Team":
+                    bg, fg = club_style(str(val))
+                    dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
+                           f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
+                    cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
+                              f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
+                elif c == "Player":
+                    cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
+                              f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
+                elif c == "Pos":
+                    pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
+                    pc = pos_c.get(str(val), "#888")
+                    cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
+                              f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
+                              f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
+                elif c == "W":
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
+                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                elif c == "D":
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
+                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                elif c == "L":
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
+                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+                elif c in ("MP","Starts","Mins","Min/Start"):
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
+                              f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
+                elif c == "Price":
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
+                              f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
+                else:
+                    try:
+                        cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
+                    except:
+                        cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
+                                  f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
+
+            rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
+                          f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
+
+        return (
+            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
+            '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+            f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+            f'<tbody>{rows_html}</tbody></table></div>'
+        )
+
+
+    # =============================================================================
+    # CSV DATA LOADERS — Team & Player Stats
+    # =============================================================================
+
+    @st.cache_data(show_spinner=False)
+    def load_csv_team_stats():
+        df = pd.read_csv("pl_teams_stats_2025_2026.csv")
+        df = df[["Team Name", "Expected goals", "xG conceded", "xG difference"]].copy()
+        df.columns = ["Team", "xG", "xGC", "xGDiff"]
+        for c in ["xG", "xGC", "xGDiff"]:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+        return df
+
+
+    @st.cache_data(show_spinner=False)
+    def load_csv_player_stats():
+        df = pd.read_csv("pl_players_stats_2025_2026.csv")
+        col_map = {
+            "Player Name":                     "Player",
+            "Team":                            "Team",
+            "Country":                         "Country",
+            "Matches Played":                  "MP",
+            "Minutes Played":                  "Mins",
+            "Top scorer":                      "Goals",
+            "Assists":                         "Assists",
+            "Goals + Assists":                 "G+A",
+            "Goals per 90":                    "G/90",
+            "Big chances missed":              "BCM",
+            "Shots per 90":                    "Sh/90",
+            "Shots on target per 90":          "SoT/90",
+            "Big chances created":             "BCC",
+            "Chances created":                 "CC",
+            "Expected goals (xG)":             "xG",
+            "Expected goals (xG) per 90":      "xG/90",
+            "Expected goals on target (xGOT)": "xGOT",
+            "Expected assist (xA)":            "xA",
+            "Expected assist (xA) per 90":     "xA/90",
+            "xG + xA per 90":                  "xG+xA/90",
+        }
+        df = df[[c for c in col_map if c in df.columns]].rename(columns=col_map)
+        num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90", "BCM", "Sh/90",
+                    "SoT/90", "BCC", "CC", "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+        for c in num_cols:
+            if c in df.columns:
+                df[c] = pd.to_numeric(df[c], errors="coerce")
+        return df
+
+
+    def add_fpl_positions(player_df, bootstrap):
+        """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
+        elements = pd.DataFrame(bootstrap["elements"])
+        POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+        name_to_pos = {
+            f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
+            for _, r in elements.iterrows()
+        }
+        df = player_df.copy()
+        df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
+        return df
+
+
+    # =============================================================================
+    # TAB 8 — Team Stats
+    # =============================================================================
+
+    # ── FPL Team fetch helpers ─────────────────────────────────────────────────────
+    @st.cache_data(ttl=300, show_spinner=False)
+    def fetch_fpl_entry(team_id: int):
+        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        r.raise_for_status()
+        return r.json()
+
+    @st.cache_data(ttl=300, show_spinner=False)
+    def fetch_fpl_history(team_id: int):
+        """Return chips played from /history/ endpoint: [{"name":"wildcard","event":5,...},...]"""
+        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/history/"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        r.raise_for_status()
+        return r.json()
+
+    @st.cache_data(ttl=300, show_spinner=False)
+    def fetch_fpl_picks(team_id: int, gw: int):
+        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        r.raise_for_status()
+        return r.json()
+
+    def build_squad_from_picks(picks_data, bootstrap):
+        el_map = {p["id"]: p for p in bootstrap["elements"]}
+        teams  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
+        POS    = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+        squad  = []
+        for pick in picks_data["picks"]:
+            el = el_map.get(pick["element"], {})
+            squad.append({
+                "id":         pick["element"],
+                "name":       el.get("web_name", "?"),
+                "team":       teams.get(el.get("team"), "?"),
+                "pos":        POS.get(el.get("element_type"), "?"),
+                "price":      el.get("now_cost", 0) / 10,
+                "sel%":       el.get("selected_by_percent", "0"),
+                "position":   pick["position"],
+                "multiplier": pick["multiplier"],
+                "is_captain": pick["is_captain"],
+                "is_vice":    pick["is_vice_captain"],
+                "code":       el.get("code"),
+            })
+        return squad
+
+    def enrich_squad_solio(squad, proj_df, eo_df, gw):
+        pts_col = f"{gw}_Pts"
+        eo_col  = f"{gw}_eo"
+        ev_map, eo_map = {}, {}
+        if proj_df is not None and pts_col in proj_df.columns:
+            ev_map = pd.to_numeric(proj_df.set_index("ID")[pts_col], errors="coerce").to_dict()
+        if eo_df is not None and eo_col in eo_df.columns:
+            eo_map = pd.to_numeric(eo_df.set_index("ID")[eo_col], errors="coerce").to_dict()
+        for p in squad:
+            pid = p["id"]
+            ev  = ev_map.get(pid)
+            eo  = eo_map.get(pid)
+            p["ev"]  = round(float(ev), 2) if ev is not None and not (isinstance(ev, float) and np.isnan(ev)) else None
+            p["eo%"] = round(float(eo) * 100, 1) if eo is not None and not (isinstance(eo, float) and np.isnan(eo)) else None
+        return squad
+
+    def _squad_player_card(p, gw, master_df_full):
+        club_bg, club_fg = club_style(p["team"])
+        fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
+        fdr_bg = FDR_BG.get(fdr, "#444")
+        fdr_fg = FDR_FG.get(fdr, "#fff")
+        badge = ""
+        if p["is_captain"]:
+            badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
+        elif p["is_vice"]:
+            badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
+        initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
+        photo_url = _verified_photo_url(p.get("code"))
+        if photo_url:
+            img_html = f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;object-position:top;border-radius:4px;display:block">'
+        else:
+            img_html = (
+                f'<div style="width:44px;height:56px;border-radius:4px;display:flex;'
+                f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
+                f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+            )
+        ev_str = f"{p['ev']} pts" if p.get("ev") else "—"
+        eo_str = f"EO {p['eo%']}%" if p.get("eo%") else ""
+        opacity = "0.5" if p["position"] > 11 else "1"
+        return (
+            f'<div style="position:relative;background:{club_bg};border-radius:8px;'
+            f'padding:8px 10px;display:flex;align-items:center;gap:10px;opacity:{opacity};'
+            f'border:1px solid rgba(255,255,255,0.06);margin-bottom:4px">'
+            f'{badge}<div style="flex-shrink:0">{img_html}</div>'
+            f'<div style="min-width:0;flex:1">'
+            f'<div style="color:{club_fg};font-weight:700;font-size:13px;white-space:nowrap;'
+            f'overflow:hidden;text-overflow:ellipsis">{p["name"]}</div>'
+            f'<div style="color:{club_fg};font-size:11px;opacity:0.7">{p["team"]} · {p["pos"]}</div>'
+            f'<div style="display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap">'
+            f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{fix}</span>'
+            f'<span style="color:{club_fg};font-size:12px;font-weight:700">{ev_str}</span>'
+            f'<span style="color:{club_fg};font-size:11px;opacity:0.65">{eo_str}</span>'
+            f'</div></div></div>'
+        )
+
+
+    def _pitch_token(p, gw, master_df_full, is_bench=False):
+        """FPL-style compact pitch token: photo/initials + club badge + fixture + EV."""
+        club_bg, club_fg = club_style(p["team"])
+        fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
+        fdr_bg  = FDR_BG.get(fdr, "#444")
+        fdr_fg  = FDR_FG.get(fdr, "#fff")
+        initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
+        photo_url = _verified_photo_url(p.get("code"))
+
+        # Photo or initials in a circle
+        if photo_url:
+            avatar = (
+                f'<div style="width:54px;height:54px;border-radius:50%;overflow:hidden;'
+                f'border:2.5px solid rgba(255,255,255,0.5);margin:0 auto 3px;background:{club_bg}">'
+                f'<img src="{photo_url}" style="width:100%;height:100%;object-fit:cover;object-position:top">'
+                f'</div>'
+            )
+        else:
+            avatar = (
+                f'<div style="width:54px;height:54px;border-radius:50%;display:flex;'
+                f'align-items:center;justify-content:center;font-size:18px;font-weight:800;'
+                f'color:{club_fg};background:{club_bg};border:2.5px solid rgba(255,255,255,0.5);'
+                f'margin:0 auto 3px">{initials}</div>'
+            )
+
+        # Captain / vice badge
+        cap_badge = ""
+        if p.get("is_captain"):
+            cap_badge = '<span style="position:absolute;top:0;right:0;background:#ffcc00;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">C</span>'
+        elif p.get("is_vice"):
+            cap_badge = '<span style="position:absolute;top:0;right:0;background:#bbb;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">V</span>'
+
+        ev_str  = f"{p['ev']}" if p.get("ev") else "—"
+        fix_str = fix if fix else "?"
+        opacity = "0.55" if is_bench else "1"
+
+        # Short name (up to 9 chars)
+        short = p["name"] if len(p["name"]) <= 9 else p["name"][:8] + "…"
+
+        return (
+            f'<div style="display:inline-block;text-align:center;width:68px;position:relative;opacity:{opacity};vertical-align:top">'
+            f'{cap_badge}'
+            f'{avatar}'
+            f'<div style="background:{club_bg};color:{club_fg};font-size:9.5px;font-weight:700;'
+            f'padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;'
+            f'text-overflow:ellipsis;max-width:68px;margin-bottom:2px">{short}</div>'
+            f'<div style="display:flex;gap:2px;justify-content:center;flex-wrap:nowrap">'
+            f'<span style="background:{fdr_bg};color:{fdr_fg};font-size:8px;font-weight:700;'
+            f'padding:1px 4px;border-radius:2px;white-space:nowrap">{fix_str}</span>'
+            f'<span style="background:rgba(0,0,0,0.55);color:#5fffb0;font-size:8px;font-weight:800;'
+            f'padding:1px 4px;border-radius:2px;white-space:nowrap">{ev_str}</span>'
+            f'</div>'
             f'</div>'
         )
-    else:
-        avatar = (
-            f'<div style="width:54px;height:54px;border-radius:50%;display:flex;'
-            f'align-items:center;justify-content:center;font-size:18px;font-weight:800;'
-            f'color:{club_fg};background:{club_bg};border:2.5px solid rgba(255,255,255,0.5);'
-            f'margin:0 auto 3px">{initials}</div>'
-        )
-
-    # Captain / vice badge
-    cap_badge = ""
-    if p.get("is_captain"):
-        cap_badge = '<span style="position:absolute;top:0;right:0;background:#ffcc00;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">C</span>'
-    elif p.get("is_vice"):
-        cap_badge = '<span style="position:absolute;top:0;right:0;background:#bbb;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">V</span>'
-
-    ev_str  = f"{p['ev']}" if p.get("ev") else "—"
-    fix_str = fix if fix else "?"
-    opacity = "0.55" if is_bench else "1"
-
-    # Short name (up to 9 chars)
-    short = p["name"] if len(p["name"]) <= 9 else p["name"][:8] + "…"
-
-    return (
-        f'<div style="display:inline-block;text-align:center;width:68px;position:relative;opacity:{opacity};vertical-align:top">'
-        f'{cap_badge}'
-        f'{avatar}'
-        f'<div style="background:{club_bg};color:{club_fg};font-size:9.5px;font-weight:700;'
-        f'padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;'
-        f'text-overflow:ellipsis;max-width:68px;margin-bottom:2px">{short}</div>'
-        f'<div style="display:flex;gap:2px;justify-content:center;flex-wrap:nowrap">'
-        f'<span style="background:{fdr_bg};color:{fdr_fg};font-size:8px;font-weight:700;'
-        f'padding:1px 4px;border-radius:2px;white-space:nowrap">{fix_str}</span>'
-        f'<span style="background:rgba(0,0,0,0.55);color:#5fffb0;font-size:8px;font-weight:800;'
-        f'padding:1px 4px;border-radius:2px;white-space:nowrap">{ev_str}</span>'
-        f'</div>'
-        f'</div>'
-    )
 
 
-def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
-    """Render a full-pitch SVG background with player tokens in formation rows.
-    players_by_pos: dict with keys GKP/DEF/MID/FWD, each a list of player dicts."""
-    rows_html = ""
-    for pos in ["GKP", "DEF", "MID", "FWD"]:
-        grp = players_by_pos.get(pos, [])
-        if not grp:
-            continue
-        tokens = "".join(_pitch_token(p, gw, master_df_full) for p in grp)
-        rows_html += (
-            f'<div style="display:flex;justify-content:center;gap:8px;'
-            f'margin-bottom:14px;flex-wrap:nowrap">{tokens}</div>'
-        )
+    def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
+        """Render a full-pitch SVG background with player tokens in formation rows.
+        players_by_pos: dict with keys GKP/DEF/MID/FWD, each a list of player dicts."""
+        rows_html = ""
+        for pos in ["GKP", "DEF", "MID", "FWD"]:
+            grp = players_by_pos.get(pos, [])
+            if not grp:
+                continue
+            tokens = "".join(_pitch_token(p, gw, master_df_full) for p in grp)
+            rows_html += (
+                f'<div style="display:flex;justify-content:center;gap:8px;'
+                f'margin-bottom:14px;flex-wrap:nowrap">{tokens}</div>'
+            )
 
-    bench_html = ""
-    if bench_players:
-        btokens = "".join(_pitch_token(p, gw, master_df_full, is_bench=True) for p in bench_players)
-        bench_html = (
-            '<div style="margin-top:10px;padding-top:10px;border-top:2px dashed rgba(255,255,255,0.2)">'
-            '<div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:700;'
-            'letter-spacing:.6px;text-align:center;margin-bottom:8px">BENCH</div>'
-            f'<div style="display:flex;justify-content:center;gap:8px;flex-wrap:nowrap">{btokens}</div>'
+        bench_html = ""
+        if bench_players:
+            btokens = "".join(_pitch_token(p, gw, master_df_full, is_bench=True) for p in bench_players)
+            bench_html = (
+                '<div style="margin-top:10px;padding-top:10px;border-top:2px dashed rgba(255,255,255,0.2)">'
+                '<div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:700;'
+                'letter-spacing:.6px;text-align:center;margin-bottom:8px">BENCH</div>'
+                f'<div style="display:flex;justify-content:center;gap:8px;flex-wrap:nowrap">{btokens}</div>'
+                '</div>'
+            )
+
+        return (
+            # Outer pitch container
+            '<div style="position:relative;border-radius:12px;overflow:hidden;'
+            'border:3px solid rgba(255,255,255,0.25);margin:6px 0">'
+            # Green pitch stripes background
+            '<div style="position:absolute;inset:0;'
+            'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 64px,#1e7024 64px,#1e7024 128px)">'
+            '</div>'
+            # Pitch markings overlay
+            '<div style="position:absolute;inset:0;pointer-events:none">'
+            # Top penalty area
+            '<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);'
+            'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-top:none;border-radius:0 0 8px 8px"></div>'
+            # Center line
+            '<div style="position:absolute;top:50%;left:4%;right:4%;height:1.5px;background:rgba(255,255,255,0.18)"></div>'
+            # Center circle
+            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
+            'width:72px;height:72px;border:1.5px solid rgba(255,255,255,0.18);border-radius:50%"></div>'
+            # Center dot
+            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
+            'width:5px;height:5px;background:rgba(255,255,255,0.25);border-radius:50%"></div>'
+            # Bottom penalty area
+            '<div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);'
+            'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-bottom:none;border-radius:8px 8px 0 0"></div>'
+            '</div>'
+            # Content (tokens on top of pitch)
+            f'<div style="position:relative;z-index:1;padding:18px 12px 14px">'
+            f'{rows_html}'
+            f'{bench_html}'
+            '</div>'
             '</div>'
         )
 
-    return (
-        # Outer pitch container
-        '<div style="position:relative;border-radius:12px;overflow:hidden;'
-        'border:3px solid rgba(255,255,255,0.25);margin:6px 0">'
-        # Green pitch stripes background
-        '<div style="position:absolute;inset:0;'
-        'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 64px,#1e7024 64px,#1e7024 128px)">'
-        '</div>'
-        # Pitch markings overlay
-        '<div style="position:absolute;inset:0;pointer-events:none">'
-        # Top penalty area
-        '<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);'
-        'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-top:none;border-radius:0 0 8px 8px"></div>'
-        # Center line
-        '<div style="position:absolute;top:50%;left:4%;right:4%;height:1.5px;background:rgba(255,255,255,0.18)"></div>'
-        # Center circle
-        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
-        'width:72px;height:72px;border:1.5px solid rgba(255,255,255,0.18);border-radius:50%"></div>'
-        # Center dot
-        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
-        'width:5px;height:5px;background:rgba(255,255,255,0.25);border-radius:50%"></div>'
-        # Bottom penalty area
-        '<div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);'
-        'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-bottom:none;border-radius:8px 8px 0 0"></div>'
-        '</div>'
-        # Content (tokens on top of pitch)
-        f'<div style="position:relative;z-index:1;padding:18px 12px 14px">'
-        f'{rows_html}'
-        f'{bench_html}'
-        '</div>'
-        '</div>'
-    )
-
-# ── Tab 9: My Team ─────────────────────────────────────────────────────────────
-with tab9:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">👕 My Team</span>'
-        '<span style="font-size:12px;color:#444">Live squad · fixtures · EV · captaincy</span></div>',
-        unsafe_allow_html=True
-    )
-
-    if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-    else:
-        col_tid, col_tgw = st.columns([2, 1])
-        with col_tid:
-            team_id_input = st.number_input(
-                "FPL Team ID", min_value=1, max_value=99999999,
-                value=int(st.session_state.get("fpl_team_id", 1)),
-                step=1, key="fpl_team_id_input",
-                help="Find your ID at: fantasy.premierleague.com/entry/{ID}/event/..."
-            )
-        with col_tgw:
-            avail_gws = future_gws if future_gws else list(range(current_gw, 39))
-            team_gw   = st.selectbox("View GW fixtures", avail_gws, key="myteam_gw")
-
-        if st.button("🔄 Load Team", key="load_team_btn"):
-            st.session_state["fpl_team_id"] = team_id_input
-            for k in ["squad_data", "entry_data", "picks_raw"]:
-                st.session_state.pop(k, None)
-
-        team_id = st.session_state.get("fpl_team_id")
-
-        # Manual squad fallback
-        with st.expander("✏️ Pick squad manually (if Team ID unavailable)", expanded=False):
-            all_el    = pd.DataFrame(bootstrap["elements"])
-            teams_bdf = pd.DataFrame(bootstrap["teams"])
-            id2sname  = dict(zip(teams_bdf["id"], teams_bdf["short_name"]))
-            all_el["label"] = all_el["web_name"] + " (" + all_el["team"].map(id2sname) + ")"
-            opts = all_el.sort_values("web_name")["label"].tolist()
-            pid_map = dict(zip(all_el["label"], all_el["id"]))
-
-            man_xi    = st.multiselect("Starting XI (11)", opts, max_selections=11, key="man_xi")
-            man_bench = st.multiselect("Bench (4)", opts, max_selections=4, key="man_bench")
-
-            if st.button("✅ Use Manual Squad", key="use_manual_sq"):
-                el_map_m = {p["id"]: p for p in bootstrap["elements"]}
-                POS_M    = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
-                t_short  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
-                msq = []
-                for idx, lbl in enumerate(man_xi + man_bench, 1):
-                    pid = pid_map.get(lbl)
-                    if not pid: continue
-                    el  = el_map_m.get(pid, {})
-                    msq.append({
-                        "id": pid, "name": el.get("web_name","?"),
-                        "team": t_short.get(el.get("team"),"?"),
-                        "pos": POS_M.get(el.get("element_type"),"?"),
-                        "price": el.get("now_cost",0)/10,
-                        "sel%": el.get("selected_by_percent","0"),
-                        "position": idx, "multiplier": 1,
-                        "is_captain": idx==1, "is_vice": idx==2,
-                        "code": el.get("code"),
-                    })
-                if msq:
-                    st.session_state["squad_data"] = msq
-                    st.success("Manual squad loaded!")
-
-        # Auto-load from FPL API
-        # Picks for GW N are only available AFTER GW N deadline.
-        # Before the deadline → fetch from the last finished GW.
-        if team_id and "squad_data" not in st.session_state:
-            try:
-                with st.spinner(f"Loading FPL team {team_id}..."):
-                    from datetime import datetime, timezone
-                    entry_d = fetch_fpl_entry(int(team_id))
-                    now_utc = datetime.now(timezone.utc)
-                    events  = bootstrap.get("events", [])
-
-                    picks_gw       = current_gw
-                    picks_gw_label = f"GW{current_gw}"
-                    for ev in events:
-                        if ev["id"] == current_gw:
-                            dl_raw = ev.get("deadline_time", "")
-                            if dl_raw:
-                                try:
-                                    dl_utc = datetime.fromisoformat(dl_raw.replace("Z", "+00:00"))
-                                    if now_utc < dl_utc:
-                                        finished_gws = sorted(
-                                            [e["id"] for e in events if e.get("finished")],
-                                            reverse=True
-                                        )
-                                        if finished_gws:
-                                            picks_gw = finished_gws[0]
-                                            picks_gw_label = f"GW{picks_gw} (last confirmed squad — GW{current_gw} deadline not yet passed)"
-                                except Exception:
-                                    pass
-                            break
-
-                    picks_d  = fetch_fpl_picks(int(team_id), picks_gw)
-                    history_d = fetch_fpl_history(int(team_id))
-                    squad_d  = build_squad_from_picks(picks_d, bootstrap)
-                    st.session_state["squad_data"]     = squad_d
-                    st.session_state["entry_data"]     = entry_d
-                    st.session_state["picks_raw"]      = picks_d
-                    st.session_state["history_data"]   = history_d
-                    st.session_state["picks_gw_label"] = picks_gw_label
-            except Exception as exc:
-                st.error(f"Could not load team {team_id}: {exc}")
-
-        if "squad_data" in st.session_state:
-            squad = enrich_squad_solio(
-                list(st.session_state["squad_data"]), proj_df, eo_df, team_gw
-            )
-
-            # Manager banner
-            picks_gw_label = st.session_state.get("picks_gw_label", f"GW{current_gw}")
-            if f"(last confirmed" in picks_gw_label:
-                st.info(f"⚠️ Showing **{picks_gw_label}** — update your squad after the deadline passes.")
-
-            if "entry_data" in st.session_state:
-                ed       = st.session_state["entry_data"]
-                pr       = st.session_state.get("picks_raw", {})
-                eh       = pr.get("entry_history", {})
-                manager  = ed.get("name", f"Team {team_id}")
-                rank     = ed.get("summary_overall_rank", "—")
-                pts_tot  = ed.get("summary_overall_points", "—")
-                bank_val = eh.get("bank", 0) / 10
-                tv_val   = eh.get("value", 0) / 10
-                # Chips played come from the history endpoint (entry endpoint doesn't reliably include them)
-                rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
-                st.markdown(
-                    f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
-                    f'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">'
-                    f'<div><div style="font-size:16px;font-weight:800;color:#e0e0e0">{manager}</div>'
-                    f'<div style="font-size:11px;color:#555">Rank {rank_fmt} · {pts_tot} pts</div></div>'
-                    f'<div><div style="font-size:11px;color:#555">Team Value</div>'
-                    f'<div style="font-size:14px;font-weight:700;color:#5fffb0">£{tv_val:.1f}m</div></div>'
-                    f'<div><div style="font-size:11px;color:#555">Bank</div>'
-                    f'<div style="font-size:14px;font-weight:700;color:#ffaa33">£{bank_val:.1f}m</div></div>'
-                    f'</div>',
-                    unsafe_allow_html=True
-                )
-
-            xi    = sorted([p for p in squad if p["position"] <= 11], key=lambda p: p["position"])
-            bench = sorted([p for p in squad if p["position"] >  11], key=lambda p: p["position"])
-
-            # Captain recommendation
-            xi_ev = [p for p in xi if p.get("ev")]
-            if xi_ev:
-                top_cap  = max(xi_ev, key=lambda p: p["ev"])
-                diff_cap = next((p for p in sorted(xi_ev, key=lambda p: -p["ev"])
-                                 if (p.get("eo%") or 999) < 10), None)
-                cap_rec = (
-                    f'<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
-                    f'padding:10px 14px;margin-bottom:10px;display:flex;gap:24px;flex-wrap:wrap">'
-                    f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">CAPTAIN REC</div>'
-                    f'<div style="font-size:15px;font-weight:800;color:#5fffb0;margin-top:2px">🏆 {top_cap["name"]}</div>'
-                    f'<div style="font-size:11px;color:#888">{top_cap["ev"]} pts · EO {top_cap.get("eo%","—")}%</div></div>'
-                )
-                if diff_cap and diff_cap["id"] != top_cap["id"]:
-                    cap_rec += (
-                        f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">DIFFERENTIAL</div>'
-                        f'<div style="font-size:15px;font-weight:800;color:#ffaa33;margin-top:2px">🎯 {diff_cap["name"]}</div>'
-                        f'<div style="font-size:11px;color:#888">{diff_cap["ev"]} pts · EO {diff_cap.get("eo%","—")}%</div></div>'
-                    )
-                cap_rec += '</div>'
-                st.markdown(cap_rec, unsafe_allow_html=True)
-
-            # Build position groups sorted by position number
-            pos_order = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
-            xi_by_pos = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
-            for p in sorted(xi, key=lambda p: (pos_order.get(p["pos"],4), p["position"])):
-                xi_by_pos[p["pos"]].append(p)
-
-            pitch_html = _render_pitch(xi_by_pos, team_gw, master_df_full, bench_players=bench)
-            st.markdown(pitch_html, unsafe_allow_html=True)
-
-
-# ── Tab 10: GW Planner ────────────────────────────────────────────────────────
-with tab10:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📅 GW Planner</span>'
-        '<span style="font-size:12px;color:#444">Projected XI · transfer suggestions</span></div>',
-        unsafe_allow_html=True
-    )
-
-    if not live_ok:
-        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-    elif proj_df is None:
-        st.info("📂 projections.csv not found — required for GW Planner.")
-    elif "squad_data" not in st.session_state:
-        st.info("👕 Load your team in the **My Team** tab first.")
-    else:
-        avail_gws_p = future_gws if future_gws else list(range(current_gw, 39))
-        plan_gw     = st.selectbox("Plan for GW:", avail_gws_p, key="plan_gw")
-        pts_col_p   = f"{plan_gw}_Pts"
-        mins_col_p  = f"{plan_gw}_xMins"
-        eo_col_p    = f"{plan_gw}_eo"
-
-        squad_p = enrich_squad_solio(
-            list(st.session_state["squad_data"]), proj_df, eo_df, plan_gw
+    # ── Tab 9: My Team ─────────────────────────────────────────────────────────────
+    with tab9:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">👕 My Team</span>'
+            '<span style="font-size:12px;color:#444">Live squad · fixtures · EV · captaincy</span></div>',
+            unsafe_allow_html=True
         )
-        xi_p    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p["position"])
 
-        # ── Projected XI ──────────────────────────────────────────────────────
-        st.markdown("#### 🔢 Projected XI")
-
-        if pts_col_p not in proj_df.columns:
-            st.warning(f"No Solio projections available for GW{plan_gw} yet.")
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
         else:
-            # Auto-build best XI by EV respecting formation rules
-            def _best_xi(players):
-                POS_MIN = {"GKP":1,"DEF":3,"MID":2,"FWD":1}
-                POS_MAX = {"GKP":1,"DEF":5,"MID":5,"FWD":3}
-                selected, counts = [], {"GKP":0,"DEF":0,"MID":0,"FWD":0}
-                for pos in ["GKP","DEF","MID","FWD"]:
-                    pool = sorted([p for p in players if p["pos"]==pos], key=lambda p: p.get("ev") or 0, reverse=True)
-                    for p in pool[:POS_MIN[pos]]:
-                        selected.append(p); counts[pos] += 1
-                remaining = sorted([p for p in players if p not in selected], key=lambda p: p.get("ev") or 0, reverse=True)
-                for p in remaining:
-                    if len(selected) >= 11: break
-                    if counts[p["pos"]] < POS_MAX[p["pos"]]:
-                        selected.append(p); counts[p["pos"]] += 1
-                return selected
-
-            sug_xi    = _best_xi(squad_p)
-            cap_p     = max(sug_xi, key=lambda p: p.get("ev") or 0) if sug_xi else None
-            total_ev  = sum(p.get("ev") or 0 for p in sug_xi)
-            cap_bonus = (cap_p["ev"] if cap_p and cap_p.get("ev") else 0)
-            total_cap = total_ev + cap_bonus  # captain doubles
-
-            # Summary card
-            cap_rec_html = ""
-            if cap_p:
-                cap_rec_html = (
-                    f'<div><div style="font-size:10px;color:#555;font-weight:700">CAPTAIN REC</div>'
-                    f'<div style="font-size:16px;font-weight:800;color:#fff;margin-top:2px">'
-                    f'{cap_p["name"]} ({cap_p["ev"]} pts)</div></div>'
+            col_tid, col_tgw = st.columns([2, 1])
+            with col_tid:
+                team_id_input = st.number_input(
+                    "FPL Team ID", min_value=1, max_value=99999999,
+                    value=int(st.session_state.get("fpl_team_id", 1)),
+                    step=1, key="fpl_team_id_input",
+                    help="Find your ID at: fantasy.premierleague.com/entry/{ID}/event/..."
                 )
-            st.markdown(
-                '<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
-                'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap">'
-                '<div><div style="font-size:10px;color:#555;font-weight:700">PROJECTED PTS (XI)</div>'
-                f'<div style="font-size:22px;font-weight:800;color:#5fffb0">{total_ev:.1f}</div></div>'
-                '<div><div style="font-size:10px;color:#555;font-weight:700">WITH CAPTAIN</div>'
-                f'<div style="font-size:22px;font-weight:800;color:#ffaa33">{total_cap:.1f}</div></div>'
-                + cap_rec_html + '</div>',
-                unsafe_allow_html=True
-            )
+            with col_tgw:
+                avail_gws = future_gws if future_gws else list(range(current_gw, 39))
+                team_gw   = st.selectbox("View GW fixtures", avail_gws, key="myteam_gw")
 
-            # Build best XI position groups, mark captain
-            pos_ord   = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
-            xi_by_pos_p = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
-            for p in sorted(sug_xi, key=lambda p: (pos_ord.get(p["pos"],4), -(p.get("ev") or 0))):
-                p["is_captain"] = (p == cap_p)
-                p["is_vice"]    = False
-                xi_by_pos_p[p["pos"]].append(p)
-            bench_sug = sorted([p for p in squad_p if p not in sug_xi], key=lambda p: -(p.get("ev") or 0))
-            for p in bench_sug:
-                p["is_captain"] = False
-                p["is_vice"]    = False
+            if st.button("🔄 Load Team", key="load_team_btn"):
+                st.session_state["fpl_team_id"] = team_id_input
+                for k in ["squad_data", "entry_data", "picks_raw"]:
+                    st.session_state.pop(k, None)
 
-            pitch_html_p = _render_pitch(xi_by_pos_p, plan_gw, master_df_full, bench_players=bench_sug)
-            st.markdown(pitch_html_p, unsafe_allow_html=True)
+            team_id = st.session_state.get("fpl_team_id")
 
-        # ── Transfer Suggestions ───────────────────────────────────────────────
-        st.markdown("#### 🔄 Transfer Suggestions")
+            # Manual squad fallback
+            with st.expander("✏️ Pick squad manually (if Team ID unavailable)", expanded=False):
+                all_el    = pd.DataFrame(bootstrap["elements"])
+                teams_bdf = pd.DataFrame(bootstrap["teams"])
+                id2sname  = dict(zip(teams_bdf["id"], teams_bdf["short_name"]))
+                all_el["label"] = all_el["web_name"] + " (" + all_el["team"].map(id2sname) + ")"
+                opts = all_el.sort_values("web_name")["label"].tolist()
+                pid_map = dict(zip(all_el["label"], all_el["id"]))
 
-        if pts_col_p not in proj_df.columns:
-            st.warning(f"No Solio projections for GW{plan_gw}.")
+                man_xi    = st.multiselect("Starting XI (11)", opts, max_selections=11, key="man_xi")
+                man_bench = st.multiselect("Bench (4)", opts, max_selections=4, key="man_bench")
+
+                if st.button("✅ Use Manual Squad", key="use_manual_sq"):
+                    el_map_m = {p["id"]: p for p in bootstrap["elements"]}
+                    POS_M    = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
+                    t_short  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
+                    msq = []
+                    for idx, lbl in enumerate(man_xi + man_bench, 1):
+                        pid = pid_map.get(lbl)
+                        if not pid: continue
+                        el  = el_map_m.get(pid, {})
+                        msq.append({
+                            "id": pid, "name": el.get("web_name","?"),
+                            "team": t_short.get(el.get("team"),"?"),
+                            "pos": POS_M.get(el.get("element_type"),"?"),
+                            "price": el.get("now_cost",0)/10,
+                            "sel%": el.get("selected_by_percent","0"),
+                            "position": idx, "multiplier": 1,
+                            "is_captain": idx==1, "is_vice": idx==2,
+                            "code": el.get("code"),
+                        })
+                    if msq:
+                        st.session_state["squad_data"] = msq
+                        st.success("Manual squad loaded!")
+
+            # Auto-load from FPL API
+            # Picks for GW N are only available AFTER GW N deadline.
+            # Before the deadline → fetch from the last finished GW.
+            if team_id and "squad_data" not in st.session_state:
+                try:
+                    with st.spinner(f"Loading FPL team {team_id}..."):
+                        from datetime import datetime, timezone
+                        entry_d = fetch_fpl_entry(int(team_id))
+                        now_utc = datetime.now(timezone.utc)
+                        events  = bootstrap.get("events", [])
+
+                        picks_gw       = current_gw
+                        picks_gw_label = f"GW{current_gw}"
+                        for ev in events:
+                            if ev["id"] == current_gw:
+                                dl_raw = ev.get("deadline_time", "")
+                                if dl_raw:
+                                    try:
+                                        dl_utc = datetime.fromisoformat(dl_raw.replace("Z", "+00:00"))
+                                        if now_utc < dl_utc:
+                                            finished_gws = sorted(
+                                                [e["id"] for e in events if e.get("finished")],
+                                                reverse=True
+                                            )
+                                            if finished_gws:
+                                                picks_gw = finished_gws[0]
+                                                picks_gw_label = f"GW{picks_gw} (last confirmed squad — GW{current_gw} deadline not yet passed)"
+                                    except Exception:
+                                        pass
+                                break
+
+                        picks_d  = fetch_fpl_picks(int(team_id), picks_gw)
+                        history_d = fetch_fpl_history(int(team_id))
+                        squad_d  = build_squad_from_picks(picks_d, bootstrap)
+                        st.session_state["squad_data"]     = squad_d
+                        st.session_state["entry_data"]     = entry_d
+                        st.session_state["picks_raw"]      = picks_d
+                        st.session_state["history_data"]   = history_d
+                        st.session_state["picks_gw_label"] = picks_gw_label
+                except Exception as exc:
+                    st.error(f"Could not load team {team_id}: {exc}")
+
+            if "squad_data" in st.session_state:
+                squad = enrich_squad_solio(
+                    list(st.session_state["squad_data"]), proj_df, eo_df, team_gw
+                )
+
+                # Manager banner
+                picks_gw_label = st.session_state.get("picks_gw_label", f"GW{current_gw}")
+                if f"(last confirmed" in picks_gw_label:
+                    st.info(f"⚠️ Showing **{picks_gw_label}** — update your squad after the deadline passes.")
+
+                if "entry_data" in st.session_state:
+                    ed       = st.session_state["entry_data"]
+                    pr       = st.session_state.get("picks_raw", {})
+                    eh       = pr.get("entry_history", {})
+                    manager  = ed.get("name", f"Team {team_id}")
+                    rank     = ed.get("summary_overall_rank", "—")
+                    pts_tot  = ed.get("summary_overall_points", "—")
+                    bank_val = eh.get("bank", 0) / 10
+                    tv_val   = eh.get("value", 0) / 10
+                    # Chips played come from the history endpoint (entry endpoint doesn't reliably include them)
+                    rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
+                    st.markdown(
+                        f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
+                        f'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">'
+                        f'<div><div style="font-size:16px;font-weight:800;color:#e0e0e0">{manager}</div>'
+                        f'<div style="font-size:11px;color:#555">Rank {rank_fmt} · {pts_tot} pts</div></div>'
+                        f'<div><div style="font-size:11px;color:#555">Team Value</div>'
+                        f'<div style="font-size:14px;font-weight:700;color:#5fffb0">£{tv_val:.1f}m</div></div>'
+                        f'<div><div style="font-size:11px;color:#555">Bank</div>'
+                        f'<div style="font-size:14px;font-weight:700;color:#ffaa33">£{bank_val:.1f}m</div></div>'
+                        f'</div>',
+                        unsafe_allow_html=True
+                    )
+
+                xi    = sorted([p for p in squad if p["position"] <= 11], key=lambda p: p["position"])
+                bench = sorted([p for p in squad if p["position"] >  11], key=lambda p: p["position"])
+
+                # Captain recommendation
+                xi_ev = [p for p in xi if p.get("ev")]
+                if xi_ev:
+                    top_cap  = max(xi_ev, key=lambda p: p["ev"])
+                    diff_cap = next((p for p in sorted(xi_ev, key=lambda p: -p["ev"])
+                                     if (p.get("eo%") or 999) < 10), None)
+                    cap_rec = (
+                        f'<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
+                        f'padding:10px 14px;margin-bottom:10px;display:flex;gap:24px;flex-wrap:wrap">'
+                        f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">CAPTAIN REC</div>'
+                        f'<div style="font-size:15px;font-weight:800;color:#5fffb0;margin-top:2px">🏆 {top_cap["name"]}</div>'
+                        f'<div style="font-size:11px;color:#888">{top_cap["ev"]} pts · EO {top_cap.get("eo%","—")}%</div></div>'
+                    )
+                    if diff_cap and diff_cap["id"] != top_cap["id"]:
+                        cap_rec += (
+                            f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">DIFFERENTIAL</div>'
+                            f'<div style="font-size:15px;font-weight:800;color:#ffaa33;margin-top:2px">🎯 {diff_cap["name"]}</div>'
+                            f'<div style="font-size:11px;color:#888">{diff_cap["ev"]} pts · EO {diff_cap.get("eo%","—")}%</div></div>'
+                        )
+                    cap_rec += '</div>'
+                    st.markdown(cap_rec, unsafe_allow_html=True)
+
+                # Build position groups sorted by position number
+                pos_order = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
+                xi_by_pos = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
+                for p in sorted(xi, key=lambda p: (pos_order.get(p["pos"],4), p["position"])):
+                    xi_by_pos[p["pos"]].append(p)
+
+                pitch_html = _render_pitch(xi_by_pos, team_gw, master_df_full, bench_players=bench)
+                st.markdown(pitch_html, unsafe_allow_html=True)
+
+
+    # ── Tab 10: GW Planner ────────────────────────────────────────────────────────
+    with tab10:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📅 GW Planner</span>'
+            '<span style="font-size:12px;color:#444">Projected XI · transfer suggestions</span></div>',
+            unsafe_allow_html=True
+        )
+
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        elif proj_df is None:
+            st.info("📂 projections.csv not found — required for GW Planner.")
+        elif "squad_data" not in st.session_state:
+            st.info("👕 Load your team in the **My Team** tab first.")
         else:
-            ft_opt    = st.radio("Free transfers:", ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"],
-                                 index=0, horizontal=True, key="plan_ft")
-            n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5}[ft_opt]
-            avail_ft  = n_suggest  # no automatic detection; user selects
+            avail_gws_p = future_gws if future_gws else list(range(current_gw, 39))
+            plan_gw     = st.selectbox("Plan for GW:", avail_gws_p, key="plan_gw")
+            pts_col_p   = f"{plan_gw}_Pts"
+            mins_col_p  = f"{plan_gw}_xMins"
+            eo_col_p    = f"{plan_gw}_eo"
 
-            squad_ids = {p["id"] for p in squad_p}
-            df_out    = proj_df.copy()
-            df_out[pts_col_p]  = pd.to_numeric(df_out[pts_col_p],  errors="coerce")
-            df_out[mins_col_p] = pd.to_numeric(df_out[mins_col_p], errors="coerce")
-            df_out["SV"]       = pd.to_numeric(df_out["SV"],       errors="coerce")
+            squad_p = enrich_squad_solio(
+                list(st.session_state["squad_data"]), proj_df, eo_df, plan_gw
+            )
+            xi_p    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p["position"])
 
-            outside = df_out[(df_out[mins_col_p] > 45) & (~df_out["ID"].isin(squad_ids))].copy()
-            if eo_df is not None and eo_col_p in eo_df.columns:
-                eo_map_t = pd.to_numeric(eo_df.set_index("ID")[eo_col_p], errors="coerce").to_dict()
-                outside["EO%"] = outside["ID"].map(eo_map_t).fillna(0) * 100
+            # ── Projected XI ──────────────────────────────────────────────────────
+            st.markdown("#### 🔢 Projected XI")
+
+            if pts_col_p not in proj_df.columns:
+                st.warning(f"No Solio projections available for GW{plan_gw} yet.")
             else:
-                outside["EO%"] = 0
+                # Auto-build best XI by EV respecting formation rules
+                def _best_xi(players):
+                    POS_MIN = {"GKP":1,"DEF":3,"MID":2,"FWD":1}
+                    POS_MAX = {"GKP":1,"DEF":5,"MID":5,"FWD":3}
+                    selected, counts = [], {"GKP":0,"DEF":0,"MID":0,"FWD":0}
+                    for pos in ["GKP","DEF","MID","FWD"]:
+                        pool = sorted([p for p in players if p["pos"]==pos], key=lambda p: p.get("ev") or 0, reverse=True)
+                        for p in pool[:POS_MIN[pos]]:
+                            selected.append(p); counts[pos] += 1
+                    remaining = sorted([p for p in players if p not in selected], key=lambda p: p.get("ev") or 0, reverse=True)
+                    for p in remaining:
+                        if len(selected) >= 11: break
+                        if counts[p["pos"]] < POS_MAX[p["pos"]]:
+                            selected.append(p); counts[p["pos"]] += 1
+                    return selected
 
-            pos_map = {"GKP":"G","DEF":"D","MID":"M","FWD":"F"}
-            # For more FTs, consider more sell candidates (bench included if ≥3 FTs)
-            pool_xi    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p.get("ev") or 0)
-            pool_bench = sorted([p for p in squad_p if p["position"] > 11],  key=lambda p: p.get("ev") or 0)
-            sell_pool  = pool_xi[:max(n_suggest + 2, 6)] if n_suggest < 3 else (pool_xi + pool_bench)[:max(n_suggest + 3, 8)]
-            xi_worst   = sell_pool  # alias for backwards compat
+                sug_xi    = _best_xi(squad_p)
+                cap_p     = max(sug_xi, key=lambda p: p.get("ev") or 0) if sug_xi else None
+                total_ev  = sum(p.get("ev") or 0 for p in sug_xi)
+                cap_bonus = (cap_p["ev"] if cap_p and cap_p.get("ev") else 0)
+                total_cap = total_ev + cap_bonus  # captain doubles
 
-            suggestions = []
-            used_buy_ids = set()  # prevent the same player being suggested as buy twice
-            for sell in xi_worst[:max(n_suggest * 2, 8)]:
-                if len(suggestions) >= n_suggest:
-                    break
-                sell_ev    = sell.get("ev") or 0
-                sell_price = sell["price"]
-                sell_pos   = sell["pos"]
-                same_pos   = outside[
-                    (outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])) &
-                    (~outside["ID"].isin(used_buy_ids))
-                ]
-                in_budget  = same_pos[same_pos["SV"] <= sell_price + 0.1]
-                if in_budget.empty:
-                    in_budget = same_pos
-                if in_budget.empty:
-                    continue
-                best_buy = in_budget.nlargest(1, pts_col_p)
-                if best_buy.empty: continue
-                buy_row  = best_buy.iloc[0]
-                buy_ev   = round(float(buy_row[pts_col_p]), 2)
-                gain     = round(buy_ev - sell_ev, 2)
-                if gain <= 0: continue
-                used_buy_ids.add(buy_row["ID"])
-                suggestions.append({
-                    "out_name": sell["name"], "out_team": sell["team"], "out_ev": sell_ev,
-                    "in_name":  buy_row["Name"], "in_team": buy_row["Team"],
-                    "in_ev": buy_ev, "gain": gain,
-                    "in_eo": round(float(buy_row.get("EO%", 0)), 1),
-                    "in_price": buy_row["SV"],
-                })
-
-            if not suggestions:
-                st.success("✅ Your squad looks optimal — no clear upgrades found.")
-            else:
-                suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:n_suggest]
-                th_s = 'style="padding:7px 10px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
-                rows_sg = ""
-                for sg in suggestions:
-                    ob, of = club_style(sg["out_team"])
-                    ib, if_ = club_style(sg["in_team"])
-                    gc = "#5fffb0" if sg["gain"] > 0 else "#ff6060"
-                    rows_sg += (
-                        f'<tr>'
-                        f'<td style="padding:7px 10px;border-bottom:1px solid #1a1a1a">'
-                        f'<span style="background:{ob};color:{of};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["out_name"]}</span>'
-                        f'<span style="color:#444;padding:0 6px">→</span>'
-                        f'<span style="background:{ib};color:{if_};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["in_name"]}</span>'
-                        f'</td>'
-                        f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:12px;border-bottom:1px solid #1a1a1a">{sg["out_ev"]} → {sg["in_ev"]}</td>'
-                        f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:13px;color:{gc};border-bottom:1px solid #1a1a1a">+{sg["gain"]}</td>'
-                        f'<td style="padding:7px 10px;text-align:center;color:#666;font-size:11px;border-bottom:1px solid #1a1a1a">{sg["in_eo"]}%</td>'
-                        f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">£{sg["in_price"]:.1f}m</td>'
-                        f'</tr>'
+                # Summary card
+                cap_rec_html = ""
+                if cap_p:
+                    cap_rec_html = (
+                        f'<div><div style="font-size:10px;color:#555;font-weight:700">CAPTAIN REC</div>'
+                        f'<div style="font-size:16px;font-weight:800;color:#fff;margin-top:2px">'
+                        f'{cap_p["name"]} ({cap_p["ev"]} pts)</div></div>'
                     )
                 st.markdown(
-                    f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
-                    f'<thead><tr>'
-                    f'<th {th_s} style="text-align:left">TRANSFER</th>'
-                    f'<th {th_s}>EV OUT→IN</th><th {th_s}>EV GAIN</th>'
-                    f'<th {th_s}>EO%</th><th {th_s}>PRICE</th>'
-                    f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
+                    '<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
+                    'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap">'
+                    '<div><div style="font-size:10px;color:#555;font-weight:700">PROJECTED PTS (XI)</div>'
+                    f'<div style="font-size:22px;font-weight:800;color:#5fffb0">{total_ev:.1f}</div></div>'
+                    '<div><div style="font-size:10px;color:#555;font-weight:700">WITH CAPTAIN</div>'
+                    f'<div style="font-size:22px;font-weight:800;color:#ffaa33">{total_cap:.1f}</div></div>'
+                    + cap_rec_html + '</div>',
                     unsafe_allow_html=True
                 )
 
+                # Build best XI position groups, mark captain
+                pos_ord   = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
+                xi_by_pos_p = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
+                for p in sorted(sug_xi, key=lambda p: (pos_ord.get(p["pos"],4), -(p.get("ev") or 0))):
+                    p["is_captain"] = (p == cap_p)
+                    p["is_vice"]    = False
+                    xi_by_pos_p[p["pos"]].append(p)
+                bench_sug = sorted([p for p in squad_p if p not in sug_xi], key=lambda p: -(p.get("ev") or 0))
+                for p in bench_sug:
+                    p["is_captain"] = False
+                    p["is_vice"]    = False
 
-with tab11:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-        '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
-        unsafe_allow_html=True
-    )
+                pitch_html_p = _render_pitch(xi_by_pos_p, plan_gw, master_df_full, bench_players=bench_sug)
+                st.markdown(pitch_html_p, unsafe_allow_html=True)
 
-    ts_df = load_csv_team_stats()
+            # ── Transfer Suggestions ───────────────────────────────────────────────
+            st.markdown("#### 🔄 Transfer Suggestions")
 
-    if ts_df.empty:
-        st.info("No team stats available.")
-    else:
+            if pts_col_p not in proj_df.columns:
+                st.warning(f"No Solio projections for GW{plan_gw}.")
+            else:
+                ft_opt    = st.radio("Free transfers:", ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"],
+                                     index=0, horizontal=True, key="plan_ft")
+                n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5}[ft_opt]
+                avail_ft  = n_suggest  # no automatic detection; user selects
+
+                squad_ids = {p["id"] for p in squad_p}
+                df_out    = proj_df.copy()
+                df_out[pts_col_p]  = pd.to_numeric(df_out[pts_col_p],  errors="coerce")
+                df_out[mins_col_p] = pd.to_numeric(df_out[mins_col_p], errors="coerce")
+                df_out["SV"]       = pd.to_numeric(df_out["SV"],       errors="coerce")
+
+                outside = df_out[(df_out[mins_col_p] > 45) & (~df_out["ID"].isin(squad_ids))].copy()
+                if eo_df is not None and eo_col_p in eo_df.columns:
+                    eo_map_t = pd.to_numeric(eo_df.set_index("ID")[eo_col_p], errors="coerce").to_dict()
+                    outside["EO%"] = outside["ID"].map(eo_map_t).fillna(0) * 100
+                else:
+                    outside["EO%"] = 0
+
+                pos_map = {"GKP":"G","DEF":"D","MID":"M","FWD":"F"}
+                # For more FTs, consider more sell candidates (bench included if ≥3 FTs)
+                pool_xi    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p.get("ev") or 0)
+                pool_bench = sorted([p for p in squad_p if p["position"] > 11],  key=lambda p: p.get("ev") or 0)
+                sell_pool  = pool_xi[:max(n_suggest + 2, 6)] if n_suggest < 3 else (pool_xi + pool_bench)[:max(n_suggest + 3, 8)]
+                xi_worst   = sell_pool  # alias for backwards compat
+
+                suggestions = []
+                used_buy_ids = set()  # prevent the same player being suggested as buy twice
+                for sell in xi_worst[:max(n_suggest * 2, 8)]:
+                    if len(suggestions) >= n_suggest:
+                        break
+                    sell_ev    = sell.get("ev") or 0
+                    sell_price = sell["price"]
+                    sell_pos   = sell["pos"]
+                    same_pos   = outside[
+                        (outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])) &
+                        (~outside["ID"].isin(used_buy_ids))
+                    ]
+                    in_budget  = same_pos[same_pos["SV"] <= sell_price + 0.1]
+                    if in_budget.empty:
+                        in_budget = same_pos
+                    if in_budget.empty:
+                        continue
+                    best_buy = in_budget.nlargest(1, pts_col_p)
+                    if best_buy.empty: continue
+                    buy_row  = best_buy.iloc[0]
+                    buy_ev   = round(float(buy_row[pts_col_p]), 2)
+                    gain     = round(buy_ev - sell_ev, 2)
+                    if gain <= 0: continue
+                    used_buy_ids.add(buy_row["ID"])
+                    suggestions.append({
+                        "out_name": sell["name"], "out_team": sell["team"], "out_ev": sell_ev,
+                        "in_name":  buy_row["Name"], "in_team": buy_row["Team"],
+                        "in_ev": buy_ev, "gain": gain,
+                        "in_eo": round(float(buy_row.get("EO%", 0)), 1),
+                        "in_price": buy_row["SV"],
+                    })
+
+                if not suggestions:
+                    st.success("✅ Your squad looks optimal — no clear upgrades found.")
+                else:
+                    suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:n_suggest]
+                    th_s = 'style="padding:7px 10px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
+                    rows_sg = ""
+                    for sg in suggestions:
+                        ob, of = club_style(sg["out_team"])
+                        ib, if_ = club_style(sg["in_team"])
+                        gc = "#5fffb0" if sg["gain"] > 0 else "#ff6060"
+                        rows_sg += (
+                            f'<tr>'
+                            f'<td style="padding:7px 10px;border-bottom:1px solid #1a1a1a">'
+                            f'<span style="background:{ob};color:{of};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["out_name"]}</span>'
+                            f'<span style="color:#444;padding:0 6px">→</span>'
+                            f'<span style="background:{ib};color:{if_};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["in_name"]}</span>'
+                            f'</td>'
+                            f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:12px;border-bottom:1px solid #1a1a1a">{sg["out_ev"]} → {sg["in_ev"]}</td>'
+                            f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:13px;color:{gc};border-bottom:1px solid #1a1a1a">+{sg["gain"]}</td>'
+                            f'<td style="padding:7px 10px;text-align:center;color:#666;font-size:11px;border-bottom:1px solid #1a1a1a">{sg["in_eo"]}%</td>'
+                            f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">£{sg["in_price"]:.1f}m</td>'
+                            f'</tr>'
+                        )
+                    st.markdown(
+                        f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                        f'<thead><tr>'
+                        f'<th {th_s} style="text-align:left">TRANSFER</th>'
+                        f'<th {th_s}>EV OUT→IN</th><th {th_s}>EV GAIN</th>'
+                        f'<th {th_s}>EO%</th><th {th_s}>PRICE</th>'
+                        f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
+                        unsafe_allow_html=True
+                    )
+
+
+
+# ────────────────────────────────────────────────────────────────────────────
+else:  # 🏟️ Stats
+    with tab11:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
+            '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
+            unsafe_allow_html=True
+        )
+
+        ts_df = load_csv_team_stats()
+
+        if ts_df.empty:
+            st.info("No team stats available.")
+        else:
+            st.dataframe(
+                ts_df,
+                use_container_width=True,
+                hide_index=True,
+                column_config={
+                    "Team":    st.column_config.TextColumn("Team"),
+                    "xG":      st.column_config.NumberColumn("xG", format="%.1f"),
+                    "xGC":     st.column_config.NumberColumn("xGC", format="%.1f"),
+                    "xGDiff":  st.column_config.NumberColumn("xG Diff", format="%.1f"),
+                },
+            )
+            st.caption("Click any column header to sort · xGC = xG conceded · xG Diff = xG − xGC")
+
+
+    # =============================================================================
+    # TAB 9 — Player Stats
+    # =============================================================================
+    with tab12:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
+            '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
+            unsafe_allow_html=True
+        )
+
+        ps_df = load_csv_player_stats()
+        ps_df = add_fpl_positions(ps_df, bootstrap)
+
+        # ── Primary filters ────────────────────────────────────────────────────────
+        fc1, fc2, fc3 = st.columns([2, 1, 1])
+        with fc1:
+            name_f = st.text_input("Search player:", placeholder="e.g. Salah", key="csv_ps_name")
+        with fc2:
+            club_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
+            club_f = st.selectbox("Club:", club_opts, key="csv_ps_club")
+        with fc3:
+            pos_f = st.selectbox("Position:", ["All", "GKP", "DEF", "MID", "FWD"], key="csv_ps_pos")
+
+        # ── Numeric column filters (expander) ──────────────────────────────────────
+        num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90",
+                    "Sh/90", "SoT/90", "BCC", "CC", "BCM",
+                    "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+        num_cols = [c for c in num_cols if c in ps_df.columns]
+
+        slider_vals = {}
+        with st.expander("Column filters", expanded=False):
+            exp_cols = st.columns(3)
+            for i, col in enumerate(num_cols):
+                col_min = float(ps_df[col].min())
+                col_max = float(ps_df[col].max())
+                with exp_cols[i % 3]:
+                    fmt = "%.0f" if col in ("MP", "Mins", "Goals", "Assists", "G+A", "BCC", "CC", "BCM") else "%.2f"
+                    slider_vals[col] = st.slider(
+                        col, col_min, col_max, (col_min, col_max),
+                        format=fmt, key=f"csv_ps_sl_{col}"
+                    )
+
+        # ── Apply all filters ──────────────────────────────────────────────────────
+        filt_ps = ps_df.copy()
+        if name_f:
+            filt_ps = filt_ps[filt_ps["Player"].str.contains(name_f, case=False, na=False)]
+        if club_f != "All":
+            filt_ps = filt_ps[filt_ps["Team"] == club_f]
+        if pos_f != "All":
+            filt_ps = filt_ps[filt_ps["Pos"] == pos_f]
+        for col, (lo, hi) in slider_vals.items():
+            filt_ps = filt_ps[(filt_ps[col] >= lo) & (filt_ps[col] <= hi)]
+        filt_ps = filt_ps.reset_index(drop=True)
+
+        col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
+                     "Goals", "Assists", "G+A", "G/90",
+                     "Sh/90", "SoT/90", "BCC", "CC", "BCM",
+                     "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+        show_cols = [c for c in col_order if c in filt_ps.columns]
+
         st.dataframe(
-            ts_df,
+            filt_ps[show_cols],
             use_container_width=True,
             hide_index=True,
             column_config={
-                "Team":    st.column_config.TextColumn("Team"),
-                "xG":      st.column_config.NumberColumn("xG", format="%.1f"),
-                "xGC":     st.column_config.NumberColumn("xGC", format="%.1f"),
-                "xGDiff":  st.column_config.NumberColumn("xG Diff", format="%.1f"),
+                "Player":     st.column_config.TextColumn("Player"),
+                "Team":       st.column_config.TextColumn("Team"),
+                "Country":    st.column_config.TextColumn("Country"),
+                "Pos":        st.column_config.TextColumn("Pos"),
+                "MP":         st.column_config.NumberColumn("MP"),
+                "Mins":       st.column_config.NumberColumn("Mins"),
+                "Goals":      st.column_config.NumberColumn("Goals"),
+                "Assists":    st.column_config.NumberColumn("Assists"),
+                "G+A":        st.column_config.NumberColumn("G+A"),
+                "G/90":       st.column_config.NumberColumn("G/90", format="%.2f"),
+                "Sh/90":      st.column_config.NumberColumn("Sh/90", format="%.2f"),
+                "SoT/90":     st.column_config.NumberColumn("SoT/90", format="%.2f"),
+                "BCC":        st.column_config.NumberColumn("BCC"),
+                "CC":         st.column_config.NumberColumn("CC"),
+                "BCM":        st.column_config.NumberColumn("BCM"),
+                "xG":         st.column_config.NumberColumn("xG", format="%.1f"),
+                "xG/90":      st.column_config.NumberColumn("xG/90", format="%.2f"),
+                "xGOT":       st.column_config.NumberColumn("xGOT", format="%.1f"),
+                "xA":         st.column_config.NumberColumn("xA", format="%.1f"),
+                "xA/90":      st.column_config.NumberColumn("xA/90", format="%.2f"),
+                "xG+xA/90":   st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
             },
         )
-        st.caption("Click any column header to sort · xGC = xG conceded · xG Diff = xG − xGC")
-
-
-# =============================================================================
-# TAB 9 — Player Stats
-# =============================================================================
-with tab12:
-    st.markdown(
-        '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-        '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
-        '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
-        unsafe_allow_html=True
-    )
-
-    ps_df = load_csv_player_stats()
-    ps_df = add_fpl_positions(ps_df, bootstrap)
-
-    # ── Primary filters ────────────────────────────────────────────────────────
-    fc1, fc2, fc3 = st.columns([2, 1, 1])
-    with fc1:
-        name_f = st.text_input("Search player:", placeholder="e.g. Salah", key="csv_ps_name")
-    with fc2:
-        club_opts = ["All"] + sorted(ps_df["Team"].dropna().unique().tolist())
-        club_f = st.selectbox("Club:", club_opts, key="csv_ps_club")
-    with fc3:
-        pos_f = st.selectbox("Position:", ["All", "GKP", "DEF", "MID", "FWD"], key="csv_ps_pos")
-
-    # ── Numeric column filters (expander) ──────────────────────────────────────
-    num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90",
-                "Sh/90", "SoT/90", "BCC", "CC", "BCM",
-                "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
-    num_cols = [c for c in num_cols if c in ps_df.columns]
-
-    slider_vals = {}
-    with st.expander("Column filters", expanded=False):
-        exp_cols = st.columns(3)
-        for i, col in enumerate(num_cols):
-            col_min = float(ps_df[col].min())
-            col_max = float(ps_df[col].max())
-            with exp_cols[i % 3]:
-                fmt = "%.0f" if col in ("MP", "Mins", "Goals", "Assists", "G+A", "BCC", "CC", "BCM") else "%.2f"
-                slider_vals[col] = st.slider(
-                    col, col_min, col_max, (col_min, col_max),
-                    format=fmt, key=f"csv_ps_sl_{col}"
-                )
-
-    # ── Apply all filters ──────────────────────────────────────────────────────
-    filt_ps = ps_df.copy()
-    if name_f:
-        filt_ps = filt_ps[filt_ps["Player"].str.contains(name_f, case=False, na=False)]
-    if club_f != "All":
-        filt_ps = filt_ps[filt_ps["Team"] == club_f]
-    if pos_f != "All":
-        filt_ps = filt_ps[filt_ps["Pos"] == pos_f]
-    for col, (lo, hi) in slider_vals.items():
-        filt_ps = filt_ps[(filt_ps[col] >= lo) & (filt_ps[col] <= hi)]
-    filt_ps = filt_ps.reset_index(drop=True)
-
-    col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
-                 "Goals", "Assists", "G+A", "G/90",
-                 "Sh/90", "SoT/90", "BCC", "CC", "BCM",
-                 "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
-    show_cols = [c for c in col_order if c in filt_ps.columns]
-
-    st.dataframe(
-        filt_ps[show_cols],
-        use_container_width=True,
-        hide_index=True,
-        column_config={
-            "Player":     st.column_config.TextColumn("Player"),
-            "Team":       st.column_config.TextColumn("Team"),
-            "Country":    st.column_config.TextColumn("Country"),
-            "Pos":        st.column_config.TextColumn("Pos"),
-            "MP":         st.column_config.NumberColumn("MP"),
-            "Mins":       st.column_config.NumberColumn("Mins"),
-            "Goals":      st.column_config.NumberColumn("Goals"),
-            "Assists":    st.column_config.NumberColumn("Assists"),
-            "G+A":        st.column_config.NumberColumn("G+A"),
-            "G/90":       st.column_config.NumberColumn("G/90", format="%.2f"),
-            "Sh/90":      st.column_config.NumberColumn("Sh/90", format="%.2f"),
-            "SoT/90":     st.column_config.NumberColumn("SoT/90", format="%.2f"),
-            "BCC":        st.column_config.NumberColumn("BCC"),
-            "CC":         st.column_config.NumberColumn("CC"),
-            "BCM":        st.column_config.NumberColumn("BCM"),
-            "xG":         st.column_config.NumberColumn("xG", format="%.1f"),
-            "xG/90":      st.column_config.NumberColumn("xG/90", format="%.2f"),
-            "xGOT":       st.column_config.NumberColumn("xGOT", format="%.1f"),
-            "xA":         st.column_config.NumberColumn("xA", format="%.1f"),
-            "xA/90":      st.column_config.NumberColumn("xA/90", format="%.2f"),
-            "xG+xA/90":   st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
-        },
-    )
-    st.caption(
-        f"{len(filt_ps)} players · Click any column header to sort · "
-        "BCC = big chances created · BCM = big chances missed · xGOT = xG on target"
-    )
+        st.caption(
+            f"{len(filt_ps)} players · Click any column header to sort · "
+            "BCC = big chances created · BCM = big chances missed · xGOT = xG on target"
+        )
 
