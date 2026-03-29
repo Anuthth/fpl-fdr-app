@@ -2485,7 +2485,129 @@ elif nav_cat == "🎯 Captain & Picks":
             )
             st.markdown(card_html, unsafe_allow_html=True)
 
+        # ── Export ────────────────────────────────────────────────────────────
+        if gw_notes:
+            st.divider()
+            export_body = card_html
+            export_html_str = _export_html(f"GW{view_gw} Cheatsheet", export_body)
+            st.download_button(
+                label="📥 Download Cheatsheet (HTML)",
+                data=export_html_str,
+                file_name=f"cheatsheet_gw{view_gw}.html",
+                mime="text/html",
+                key="dl_cheatsheet",
+            )
+
         # Show how-to hint
+
+    # ── Tab 13: Differential Finder ──────────────────────────────────────────
+    with tab13:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🔍 Differential Finder</span>'
+            '<span style="font-size:12px;color:#444">Low-ownership · high-projection picks</span></div>',
+            unsafe_allow_html=True
+        )
+
+        if proj_df is None or eo_df is None:
+            st.info("📂 Requires projections.csv and EO%.csv in the app folder.")
+        elif not future_gws:
+            st.info("No upcoming GW projections found.")
+        else:
+            dc1, dc2, dc3, dc4 = st.columns([1, 1, 1, 1])
+            with dc1:
+                diff_gw = st.selectbox("Gameweek", future_gws, key="diff_gw")
+            with dc2:
+                diff_pos = st.selectbox("Position", ["All", "GKP", "DEF", "MID", "FWD"], key="diff_pos")
+            with dc3:
+                diff_max_eo = st.slider("Max EO%", 1.0, 30.0, 10.0, 0.5, key="diff_max_eo")
+            with dc4:
+                diff_min_pts = st.slider("Min Proj Pts", 0.0, 12.0, 3.0, 0.5, key="diff_min_pts")
+
+            pts_col_d = f"{diff_gw}_Pts"
+            eo_col_d  = f"{diff_gw}_eo"
+
+            if pts_col_d not in proj_df.columns:
+                st.warning(f"No projections available for GW{diff_gw}.")
+            elif eo_col_d not in eo_df.columns:
+                st.warning(f"No EO% data available for GW{diff_gw}.")
+            else:
+                df_diff = proj_df[["ID", "Name", "Pos", "Team", "SV", pts_col_d]].copy()
+                df_diff[pts_col_d] = pd.to_numeric(df_diff[pts_col_d], errors="coerce")
+                eo_map_d = pd.to_numeric(eo_df.set_index("ID")[eo_col_d], errors="coerce").to_dict()
+                df_diff["EO%"] = (df_diff["ID"].map(eo_map_d) * 100).round(1)
+                df_diff["SV"]  = pd.to_numeric(df_diff["SV"], errors="coerce") / 10
+
+                # Apply filters
+                df_diff = df_diff[df_diff["EO%"] <= diff_max_eo]
+                df_diff = df_diff[df_diff[pts_col_d] >= diff_min_pts]
+                if diff_pos != "All":
+                    df_diff = df_diff[df_diff["Pos"] == diff_pos]
+                df_diff = df_diff.dropna(subset=[pts_col_d, "EO%"])
+                df_diff = df_diff.sort_values(pts_col_d, ascending=False).reset_index(drop=True)
+
+                st.markdown(
+                    f'<div style="font-size:12px;color:#555;margin-bottom:8px">'
+                    f'{len(df_diff)} differentials found · EO% ≤ {diff_max_eo}% · Proj pts ≥ {diff_min_pts}'
+                    f'</div>',
+                    unsafe_allow_html=True
+                )
+
+                if df_diff.empty:
+                    st.info("No players match the current filters.")
+                else:
+                    # Build styled HTML table
+                    th = 'style="padding:8px 10px;text-align:left;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e"'
+                    th_c = 'style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e"'
+                    rows_d = ""
+                    for i, row in df_diff.head(40).iterrows():
+                        bg, fg = club_style(row["Team"])
+                        fdr_val = get_fdr_for_team_gw(row["Team"], diff_gw, master_df_full)
+                        fdr_num = fdr_val[1] if isinstance(fdr_val, tuple) else 3
+                        fdr_bg  = FDR_BG.get(fdr_num, "#444")
+                        fdr_fg  = FDR_FG.get(fdr_num, "#fff")
+                        fix_lbl = fdr_val[0] if isinstance(fdr_val, tuple) else "?"
+                        eo_color = "#5fffb0" if row["EO%"] <= 5 else "#aaaaaa"
+                        rows_d += (
+                            f'<tr style="border-bottom:1px solid #141414">'
+                            f'<td style="padding:8px 10px;font-size:13px;font-weight:700;color:#e0e0e0">'
+                            f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:12px;font-weight:700;margin-right:8px">{row["Team"][:3].upper()}</span>'
+                            f'{row["Name"]}</td>'
+                            f'<td style="padding:8px 10px;text-align:center;color:#888;font-size:12px">{row["Pos"]}</td>'
+                            f'<td style="padding:8px 10px;text-align:center;font-weight:800;font-size:14px;color:#5aabff">{row[pts_col_d]:.1f}</td>'
+                            f'<td style="padding:8px 10px;text-align:center;font-weight:700;font-size:13px;color:{eo_color}">{row["EO%"]:.1f}%</td>'
+                            f'<td style="padding:8px 10px;text-align:center"><span style="background:{fdr_bg};color:{fdr_fg};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{fix_lbl}</span></td>'
+                            f'<td style="padding:8px 10px;text-align:center;color:#666;font-size:12px">£{row["SV"]:.1f}m</td>'
+                            f'</tr>'
+                        )
+                    diff_table = (
+                        f'<div style="overflow-x:auto">'
+                        f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                        f'<thead><tr style="background:#161b22">'
+                        f'<th {th}>PLAYER</th>'
+                        f'<th {th_c}>POS</th>'
+                        f'<th {th_c}>PROJ PTS</th>'
+                        f'<th {th_c}>EO%</th>'
+                        f'<th {th_c}>FIXTURE</th>'
+                        f'<th {th_c}>PRICE</th>'
+                        f'</tr></thead><tbody>{rows_d}</tbody></table></div>'
+                    )
+                    st.markdown(diff_table, unsafe_allow_html=True)
+                    st.caption("EO% = Solio expected ownership · Sorted by projected points · Green EO% = ≤ 5%")
+
+                    # Export
+                    st.divider()
+                    export_diff_html = _export_html(
+                        f"GW{diff_gw} Differentials (EO% ≤ {diff_max_eo}%)",
+                        diff_table
+                    )
+                    st.download_button(
+                        label="📥 Download Differentials (HTML)",
+                        data=export_diff_html,
+                        file_name=f"differentials_gw{diff_gw}.html",
+                        mime="text/html",
+                        key="dl_differentials",
+                    )
 
 # ────────────────────────────────────────────────────────────────────────────
 elif nav_cat == "👕 My FPL":
@@ -2911,6 +3033,119 @@ elif nav_cat == "👕 My FPL":
                         f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
                         unsafe_allow_html=True
                     )
+
+    # ── Tab 14: Mini-League Tracker ──────────────────────────────────────────
+    with tab14:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🏆 Mini-League</span>'
+            '<span style="font-size:12px;color:#444">Standings · rank movements</span></div>',
+            unsafe_allow_html=True
+        )
+
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        else:
+            ml_col1, ml_col2 = st.columns([3, 1])
+            with ml_col1:
+                ml_id_input = st.number_input(
+                    "Mini-League ID",
+                    min_value=1, max_value=9999999,
+                    value=int(st.session_state.get("ml_league_id", 314)),
+                    step=1, key="ml_id_input",
+                    help="Find the ID in the URL: fantasy.premierleague.com/leagues/{ID}/standings/c"
+                )
+            with ml_col2:
+                st.markdown("<br>", unsafe_allow_html=True)
+                load_ml = st.button("🔍 Load", key="load_ml_btn", use_container_width=True)
+
+            if load_ml:
+                st.session_state["ml_league_id"] = ml_id_input
+                fetch_mini_league.clear()
+
+            ml_league_id = st.session_state.get("ml_league_id")
+
+            if ml_league_id:
+                try:
+                    ml_data     = fetch_mini_league(int(ml_league_id))
+                    league_info = ml_data.get("league", {})
+                    league_name = league_info.get("name", f"League {ml_league_id}")
+                    results     = ml_data.get("standings", {}).get("results", [])
+
+                    st.markdown(
+                        f'<div style="font-size:16px;font-weight:700;color:#5fffb0;margin-bottom:12px">'
+                        f'{league_name}</div>',
+                        unsafe_allow_html=True
+                    )
+
+                    if not results:
+                        st.info("No standings data found for this league.")
+                    else:
+                        th_ml = 'style="padding:8px 10px;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e;text-align:center"'
+                        th_ml_l = 'style="padding:8px 10px;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e;text-align:left"'
+                        rows_ml = ""
+                        for entry in results:
+                            rank      = entry.get("rank", "-")
+                            last_rank = entry.get("last_rank", rank)
+                            try:
+                                move = int(last_rank) - int(rank)
+                            except Exception:
+                                move = 0
+                            if move > 0:
+                                arrow = f'<span style="color:#5fffb0;font-size:11px">▲{move}</span>'
+                            elif move < 0:
+                                arrow = f'<span style="color:#ff6060;font-size:11px">▼{abs(move)}</span>'
+                            else:
+                                arrow = '<span style="color:#444;font-size:11px">–</span>'
+
+                            manager   = entry.get("player_name", "?")
+                            team_name = entry.get("entry_name", "?")
+                            gw_pts    = entry.get("event_total", 0)
+                            total_pts = entry.get("total", 0)
+
+                            rank_color = "#ffd700" if rank == 1 else ("#c0c0c0" if rank == 2 else ("#cd7f32" if rank == 3 else "#e0e0e0"))
+
+                            rows_ml += (
+                                f'<tr style="border-bottom:1px solid #141414">'
+                                f'<td style="padding:8px 10px;text-align:center;font-weight:800;font-size:15px;color:{rank_color}">{rank}</td>'
+                                f'<td style="padding:8px 4px;text-align:center">{arrow}</td>'
+                                f'<td style="padding:8px 10px;font-size:13px;font-weight:600;color:#e0e0e0">{team_name}<br>'
+                                f'<span style="font-size:11px;color:#555;font-weight:400">{manager}</span></td>'
+                                f'<td style="padding:8px 10px;text-align:center;font-weight:800;font-size:14px;color:#5aabff">{gw_pts}</td>'
+                                f'<td style="padding:8px 10px;text-align:center;font-weight:700;font-size:13px;color:#aaa">{total_pts}</td>'
+                                f'</tr>'
+                            )
+
+                        ml_table = (
+                            f'<div style="overflow-x:auto">'
+                            f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
+                            f'<thead><tr style="background:#161b22">'
+                            f'<th {th_ml}>RANK</th>'
+                            f'<th {th_ml}></th>'
+                            f'<th {th_ml_l}>TEAM / MANAGER</th>'
+                            f'<th {th_ml}>GW PTS</th>'
+                            f'<th {th_ml}>TOTAL</th>'
+                            f'</tr></thead><tbody>{rows_ml}</tbody></table></div>'
+                        )
+                        st.markdown(ml_table, unsafe_allow_html=True)
+                        has_next = ml_data.get("standings", {}).get("has_next", False)
+                        if has_next:
+                            st.caption("Showing first 50 entries · FPL API paginates at 50")
+
+                        # Export
+                        st.divider()
+                        export_ml_html = _export_html(f"{league_name} Standings", ml_table)
+                        st.download_button(
+                            label="📥 Download Standings (HTML)",
+                            data=export_ml_html,
+                            file_name=f"mini_league_{ml_league_id}.html",
+                            mime="text/html",
+                            key="dl_mini_league",
+                        )
+
+                except Exception as e:
+                    st.error(f"Could not load league {ml_league_id}: {e}")
+                    st.caption("Check the league ID and ensure it's a Classic league (not H2H).")
 
 
 
