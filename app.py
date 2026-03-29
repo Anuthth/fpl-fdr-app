@@ -1705,19 +1705,30 @@ def load_csv_player_stats():
 
 
 def add_fpl_positions(player_df, bootstrap):
-    """Match FPL position (GKP/DEF/MID/FWD) and element ID to players by full name."""
+    """Match FPL position (GKP/DEF/MID/FWD) and element ID using multiple name strategies."""
+    import unicodedata
+    def _norm(s):
+        return unicodedata.normalize("NFD", str(s)).encode("ascii", "ignore").decode().lower().strip()
+
     elements = pd.DataFrame(bootstrap["elements"])
     POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    name_to_data = {
-        f"{r['first_name']} {r['second_name']}".lower(): {
-            "pos": POS.get(r["element_type"], "?"),
-            "id":  int(r["id"]),
-        }
-        for _, r in elements.iterrows()
-    }
+    lookup = {}  # normalised name → {pos, id}
+    for _, r in elements.iterrows():
+        data = {"pos": POS.get(r["element_type"], "?"), "id": int(r["id"])}
+        # Strategy 1: full name
+        lookup[_norm(f"{r['first_name']} {r['second_name']}")] = data
+        # Strategy 2: web_name only
+        lookup[_norm(r["web_name"])] = data
+        # Strategy 3: second_name only (fallback for single-name CSV entries)
+        lookup[_norm(r["second_name"])] = data
+
+    def _match(name):
+        n = _norm(name)
+        return lookup.get(n, {})
+
     df = player_df.copy()
-    df["Pos"]     = df["Player"].apply(lambda n: name_to_data.get(str(n).lower(), {}).get("pos", "?"))
-    df["_fpl_id"] = df["Player"].apply(lambda n: name_to_data.get(str(n).lower(), {}).get("id"))
+    df["Pos"]     = df["Player"].apply(lambda n: _match(n).get("pos", "?"))
+    df["_fpl_id"] = df["Player"].apply(lambda n: _match(n).get("id"))
     return df
 
 
@@ -2611,22 +2622,6 @@ elif nav_cat == "🎯 Captain & Picks":
                         fix_lbl = fdr_val[0] if isinstance(fdr_val, tuple) else "?"
                         eo_color = "#5fffb0" if row["EO%"] <= 5 else "#aaaaaa"
                         sv_val   = row["SV"]
-                        # External links
-                        _el_id   = int(row["ID"]) if pd.notna(row["ID"]) else None
-                        _ext     = _ext_links.get(_el_id, {})
-                        _links   = ""
-                        if _ext.get("understat"):
-                            _links += (f'<a href="https://understat.com/player/{_ext["understat"]}" '
-                                       f'target="_blank" style="color:#5aabff;text-decoration:none;'
-                                       f'font-size:11px;font-weight:700;margin-right:5px" title="Understat">US</a>')
-                        if _ext.get("fbref"):
-                            _links += (f'<a href="https://fbref.com/en/players/{_ext["fbref"]}/" '
-                                       f'target="_blank" style="color:#5fffb0;text-decoration:none;'
-                                       f'font-size:11px;font-weight:700;margin-right:5px" title="FBRef">FB</a>')
-                        if _ext.get("transfermarkt"):
-                            _links += (f'<a href="https://www.transfermarkt.com/-/profil/spieler/{_ext["transfermarkt"]}" '
-                                       f'target="_blank" style="color:#aaa;text-decoration:none;'
-                                       f'font-size:11px;font-weight:700" title="Transfermarkt">TM</a>')
                         rows_d += (
                             f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
                             f'<td style="padding:8px 10px;font-size:13px;font-weight:700;color:#e0e0e0;border-bottom:1px solid #141414;white-space:nowrap" data-val="{row["Name"]}">'
@@ -2638,9 +2633,6 @@ elif nav_cat == "🎯 Captain & Picks":
                             f'<td style="padding:8px 10px;text-align:center;border-bottom:1px solid #141414" data-val="{fdr_num}">'
                             f'<span style="background:{fdr_bg};color:{fdr_fg};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{fix_lbl}</span></td>'
                             f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;border-bottom:1px solid #141414" data-val="{sv_val:.2f}">£{sv_val:.1f}m</td>'
-                            '<td style="padding:8px 10px;text-align:center;border-bottom:1px solid #141414;white-space:nowrap" data-val="">'
-                            + (_links or '<span style="color:#333">—</span>') +
-                            '</td>'
                             f'</tr>'
                         )
 
@@ -2683,8 +2675,7 @@ elif nav_cat == "🎯 Captain & Picks":
                         + _dth("PROJ PTS", 2, "num")
                         + _dth("EO%", 3, "num")
                         + _dth("FIXTURE", 4, "num")
-                        + _dth("PRICE", 5, "num")
-                        + f'<th style="{_th_s};text-align:center">LINKS</th>' +
+                        + _dth("PRICE", 5, "num") +
                         f'</tr></thead><tbody>{rows_d}</tbody></table></div>'
                         f'{sort_js}</body></html>'
                     )
@@ -3349,22 +3340,41 @@ else:  # 🏟️ Stats
             except (ValueError, TypeError):
                 return None
 
-        filt_ps["Understat"] = filt_ps["_fpl_id"].apply(
-            lambda eid: (f"https://understat.com/player/{_ext_links[_safe_eid(eid)]['understat']}"
-                         if _safe_eid(eid) is not None and _safe_eid(eid) in _ext_links and _ext_links[_safe_eid(eid)].get("understat")
-                         else None)
+        def _tm_url(eid, player_name):
+            sid = _safe_eid(eid)
+            if sid is not None and sid in _ext_links and _ext_links[sid].get("transfermarkt"):
+                return f"https://www.transfermarkt.com/-/profil/spieler/{_ext_links[sid]['transfermarkt']}"
+            # Fallback: TM search by name
+            import urllib.parse
+            return f"https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={urllib.parse.quote(str(player_name))}"
+
+        filt_ps["Understat"] = filt_ps.apply(
+            lambda row: (f"https://understat.com/player/{_ext_links[_safe_eid(row['_fpl_id'])]['understat']}"
+                         if _safe_eid(row["_fpl_id"]) is not None
+                         and _safe_eid(row["_fpl_id"]) in _ext_links
+                         and _ext_links[_safe_eid(row["_fpl_id"])].get("understat")
+                         else None), axis=1
         )
-        filt_ps["FBRef"] = filt_ps["_fpl_id"].apply(
-            lambda eid: (f"https://fbref.com/en/players/{_ext_links[_safe_eid(eid)]['fbref']}/"
-                         if _safe_eid(eid) is not None and _safe_eid(eid) in _ext_links and _ext_links[_safe_eid(eid)].get("fbref")
-                         else None)
+        filt_ps["FBRef"] = filt_ps.apply(
+            lambda row: (f"https://fbref.com/en/players/{_ext_links[_safe_eid(row['_fpl_id'])]['fbref']}/"
+                         if _safe_eid(row["_fpl_id"]) is not None
+                         and _safe_eid(row["_fpl_id"]) in _ext_links
+                         and _ext_links[_safe_eid(row["_fpl_id"])].get("fbref")
+                         else None), axis=1
+        )
+        filt_ps["Transfermarkt"] = filt_ps.apply(
+            lambda row: _tm_url(row["_fpl_id"], row["Player"]), axis=1
+        )
+        filt_ps["FPL"] = filt_ps["_fpl_id"].apply(
+            lambda eid: (f"https://fantasy.premierleague.com/api/element-summary/{_safe_eid(eid)}/"
+                         if _safe_eid(eid) is not None else None)
         )
 
         col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
                      "Goals", "Assists", "G+A", "G/90",
                      "Sh/90", "SoT/90", "BCC", "CC", "BCM",
                      "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90",
-                     "Understat", "FBRef"]
+                     "Understat", "FBRef", "Transfermarkt", "FPL"]
         show_cols = [c for c in col_order if c in filt_ps.columns]
 
         st.dataframe(
@@ -3372,34 +3382,36 @@ else:  # 🏟️ Stats
             use_container_width=True,
             hide_index=True,
             column_config={
-                "Player":     st.column_config.TextColumn("Player"),
-                "Team":       st.column_config.TextColumn("Team"),
-                "Country":    st.column_config.TextColumn("Country"),
-                "Pos":        st.column_config.TextColumn("Pos"),
-                "MP":         st.column_config.NumberColumn("MP"),
-                "Mins":       st.column_config.NumberColumn("Mins"),
-                "Goals":      st.column_config.NumberColumn("Goals"),
-                "Assists":    st.column_config.NumberColumn("Assists"),
-                "G+A":        st.column_config.NumberColumn("G+A"),
-                "G/90":       st.column_config.NumberColumn("G/90", format="%.2f"),
-                "Sh/90":      st.column_config.NumberColumn("Sh/90", format="%.2f"),
-                "SoT/90":     st.column_config.NumberColumn("SoT/90", format="%.2f"),
-                "BCC":        st.column_config.NumberColumn("BCC"),
-                "CC":         st.column_config.NumberColumn("CC"),
-                "BCM":        st.column_config.NumberColumn("BCM"),
-                "xG":         st.column_config.NumberColumn("xG", format="%.1f"),
-                "xG/90":      st.column_config.NumberColumn("xG/90", format="%.2f"),
-                "xGOT":       st.column_config.NumberColumn("xGOT", format="%.1f"),
-                "xA":         st.column_config.NumberColumn("xA", format="%.1f"),
-                "xA/90":      st.column_config.NumberColumn("xA/90", format="%.2f"),
-                "xG+xA/90":   st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
-                "Understat":  st.column_config.LinkColumn("Understat", display_text="US ↗"),
-                "FBRef":      st.column_config.LinkColumn("FBRef", display_text="FB ↗"),
+                "Player":        st.column_config.TextColumn("Player"),
+                "Team":          st.column_config.TextColumn("Team"),
+                "Country":       st.column_config.TextColumn("Country"),
+                "Pos":           st.column_config.TextColumn("Pos"),
+                "MP":            st.column_config.NumberColumn("MP"),
+                "Mins":          st.column_config.NumberColumn("Mins"),
+                "Goals":         st.column_config.NumberColumn("Goals"),
+                "Assists":       st.column_config.NumberColumn("Assists"),
+                "G+A":           st.column_config.NumberColumn("G+A"),
+                "G/90":          st.column_config.NumberColumn("G/90", format="%.2f"),
+                "Sh/90":         st.column_config.NumberColumn("Sh/90", format="%.2f"),
+                "SoT/90":        st.column_config.NumberColumn("SoT/90", format="%.2f"),
+                "BCC":           st.column_config.NumberColumn("BCC"),
+                "CC":            st.column_config.NumberColumn("CC"),
+                "BCM":           st.column_config.NumberColumn("BCM"),
+                "xG":            st.column_config.NumberColumn("xG", format="%.1f"),
+                "xG/90":         st.column_config.NumberColumn("xG/90", format="%.2f"),
+                "xGOT":          st.column_config.NumberColumn("xGOT", format="%.1f"),
+                "xA":            st.column_config.NumberColumn("xA", format="%.1f"),
+                "xA/90":         st.column_config.NumberColumn("xA/90", format="%.2f"),
+                "xG+xA/90":      st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
+                "Understat":     st.column_config.LinkColumn("Understat", display_text="US ↗"),
+                "FBRef":         st.column_config.LinkColumn("FBRef", display_text="FB ↗"),
+                "Transfermarkt": st.column_config.LinkColumn("Transfermarkt", display_text="TM ↗"),
+                "FPL":           st.column_config.LinkColumn("FPL", display_text="FPL ↗"),
             },
         )
         st.caption(
             f"{len(filt_ps)} players · Click any column header to sort · "
             "BCC = big chances created · BCM = big chances missed · xGOT = xG on target · "
-            "US = Understat · FB = FBRef"
+            "US = Understat · FB = FBRef · TM = Transfermarkt · FPL = FPL API stats"
         )
 
