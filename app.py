@@ -2536,7 +2536,7 @@ elif nav_cat == "🎯 Captain & Picks":
                 df_diff[pts_col_d] = pd.to_numeric(df_diff[pts_col_d], errors="coerce")
                 eo_map_d = pd.to_numeric(eo_df.set_index("ID")[eo_col_d], errors="coerce").to_dict()
                 df_diff["EO%"] = (df_diff["ID"].map(eo_map_d) * 100).round(1)
-                df_diff["SV"]  = pd.to_numeric(df_diff["SV"], errors="coerce") / 10
+                df_diff["SV"]  = pd.to_numeric(df_diff["SV"], errors="coerce")
 
                 # Apply filters
                 df_diff = df_diff[df_diff["EO%"] <= diff_max_eo]
@@ -2556,11 +2556,18 @@ elif nav_cat == "🎯 Captain & Picks":
                 if df_diff.empty:
                     st.info("No players match the current filters.")
                 else:
-                    # Build styled HTML table
-                    th = 'style="padding:8px 10px;text-align:left;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e"'
-                    th_c = 'style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #1e1e1e"'
+                    # Build sortable styled HTML table
+                    _tid = "tbl_diff"
+                    _th_s = ("padding:8px 10px;font-size:11px;font-weight:700;letter-spacing:.5px;"
+                             "border-bottom:2px solid #1e1e1e;cursor:pointer;user-select:none;"
+                             "color:#666;white-space:nowrap")
+                    def _dth(label, col_i, dtype="num", align="center"):
+                        ta = "left" if align == "left" else "center"
+                        return (f'<th style="{_th_s};text-align:{ta}" '
+                                f'onclick="sortDiff({col_i},\'{dtype}\')">{label} ↕</th>')
+
                     rows_d = ""
-                    for i, row in df_diff.head(40).iterrows():
+                    for i, row in df_diff.head(60).iterrows():
                         bg, fg = club_style(row["Team"])
                         fdr_val = get_fdr_for_team_gw(row["Team"], diff_gw, master_df_full)
                         fdr_num = fdr_val[1] if isinstance(fdr_val, tuple) else 3
@@ -2568,38 +2575,85 @@ elif nav_cat == "🎯 Captain & Picks":
                         fdr_fg  = FDR_FG.get(fdr_num, "#fff")
                         fix_lbl = fdr_val[0] if isinstance(fdr_val, tuple) else "?"
                         eo_color = "#5fffb0" if row["EO%"] <= 5 else "#aaaaaa"
+                        sv_val   = row["SV"]
                         rows_d += (
-                            f'<tr style="border-bottom:1px solid #141414">'
-                            f'<td style="padding:8px 10px;font-size:13px;font-weight:700;color:#e0e0e0">'
+                            f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
+                            f'<td style="padding:8px 10px;font-size:13px;font-weight:700;color:#e0e0e0;border-bottom:1px solid #141414;white-space:nowrap" data-val="{row["Name"]}">'
                             f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;font-size:12px;font-weight:700;margin-right:8px">{row["Team"][:3].upper()}</span>'
                             f'{row["Name"]}</td>'
-                            f'<td style="padding:8px 10px;text-align:center;color:#888;font-size:12px">{row["Pos"]}</td>'
-                            f'<td style="padding:8px 10px;text-align:center;font-weight:800;font-size:14px;color:#5aabff">{row[pts_col_d]:.1f}</td>'
-                            f'<td style="padding:8px 10px;text-align:center;font-weight:700;font-size:13px;color:{eo_color}">{row["EO%"]:.1f}%</td>'
-                            f'<td style="padding:8px 10px;text-align:center"><span style="background:{fdr_bg};color:{fdr_fg};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{fix_lbl}</span></td>'
-                            f'<td style="padding:8px 10px;text-align:center;color:#666;font-size:12px">£{row["SV"]:.1f}m</td>'
+                            f'<td style="padding:8px 10px;text-align:center;color:#888;font-size:12px;border-bottom:1px solid #141414" data-val="{row["Pos"]}">{row["Pos"]}</td>'
+                            f'<td style="padding:8px 10px;text-align:center;font-weight:800;font-size:14px;color:#5aabff;border-bottom:1px solid #141414" data-val="{row[pts_col_d]:.2f}">{row[pts_col_d]:.1f}</td>'
+                            f'<td style="padding:8px 10px;text-align:center;font-weight:700;font-size:13px;color:{eo_color};border-bottom:1px solid #141414" data-val="{row["EO%"]:.2f}">{row["EO%"]:.1f}%</td>'
+                            f'<td style="padding:8px 10px;text-align:center;border-bottom:1px solid #141414" data-val="{fdr_num}">'
+                            f'<span style="background:{fdr_bg};color:{fdr_fg};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{fix_lbl}</span></td>'
+                            f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;border-bottom:1px solid #141414" data-val="{sv_val:.2f}">£{sv_val:.1f}m</td>'
                             f'</tr>'
                         )
+
+                    sort_js = f"""
+<script>
+(function(){{
+  var _ds = {{}};
+  window.sortDiff = function(col, dtype) {{
+    var tbl = document.getElementById('{_tid}');
+    if (!tbl) return;
+    var tbody = tbl.querySelector('tbody');
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    var key = col;
+    var asc = _ds[key] !== true;
+    _ds[key] = asc;
+    rows.sort(function(a,b){{
+      var av = a.cells[col] ? a.cells[col].getAttribute('data-val') : '';
+      var bv = b.cells[col] ? b.cells[col].getAttribute('data-val') : '';
+      if (dtype==='num'){{ av=parseFloat(av)||0; bv=parseFloat(bv)||0; return asc?av-bv:bv-av; }}
+      return asc?av.localeCompare(bv):bv.localeCompare(av);
+    }});
+    var ths = tbl.querySelectorAll('thead th');
+    ths.forEach(function(th,i){{
+      th.innerHTML = th.innerHTML.replace(/ [↑↓↕]/g,'') + (i===col?(asc?' ↑':' ↓'):' ↕');
+    }});
+    rows.forEach(function(r){{ tbody.appendChild(r); }});
+  }};
+}})();
+</script>"""
+
                     diff_table = (
+                        f'<!DOCTYPE html><html><head>'
+                        f'<style>body{{margin:0;background:#0d1117;}}table{{border-collapse:collapse;width:100%;font-family:Inter,Arial,sans-serif;background:#0d1117;}}th:hover{{color:#fff!important;}}</style>'
+                        f'</head><body>'
+                        f'<div style="overflow-x:auto">'
+                        f'<table id="{_tid}" style="border-collapse:collapse;width:100%;background:#0d1117">'
+                        f'<thead><tr style="background:#161b22">'
+                        + _dth("PLAYER", 0, "str", "left")
+                        + _dth("POS", 1, "str")
+                        + _dth("PROJ PTS", 2, "num")
+                        + _dth("EO%", 3, "num")
+                        + _dth("FIXTURE", 4, "num")
+                        + _dth("PRICE", 5, "num") +
+                        f'</tr></thead><tbody>{rows_d}</tbody></table></div>'
+                        f'{sort_js}</body></html>'
+                    )
+                    _tbl_h = 55 + min(len(df_diff), 60) * 42
+                    components.html(diff_table, height=_tbl_h, scrolling=False)
+                    st.caption("Click any column header to sort · EO% = Solio expected ownership · Green EO% = ≤ 5%")
+
+                    # Export (plain table, no JS wrapper)
+                    _export_table = (
                         f'<div style="overflow-x:auto">'
                         f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
                         f'<thead><tr style="background:#161b22">'
-                        f'<th {th}>PLAYER</th>'
-                        f'<th {th_c}>POS</th>'
-                        f'<th {th_c}>PROJ PTS</th>'
-                        f'<th {th_c}>EO%</th>'
-                        f'<th {th_c}>FIXTURE</th>'
-                        f'<th {th_c}>PRICE</th>'
+                        f'<th style="padding:8px 10px;text-align:left;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">PLAYER</th>'
+                        f'<th style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">POS</th>'
+                        f'<th style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">PROJ PTS</th>'
+                        f'<th style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">EO%</th>'
+                        f'<th style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">FIXTURE</th>'
+                        f'<th style="padding:8px 10px;text-align:center;color:#555;font-size:11px;font-weight:700;border-bottom:2px solid #1e1e1e">PRICE</th>'
                         f'</tr></thead><tbody>{rows_d}</tbody></table></div>'
                     )
-                    st.markdown(diff_table, unsafe_allow_html=True)
-                    st.caption("EO% = Solio expected ownership · Sorted by projected points · Green EO% = ≤ 5%")
-
-                    # Export
                     st.divider()
                     export_diff_html = _export_html(
                         f"GW{diff_gw} Differentials (EO% ≤ {diff_max_eo}%)",
-                        diff_table
+                        _export_table
                     )
                     st.download_button(
                         label="📥 Download Differentials (HTML)",
