@@ -572,6 +572,24 @@ st.set_page_config(layout="wide")
 st.title("🏆 CoachFPL Command Center")
 
 with st.sidebar:
+    # ── Section navigation (top of sidebar) ───────────────────────────────────
+    _NAV_GROUPS = ["📊 Planning", "🎯 Captain & Picks", "👕 My FPL", "🏟️ Stats"]
+    if "nav_cat" not in st.session_state:
+        st.session_state["nav_cat"] = _NAV_GROUPS[0]
+    st.markdown(
+        '<p style="font-size:11px;font-weight:800;color:#5fffb0;letter-spacing:1px;margin-bottom:4px;margin-top:0">SECTION</p>',
+        unsafe_allow_html=True,
+    )
+    nav_cat = st.radio(
+        "Section",
+        _NAV_GROUPS,
+        index=_NAV_GROUPS.index(st.session_state.get("nav_cat", _NAV_GROUPS[0])),
+        key="nav_cat",
+        label_visibility="collapsed",
+    )
+    st.divider()
+
+    # ── Settings ───────────────────────────────────────────────────────────────
     st.header("⚙️ Settings")
     use_live = st.toggle("📡 Live FPL Data", value=True)
     c1, c2 = st.columns(2)
@@ -750,18 +768,6 @@ fh_opts = [None] + list(range(start_gw, end_gw+1))
 free_hit_gw = st.sidebar.selectbox("Free Hit GW:", fh_opts,
                                     format_func=lambda x: "None" if x is None else f"GW{x}")
 
-st.sidebar.divider()
-st.sidebar.markdown('<span style="font-size:11px;color:#666;font-weight:700;letter-spacing:.5px">NAVIGATE</span>', unsafe_allow_html=True)
-_NAV_GROUPS = ["📊 Planning", "🎯 Captain & Picks", "👕 My FPL", "🏟️ Stats"]
-if "nav_cat" not in st.session_state:
-    st.session_state["nav_cat"] = _NAV_GROUPS[0]
-nav_cat = st.sidebar.radio(
-    "Section",
-    _NAV_GROUPS,
-    index=_NAV_GROUPS.index(st.session_state.get("nav_cat", _NAV_GROUPS[0])),
-    key="nav_cat",
-    label_visibility="collapsed",
-)
 
 # Build full master_df (GW29–38 for captain lookups)
 if proj_df is not None:
