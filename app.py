@@ -942,7 +942,926 @@ def _xcs_color(v):
     return "#6f2a74","#ffffff"
 
 
+# ── Solio branding helper ─────────────────────────────────────────────────────
+def _solio_credit_bar():
+    import base64
+    logo_b64 = ""
+    try:
+        with open("Solio_Logo_Neg_RGB.png", "rb") as f:
+            logo_b64 = base64.b64encode(f.read()).decode()
+        img_tag = (f'<img src="data:image/png;base64,{logo_b64}" '
+                   f'style="height:22px;vertical-align:middle;margin-right:10px;opacity:0.9">')
+    except:
+        img_tag = '<span style="font-weight:800;color:#fff;font-size:13px;margin-right:10px;letter-spacing:1px">SOLIO</span>'
+    return (
+        '<div style="display:flex;align-items:center;justify-content:space-between;'
+        'background:#111;border:1px solid #222;border-radius:6px;'
+        'padding:8px 14px;margin-bottom:14px">'
+        '<div style="display:flex;align-items:center">'
+        f'{img_tag}'
+        '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>'
+        '</div>'
+        '<a href="https://fpl.solioanalytics.com/" target="_blank" '
+        'style="background:#fff;color:#000;font-size:11px;font-weight:700;'
+        'padding:4px 12px;border-radius:4px;text-decoration:none;'
+        'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>'
+        '</div>'
+    )
+
+SOLIO_NO_FILE_MSG = (
+    "\ud83d\udcc2 **{filename} not found.**\n\n"
+    "Download from [Solio Analytics](https://www.solioanalytics.com) "
+    "and place it in your app folder alongside `app.py`."
+)
+
+
 # ────────────────────────────────────────────────────────────────────────────
+
+# =============================================================================
+# HELPERS — Team Stats & Player Stats  (100% FPL API, no external files)
+# =============================================================================
+
+def build_team_stats_df(bootstrap, raw_fixtures):
+    """
+    Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
+    xG/xGC from elements aggregation (most accurate source).
+    CS from main GKP per team.
+    """
+    teams_df = pd.DataFrame(bootstrap["teams"])
+    elements = pd.DataFrame(bootstrap["elements"])
+    id2name  = dict(zip(teams_df["id"], teams_df["name"]))
+
+    # ── Derive table stats from completed fixtures ────────────────────────────
+    records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+               for tid in teams_df["id"]}
+
+    for f in raw_fixtures:
+        if not f.get("finished", False): continue
+        hs = f.get("team_h_score")
+        as_ = f.get("team_a_score")
+        if hs is None or as_ is None: continue
+        hs, as_ = int(hs), int(as_)
+        h, a = f["team_h"], f["team_a"]
+        for tid in (h, a):
+            if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
+        records[h]["MP"] += 1; records[a]["MP"] += 1
+        records[h]["GF"] += hs; records[h]["GA"] += as_
+        records[a]["GF"] += as_; records[a]["GA"] += hs
+        if hs > as_:
+            records[h]["W"] += 1; records[h]["Pts"] += 3
+            records[a]["L"] += 1
+        elif hs < as_:
+            records[a]["W"] += 1; records[a]["Pts"] += 3
+            records[h]["L"] += 1
+        else:
+            records[h]["D"] += 1; records[h]["Pts"] += 1
+            records[a]["D"] += 1; records[a]["Pts"] += 1
+
+    # ── xG for team = sum of player xG ───────────────────────────────────────
+    for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
+        if c in elements.columns:
+            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
+    xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
+                  if "expected_goals" in elements.columns else {}
+
+    # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
+    rows = []
+    for _, t in teams_df.iterrows():
+        name = TEAM_NAME_MAP.get(t["name"], t["name"])
+        if name not in PREMIER_LEAGUE_TEAMS:
+            continue
+        tid = t["id"]
+        rec = records.get(tid, {})
+        gf  = rec.get("GF", 0)
+        ga  = rec.get("GA", 0)
+
+        # xG for team
+        xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
+
+        # xGC: expected_goals_conceded from main GKP
+        gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
+        if not gkps.empty and "expected_goals_conceded" in gkps.columns:
+            gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
+            gkps["expected_goals_conceded"] = pd.to_numeric(
+                gkps["expected_goals_conceded"], errors="coerce").fillna(0)
+            xgc = round(float(gkps.sort_values("minutes", ascending=False)
+                               .iloc[0]["expected_goals_conceded"]), 1)
+        else:
+            xgc = None
+
+        # CS: clean sheets from main GKP
+        if not gkps.empty and "clean_sheets" in gkps.columns:
+            gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
+            cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
+        else:
+            cs = 0
+
+        gd     = gf - ga
+        xgdiff = round(xg - xgc, 1) if xgc is not None else None
+
+        rows.append({
+            "Team":   name,
+            "MP":     rec.get("MP", 0),
+            "W":      rec.get("W",  0),
+            "D":      rec.get("D",  0),
+            "L":      rec.get("L",  0),
+            "GF":     gf,
+            "GA":     ga,
+            "GD":     gd,
+            "CS":     cs,
+            "xG":     xg,
+            "xGC":    xgc if xgc is not None else 0.0,
+            "xGDiff": xgdiff if xgdiff is not None else 0.0,
+            "Pts":    rec.get("Pts", 0),
+        })
+
+    df = pd.DataFrame(rows)
+    if not df.empty:
+        df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
+        df.insert(0, "Rk", range(1, len(df)+1))
+    return df
+
+
+# =============================================================================
+# FOTMOB SCRAPING — Team Stats & Player Stats
+# =============================================================================
+
+FOTMOB_PL_ID = 47  # Premier League on Fotmob
+
+_FOTMOB_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "https://www.fotmob.com/",
+}
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fotmob_league():
+    """Fetch Premier League overview from Fotmob (table + season info)."""
+    r = requests.get(
+        f"https://www.fotmob.com/api/leagues?id={FOTMOB_PL_ID}",
+        headers=_FOTMOB_HEADERS, timeout=15,
+    )
+    r.raise_for_status()
+    return r.json()
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fotmob_deep_stat(season_id: str, stat: str):
+    """Fetch top-100 player list for a single stat from Fotmob."""
+    url = (
+        f"https://www.fotmob.com/api/leagueseasondeepstats"
+        f"?id={FOTMOB_PL_ID}&season={season_id}&type=players&stat={stat}"
+    )
+    r = requests.get(url, headers=_FOTMOB_HEADERS, timeout=15)
+    r.raise_for_status()
+    return r.json()
+
+
+def _fotmob_pos(pos_str: str) -> str:
+    p = (pos_str or "").lower()
+    if "goal" in p:                              return "GKP"
+    if "defend" in p:                            return "DEF"
+    if "mid" in p:                               return "MID"
+    if "attack" in p or "forward" in p or "wing" in p: return "FWD"
+    return "?"
+
+
+def _fotmob_season_id(league_data: dict):
+    """Extract the active season ID string from Fotmob league JSON."""
+    details = league_data.get("details", {})
+    sid = details.get("selectedSeason")
+    if sid:
+        return str(sid)
+    for s in league_data.get("seasons", []):
+        if s.get("isSelected") or s.get("selected"):
+            return str(s.get("id") or s.get("seasonId", ""))
+    return None
+
+
+def _parse_fotmob_items(data: dict) -> list:
+    """Robustly extract the player list from a deep-stat API response."""
+    ss = data.get("statsSection", {})
+    # path 1: statsSubSections[0].items
+    sub = ss.get("statsSubSections", [])
+    if sub:
+        items = sub[0].get("items", [])
+        if items:
+            return items
+    # path 2: topLists
+    top = ss.get("topLists", [])
+    if top:
+        return top
+    # path 3: flat fallback
+    return data.get("items", data.get("topLists", []))
+
+
+def build_fotmob_team_stats_df(league_data: dict) -> pd.DataFrame:
+    """Build team stats table from Fotmob league-table data."""
+    try:
+        tables = league_data.get("table", [])
+        if not tables:
+            return pd.DataFrame()
+
+        table_all = (
+            tables[0]
+            .get("data", {})
+            .get("table", {})
+            .get("all", [])
+        )
+        if not table_all:
+            return pd.DataFrame()
+
+        rows = []
+        for t in table_all:
+            scores = t.get("scoresStr", "0-0")
+            try:
+                gf, ga = map(int, scores.split("-"))
+            except (ValueError, AttributeError):
+                gf, ga = 0, 0
+
+            xg_raw  = t.get("xg")
+            xgc_raw = t.get("xgc")
+
+            # Normalise team name through existing map
+            raw_name = t.get("name", "")
+            name = TEAM_NAME_MAP.get(raw_name, raw_name)
+
+            rows.append({
+                "Team": name,
+                "MP":   int(t.get("played", 0)),
+                "W":    int(t.get("wins",   0)),
+                "D":    int(t.get("draws",  0)),
+                "L":    int(t.get("losses", 0)),
+                "GF":   gf,
+                "GA":   ga,
+                "GD":   int(t.get("goalConDiff", gf - ga)),
+                "Pts":  int(t.get("pts", 0)),
+                "xG":   round(float(xg_raw),  1) if xg_raw  is not None else 0.0,
+                "xGC":  round(float(xgc_raw), 1) if xgc_raw is not None else 0.0,
+            })
+
+        df = pd.DataFrame(rows)
+        if not df.empty:
+            df["xGDiff"] = (df["xG"] - df["xGC"]).round(1)
+            df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
+            df.insert(0, "Rk", range(1, len(df) + 1))
+        return df
+    except Exception:
+        return pd.DataFrame()
+
+
+def build_fotmob_player_stats_df(league_data: dict) -> pd.DataFrame:
+    """
+    Build player stats by merging multiple Fotmob deep-stat pages.
+    Stats fetched: expected_goals, expected_assists, goals, assists,
+    minutes_played, interceptions, tackles_won, clearances_defensive,
+    clean_sheets, expected_goals_conceded.
+    """
+    season_id = _fotmob_season_id(league_data)
+    if not season_id:
+        return pd.DataFrame()
+
+    # stat_key → DataFrame column name
+    STAT_MAP = {
+        "expected_goals":          "xG",
+        "expected_assists":        "xA",
+        "goals":                   "Goals",
+        "assists":                 "Assists",
+        "minutes_played":          "_mins_raw",
+        "interceptions":           "Interceptions",
+        "tackles_won":             "Tackles",
+        "clearances_defensive":    "Clearances",
+        "clean_sheets":            "CS",
+        "expected_goals_conceded": "xGC",
+    }
+
+    players: dict = {}  # pid → {field: value}
+
+    for stat_key, field in STAT_MAP.items():
+        try:
+            items = _parse_fotmob_items(fetch_fotmob_deep_stat(season_id, stat_key))
+        except Exception:
+            continue
+
+        for item in items:
+            pid = str(item.get("id", ""))
+            if not pid:
+                continue
+            if pid not in players:
+                raw_team = item.get("teamName", "")
+                players[pid] = {
+                    "Player": item.get("name", ""),
+                    "Team":   TEAM_NAME_MAP.get(raw_team, raw_team),
+                    "Pos":    _fotmob_pos(item.get("position", "")),
+                    "Mins":   0,
+                }
+            players[pid][field] = item.get("statValue", 0)
+            # Keep max minutes seen across all stat calls
+            mp = int(item.get("minutesPlayed", 0) or 0)
+            if mp > players[pid].get("Mins", 0):
+                players[pid]["Mins"] = mp
+
+    if not players:
+        return pd.DataFrame()
+
+    rows = []
+    for p in players.values():
+        # Prefer the dedicated minutes_played stat value
+        mins = float(p.get("_mins_raw") or p.get("Mins") or 0)
+        p["Mins"] = int(mins)
+        nineties = mins / 90.0 if mins > 0 else 0.0
+
+        xg  = float(p.get("xG",  0) or 0)
+        xa  = float(p.get("xA",  0) or 0)
+        xgi = round(xg + xa, 2)
+        xgc = float(p.get("xGC", 0) or 0)
+
+        inter  = float(p.get("Interceptions", 0) or 0)
+        tackle = float(p.get("Tackles",       0) or 0)
+        clear  = float(p.get("Clearances",    0) or 0)
+        defcon = round(inter + tackle + clear, 1)
+        defcon90 = round(defcon / nineties, 2) if nineties >= 0.5 else None
+
+        rows.append({
+            "Player":    p.get("Player", ""),
+            "Team":      p.get("Team",   ""),
+            "Pos":       p.get("Pos",    "?"),
+            "Mins":      p["Mins"],
+            "Goals":     int(p.get("Goals",   0) or 0),
+            "Assists":   int(p.get("Assists", 0) or 0),
+            "xG":        round(xg,  2),
+            "xA":        round(xa,  2),
+            "xGI":       xgi,
+            "xGC":       round(xgc, 2),
+            "CS":        int(p.get("CS", 0) or 0),
+            "Defcon":    defcon,
+            "Defcon/90": defcon90,
+            "_90s":      round(nineties, 2),
+        })
+
+    df = pd.DataFrame(rows)
+    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
+    return df
+
+
+def build_player_stats_df(bootstrap):
+    """Full player analytics from FPL API elements — raw totals."""
+    elements = pd.DataFrame(bootstrap["elements"])
+    teams_df = pd.DataFrame(bootstrap["teams"])
+    id2name  = dict(zip(teams_df["id"], teams_df["name"]))
+    POS      = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
+
+    # Coerce all numeric strings
+    num_cols = ["minutes","starts","expected_goals","expected_assists",
+                "expected_goal_involvements","expected_goals_conceded",
+                "penalties_scored","now_cost","selected_by_percent",
+                "total_points","clearances_blocks_interceptions","tackles","recoveries"]
+    for c in num_cols:
+        if c in elements.columns:
+            elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
+
+    rows = []
+    for _, p in elements.iterrows():
+        mins     = float(p.get("minutes", 0))
+        starts   = float(p.get("starts", 0))
+        nineties = mins / 90 if mins >= 45 else 0
+
+        team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
+        pos  = POS.get(p.get("element_type"), "?")
+
+        xg  = float(p.get("expected_goals", 0))
+        xa  = float(p.get("expected_assists", 0))
+        xgi = float(p.get("expected_goal_involvements", 0))
+        xgc = float(p.get("expected_goals_conceded", 0))
+
+        pens  = float(p.get("penalties_scored", 0))
+        npxg  = max(0.0, round(xg - pens * 0.76, 2))
+        npxgi = max(0.0, round(npxg + xa, 2))
+
+        def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
+                      float(p.get("tackles", 0)) +
+                      float(p.get("recoveries", 0)))
+        defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
+
+        price       = round(float(p.get("now_cost", 0)) / 10, 1)
+        own         = float(p.get("selected_by_percent", 0))
+        total_pts   = float(p.get("total_points", 0))
+        ppm         = round(total_pts / price, 1) if price > 0 else None
+        min_start   = round(mins / starts, 0) if starts > 0 else None
+
+        rows.append({
+            "Player":    p.get("web_name", ""),
+            "Team":      team,
+            "Pos":       pos,
+            "Price":     price,
+            "Starts":    int(starts),
+            "Mins":      int(mins),
+            "Min/Start": int(min_start) if min_start else None,
+            # raw totals
+            "xG":        round(xg, 2),
+            "xA":        round(xa, 2),
+            "xGI":       round(xgi, 2),
+            "NpxG":      npxg,
+            "NpxGI":     npxgi,
+            "xGC":       round(xgc, 2),
+            "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
+            "Defcon/90": defcon_90,
+            "PPM":       ppm,
+            "Own%":      own,
+            # hidden 90s divisor for toggle
+            "_90s":      round(nineties, 2),
+        })
+
+    df = pd.DataFrame(rows)
+    df = df[df["Mins"] > 0].copy().reset_index(drop=True)
+    return df
+
+
+def _per90(df, cols_to_divide):
+    """Return a copy of df with specified cols divided by _90s."""
+    out = df.copy()
+    for c in cols_to_divide:
+        if c in out.columns and "_90s" in out.columns:
+            out[c] = (out[c] / out["_90s"].replace(0, np.nan)).round(2)
+    return out
+
+
+# ── Colour helpers ────────────────────────────────────────────────────────────
+# Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
+
+def _tier_color(val, low, high, col_type="positive"):
+    """
+    Returns (background, text_color) using a 3-tier system:
+      positive: low=grey, mid=teal, high=green
+      negative: low=grey, mid=orange, high=red   (used for GA, xGC)
+      diff:     positive=green, zero=grey, negative=red
+    """
+    if val is None or (isinstance(val, float) and np.isnan(val)):
+        return "#1a1a1a", "#444444"
+
+    fv = float(val)
+    # normalise 0→1
+    span = high - low
+    if span == 0:
+        t = 0.5
+    else:
+        t = max(0.0, min(1.0, (fv - low) / span))
+
+    if col_type == "positive":
+        # dark grey → teal → bright green
+        if t < 0.33:
+            return "#1e1e1e", "#666666"
+        elif t < 0.66:
+            return "#0d2b2b", "#4ecdc4"
+        else:
+            return "#0a2818", "#5fffb0"
+    elif col_type == "negative":
+        # green (low GA is good) → amber → red
+        if t < 0.33:
+            return "#0a2818", "#5fffb0"
+        elif t < 0.66:
+            return "#2b1a00", "#ffaa33"
+        else:
+            return "#2b0a0a", "#ff6060"
+    elif col_type == "diff":
+        if fv > 0.5:
+            return "#0a2818", "#5fffb0"
+        elif fv < -0.5:
+            return "#2b0a0a", "#ff6060"
+        else:
+            return "#1e1e1e", "#888888"
+    elif col_type == "blue":
+        # for CS, Defcon — blue scale
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#0a1a2b", "#5aabff"
+        else:
+            return "#051022", "#99ccff"
+    elif col_type == "gold":
+        if t < 0.33:
+            return "#1e1e1e", "#555555"
+        elif t < 0.66:
+            return "#221a00", "#ccaa33"
+        else:
+            return "#2b1f00", "#ffd966"
+    return "#1e1e1e", "#888888"
+
+
+# Pre-compute column ranges for consistent colouring across sort orders
+_TEAM_RANGES = {
+    "GF":     (15, 70, "positive"),
+    "GA":     (15, 65, "negative"),
+    "GD":     (-40, 50, "diff"),
+    "CS":     (0,  18, "blue"),
+    "xG":     (15, 65, "positive"),
+    "xGC":    (15, 65, "negative"),
+    "xGDiff": (-35, 35, "diff"),
+    "Pts":    (0,  90, "blue"),
+    "W":      (0,  30, "positive"),
+    "L":      (0,  25, "negative"),
+    "D":      (0,  15, "positive"),
+}
+
+_PLAYER_RANGES = {
+    "xG":        (0, 20,  "positive"),
+    "xA":        (0, 12,  "positive"),
+    "xGI":       (0, 25,  "positive"),
+    "NpxG":      (0, 18,  "positive"),
+    "NpxGI":     (0, 22,  "positive"),
+    "xGC":       (0, 50,  "negative"),
+    "Defcon/90": (0, 10,  "blue"),
+    "Defcon":    (0, 200, "blue"),
+    "PPM":       (0, 20,  "gold"),
+    "Own%":      (0, 70,  "gold"),
+    "Price":     (3.5, 15,"gold"),
+    # Fotmob-specific
+    "Goals":     (0, 25,  "positive"),
+    "Assists":   (0, 15,  "positive"),
+    "CS":        (0, 15,  "blue"),
+}
+
+
+def _stat_cell(val, col, ranges):
+    """Styled <td> with 3-tier colour, clean white text, minimal look."""
+    if val is None or (isinstance(val, float) and np.isnan(val)):
+        return ('<td style="padding:6px 10px;text-align:center;color:#333;'
+                'border-bottom:1px solid #161616">—</td>')
+
+    fv = float(val)
+
+    if col in ranges:
+        low, high, col_type = ranges[col]
+        bg, tc = _tier_color(fv, low, high, col_type)
+    else:
+        bg, tc = "#1e1e1e", "#888888"
+
+    # Format display value
+    if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
+               "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
+        disp = f"{fv:.2f}"
+    elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
+        disp = f"{int(round(fv))}"
+    else:
+        disp = f"{fv:.2f}"
+
+    return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
+            f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
+
+
+def _build_stats_html(df, ranges):
+    """Render minimal dark stats HTML table."""
+    cols = [c for c in df.columns if not c.startswith("_")]
+
+    header = ""
+    for c in cols:
+        align = "left" if c in ("Player","Team") else "center"
+        header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
+                   f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
+                   f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
+
+    rows_html = ""
+    for _, row in df.iterrows():
+        cells = ""
+        for c in cols:
+            val = row[c]
+            if c == "Rk":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
+                          f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "Team":
+                bg, fg = club_style(str(val))
+                dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
+                       f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
+                cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
+            elif c == "Player":
+                cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
+                          f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
+            elif c == "Pos":
+                pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
+                pc = pos_c.get(str(val), "#888")
+                cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
+                          f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
+                          f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
+            elif c == "W":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "D":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c == "L":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
+                          f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
+            elif c in ("MP","Starts","Mins","Min/Start"):
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
+                          f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
+            elif c == "Price":
+                cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
+                          f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
+            else:
+                try:
+                    cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
+                except:
+                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
+                              f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
+
+        rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
+                      f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
+
+    return (
+        '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
+        '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
+        f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
+        f'<tbody>{rows_html}</tbody></table></div>'
+    )
+
+
+# =============================================================================
+# CSV DATA LOADERS — Team & Player Stats
+# =============================================================================
+
+@st.cache_data(show_spinner=False)
+def load_csv_team_stats():
+    df = pd.read_csv("pl_teams_stats_2025_2026.csv")
+    df = df[["Team Name", "Expected goals", "xG conceded", "xG difference"]].copy()
+    df.columns = ["Team", "xG", "xGC", "xGDiff"]
+    for c in ["xG", "xGC", "xGDiff"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+
+
+@st.cache_data(show_spinner=False)
+def load_csv_player_stats():
+    df = pd.read_csv("pl_players_stats_2025_2026.csv")
+    col_map = {
+        "Player Name":                     "Player",
+        "Team":                            "Team",
+        "Country":                         "Country",
+        "Matches Played":                  "MP",
+        "Minutes Played":                  "Mins",
+        "Top scorer":                      "Goals",
+        "Assists":                         "Assists",
+        "Goals + Assists":                 "G+A",
+        "Goals per 90":                    "G/90",
+        "Big chances missed":              "BCM",
+        "Shots per 90":                    "Sh/90",
+        "Shots on target per 90":          "SoT/90",
+        "Big chances created":             "BCC",
+        "Chances created":                 "CC",
+        "Expected goals (xG)":             "xG",
+        "Expected goals (xG) per 90":      "xG/90",
+        "Expected goals on target (xGOT)": "xGOT",
+        "Expected assist (xA)":            "xA",
+        "Expected assist (xA) per 90":     "xA/90",
+        "xG + xA per 90":                  "xG+xA/90",
+    }
+    df = df[[c for c in col_map if c in df.columns]].rename(columns=col_map)
+    num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90", "BCM", "Sh/90",
+                "SoT/90", "BCC", "CC", "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+    for c in num_cols:
+        if c in df.columns:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+
+
+def add_fpl_positions(player_df, bootstrap):
+    """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
+    elements = pd.DataFrame(bootstrap["elements"])
+    POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    name_to_pos = {
+        f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
+        for _, r in elements.iterrows()
+    }
+    df = player_df.copy()
+    df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
+    return df
+
+
+# =============================================================================
+# TAB 8 — Team Stats
+# =============================================================================
+
+# ── FPL Team fetch helpers ─────────────────────────────────────────────────────
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_entry(team_id: int):
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_history(team_id: int):
+    """Return chips played from /history/ endpoint: [{"name":"wildcard","event":5,...},...]"""
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/history/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_fpl_picks(team_id: int, gw: int):
+    url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
+    r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+def build_squad_from_picks(picks_data, bootstrap):
+    el_map = {p["id"]: p for p in bootstrap["elements"]}
+    teams  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
+    POS    = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    squad  = []
+    for pick in picks_data["picks"]:
+        el = el_map.get(pick["element"], {})
+        squad.append({
+            "id":         pick["element"],
+            "name":       el.get("web_name", "?"),
+            "team":       teams.get(el.get("team"), "?"),
+            "pos":        POS.get(el.get("element_type"), "?"),
+            "price":      el.get("now_cost", 0) / 10,
+            "sel%":       el.get("selected_by_percent", "0"),
+            "position":   pick["position"],
+            "multiplier": pick["multiplier"],
+            "is_captain": pick["is_captain"],
+            "is_vice":    pick["is_vice_captain"],
+            "code":       el.get("code"),
+        })
+    return squad
+
+def enrich_squad_solio(squad, proj_df, eo_df, gw):
+    pts_col = f"{gw}_Pts"
+    eo_col  = f"{gw}_eo"
+    ev_map, eo_map = {}, {}
+    if proj_df is not None and pts_col in proj_df.columns:
+        ev_map = pd.to_numeric(proj_df.set_index("ID")[pts_col], errors="coerce").to_dict()
+    if eo_df is not None and eo_col in eo_df.columns:
+        eo_map = pd.to_numeric(eo_df.set_index("ID")[eo_col], errors="coerce").to_dict()
+    for p in squad:
+        pid = p["id"]
+        ev  = ev_map.get(pid)
+        eo  = eo_map.get(pid)
+        p["ev"]  = round(float(ev), 2) if ev is not None and not (isinstance(ev, float) and np.isnan(ev)) else None
+        p["eo%"] = round(float(eo) * 100, 1) if eo is not None and not (isinstance(eo, float) and np.isnan(eo)) else None
+    return squad
+
+def _squad_player_card(p, gw, master_df_full):
+    club_bg, club_fg = club_style(p["team"])
+    fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
+    fdr_bg = FDR_BG.get(fdr, "#444")
+    fdr_fg = FDR_FG.get(fdr, "#fff")
+    badge = ""
+    if p["is_captain"]:
+        badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
+    elif p["is_vice"]:
+        badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
+    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
+    photo_url = _verified_photo_url(p.get("code"))
+    if photo_url:
+        img_html = f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;object-position:top;border-radius:4px;display:block">'
+    else:
+        img_html = (
+            f'<div style="width:44px;height:56px;border-radius:4px;display:flex;'
+            f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
+            f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
+        )
+    ev_str = f"{p['ev']} pts" if p.get("ev") else "—"
+    eo_str = f"EO {p['eo%']}%" if p.get("eo%") else ""
+    opacity = "0.5" if p["position"] > 11 else "1"
+    return (
+        f'<div style="position:relative;background:{club_bg};border-radius:8px;'
+        f'padding:8px 10px;display:flex;align-items:center;gap:10px;opacity:{opacity};'
+        f'border:1px solid rgba(255,255,255,0.06);margin-bottom:4px">'
+        f'{badge}<div style="flex-shrink:0">{img_html}</div>'
+        f'<div style="min-width:0;flex:1">'
+        f'<div style="color:{club_fg};font-weight:700;font-size:13px;white-space:nowrap;'
+        f'overflow:hidden;text-overflow:ellipsis">{p["name"]}</div>'
+        f'<div style="color:{club_fg};font-size:11px;opacity:0.7">{p["team"]} · {p["pos"]}</div>'
+        f'<div style="display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap">'
+        f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{fix}</span>'
+        f'<span style="color:{club_fg};font-size:12px;font-weight:700">{ev_str}</span>'
+        f'<span style="color:{club_fg};font-size:11px;opacity:0.65">{eo_str}</span>'
+        f'</div></div></div>'
+    )
+
+
+def _pitch_token(p, gw, master_df_full, is_bench=False):
+    """FPL-style compact pitch token: photo/initials + club badge + fixture + EV."""
+    club_bg, club_fg = club_style(p["team"])
+    fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
+    fdr_bg  = FDR_BG.get(fdr, "#444")
+    fdr_fg  = FDR_FG.get(fdr, "#fff")
+    initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
+    photo_url = _verified_photo_url(p.get("code"))
+
+    # Photo or initials in a circle
+    if photo_url:
+        avatar = (
+            f'<div style="width:54px;height:54px;border-radius:50%;overflow:hidden;'
+            f'border:2.5px solid rgba(255,255,255,0.5);margin:0 auto 3px;background:{club_bg}">'
+            f'<img src="{photo_url}" style="width:100%;height:100%;object-fit:cover;object-position:top">'
+            f'</div>'
+        )
+    else:
+        avatar = (
+            f'<div style="width:54px;height:54px;border-radius:50%;display:flex;'
+            f'align-items:center;justify-content:center;font-size:18px;font-weight:800;'
+            f'color:{club_fg};background:{club_bg};border:2.5px solid rgba(255,255,255,0.5);'
+            f'margin:0 auto 3px">{initials}</div>'
+        )
+
+    # Captain / vice badge
+    cap_badge = ""
+    if p.get("is_captain"):
+        cap_badge = '<span style="position:absolute;top:0;right:0;background:#ffcc00;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">C</span>'
+    elif p.get("is_vice"):
+        cap_badge = '<span style="position:absolute;top:0;right:0;background:#bbb;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">V</span>'
+
+    ev_str  = f"{p['ev']}" if p.get("ev") else "—"
+    fix_str = fix if fix else "?"
+    opacity = "0.55" if is_bench else "1"
+
+    # Short name (up to 9 chars)
+    short = p["name"] if len(p["name"]) <= 9 else p["name"][:8] + "…"
+
+    return (
+        f'<div style="display:inline-block;text-align:center;width:68px;position:relative;opacity:{opacity};vertical-align:top">'
+        f'{cap_badge}'
+        f'{avatar}'
+        f'<div style="background:{club_bg};color:{club_fg};font-size:9.5px;font-weight:700;'
+        f'padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;'
+        f'text-overflow:ellipsis;max-width:68px;margin-bottom:2px">{short}</div>'
+        f'<div style="display:flex;gap:2px;justify-content:center;flex-wrap:nowrap">'
+        f'<span style="background:{fdr_bg};color:{fdr_fg};font-size:8px;font-weight:700;'
+        f'padding:1px 4px;border-radius:2px;white-space:nowrap">{fix_str}</span>'
+        f'<span style="background:rgba(0,0,0,0.55);color:#5fffb0;font-size:8px;font-weight:800;'
+        f'padding:1px 4px;border-radius:2px;white-space:nowrap">{ev_str}</span>'
+        f'</div>'
+        f'</div>'
+    )
+
+
+def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
+    """Render a full-pitch SVG background with player tokens in formation rows.
+    players_by_pos: dict with keys GKP/DEF/MID/FWD, each a list of player dicts."""
+    rows_html = ""
+    for pos in ["GKP", "DEF", "MID", "FWD"]:
+        grp = players_by_pos.get(pos, [])
+        if not grp:
+            continue
+        tokens = "".join(_pitch_token(p, gw, master_df_full) for p in grp)
+        rows_html += (
+            f'<div style="display:flex;justify-content:center;gap:8px;'
+            f'margin-bottom:14px;flex-wrap:nowrap">{tokens}</div>'
+        )
+
+    bench_html = ""
+    if bench_players:
+        btokens = "".join(_pitch_token(p, gw, master_df_full, is_bench=True) for p in bench_players)
+        bench_html = (
+            '<div style="margin-top:10px;padding-top:10px;border-top:2px dashed rgba(255,255,255,0.2)">'
+            '<div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:700;'
+            'letter-spacing:.6px;text-align:center;margin-bottom:8px">BENCH</div>'
+            f'<div style="display:flex;justify-content:center;gap:8px;flex-wrap:nowrap">{btokens}</div>'
+            '</div>'
+        )
+
+    return (
+        # Outer pitch container
+        '<div style="position:relative;border-radius:12px;overflow:hidden;'
+        'border:3px solid rgba(255,255,255,0.25);margin:6px 0">'
+        # Green pitch stripes background
+        '<div style="position:absolute;inset:0;'
+        'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 64px,#1e7024 64px,#1e7024 128px)">'
+        '</div>'
+        # Pitch markings overlay
+        '<div style="position:absolute;inset:0;pointer-events:none">'
+        # Top penalty area
+        '<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);'
+        'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-top:none;border-radius:0 0 8px 8px"></div>'
+        # Center line
+        '<div style="position:absolute;top:50%;left:4%;right:4%;height:1.5px;background:rgba(255,255,255,0.18)"></div>'
+        # Center circle
+        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
+        'width:72px;height:72px;border:1.5px solid rgba(255,255,255,0.18);border-radius:50%"></div>'
+        # Center dot
+        '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
+        'width:5px;height:5px;background:rgba(255,255,255,0.25);border-radius:50%"></div>'
+        # Bottom penalty area
+        '<div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);'
+        'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-bottom:none;border-radius:8px 8px 0 0"></div>'
+        '</div>'
+        # Content (tokens on top of pitch)
+        f'<div style="position:relative;z-index:1;padding:18px 12px 14px">'
+        f'{rows_html}'
+        f'{bench_html}'
+        '</div>'
+        '</div>'
+    )
+
 if nav_cat == "📊 Planning":
     # ── Tab 1: FDR ────────────────────────────────────────────────────────────────
     with tab1:
@@ -1192,38 +2111,6 @@ if nav_cat == "📊 Planning":
                 f'</tr></thead><tbody>{rows_html}</tbody></table></div>',
                 unsafe_allow_html=True
             )
-
-    # ── Solio branding helper ─────────────────────────────────────────────────────
-    def _solio_credit_bar():
-        import base64
-        logo_b64 = ""
-        try:
-            with open("Solio_Logo_Neg_RGB.png", "rb") as f:
-                logo_b64 = base64.b64encode(f.read()).decode()
-            img_tag = (f'<img src="data:image/png;base64,{logo_b64}" '
-                       f'style="height:22px;vertical-align:middle;margin-right:10px;opacity:0.9">')
-        except:
-            img_tag = '<span style="font-weight:800;color:#fff;font-size:13px;margin-right:10px;letter-spacing:1px">SOLIO</span>'
-        return (
-            '<div style="display:flex;align-items:center;justify-content:space-between;' 
-            'background:#111;border:1px solid #222;border-radius:6px;' 
-            'padding:8px 14px;margin-bottom:14px">' 
-            '<div style="display:flex;align-items:center">' 
-            f'{img_tag}'
-            '<span style="color:#555;font-size:11px">Projections &amp; EO data powered by Solio Analytics</span>' 
-            '</div>' 
-            '<a href="https://fpl.solioanalytics.com/" target="_blank" ' 
-            'style="background:#fff;color:#000;font-size:11px;font-weight:700;' 
-            'padding:4px 12px;border-radius:4px;text-decoration:none;' 
-            'letter-spacing:.5px;white-space:nowrap">Try Solio ↗</a>' 
-            '</div>'
-        )
-
-    SOLIO_NO_FILE_MSG = (
-        "\ud83d\udcc2 **{filename} not found.**\n\n"
-        "Download from [Solio Analytics](https://www.solioanalytics.com) "
-        "and place it in your app folder alongside `app.py`."
-    )
 
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -1610,892 +2497,6 @@ elif nav_cat == "👕 My FPL":
                     st.warning(f"Injury data unavailable: {e}")
 
 
-
-
-    # =============================================================================
-    # HELPERS — Team Stats & Player Stats  (100% FPL API, no external files)
-    # =============================================================================
-
-    def build_team_stats_df(bootstrap, raw_fixtures):
-        """
-        Derive W/D/L/MP/GF/GA/Pts from completed fixtures.
-        xG/xGC from elements aggregation (most accurate source).
-        CS from main GKP per team.
-        """
-        teams_df = pd.DataFrame(bootstrap["teams"])
-        elements = pd.DataFrame(bootstrap["elements"])
-        id2name  = dict(zip(teams_df["id"], teams_df["name"]))
-
-        # ── Derive table stats from completed fixtures ────────────────────────────
-        records = {tid: {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-                   for tid in teams_df["id"]}
-
-        for f in raw_fixtures:
-            if not f.get("finished", False): continue
-            hs = f.get("team_h_score")
-            as_ = f.get("team_a_score")
-            if hs is None or as_ is None: continue
-            hs, as_ = int(hs), int(as_)
-            h, a = f["team_h"], f["team_a"]
-            for tid in (h, a):
-                if tid not in records: records[tid] = {"MP":0,"W":0,"D":0,"L":0,"GF":0,"GA":0,"Pts":0}
-            records[h]["MP"] += 1; records[a]["MP"] += 1
-            records[h]["GF"] += hs; records[h]["GA"] += as_
-            records[a]["GF"] += as_; records[a]["GA"] += hs
-            if hs > as_:
-                records[h]["W"] += 1; records[h]["Pts"] += 3
-                records[a]["L"] += 1
-            elif hs < as_:
-                records[a]["W"] += 1; records[a]["Pts"] += 3
-                records[h]["L"] += 1
-            else:
-                records[h]["D"] += 1; records[h]["Pts"] += 1
-                records[a]["D"] += 1; records[a]["Pts"] += 1
-
-        # ── xG for team = sum of player xG ───────────────────────────────────────
-        for c in ["expected_goals","expected_goals_conceded","expected_goal_involvements"]:
-            if c in elements.columns:
-                elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
-
-        xg_by_team  = elements.groupby("team")["expected_goals"].sum() \
-                      if "expected_goals" in elements.columns else {}
-
-        # ── xGC: from top GKP per team (most accurate — represents team's defensive xGC) ──
-        rows = []
-        for _, t in teams_df.iterrows():
-            name = TEAM_NAME_MAP.get(t["name"], t["name"])
-            if name not in PREMIER_LEAGUE_TEAMS:
-                continue
-            tid = t["id"]
-            rec = records.get(tid, {})
-            gf  = rec.get("GF", 0)
-            ga  = rec.get("GA", 0)
-
-            # xG for team
-            xg = round(float(xg_by_team.get(tid, 0)), 1) if hasattr(xg_by_team, "get") else 0.0
-
-            # xGC: expected_goals_conceded from main GKP
-            gkps = elements[(elements["team"] == tid) & (elements["element_type"] == 1)].copy()
-            if not gkps.empty and "expected_goals_conceded" in gkps.columns:
-                gkps["minutes"] = pd.to_numeric(gkps.get("minutes", 0), errors="coerce").fillna(0)
-                gkps["expected_goals_conceded"] = pd.to_numeric(
-                    gkps["expected_goals_conceded"], errors="coerce").fillna(0)
-                xgc = round(float(gkps.sort_values("minutes", ascending=False)
-                                   .iloc[0]["expected_goals_conceded"]), 1)
-            else:
-                xgc = None
-
-            # CS: clean sheets from main GKP
-            if not gkps.empty and "clean_sheets" in gkps.columns:
-                gkps["clean_sheets"] = pd.to_numeric(gkps["clean_sheets"], errors="coerce").fillna(0)
-                cs = int(gkps.sort_values("minutes", ascending=False).iloc[0]["clean_sheets"])
-            else:
-                cs = 0
-
-            gd     = gf - ga
-            xgdiff = round(xg - xgc, 1) if xgc is not None else None
-
-            rows.append({
-                "Team":   name,
-                "MP":     rec.get("MP", 0),
-                "W":      rec.get("W",  0),
-                "D":      rec.get("D",  0),
-                "L":      rec.get("L",  0),
-                "GF":     gf,
-                "GA":     ga,
-                "GD":     gd,
-                "CS":     cs,
-                "xG":     xg,
-                "xGC":    xgc if xgc is not None else 0.0,
-                "xGDiff": xgdiff if xgdiff is not None else 0.0,
-                "Pts":    rec.get("Pts", 0),
-            })
-
-        df = pd.DataFrame(rows)
-        if not df.empty:
-            df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
-            df.insert(0, "Rk", range(1, len(df)+1))
-        return df
-
-
-    # =============================================================================
-    # FOTMOB SCRAPING — Team Stats & Player Stats
-    # =============================================================================
-
-    FOTMOB_PL_ID = 47  # Premier League on Fotmob
-
-    _FOTMOB_HEADERS = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/120.0.0.0 Safari/537.36"
-        ),
-        "Accept": "application/json, text/plain, */*",
-        "Referer": "https://www.fotmob.com/",
-    }
-
-
-    @st.cache_data(ttl=300, show_spinner=False)
-    def fetch_fotmob_league():
-        """Fetch Premier League overview from Fotmob (table + season info)."""
-        r = requests.get(
-            f"https://www.fotmob.com/api/leagues?id={FOTMOB_PL_ID}",
-            headers=_FOTMOB_HEADERS, timeout=15,
-        )
-        r.raise_for_status()
-        return r.json()
-
-
-    @st.cache_data(ttl=300, show_spinner=False)
-    def fetch_fotmob_deep_stat(season_id: str, stat: str):
-        """Fetch top-100 player list for a single stat from Fotmob."""
-        url = (
-            f"https://www.fotmob.com/api/leagueseasondeepstats"
-            f"?id={FOTMOB_PL_ID}&season={season_id}&type=players&stat={stat}"
-        )
-        r = requests.get(url, headers=_FOTMOB_HEADERS, timeout=15)
-        r.raise_for_status()
-        return r.json()
-
-
-    def _fotmob_pos(pos_str: str) -> str:
-        p = (pos_str or "").lower()
-        if "goal" in p:                              return "GKP"
-        if "defend" in p:                            return "DEF"
-        if "mid" in p:                               return "MID"
-        if "attack" in p or "forward" in p or "wing" in p: return "FWD"
-        return "?"
-
-
-    def _fotmob_season_id(league_data: dict):
-        """Extract the active season ID string from Fotmob league JSON."""
-        details = league_data.get("details", {})
-        sid = details.get("selectedSeason")
-        if sid:
-            return str(sid)
-        for s in league_data.get("seasons", []):
-            if s.get("isSelected") or s.get("selected"):
-                return str(s.get("id") or s.get("seasonId", ""))
-        return None
-
-
-    def _parse_fotmob_items(data: dict) -> list:
-        """Robustly extract the player list from a deep-stat API response."""
-        ss = data.get("statsSection", {})
-        # path 1: statsSubSections[0].items
-        sub = ss.get("statsSubSections", [])
-        if sub:
-            items = sub[0].get("items", [])
-            if items:
-                return items
-        # path 2: topLists
-        top = ss.get("topLists", [])
-        if top:
-            return top
-        # path 3: flat fallback
-        return data.get("items", data.get("topLists", []))
-
-
-    def build_fotmob_team_stats_df(league_data: dict) -> pd.DataFrame:
-        """Build team stats table from Fotmob league-table data."""
-        try:
-            tables = league_data.get("table", [])
-            if not tables:
-                return pd.DataFrame()
-
-            table_all = (
-                tables[0]
-                .get("data", {})
-                .get("table", {})
-                .get("all", [])
-            )
-            if not table_all:
-                return pd.DataFrame()
-
-            rows = []
-            for t in table_all:
-                scores = t.get("scoresStr", "0-0")
-                try:
-                    gf, ga = map(int, scores.split("-"))
-                except (ValueError, AttributeError):
-                    gf, ga = 0, 0
-
-                xg_raw  = t.get("xg")
-                xgc_raw = t.get("xgc")
-
-                # Normalise team name through existing map
-                raw_name = t.get("name", "")
-                name = TEAM_NAME_MAP.get(raw_name, raw_name)
-
-                rows.append({
-                    "Team": name,
-                    "MP":   int(t.get("played", 0)),
-                    "W":    int(t.get("wins",   0)),
-                    "D":    int(t.get("draws",  0)),
-                    "L":    int(t.get("losses", 0)),
-                    "GF":   gf,
-                    "GA":   ga,
-                    "GD":   int(t.get("goalConDiff", gf - ga)),
-                    "Pts":  int(t.get("pts", 0)),
-                    "xG":   round(float(xg_raw),  1) if xg_raw  is not None else 0.0,
-                    "xGC":  round(float(xgc_raw), 1) if xgc_raw is not None else 0.0,
-                })
-
-            df = pd.DataFrame(rows)
-            if not df.empty:
-                df["xGDiff"] = (df["xG"] - df["xGC"]).round(1)
-                df = df.sort_values("Pts", ascending=False).reset_index(drop=True)
-                df.insert(0, "Rk", range(1, len(df) + 1))
-            return df
-        except Exception:
-            return pd.DataFrame()
-
-
-    def build_fotmob_player_stats_df(league_data: dict) -> pd.DataFrame:
-        """
-        Build player stats by merging multiple Fotmob deep-stat pages.
-        Stats fetched: expected_goals, expected_assists, goals, assists,
-        minutes_played, interceptions, tackles_won, clearances_defensive,
-        clean_sheets, expected_goals_conceded.
-        """
-        season_id = _fotmob_season_id(league_data)
-        if not season_id:
-            return pd.DataFrame()
-
-        # stat_key → DataFrame column name
-        STAT_MAP = {
-            "expected_goals":          "xG",
-            "expected_assists":        "xA",
-            "goals":                   "Goals",
-            "assists":                 "Assists",
-            "minutes_played":          "_mins_raw",
-            "interceptions":           "Interceptions",
-            "tackles_won":             "Tackles",
-            "clearances_defensive":    "Clearances",
-            "clean_sheets":            "CS",
-            "expected_goals_conceded": "xGC",
-        }
-
-        players: dict = {}  # pid → {field: value}
-
-        for stat_key, field in STAT_MAP.items():
-            try:
-                items = _parse_fotmob_items(fetch_fotmob_deep_stat(season_id, stat_key))
-            except Exception:
-                continue
-
-            for item in items:
-                pid = str(item.get("id", ""))
-                if not pid:
-                    continue
-                if pid not in players:
-                    raw_team = item.get("teamName", "")
-                    players[pid] = {
-                        "Player": item.get("name", ""),
-                        "Team":   TEAM_NAME_MAP.get(raw_team, raw_team),
-                        "Pos":    _fotmob_pos(item.get("position", "")),
-                        "Mins":   0,
-                    }
-                players[pid][field] = item.get("statValue", 0)
-                # Keep max minutes seen across all stat calls
-                mp = int(item.get("minutesPlayed", 0) or 0)
-                if mp > players[pid].get("Mins", 0):
-                    players[pid]["Mins"] = mp
-
-        if not players:
-            return pd.DataFrame()
-
-        rows = []
-        for p in players.values():
-            # Prefer the dedicated minutes_played stat value
-            mins = float(p.get("_mins_raw") or p.get("Mins") or 0)
-            p["Mins"] = int(mins)
-            nineties = mins / 90.0 if mins > 0 else 0.0
-
-            xg  = float(p.get("xG",  0) or 0)
-            xa  = float(p.get("xA",  0) or 0)
-            xgi = round(xg + xa, 2)
-            xgc = float(p.get("xGC", 0) or 0)
-
-            inter  = float(p.get("Interceptions", 0) or 0)
-            tackle = float(p.get("Tackles",       0) or 0)
-            clear  = float(p.get("Clearances",    0) or 0)
-            defcon = round(inter + tackle + clear, 1)
-            defcon90 = round(defcon / nineties, 2) if nineties >= 0.5 else None
-
-            rows.append({
-                "Player":    p.get("Player", ""),
-                "Team":      p.get("Team",   ""),
-                "Pos":       p.get("Pos",    "?"),
-                "Mins":      p["Mins"],
-                "Goals":     int(p.get("Goals",   0) or 0),
-                "Assists":   int(p.get("Assists", 0) or 0),
-                "xG":        round(xg,  2),
-                "xA":        round(xa,  2),
-                "xGI":       xgi,
-                "xGC":       round(xgc, 2),
-                "CS":        int(p.get("CS", 0) or 0),
-                "Defcon":    defcon,
-                "Defcon/90": defcon90,
-                "_90s":      round(nineties, 2),
-            })
-
-        df = pd.DataFrame(rows)
-        df = df[df["Mins"] > 0].copy().reset_index(drop=True)
-        return df
-
-
-    def build_player_stats_df(bootstrap):
-        """Full player analytics from FPL API elements — raw totals."""
-        elements = pd.DataFrame(bootstrap["elements"])
-        teams_df = pd.DataFrame(bootstrap["teams"])
-        id2name  = dict(zip(teams_df["id"], teams_df["name"]))
-        POS      = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
-
-        # Coerce all numeric strings
-        num_cols = ["minutes","starts","expected_goals","expected_assists",
-                    "expected_goal_involvements","expected_goals_conceded",
-                    "penalties_scored","now_cost","selected_by_percent",
-                    "total_points","clearances_blocks_interceptions","tackles","recoveries"]
-        for c in num_cols:
-            if c in elements.columns:
-                elements[c] = pd.to_numeric(elements[c], errors="coerce").fillna(0)
-
-        rows = []
-        for _, p in elements.iterrows():
-            mins     = float(p.get("minutes", 0))
-            starts   = float(p.get("starts", 0))
-            nineties = mins / 90 if mins >= 45 else 0
-
-            team = TEAM_NAME_MAP.get(id2name.get(p.get("team"), ""), "")
-            pos  = POS.get(p.get("element_type"), "?")
-
-            xg  = float(p.get("expected_goals", 0))
-            xa  = float(p.get("expected_assists", 0))
-            xgi = float(p.get("expected_goal_involvements", 0))
-            xgc = float(p.get("expected_goals_conceded", 0))
-
-            pens  = float(p.get("penalties_scored", 0))
-            npxg  = max(0.0, round(xg - pens * 0.76, 2))
-            npxgi = max(0.0, round(npxg + xa, 2))
-
-            def_raw    = (float(p.get("clearances_blocks_interceptions", 0)) +
-                          float(p.get("tackles", 0)) +
-                          float(p.get("recoveries", 0)))
-            defcon_90  = round(def_raw / nineties, 2) if nineties >= 0.5 else None
-
-            price       = round(float(p.get("now_cost", 0)) / 10, 1)
-            own         = float(p.get("selected_by_percent", 0))
-            total_pts   = float(p.get("total_points", 0))
-            ppm         = round(total_pts / price, 1) if price > 0 else None
-            min_start   = round(mins / starts, 0) if starts > 0 else None
-
-            rows.append({
-                "Player":    p.get("web_name", ""),
-                "Team":      team,
-                "Pos":       pos,
-                "Price":     price,
-                "Starts":    int(starts),
-                "Mins":      int(mins),
-                "Min/Start": int(min_start) if min_start else None,
-                # raw totals
-                "xG":        round(xg, 2),
-                "xA":        round(xa, 2),
-                "xGI":       round(xgi, 2),
-                "NpxG":      npxg,
-                "NpxGI":     npxgi,
-                "xGC":       round(xgc, 2),
-                "Defcon":    round(def_raw, 1),   # raw total (for /90 toggle)
-                "Defcon/90": defcon_90,
-                "PPM":       ppm,
-                "Own%":      own,
-                # hidden 90s divisor for toggle
-                "_90s":      round(nineties, 2),
-            })
-
-        df = pd.DataFrame(rows)
-        df = df[df["Mins"] > 0].copy().reset_index(drop=True)
-        return df
-
-
-    def _per90(df, cols_to_divide):
-        """Return a copy of df with specified cols divided by _90s."""
-        out = df.copy()
-        for c in cols_to_divide:
-            if c in out.columns and "_90s" in out.columns:
-                out[c] = (out[c] / out["_90s"].replace(0, np.nan)).round(2)
-        return out
-
-
-    # ── Colour helpers ────────────────────────────────────────────────────────────
-    # Simple 3-tier palette: low / mid / high — easy on the eyes, high contrast text
-
-    def _tier_color(val, low, high, col_type="positive"):
-        """
-        Returns (background, text_color) using a 3-tier system:
-          positive: low=grey, mid=teal, high=green
-          negative: low=grey, mid=orange, high=red   (used for GA, xGC)
-          diff:     positive=green, zero=grey, negative=red
-        """
-        if val is None or (isinstance(val, float) and np.isnan(val)):
-            return "#1a1a1a", "#444444"
-
-        fv = float(val)
-        # normalise 0→1
-        span = high - low
-        if span == 0:
-            t = 0.5
-        else:
-            t = max(0.0, min(1.0, (fv - low) / span))
-
-        if col_type == "positive":
-            # dark grey → teal → bright green
-            if t < 0.33:
-                return "#1e1e1e", "#666666"
-            elif t < 0.66:
-                return "#0d2b2b", "#4ecdc4"
-            else:
-                return "#0a2818", "#5fffb0"
-        elif col_type == "negative":
-            # green (low GA is good) → amber → red
-            if t < 0.33:
-                return "#0a2818", "#5fffb0"
-            elif t < 0.66:
-                return "#2b1a00", "#ffaa33"
-            else:
-                return "#2b0a0a", "#ff6060"
-        elif col_type == "diff":
-            if fv > 0.5:
-                return "#0a2818", "#5fffb0"
-            elif fv < -0.5:
-                return "#2b0a0a", "#ff6060"
-            else:
-                return "#1e1e1e", "#888888"
-        elif col_type == "blue":
-            # for CS, Defcon — blue scale
-            if t < 0.33:
-                return "#1e1e1e", "#555555"
-            elif t < 0.66:
-                return "#0a1a2b", "#5aabff"
-            else:
-                return "#051022", "#99ccff"
-        elif col_type == "gold":
-            if t < 0.33:
-                return "#1e1e1e", "#555555"
-            elif t < 0.66:
-                return "#221a00", "#ccaa33"
-            else:
-                return "#2b1f00", "#ffd966"
-        return "#1e1e1e", "#888888"
-
-
-    # Pre-compute column ranges for consistent colouring across sort orders
-    _TEAM_RANGES = {
-        "GF":     (15, 70, "positive"),
-        "GA":     (15, 65, "negative"),
-        "GD":     (-40, 50, "diff"),
-        "CS":     (0,  18, "blue"),
-        "xG":     (15, 65, "positive"),
-        "xGC":    (15, 65, "negative"),
-        "xGDiff": (-35, 35, "diff"),
-        "Pts":    (0,  90, "blue"),
-        "W":      (0,  30, "positive"),
-        "L":      (0,  25, "negative"),
-        "D":      (0,  15, "positive"),
-    }
-
-    _PLAYER_RANGES = {
-        "xG":        (0, 20,  "positive"),
-        "xA":        (0, 12,  "positive"),
-        "xGI":       (0, 25,  "positive"),
-        "NpxG":      (0, 18,  "positive"),
-        "NpxGI":     (0, 22,  "positive"),
-        "xGC":       (0, 50,  "negative"),
-        "Defcon/90": (0, 10,  "blue"),
-        "Defcon":    (0, 200, "blue"),
-        "PPM":       (0, 20,  "gold"),
-        "Own%":      (0, 70,  "gold"),
-        "Price":     (3.5, 15,"gold"),
-        # Fotmob-specific
-        "Goals":     (0, 25,  "positive"),
-        "Assists":   (0, 15,  "positive"),
-        "CS":        (0, 15,  "blue"),
-    }
-
-
-    def _stat_cell(val, col, ranges):
-        """Styled <td> with 3-tier colour, clean white text, minimal look."""
-        if val is None or (isinstance(val, float) and np.isnan(val)):
-            return ('<td style="padding:6px 10px;text-align:center;color:#333;'
-                    'border-bottom:1px solid #161616">—</td>')
-
-        fv = float(val)
-
-        if col in ranges:
-            low, high, col_type = ranges[col]
-            bg, tc = _tier_color(fv, low, high, col_type)
-        else:
-            bg, tc = "#1e1e1e", "#888888"
-
-        # Format display value
-        if col in ("xG","xA","xGI","NpxG","NpxGI","xGC","xGDiff","xG/90","xA/90",
-                   "xGI/90","NpxG/90","NpxGI/90","xGC/90","Defcon/90","PPM","Price","Own%"):
-            disp = f"{fv:.2f}"
-        elif col in ("Pts","GF","GA","GD","W","D","L","MP","CS","Starts","Mins","Min/Start"):
-            disp = f"{int(round(fv))}"
-        else:
-            disp = f"{fv:.2f}"
-
-        return (f'<td style="padding:6px 10px;text-align:center;background:{bg};color:{tc};'
-                f'font-size:12px;font-weight:600;border-bottom:1px solid #161616">{disp}</td>')
-
-
-    def _build_stats_html(df, ranges):
-        """Render minimal dark stats HTML table."""
-        cols = [c for c in df.columns if not c.startswith("_")]
-
-        header = ""
-        for c in cols:
-            align = "left" if c in ("Player","Team") else "center"
-            header += (f'<th style="padding:7px 10px;text-align:{align};color:#555;font-size:10px;'
-                       f'font-weight:700;letter-spacing:.7px;border-bottom:2px solid #222;'
-                       f'white-space:nowrap;background:#0d1117">{c.upper()}</th>')
-
-        rows_html = ""
-        for _, row in df.iterrows():
-            cells = ""
-            for c in cols:
-                val = row[c]
-                if c == "Rk":
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#3a3a3a;'
-                              f'font-size:11px;border-bottom:1px solid #161616">{val}</td>')
-                elif c == "Team":
-                    bg, fg = club_style(str(val))
-                    dot = (f'<span style="display:inline-block;width:8px;height:8px;border-radius:50%;'
-                           f'background:{bg};margin-right:7px;vertical-align:middle"></span>')
-                    cells += (f'<td style="padding:6px 10px;font-weight:700;color:#e0e0e0;font-size:12px;'
-                              f'border-bottom:1px solid #161616;white-space:nowrap">{dot}{val}</td>')
-                elif c == "Player":
-                    cells += (f'<td style="padding:6px 10px;font-weight:600;color:#d0d0d0;font-size:12px;'
-                              f'border-bottom:1px solid #161616;white-space:nowrap">{val}</td>')
-                elif c == "Pos":
-                    pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}
-                    pc = pos_c.get(str(val), "#888")
-                    cells += (f'<td style="padding:4px 10px;text-align:center;border-bottom:1px solid #161616">'
-                              f'<span style="background:{pc}18;color:{pc};border-radius:3px;'
-                              f'padding:2px 7px;font-size:11px;font-weight:700">{val}</span></td>')
-                elif c == "W":
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#5fffb0;font-size:12px;'
-                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-                elif c == "D":
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#888;font-size:12px;'
-                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-                elif c == "L":
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#ff6060;font-size:12px;'
-                              f'font-weight:700;border-bottom:1px solid #161616">{val}</td>')
-                elif c in ("MP","Starts","Mins","Min/Start"):
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;font-size:12px;'
-                              f'border-bottom:1px solid #161616">{val if val is not None else "—"}</td>')
-                elif c == "Price":
-                    cells += (f'<td style="padding:6px 10px;text-align:center;color:#f4a261;font-size:12px;'
-                              f'font-weight:600;border-bottom:1px solid #161616">£{val:.1f}m</td>')
-                else:
-                    try:
-                        cells += _stat_cell(pd.to_numeric(val, errors="coerce"), c, ranges)
-                    except:
-                        cells += (f'<td style="padding:6px 10px;text-align:center;color:#555;'
-                                  f'font-size:12px;border-bottom:1px solid #161616">{val}</td>')
-
-            rows_html += (f'<tr onmouseover="this.style.background=\'#111\'" '
-                          f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
-
-        return (
-            '<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
-            '<table style="border-collapse:collapse;width:100%;font-family:\'Inter\',sans-serif;background:#0d1117">'
-            f'<thead><tr style="background:#0d1117">{header}</tr></thead>'
-            f'<tbody>{rows_html}</tbody></table></div>'
-        )
-
-
-    # =============================================================================
-    # CSV DATA LOADERS — Team & Player Stats
-    # =============================================================================
-
-    @st.cache_data(show_spinner=False)
-    def load_csv_team_stats():
-        df = pd.read_csv("pl_teams_stats_2025_2026.csv")
-        df = df[["Team Name", "Expected goals", "xG conceded", "xG difference"]].copy()
-        df.columns = ["Team", "xG", "xGC", "xGDiff"]
-        for c in ["xG", "xGC", "xGDiff"]:
-            df[c] = pd.to_numeric(df[c], errors="coerce")
-        return df
-
-
-    @st.cache_data(show_spinner=False)
-    def load_csv_player_stats():
-        df = pd.read_csv("pl_players_stats_2025_2026.csv")
-        col_map = {
-            "Player Name":                     "Player",
-            "Team":                            "Team",
-            "Country":                         "Country",
-            "Matches Played":                  "MP",
-            "Minutes Played":                  "Mins",
-            "Top scorer":                      "Goals",
-            "Assists":                         "Assists",
-            "Goals + Assists":                 "G+A",
-            "Goals per 90":                    "G/90",
-            "Big chances missed":              "BCM",
-            "Shots per 90":                    "Sh/90",
-            "Shots on target per 90":          "SoT/90",
-            "Big chances created":             "BCC",
-            "Chances created":                 "CC",
-            "Expected goals (xG)":             "xG",
-            "Expected goals (xG) per 90":      "xG/90",
-            "Expected goals on target (xGOT)": "xGOT",
-            "Expected assist (xA)":            "xA",
-            "Expected assist (xA) per 90":     "xA/90",
-            "xG + xA per 90":                  "xG+xA/90",
-        }
-        df = df[[c for c in col_map if c in df.columns]].rename(columns=col_map)
-        num_cols = ["MP", "Mins", "Goals", "Assists", "G+A", "G/90", "BCM", "Sh/90",
-                    "SoT/90", "BCC", "CC", "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
-        for c in num_cols:
-            if c in df.columns:
-                df[c] = pd.to_numeric(df[c], errors="coerce")
-        return df
-
-
-    def add_fpl_positions(player_df, bootstrap):
-        """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
-        elements = pd.DataFrame(bootstrap["elements"])
-        POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-        name_to_pos = {
-            f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
-            for _, r in elements.iterrows()
-        }
-        df = player_df.copy()
-        df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
-        return df
-
-
-    # =============================================================================
-    # TAB 8 — Team Stats
-    # =============================================================================
-
-    # ── FPL Team fetch helpers ─────────────────────────────────────────────────────
-    @st.cache_data(ttl=300, show_spinner=False)
-    def fetch_fpl_entry(team_id: int):
-        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/"
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-        r.raise_for_status()
-        return r.json()
-
-    @st.cache_data(ttl=300, show_spinner=False)
-    def fetch_fpl_history(team_id: int):
-        """Return chips played from /history/ endpoint: [{"name":"wildcard","event":5,...},...]"""
-        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/history/"
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-        r.raise_for_status()
-        return r.json()
-
-    @st.cache_data(ttl=300, show_spinner=False)
-    def fetch_fpl_picks(team_id: int, gw: int):
-        url = f"https://fantasy.premierleague.com/api/entry/{team_id}/event/{gw}/picks/"
-        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
-        r.raise_for_status()
-        return r.json()
-
-    def build_squad_from_picks(picks_data, bootstrap):
-        el_map = {p["id"]: p for p in bootstrap["elements"]}
-        teams  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
-        POS    = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-        squad  = []
-        for pick in picks_data["picks"]:
-            el = el_map.get(pick["element"], {})
-            squad.append({
-                "id":         pick["element"],
-                "name":       el.get("web_name", "?"),
-                "team":       teams.get(el.get("team"), "?"),
-                "pos":        POS.get(el.get("element_type"), "?"),
-                "price":      el.get("now_cost", 0) / 10,
-                "sel%":       el.get("selected_by_percent", "0"),
-                "position":   pick["position"],
-                "multiplier": pick["multiplier"],
-                "is_captain": pick["is_captain"],
-                "is_vice":    pick["is_vice_captain"],
-                "code":       el.get("code"),
-            })
-        return squad
-
-    def enrich_squad_solio(squad, proj_df, eo_df, gw):
-        pts_col = f"{gw}_Pts"
-        eo_col  = f"{gw}_eo"
-        ev_map, eo_map = {}, {}
-        if proj_df is not None and pts_col in proj_df.columns:
-            ev_map = pd.to_numeric(proj_df.set_index("ID")[pts_col], errors="coerce").to_dict()
-        if eo_df is not None and eo_col in eo_df.columns:
-            eo_map = pd.to_numeric(eo_df.set_index("ID")[eo_col], errors="coerce").to_dict()
-        for p in squad:
-            pid = p["id"]
-            ev  = ev_map.get(pid)
-            eo  = eo_map.get(pid)
-            p["ev"]  = round(float(ev), 2) if ev is not None and not (isinstance(ev, float) and np.isnan(ev)) else None
-            p["eo%"] = round(float(eo) * 100, 1) if eo is not None and not (isinstance(eo, float) and np.isnan(eo)) else None
-        return squad
-
-    def _squad_player_card(p, gw, master_df_full):
-        club_bg, club_fg = club_style(p["team"])
-        fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
-        fdr_bg = FDR_BG.get(fdr, "#444")
-        fdr_fg = FDR_FG.get(fdr, "#fff")
-        badge = ""
-        if p["is_captain"]:
-            badge = '<span style="position:absolute;top:4px;right:4px;background:#ffcc00;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">C</span>'
-        elif p["is_vice"]:
-            badge = '<span style="position:absolute;top:4px;right:4px;background:#aaa;color:#000;font-size:9px;font-weight:800;border-radius:3px;padding:1px 5px">V</span>'
-        initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
-        photo_url = _verified_photo_url(p.get("code"))
-        if photo_url:
-            img_html = f'<img src="{photo_url}" style="width:44px;height:56px;object-fit:cover;object-position:top;border-radius:4px;display:block">'
-        else:
-            img_html = (
-                f'<div style="width:44px;height:56px;border-radius:4px;display:flex;'
-                f'align-items:center;justify-content:center;font-size:16px;font-weight:800;'
-                f'color:{club_fg};background:rgba(0,0,0,0.3)">{initials}</div>'
-            )
-        ev_str = f"{p['ev']} pts" if p.get("ev") else "—"
-        eo_str = f"EO {p['eo%']}%" if p.get("eo%") else ""
-        opacity = "0.5" if p["position"] > 11 else "1"
-        return (
-            f'<div style="position:relative;background:{club_bg};border-radius:8px;'
-            f'padding:8px 10px;display:flex;align-items:center;gap:10px;opacity:{opacity};'
-            f'border:1px solid rgba(255,255,255,0.06);margin-bottom:4px">'
-            f'{badge}<div style="flex-shrink:0">{img_html}</div>'
-            f'<div style="min-width:0;flex:1">'
-            f'<div style="color:{club_fg};font-weight:700;font-size:13px;white-space:nowrap;'
-            f'overflow:hidden;text-overflow:ellipsis">{p["name"]}</div>'
-            f'<div style="color:{club_fg};font-size:11px;opacity:0.7">{p["team"]} · {p["pos"]}</div>'
-            f'<div style="display:flex;align-items:center;gap:5px;margin-top:4px;flex-wrap:wrap">'
-            f'<span style="background:{fdr_bg};color:{fdr_fg};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{fix}</span>'
-            f'<span style="color:{club_fg};font-size:12px;font-weight:700">{ev_str}</span>'
-            f'<span style="color:{club_fg};font-size:11px;opacity:0.65">{eo_str}</span>'
-            f'</div></div></div>'
-        )
-
-
-    def _pitch_token(p, gw, master_df_full, is_bench=False):
-        """FPL-style compact pitch token: photo/initials + club badge + fixture + EV."""
-        club_bg, club_fg = club_style(p["team"])
-        fix, fdr = get_fdr_for_team_gw(p["team"], gw, master_df_full)
-        fdr_bg  = FDR_BG.get(fdr, "#444")
-        fdr_fg  = FDR_FG.get(fdr, "#fff")
-        initials = "".join(w[0].upper() for w in p["name"].replace(".", " ").split() if w)[:2] or "?"
-        photo_url = _verified_photo_url(p.get("code"))
-
-        # Photo or initials in a circle
-        if photo_url:
-            avatar = (
-                f'<div style="width:54px;height:54px;border-radius:50%;overflow:hidden;'
-                f'border:2.5px solid rgba(255,255,255,0.5);margin:0 auto 3px;background:{club_bg}">'
-                f'<img src="{photo_url}" style="width:100%;height:100%;object-fit:cover;object-position:top">'
-                f'</div>'
-            )
-        else:
-            avatar = (
-                f'<div style="width:54px;height:54px;border-radius:50%;display:flex;'
-                f'align-items:center;justify-content:center;font-size:18px;font-weight:800;'
-                f'color:{club_fg};background:{club_bg};border:2.5px solid rgba(255,255,255,0.5);'
-                f'margin:0 auto 3px">{initials}</div>'
-            )
-
-        # Captain / vice badge
-        cap_badge = ""
-        if p.get("is_captain"):
-            cap_badge = '<span style="position:absolute;top:0;right:0;background:#ffcc00;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">C</span>'
-        elif p.get("is_vice"):
-            cap_badge = '<span style="position:absolute;top:0;right:0;background:#bbb;color:#000;font-size:8px;font-weight:800;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;line-height:1">V</span>'
-
-        ev_str  = f"{p['ev']}" if p.get("ev") else "—"
-        fix_str = fix if fix else "?"
-        opacity = "0.55" if is_bench else "1"
-
-        # Short name (up to 9 chars)
-        short = p["name"] if len(p["name"]) <= 9 else p["name"][:8] + "…"
-
-        return (
-            f'<div style="display:inline-block;text-align:center;width:68px;position:relative;opacity:{opacity};vertical-align:top">'
-            f'{cap_badge}'
-            f'{avatar}'
-            f'<div style="background:{club_bg};color:{club_fg};font-size:9.5px;font-weight:700;'
-            f'padding:2px 4px;border-radius:3px;white-space:nowrap;overflow:hidden;'
-            f'text-overflow:ellipsis;max-width:68px;margin-bottom:2px">{short}</div>'
-            f'<div style="display:flex;gap:2px;justify-content:center;flex-wrap:nowrap">'
-            f'<span style="background:{fdr_bg};color:{fdr_fg};font-size:8px;font-weight:700;'
-            f'padding:1px 4px;border-radius:2px;white-space:nowrap">{fix_str}</span>'
-            f'<span style="background:rgba(0,0,0,0.55);color:#5fffb0;font-size:8px;font-weight:800;'
-            f'padding:1px 4px;border-radius:2px;white-space:nowrap">{ev_str}</span>'
-            f'</div>'
-            f'</div>'
-        )
-
-
-    def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
-        """Render a full-pitch SVG background with player tokens in formation rows.
-        players_by_pos: dict with keys GKP/DEF/MID/FWD, each a list of player dicts."""
-        rows_html = ""
-        for pos in ["GKP", "DEF", "MID", "FWD"]:
-            grp = players_by_pos.get(pos, [])
-            if not grp:
-                continue
-            tokens = "".join(_pitch_token(p, gw, master_df_full) for p in grp)
-            rows_html += (
-                f'<div style="display:flex;justify-content:center;gap:8px;'
-                f'margin-bottom:14px;flex-wrap:nowrap">{tokens}</div>'
-            )
-
-        bench_html = ""
-        if bench_players:
-            btokens = "".join(_pitch_token(p, gw, master_df_full, is_bench=True) for p in bench_players)
-            bench_html = (
-                '<div style="margin-top:10px;padding-top:10px;border-top:2px dashed rgba(255,255,255,0.2)">'
-                '<div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:700;'
-                'letter-spacing:.6px;text-align:center;margin-bottom:8px">BENCH</div>'
-                f'<div style="display:flex;justify-content:center;gap:8px;flex-wrap:nowrap">{btokens}</div>'
-                '</div>'
-            )
-
-        return (
-            # Outer pitch container
-            '<div style="position:relative;border-radius:12px;overflow:hidden;'
-            'border:3px solid rgba(255,255,255,0.25);margin:6px 0">'
-            # Green pitch stripes background
-            '<div style="position:absolute;inset:0;'
-            'background:repeating-linear-gradient(to bottom,#1b5e20 0px,#1b5e20 64px,#1e7024 64px,#1e7024 128px)">'
-            '</div>'
-            # Pitch markings overlay
-            '<div style="position:absolute;inset:0;pointer-events:none">'
-            # Top penalty area
-            '<div style="position:absolute;top:0;left:50%;transform:translateX(-50%);'
-            'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-top:none;border-radius:0 0 8px 8px"></div>'
-            # Center line
-            '<div style="position:absolute;top:50%;left:4%;right:4%;height:1.5px;background:rgba(255,255,255,0.18)"></div>'
-            # Center circle
-            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
-            'width:72px;height:72px;border:1.5px solid rgba(255,255,255,0.18);border-radius:50%"></div>'
-            # Center dot
-            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);'
-            'width:5px;height:5px;background:rgba(255,255,255,0.25);border-radius:50%"></div>'
-            # Bottom penalty area
-            '<div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);'
-            'width:55%;height:56px;border:1.5px solid rgba(255,255,255,0.18);border-bottom:none;border-radius:8px 8px 0 0"></div>'
-            '</div>'
-            # Content (tokens on top of pitch)
-            f'<div style="position:relative;z-index:1;padding:18px 12px 14px">'
-            f'{rows_html}'
-            f'{bench_html}'
-            '</div>'
-            '</div>'
-        )
 
     # ── Tab 9: My Team ─────────────────────────────────────────────────────────────
     with tab9:
