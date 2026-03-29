@@ -3343,14 +3343,20 @@ else:  # 🏟️ Stats
         filt_ps = filt_ps.reset_index(drop=True)
 
         # Build external links columns from id map
+        def _safe_eid(eid):
+            try:
+                return int(eid) if eid is not None and eid == eid else None
+            except (ValueError, TypeError):
+                return None
+
         filt_ps["Understat"] = filt_ps["_fpl_id"].apply(
-            lambda eid: (f"https://understat.com/player/{_ext_links[int(eid)]['understat']}"
-                         if eid is not None and int(eid) in _ext_links and _ext_links[int(eid)].get("understat")
+            lambda eid: (f"https://understat.com/player/{_ext_links[_safe_eid(eid)]['understat']}"
+                         if _safe_eid(eid) is not None and _safe_eid(eid) in _ext_links and _ext_links[_safe_eid(eid)].get("understat")
                          else None)
         )
         filt_ps["FBRef"] = filt_ps["_fpl_id"].apply(
-            lambda eid: (f"https://fbref.com/en/players/{_ext_links[int(eid)]['fbref']}/"
-                         if eid is not None and int(eid) in _ext_links and _ext_links[int(eid)].get("fbref")
+            lambda eid: (f"https://fbref.com/en/players/{_ext_links[_safe_eid(eid)]['fbref']}/"
+                         if _safe_eid(eid) is not None and _safe_eid(eid) in _ext_links and _ext_links[_safe_eid(eid)].get("fbref")
                          else None)
         )
 
