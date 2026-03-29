@@ -1705,26 +1705,41 @@ def load_csv_player_stats():
 
 
 def add_fpl_positions(player_df, bootstrap):
-    """Match FPL position (GKP/DEF/MID/FWD) and element ID using multiple name strategies."""
+    """Match FPL position and element ID using exact + fuzzy name strategies."""
     import unicodedata
+    from difflib import get_close_matches
+
     def _norm(s):
         return unicodedata.normalize("NFD", str(s)).encode("ascii", "ignore").decode().lower().strip()
 
     elements = pd.DataFrame(bootstrap["elements"])
     POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    lookup = {}  # normalised name → {pos, id}
+    lookup = {}
     for _, r in elements.iterrows():
         data = {"pos": POS.get(r["element_type"], "?"), "id": int(r["id"])}
-        # Strategy 1: full name
-        lookup[_norm(f"{r['first_name']} {r['second_name']}")] = data
-        # Strategy 2: web_name only
-        lookup[_norm(r["web_name"])] = data
-        # Strategy 3: second_name only (fallback for single-name CSV entries)
-        lookup[_norm(r["second_name"])] = data
+        # full name, web_name, second_name, last word of web_name
+        for key in [
+            _norm(f"{r['first_name']} {r['second_name']}"),
+            _norm(r["web_name"]),
+            _norm(r["second_name"]),
+            _norm(r["web_name"].split(".")[-1].strip()),  # "B.Guimarães" → "Guimarães"
+        ]:
+            if key and key not in lookup:
+                lookup[key] = data
+
+    all_keys = list(lookup.keys())
 
     def _match(name):
         n = _norm(name)
-        return lookup.get(n, {})
+        if n in lookup:
+            return lookup[n]
+        # try last word of CSV name (e.g. "Guimarães" from "Bruno Guimarães")
+        last = n.split()[-1] if n.split() else ""
+        if last and last in lookup:
+            return lookup[last]
+        # fuzzy fallback — catches nicknames and minor spelling differences
+        hits = get_close_matches(n, all_keys, n=1, cutoff=0.82)
+        return lookup[hits[0]] if hits else {}
 
     df = player_df.copy()
     df["Pos"]     = df["Player"].apply(lambda n: _match(n).get("pos", "?"))
