@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
@@ -6,7 +5,6 @@ import numpy as np
 import math
 import requests
 import plotly.graph_objects as go
-from datetime import datetime, timezone
 
 # ── FPL API ───────────────────────────────────────────────────────────────────
 BASE_URL      = "https://fantasy.premierleague.com/api"
@@ -615,17 +613,14 @@ if use_live:
         raw_fixtures = _fetch_live_fixtures()
         live_ok      = True
         current_gw   = get_current_gw(bootstrap)
-        st.session_state["last_fpl_fetch_ts"] = datetime.now(timezone.utc)
         events       = bootstrap.get("events", [])
         ev_info      = next((ev for ev in events if ev.get("is_current") or ev.get("is_next")), None)
         is_live_gw   = ev_info and ev_info.get("is_current") and not ev_info.get("finished")
         status_label = "Live" if is_live_gw else "Next GW"
-        _fetch_age   = int((datetime.now(timezone.utc) - st.session_state["last_fpl_fetch_ts"]).total_seconds() // 60)
-        _age_str     = "just now" if _fetch_age == 0 else f"{_fetch_age}m ago"
-        st.sidebar.success(f"GW{current_gw} | {status_label} · {_age_str}")
+        st.sidebar.success(f"GW{current_gw} | {status_label}")
 
         # -- Deadline countdown Bangkok (GMT+7) --------------------------------
-        from datetime import timedelta
+        from datetime import datetime, timezone, timedelta
         BKK     = timezone(timedelta(hours=7))
         now_utc = datetime.now(timezone.utc)
 
@@ -738,12 +733,7 @@ if use_live:
                 components.html(countdown_html, height=130)
 
     except Exception as e:
-        _last_ts = st.session_state.get("last_fpl_fetch_ts")
-        if _last_ts:
-            _mins = int((datetime.now(timezone.utc) - _last_ts).total_seconds() // 60)
-            st.sidebar.error(f"⚠️ FPL API down · Last fetch: {_mins}m ago")
-        else:
-            st.sidebar.error(f"⚠️ FPL API unavailable")
+        st.sidebar.warning(f"Live failed: {e}")
 
 ratings_df, fixtures_df = load_csv_data()
 proj_df = load_projections_csv()
@@ -1601,24 +1591,6 @@ def _build_stats_html(df, ranges):
 # =============================================================================
 # CSV DATA LOADERS — Team & Player Stats
 # =============================================================================
-
-def _csv_mtime(path: str) -> str:
-    """Return a human-readable 'last modified' string for a CSV file."""
-    try:
-        ts  = os.path.getmtime(path)
-        dt  = datetime.fromtimestamp(ts, tz=timezone.utc)
-        now = datetime.now(timezone.utc)
-        diff_mins = int((now - dt).total_seconds() // 60)
-        date_str  = dt.strftime("%-d %b %Y, %H:%M UTC")
-        if diff_mins < 60:
-            age = f"{diff_mins}m ago"
-        elif diff_mins < 1440:
-            age = f"{diff_mins // 60}h ago"
-        else:
-            age = f"{diff_mins // 1440}d ago"
-        return f"{date_str} ({age})"
-    except Exception:
-        return "unknown"
 
 @st.cache_data(show_spinner=False)
 def load_csv_team_stats():
@@ -2899,19 +2871,12 @@ elif nav_cat == "👕 My FPL":
 # ────────────────────────────────────────────────────────────────────────────
 else:  # 🏟️ Stats
     with tab11:
-        _ts11_l, _ts11_r = st.columns([3, 1])
-        with _ts11_l:
-            st.markdown(
-                '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
-                '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
-                '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
-                unsafe_allow_html=True
-            )
-            st.caption(f"CSV last updated: {_csv_mtime('pl_teams_stats_2025_2026.csv')}")
-        with _ts11_r:
-            if st.button("🔄 Refresh", key="refresh_team_stats", use_container_width=True):
-                load_csv_team_stats.clear()
-                st.rerun()
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Team Stats</span>'
+            '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
+            unsafe_allow_html=True
+        )
 
         ts_df = load_csv_team_stats()
 
@@ -2936,19 +2901,12 @@ else:  # 🏟️ Stats
     # TAB 9 — Player Stats
     # =============================================================================
     with tab12:
-        _ps12_l, _ps12_r = st.columns([3, 1])
-        with _ps12_l:
-            st.markdown(
-                '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px">'
-                '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
-                '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
-                unsafe_allow_html=True
-            )
-            st.caption(f"CSV last updated: {_csv_mtime('pl_players_stats_2025_2026.csv')}")
-        with _ps12_r:
-            if st.button("🔄 Refresh", key="refresh_player_stats", use_container_width=True):
-                load_csv_player_stats.clear()
-                st.rerun()
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Player Stats</span>'
+            '<span style="font-size:12px;color:#444">Premier League 2025/26</span></div>',
+            unsafe_allow_html=True
+        )
 
         ps_df = load_csv_player_stats()
         ps_df = add_fpl_positions(ps_df, bootstrap)
