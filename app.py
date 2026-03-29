@@ -210,6 +210,17 @@ def load_eo_csv():
     except FileNotFoundError:
         return None
 
+@st.cache_data(ttl=3600, show_spinner=False)
+def load_fpl_id_map():
+    """Load ChrisMusson/FPL-ID-Map — maps player code → FBRef / Understat / Transfermarkt IDs."""
+    try:
+        url = "https://raw.githubusercontent.com/ChrisMusson/FPL-ID-Map/refs/heads/main/Master.csv"
+        df = pd.read_csv(url)
+        df.columns = [c.strip() for c in df.columns]
+        return df
+    except Exception:
+        return pd.DataFrame()
+
 def build_live_fixtures_df(bootstrap, raw_fixtures):
     teams = pd.DataFrame(bootstrap["teams"])
     id_to_name  = dict(zip(teams["id"], teams["name"]))
@@ -738,9 +749,28 @@ if use_live:
 ratings_df, fixtures_df = load_csv_data()
 proj_df = load_projections_csv()
 eo_df   = load_eo_csv()
+id_map_df = load_fpl_id_map()
 
 if live_ok and bootstrap and raw_fixtures:
     fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
+
+# ── Build FPL element_id → external profile links lookup ──────────────────────
+_ext_links: dict = {}
+if not id_map_df.empty and bootstrap is not None:
+    _elements     = pd.DataFrame(bootstrap["elements"])
+    _code_to_elid = dict(zip(_elements["code"], _elements["id"]))
+    for _, _r in id_map_df.iterrows():
+        _el_id = _code_to_elid.get(_r.get("code"))
+        if _el_id is None:
+            continue
+        _us = _r.get("understat")
+        _fb = _r.get("fbref")
+        _tm = _r.get("transfermarkt")
+        _ext_links[int(_el_id)] = {
+            "understat":    int(_us)  if pd.notna(_us) else None,
+            "fbref":        str(_fb)  if pd.notna(_fb) else None,
+            "transfermarkt":int(_tm)  if pd.notna(_tm) else None,
+        }
 
 with st.expander("Glossary"):
     st.markdown(f"""
@@ -1675,15 +1705,19 @@ def load_csv_player_stats():
 
 
 def add_fpl_positions(player_df, bootstrap):
-    """Match FPL position (GKP/DEF/MID/FWD) to players by full name."""
+    """Match FPL position (GKP/DEF/MID/FWD) and element ID to players by full name."""
     elements = pd.DataFrame(bootstrap["elements"])
     POS = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
-    name_to_pos = {
-        f"{r['first_name']} {r['second_name']}".lower(): POS.get(r["element_type"], "?")
+    name_to_data = {
+        f"{r['first_name']} {r['second_name']}".lower(): {
+            "pos": POS.get(r["element_type"], "?"),
+            "id":  int(r["id"]),
+        }
         for _, r in elements.iterrows()
     }
     df = player_df.copy()
-    df["Pos"] = df["Player"].apply(lambda n: name_to_pos.get(str(n).lower(), "?"))
+    df["Pos"]     = df["Player"].apply(lambda n: name_to_data.get(str(n).lower(), {}).get("pos", "?"))
+    df["_fpl_id"] = df["Player"].apply(lambda n: name_to_data.get(str(n).lower(), {}).get("id"))
     return df
 
 
@@ -2533,6 +2567,7 @@ elif nav_cat == "🎯 Captain & Picks":
                 st.warning(f"No EO% data available for GW{diff_gw}.")
             else:
                 df_diff = proj_df[["ID", "Name", "Pos", "Team", "SV", pts_col_d]].copy()
+                df_diff["ID"] = pd.to_numeric(df_diff["ID"], errors="coerce")
                 df_diff[pts_col_d] = pd.to_numeric(df_diff[pts_col_d], errors="coerce")
                 eo_map_d = pd.to_numeric(eo_df.set_index("ID")[eo_col_d], errors="coerce").to_dict()
                 df_diff["EO%"] = (df_diff["ID"].map(eo_map_d) * 100).round(1)
@@ -2576,6 +2611,22 @@ elif nav_cat == "🎯 Captain & Picks":
                         fix_lbl = fdr_val[0] if isinstance(fdr_val, tuple) else "?"
                         eo_color = "#5fffb0" if row["EO%"] <= 5 else "#aaaaaa"
                         sv_val   = row["SV"]
+                        # External links
+                        _el_id   = int(row["ID"]) if pd.notna(row["ID"]) else None
+                        _ext     = _ext_links.get(_el_id, {})
+                        _links   = ""
+                        if _ext.get("understat"):
+                            _links += (f'<a href="https://understat.com/player/{_ext["understat"]}" '
+                                       f'target="_blank" style="color:#5aabff;text-decoration:none;'
+                                       f'font-size:11px;font-weight:700;margin-right:5px" title="Understat">US</a>')
+                        if _ext.get("fbref"):
+                            _links += (f'<a href="https://fbref.com/en/players/{_ext["fbref"]}/" '
+                                       f'target="_blank" style="color:#5fffb0;text-decoration:none;'
+                                       f'font-size:11px;font-weight:700;margin-right:5px" title="FBRef">FB</a>')
+                        if _ext.get("transfermarkt"):
+                            _links += (f'<a href="https://www.transfermarkt.com/-/profil/spieler/{_ext["transfermarkt"]}" '
+                                       f'target="_blank" style="color:#aaa;text-decoration:none;'
+                                       f'font-size:11px;font-weight:700" title="Transfermarkt">TM</a>')
                         rows_d += (
                             f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
                             f'<td style="padding:8px 10px;font-size:13px;font-weight:700;color:#e0e0e0;border-bottom:1px solid #141414;white-space:nowrap" data-val="{row["Name"]}">'
@@ -2587,6 +2638,9 @@ elif nav_cat == "🎯 Captain & Picks":
                             f'<td style="padding:8px 10px;text-align:center;border-bottom:1px solid #141414" data-val="{fdr_num}">'
                             f'<span style="background:{fdr_bg};color:{fdr_fg};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{fix_lbl}</span></td>'
                             f'<td style="padding:8px 10px;text-align:center;color:#aaa;font-size:12px;border-bottom:1px solid #141414" data-val="{sv_val:.2f}">£{sv_val:.1f}m</td>'
+                            '<td style="padding:8px 10px;text-align:center;border-bottom:1px solid #141414;white-space:nowrap" data-val="">'
+                            + (_links or '<span style="color:#333">—</span>') +
+                            '</td>'
                             f'</tr>'
                         )
 
@@ -2629,7 +2683,8 @@ elif nav_cat == "🎯 Captain & Picks":
                         + _dth("PROJ PTS", 2, "num")
                         + _dth("EO%", 3, "num")
                         + _dth("FIXTURE", 4, "num")
-                        + _dth("PRICE", 5, "num") +
+                        + _dth("PRICE", 5, "num")
+                        + f'<th style="{_th_s};text-align:center">LINKS</th>' +
                         f'</tr></thead><tbody>{rows_d}</tbody></table></div>'
                         f'{sort_js}</body></html>'
                     )
@@ -3287,10 +3342,23 @@ else:  # 🏟️ Stats
             filt_ps = filt_ps[(filt_ps[col] >= lo) & (filt_ps[col] <= hi)]
         filt_ps = filt_ps.reset_index(drop=True)
 
+        # Build external links columns from id map
+        filt_ps["Understat"] = filt_ps["_fpl_id"].apply(
+            lambda eid: (f"https://understat.com/player/{_ext_links[int(eid)]['understat']}"
+                         if eid is not None and int(eid) in _ext_links and _ext_links[int(eid)].get("understat")
+                         else None)
+        )
+        filt_ps["FBRef"] = filt_ps["_fpl_id"].apply(
+            lambda eid: (f"https://fbref.com/en/players/{_ext_links[int(eid)]['fbref']}/"
+                         if eid is not None and int(eid) in _ext_links and _ext_links[int(eid)].get("fbref")
+                         else None)
+        )
+
         col_order = ["Player", "Team", "Country", "Pos", "MP", "Mins",
                      "Goals", "Assists", "G+A", "G/90",
                      "Sh/90", "SoT/90", "BCC", "CC", "BCM",
-                     "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90"]
+                     "xG", "xG/90", "xGOT", "xA", "xA/90", "xG+xA/90",
+                     "Understat", "FBRef"]
         show_cols = [c for c in col_order if c in filt_ps.columns]
 
         st.dataframe(
@@ -3319,10 +3387,13 @@ else:  # 🏟️ Stats
                 "xA":         st.column_config.NumberColumn("xA", format="%.1f"),
                 "xA/90":      st.column_config.NumberColumn("xA/90", format="%.2f"),
                 "xG+xA/90":   st.column_config.NumberColumn("xG+xA/90", format="%.2f"),
+                "Understat":  st.column_config.LinkColumn("Understat", display_text="US ↗"),
+                "FBRef":      st.column_config.LinkColumn("FBRef", display_text="FB ↗"),
             },
         )
         st.caption(
             f"{len(filt_ps)} players · Click any column header to sort · "
-            "BCC = big chances created · BCM = big chances missed · xGOT = xG on target"
+            "BCC = big chances created · BCM = big chances missed · xGOT = xG on target · "
+            "US = Understat · FB = FBRef"
         )
 
