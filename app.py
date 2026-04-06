@@ -162,8 +162,9 @@ TEAM_NAME_MAP = {
     "SUN":"Sunderland","TOT":"Spurs","WHU":"West Ham","WOL":"Wolves",
 }
 
-FDR_BG = {1:"#00ff85",2:"#50c369",3:"#D3D3D3",4:"#9d66a0",5:"#6f2a74",6:"#1E1E1E"}
-FDR_FG = {1:"#31333F",2:"#31333F",3:"#31333F",4:"#FFFFFF",5:"#FFFFFF",6:"#FF4B4B"}
+# FDR 0 = DGW special (always best, visually distinct gold)
+FDR_BG = {0:"#FFD700",1:"#00ff85",2:"#50c369",3:"#D3D3D3",4:"#9d66a0",5:"#6f2a74",6:"#1E1E1E"}
+FDR_FG = {0:"#111111",1:"#31333F",2:"#31333F",3:"#31333F",4:"#FFFFFF",5:"#FFFFFF",6:"#FF4B4B"}
 
 # ── Data helpers ──────────────────────────────────────────────────────────────
 
@@ -861,7 +862,7 @@ else:  # 🏟️ Stats
     tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
 # ── Shared helper: build clean HTML heatmap table ─────────────────────────────
-def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht", dgw_color_bonus=0):
+def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht"):
     """
     Render a dark heatmap HTML table with clickable column sorting.
     Click any column header to sort asc/desc. Arrow indicates direction.
@@ -900,19 +901,18 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
         for col in gw_cols:
             cell = row[col]
             if isinstance(cell, dict):
-                val  = cell.get(value_key, 0)
-                lbl  = label_fn(cell)
-                # Detect DGW via count field
+                val    = cell.get(value_key, 0)
+                lbl    = label_fn(cell)
                 is_dgw = cell.get("count", 1) >= 2
-                # Apply visual bonus for DGW cells (lower = greener for FDR)
-                color_val = max(0, val - dgw_color_bonus) if is_dgw else val
-                cbg, cfg = color_fn(color_val)
+                # DGW always uses color_val=0: guaranteed better than any single fixture (FDR 1-5)
+                color_val = 0 if is_dgw else val
+                sort_val  = 0 if is_dgw else val   # also sorts to top of any GW column
+                cbg, cfg  = color_fn(color_val)
                 if is_dgw:
                     dgw_badge = (
-                        '<span style="font-size:8px;background:#FFD700;color:#111;border-radius:2px;'
+                        '<span style="font-size:8px;background:#111;color:#FFD700;border-radius:2px;'
                         'padding:0 4px;font-weight:800;letter-spacing:.5px;display:block;margin-bottom:2px">DGW</span>'
                     )
-                    # lbl may be multi-part (e.g. "ARS (H) + BUR (A)" or "1.85 + 1.23")
                     lbl_parts = lbl.split(" + ") if " + " in lbl else [lbl]
                     content_html = '<br>'.join(
                         f'<span style="font-size:11px;font-weight:700">{p}</span>' for p in lbl_parts
@@ -926,7 +926,7 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                     td_style = (f'padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
                                 f'font-size:12px;font-weight:700;border-bottom:1px solid #161616;'
                                 f'border-right:1px solid #1e1e1e')
-                cells += f'<td style="{td_style}" data-val="{val}">{inner_lbl}</td>'
+                cells += f'<td style="{td_style}" data-val="{sort_val}">{inner_lbl}</td>'
             else:
                 cells += ('<td style="padding:6px 8px;text-align:center;background:#1a0a0a;color:#e74c3c;'
                           'font-size:10px;font-weight:800;border-bottom:1px solid #161616;'
@@ -2020,8 +2020,9 @@ if nav_cat == "📊 Planning":
             '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
             unsafe_allow_html=True
         )
-        # Legend
+        # Legend — DGW first as it's the best
         legend_items = [
+            ("#FFD700","#111","DGW Best"),
             ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
             ("#2e2e2e","#999","3 Neutral"),
             ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
@@ -2031,11 +2032,6 @@ if nav_cat == "📊 Planning":
         for bg, fg, lbl in legend_items:
             legend_html += (f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;'
                             f'font-size:11px;font-weight:700">{lbl}</span>')
-        legend_html += (
-            '<span style="background:#FFD700;color:#111;padding:2px 8px;border-radius:3px;'
-            'font-size:11px;font-weight:800">DGW</span>'
-            ' <span style="color:#555;font-size:11px">= Double Gameweek</span>'
-        )
         legend_html += '</div>'
         st.markdown(legend_html, unsafe_allow_html=True)
 
@@ -2051,7 +2047,6 @@ if nav_cat == "📊 Planning":
             total_col="Total_Difficulty",
             total_fmt=lambda v: f"{v:.0f}",
             table_id="tbl_fdr",
-            dgw_color_bonus=2,  # DGW cells appear 2 shades easier (greener)
         )
         # DGW rows are taller (two fixture lines), use 55px per row
         _tbl_h = 60 + len(df_d) * 55
