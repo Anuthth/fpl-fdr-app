@@ -114,8 +114,8 @@ EO_CSV_FILE          = "EO%.csv"          # Solio expected ownership file
 
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
-BGW_PENALTY_FDR = 6.0
-DGW_BONUS_FDR   = 2.0   # Reduce difficulty contribution by this for DGW weeks
+BGW_PENALTY_FDR = 3.0   # Treat BGW as neutral (avg fixture), not max-hard
+DGW_BONUS_FDR   = 3.0   # Reduce difficulty contribution for DGW weeks
 FDR_THRESHOLDS  = {5: 120.0, 4: 108.0, 3: 99.0, 2: 90.0, 1: 0}
 
 PREMIER_LEAGUE_TEAMS = sorted([
@@ -326,7 +326,7 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
             else:
                 projection_data[team][gw_key] = {
                     "display": display, "fdr": fdr, "xG": xg, "CS": cs,
-                    "count": 1, "xG_parts": [], "CS_parts": [],
+                    "count": 1, "xG_parts": [xg], "CS_parts": [cs],
                 }
 
         if home in PREMIER_LEAGUE_TEAMS:
@@ -2100,7 +2100,7 @@ if nav_cat == "📊 Planning":
         st.markdown(
             '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
             '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Clean Sheet % (xCS)</span>'
-            '<span style="font-size:12px;color:#555">higher = better for defenders & keepers · sorted by total</span></div>',
+            '<span style="font-size:12px;color:#555">cells = CS% per game · total = expected CS count · higher = better</span></div>',
             unsafe_allow_html=True
         )
         legend_items_cs = [
@@ -2131,7 +2131,7 @@ if nav_cat == "📊 Planning":
             label_fn=_xcs_label,
             color_fn=_xcs_color,
             total_col="Total_xCS",
-            total_fmt=lambda v: f"{v*100:.0f}%",
+            total_fmt=lambda v: f"{v:.2f}",   # expected CS count, not %, avoids >100%
             table_id="tbl_xcs",
         )
         _tbl_h = 60 + len(df_d) * 55
