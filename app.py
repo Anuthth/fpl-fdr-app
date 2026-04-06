@@ -162,9 +162,9 @@ TEAM_NAME_MAP = {
     "SUN":"Sunderland","TOT":"Spurs","WHU":"West Ham","WOL":"Wolves",
 }
 
-# FDR 0 = DGW special (always best, visually distinct gold)
-FDR_BG = {0:"#FFD700",1:"#00ff85",2:"#50c369",3:"#D3D3D3",4:"#9d66a0",5:"#6f2a74",6:"#1E1E1E"}
-FDR_FG = {0:"#111111",1:"#31333F",2:"#31333F",3:"#31333F",4:"#FFFFFF",5:"#FFFFFF",6:"#FF4B4B"}
+# DGW color levels (-2 easy, -1 medium, 0 hard) — all better than any single fixture (1-5)
+FDR_BG = {-2:"#FFD700",-1:"#FFC107",0:"#FF9800",1:"#00ff85",2:"#50c369",3:"#D3D3D3",4:"#9d66a0",5:"#6f2a74",6:"#1E1E1E"}
+FDR_FG = {-2:"#111",-1:"#111",0:"#111",1:"#31333F",2:"#31333F",3:"#31333F",4:"#FFFFFF",5:"#FFFFFF",6:"#FF4B4B"}
 
 # ── Data helpers ──────────────────────────────────────────────────────────────
 
@@ -904,13 +904,22 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                 val    = cell.get(value_key, 0)
                 lbl    = label_fn(cell)
                 is_dgw = cell.get("count", 1) >= 2
-                # DGW always uses color_val=0: guaranteed better than any single fixture (FDR 1-5)
-                color_val = 0 if is_dgw else val
-                sort_val  = 0 if is_dgw else val   # also sorts to top of any GW column
-                cbg, cfg  = color_fn(color_val)
+                if is_dgw:
+                    # Map avg FDR to DGW color level (relative difficulty within DGW teams)
+                    # -2 = easy DGW (gold), -1 = medium DGW (amber), 0 = hard DGW (orange)
+                    avg_fdr = cell.get("fdr", 3)
+                    if avg_fdr <= 2:   color_val = -2
+                    elif avg_fdr == 3: color_val = -1
+                    else:              color_val = 0
+                    # Sort value: DGW range -5..-1, always above any single (1-5) or BGW (10)
+                    sort_val = avg_fdr - 6
+                else:
+                    color_val = val
+                    sort_val  = val
+                cbg, cfg = color_fn(color_val)
                 if is_dgw:
                     dgw_badge = (
-                        '<span style="font-size:8px;background:#111;color:#FFD700;border-radius:2px;'
+                        '<span style="font-size:8px;background:rgba(0,0,0,0.3);color:#111;border-radius:2px;'
                         'padding:0 4px;font-weight:800;letter-spacing:.5px;display:block;margin-bottom:2px">DGW</span>'
                     )
                     lbl_parts = lbl.split(" + ") if " + " in lbl else [lbl]
@@ -928,9 +937,10 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                                 f'border-right:1px solid #1e1e1e')
                 cells += f'<td style="{td_style}" data-val="{sort_val}">{inner_lbl}</td>'
             else:
+                # BGW: sort_val=10 so it always sorts to the bottom
                 cells += ('<td style="padding:6px 8px;text-align:center;background:#1a0a0a;color:#e74c3c;'
                           'font-size:10px;font-weight:800;border-bottom:1px solid #161616;'
-                          'border-right:1px solid #1e1e1e;letter-spacing:1px" data-val="-1">BGW</td>')
+                          'border-right:1px solid #1e1e1e;letter-spacing:1px" data-val="10">BGW</td>')
 
         rows += (f'<tr onmouseover="this.style.background=\'#1a1a1a\'" '
                  f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
@@ -993,8 +1003,9 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
 
 
 def _fdr_color(v):
-    c = {1:"#00ff85",2:"#50c369",3:"#2e2e2e",4:"#9d66a0",5:"#6f2a74"}
-    fg = {1:"#0d1117",2:"#0d1117",3:"#999999",4:"#ffffff",5:"#ffffff"}
+    # DGW levels: -2 (easy), -1 (medium), 0 (hard) — all gold/amber, always better than single (1-5)
+    c  = {-2:"#FFD700",-1:"#FFC107",0:"#FF9800",1:"#00ff85",2:"#50c369",3:"#2e2e2e",4:"#9d66a0",5:"#6f2a74"}
+    fg = {-2:"#111",-1:"#111",0:"#111",1:"#0d1117",2:"#0d1117",3:"#999999",4:"#ffffff",5:"#ffffff"}
     vr = round(v)
     return c.get(vr,"#333"), fg.get(vr,"#fff")
 
@@ -2020,9 +2031,9 @@ if nav_cat == "📊 Planning":
             '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
             unsafe_allow_html=True
         )
-        # Legend — DGW first as it's the best
+        # Legend — DGW 3 levels first, then single FDR 1-5, then BGW
         legend_items = [
-            ("#FFD700","#111","DGW Best"),
+            ("#FFD700","#111","DGW Easy"), ("#FFC107","#111","DGW Med"), ("#FF9800","#111","DGW Hard"),
             ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
             ("#2e2e2e","#999","3 Neutral"),
             ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
