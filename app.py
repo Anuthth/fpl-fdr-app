@@ -115,6 +115,7 @@ EO_CSV_FILE          = "EO%.csv"          # Solio expected ownership file
 AVG_LEAGUE_HOME_GOALS = 1.55
 AVG_LEAGUE_AWAY_GOALS = 1.25
 BGW_PENALTY_FDR = 6.0
+DGW_BONUS_FDR   = 2.0   # Reduce difficulty contribution by this for DGW weeks
 FDR_THRESHOLDS  = {5: 120.0, 4: 108.0, 3: 99.0, 2: 90.0, 1: 0}
 
 PREMIER_LEAGUE_TEAMS = sorted([
@@ -317,10 +318,16 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
                     "display": ex["display"] + " + " + display,
                     "fdr": round((ex["fdr"] + fdr) / 2),
                     "xG": ex["xG"] + xg,
-                    "CS": ex["CS"] + cs,  # additive probability for DGW
+                    "CS": ex["CS"] + cs,
+                    "count": ex.get("count", 1) + 1,
+                    "xG_parts": ex.get("xG_parts", [ex["xG"]]) + [xg],
+                    "CS_parts": ex.get("CS_parts", [ex["CS"]]) + [cs],
                 }
             else:
-                projection_data[team][gw_key] = {"display":display,"fdr":fdr,"xG":xg,"CS":cs}
+                projection_data[team][gw_key] = {
+                    "display": display, "fdr": fdr, "xG": xg, "CS": cs,
+                    "count": 1, "xG_parts": [], "CS_parts": [],
+                }
 
         if home in PREMIER_LEAGUE_TEAMS:
             _store(home, gw_key, f"{TEAM_ABBREVIATIONS.get(away,'???')} (H)", home_fdr, home_xg, home_cs)
@@ -337,7 +344,13 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
         for gw_col, cell in row.items():
             if gw_col == free_hit_col: continue
             if isinstance(cell, dict):
-                fd += cell.get("fdr", 0)
+                count = cell.get("count", 1)
+                fdr_val = cell.get("fdr", 0)
+                # DGW bonus: having 2 fixtures is better, reduce difficulty contribution
+                if count >= 2:
+                    fd += max(0, fdr_val - DGW_BONUS_FDR)
+                else:
+                    fd += fdr_val
                 xg += cell.get("xG", 0)
                 cs += cell.get("CS", 0)
             else:
@@ -890,19 +903,19 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                 val  = cell.get(value_key, 0)
                 lbl  = label_fn(cell)
                 cbg, cfg = color_fn(val)
-                # Detect DGW: display string contains " + "
-                display_str = cell.get("display", "")
-                is_dgw = " + " in display_str
+                # Detect DGW via count field
+                is_dgw = cell.get("count", 1) >= 2
                 if is_dgw:
-                    parts = display_str.split(" + ")
                     dgw_badge = (
                         '<span style="font-size:8px;background:#FFD700;color:#111;border-radius:2px;'
                         'padding:0 4px;font-weight:800;letter-spacing:.5px;display:block;margin-bottom:2px">DGW</span>'
                     )
-                    fixtures_html = '<br>'.join(
-                        f'<span style="font-size:11px;font-weight:700">{p}</span>' for p in parts
+                    # lbl may be multi-part (e.g. "ARS (H) + BUR (A)" or "1.85 + 1.23")
+                    lbl_parts = lbl.split(" + ") if " + " in lbl else [lbl]
+                    content_html = '<br>'.join(
+                        f'<span style="font-size:11px;font-weight:700">{p}</span>' for p in lbl_parts
                     )
-                    inner_lbl = dgw_badge + fixtures_html
+                    inner_lbl = dgw_badge + content_html
                     td_style = (f'padding:4px 6px;text-align:center;background:{cbg};color:{cfg};'
                                 f'font-weight:700;border-bottom:1px solid #161616;'
                                 f'border-right:1px solid #1e1e1e;vertical-align:middle;min-width:80px;line-height:1.5')
@@ -2064,10 +2077,16 @@ if nav_cat == "📊 Planning":
         df_d = df_d[["Team","Total xG"] + gw_columns].copy()
         df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
 
+        def _xg_label(c):
+            parts = c.get("xG_parts", [])
+            if len(parts) >= 2:
+                return " + ".join(f"{v:.2f}" for v in parts)
+            return f"{c.get('xG',0):.2f}"
+
         html = _heatmap_table(
             df_d, gw_columns,
             value_key="xG",
-            label_fn=lambda c: f"{c.get('xG',0):.2f}",
+            label_fn=_xg_label,
             color_fn=_xg_color,
             total_col="Total_xG",
             total_fmt=lambda v: f"{v:.2f}",
@@ -2100,10 +2119,16 @@ if nav_cat == "📊 Planning":
         df_d = df_d[["Team","xCS"] + gw_columns].copy()
         df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
 
+        def _xcs_label(c):
+            parts = c.get("CS_parts", [])
+            if len(parts) >= 2:
+                return " + ".join(f"{v*100:.0f}%" for v in parts)
+            return f"{c.get('CS',0)*100:.0f}%"
+
         html = _heatmap_table(
             df_d, gw_columns,
             value_key="CS",
-            label_fn=lambda c: f"{c.get('CS',0)*100:.0f}%",
+            label_fn=_xcs_label,
             color_fn=_xcs_color,
             total_col="Total_xCS",
             total_fmt=lambda v: f"{v*100:.0f}%",
