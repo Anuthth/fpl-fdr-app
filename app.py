@@ -861,7 +861,7 @@ else:  # 🏟️ Stats
     tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
 # ── Shared helper: build clean HTML heatmap table ─────────────────────────────
-def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht"):
+def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col, total_fmt, table_id="ht", dgw_color_bonus=0):
     """
     Render a dark heatmap HTML table with clickable column sorting.
     Click any column header to sort asc/desc. Arrow indicates direction.
@@ -902,9 +902,11 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
             if isinstance(cell, dict):
                 val  = cell.get(value_key, 0)
                 lbl  = label_fn(cell)
-                cbg, cfg = color_fn(val)
                 # Detect DGW via count field
                 is_dgw = cell.get("count", 1) >= 2
+                # Apply visual bonus for DGW cells (lower = greener for FDR)
+                color_val = max(0, val - dgw_color_bonus) if is_dgw else val
+                cbg, cfg = color_fn(color_val)
                 if is_dgw:
                     dgw_badge = (
                         '<span style="font-size:8px;background:#FFD700;color:#111;border-radius:2px;'
@@ -2049,6 +2051,7 @@ if nav_cat == "📊 Planning":
             total_col="Total_Difficulty",
             total_fmt=lambda v: f"{v:.0f}",
             table_id="tbl_fdr",
+            dgw_color_bonus=2,  # DGW cells appear 2 shades easier (greener)
         )
         # DGW rows are taller (two fixture lines), use 55px per row
         _tbl_h = 60 + len(df_d) * 55
