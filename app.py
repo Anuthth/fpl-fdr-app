@@ -751,8 +751,11 @@ proj_df = load_projections_csv()
 eo_df   = load_eo_csv()
 id_map_df = load_fpl_id_map()
 
-if live_ok and bootstrap and raw_fixtures:
-    fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
+# NOTE: Always use CSV fixtures as source of truth for DGW/BGW scheduling.
+# The FPL live API may not reflect manually-confirmed DGW/BGW rescheduling yet.
+# raw_fixtures is still available for live stats (team stats, live radar, etc.)
+# if live_ok and bootstrap and raw_fixtures:
+#     fixtures_df = build_live_fixtures_df(bootstrap, raw_fixtures)
 
 # ── Build FPL element_id → external profile links lookup ──────────────────────
 _ext_links: dict = {}
@@ -887,13 +890,32 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                 val  = cell.get(value_key, 0)
                 lbl  = label_fn(cell)
                 cbg, cfg = color_fn(val)
-                cells += (f'<td style="padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
-                          f'font-size:12px;font-weight:700;border-bottom:1px solid #161616;'
-                          f'border-right:1px solid #1e1e1e" data-val="{val}">{lbl}</td>')
+                # Detect DGW: display string contains " + "
+                display_str = cell.get("display", "")
+                is_dgw = " + " in display_str
+                if is_dgw:
+                    parts = display_str.split(" + ")
+                    dgw_badge = (
+                        '<span style="font-size:8px;background:#FFD700;color:#111;border-radius:2px;'
+                        'padding:0 4px;font-weight:800;letter-spacing:.5px;display:block;margin-bottom:2px">DGW</span>'
+                    )
+                    fixtures_html = '<br>'.join(
+                        f'<span style="font-size:11px;font-weight:700">{p}</span>' for p in parts
+                    )
+                    inner_lbl = dgw_badge + fixtures_html
+                    td_style = (f'padding:4px 6px;text-align:center;background:{cbg};color:{cfg};'
+                                f'font-weight:700;border-bottom:1px solid #161616;'
+                                f'border-right:1px solid #1e1e1e;vertical-align:middle;min-width:80px;line-height:1.5')
+                else:
+                    inner_lbl = lbl
+                    td_style = (f'padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
+                                f'font-size:12px;font-weight:700;border-bottom:1px solid #161616;'
+                                f'border-right:1px solid #1e1e1e')
+                cells += f'<td style="{td_style}" data-val="{val}">{inner_lbl}</td>'
             else:
-                cells += ('<td style="padding:6px 8px;text-align:center;background:#111;color:#c0392b;'
-                          'font-size:11px;font-weight:700;border-bottom:1px solid #161616;'
-                          'border-right:1px solid #1e1e1e;letter-spacing:.5px" data-val="-1">BGW</td>')
+                cells += ('<td style="padding:6px 8px;text-align:center;background:#1a0a0a;color:#e74c3c;'
+                          'font-size:10px;font-weight:800;border-bottom:1px solid #161616;'
+                          'border-right:1px solid #1e1e1e;letter-spacing:1px" data-val="-1">BGW</td>')
 
         rows += (f'<tr onmouseover="this.style.background=\'#1a1a1a\'" '
                  f'onmouseout="this.style.background=\'transparent\'">{cells}</tr>')
@@ -1988,12 +2010,17 @@ if nav_cat == "📊 Planning":
             ("#00ff85","#0d1117","1 Easy"), ("#50c369","#0d1117","2"),
             ("#2e2e2e","#999","3 Neutral"),
             ("#9d66a0","#fff","4"), ("#6f2a74","#fff","5 Hard"),
-            ("#111","#c0392b","BGW"),
+            ("#1a0a0a","#e74c3c","BGW"),
         ]
-        legend_html = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">'
+        legend_html = '<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;align-items:center">'
         for bg, fg, lbl in legend_items:
             legend_html += (f'<span style="background:{bg};color:{fg};padding:2px 8px;border-radius:3px;'
                             f'font-size:11px;font-weight:700">{lbl}</span>')
+        legend_html += (
+            '<span style="background:#FFD700;color:#111;padding:2px 8px;border-radius:3px;'
+            'font-size:11px;font-weight:800">DGW</span>'
+            ' <span style="color:#555;font-size:11px">= Double Gameweek</span>'
+        )
         legend_html += '</div>'
         st.markdown(legend_html, unsafe_allow_html=True)
 
@@ -2010,7 +2037,8 @@ if nav_cat == "📊 Planning":
             total_fmt=lambda v: f"{v:.0f}",
             table_id="tbl_fdr",
         )
-        _tbl_h = 50 + len(df_d) * 42
+        # DGW rows are taller (two fixture lines), use 55px per row
+        _tbl_h = 60 + len(df_d) * 55
         components.html(html, height=_tbl_h, scrolling=False)
 
     # ── Tab 2: xG ─────────────────────────────────────────────────────────────────
@@ -2045,7 +2073,7 @@ if nav_cat == "📊 Planning":
             total_fmt=lambda v: f"{v:.2f}",
             table_id="tbl_xg",
         )
-        _tbl_h = 50 + len(df_d) * 42
+        _tbl_h = 60 + len(df_d) * 55
         components.html(html, height=_tbl_h, scrolling=False)
 
     # ── Tab 3: xCS ────────────────────────────────────────────────────────────────
@@ -2081,7 +2109,7 @@ if nav_cat == "📊 Planning":
             total_fmt=lambda v: f"{v*100:.0f}%",
             table_id="tbl_xcs",
         )
-        _tbl_h = 50 + len(df_d) * 42
+        _tbl_h = 60 + len(df_d) * 55
         components.html(html, height=_tbl_h, scrolling=False)
 
     # ── Tab 4: Team Ratings ───────────────────────────────────────────────────────
