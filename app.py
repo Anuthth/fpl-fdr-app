@@ -321,13 +321,14 @@ def create_all_data(fixtures_df_dict, start_gw, end_gw, ratings_df_dict, free_hi
                     "xG": ex["xG"] + xg,
                     "CS": ex["CS"] + cs,
                     "count": ex.get("count", 1) + 1,
-                    "xG_parts": ex.get("xG_parts", [ex["xG"]]) + [xg],
-                    "CS_parts": ex.get("CS_parts", [ex["CS"]]) + [cs],
+                    "xG_parts":  ex.get("xG_parts",  [ex["xG"]])  + [xg],
+                    "CS_parts":  ex.get("CS_parts",  [ex["CS"]])  + [cs],
+                    "fdr_parts": ex.get("fdr_parts", [ex["fdr"]]) + [fdr],
                 }
             else:
                 projection_data[team][gw_key] = {
                     "display": display, "fdr": fdr, "xG": xg, "CS": cs,
-                    "count": 1, "xG_parts": [xg], "CS_parts": [cs],
+                    "count": 1, "xG_parts": [xg], "CS_parts": [cs], "fdr_parts": [fdr],
                 }
 
         if home in PREMIER_LEAGUE_TEAMS:
@@ -919,17 +920,34 @@ def _heatmap_table(df_display, gw_cols, value_key, label_fn, color_fn, total_col
                 cbg, cfg = color_fn(color_val)
                 if is_dgw:
                     dgw_badge = (
-                        '<span style="font-size:8px;background:rgba(0,0,0,0.3);color:#111;border-radius:2px;'
-                        'padding:0 4px;font-weight:800;letter-spacing:.5px;display:block;margin-bottom:2px">DGW</span>'
+                        '<span style="font-size:8px;background:rgba(255,255,255,0.15);color:#fff;'
+                        'border-radius:2px;padding:0 4px;font-weight:800;letter-spacing:.5px;'
+                        'display:block;margin-bottom:3px">DGW</span>'
                     )
-                    lbl_parts = lbl.split(" + ") if " + " in lbl else [lbl]
-                    content_html = '<br>'.join(
-                        f'<span style="font-size:11px;font-weight:700">{p}</span>' for p in lbl_parts
-                    )
+                    fdr_parts  = cell.get("fdr_parts", [])
+                    disp_parts = cell.get("display", lbl).split(" + ")
+                    lbl_parts  = lbl.split(" + ") if " + " in lbl else [lbl]
+                    # For FDR tab: render each fixture as its own colored pill
+                    if value_key == "fdr" and fdr_parts and len(fdr_parts) == len(disp_parts):
+                        pills = []
+                        for fix_lbl, fix_fdr in zip(disp_parts, fdr_parts):
+                            pbg, pfg = color_fn(fix_fdr)
+                            pills.append(
+                                f'<div style="background:{pbg};color:{pfg};padding:2px 5px;'
+                                f'border-radius:3px;font-size:10px;font-weight:700;'
+                                f'margin:1px 0;white-space:nowrap">{fix_lbl}</div>'
+                            )
+                        content_html = ''.join(pills)
+                    else:
+                        # xG / xCS: show values per fixture
+                        content_html = '<br>'.join(
+                            f'<span style="font-size:11px;font-weight:700">{p}</span>'
+                            for p in lbl_parts
+                        )
                     inner_lbl = dgw_badge + content_html
-                    td_style = (f'padding:4px 6px;text-align:center;background:{cbg};color:{cfg};'
+                    td_style = (f'padding:4px 6px;text-align:center;background:{cbg};color:#fff;'
                                 f'font-weight:700;border-bottom:1px solid #161616;'
-                                f'border-right:1px solid #1e1e1e;vertical-align:middle;min-width:80px;line-height:1.5')
+                                f'border-right:1px solid #1e1e1e;vertical-align:middle;min-width:85px;line-height:1.4')
                 else:
                     inner_lbl = lbl
                     td_style = (f'padding:6px 8px;text-align:center;background:{cbg};color:{cfg};'
