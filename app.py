@@ -1783,12 +1783,12 @@ def add_fpl_positions(player_df, bootstrap):
     lookup = {}
     for _, r in elements.iterrows():
         data = {"pos": POS.get(r["element_type"], "?"), "id": int(r["id"])}
-        # full name, web_name, second_name, last word of web_name
         for key in [
-            _norm(f"{r['first_name']} {r['second_name']}"),
-            _norm(r["web_name"]),
-            _norm(r["second_name"]),
-            _norm(r["web_name"].split(".")[-1].strip()),  # "B.Guimarães" → "Guimarães"
+            _norm(f"{r['first_name']} {r['second_name']}"),  # "Bruno Guimarães"
+            _norm(r["web_name"]),                            # "B.Guimarães"
+            _norm(r["second_name"]),                         # "Guimarães"
+            _norm(r["web_name"].split(".")[-1].strip()),     # strip "B." prefix
+            _norm(r["first_name"]),                          # "Bruno", "Yeremy", "Hee-Chan"
         ]:
             if key and key not in lookup:
                 lookup[key] = data
@@ -1797,14 +1797,35 @@ def add_fpl_positions(player_df, bootstrap):
 
     def _match(name):
         n = _norm(name)
+        parts = n.split()
+
+        # 1. Direct full match
         if n in lookup:
             return lookup[n]
-        # try last word of CSV name (e.g. "Guimarães" from "Bruno Guimarães")
-        last = n.split()[-1] if n.split() else ""
-        if last and last in lookup:
-            return lookup[last]
-        # fuzzy fallback — catches nicknames and minor spelling differences
-        hits = get_close_matches(n, all_keys, n=1, cutoff=0.82)
+
+        # 2. Last word (surname)
+        if len(parts) > 1:
+            last = parts[-1]
+            if last in lookup:
+                return lookup[last]
+
+        # 3. Abbreviated surname: "Bruno G." → first name "Bruno"
+        if len(parts) >= 2 and len(parts[-1]) <= 2:
+            first = parts[0]
+            if first in lookup:
+                return lookup[first]
+
+        # 4. Space → hyphen: "Hee Chan" → "Hee-Chan" (Korean/compound names)
+        hyphen_n = n.replace(" ", "-")
+        if hyphen_n in lookup:
+            return lookup[hyphen_n]
+
+        # 5. Single-word first name: "Yeremy", "Bernardo"
+        if len(parts) == 1 and n in lookup:
+            return lookup[n]
+
+        # 6. Fuzzy fallback (slightly lower cutoff 0.80 for short names)
+        hits = get_close_matches(n, all_keys, n=1, cutoff=0.80)
         return lookup[hits[0]] if hits else {}
 
     df = player_df.copy()
