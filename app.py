@@ -607,7 +607,7 @@ st.title("🏆 CoachFPL Command Center")
 
 with st.sidebar:
     # ── Section navigation (top of sidebar) ───────────────────────────────────
-    _NAV_GROUPS = ["📊 Planning", "🎯 Captain & Picks", "👕 My FPL", "🏟️ Stats"]
+    _NAV_GROUPS = ["🔴 Live GW", "📊 Planning", "🎯 Captain & Picks", "🏟️ Stats", "👕 My FPL"]
     if "nav_cat" not in st.session_state:
         st.session_state["nav_cat"] = _NAV_GROUPS[0]
     st.markdown(
@@ -861,12 +861,14 @@ if free_hit_gw and f"GW{free_hit_gw}" in gw_columns:
 # TABS
 # =============================================================================
 # ── Conditional tab groups based on sidebar navigation ────────────────────────
-if nav_cat == "📊 Planning":
+if nav_cat == "🔴 Live GW":
+    pass  # no tabs — rendered directly below
+elif nav_cat == "📊 Planning":
     tab1, tab2, tab3, tab4 = st.tabs(["📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings"])
 elif nav_cat == "🎯 Captain & Picks":
     tab5, tab6, tab7, tab13 = st.tabs(["🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "🔍 Differentials"])
 elif nav_cat == "👕 My FPL":
-    tab15, tab8, tab9, tab10, tab14 = st.tabs(["🔴 Live GW", "📡 Live Radar", "👕 My Team", "📅 GW Planner", "🏆 Mini-League"])
+    tab8, tab14 = st.tabs(["📡 Live Radar", "🏆 Mini-League"])
 else:  # 🏟️ Stats
     tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
@@ -2104,7 +2106,193 @@ def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
         '</div>'
     )
 
-if nav_cat == "📊 Planning":
+if nav_cat == "🔴 Live GW":
+    # ── Live GW — top-level section (no sub-tabs) ──────────────────────────────
+    import re as _lgre
+    if not live_ok:
+        st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+    else:
+        _all_events = bootstrap.get("events", [])
+        _finished_or_current = [e["id"] for e in _all_events if e.get("finished") or e.get("is_current")]
+        _live_gw_opts = _finished_or_current if _finished_or_current else [current_gw]
+
+        _lc1, _lc2 = st.columns([4, 1])
+        with _lc1:
+            _sel_gw = st.selectbox("Gameweek:", _live_gw_opts,
+                                   index=len(_live_gw_opts) - 1,
+                                   format_func=lambda g: f"GW{g}", key="live_gw_sel")
+        with _lc2:
+            st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
+            if st.button("🔄 Refresh", key="live_gw_refresh", use_container_width=True):
+                st.cache_data.clear()
+                st.rerun()
+
+        try:
+            _live_data = _fetch_gw_live(_sel_gw)
+        except Exception as _e:
+            st.error(f"Could not fetch live data: {_e}")
+            _live_data = None
+
+        if _live_data:
+            _team_map   = {t["id"]: t for t in bootstrap.get("teams", [])}
+            _pos_map    = {pt["id"]: pt["singular_name_short"] for pt in bootstrap.get("element_types", [])}
+            _player_map = {el["id"]: el for el in bootstrap.get("elements", [])}
+            _explain_idx = {}
+            for _el in _live_data.get("elements", []):
+                for _expl in _el.get("explain", []):
+                    _explain_idx.setdefault(_el["id"], {})[_expl["fixture"]] = _expl
+
+            _gw_fixtures = sorted([f for f in raw_fixtures if f.get("event") == _sel_gw],
+                                   key=lambda f: f.get("kickoff_time") or "")
+
+            def _pts_color(pts):
+                if pts >= 12: return "#FFD700","#111"
+                if pts >= 9:  return "#FF9800","#111"
+                if pts >= 6:  return "#4caf50","#fff"
+                if pts >= 3:  return "#1e88e5","#fff"
+                if pts > 0:   return "#555","#ccc"
+                return "#2a2a2a","#666"
+
+            _LOGO = "https://resources.premierleague.com/premierleague/badges/t{code}.png"
+
+            def _calc_defcon(el, p):
+                """Compute DefCon from raw per-GW stats: DEF>=10 CBIT, MID/FWD>=12 CBIRT."""
+                s    = el.get("stats", {})
+                cbi  = int(s.get("clearances_blocks_interceptions", 0) or 0)
+                tack = int(s.get("tackles", 0) or 0)
+                rec  = int(s.get("recoveries", 0) or 0)
+                etype = p.get("element_type", 0)
+                if etype == 2:       return (cbi + tack) >= 10
+                if etype in (3, 4):  return (cbi + tack + rec) >= 12
+                return False
+
+            # Per-fixture summaries (goals/assists, defcon, bonus)
+            _fx_summary = {}
+            for _el in _live_data.get("elements", []):
+                _pid  = _el["id"]; _p = _player_map.get(_pid)
+                if not _p: continue
+                _defcon = _calc_defcon(_el, _p)
+                for _expl in _el.get("explain", []):
+                    _fid  = _expl["fixture"]
+                    _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
+                    _g    = _sv.get("goals_scored", 0); _a = _sv.get("assists", 0)
+                    _bon  = _sv.get("bonus", 0); _name = _p.get("web_name", "?")
+                    _s    = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
+                    if _g or _a:  _s["goals"].append((_name, _g, _a))
+                    if _defcon:   _s["dc"].append(_name)
+                    if _bon:      _s["bonus"].append((_name, _bon))
+
+            _N_COLS = 4
+            for _row_start in range(0, len(_gw_fixtures), _N_COLS):
+                _row_fx   = _gw_fixtures[_row_start:_row_start + _N_COLS]
+                _grid_cols = st.columns(len(_row_fx))
+                for _ci, _fx in enumerate(_row_fx):
+                    with _grid_cols[_ci]:
+                        _ht = _team_map.get(_fx["team_h"],{}); _at = _team_map.get(_fx["team_a"],{})
+                        _h_short = _ht.get("short_name","?"); _a_short = _at.get("short_name","?")
+                        _h_code  = _ht.get("code",0);        _a_code  = _at.get("code",0)
+                        _hs      = _fx.get("team_h_score");   _as_     = _fx.get("team_a_score")
+                        _started = _fx.get("started",False);  _finished= _fx.get("finished",False)
+                        _mins    = _fx.get("minutes",0);      _ko      = _fx.get("kickoff_time","")
+                        _fx_id   = _fx["id"]
+                        if not _started:
+                            _ko_fmt=_lgre.sub(r".*T(\d{2}:\d{2}).*",r"\1",_ko) if _ko else "TBD"
+                            _score_txt="vs";_score_col="#555";_status_txt=_ko_fmt;_status_col="#666"
+                        elif _finished:
+                            _score_txt=f"{_hs} – {_as_}";_score_col="#e8e8e8";_status_txt="FT";_status_col="#4caf50"
+                        else:
+                            _score_txt=f"{_hs} – {_as_}";_score_col="#ffffff";_status_txt=f"🔴 {_mins}'";_status_col="#ff4444"
+                        _summ = _fx_summary.get(_fx_id,{"goals":[],"dc":[],"bonus":[]})
+                        _goal_lines = [("⚽"*g)+("🅰️"*a)+f" {n}" for n,g,a in sorted(_summ["goals"],key=lambda x:-(x[1]*2+x[2]))]
+                        _goals_html  = "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines) or '<span style="color:#333">–</span>'
+                        _defcon_html = "  ".join(f'<span style="color:#4fc3f7">🛡️ {n}</span>' for n in _summ["dc"]) or '<span style="color:#333">–</span>'
+                        _bonus_html  = "  ".join(f'<span style="color:#FFD700">★{bp} {nm}</span>' for nm,bp in sorted(_summ["bonus"],key=lambda x:-x[1])) or '<span style="color:#333">–</span>'
+                        _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
+                        _card = (
+                            f'<div style="background:#181818;border:1px solid #2a2a2a;border-radius:12px;padding:14px 10px 12px;text-align:center;font-family:sans-serif">'
+                            f'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px">'
+                            f'<div style="flex:1;text-align:center"><img src="{_LOGO.format(code=_h_code)}" width="40" height="40" style="object-fit:contain;display:block;margin:0 auto"/><div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_h_short}</div></div>'
+                            f'<div style="flex:1;text-align:center"><div style="font-size:22px;font-weight:900;color:{_score_col};letter-spacing:1px">{_score_txt}</div><div style="font-size:10px;font-weight:700;color:{_status_col};margin-top:2px">{_status_txt}</div></div>'
+                            f'<div style="flex:1;text-align:center"><img src="{_LOGO.format(code=_a_code)}" width="40" height="40" style="object-fit:contain;display:block;margin:0 auto"/><div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_a_short}</div></div>'
+                            f'</div><div style="border-top:1px solid #252525;margin:10px 0 8px"></div>'
+                            f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">Goals & Assists</div><div style="font-size:11px;line-height:1.7">{_goals_html}</div></div>'
+                            f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">Defcon</div><div style="font-size:11px;line-height:1.7">{_defcon_html}</div></div>'
+                            f'<div style="text-align:left;padding:0 4px"><div style="{_lbl_s}">Bonus</div><div style="font-size:11px">{_bonus_html}</div></div>'
+                            f'</div>'
+                        )
+                        st.markdown(_card, unsafe_allow_html=True)
+                        _is_sel = st.session_state.get("live_sel_fx") == _fx_id
+                        if st.button("▲ Hide" if _is_sel else "▼ Players", key=f"fxbtn_{_fx_id}", use_container_width=True):
+                            st.session_state["live_sel_fx"] = None if _is_sel else _fx_id
+                            st.rerun()
+
+            _sel_fx_id = st.session_state.get("live_sel_fx")
+            if _sel_fx_id:
+                _sel_fx = next((f for f in _gw_fixtures if f["id"] == _sel_fx_id), None)
+                if _sel_fx:
+                    _ht=_team_map.get(_sel_fx["team_h"],{}); _at=_team_map.get(_sel_fx["team_a"],{})
+                    _h_short=_ht.get("short_name","?"); _a_short=_at.get("short_name","?")
+                    _h_full=TEAM_NAME_MAP.get(_h_short,_h_short); _a_full=TEAM_NAME_MAP.get(_a_short,_a_short)
+                    _h_bg=CLUB_COLORS.get(_h_full,{}).get("bg","#333"); _h_fg=CLUB_COLORS.get(_h_full,{}).get("text","#fff")
+                    _a_bg=CLUB_COLORS.get(_a_full,{}).get("bg","#333"); _a_fg=CLUB_COLORS.get(_a_full,{}).get("text","#fff")
+                    st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+                    _home_rows, _away_rows = [], []
+                    for _el in _live_data.get("elements", []):
+                        _pid=_el["id"]; _p=_player_map.get(_pid)
+                        if not _p: continue
+                        _expl=_explain_idx.get(_pid,{}).get(_sel_fx_id)
+                        if not _expl: continue
+                        _sv={s["identifier"]:s["value"] for s in _expl.get("stats",[])}
+                        _pts=sum(s["points"] for s in _expl.get("stats",[]))
+                        if _sv.get("minutes",0)==0: continue
+                        _pos=_pos_map.get(_p.get("element_type"),"?")
+                        _g=_sv.get("goals_scored",0); _a=_sv.get("assists",0)
+                        _cs=_sv.get("clean_sheets",0); _yc=_sv.get("yellow_cards",0)
+                        _rc=_sv.get("red_cards",0);   _sav=_sv.get("saves",0); _bon=_sv.get("bonus",0)
+                        _defcon=_calc_defcon(_el, _p)
+                        _ev=("⚽"*_g)+("🅰️"*_a)
+                        if _cs:  _ev+="🧤" if _pos=="GKP" else "🛡️"
+                        if _yc:  _ev+="🟨"
+                        if _rc:  _ev+="🟥"
+                        if _sav>=3: _ev+=f" ({_sav}sv)"
+                        if _defcon: _ev+=" 🛡DC"
+                        _row={"Player":_p.get("web_name","?"),"Pos":_pos,"Mins":_sv.get("minutes",0),
+                              "Events":_ev.strip(),"DC":_defcon,"BP":_bon,"Pts":_pts}
+                        (_home_rows if _p["team"]==_sel_fx["team_h"] else _away_rows).append(_row)
+
+                    def _team_tbl(rows, short, bg, fg):
+                        rows_s=sorted(rows,key=lambda r:-r["Pts"])
+                        _th_s="padding:6px 10px;font-size:11px;font-weight:700;color:#888;border-bottom:1px solid #222;white-space:nowrap"
+                        _td_s="padding:6px 10px;font-size:13px;border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd"
+                        _hdrs=["Player","Pos","Mins","Events","DC","BP","Pts"]
+                        _hcells="".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
+                        _html=(f'<div style="background:{bg};color:{fg};padding:7px 12px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700">{short}</div>'
+                               f'<div style="overflow-x:auto;border:1px solid #222;border-top:none;border-radius:0 0 8px 8px">'
+                               f'<table style="width:100%;border-collapse:collapse;background:#111"><thead><tr>{_hcells}</tr></thead><tbody>')
+                        for r in rows_s:
+                            _pbg,_pfg=_pts_color(r["Pts"])
+                            _pts_c=f'<span style="background:{_pbg};color:{_pfg};padding:2px 8px;border-radius:4px;font-weight:700">{r["Pts"]}</span>'
+                            _dc_c='<b style="color:#4fc3f7">✓ +2</b>' if r["DC"] else '<span style="color:#444">–</span>'
+                            _bp_c=f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else '<span style="color:#444">–</span>'
+                            _html+=(f'<tr><td style="{_td_s}">{r["Player"]}</td>'
+                                    f'<td style="{_td_s};color:#888;font-size:11px">{r["Pos"]}</td>'
+                                    f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
+                                    f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
+                                    f'<td style="{_td_s};text-align:center">{_dc_c}</td>'
+                                    f'<td style="{_td_s};text-align:center">{_bp_c}</td>'
+                                    f'<td style="{_td_s}">{_pts_c}</td></tr>')
+                        _html+='</tbody></table></div>'
+                        return _html, 50+len(rows_s)*40
+
+                    _col_h,_col_a=st.columns(2)
+                    _h_html,_h_ht=_team_tbl(_home_rows,_h_short,_h_bg,_h_fg)
+                    _a_html,_a_ht=_team_tbl(_away_rows,_a_short,_a_bg,_a_fg)
+                    with _col_h: components.html(_h_html, height=_h_ht, scrolling=False)
+                    with _col_a: components.html(_a_html, height=_a_ht, scrolling=False)
+
+            st.caption(f"GW{_sel_gw} · refreshes every 60s · Defcon = +2pts when defensive threshold met")
+
+elif nav_cat == "📊 Planning":
     # ── Team filter & custom order (shared across FDR / xG / xCS tabs) ──────────
     _all_plan_teams = list(master_df.index)
 
@@ -2928,320 +3116,6 @@ elif nav_cat == "🎯 Captain & Picks":
 
 # ────────────────────────────────────────────────────────────────────────────
 elif nav_cat == "👕 My FPL":
-    # ── Tab 15: Live GW ──────────────────────────────────────────────────────────
-    with tab15:
-        import re as _re
-        if not live_ok:
-            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-        else:
-            # ── GW selector + refresh ──────────────────────────────────────────
-            _all_events = bootstrap.get("events", [])
-            _finished_or_current = [
-                e["id"] for e in _all_events
-                if e.get("finished") or e.get("is_current")
-            ]
-            _live_gw_opts = _finished_or_current if _finished_or_current else [current_gw]
-
-            _lc1, _lc2 = st.columns([4, 1])
-            with _lc1:
-                _sel_gw = st.selectbox(
-                    "Gameweek:", _live_gw_opts,
-                    index=len(_live_gw_opts) - 1,
-                    format_func=lambda g: f"GW{g}",
-                    key="live_gw_sel",
-                )
-            with _lc2:
-                st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
-                if st.button("🔄 Refresh", key="live_gw_refresh", use_container_width=True):
-                    st.cache_data.clear()
-                    st.rerun()
-
-            try:
-                _live_data = _fetch_gw_live(_sel_gw)
-            except Exception as _e:
-                st.error(f"Could not fetch live data: {_e}")
-                _live_data = None
-
-            if _live_data:
-                _team_map   = {t["id"]: t for t in bootstrap.get("teams", [])}
-                _pos_map    = {pt["id"]: pt["singular_name_short"]
-                               for pt in bootstrap.get("element_types", [])}
-                _player_map = {el["id"]: el for el in bootstrap.get("elements", [])}
-                # {player_id: {fixture_id: explain_stats}}
-                _explain_idx = {}
-                for _el in _live_data.get("elements", []):
-                    for _expl in _el.get("explain", []):
-                        _explain_idx.setdefault(_el["id"], {})[_expl["fixture"]] = _expl
-
-                _gw_fixtures = sorted(
-                    [f for f in raw_fixtures if f.get("event") == _sel_gw],
-                    key=lambda f: f.get("kickoff_time") or "",
-                )
-
-                def _pts_color(pts):
-                    if pts >= 12: return "#FFD700","#111"
-                    if pts >= 9:  return "#FF9800","#111"
-                    if pts >= 6:  return "#4caf50","#fff"
-                    if pts >= 3:  return "#1e88e5","#fff"
-                    if pts > 0:   return "#555","#ccc"
-                    return "#2a2a2a","#666"
-
-                # Logo base URL (FPL CDN)
-                _LOGO = "https://resources.premierleague.com/premierleague/badges/t{code}.png"
-
-                # Build per-fixture goal/assist, DefCon, and Bonus summaries
-                _fx_summary = {}   # {fx_id: {"goals": [...], "dc": [...], "bonus": [...]}}
-                for _el in _live_data.get("elements", []):
-                    _pid = _el["id"]
-                    _p   = _player_map.get(_pid)
-                    if not _p:
-                        continue
-                    for _expl in _el.get("explain", []):
-                        _fid  = _expl["fixture"]
-                        _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
-                        _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
-                        _g    = _sv.get("goals_scored", 0)
-                        _a    = _sv.get("assists", 0)
-                        _bon  = _sv.get("bonus", 0)
-                        # DefCon: 2pts awarded when defensive contribution threshold met
-                        _defcon_pts = _spts.get("defensive_contributions", 0)
-                        _name = _p.get("web_name", "?")
-                        _s = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
-                        if _g or _a:
-                            _s["goals"].append((_name, _g, _a))
-                        if _defcon_pts > 0:
-                            _s["dc"].append(_name)
-                        if _bon:
-                            _s["bonus"].append((_name, _bon))
-
-                # ── Match card grid (4 per row) ────────────────────────────────
-                _N_COLS = 4
-                for _row_start in range(0, len(_gw_fixtures), _N_COLS):
-                    _row_fx = _gw_fixtures[_row_start:_row_start + _N_COLS]
-                    _grid_cols = st.columns(len(_row_fx))
-
-                    for _ci, _fx in enumerate(_row_fx):
-                        with _grid_cols[_ci]:
-                            _ht      = _team_map.get(_fx["team_h"], {})
-                            _at      = _team_map.get(_fx["team_a"], {})
-                            _h_short = _ht.get("short_name", "?")
-                            _a_short = _at.get("short_name", "?")
-                            _h_code  = _ht.get("code", 0)
-                            _a_code  = _at.get("code", 0)
-                            _hs      = _fx.get("team_h_score")
-                            _as_     = _fx.get("team_a_score")
-                            _started  = _fx.get("started", False)
-                            _finished = _fx.get("finished", False)
-                            _mins     = _fx.get("minutes", 0)
-                            _ko       = _fx.get("kickoff_time", "")
-                            _fx_id    = _fx["id"]
-
-                            if not _started:
-                                _ko_fmt = _re.sub(r".*T(\d{2}:\d{2}).*", r"\1", _ko) if _ko else "TBD"
-                                _score_txt  = "vs"
-                                _score_col  = "#555"
-                                _status_txt = _ko_fmt
-                                _status_col = "#666"
-                            elif _finished:
-                                _score_txt  = f"{_hs} – {_as_}"
-                                _score_col  = "#e8e8e8"
-                                _status_txt = "FT"
-                                _status_col = "#4caf50"
-                            else:
-                                _score_txt  = f"{_hs} – {_as_}"
-                                _score_col  = "#ffffff"
-                                _status_txt = f"🔴 {_mins}'"
-                                _status_col = "#ff4444"
-
-                            # Goals/assists, DC (DefCon), Bonus summaries
-                            _summ = _fx_summary.get(_fx_id, {"goals": [], "dc": [], "bonus": []})
-
-                            _goal_lines = []
-                            for _nm, _g, _a in sorted(_summ["goals"], key=lambda x: -(x[1]*2+x[2])):
-                                _parts = ("⚽" * _g) + ("🅰️" * _a)
-                                _goal_lines.append(f"{_parts} {_nm}")
-                            _goals_html = (
-                                "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines)
-                                if _goal_lines else '<span style="color:#333">–</span>'
-                            )
-
-                            _dc_names = _summ["dc"]
-                            _defcon_html = (
-                                "  ".join(f'<span style="color:#4fc3f7">🛡️ {n}</span>' for n in _dc_names)
-                                if _dc_names else '<span style="color:#333">–</span>'
-                            )
-
-                            _bonus_lines = []
-                            for _nm, _bp in sorted(_summ["bonus"], key=lambda x: -x[1]):
-                                _bonus_lines.append(f"★{_bp} {_nm}")
-                            _bonus_html = (
-                                "  ".join(f'<span style="color:#FFD700">{l}</span>' for l in _bonus_lines)
-                                if _bonus_lines else '<span style="color:#333">–</span>'
-                            )
-
-                            _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
-                            # Card HTML
-                            _card = (
-                                f'<div style="background:#181818;border:1px solid #2a2a2a;border-radius:12px;'
-                                f'padding:14px 10px 12px;text-align:center;font-family:sans-serif">'
-                                # Teams + score row
-                                f'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px">'
-                                f'<div style="flex:1;text-align:center">'
-                                f'<img src="{_LOGO.format(code=_h_code)}" width="40" height="40" '
-                                f'style="object-fit:contain;display:block;margin:0 auto"/>'
-                                f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_h_short}</div>'
-                                f'</div>'
-                                f'<div style="flex:1;text-align:center">'
-                                f'<div style="font-size:22px;font-weight:900;color:{_score_col};letter-spacing:1px">{_score_txt}</div>'
-                                f'<div style="font-size:10px;font-weight:700;color:{_status_col};margin-top:2px">{_status_txt}</div>'
-                                f'</div>'
-                                f'<div style="flex:1;text-align:center">'
-                                f'<img src="{_LOGO.format(code=_a_code)}" width="40" height="40" '
-                                f'style="object-fit:contain;display:block;margin:0 auto"/>'
-                                f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_a_short}</div>'
-                                f'</div>'
-                                f'</div>'
-                                f'<div style="border-top:1px solid #252525;margin:10px 0 8px"></div>'
-                                # Goals/assists
-                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
-                                f'<div style="{_lbl_s}">Goals & Assists</div>'
-                                f'<div style="font-size:11px;line-height:1.7">{_goals_html}</div>'
-                                f'</div>'
-                                # DefCon
-                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
-                                f'<div style="{_lbl_s}">Defcon</div>'
-                                f'<div style="font-size:11px;line-height:1.7">{_defcon_html}</div>'
-                                f'</div>'
-                                # Bonus
-                                f'<div style="text-align:left;padding:0 4px">'
-                                f'<div style="{_lbl_s}">Bonus</div>'
-                                f'<div style="font-size:11px">{_bonus_html}</div>'
-                                f'</div>'
-                                f'</div>'
-                            )
-                            st.markdown(_card, unsafe_allow_html=True)
-
-                            # Click button — minimal, below card
-                            _is_sel = st.session_state.get("live_sel_fx") == _fx_id
-                            _btn_lbl = "▲ Hide" if _is_sel else "▼ Players"
-                            if st.button(_btn_lbl, key=f"fxbtn_{_fx_id}", use_container_width=True):
-                                if _is_sel:
-                                    st.session_state.pop("live_sel_fx", None)
-                                else:
-                                    st.session_state["live_sel_fx"] = _fx_id
-                                st.rerun()
-
-                # ── Player detail table for selected fixture ───────────────────
-                _sel_fx_id = st.session_state.get("live_sel_fx")
-                if _sel_fx_id:
-                    _sel_fx = next((f for f in _gw_fixtures if f["id"] == _sel_fx_id), None)
-                    if _sel_fx:
-                        _ht      = _team_map.get(_sel_fx["team_h"], {})
-                        _at      = _team_map.get(_sel_fx["team_a"], {})
-                        _h_short = _ht.get("short_name", "?")
-                        _a_short = _at.get("short_name", "?")
-                        _h_full  = TEAM_NAME_MAP.get(_h_short, _h_short)
-                        _a_full  = TEAM_NAME_MAP.get(_a_short, _a_short)
-                        _h_bg    = CLUB_COLORS.get(_h_full, {}).get("bg", "#333")
-                        _h_fg    = CLUB_COLORS.get(_h_full, {}).get("text", "#fff")
-                        _a_bg    = CLUB_COLORS.get(_a_full, {}).get("bg", "#333")
-                        _a_fg    = CLUB_COLORS.get(_a_full, {}).get("text", "#fff")
-
-                        st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
-
-                        _home_rows, _away_rows = [], []
-                        for _el in _live_data.get("elements", []):
-                            _pid  = _el["id"]
-                            _p    = _player_map.get(_pid)
-                            if not _p:
-                                continue
-                            _expl = _explain_idx.get(_pid, {}).get(_sel_fx_id)
-                            if not _expl:
-                                continue
-                            _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
-                            _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
-                            _pts  = sum(s["points"] for s in _expl.get("stats", []))
-                            if _sv.get("minutes", 0) == 0:
-                                continue
-                            _pos  = _pos_map.get(_p.get("element_type"), "?")
-                            _g    = _sv.get("goals_scored", 0)
-                            _a    = _sv.get("assists", 0)
-                            _cs   = _sv.get("clean_sheets", 0)
-                            _yc   = _sv.get("yellow_cards", 0)
-                            _rc   = _sv.get("red_cards", 0)
-                            _sav  = _sv.get("saves", 0)
-                            _bon  = _sv.get("bonus", 0)
-                            _mins_p = _sv.get("minutes", 0)
-                            # DefCon: 2pts awarded when threshold met (new 2025/26 metric)
-                            _defcon_pts = _spts.get("defensive_contributions", 0)
-
-                            _ev = ""
-                            if _g:  _ev += "⚽" * _g
-                            if _a:  _ev += "🅰️" * _a
-                            if _cs: _ev += "🧤" if _pos == "GKP" else "🛡️"
-                            if _yc: _ev += "🟨"
-                            if _rc: _ev += "🟥"
-                            if _sav >= 3: _ev += f" ({_sav}sv)"
-                            if _defcon_pts: _ev += " 🛡DC"
-
-                            _row = {
-                                "Player": _p.get("web_name", "?"),
-                                "Pos":    _pos,
-                                "Mins":   _mins_p,
-                                "Events": _ev.strip(),
-                                "DC":     _defcon_pts,   # 2 if DefCon earned, 0 otherwise
-                                "BP":     _bon,
-                                "Pts":    _pts,
-                            }
-                            if _p["team"] == _sel_fx["team_h"]:
-                                _home_rows.append(_row)
-                            else:
-                                _away_rows.append(_row)
-
-                        def _team_tbl(rows, short, bg, fg):
-                            rows_s = sorted(rows, key=lambda r: -r["Pts"])
-                            _th_s  = "padding:6px 10px;font-size:11px;font-weight:700;color:#888;border-bottom:1px solid #222;white-space:nowrap"
-                            _td_s  = "padding:6px 10px;font-size:13px;border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd"
-                            _hdrs  = ["Player","Pos","Mins","Events","DC","BP","Pts"]
-                            _hcells = "".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
-                            _h = (
-                                f'<div style="background:{bg};color:{fg};padding:7px 12px;'
-                                f'border-radius:8px 8px 0 0;font-size:13px;font-weight:700">{short}</div>'
-                                f'<div style="overflow-x:auto;border:1px solid #222;border-top:none;border-radius:0 0 8px 8px">'
-                                f'<table style="width:100%;border-collapse:collapse;background:#111">'
-                                f'<thead><tr>{_hcells}</tr></thead><tbody>'
-                            )
-                            for r in rows_s:
-                                _pbg, _pfg = _pts_color(r["Pts"])
-                                _pts_c = f'<span style="background:{_pbg};color:{_pfg};padding:2px 8px;border-radius:4px;font-weight:700">{r["Pts"]}</span>'
-                                _dc_c  = '<b style="color:#4fc3f7">✓ +2</b>' if r["DC"] else '<span style="color:#444">–</span>'
-                                _bp_c  = f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else '<span style="color:#444">–</span>'
-                                _h += (
-                                    f'<tr>'
-                                    f'<td style="{_td_s}">{r["Player"]}</td>'
-                                    f'<td style="{_td_s};color:#888;font-size:11px">{r["Pos"]}</td>'
-                                    f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
-                                    f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
-                                    f'<td style="{_td_s};text-align:center">{_dc_c}</td>'
-                                    f'<td style="{_td_s};text-align:center">{_bp_c}</td>'
-                                    f'<td style="{_td_s}">{_pts_c}</td>'
-                                    f'</tr>'
-                                )
-                            _h += '</tbody></table></div>'
-                            return _h, 50 + len(rows_s) * 40
-
-                        _col_h, _col_a = st.columns(2)
-                        _h_html, _h_ht = _team_tbl(_home_rows, _h_short, _h_bg, _h_fg)
-                        _a_html, _a_ht = _team_tbl(_away_rows, _a_short, _a_bg, _a_fg)
-                        with _col_h:
-                            components.html(_h_html, height=_h_ht, scrolling=False)
-                        with _col_a:
-                            components.html(_a_html, height=_a_ht, scrolling=False)
-
-                st.caption(f"GW{_sel_gw} · refreshes every 60s · DC = Defcon (+2pts when defensive threshold met)")
-
-
-
     with tab8:
         st.subheader("📡 Live Radar")
         if not live_ok:
@@ -3302,368 +3176,6 @@ elif nav_cat == "👕 My FPL":
                     st.warning(f"Injury data unavailable: {e}")
 
 
-
-    # ── Tab 9: My Team ─────────────────────────────────────────────────────────────
-    with tab9:
-        st.markdown(
-            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">👕 My Team</span>'
-            '<span style="font-size:12px;color:#444">Live squad · fixtures · EV · captaincy</span></div>',
-            unsafe_allow_html=True
-        )
-
-        if not live_ok:
-            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-        else:
-            col_tid, col_tgw = st.columns([2, 1])
-            with col_tid:
-                team_id_input = st.number_input(
-                    "FPL Team ID", min_value=1, max_value=99999999,
-                    value=int(st.session_state.get("fpl_team_id", 1)),
-                    step=1, key="fpl_team_id_input",
-                    help="Find your ID at: fantasy.premierleague.com/entry/{ID}/event/..."
-                )
-            with col_tgw:
-                avail_gws = future_gws if future_gws else list(range(current_gw, 39))
-                team_gw   = st.selectbox("View GW fixtures", avail_gws, key="myteam_gw")
-
-            if st.button("🔄 Load Team", key="load_team_btn"):
-                st.session_state["fpl_team_id"] = team_id_input
-                for k in ["squad_data", "entry_data", "picks_raw"]:
-                    st.session_state.pop(k, None)
-
-            team_id = st.session_state.get("fpl_team_id")
-
-            # Manual squad fallback
-            with st.expander("✏️ Pick squad manually (if Team ID unavailable)", expanded=False):
-                all_el    = pd.DataFrame(bootstrap["elements"])
-                teams_bdf = pd.DataFrame(bootstrap["teams"])
-                id2sname  = dict(zip(teams_bdf["id"], teams_bdf["short_name"]))
-                all_el["label"] = all_el["web_name"] + " (" + all_el["team"].map(id2sname) + ")"
-                opts = all_el.sort_values("web_name")["label"].tolist()
-                pid_map = dict(zip(all_el["label"], all_el["id"]))
-
-                man_xi    = st.multiselect("Starting XI (11)", opts, max_selections=11, key="man_xi")
-                man_bench = st.multiselect("Bench (4)", opts, max_selections=4, key="man_bench")
-
-                if st.button("✅ Use Manual Squad", key="use_manual_sq"):
-                    el_map_m = {p["id"]: p for p in bootstrap["elements"]}
-                    POS_M    = {1:"GKP",2:"DEF",3:"MID",4:"FWD"}
-                    t_short  = {t["id"]: t["short_name"] for t in bootstrap["teams"]}
-                    msq = []
-                    for idx, lbl in enumerate(man_xi + man_bench, 1):
-                        pid = pid_map.get(lbl)
-                        if not pid: continue
-                        el  = el_map_m.get(pid, {})
-                        msq.append({
-                            "id": pid, "name": el.get("web_name","?"),
-                            "team": t_short.get(el.get("team"),"?"),
-                            "pos": POS_M.get(el.get("element_type"),"?"),
-                            "price": el.get("now_cost",0)/10,
-                            "sel%": el.get("selected_by_percent","0"),
-                            "position": idx, "multiplier": 1,
-                            "is_captain": idx==1, "is_vice": idx==2,
-                            "code": el.get("code"),
-                        })
-                    if msq:
-                        st.session_state["squad_data"] = msq
-                        st.success("Manual squad loaded!")
-
-            # Auto-load from FPL API
-            # Picks for GW N are only available AFTER GW N deadline.
-            # Before the deadline → fetch from the last finished GW.
-            if team_id and "squad_data" not in st.session_state:
-                try:
-                    with st.spinner(f"Loading FPL team {team_id}..."):
-                        from datetime import datetime, timezone
-                        entry_d = fetch_fpl_entry(int(team_id))
-                        now_utc = datetime.now(timezone.utc)
-                        events  = bootstrap.get("events", [])
-
-                        picks_gw       = current_gw
-                        picks_gw_label = f"GW{current_gw}"
-                        for ev in events:
-                            if ev["id"] == current_gw:
-                                dl_raw = ev.get("deadline_time", "")
-                                if dl_raw:
-                                    try:
-                                        dl_utc = datetime.fromisoformat(dl_raw.replace("Z", "+00:00"))
-                                        if now_utc < dl_utc:
-                                            finished_gws = sorted(
-                                                [e["id"] for e in events if e.get("finished")],
-                                                reverse=True
-                                            )
-                                            if finished_gws:
-                                                picks_gw = finished_gws[0]
-                                                picks_gw_label = f"GW{picks_gw} (last confirmed squad — GW{current_gw} deadline not yet passed)"
-                                    except Exception:
-                                        pass
-                                break
-
-                        picks_d  = fetch_fpl_picks(int(team_id), picks_gw)
-                        history_d = fetch_fpl_history(int(team_id))
-                        squad_d  = build_squad_from_picks(picks_d, bootstrap)
-                        st.session_state["squad_data"]     = squad_d
-                        st.session_state["entry_data"]     = entry_d
-                        st.session_state["picks_raw"]      = picks_d
-                        st.session_state["history_data"]   = history_d
-                        st.session_state["picks_gw_label"] = picks_gw_label
-                except Exception as exc:
-                    st.error(f"Could not load team {team_id}: {exc}")
-
-            if "squad_data" in st.session_state:
-                squad = enrich_squad_solio(
-                    list(st.session_state["squad_data"]), proj_df, eo_df, team_gw
-                )
-
-                # Manager banner
-                picks_gw_label = st.session_state.get("picks_gw_label", f"GW{current_gw}")
-                if f"(last confirmed" in picks_gw_label:
-                    st.info(f"⚠️ Showing **{picks_gw_label}** — update your squad after the deadline passes.")
-
-                if "entry_data" in st.session_state:
-                    ed       = st.session_state["entry_data"]
-                    pr       = st.session_state.get("picks_raw", {})
-                    eh       = pr.get("entry_history", {})
-                    manager  = ed.get("name", f"Team {team_id}")
-                    rank     = ed.get("summary_overall_rank", "—")
-                    pts_tot  = ed.get("summary_overall_points", "—")
-                    bank_val = eh.get("bank", 0) / 10
-                    tv_val   = eh.get("value", 0) / 10
-                    # Chips played come from the history endpoint (entry endpoint doesn't reliably include them)
-                    rank_fmt = f"{rank:,}" if isinstance(rank, int) else str(rank)
-                    st.markdown(
-                        f'<div style="background:#0d1117;border:1px solid #1e1e1e;border-radius:8px;'
-                        f'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap;align-items:center">'
-                        f'<div><div style="font-size:16px;font-weight:800;color:#e0e0e0">{manager}</div>'
-                        f'<div style="font-size:11px;color:#555">Rank {rank_fmt} · {pts_tot} pts</div></div>'
-                        f'<div><div style="font-size:11px;color:#555">Team Value</div>'
-                        f'<div style="font-size:14px;font-weight:700;color:#5fffb0">£{tv_val:.1f}m</div></div>'
-                        f'<div><div style="font-size:11px;color:#555">Bank</div>'
-                        f'<div style="font-size:14px;font-weight:700;color:#ffaa33">£{bank_val:.1f}m</div></div>'
-                        f'</div>',
-                        unsafe_allow_html=True
-                    )
-
-                xi    = sorted([p for p in squad if p["position"] <= 11], key=lambda p: p["position"])
-                bench = sorted([p for p in squad if p["position"] >  11], key=lambda p: p["position"])
-
-                # Captain recommendation
-                xi_ev = [p for p in xi if p.get("ev")]
-                if xi_ev:
-                    top_cap  = max(xi_ev, key=lambda p: p["ev"])
-                    diff_cap = next((p for p in sorted(xi_ev, key=lambda p: -p["ev"])
-                                     if (p.get("eo%") or 999) < 10), None)
-                    cap_rec = (
-                        f'<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
-                        f'padding:10px 14px;margin-bottom:10px;display:flex;gap:24px;flex-wrap:wrap">'
-                        f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">CAPTAIN REC</div>'
-                        f'<div style="font-size:15px;font-weight:800;color:#5fffb0;margin-top:2px">🏆 {top_cap["name"]}</div>'
-                        f'<div style="font-size:11px;color:#888">{top_cap["ev"]} pts · EO {top_cap.get("eo%","—")}%</div></div>'
-                    )
-                    if diff_cap and diff_cap["id"] != top_cap["id"]:
-                        cap_rec += (
-                            f'<div><div style="font-size:10px;color:#555;font-weight:700;letter-spacing:.5px">DIFFERENTIAL</div>'
-                            f'<div style="font-size:15px;font-weight:800;color:#ffaa33;margin-top:2px">🎯 {diff_cap["name"]}</div>'
-                            f'<div style="font-size:11px;color:#888">{diff_cap["ev"]} pts · EO {diff_cap.get("eo%","—")}%</div></div>'
-                        )
-                    cap_rec += '</div>'
-                    st.markdown(cap_rec, unsafe_allow_html=True)
-
-                # Build position groups sorted by position number
-                pos_order = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
-                xi_by_pos = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
-                for p in sorted(xi, key=lambda p: (pos_order.get(p["pos"],4), p["position"])):
-                    xi_by_pos[p["pos"]].append(p)
-
-                pitch_html = _render_pitch(xi_by_pos, team_gw, master_df_full, bench_players=bench)
-                st.markdown(pitch_html, unsafe_allow_html=True)
-
-
-    # ── Tab 10: GW Planner ────────────────────────────────────────────────────────
-    with tab10:
-        st.markdown(
-            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
-            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📅 GW Planner</span>'
-            '<span style="font-size:12px;color:#444">Projected XI · transfer suggestions</span></div>',
-            unsafe_allow_html=True
-        )
-
-        if not live_ok:
-            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
-        elif proj_df is None:
-            st.info("📂 projections.csv not found — required for GW Planner.")
-        elif "squad_data" not in st.session_state:
-            st.info("👕 Load your team in the **My Team** tab first.")
-        else:
-            avail_gws_p = future_gws if future_gws else list(range(current_gw, 39))
-            plan_gw     = st.selectbox("Plan for GW:", avail_gws_p, key="plan_gw")
-            pts_col_p   = f"{plan_gw}_Pts"
-            mins_col_p  = f"{plan_gw}_xMins"
-            eo_col_p    = f"{plan_gw}_eo"
-
-            squad_p = enrich_squad_solio(
-                list(st.session_state["squad_data"]), proj_df, eo_df, plan_gw
-            )
-            xi_p    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p["position"])
-
-            # ── Projected XI ──────────────────────────────────────────────────────
-            st.markdown("#### 🔢 Projected XI")
-
-            if pts_col_p not in proj_df.columns:
-                st.warning(f"No Solio projections available for GW{plan_gw} yet.")
-            else:
-                # Auto-build best XI by EV respecting formation rules
-                def _best_xi(players):
-                    POS_MIN = {"GKP":1,"DEF":3,"MID":2,"FWD":1}
-                    POS_MAX = {"GKP":1,"DEF":5,"MID":5,"FWD":3}
-                    selected, counts = [], {"GKP":0,"DEF":0,"MID":0,"FWD":0}
-                    for pos in ["GKP","DEF","MID","FWD"]:
-                        pool = sorted([p for p in players if p["pos"]==pos], key=lambda p: p.get("ev") or 0, reverse=True)
-                        for p in pool[:POS_MIN[pos]]:
-                            selected.append(p); counts[pos] += 1
-                    remaining = sorted([p for p in players if p not in selected], key=lambda p: p.get("ev") or 0, reverse=True)
-                    for p in remaining:
-                        if len(selected) >= 11: break
-                        if counts[p["pos"]] < POS_MAX[p["pos"]]:
-                            selected.append(p); counts[p["pos"]] += 1
-                    return selected
-
-                sug_xi    = _best_xi(squad_p)
-                cap_p     = max(sug_xi, key=lambda p: p.get("ev") or 0) if sug_xi else None
-                total_ev  = sum(p.get("ev") or 0 for p in sug_xi)
-                cap_bonus = (cap_p["ev"] if cap_p and cap_p.get("ev") else 0)
-                total_cap = total_ev + cap_bonus  # captain doubles
-
-                # Summary card
-                cap_rec_html = ""
-                if cap_p:
-                    cap_rec_html = (
-                        f'<div><div style="font-size:10px;color:#555;font-weight:700">CAPTAIN REC</div>'
-                        f'<div style="font-size:16px;font-weight:800;color:#fff;margin-top:2px">'
-                        f'{cap_p["name"]} ({cap_p["ev"]} pts)</div></div>'
-                    )
-                st.markdown(
-                    '<div style="background:#0a1a0a;border:1px solid #1e3a1e;border-radius:8px;'
-                    'padding:12px 16px;margin-bottom:12px;display:flex;gap:24px;flex-wrap:wrap">'
-                    '<div><div style="font-size:10px;color:#555;font-weight:700">PROJECTED PTS (XI)</div>'
-                    f'<div style="font-size:22px;font-weight:800;color:#5fffb0">{total_ev:.1f}</div></div>'
-                    '<div><div style="font-size:10px;color:#555;font-weight:700">WITH CAPTAIN</div>'
-                    f'<div style="font-size:22px;font-weight:800;color:#ffaa33">{total_cap:.1f}</div></div>'
-                    + cap_rec_html + '</div>',
-                    unsafe_allow_html=True
-                )
-
-                # Build best XI position groups, mark captain
-                pos_ord   = {"GKP":0,"DEF":1,"MID":2,"FWD":3}
-                xi_by_pos_p = {"GKP":[],"DEF":[],"MID":[],"FWD":[]}
-                for p in sorted(sug_xi, key=lambda p: (pos_ord.get(p["pos"],4), -(p.get("ev") or 0))):
-                    p["is_captain"] = (p == cap_p)
-                    p["is_vice"]    = False
-                    xi_by_pos_p[p["pos"]].append(p)
-                bench_sug = sorted([p for p in squad_p if p not in sug_xi], key=lambda p: -(p.get("ev") or 0))
-                for p in bench_sug:
-                    p["is_captain"] = False
-                    p["is_vice"]    = False
-
-                pitch_html_p = _render_pitch(xi_by_pos_p, plan_gw, master_df_full, bench_players=bench_sug)
-                st.markdown(pitch_html_p, unsafe_allow_html=True)
-
-            # ── Transfer Suggestions ───────────────────────────────────────────────
-            st.markdown("#### 🔄 Transfer Suggestions")
-
-            if pts_col_p not in proj_df.columns:
-                st.warning(f"No Solio projections for GW{plan_gw}.")
-            else:
-                ft_opt    = st.radio("Free transfers:", ["1 FT", "2 FTs", "3 FTs", "4 FTs", "5 FTs"],
-                                     index=0, horizontal=True, key="plan_ft")
-                n_suggest = {"1 FT":1,"2 FTs":2,"3 FTs":3,"4 FTs":4,"5 FTs":5}[ft_opt]
-                avail_ft  = n_suggest  # no automatic detection; user selects
-
-                squad_ids = {p["id"] for p in squad_p}
-                df_out    = proj_df.copy()
-                df_out[pts_col_p]  = pd.to_numeric(df_out[pts_col_p],  errors="coerce")
-                df_out[mins_col_p] = pd.to_numeric(df_out[mins_col_p], errors="coerce")
-                df_out["SV"]       = pd.to_numeric(df_out["SV"],       errors="coerce")
-
-                outside = df_out[(df_out[mins_col_p] > 45) & (~df_out["ID"].isin(squad_ids))].copy()
-                if eo_df is not None and eo_col_p in eo_df.columns:
-                    eo_map_t = pd.to_numeric(eo_df.set_index("ID")[eo_col_p], errors="coerce").to_dict()
-                    outside["EO%"] = outside["ID"].map(eo_map_t).fillna(0) * 100
-                else:
-                    outside["EO%"] = 0
-
-                pos_map = {"GKP":"G","DEF":"D","MID":"M","FWD":"F"}
-                # For more FTs, consider more sell candidates (bench included if ≥3 FTs)
-                pool_xi    = sorted([p for p in squad_p if p["position"] <= 11], key=lambda p: p.get("ev") or 0)
-                pool_bench = sorted([p for p in squad_p if p["position"] > 11],  key=lambda p: p.get("ev") or 0)
-                sell_pool  = pool_xi[:max(n_suggest + 2, 6)] if n_suggest < 3 else (pool_xi + pool_bench)[:max(n_suggest + 3, 8)]
-                xi_worst   = sell_pool  # alias for backwards compat
-
-                suggestions = []
-                used_buy_ids = set()  # prevent the same player being suggested as buy twice
-                for sell in xi_worst[:max(n_suggest * 2, 8)]:
-                    if len(suggestions) >= n_suggest:
-                        break
-                    sell_ev    = sell.get("ev") or 0
-                    sell_price = sell["price"]
-                    sell_pos   = sell["pos"]
-                    same_pos   = outside[
-                        (outside["Pos"].str.upper().str[0] == pos_map.get(sell_pos, sell_pos[0])) &
-                        (~outside["ID"].isin(used_buy_ids))
-                    ]
-                    in_budget  = same_pos[same_pos["SV"] <= sell_price + 0.1]
-                    if in_budget.empty:
-                        in_budget = same_pos
-                    if in_budget.empty:
-                        continue
-                    best_buy = in_budget.nlargest(1, pts_col_p)
-                    if best_buy.empty: continue
-                    buy_row  = best_buy.iloc[0]
-                    buy_ev   = round(float(buy_row[pts_col_p]), 2)
-                    gain     = round(buy_ev - sell_ev, 2)
-                    if gain <= 0: continue
-                    used_buy_ids.add(buy_row["ID"])
-                    suggestions.append({
-                        "out_name": sell["name"], "out_team": sell["team"], "out_ev": sell_ev,
-                        "in_name":  buy_row["Name"], "in_team": buy_row["Team"],
-                        "in_ev": buy_ev, "gain": gain,
-                        "in_eo": round(float(buy_row.get("EO%", 0)), 1),
-                        "in_price": buy_row["SV"],
-                    })
-
-                if not suggestions:
-                    st.success("✅ Your squad looks optimal — no clear upgrades found.")
-                else:
-                    suggestions = sorted(suggestions, key=lambda x: -x["gain"])[:n_suggest]
-                    th_s = 'style="padding:7px 10px;text-align:center;color:#444;font-size:10px;font-weight:700;letter-spacing:.5px;border-bottom:2px solid #222"'
-                    rows_sg = ""
-                    for sg in suggestions:
-                        ob, of = club_style(sg["out_team"])
-                        ib, if_ = club_style(sg["in_team"])
-                        gc = "#5fffb0" if sg["gain"] > 0 else "#ff6060"
-                        rows_sg += (
-                            f'<tr>'
-                            f'<td style="padding:7px 10px;border-bottom:1px solid #1a1a1a">'
-                            f'<span style="background:{ob};color:{of};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["out_name"]}</span>'
-                            f'<span style="color:#444;padding:0 6px">→</span>'
-                            f'<span style="background:{ib};color:{if_};padding:2px 7px;border-radius:3px;font-size:12px;font-weight:700">{sg["in_name"]}</span>'
-                            f'</td>'
-                            f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:12px;border-bottom:1px solid #1a1a1a">{sg["out_ev"]} → {sg["in_ev"]}</td>'
-                            f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:13px;color:{gc};border-bottom:1px solid #1a1a1a">+{sg["gain"]}</td>'
-                            f'<td style="padding:7px 10px;text-align:center;color:#666;font-size:11px;border-bottom:1px solid #1a1a1a">{sg["in_eo"]}%</td>'
-                            f'<td style="padding:7px 10px;text-align:center;color:#888;font-size:11px;border-bottom:1px solid #1a1a1a">£{sg["in_price"]:.1f}m</td>'
-                            f'</tr>'
-                        )
-                    st.markdown(
-                        f'<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:sans-serif">'
-                        f'<thead><tr>'
-                        f'<th {th_s} style="text-align:left">TRANSFER</th>'
-                        f'<th {th_s}>EV OUT→IN</th><th {th_s}>EV GAIN</th>'
-                        f'<th {th_s}>EO%</th><th {th_s}>PRICE</th>'
-                        f'</tr></thead><tbody>{rows_sg}</tbody></table></div>',
-                        unsafe_allow_html=True
-                    )
 
     # ── Tab 14: Mini-League Tracker ──────────────────────────────────────────
     with tab14:
@@ -3777,7 +3289,6 @@ elif nav_cat == "👕 My FPL":
                 except Exception as e:
                     st.error(f"Could not load league {ml_league_id}: {e}")
                     st.caption("Check the league ID and ensure it's a Classic league (not H2H).")
-
 
 
 # ────────────────────────────────────────────────────────────────────────────
