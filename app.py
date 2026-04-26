@@ -2942,7 +2942,7 @@ elif nav_cat == "👕 My FPL":
             ]
             _live_gw_opts = _finished_or_current if _finished_or_current else [current_gw]
 
-            _lc1, _lc2 = st.columns([3, 1])
+            _lc1, _lc2 = st.columns([4, 1])
             with _lc1:
                 _sel_gw = st.selectbox(
                     "Gameweek:", _live_gw_opts,
@@ -2951,11 +2951,10 @@ elif nav_cat == "👕 My FPL":
                     key="live_gw_sel",
                 )
             with _lc2:
-                st.markdown("<div style='margin-top:22px'>", unsafe_allow_html=True)
+                st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
                 if st.button("🔄 Refresh", key="live_gw_refresh", use_container_width=True):
                     st.cache_data.clear()
                     st.rerun()
-                st.markdown("</div>", unsafe_allow_html=True)
 
             try:
                 _live_data = _fetch_gw_live(_sel_gw)
@@ -2968,9 +2967,11 @@ elif nav_cat == "👕 My FPL":
                 _pos_map    = {pt["id"]: pt["singular_name_short"]
                                for pt in bootstrap.get("element_types", [])}
                 _player_map = {el["id"]: el for el in bootstrap.get("elements", [])}
-
-                # index live stats by player id
-                _live_stats = {el["id"]: el for el in _live_data.get("elements", [])}
+                # {player_id: {fixture_id: explain_stats}}
+                _explain_idx = {}
+                for _el in _live_data.get("elements", []):
+                    for _expl in _el.get("explain", []):
+                        _explain_idx.setdefault(_el["id"], {})[_expl["fixture"]] = _expl
 
                 _gw_fixtures = sorted(
                     [f for f in raw_fixtures if f.get("event") == _sel_gw],
@@ -2978,153 +2979,267 @@ elif nav_cat == "👕 My FPL":
                 )
 
                 def _pts_color(pts):
-                    if pts >= 12: return "#FFD700", "#111"
-                    if pts >= 9:  return "#FF9800", "#111"
-                    if pts >= 6:  return "#4caf50", "#fff"
-                    if pts >= 3:  return "#1e88e5", "#fff"
-                    if pts > 0:   return "#555",    "#ccc"
-                    return "#2a2a2a", "#666"
+                    if pts >= 12: return "#FFD700","#111"
+                    if pts >= 9:  return "#FF9800","#111"
+                    if pts >= 6:  return "#4caf50","#fff"
+                    if pts >= 3:  return "#1e88e5","#fff"
+                    if pts > 0:   return "#555","#ccc"
+                    return "#2a2a2a","#666"
 
-                for _fx in _gw_fixtures:
-                    _ht       = _team_map.get(_fx["team_h"], {})
-                    _at       = _team_map.get(_fx["team_a"], {})
-                    _h_short  = _ht.get("short_name", "?")
-                    _a_short  = _at.get("short_name", "?")
-                    _hs       = _fx.get("team_h_score")
-                    _as_      = _fx.get("team_a_score")
-                    _started  = _fx.get("started", False)
-                    _finished = _fx.get("finished", False)
-                    _mins     = _fx.get("minutes", 0)
-                    _ko       = _fx.get("kickoff_time", "")
+                # Logo base URL (FPL CDN)
+                _LOGO = "https://resources.premierleague.com/premierleague/badges/t{code}.png"
 
-                    # Expander label (plain text with emoji)
-                    if not _started:
-                        _ko_fmt = _re.sub(r".*T(\d{2}:\d{2}).*", r"\1", _ko) if _ko else "TBD"
-                        _lbl = f"⏰  {_h_short}  vs  {_a_short}   ·   {_ko_fmt}"
-                        _is_live = False
-                    elif _finished:
-                        _lbl = f"✅  {_h_short}  {_hs} – {_as_}  {_a_short}   ·   FT"
-                        _is_live = False
-                    else:
-                        _lbl = f"🔴  {_h_short}  {_hs} – {_as_}  {_a_short}   ·   {_mins}'"
-                        _is_live = True
+                # Build per-fixture goal/assist, DefCon, and Bonus summaries
+                _fx_summary = {}   # {fx_id: {"goals": [...], "dc": [...], "bonus": [...]}}
+                for _el in _live_data.get("elements", []):
+                    _pid = _el["id"]
+                    _p   = _player_map.get(_pid)
+                    if not _p:
+                        continue
+                    for _expl in _el.get("explain", []):
+                        _fid  = _expl["fixture"]
+                        _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
+                        _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
+                        _g    = _sv.get("goals_scored", 0)
+                        _a    = _sv.get("assists", 0)
+                        _bon  = _sv.get("bonus", 0)
+                        # DefCon: 2pts awarded when defensive contribution threshold met
+                        _defcon_pts = _spts.get("defensive_contributions", 0)
+                        _name = _p.get("web_name", "?")
+                        _s = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
+                        if _g or _a:
+                            _s["goals"].append((_name, _g, _a))
+                        if _defcon_pts > 0:
+                            _s["dc"].append(_name)
+                        if _bon:
+                            _s["bonus"].append((_name, _bon))
 
-                    with st.expander(_lbl, expanded=_is_live):
-                        # Collect players for this fixture via explain
-                        _fx_id = _fx["id"]
+                # ── Match card grid (4 per row) ────────────────────────────────
+                _N_COLS = 4
+                for _row_start in range(0, len(_gw_fixtures), _N_COLS):
+                    _row_fx = _gw_fixtures[_row_start:_row_start + _N_COLS]
+                    _grid_cols = st.columns(len(_row_fx))
+
+                    for _ci, _fx in enumerate(_row_fx):
+                        with _grid_cols[_ci]:
+                            _ht      = _team_map.get(_fx["team_h"], {})
+                            _at      = _team_map.get(_fx["team_a"], {})
+                            _h_short = _ht.get("short_name", "?")
+                            _a_short = _at.get("short_name", "?")
+                            _h_code  = _ht.get("code", 0)
+                            _a_code  = _at.get("code", 0)
+                            _hs      = _fx.get("team_h_score")
+                            _as_     = _fx.get("team_a_score")
+                            _started  = _fx.get("started", False)
+                            _finished = _fx.get("finished", False)
+                            _mins     = _fx.get("minutes", 0)
+                            _ko       = _fx.get("kickoff_time", "")
+                            _fx_id    = _fx["id"]
+
+                            if not _started:
+                                _ko_fmt = _re.sub(r".*T(\d{2}:\d{2}).*", r"\1", _ko) if _ko else "TBD"
+                                _score_txt  = "vs"
+                                _score_col  = "#555"
+                                _status_txt = _ko_fmt
+                                _status_col = "#666"
+                            elif _finished:
+                                _score_txt  = f"{_hs} – {_as_}"
+                                _score_col  = "#e8e8e8"
+                                _status_txt = "FT"
+                                _status_col = "#4caf50"
+                            else:
+                                _score_txt  = f"{_hs} – {_as_}"
+                                _score_col  = "#ffffff"
+                                _status_txt = f"🔴 {_mins}'"
+                                _status_col = "#ff4444"
+
+                            # Goals/assists, DC (DefCon), Bonus summaries
+                            _summ = _fx_summary.get(_fx_id, {"goals": [], "dc": [], "bonus": []})
+
+                            _goal_lines = []
+                            for _nm, _g, _a in sorted(_summ["goals"], key=lambda x: -(x[1]*2+x[2])):
+                                _parts = ("⚽" * _g) + ("🅰️" * _a)
+                                _goal_lines.append(f"{_parts} {_nm}")
+                            _goals_html = (
+                                "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines)
+                                if _goal_lines else '<span style="color:#333">–</span>'
+                            )
+
+                            _dc_names = _summ["dc"]
+                            _defcon_html = (
+                                "  ".join(f'<span style="color:#4fc3f7">🛡️ {n}</span>' for n in _dc_names)
+                                if _dc_names else '<span style="color:#333">–</span>'
+                            )
+
+                            _bonus_lines = []
+                            for _nm, _bp in sorted(_summ["bonus"], key=lambda x: -x[1]):
+                                _bonus_lines.append(f"★{_bp} {_nm}")
+                            _bonus_html = (
+                                "  ".join(f'<span style="color:#FFD700">{l}</span>' for l in _bonus_lines)
+                                if _bonus_lines else '<span style="color:#333">–</span>'
+                            )
+
+                            _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
+                            # Card HTML
+                            _card = (
+                                f'<div style="background:#181818;border:1px solid #2a2a2a;border-radius:12px;'
+                                f'padding:14px 10px 12px;text-align:center;font-family:sans-serif">'
+                                # Teams + score row
+                                f'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px">'
+                                f'<div style="flex:1;text-align:center">'
+                                f'<img src="{_LOGO.format(code=_h_code)}" width="40" height="40" '
+                                f'style="object-fit:contain;display:block;margin:0 auto"/>'
+                                f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_h_short}</div>'
+                                f'</div>'
+                                f'<div style="flex:1;text-align:center">'
+                                f'<div style="font-size:22px;font-weight:900;color:{_score_col};letter-spacing:1px">{_score_txt}</div>'
+                                f'<div style="font-size:10px;font-weight:700;color:{_status_col};margin-top:2px">{_status_txt}</div>'
+                                f'</div>'
+                                f'<div style="flex:1;text-align:center">'
+                                f'<img src="{_LOGO.format(code=_a_code)}" width="40" height="40" '
+                                f'style="object-fit:contain;display:block;margin:0 auto"/>'
+                                f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_a_short}</div>'
+                                f'</div>'
+                                f'</div>'
+                                f'<div style="border-top:1px solid #252525;margin:10px 0 8px"></div>'
+                                # Goals/assists
+                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
+                                f'<div style="{_lbl_s}">Goals & Assists</div>'
+                                f'<div style="font-size:11px;line-height:1.7">{_goals_html}</div>'
+                                f'</div>'
+                                # DefCon
+                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
+                                f'<div style="{_lbl_s}">Defcon</div>'
+                                f'<div style="font-size:11px;line-height:1.7">{_defcon_html}</div>'
+                                f'</div>'
+                                # Bonus
+                                f'<div style="text-align:left;padding:0 4px">'
+                                f'<div style="{_lbl_s}">Bonus</div>'
+                                f'<div style="font-size:11px">{_bonus_html}</div>'
+                                f'</div>'
+                                f'</div>'
+                            )
+                            st.markdown(_card, unsafe_allow_html=True)
+
+                            # Click button — minimal, below card
+                            _is_sel = st.session_state.get("live_sel_fx") == _fx_id
+                            _btn_lbl = "▲ Hide" if _is_sel else "▼ Players"
+                            if st.button(_btn_lbl, key=f"fxbtn_{_fx_id}", use_container_width=True):
+                                if _is_sel:
+                                    st.session_state.pop("live_sel_fx", None)
+                                else:
+                                    st.session_state["live_sel_fx"] = _fx_id
+                                st.rerun()
+
+                # ── Player detail table for selected fixture ───────────────────
+                _sel_fx_id = st.session_state.get("live_sel_fx")
+                if _sel_fx_id:
+                    _sel_fx = next((f for f in _gw_fixtures if f["id"] == _sel_fx_id), None)
+                    if _sel_fx:
+                        _ht      = _team_map.get(_sel_fx["team_h"], {})
+                        _at      = _team_map.get(_sel_fx["team_a"], {})
+                        _h_short = _ht.get("short_name", "?")
+                        _a_short = _at.get("short_name", "?")
+                        _h_full  = TEAM_NAME_MAP.get(_h_short, _h_short)
+                        _a_full  = TEAM_NAME_MAP.get(_a_short, _a_short)
+                        _h_bg    = CLUB_COLORS.get(_h_full, {}).get("bg", "#333")
+                        _h_fg    = CLUB_COLORS.get(_h_full, {}).get("text", "#fff")
+                        _a_bg    = CLUB_COLORS.get(_a_full, {}).get("bg", "#333")
+                        _a_fg    = CLUB_COLORS.get(_a_full, {}).get("text", "#fff")
+
+                        st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+
                         _home_rows, _away_rows = [], []
-
                         for _el in _live_data.get("elements", []):
-                            _pid = _el["id"]
-                            _p   = _player_map.get(_pid)
+                            _pid  = _el["id"]
+                            _p    = _player_map.get(_pid)
                             if not _p:
                                 continue
-                            for _expl in _el.get("explain", []):
-                                if _expl["fixture"] != _fx_id:
-                                    continue
-                                _sv = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
-                                _pts = sum(s["points"] for s in _expl.get("stats", []))
-                                if _sv.get("minutes", 0) == 0:
-                                    break
-                                _pos  = _pos_map.get(_p.get("element_type"), "?")
-                                _g    = _sv.get("goals_scored", 0)
-                                _a    = _sv.get("assists", 0)
-                                _cs   = _sv.get("clean_sheets", 0)
-                                _gc   = _sv.get("goals_conceded", 0)
-                                _yc   = _sv.get("yellow_cards", 0)
-                                _rc   = _sv.get("red_cards", 0)
-                                _sav  = _sv.get("saves", 0)
-                                _bon  = _sv.get("bonus", 0)
-                                _dc   = _g + _a
-                                _mins_p = _sv.get("minutes", 0)
+                            _expl = _explain_idx.get(_pid, {}).get(_sel_fx_id)
+                            if not _expl:
+                                continue
+                            _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
+                            _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
+                            _pts  = sum(s["points"] for s in _expl.get("stats", []))
+                            if _sv.get("minutes", 0) == 0:
+                                continue
+                            _pos  = _pos_map.get(_p.get("element_type"), "?")
+                            _g    = _sv.get("goals_scored", 0)
+                            _a    = _sv.get("assists", 0)
+                            _cs   = _sv.get("clean_sheets", 0)
+                            _yc   = _sv.get("yellow_cards", 0)
+                            _rc   = _sv.get("red_cards", 0)
+                            _sav  = _sv.get("saves", 0)
+                            _bon  = _sv.get("bonus", 0)
+                            _mins_p = _sv.get("minutes", 0)
+                            # DefCon: 2pts awarded when threshold met (new 2025/26 metric)
+                            _defcon_pts = _spts.get("defensive_contributions", 0)
 
-                                _events_txt = ""
-                                if _g:  _events_txt += "⚽" * _g
-                                if _a:  _events_txt += "🅰️" * _a
-                                if _cs: _events_txt += "🧤" if _pos == "GKP" else "🛡️"
-                                if _yc: _events_txt += "🟨"
-                                if _rc: _events_txt += "🟥"
-                                if _sav >= 3: _events_txt += f" ({_sav}sv)"
-                                if _bon: _events_txt += f" ★{_bon}"
+                            _ev = ""
+                            if _g:  _ev += "⚽" * _g
+                            if _a:  _ev += "🅰️" * _a
+                            if _cs: _ev += "🧤" if _pos == "GKP" else "🛡️"
+                            if _yc: _ev += "🟨"
+                            if _rc: _ev += "🟥"
+                            if _sav >= 3: _ev += f" ({_sav}sv)"
+                            if _defcon_pts: _ev += " 🛡DC"
 
-                                _row = {
-                                    "Player":  _p.get("web_name", "?"),
-                                    "Pos":     _pos,
-                                    "Mins":    _mins_p,
-                                    "Events":  _events_txt.strip(),
-                                    "G":       _g,
-                                    "A":       _a,
-                                    "CS":      "✓" if _cs else "",
-                                    "GC":      _gc if _gc else "",
-                                    "YC":      "🟨" if _yc else "",
-                                    "RC":      "🟥" if _rc else "",
-                                    "Saves":   _sav if _sav else "",
-                                    "DC":      _dc if _dc else "",
-                                    "BP":      _bon if _bon else "",
-                                    "Pts":     _pts,
-                                }
-                                if _p["team"] == _fx["team_h"]:
-                                    _home_rows.append(_row)
-                                else:
-                                    _away_rows.append(_row)
-                                break
+                            _row = {
+                                "Player": _p.get("web_name", "?"),
+                                "Pos":    _pos,
+                                "Mins":   _mins_p,
+                                "Events": _ev.strip(),
+                                "DC":     _defcon_pts,   # 2 if DefCon earned, 0 otherwise
+                                "BP":     _bon,
+                                "Pts":    _pts,
+                            }
+                            if _p["team"] == _sel_fx["team_h"]:
+                                _home_rows.append(_row)
+                            else:
+                                _away_rows.append(_row)
 
-                        if not _home_rows and not _away_rows:
-                            st.caption("No player data yet.")
-                        else:
-                            # Render home / away side by side
-                            _h_full = TEAM_NAME_MAP.get(_h_short, _h_short)
-                            _a_full = TEAM_NAME_MAP.get(_a_short, _a_short)
-                            _h_bg   = CLUB_COLORS.get(_h_full, {}).get("bg", "#333")
-                            _h_fg   = CLUB_COLORS.get(_h_full, {}).get("text", "#fff")
-                            _a_bg   = CLUB_COLORS.get(_a_full, {}).get("bg", "#333")
-                            _a_fg   = CLUB_COLORS.get(_a_full, {}).get("text", "#fff")
-
-                            _col_h, _col_a = st.columns(2)
-
-                            def _render_team_table(rows, team_short, bg, fg, col):
-                                rows_sorted = sorted(rows, key=lambda r: -r["Pts"])
-                                _th_s = (f"padding:6px 10px;font-size:11px;font-weight:700;"
-                                         f"letter-spacing:.4px;border-bottom:1px solid #222;color:#aaa;white-space:nowrap")
-                                _td_s = ("padding:6px 10px;font-size:12px;"
-                                         "border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd")
-                                _hdrs = ["Player", "Pos", "Mins", "Events", "DC", "BP", "Pts"]
-                                _hcells = "".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
-                                _tbl_html = (
-                                    f'<div style="background:{bg};color:{fg};padding:6px 12px;'
-                                    f'border-radius:6px 6px 0 0;font-size:13px;font-weight:700">'
-                                    f'{team_short}</div>'
-                                    f'<div style="overflow-x:auto;border-radius:0 0 6px 6px;'
-                                    f'border:1px solid #222;border-top:none">'
-                                    f'<table style="width:100%;border-collapse:collapse;background:#111">'
-                                    f'<thead><tr>{_hcells}</tr></thead><tbody>'
+                        def _team_tbl(rows, short, bg, fg):
+                            rows_s = sorted(rows, key=lambda r: -r["Pts"])
+                            _th_s  = "padding:6px 10px;font-size:11px;font-weight:700;color:#888;border-bottom:1px solid #222;white-space:nowrap"
+                            _td_s  = "padding:6px 10px;font-size:13px;border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd"
+                            _hdrs  = ["Player","Pos","Mins","Events","DC","BP","Pts"]
+                            _hcells = "".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
+                            _h = (
+                                f'<div style="background:{bg};color:{fg};padding:7px 12px;'
+                                f'border-radius:8px 8px 0 0;font-size:13px;font-weight:700">{short}</div>'
+                                f'<div style="overflow-x:auto;border:1px solid #222;border-top:none;border-radius:0 0 8px 8px">'
+                                f'<table style="width:100%;border-collapse:collapse;background:#111">'
+                                f'<thead><tr>{_hcells}</tr></thead><tbody>'
+                            )
+                            for r in rows_s:
+                                _pbg, _pfg = _pts_color(r["Pts"])
+                                _pts_c = f'<span style="background:{_pbg};color:{_pfg};padding:2px 8px;border-radius:4px;font-weight:700">{r["Pts"]}</span>'
+                                _dc_c  = '<b style="color:#4fc3f7">✓ +2</b>' if r["DC"] else '<span style="color:#444">–</span>'
+                                _bp_c  = f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else '<span style="color:#444">–</span>'
+                                _h += (
+                                    f'<tr>'
+                                    f'<td style="{_td_s}">{r["Player"]}</td>'
+                                    f'<td style="{_td_s};color:#888;font-size:11px">{r["Pos"]}</td>'
+                                    f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
+                                    f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
+                                    f'<td style="{_td_s};text-align:center">{_dc_c}</td>'
+                                    f'<td style="{_td_s};text-align:center">{_bp_c}</td>'
+                                    f'<td style="{_td_s}">{_pts_c}</td>'
+                                    f'</tr>'
                                 )
-                                for r in rows_sorted:
-                                    _pbg, _pfg = _pts_color(r["Pts"])
-                                    _pts_cell = (f'<span style="background:{_pbg};color:{_pfg};'
-                                                 f'padding:2px 7px;border-radius:4px;font-weight:700">'
-                                                 f'{r["Pts"]}</span>')
-                                    _dc_txt = f'<b style="color:#4fc3f7">{r["DC"]}</b>' if r["DC"] else "–"
-                                    _bp_txt = f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else "–"
-                                    _cells = (
-                                        f'<td style="{_td_s}">{r["Player"]}</td>'
-                                        f'<td style="{_td_s};color:#888">{r["Pos"]}</td>'
-                                        f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
-                                        f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
-                                        f'<td style="{_td_s};text-align:center">{_dc_txt}</td>'
-                                        f'<td style="{_td_s};text-align:center">{_bp_txt}</td>'
-                                        f'<td style="{_td_s}">{_pts_cell}</td>'
-                                    )
-                                    _tbl_html += f'<tr>{_cells}</tr>'
-                                _tbl_html += '</tbody></table></div>'
-                                with col:
-                                    _h = 56 + len(rows_sorted) * 38
-                                    components.html(_tbl_html, height=_h, scrolling=False)
+                            _h += '</tbody></table></div>'
+                            return _h, 50 + len(rows_s) * 40
 
-                            _render_team_table(_home_rows, _h_short, _h_bg, _h_fg, _col_h)
-                            _render_team_table(_away_rows, _a_short, _a_bg, _a_fg, _col_a)
+                        _col_h, _col_a = st.columns(2)
+                        _h_html, _h_ht = _team_tbl(_home_rows, _h_short, _h_bg, _h_fg)
+                        _a_html, _a_ht = _team_tbl(_away_rows, _a_short, _a_bg, _a_fg)
+                        with _col_h:
+                            components.html(_h_html, height=_h_ht, scrolling=False)
+                        with _col_a:
+                            components.html(_a_html, height=_a_ht, scrolling=False)
 
-                st.caption(f"GW{_sel_gw} · auto-refreshes every 60s · click 🔄 for latest")
+                st.caption(f"GW{_sel_gw} · refreshes every 60s · DC = Defcon (+2pts when defensive threshold met)")
+
 
 
     with tab8:
