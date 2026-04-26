@@ -1828,12 +1828,14 @@ def add_fpl_positions(player_df, bootstrap):
 
         # 4. Last word (surname) — catches "Hee-Chan Hwang" → "hwang"
         #    Runs after compound-prefix strategies to avoid single-surname collisions
+        # 2. Last word (surname) — catches "Hee-Chan Hwang" → "hwang"
         if len(parts) > 1:
             last = parts[-1]
             if last in lookup:
                 return lookup[last]
 
         # 5. Abbreviated surname: "Bruno G." → first name
+        # 3. Abbreviated surname: "Bruno G." → first name
         if len(parts) >= 2 and len(parts[-1]) <= 2:
             if parts[0] in lookup:
                 return lookup[parts[0]]
@@ -1841,6 +1843,23 @@ def add_fpl_positions(player_df, bootstrap):
         # 6. Space → hyphen: "Hee Chan" → "Hee-Chan"
         if n.replace(" ", "-") in lookup:
             return lookup[n.replace(" ", "-")]
+
+        # 4. Space → hyphen: "Hee Chan" → "Hee-Chan"
+        if n.replace(" ", "-") in lookup:
+            return lookup[n.replace(" ", "-")]
+
+        # 5. FPL compound surname: any key that STARTS WITH the query
+        #    "bruno guimaraes" → matches "bruno guimaraes rodriguez moura"
+        for key in all_keys:
+            if key.startswith(n + " "):
+                return lookup[key]
+
+        # 6. Query starts with a short FPL key (first-name-only web_name)
+        #    "bernardo silva" starts with "bernardo" (Bernardo's web_name key)
+        #    Sort longest-first to avoid false short matches
+        for key in sorted(all_keys, key=len, reverse=True):
+            if len(key) >= 4 and n.startswith(key + " "):
+                return lookup[key]
 
         # 7. Fuzzy on first word only — "yeremi" ≈ "yeremy" (spelling variant)
         if parts and len(parts[0]) >= 4:
