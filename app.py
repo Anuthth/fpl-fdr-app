@@ -2078,12 +2078,58 @@ def _render_pitch(players_by_pos, gw, master_df_full, bench_players=None):
     )
 
 if nav_cat == "📊 Planning":
+    # ── Team filter & custom order (shared across FDR / xG / xCS tabs) ──────────
+    _all_plan_teams = list(master_df.index)
+
+    with st.expander("🔍 Filter & Order Teams", expanded=False):
+        _fc, _oc = st.columns([4, 1])
+        with _fc:
+            _plan_filter = st.multiselect(
+                "Show teams:", _all_plan_teams,
+                default=_all_plan_teams,
+                key="plan_team_filter",
+                help="Select which teams appear in the heatmap tables below",
+            )
+        with _oc:
+            _custom_order = st.toggle("Custom order", value=False, key="plan_custom_order",
+                                      help="Set your own row order instead of auto-sort")
+
+        if _custom_order and _plan_filter:
+            _init_order = (
+                st.session_state.get("_plan_order_state") or
+                list(range(1, len(_plan_filter) + 1))
+            )
+            # Rebuild if filter length changed
+            if len(_init_order) != len(_plan_filter):
+                _init_order = list(range(1, len(_plan_filter) + 1))
+
+            _order_df = pd.DataFrame({"#": _init_order, "Team": _plan_filter})
+            _edited = st.data_editor(
+                _order_df,
+                use_container_width=True,
+                num_rows="fixed",
+                hide_index=True,
+                column_config={
+                    "#": st.column_config.NumberColumn(
+                        "Order", min_value=1, max_value=len(_plan_filter), step=1,
+                        help="Lower number = higher row",
+                    ),
+                    "Team": st.column_config.TextColumn("Team", disabled=True),
+                },
+                key="plan_order_editor",
+            )
+            st.session_state["_plan_order_state"] = _edited["#"].tolist()
+            _plan_teams_ordered = _edited.sort_values("#")["Team"].tolist()
+        else:
+            _plan_teams_ordered = _plan_filter if _plan_filter else _all_plan_teams
+
     # ── Tab 1: FDR ────────────────────────────────────────────────────────────────
     with tab1:
+        _fdr_sort_lbl = "custom order" if _custom_order else "sorted easiest → hardest"
         st.markdown(
             '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:2px">'
             '<span style="font-size:18px;font-weight:700;color:#e0e0e0">Fixture Difficulty</span>'
-            '<span style="font-size:12px;color:#555">sorted easiest → hardest</span></div>',
+            f'<span style="font-size:12px;color:#555">{_fdr_sort_lbl}</span></div>',
             unsafe_allow_html=True
         )
         # Legend — DGW 3 levels first, then single FDR 1-5, then BGW
@@ -2101,7 +2147,11 @@ if nav_cat == "📊 Planning":
         legend_html += '</div>'
         st.markdown(legend_html, unsafe_allow_html=True)
 
-        df_d = master_df.sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
+        _fdr_teams = [t for t in _plan_teams_ordered if t in master_df.index]
+        if _custom_order:
+            df_d = master_df.reindex(_fdr_teams).reset_index().rename(columns={"index":"Team"})
+        else:
+            df_d = master_df.reindex(_fdr_teams).sort_values("Total Difficulty").reset_index().rename(columns={"index":"Team"})
         df_d = df_d[["Team","Total Difficulty"] + gw_columns].copy()
         df_d.rename(columns={"Total Difficulty":"Total_Difficulty"}, inplace=True)
 
@@ -2137,7 +2187,11 @@ if nav_cat == "📊 Planning":
         lh += '</div>'
         st.markdown(lh, unsafe_allow_html=True)
 
-        df_d = master_df.sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
+        _xg_teams = [t for t in _plan_teams_ordered if t in master_df.index]
+        if _custom_order:
+            df_d = master_df.reindex(_xg_teams).reset_index().rename(columns={"index":"Team"})
+        else:
+            df_d = master_df.reindex(_xg_teams).sort_values("Total xG", ascending=False).reset_index().rename(columns={"index":"Team"})
         df_d = df_d[["Team","Total xG"] + gw_columns].copy()
         df_d.rename(columns={"Total xG":"Total_xG"}, inplace=True)
 
@@ -2179,7 +2233,11 @@ if nav_cat == "📊 Planning":
         lh += '</div>'
         st.markdown(lh, unsafe_allow_html=True)
 
-        df_d = master_df.sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
+        _xcs_teams = [t for t in _plan_teams_ordered if t in master_df.index]
+        if _custom_order:
+            df_d = master_df.reindex(_xcs_teams).reset_index().rename(columns={"index":"Team"})
+        else:
+            df_d = master_df.reindex(_xcs_teams).sort_values("xCS", ascending=False).reset_index().rename(columns={"index":"Team"})
         df_d = df_d[["Team","xCS"] + gw_columns].copy()
         df_d.rename(columns={"xCS":"Total_xCS"}, inplace=True)
 
