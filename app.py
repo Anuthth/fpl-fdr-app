@@ -3008,8 +3008,8 @@ elif nav_cat == "👕 My FPL":
 
                         _h_short = _ht.get("short_name", "?")
                         _a_short = _at.get("short_name", "?")
-                        _h_full  = FPL_SHORT_TO_FULL.get(_h_short, _ht.get("name", _h_short))
-                        _a_full  = FPL_SHORT_TO_FULL.get(_a_short, _at.get("name", _a_short))
+                        _h_full  = TEAM_NAME_MAP.get(_h_short, _ht.get("name", _h_short))
+                        _a_full  = TEAM_NAME_MAP.get(_a_short, _at.get("name", _a_short))
                         _h_bg    = CLUB_COLORS.get(_h_full, {}).get("bg", "#333")
                         _h_fg    = CLUB_COLORS.get(_h_full, {}).get("text", "#fff")
                         _a_bg    = CLUB_COLORS.get(_a_full, {}).get("bg", "#333")
@@ -3043,7 +3043,7 @@ elif nav_cat == "👕 My FPL":
                         continue
                     _t      = _team_map.get(_p["team"], {})
                     _tshort = _t.get("short_name", "?")
-                    _tfull  = FPL_SHORT_TO_FULL.get(_tshort, _t.get("name", _tshort))
+                    _tfull  = TEAM_NAME_MAP.get(_tshort, _t.get("name", _tshort))
                     _rows.append({
                         "Player":  _p.get("web_name", "?"),
                         "Team":    _tshort,
@@ -3108,7 +3108,7 @@ elif nav_cat == "👕 My FPL":
                     for _, _row in _df_show.iterrows():
                         _pbg, _pfg = _pts_bg(_row["Pts"])
                         # team pill colors
-                        _tf  = FPL_SHORT_TO_FULL.get(_row["Team"], _row["Team"])
+                        _tf  = TEAM_NAME_MAP.get(_row["Team"], _row["Team"])
                         _cbg = CLUB_COLORS.get(_tf, {}).get("bg", "#444")
                         _cfg = CLUB_COLORS.get(_tf, {}).get("text", "#fff")
                         _team_pill = (f'<span style="background:{_cbg};color:{_cfg};padding:1px 6px;'
