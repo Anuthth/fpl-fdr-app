@@ -3035,7 +3035,7 @@ elif nav_cat == "👕 My FPL":
                                 _rc   = _sv.get("red_cards", 0)
                                 _sav  = _sv.get("saves", 0)
                                 _bon  = _sv.get("bonus", 0)
-                                _bps  = _sv.get("bps", 0)
+                                _dc   = _g + _a
                                 _mins_p = _sv.get("minutes", 0)
 
                                 _events_txt = ""
@@ -3045,13 +3045,13 @@ elif nav_cat == "👕 My FPL":
                                 if _yc: _events_txt += "🟨"
                                 if _rc: _events_txt += "🟥"
                                 if _sav >= 3: _events_txt += f" ({_sav}sv)"
-                                if _bon: _events_txt += f" +{_bon}b"
+                                if _bon: _events_txt += f" ★{_bon}"
 
                                 _row = {
                                     "Player":  _p.get("web_name", "?"),
                                     "Pos":     _pos,
                                     "Mins":    _mins_p,
-                                    "Events":  _events_txt,
+                                    "Events":  _events_txt.strip(),
                                     "G":       _g,
                                     "A":       _a,
                                     "CS":      "✓" if _cs else "",
@@ -3059,8 +3059,8 @@ elif nav_cat == "👕 My FPL":
                                     "YC":      "🟨" if _yc else "",
                                     "RC":      "🟥" if _rc else "",
                                     "Saves":   _sav if _sav else "",
-                                    "Bonus":   _bon if _bon else "",
-                                    "BPS":     _bps,
+                                    "DC":      _dc if _dc else "",
+                                    "BP":      _bon if _bon else "",
                                     "Pts":     _pts,
                                 }
                                 if _p["team"] == _fx["team_h"]:
@@ -3088,7 +3088,7 @@ elif nav_cat == "👕 My FPL":
                                          f"letter-spacing:.4px;border-bottom:1px solid #222;color:#aaa;white-space:nowrap")
                                 _td_s = ("padding:6px 10px;font-size:12px;"
                                          "border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd")
-                                _hdrs = ["Player", "Pos", "Mins", "Events", "BPS", "Pts"]
+                                _hdrs = ["Player", "Pos", "Mins", "Events", "DC", "BP", "Pts"]
                                 _hcells = "".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
                                 _tbl_html = (
                                     f'<div style="background:{bg};color:{fg};padding:6px 12px;'
@@ -3104,12 +3104,15 @@ elif nav_cat == "👕 My FPL":
                                     _pts_cell = (f'<span style="background:{_pbg};color:{_pfg};'
                                                  f'padding:2px 7px;border-radius:4px;font-weight:700">'
                                                  f'{r["Pts"]}</span>')
+                                    _dc_txt = f'<b style="color:#4fc3f7">{r["DC"]}</b>' if r["DC"] else "–"
+                                    _bp_txt = f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else "–"
                                     _cells = (
                                         f'<td style="{_td_s}">{r["Player"]}</td>'
                                         f'<td style="{_td_s};color:#888">{r["Pos"]}</td>'
                                         f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
                                         f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
-                                        f'<td style="{_td_s};color:#666">{r["BPS"]}</td>'
+                                        f'<td style="{_td_s};text-align:center">{_dc_txt}</td>'
+                                        f'<td style="{_td_s};text-align:center">{_bp_txt}</td>'
                                         f'<td style="{_td_s}">{_pts_cell}</td>'
                                     )
                                     _tbl_html += f'<tr>{_cells}</tr>'
