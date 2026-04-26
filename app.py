@@ -2156,31 +2156,36 @@ if nav_cat == "🔴 Live GW":
             _LOGO = "https://resources.premierleague.com/premierleague/badges/t{code}.png"
 
             def _calc_defcon(el, p):
-                """Compute DefCon from raw per-GW stats: DEF>=10 CBIT, MID/FWD>=12 CBIRT."""
-                s    = el.get("stats", {})
-                cbi  = int(s.get("clearances_blocks_interceptions", 0) or 0)
-                tack = int(s.get("tackles", 0) or 0)
-                rec  = int(s.get("recoveries", 0) or 0)
+                """Return (earned, raw_count). DEF: CBI+tackles>=10, MID/FWD: +recoveries>=12."""
+                s     = el.get("stats", {})
+                cbi   = int(s.get("clearances_blocks_interceptions", 0) or 0)
+                tack  = int(s.get("tackles", 0) or 0)
+                rec   = int(s.get("recoveries", 0) or 0)
                 etype = p.get("element_type", 0)
-                if etype == 2:       return (cbi + tack) >= 10
-                if etype in (3, 4):  return (cbi + tack + rec) >= 12
-                return False
+                if etype == 2:
+                    raw = cbi + tack
+                    return raw >= 10, raw
+                if etype in (3, 4):
+                    raw = cbi + tack + rec
+                    return raw >= 12, raw
+                return False, 0
 
             # Per-fixture summaries (goals/assists, defcon, bonus)
+            # dc entries: (name, raw_count, team_id)
             _fx_summary = {}
             for _el in _live_data.get("elements", []):
                 _pid  = _el["id"]; _p = _player_map.get(_pid)
                 if not _p: continue
-                _defcon = _calc_defcon(_el, _p)
+                _defcon_earned, _defcon_raw = _calc_defcon(_el, _p)
                 for _expl in _el.get("explain", []):
                     _fid  = _expl["fixture"]
                     _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
                     _g    = _sv.get("goals_scored", 0); _a = _sv.get("assists", 0)
                     _bon  = _sv.get("bonus", 0); _name = _p.get("web_name", "?")
                     _s    = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
-                    if _g or _a:  _s["goals"].append((_name, _g, _a))
-                    if _defcon:   _s["dc"].append(_name)
-                    if _bon:      _s["bonus"].append((_name, _bon))
+                    if _g or _a:       _s["goals"].append((_name, _g, _a))
+                    if _defcon_earned: _s["dc"].append((_name, _defcon_raw, _p["team"]))
+                    if _bon:           _s["bonus"].append((_name, _bon))
 
             _N_COLS = 4
             for _row_start in range(0, len(_gw_fixtures), _N_COLS):
@@ -2205,7 +2210,19 @@ if nav_cat == "🔴 Live GW":
                         _summ = _fx_summary.get(_fx_id,{"goals":[],"dc":[],"bonus":[]})
                         _goal_lines = [("⚽"*g)+("🅰️"*a)+f" {n}" for n,g,a in sorted(_summ["goals"],key=lambda x:-(x[1]*2+x[2]))]
                         _goals_html  = "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines) or '<span style="color:#333">–</span>'
-                        _defcon_html = "  ".join(f'<span style="color:#4fc3f7">🛡️ {n}</span>' for n in _summ["dc"]) or '<span style="color:#333">–</span>'
+                        # Separate defcon by home/away, show raw count in brackets
+                        _dc_home = [(n,r) for n,r,tid in _summ["dc"] if tid == _fx["team_h"]]
+                        _dc_away = [(n,r) for n,r,tid in _summ["dc"] if tid == _fx["team_a"]]
+                        def _dc_span(nm, raw):
+                            return f'<span style="color:#4fc3f7">🛡️ {nm} <span style="color:#555">({raw})</span></span>'
+                        _dc_parts = []
+                        if _dc_home:
+                            _dc_parts.append("  ".join(_dc_span(n,r) for n,r in _dc_home))
+                        if _dc_home and _dc_away:
+                            _dc_parts.append('<span style="color:#333">|</span>')
+                        if _dc_away:
+                            _dc_parts.append("  ".join(_dc_span(n,r) for n,r in _dc_away))
+                        _defcon_html = "  ".join(_dc_parts) if _dc_parts else '<span style="color:#333">–</span>'
                         _bonus_html  = "  ".join(f'<span style="color:#FFD700">★{bp} {nm}</span>' for nm,bp in sorted(_summ["bonus"],key=lambda x:-x[1])) or '<span style="color:#333">–</span>'
                         _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
                         _card = (
@@ -2249,15 +2266,15 @@ if nav_cat == "🔴 Live GW":
                         _g=_sv.get("goals_scored",0); _a=_sv.get("assists",0)
                         _cs=_sv.get("clean_sheets",0); _yc=_sv.get("yellow_cards",0)
                         _rc=_sv.get("red_cards",0);   _sav=_sv.get("saves",0); _bon=_sv.get("bonus",0)
-                        _defcon=_calc_defcon(_el, _p)
+                        _defcon_earned, _defcon_raw = _calc_defcon(_el, _p)
                         _ev=("⚽"*_g)+("🅰️"*_a)
                         if _cs:  _ev+="🧤" if _pos=="GKP" else "🛡️"
                         if _yc:  _ev+="🟨"
                         if _rc:  _ev+="🟥"
                         if _sav>=3: _ev+=f" ({_sav}sv)"
-                        if _defcon: _ev+=" 🛡DC"
+                        if _defcon_earned: _ev+=f" 🛡DC({_defcon_raw})"
                         _row={"Player":_p.get("web_name","?"),"Pos":_pos,"Mins":_sv.get("minutes",0),
-                              "Events":_ev.strip(),"DC":_defcon,"BP":_bon,"Pts":_pts}
+                              "Events":_ev.strip(),"DC":_defcon_earned,"BP":_bon,"Pts":_pts}
                         (_home_rows if _p["team"]==_sel_fx["team_h"] else _away_rows).append(_row)
 
                     def _team_tbl(rows, short, bg, fg):
