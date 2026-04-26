@@ -2989,23 +2989,28 @@ elif nav_cat == "👕 My FPL":
                 # Logo base URL (FPL CDN)
                 _LOGO = "https://resources.premierleague.com/premierleague/badges/t{code}.png"
 
-                # Build per-fixture DC and Bonus summaries from live data
-                _fx_summary = {}   # {fx_id: {"dc": [(name, g, a), ...], "bonus": [(name, bp), ...]}}
+                # Build per-fixture goal/assist, DefCon, and Bonus summaries
+                _fx_summary = {}   # {fx_id: {"goals": [...], "dc": [...], "bonus": [...]}}
                 for _el in _live_data.get("elements", []):
                     _pid = _el["id"]
                     _p   = _player_map.get(_pid)
                     if not _p:
                         continue
                     for _expl in _el.get("explain", []):
-                        _fid = _expl["fixture"]
-                        _sv  = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
-                        _g   = _sv.get("goals_scored", 0)
-                        _a   = _sv.get("assists", 0)
-                        _bon = _sv.get("bonus", 0)
+                        _fid  = _expl["fixture"]
+                        _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
+                        _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
+                        _g    = _sv.get("goals_scored", 0)
+                        _a    = _sv.get("assists", 0)
+                        _bon  = _sv.get("bonus", 0)
+                        # DefCon: 2pts awarded when defensive contribution threshold met
+                        _defcon_pts = _spts.get("defensive_contributions", 0)
                         _name = _p.get("web_name", "?")
-                        _s = _fx_summary.setdefault(_fid, {"dc": [], "bonus": []})
+                        _s = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
                         if _g or _a:
-                            _s["dc"].append((_name, _g, _a))
+                            _s["goals"].append((_name, _g, _a))
+                        if _defcon_pts > 0:
+                            _s["dc"].append(_name)
                         if _bon:
                             _s["bonus"].append((_name, _bon))
 
@@ -3048,57 +3053,70 @@ elif nav_cat == "👕 My FPL":
                                 _status_txt = f"🔴 {_mins}'"
                                 _status_col = "#ff4444"
 
-                            # DC and Bonus summaries
-                            _summ = _fx_summary.get(_fx_id, {"dc": [], "bonus": []})
-                            _dc_lines = []
-                            for _nm, _g, _a in sorted(_summ["dc"], key=lambda x: -(x[1]*2+x[2])):
+                            # Goals/assists, DC (DefCon), Bonus summaries
+                            _summ = _fx_summary.get(_fx_id, {"goals": [], "dc": [], "bonus": []})
+
+                            _goal_lines = []
+                            for _nm, _g, _a in sorted(_summ["goals"], key=lambda x: -(x[1]*2+x[2])):
                                 _parts = ("⚽" * _g) + ("🅰️" * _a)
-                                _dc_lines.append(f"{_parts} {_nm}")
-                            _dc_html = (
-                                "<br>".join(
-                                    f'<span style="color:#ddd">{l}</span>' for l in _dc_lines
-                                ) if _dc_lines else '<span style="color:#444">–</span>'
+                                _goal_lines.append(f"{_parts} {_nm}")
+                            _goals_html = (
+                                "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines)
+                                if _goal_lines else '<span style="color:#333">–</span>'
+                            )
+
+                            _dc_names = _summ["dc"]
+                            _defcon_html = (
+                                "  ".join(f'<span style="color:#4fc3f7">🛡️ {n}</span>' for n in _dc_names)
+                                if _dc_names else '<span style="color:#333">–</span>'
                             )
 
                             _bonus_lines = []
                             for _nm, _bp in sorted(_summ["bonus"], key=lambda x: -x[1]):
                                 _bonus_lines.append(f"★{_bp} {_nm}")
                             _bonus_html = (
-                                "  ".join(
-                                    f'<span style="color:#FFD700">{l}</span>' for l in _bonus_lines
-                                ) if _bonus_lines else '<span style="color:#333">–</span>'
+                                "  ".join(f'<span style="color:#FFD700">{l}</span>' for l in _bonus_lines)
+                                if _bonus_lines else '<span style="color:#333">–</span>'
                             )
 
+                            _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
                             # Card HTML
                             _card = (
                                 f'<div style="background:#181818;border:1px solid #2a2a2a;border-radius:12px;'
-                                f'padding:14px 10px 10px;text-align:center;font-family:sans-serif">'
+                                f'padding:14px 10px 12px;text-align:center;font-family:sans-serif">'
                                 # Teams + score row
                                 f'<div style="display:flex;align-items:center;justify-content:space-between;gap:4px">'
-                                # Home
                                 f'<div style="flex:1;text-align:center">'
                                 f'<img src="{_LOGO.format(code=_h_code)}" width="40" height="40" '
                                 f'style="object-fit:contain;display:block;margin:0 auto"/>'
                                 f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_h_short}</div>'
                                 f'</div>'
-                                # Score
                                 f'<div style="flex:1;text-align:center">'
                                 f'<div style="font-size:22px;font-weight:900;color:{_score_col};letter-spacing:1px">{_score_txt}</div>'
                                 f'<div style="font-size:10px;font-weight:700;color:{_status_col};margin-top:2px">{_status_txt}</div>'
                                 f'</div>'
-                                # Away
                                 f'<div style="flex:1;text-align:center">'
                                 f'<img src="{_LOGO.format(code=_a_code)}" width="40" height="40" '
                                 f'style="object-fit:contain;display:block;margin:0 auto"/>'
                                 f'<div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_a_short}</div>'
                                 f'</div>'
                                 f'</div>'
-                                # Divider
                                 f'<div style="border-top:1px solid #252525;margin:10px 0 8px"></div>'
-                                # DC summary
-                                f'<div style="font-size:11px;line-height:1.6;text-align:left;padding:0 4px">{_dc_html}</div>'
-                                # Bonus summary
-                                f'<div style="font-size:11px;margin-top:6px;text-align:left;padding:0 4px">{_bonus_html}</div>'
+                                # Goals/assists
+                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
+                                f'<div style="{_lbl_s}">Goals & Assists</div>'
+                                f'<div style="font-size:11px;line-height:1.7">{_goals_html}</div>'
+                                f'</div>'
+                                # DefCon
+                                f'<div style="text-align:left;padding:0 4px;margin-bottom:6px">'
+                                f'<div style="{_lbl_s}">Defcon</div>'
+                                f'<div style="font-size:11px;line-height:1.7">{_defcon_html}</div>'
+                                f'</div>'
+                                # Bonus
+                                f'<div style="text-align:left;padding:0 4px">'
+                                f'<div style="{_lbl_s}">Bonus</div>'
+                                f'<div style="font-size:11px">{_bonus_html}</div>'
+                                f'</div>'
                                 f'</div>'
                             )
                             st.markdown(_card, unsafe_allow_html=True)
@@ -3141,6 +3159,7 @@ elif nav_cat == "👕 My FPL":
                             if not _expl:
                                 continue
                             _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
+                            _spts = {s["identifier"]: s["points"] for s in _expl.get("stats", [])}
                             _pts  = sum(s["points"] for s in _expl.get("stats", []))
                             if _sv.get("minutes", 0) == 0:
                                 continue
@@ -3153,6 +3172,8 @@ elif nav_cat == "👕 My FPL":
                             _sav  = _sv.get("saves", 0)
                             _bon  = _sv.get("bonus", 0)
                             _mins_p = _sv.get("minutes", 0)
+                            # DefCon: 2pts awarded when threshold met (new 2025/26 metric)
+                            _defcon_pts = _spts.get("defensive_contributions", 0)
 
                             _ev = ""
                             if _g:  _ev += "⚽" * _g
@@ -3161,13 +3182,14 @@ elif nav_cat == "👕 My FPL":
                             if _yc: _ev += "🟨"
                             if _rc: _ev += "🟥"
                             if _sav >= 3: _ev += f" ({_sav}sv)"
+                            if _defcon_pts: _ev += " 🛡DC"
 
                             _row = {
                                 "Player": _p.get("web_name", "?"),
                                 "Pos":    _pos,
                                 "Mins":   _mins_p,
                                 "Events": _ev.strip(),
-                                "DC":     _g + _a,
+                                "DC":     _defcon_pts,   # 2 if DefCon earned, 0 otherwise
                                 "BP":     _bon,
                                 "Pts":    _pts,
                             }
@@ -3192,7 +3214,7 @@ elif nav_cat == "👕 My FPL":
                             for r in rows_s:
                                 _pbg, _pfg = _pts_color(r["Pts"])
                                 _pts_c = f'<span style="background:{_pbg};color:{_pfg};padding:2px 8px;border-radius:4px;font-weight:700">{r["Pts"]}</span>'
-                                _dc_c  = f'<b style="color:#4fc3f7">{r["DC"]}</b>' if r["DC"] else '<span style="color:#444">–</span>'
+                                _dc_c  = '<b style="color:#4fc3f7">✓ +2</b>' if r["DC"] else '<span style="color:#444">–</span>'
                                 _bp_c  = f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else '<span style="color:#444">–</span>'
                                 _h += (
                                     f'<tr>'
@@ -3216,7 +3238,7 @@ elif nav_cat == "👕 My FPL":
                         with _col_a:
                             components.html(_a_html, height=_a_ht, scrolling=False)
 
-                st.caption(f"GW{_sel_gw} · refreshes every 60s · DC = goals + assists")
+                st.caption(f"GW{_sel_gw} · refreshes every 60s · DC = Defcon (+2pts when defensive threshold met)")
 
 
 
