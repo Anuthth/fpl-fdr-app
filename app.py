@@ -25,6 +25,14 @@ def _fetch_live_fixtures():
     r.raise_for_status()
     return r.json()
 
+@st.cache_data(ttl=60, show_spinner="🔴 Fetching live GW stats...")
+def _fetch_gw_live(gw: int):
+    url = f"{BASE_URL}/event/{gw}/live/"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    r = requests.get(url, headers=headers, timeout=15)
+    r.raise_for_status()
+    return r.json()
+
 def get_current_gw(bootstrap):
     """
     Returns the active or next upcoming GW.
@@ -858,7 +866,7 @@ if nav_cat == "📊 Planning":
 elif nav_cat == "🎯 Captain & Picks":
     tab5, tab6, tab7, tab13 = st.tabs(["🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "🔍 Differentials"])
 elif nav_cat == "👕 My FPL":
-    tab8, tab9, tab10, tab14 = st.tabs(["📡 Live Radar", "👕 My Team", "📅 GW Planner", "🏆 Mini-League"])
+    tab15, tab8, tab9, tab10, tab14 = st.tabs(["🔴 Live GW", "📡 Live Radar", "👕 My Team", "📅 GW Planner", "🏆 Mini-League"])
 else:  # 🏟️ Stats
     tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
@@ -2901,6 +2909,216 @@ elif nav_cat == "🎯 Captain & Picks":
 
 # ────────────────────────────────────────────────────────────────────────────
 elif nav_cat == "👕 My FPL":
+    # ── Tab 15: Live GW ──────────────────────────────────────────────────────────
+    with tab15:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🔴 Live GW Stats</span>'
+            '<span style="font-size:12px;color:#555">goals · assists · bonus · points · live scores</span></div>',
+            unsafe_allow_html=True,
+        )
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        else:
+            # ── GW selector + refresh ──────────────────────────────────────────
+            _all_events = bootstrap.get("events", [])
+            _finished_or_current = [
+                e["id"] for e in _all_events
+                if e.get("finished") or e.get("is_current")
+            ]
+            _live_gw_opts = _finished_or_current if _finished_or_current else [current_gw]
+
+            _lc1, _lc2 = st.columns([3, 1])
+            with _lc1:
+                _sel_gw = st.selectbox(
+                    "Gameweek:", _live_gw_opts,
+                    index=len(_live_gw_opts) - 1,
+                    format_func=lambda g: f"GW{g}",
+                    key="live_gw_sel",
+                )
+            with _lc2:
+                if st.button("🔄 Refresh", key="live_gw_refresh"):
+                    st.cache_data.clear()
+                    st.rerun()
+
+            try:
+                _live_data = _fetch_gw_live(_sel_gw)
+            except Exception as _e:
+                st.error(f"Could not fetch live data: {_e}")
+                _live_data = None
+
+            if _live_data:
+                # ── Build lookups ──────────────────────────────────────────────
+                _team_map  = {t["id"]: t for t in bootstrap.get("teams", [])}
+                _pos_map   = {pt["id"]: pt["singular_name_short"]
+                              for pt in bootstrap.get("element_types", [])}
+                _player_map = {el["id"]: el for el in bootstrap.get("elements", [])}
+
+                # ── Fixture cards ──────────────────────────────────────────────
+                _gw_fixtures = sorted(
+                    [f for f in raw_fixtures if f.get("event") == _sel_gw],
+                    key=lambda f: f.get("kickoff_time") or "",
+                )
+
+                if _gw_fixtures:
+                    _cards_html = '<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px">'
+                    for _fx in _gw_fixtures:
+                        _ht = _team_map.get(_fx["team_h"], {})
+                        _at = _team_map.get(_fx["team_a"], {})
+                        _hs = _fx.get("team_h_score")
+                        _as_ = _fx.get("team_a_score")
+                        _started   = _fx.get("started", False)
+                        _finished  = _fx.get("finished", False)
+                        _mins      = _fx.get("minutes", 0)
+                        _ko        = _fx.get("kickoff_time", "")
+
+                        if not _started:
+                            import re as _re
+                            _ko_fmt = _re.sub(r"T(\d{2}:\d{2}).*", r" \1", _ko) if _ko else "TBD"
+                            _status_html = f'<div style="font-size:10px;color:#888;margin-top:2px">{_ko_fmt}</div>'
+                            _score_txt = "vs"
+                            _score_col = "#666"
+                        elif _finished:
+                            _status_html = '<div style="font-size:10px;color:#4caf50;font-weight:700;margin-top:2px">FT</div>'
+                            _score_txt = f"{_hs} – {_as_}"
+                            _score_col = "#e0e0e0"
+                        else:
+                            _status_html = f'<div style="font-size:10px;color:#ff4444;font-weight:700;margin-top:2px">🔴 {_mins}\' </div>'
+                            _score_txt = f"{_hs} – {_as_}"
+                            _score_col = "#fff"
+
+                        _h_short = _ht.get("short_name", "?")
+                        _a_short = _at.get("short_name", "?")
+                        _h_full  = FPL_SHORT_TO_FULL.get(_h_short, _ht.get("name", _h_short))
+                        _a_full  = FPL_SHORT_TO_FULL.get(_a_short, _at.get("name", _a_short))
+                        _h_bg    = CLUB_COLORS.get(_h_full, {}).get("bg", "#333")
+                        _h_fg    = CLUB_COLORS.get(_h_full, {}).get("text", "#fff")
+                        _a_bg    = CLUB_COLORS.get(_a_full, {}).get("bg", "#333")
+                        _a_fg    = CLUB_COLORS.get(_a_full, {}).get("text", "#fff")
+
+                        _cards_html += (
+                            f'<div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:8px;'
+                            f'padding:10px 14px;min-width:190px;text-align:center">'
+                            f'<div style="display:flex;align-items:center;justify-content:center;gap:8px">'
+                            f'<span style="background:{_h_bg};color:{_h_fg};padding:3px 8px;'
+                            f'border-radius:4px;font-size:12px;font-weight:700">{_h_short}</span>'
+                            f'<span style="font-size:16px;font-weight:800;color:{_score_col}">{_score_txt}</span>'
+                            f'<span style="background:{_a_bg};color:{_a_fg};padding:3px 8px;'
+                            f'border-radius:4px;font-size:12px;font-weight:700">{_a_short}</span>'
+                            f'</div>'
+                            f'{_status_html}'
+                            f'</div>'
+                        )
+                    _cards_html += '</div>'
+                    st.markdown(_cards_html, unsafe_allow_html=True)
+
+                # ── Player stats table ─────────────────────────────────────────
+                _rows = []
+                for _el in _live_data.get("elements", []):
+                    _pid = _el["id"]
+                    _p   = _player_map.get(_pid)
+                    if not _p:
+                        continue
+                    _s = _el.get("stats", {})
+                    if _s.get("minutes", 0) == 0:
+                        continue
+                    _t      = _team_map.get(_p["team"], {})
+                    _tshort = _t.get("short_name", "?")
+                    _tfull  = FPL_SHORT_TO_FULL.get(_tshort, _t.get("name", _tshort))
+                    _rows.append({
+                        "Player":  _p.get("web_name", "?"),
+                        "Team":    _tshort,
+                        "_team_full": _tfull,
+                        "Pos":     _pos_map.get(_p.get("element_type"), "?"),
+                        "Price":   f"£{_p.get('now_cost', 0) / 10:.1f}m",
+                        "Mins":    _s.get("minutes", 0),
+                        "G":       _s.get("goals_scored", 0),
+                        "A":       _s.get("assists", 0),
+                        "CS":      _s.get("clean_sheets", 0),
+                        "GC":      _s.get("goals_conceded", 0),
+                        "YC":      _s.get("yellow_cards", 0),
+                        "RC":      _s.get("red_cards", 0),
+                        "Saves":   _s.get("saves", 0),
+                        "Bonus":   _s.get("bonus", 0),
+                        "BPS":     _s.get("bps", 0),
+                        "Pts":     _s.get("total_points", 0),
+                    })
+
+                if _rows:
+                    _df_live = pd.DataFrame(_rows)
+
+                    # ── Filters ────────────────────────────────────────────────
+                    _ff1, _ff2, _ff3 = st.columns([2, 2, 2])
+                    with _ff1:
+                        _team_opts = ["All"] + sorted(_df_live["Team"].unique().tolist())
+                        _team_f = st.selectbox("Team:", _team_opts, key="live_team_f")
+                    with _ff2:
+                        _pos_opts = ["All", "GKP", "DEF", "MID", "FWD"]
+                        _pos_f = st.selectbox("Position:", _pos_opts, key="live_pos_f")
+                    with _ff3:
+                        _min_pts = st.number_input("Min pts:", min_value=0, value=0,
+                                                    step=1, key="live_min_pts")
+
+                    _df_show = _df_live.copy()
+                    if _team_f != "All":
+                        _df_show = _df_show[_df_show["Team"] == _team_f]
+                    if _pos_f != "All":
+                        _df_show = _df_show[_df_show["Pos"] == _pos_f]
+                    if _min_pts > 0:
+                        _df_show = _df_show[_df_show["Pts"] >= _min_pts]
+                    _df_show = _df_show.sort_values("Pts", ascending=False).drop(columns=["_team_full"])
+
+                    # ── Render as styled HTML table ────────────────────────────
+                    def _pts_bg(pts):
+                        if pts >= 12: return "#FFD700", "#111"
+                        if pts >= 9:  return "#ff9800", "#111"
+                        if pts >= 6:  return "#4caf50", "#fff"
+                        if pts >= 3:  return "#1e88e5", "#fff"
+                        return "#2a2a2a", "#888"
+
+                    _th = "padding:7px 10px;font-size:11px;color:#666;font-weight:700;letter-spacing:.5px;border-bottom:1px solid #2a2a2a;white-space:nowrap"
+                    _td_base = "padding:7px 10px;font-size:12px;border-bottom:1px solid #1a1a1a;white-space:nowrap"
+                    _cols = ["Player","Team","Pos","Price","Mins","G","A","CS","GC","YC","RC","Saves","Bonus","BPS","Pts"]
+                    _header_cells = "".join(f'<th style="{_th}">{c}</th>' for c in _cols)
+                    _tbl = (
+                        '<div style="overflow-x:auto">'
+                        '<table style="width:100%;border-collapse:collapse;background:#111;border-radius:8px;overflow:hidden">'
+                        f'<thead><tr>{_header_cells}</tr></thead>'
+                        '<tbody>'
+                    )
+                    for _, _row in _df_show.iterrows():
+                        _pbg, _pfg = _pts_bg(_row["Pts"])
+                        # team pill colors
+                        _tf  = FPL_SHORT_TO_FULL.get(_row["Team"], _row["Team"])
+                        _cbg = CLUB_COLORS.get(_tf, {}).get("bg", "#444")
+                        _cfg = CLUB_COLORS.get(_tf, {}).get("text", "#fff")
+                        _team_pill = (f'<span style="background:{_cbg};color:{_cfg};padding:1px 6px;'
+                                      f'border-radius:3px;font-size:10px;font-weight:700">{_row["Team"]}</span>')
+                        _yc_txt = "🟨" * int(_row["YC"]) if _row["YC"] else ""
+                        _rc_txt = "🟥" * int(_row["RC"]) if _row["RC"] else ""
+                        _g_txt  = f'<b style="color:#FFD700">{int(_row["G"])}</b>' if _row["G"] else "0"
+                        _a_txt  = f'<b style="color:#4fc3f7">{int(_row["A"])}</b>' if _row["A"] else "0"
+                        _cs_txt = f'<b style="color:#4caf50">✓</b>' if _row["CS"] else "–"
+                        _vals = [
+                            _row["Player"], _team_pill, _row["Pos"], _row["Price"],
+                            int(_row["Mins"]), _g_txt, _a_txt, _cs_txt,
+                            int(_row["GC"]), _yc_txt or "–", _rc_txt or "–",
+                            int(_row["Saves"]), int(_row["Bonus"]), int(_row["BPS"]),
+                            f'<b style="background:{_pbg};color:{_pfg};padding:2px 7px;border-radius:4px">{int(_row["Pts"])}</b>',
+                        ]
+                        _cells = "".join(
+                            f'<td style="{_td_base}">{v}</td>' for v in _vals
+                        )
+                        _tbl += f'<tr style="background:#111">{_cells}</tr>'
+                    _tbl += '</tbody></table></div>'
+
+                    _tbl_height = 60 + len(_df_show) * 38
+                    components.html(_tbl, height=min(_tbl_height, 800), scrolling=True)
+
+                    st.caption(f"Showing {len(_df_show)} players · GW{_sel_gw} · refreshes every 60s")
+                else:
+                    st.info("No players with minutes yet for this GW.")
+
     with tab8:
         st.subheader("📡 Live Radar")
         if not live_ok:
