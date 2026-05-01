@@ -2170,8 +2170,9 @@ if nav_cat == "🔴 Live GW":
                     return raw >= 12, raw
                 return False, 0
 
-            # Per-fixture summaries (goals/assists, defcon, bonus)
+            # Per-fixture summaries (goals/assists, defcon, bonus, bps)
             # dc entries: (name, raw_count, team_id)
+            # bps entries: (name, bps_score, team_id)
             _fx_summary = {}
             for _el in _live_data.get("elements", []):
                 _pid  = _el["id"]; _p = _player_map.get(_pid)
@@ -2181,11 +2182,13 @@ if nav_cat == "🔴 Live GW":
                     _fid  = _expl["fixture"]
                     _sv   = {s["identifier"]: s["value"] for s in _expl.get("stats", [])}
                     _g    = _sv.get("goals_scored", 0); _a = _sv.get("assists", 0)
-                    _bon  = _sv.get("bonus", 0); _name = _p.get("web_name", "?")
-                    _s    = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": []})
+                    _bon  = _sv.get("bonus", 0); _bps = _sv.get("bps", 0)
+                    _name = _p.get("web_name", "?")
+                    _s    = _fx_summary.setdefault(_fid, {"goals": [], "dc": [], "bonus": [], "bps": []})
                     if _g or _a:       _s["goals"].append((_name, _g, _a))
                     if _defcon_earned: _s["dc"].append((_name, _defcon_raw, _p["team"]))
                     if _bon:           _s["bonus"].append((_name, _bon))
+                    if _bps:           _s["bps"].append((_name, _bps, _p["team"]))
 
             _N_COLS = 4
             for _row_start in range(0, len(_gw_fixtures), _N_COLS):
@@ -2207,10 +2210,10 @@ if nav_cat == "🔴 Live GW":
                             _score_txt=f"{_hs} – {_as_}";_score_col="#e8e8e8";_status_txt="FT";_status_col="#4caf50"
                         else:
                             _score_txt=f"{_hs} – {_as_}";_score_col="#ffffff";_status_txt=f"🔴 {_mins}'";_status_col="#ff4444"
-                        _summ = _fx_summary.get(_fx_id,{"goals":[],"dc":[],"bonus":[]})
+                        _summ = _fx_summary.get(_fx_id,{"goals":[],"dc":[],"bonus":[],"bps":[]})
                         _goal_lines = [("⚽"*g)+("🅰️"*a)+f" {n}" for n,g,a in sorted(_summ["goals"],key=lambda x:-(x[1]*2+x[2]))]
                         _goals_html  = "<br>".join(f'<span style="color:#ddd">{l}</span>' for l in _goal_lines) or '<span style="color:#333">–</span>'
-                        # Separate defcon by home/away, show raw count in brackets
+                        # Defcon: home/away separated with raw count in brackets
                         _dc_home = [(n,r) for n,r,tid in _summ["dc"] if tid == _fx["team_h"]]
                         _dc_away = [(n,r) for n,r,tid in _summ["dc"] if tid == _fx["team_a"]]
                         def _dc_span(nm, raw):
@@ -2224,6 +2227,19 @@ if nav_cat == "🔴 Live GW":
                             _dc_parts.append("  ".join(_dc_span(n,r) for n,r in _dc_away))
                         _defcon_html = "  ".join(_dc_parts) if _dc_parts else '<span style="color:#333">–</span>'
                         _bonus_html  = "  ".join(f'<span style="color:#FFD700">★{bp} {nm}</span>' for nm,bp in sorted(_summ["bonus"],key=lambda x:-x[1])) or '<span style="color:#333">–</span>'
+                        # BPS: home/away separated, sorted highest first, show score in brackets
+                        _bps_home = sorted([(n,v) for n,v,tid in _summ.get("bps",[]) if tid == _fx["team_h"]], key=lambda x:-x[1])
+                        _bps_away = sorted([(n,v) for n,v,tid in _summ.get("bps",[]) if tid == _fx["team_a"]], key=lambda x:-x[1])
+                        def _bps_span(nm, val):
+                            return f'<span style="color:#81c784">{nm} <span style="color:#555">({val})</span></span>'
+                        _bps_parts = []
+                        if _bps_home:
+                            _bps_parts.append("  ".join(_bps_span(n,v) for n,v in _bps_home))
+                        if _bps_home and _bps_away:
+                            _bps_parts.append('<span style="color:#333">|</span>')
+                        if _bps_away:
+                            _bps_parts.append("  ".join(_bps_span(n,v) for n,v in _bps_away))
+                        _bps_html = "  ".join(_bps_parts) if _bps_parts else '<span style="color:#333">–</span>'
                         _lbl_s = "font-size:9px;color:#555;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px"
                         _card = (
                             f'<div style="background:#181818;border:1px solid #2a2a2a;border-radius:12px;padding:14px 10px 12px;text-align:center;font-family:sans-serif">'
@@ -2233,7 +2249,8 @@ if nav_cat == "🔴 Live GW":
                             f'<div style="flex:1;text-align:center"><img src="{_LOGO.format(code=_a_code)}" width="40" height="40" style="object-fit:contain;display:block;margin:0 auto"/><div style="font-size:11px;color:#bbb;margin-top:4px;font-weight:700">{_a_short}</div></div>'
                             f'</div><div style="border-top:1px solid #252525;margin:10px 0 8px"></div>'
                             f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">Goals & Assists</div><div style="font-size:11px;line-height:1.7">{_goals_html}</div></div>'
-                            f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">Defcon</div><div style="font-size:11px;line-height:1.7">{_defcon_html}</div></div>'
+                            f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">BPS</div><div style="font-size:11px;line-height:1.7">{_bps_html}</div></div>'
+                            f'<div style="text-align:left;padding:0 4px;margin-bottom:6px"><div style="{_lbl_s}">Defcon ✓</div><div style="font-size:11px;line-height:1.7">{_defcon_html}</div></div>'
                             f'<div style="text-align:left;padding:0 4px"><div style="{_lbl_s}">Bonus</div><div style="font-size:11px">{_bonus_html}</div></div>'
                             f'</div>'
                         )
@@ -2265,23 +2282,24 @@ if nav_cat == "🔴 Live GW":
                         _pos=_pos_map.get(_p.get("element_type"),"?")
                         _g=_sv.get("goals_scored",0); _a=_sv.get("assists",0)
                         _cs=_sv.get("clean_sheets",0); _yc=_sv.get("yellow_cards",0)
-                        _rc=_sv.get("red_cards",0);   _sav=_sv.get("saves",0); _bon=_sv.get("bonus",0)
+                        _rc=_sv.get("red_cards",0);   _sav=_sv.get("saves",0)
+                        _bon=_sv.get("bonus",0);      _bps_v=_sv.get("bps",0)
                         _defcon_earned, _defcon_raw = _calc_defcon(_el, _p)
                         _ev=("⚽"*_g)+("🅰️"*_a)
                         if _cs:  _ev+="🧤" if _pos=="GKP" else "🛡️"
                         if _yc:  _ev+="🟨"
                         if _rc:  _ev+="🟥"
                         if _sav>=3: _ev+=f" ({_sav}sv)"
-                        if _defcon_earned: _ev+=f" 🛡DC({_defcon_raw})"
                         _row={"Player":_p.get("web_name","?"),"Pos":_pos,"Mins":_sv.get("minutes",0),
-                              "Events":_ev.strip(),"DC":_defcon_earned,"BP":_bon,"Pts":_pts}
+                              "Events":_ev.strip(),"DC":(_defcon_earned,_defcon_raw),
+                              "BPS":_bps_v,"BP":_bon,"Pts":_pts}
                         (_home_rows if _p["team"]==_sel_fx["team_h"] else _away_rows).append(_row)
 
                     def _team_tbl(rows, short, bg, fg):
                         rows_s=sorted(rows,key=lambda r:-r["Pts"])
                         _th_s="padding:6px 10px;font-size:11px;font-weight:700;color:#888;border-bottom:1px solid #222;white-space:nowrap"
                         _td_s="padding:6px 10px;font-size:13px;border-bottom:1px solid #1c1c1c;white-space:nowrap;color:#ddd"
-                        _hdrs=["Player","Pos","Mins","Events","DC","BP","Pts"]
+                        _hdrs=["Player","Pos","Mins","Events","DC","BPS","BP","Pts"]
                         _hcells="".join(f'<th style="{_th_s}">{h}</th>' for h in _hdrs)
                         _html=(f'<div style="background:{bg};color:{fg};padding:7px 12px;border-radius:8px 8px 0 0;font-size:13px;font-weight:700">{short}</div>'
                                f'<div style="overflow-x:auto;border:1px solid #222;border-top:none;border-radius:0 0 8px 8px">'
@@ -2289,13 +2307,22 @@ if nav_cat == "🔴 Live GW":
                         for r in rows_s:
                             _pbg,_pfg=_pts_color(r["Pts"])
                             _pts_c=f'<span style="background:{_pbg};color:{_pfg};padding:2px 8px;border-radius:4px;font-weight:700">{r["Pts"]}</span>'
-                            _dc_c='<b style="color:#4fc3f7">✓ +2</b>' if r["DC"] else '<span style="color:#444">–</span>'
+                            _dc_earned,_dc_raw=r["DC"] if isinstance(r["DC"],tuple) else (r["DC"],0)
+                            if _dc_earned:
+                                _dc_c=f'<b style="color:#4fc3f7">✓ {_dc_raw}</b>'
+                            elif _dc_raw:
+                                _dc_c=f'<span style="color:#555">{_dc_raw}</span>'
+                            else:
+                                _dc_c='<span style="color:#444">–</span>'
+                            _bps_v=r.get("BPS",0)
+                            _bps_c=f'<span style="color:#81c784;font-weight:600">{_bps_v}</span>' if _bps_v else '<span style="color:#444">–</span>'
                             _bp_c=f'<b style="color:#FFD700">{r["BP"]}</b>' if r["BP"] else '<span style="color:#444">–</span>'
                             _html+=(f'<tr><td style="{_td_s}">{r["Player"]}</td>'
                                     f'<td style="{_td_s};color:#888;font-size:11px">{r["Pos"]}</td>'
                                     f'<td style="{_td_s};color:#666">{r["Mins"]}</td>'
                                     f'<td style="{_td_s}">{r["Events"] or "–"}</td>'
                                     f'<td style="{_td_s};text-align:center">{_dc_c}</td>'
+                                    f'<td style="{_td_s};text-align:center">{_bps_c}</td>'
                                     f'<td style="{_td_s};text-align:center">{_bp_c}</td>'
                                     f'<td style="{_td_s}">{_pts_c}</td></tr>')
                         _html+='</tbody></table></div>'
