@@ -3785,11 +3785,10 @@ elif nav_cat == "👕 My FPL":
                                 font=dict(color="#aaa", size=11),
                                 xaxis=dict(showgrid=False, tickfont=dict(size=10, color="#555")),
                                 yaxis=dict(
-                                    title="Points gained / missed",
+                                    title=dict(text="Points gained / missed", font=dict(size=11, color="#555")),
                                     showgrid=True,
                                     gridcolor="rgba(255,255,255,0.05)",
                                     tickfont=dict(size=10, color="#555"),
-                                    titlefont=dict(size=11, color="#555"),
                                 ),
                                 margin=dict(l=45, r=10, t=10, b=35),
                                 height=220,
