@@ -598,6 +598,87 @@ def get_injury_status(bootstrap):
     df = df.sort_values(["_sort","_play_num"]).reset_index(drop=True)
     return df[["Player","Team","Position","Status","Play%","News"]]
 
+
+# ── Captain History & Template Heatmap helpers ────────────────────────────────
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_gw_live_batch(gws_tuple):
+    """Parallel-fetch live data for multiple GWs. Cached 1 hour (finished GWs won't change)."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    results = {}
+    def _one(gw):
+        url = f"{BASE_URL}/event/{gw}/live/"
+        r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=15)
+        r.raise_for_status()
+        return gw, r.json()
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        futures = {executor.submit(_one, gw): gw for gw in gws_tuple}
+        for future in as_completed(futures):
+            try:
+                gw, data = future.result()
+                results[gw] = data
+            except Exception:
+                pass
+    return results
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def fetch_league_pages(league_id: int, max_pages: int):
+    """Fetch all standings entries from a classic league (up to max_pages × 50 teams)."""
+    entries = []
+    for page in range(1, max_pages + 1):
+        try:
+            data = fetch_mini_league(league_id, page)
+            results = data.get("standings", {}).get("results", [])
+            if not results:
+                break
+            entries.extend(results)
+            if not data.get("standings", {}).get("has_next", False):
+                break
+        except Exception:
+            break
+    return entries
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def fetch_template_picks(league_id: int, gw: int, max_pages: int):
+    """Fetch picks for every team in a league and aggregate player ownership. Cached 5 min."""
+    from concurrent.futures import ThreadPoolExecutor
+    entries = fetch_league_pages(league_id, max_pages)
+    if not entries:
+        return {}, 0
+    team_ids = [e["entry"] for e in entries]
+
+    player_counts: dict = {}
+
+    def _picks(tid):
+        try:
+            url = f"https://fantasy.premierleague.com/api/entry/{tid}/event/{gw}/picks/"
+            r = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+            r.raise_for_status()
+            return r.json()
+        except Exception:
+            return None
+
+    with ThreadPoolExecutor(max_workers=15) as executor:
+        for picks_data in executor.map(_picks, team_ids):
+            if not picks_data:
+                continue
+            for pick in picks_data.get("picks", []):
+                pid = pick["element"]
+                if pid not in player_counts:
+                    player_counts[pid] = {"xi": 0, "squad": 0, "cap": 0, "vc": 0}
+                player_counts[pid]["squad"] += 1
+                if pick["position"] <= 11:
+                    player_counts[pid]["xi"] += 1
+                if pick["is_captain"]:
+                    player_counts[pid]["cap"] += 1
+                if pick["is_vice_captain"]:
+                    player_counts[pid]["vc"] += 1
+
+    return player_counts, len(team_ids)
+
+
 # =============================================================================
 # MAIN APP
 # =============================================================================
@@ -866,9 +947,9 @@ if nav_cat == "🔴 Live GW":
 elif nav_cat == "📊 Planning":
     tab1, tab2, tab3, tab4 = st.tabs(["📊 FDR", "⚽ xG", "🧤 xCS", "📈 Team Ratings"])
 elif nav_cat == "🎯 Captain & Picks":
-    tab5, tab6, tab7, tab13 = st.tabs(["🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "🔍 Differentials"])
+    tab5, tab6, tab7, tab13, tab_template = st.tabs(["🎯 Captain Picks", "🏅 Captain Matrix", "📋 Cheatsheet", "🔍 Differentials", "🗺️ Template"])
 elif nav_cat == "👕 My FPL":
-    tab8, tab14 = st.tabs(["📡 Live Radar", "🏆 Mini-League"])
+    tab8, tab14, tab_capt = st.tabs(["📡 Live Radar", "🏆 Mini-League", "📈 Captain History"])
 else:  # 🏟️ Stats
     tab11, tab12 = st.tabs(["🏟️ Team Stats", "👤 Player Stats"])
 
@@ -3164,6 +3245,178 @@ elif nav_cat == "🎯 Captain & Picks":
                         key="dl_differentials",
                     )
 
+    # ── Tab: Template Heatmap ─────────────────────────────────────────────────
+    with tab_template:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">🗺️ Template Heatmap</span>'
+            '<span style="font-size:12px;color:#444">Player ownership within any FPL classic league</span></div>',
+            unsafe_allow_html=True
+        )
+
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        else:
+            _tc1, _tc2, _tc3 = st.columns([3, 1, 1])
+            with _tc1:
+                _tpl_league_id = st.number_input(
+                    "Classic League ID",
+                    min_value=1, max_value=99999999,
+                    value=int(st.session_state.get("tpl_league_id", 1)),
+                    step=1, key="tpl_league_id_input",
+                    help="Find the ID in the URL: fantasy.premierleague.com/leagues/{ID}/standings/c"
+                )
+            with _tc2:
+                _tpl_pages = st.number_input(
+                    "Pages (50 teams each)",
+                    min_value=1, max_value=20, value=4, step=1, key="tpl_pages",
+                    help="1 page = 50 managers. 4 pages = up to 200 managers."
+                )
+            with _tc3:
+                st.markdown("<br>", unsafe_allow_html=True)
+                _tpl_load = st.button("🔍 Load", key="tpl_load_btn", use_container_width=True)
+
+            if _tpl_load:
+                st.session_state["tpl_league_id"] = _tpl_league_id
+                fetch_template_picks.clear()
+                fetch_league_pages.clear()
+
+            _tpl_league_stored = st.session_state.get("tpl_league_id")
+
+            if _tpl_league_stored:
+                try:
+                    with st.spinner(f"Fetching picks for league {_tpl_league_stored} GW{current_gw}…"):
+                        _tpl_counts, _tpl_total = fetch_template_picks(
+                            int(_tpl_league_stored), current_gw, _tpl_pages
+                        )
+
+                    if not _tpl_counts:
+                        st.warning("No picks data found. Check the league ID or try a different GW.")
+                    else:
+                        # Build display DataFrame
+                        _el_map = {p["id"]: p for p in bootstrap["elements"]}
+                        _teams_df = pd.DataFrame(bootstrap["teams"])
+                        _id2short = dict(zip(_teams_df["id"], _teams_df["short_name"]))
+                        _POS = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
+
+                        _tpl_rows = []
+                        for pid, cnt in _tpl_counts.items():
+                            el = _el_map.get(pid, {})
+                            if not el:
+                                continue
+                            team_short = _id2short.get(el.get("team"), "?")
+                            team_name  = TEAM_NAME_MAP.get(team_short, team_short)
+                            xi_pct     = round(cnt["xi"]    / _tpl_total * 100, 1)
+                            sq_pct     = round(cnt["squad"] / _tpl_total * 100, 1)
+                            cap_pct    = round(cnt["cap"]   / _tpl_total * 100, 1)
+                            vc_pct     = round(cnt["vc"]    / _tpl_total * 100, 1)
+                            fix_str, fdr_num = get_fdr_for_team_gw(team_name, current_gw, master_df_full)
+                            _tpl_rows.append({
+                                "Player":   el.get("web_name", "?"),
+                                "Team":     team_name,
+                                "Pos":      _POS.get(el.get("element_type"), "?"),
+                                "Price":    round(el.get("now_cost", 0) / 10, 1),
+                                "XI%":      xi_pct,
+                                "Squad%":   sq_pct,
+                                "Cap%":     cap_pct,
+                                "VC%":      vc_pct,
+                                "Fixture":  fix_str,
+                                "_fdr":     fdr_num,
+                                "_code":    el.get("code"),
+                            })
+
+                        _tpl_df = (
+                            pd.DataFrame(_tpl_rows)
+                            .sort_values("XI%", ascending=False)
+                            .reset_index(drop=True)
+                        )
+
+                        # ── Filter controls ────────────────────────────────
+                        _tf1, _tf2, _tf3 = st.columns([2, 1, 1])
+                        with _tf1:
+                            _tpl_search = st.text_input("Search player:", key="tpl_search", placeholder="e.g. Salah")
+                        with _tf2:
+                            _tpl_pos_f = st.selectbox("Position:", ["All","GKP","DEF","MID","FWD"], key="tpl_pos_f")
+                        with _tf3:
+                            _tpl_min_xi = st.slider("Min XI%:", 0.0, 100.0, 0.0, 1.0, key="tpl_min_xi")
+
+                        _filt = _tpl_df.copy()
+                        if _tpl_search:
+                            _filt = _filt[_filt["Player"].str.contains(_tpl_search, case=False, na=False)]
+                        if _tpl_pos_f != "All":
+                            _filt = _filt[_filt["Pos"] == _tpl_pos_f]
+                        _filt = _filt[_filt["XI%"] >= _tpl_min_xi]
+
+                        st.caption(
+                            f"League {_tpl_league_stored} · GW{current_gw} · "
+                            f"{_tpl_total} managers · {len(_filt)} players shown · "
+                            "XI% = in starting XI of that share of managers"
+                        )
+
+                        # ── Build styled HTML table ────────────────────────
+                        def _pct_cell(val, thresholds=((50,"#00ff85","#0d1117"),(25,"#50c369","#0d1117"),(10,"#2e4a38","#a8d8a8"),(0,"#1e1e1e","#555"))):
+                            for thr, bg, fg in thresholds:
+                                if val >= thr:
+                                    return bg, fg
+                            return "#1e1e1e", "#555"
+
+                        _th_s = ("padding:7px 10px;font-size:10px;font-weight:700;letter-spacing:.6px;"
+                                 "color:#555;border-bottom:2px solid #1e1e1e;text-align:center;white-space:nowrap")
+                        _tpl_header = (
+                            f'<th style="{_th_s};text-align:left">PLAYER</th>'
+                            f'<th style="{_th_s}">TEAM</th>'
+                            f'<th style="{_th_s}">POS</th>'
+                            f'<th style="{_th_s}">PRICE</th>'
+                            f'<th style="{_th_s}">XI%</th>'
+                            f'<th style="{_th_s}">SQUAD%</th>'
+                            f'<th style="{_th_s}">CAP%</th>'
+                            f'<th style="{_th_s}">VC%</th>'
+                            f'<th style="{_th_s}">FIXTURE</th>'
+                        )
+
+                        _tpl_rows_html = ""
+                        for _, _r in _filt.head(100).iterrows():
+                            club_bg, club_fg = club_style(_r["Team"])
+                            dot = (f'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;'
+                                   f'background:{club_bg};margin-right:6px;vertical-align:middle"></span>')
+                            pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}.get(_r["Pos"],"#888")
+
+                            xi_bg, xi_fg   = _pct_cell(_r["XI%"])
+                            sq_bg, sq_fg   = _pct_cell(_r["Squad%"])
+                            cap_bg, cap_fg = _pct_cell(_r["Cap%"],   ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
+                            vc_bg, vc_fg   = _pct_cell(_r["VC%"],    ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
+
+                            fdr_bg_c = FDR_BG.get(_r["_fdr"], "#444")
+                            fdr_fg_c = FDR_FG.get(_r["_fdr"], "#fff")
+
+                            _tpl_rows_html += (
+                                f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
+                                f'<td style="padding:7px 10px;font-weight:600;color:#e0e0e0;font-size:13px;border-bottom:1px solid #141414;white-space:nowrap">{_r["Player"]}</td>'
+                                f'<td style="padding:7px 10px;text-align:center;font-size:12px;border-bottom:1px solid #141414;white-space:nowrap">{dot}<span style="color:#aaa">{TEAM_ABBREVIATIONS.get(_r["Team"],_r["Team"][:3].upper())}</span></td>'
+                                f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
+                                f'<span style="background:{pos_c}18;color:{pos_c};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{_r["Pos"]}</span></td>'
+                                f'<td style="padding:7px 10px;text-align:center;color:#f4a261;font-size:12px;font-weight:600;border-bottom:1px solid #141414">£{_r["Price"]:.1f}m</td>'
+                                f'<td style="padding:7px 10px;text-align:center;background:{xi_bg};color:{xi_fg};font-size:13px;font-weight:800;border-bottom:1px solid #141414">{_r["XI%"]:.1f}%</td>'
+                                f'<td style="padding:7px 10px;text-align:center;background:{sq_bg};color:{sq_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Squad%"]:.1f}%</td>'
+                                f'<td style="padding:7px 10px;text-align:center;background:{cap_bg};color:{cap_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Cap%"]:.1f}%</td>'
+                                f'<td style="padding:7px 10px;text-align:center;background:{vc_bg};color:{vc_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["VC%"]:.1f}%</td>'
+                                f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
+                                f'<span style="background:{fdr_bg_c};color:{fdr_fg_c};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{_r["Fixture"]}</span></td>'
+                                f'</tr>'
+                            )
+
+                        _tpl_table_html = (
+                            f'<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e">'
+                            f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:Inter,sans-serif">'
+                            f'<thead><tr style="background:#161b22">{_tpl_header}</tr></thead>'
+                            f'<tbody>{_tpl_rows_html}</tbody></table></div>'
+                        )
+                        st.markdown(_tpl_table_html, unsafe_allow_html=True)
+
+                except Exception as _e:
+                    st.error(f"Could not load template data: {_e}")
+                    st.caption("Check the league ID and ensure Live FPL Data is enabled.")
+
 # ────────────────────────────────────────────────────────────────────────────
 elif nav_cat == "👕 My FPL":
     with tab8:
@@ -3339,6 +3592,236 @@ elif nav_cat == "👕 My FPL":
                 except Exception as e:
                     st.error(f"Could not load league {ml_league_id}: {e}")
                     st.caption("Check the league ID and ensure it's a Classic league (not H2H).")
+
+    # ── Tab: Captain History ──────────────────────────────────────────────────
+    with tab_capt:
+        st.markdown(
+            '<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">'
+            '<span style="font-size:18px;font-weight:700;color:#e0e0e0">📈 Captain History</span>'
+            '<span style="font-size:12px;color:#444">Your captain vs optimal pick each GW</span></div>',
+            unsafe_allow_html=True
+        )
+
+        if not live_ok:
+            st.warning("⚠️ Enable Live FPL Data in the sidebar.")
+        else:
+            _ch_c1, _ch_c2 = st.columns([3, 1])
+            with _ch_c1:
+                _ch_team_id = st.number_input(
+                    "Your FPL Team ID",
+                    min_value=1, max_value=99999999,
+                    value=int(st.session_state.get("ch_team_id", 1)),
+                    step=1, key="ch_team_id_input",
+                    help="Find your team ID in the URL on the FPL website"
+                )
+            with _ch_c2:
+                st.markdown("<br>", unsafe_allow_html=True)
+                _ch_load = st.button("🔍 Load", key="ch_load_btn", use_container_width=True)
+
+            if _ch_load:
+                st.session_state["ch_team_id"] = _ch_team_id
+                fetch_fpl_picks.clear()
+                fetch_gw_live_batch.clear()
+
+            _ch_team_stored = st.session_state.get("ch_team_id")
+
+            if _ch_team_stored:
+                try:
+                    # Finished GWs from bootstrap
+                    _ch_finished = tuple(
+                        ev["id"] for ev in bootstrap.get("events", [])
+                        if ev.get("finished")
+                    )
+                    if not _ch_finished:
+                        st.info("No finished gameweeks yet.")
+                    else:
+                        with st.spinner("Fetching captain history…"):
+                            # Picks: call individually (each is cached per team+gw)
+                            _ch_all_picks = {}
+                            for _gw in _ch_finished:
+                                try:
+                                    _ch_all_picks[_gw] = fetch_fpl_picks(int(_ch_team_stored), _gw)
+                                except Exception:
+                                    pass
+
+                            # Live data: parallel batch
+                            _gws_needed = tuple(g for g in _ch_finished if g in _ch_all_picks)
+                            _ch_all_live = fetch_gw_live_batch(_gws_needed)
+
+                        _el_map_ch = {p["id"]: p for p in bootstrap["elements"]}
+
+                        _ch_rows = []
+                        for _gw in sorted(_ch_all_picks):
+                            _picks_d = _ch_all_picks[_gw]
+                            _live_d  = _ch_all_live.get(_gw)
+                            if not _live_d:
+                                continue
+
+                            # Captain from picks
+                            _cap_pick = next((p for p in _picks_d.get("picks", []) if p["is_captain"]), None)
+                            if not _cap_pick:
+                                continue
+                            _cap_id   = _cap_pick["element"]
+                            _mult     = _cap_pick.get("multiplier", 2)
+                            _cap_name = _el_map_ch.get(_cap_id, {}).get("web_name", "?")
+
+                            # GW points per player from live endpoint
+                            _live_pts = {}
+                            for _el in _live_d.get("elements", []):
+                                _total = sum(
+                                    s["points"]
+                                    for expl in _el.get("explain", [])
+                                    for s in expl.get("stats", [])
+                                )
+                                _live_pts[_el["id"]] = _total
+
+                            _cap_pts = _live_pts.get(_cap_id, 0)
+
+                            # Optimal = highest scorer in your squad (position 1-15)
+                            _squad_ids = {p["element"] for p in _picks_d.get("picks", [])}
+                            _squad_scored = {pid: _live_pts.get(pid, 0) for pid in _squad_ids}
+                            if not _squad_scored:
+                                continue
+                            _opt_id   = max(_squad_scored, key=_squad_scored.get)
+                            _opt_pts  = _squad_scored[_opt_id]
+                            _opt_name = _el_map_ch.get(_opt_id, {}).get("web_name", "?")
+
+                            # Bonus points = extra copy (multiplier-1)
+                            _cap_bonus = _cap_pts * (_mult - 1)
+                            _opt_bonus = _opt_pts * 1  # comparison always at ×2
+                            _gain      = _cap_bonus - _opt_bonus
+                            _is_opt    = _cap_id == _opt_id
+
+                            # Chip played this GW
+                            _chip = _picks_d.get("active_chip") or "—"
+
+                            _ch_rows.append({
+                                "GW":        _gw,
+                                "Captain":   _cap_name,
+                                "Cap Pts":   _cap_pts,
+                                "×":         _mult,
+                                "Cap Bonus": _cap_bonus,
+                                "Optimal":   _opt_name,
+                                "Opt Pts":   _opt_pts,
+                                "Gain/Loss": _gain,
+                                "✓":         _is_opt,
+                                "Chip":      _chip,
+                            })
+
+                        if not _ch_rows:
+                            st.info("No captain data available yet.")
+                        else:
+                            _ch_df = pd.DataFrame(_ch_rows)
+
+                            # ── Summary bar ───────────────────────────────
+                            _correct   = _ch_df["✓"].sum()
+                            _total_gws = len(_ch_df)
+                            _total_cap_bonus = _ch_df["Cap Bonus"].sum()
+                            _total_opt_bonus = _ch_df["Opt Bonus"].sum() if "Opt Bonus" in _ch_df.columns else _ch_df["Opt Pts"].sum()
+                            _total_missed    = _ch_df.loc[~_ch_df["✓"], "Gain/Loss"].sum()
+
+                            _sm1, _sm2, _sm3, _sm4 = st.columns(4)
+                            _sm1.metric("GWs analysed", _total_gws)
+                            _sm2.metric("Optimal picks", f"{_correct}/{_total_gws}")
+                            _sm3.metric("Captain bonus earned", f"{int(_total_cap_bonus)} pts")
+                            _sm4.metric("Pts left on table", f"{int(abs(_total_missed))} pts")
+
+                            # ── Plotly bar chart ──────────────────────────
+                            _fig_ch = go.Figure()
+                            _colors_ch = [
+                                "#00ff85" if r["✓"] else ("#ff6060" if r["Gain/Loss"] < -3 else "#ffaa33")
+                                for _, r in _ch_df.iterrows()
+                            ]
+                            _fig_ch.add_trace(go.Bar(
+                                x=[f"GW{g}" for g in _ch_df["GW"]],
+                                y=_ch_df["Gain/Loss"],
+                                marker_color=_colors_ch,
+                                hovertemplate=(
+                                    "<b>GW%{x}</b><br>"
+                                    "Cap: %{customdata[0]} (%{customdata[1]} pts)<br>"
+                                    "Optimal: %{customdata[2]} (%{customdata[3]} pts)<br>"
+                                    "Gain/Loss: %{y}<extra></extra>"
+                                ),
+                                customdata=list(zip(
+                                    _ch_df["Captain"], _ch_df["Cap Pts"],
+                                    _ch_df["Optimal"], _ch_df["Opt Pts"]
+                                )),
+                                name="Gain/Loss",
+                            ))
+                            _fig_ch.add_hline(y=0, line_color="rgba(255,255,255,0.15)", line_width=1)
+                            _fig_ch.update_layout(
+                                paper_bgcolor="#0d1117", plot_bgcolor="#0d1117",
+                                font=dict(color="#aaa", size=11),
+                                xaxis=dict(showgrid=False, tickfont=dict(size=10, color="#555")),
+                                yaxis=dict(
+                                    title="Points gained / missed",
+                                    showgrid=True,
+                                    gridcolor="rgba(255,255,255,0.05)",
+                                    tickfont=dict(size=10, color="#555"),
+                                    titlefont=dict(size=11, color="#555"),
+                                ),
+                                margin=dict(l=45, r=10, t=10, b=35),
+                                height=220,
+                                showlegend=False,
+                            )
+                            st.plotly_chart(_fig_ch, use_container_width=True)
+                            st.caption("🟢 Optimal pick · 🟡 Suboptimal (small miss) · 🔴 Significant miss (> 3 pts)")
+
+                            # ── Detailed table ────────────────────────────
+                            _th_ch = ("padding:7px 10px;font-size:10px;font-weight:700;letter-spacing:.6px;"
+                                      "color:#555;border-bottom:2px solid #1e1e1e;text-align:center;white-space:nowrap")
+                            _ch_header = (
+                                f'<th style="{_th_ch}">GW</th>'
+                                f'<th style="{_th_ch};text-align:left">CAPTAIN</th>'
+                                f'<th style="{_th_ch}">CAP PTS</th>'
+                                f'<th style="{_th_ch}">×</th>'
+                                f'<th style="{_th_ch}">BONUS</th>'
+                                f'<th style="{_th_ch};text-align:left">OPTIMAL (IN SQUAD)</th>'
+                                f'<th style="{_th_ch}">OPT PTS</th>'
+                                f'<th style="{_th_ch}">GAIN/LOSS</th>'
+                                f'<th style="{_th_ch}">CHIP</th>'
+                            )
+                            _ch_rows_html = ""
+                            for _, _r in _ch_df[::-1].iterrows():
+                                _gl   = _r["Gain/Loss"]
+                                _is_o = _r["✓"]
+                                _gl_c = "#00ff85" if _is_o else ("#ffaa33" if _gl >= -3 else "#ff6060")
+                                _gl_s = f"+{int(_gl)}" if _gl >= 0 else str(int(_gl))
+                                _tick = "✓" if _is_o else "✗"
+                                _tick_c = "#00ff85" if _is_o else "#555"
+                                _chip_c = "#5aabff" if _r["Chip"] != "—" else "#333"
+                                _mult_c = "#FFD700" if _r["×"] == 3 else "#888"
+
+                                _ch_rows_html += (
+                                    f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
+                                    f'<td style="padding:7px 10px;text-align:center;color:#666;font-size:12px;border-bottom:1px solid #141414">GW{int(_r["GW"])}</td>'
+                                    f'<td style="padding:7px 10px;font-weight:700;color:#e0e0e0;font-size:13px;border-bottom:1px solid #141414;white-space:nowrap">'
+                                    f'<span style="color:{_tick_c};margin-right:6px;font-size:11px">{_tick}</span>{_r["Captain"]}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:14px;color:#5aabff;border-bottom:1px solid #141414">{int(_r["Cap Pts"])}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-weight:700;font-size:12px;color:{_mult_c};border-bottom:1px solid #141414">×{int(_r["×"])}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-weight:700;font-size:13px;color:#5aabff;border-bottom:1px solid #141414">+{int(_r["Cap Bonus"])}</td>'
+                                    f'<td style="padding:7px 10px;color:#888;font-size:12px;border-bottom:1px solid #141414;white-space:nowrap">{_r["Optimal"]}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-size:13px;color:#888;border-bottom:1px solid #141414">{int(_r["Opt Pts"])}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-weight:800;font-size:14px;color:{_gl_c};border-bottom:1px solid #141414">{_gl_s}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-size:11px;color:{_chip_c};border-bottom:1px solid #141414">{_r["Chip"]}</td>'
+                                    f'</tr>'
+                                )
+
+                            _ch_table = (
+                                f'<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e;margin-top:8px">'
+                                f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:Inter,sans-serif">'
+                                f'<thead><tr style="background:#161b22">{_ch_header}</tr></thead>'
+                                f'<tbody>{_ch_rows_html}</tbody></table></div>'
+                            )
+                            st.markdown(_ch_table, unsafe_allow_html=True)
+                            st.caption(
+                                "Gain/Loss = captain bonus pts vs best-in-squad bonus pts · "
+                                "Optimal = highest scorer in your 15-man squad · "
+                                "× = TC shows ×3"
+                            )
+
+                except Exception as _e:
+                    st.error(f"Could not load captain history: {_e}")
 
 
 # ────────────────────────────────────────────────────────────────────────────
