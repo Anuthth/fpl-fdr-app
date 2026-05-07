@@ -3257,7 +3257,12 @@ elif nav_cat == "🎯 Captain & Picks":
         if not live_ok:
             st.warning("⚠️ Enable Live FPL Data in the sidebar.")
         else:
-            _tc1, _tc2, _tc3 = st.columns([3, 1, 1])
+            # Last finished GW is the safest default — picks for upcoming GWs
+            # are not visible to other managers until after the deadline.
+            _finished_gws_tpl = [ev["id"] for ev in bootstrap.get("events", []) if ev.get("finished")]
+            _default_tpl_gw   = _finished_gws_tpl[-1] if _finished_gws_tpl else current_gw
+
+            _tc1, _tc2, _tc3, _tc4 = st.columns([3, 1, 1, 1])
             with _tc1:
                 _tpl_league_id = st.number_input(
                     "Classic League ID",
@@ -3267,12 +3272,20 @@ elif nav_cat == "🎯 Captain & Picks":
                     help="Find the ID in the URL: fantasy.premierleague.com/leagues/{ID}/standings/c"
                 )
             with _tc2:
+                _tpl_gw = st.selectbox(
+                    "Gameweek",
+                    options=_finished_gws_tpl or [current_gw],
+                    index=len(_finished_gws_tpl) - 1 if _finished_gws_tpl else 0,
+                    key="tpl_gw_sel",
+                    help="Only finished GWs have public picks. Current-GW picks are locked until deadline.",
+                )
+            with _tc3:
                 _tpl_pages = st.number_input(
-                    "Pages (50 teams each)",
+                    "Pages (50/page)",
                     min_value=1, max_value=20, value=4, step=1, key="tpl_pages",
                     help="1 page = 50 managers. 4 pages = up to 200 managers."
                 )
-            with _tc3:
+            with _tc4:
                 st.markdown("<br>", unsafe_allow_html=True)
                 _tpl_load = st.button("🔍 Load", key="tpl_load_btn", use_container_width=True)
 
@@ -3285,133 +3298,151 @@ elif nav_cat == "🎯 Captain & Picks":
 
             if _tpl_league_stored:
                 try:
-                    with st.spinner(f"Fetching picks for league {_tpl_league_stored} GW{current_gw}…"):
-                        _tpl_counts, _tpl_total = fetch_template_picks(
-                            int(_tpl_league_stored), current_gw, _tpl_pages
-                        )
+                    # Show league entry count first so the user knows the league was found
+                    with st.spinner(f"Loading league {_tpl_league_stored}…"):
+                        _tpl_entries = fetch_league_pages(int(_tpl_league_stored), _tpl_pages)
 
-                    if not _tpl_counts:
-                        st.warning("No picks data found. Check the league ID or try a different GW.")
+                    if not _tpl_entries:
+                        st.error(
+                            f"League {_tpl_league_stored} not found or has no entries. "
+                            "Check the ID and ensure it is a Classic (not H2H) league."
+                        )
                     else:
-                        # Build display DataFrame
-                        _el_map = {p["id"]: p for p in bootstrap["elements"]}
-                        _teams_df = pd.DataFrame(bootstrap["teams"])
-                        _id2short = dict(zip(_teams_df["id"], _teams_df["short_name"]))
-                        _POS = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
-
-                        _tpl_rows = []
-                        for pid, cnt in _tpl_counts.items():
-                            el = _el_map.get(pid, {})
-                            if not el:
-                                continue
-                            team_short = _id2short.get(el.get("team"), "?")
-                            team_name  = TEAM_NAME_MAP.get(team_short, team_short)
-                            xi_pct     = round(cnt["xi"]    / _tpl_total * 100, 1)
-                            sq_pct     = round(cnt["squad"] / _tpl_total * 100, 1)
-                            cap_pct    = round(cnt["cap"]   / _tpl_total * 100, 1)
-                            vc_pct     = round(cnt["vc"]    / _tpl_total * 100, 1)
-                            fix_str, fdr_num = get_fdr_for_team_gw(team_name, current_gw, master_df_full)
-                            _tpl_rows.append({
-                                "Player":   el.get("web_name", "?"),
-                                "Team":     team_name,
-                                "Pos":      _POS.get(el.get("element_type"), "?"),
-                                "Price":    round(el.get("now_cost", 0) / 10, 1),
-                                "XI%":      xi_pct,
-                                "Squad%":   sq_pct,
-                                "Cap%":     cap_pct,
-                                "VC%":      vc_pct,
-                                "Fixture":  fix_str,
-                                "_fdr":     fdr_num,
-                                "_code":    el.get("code"),
-                            })
-
-                        _tpl_df = (
-                            pd.DataFrame(_tpl_rows)
-                            .sort_values("XI%", ascending=False)
-                            .reset_index(drop=True)
+                        st.info(
+                            f"Found **{len(_tpl_entries)} managers** in this league. "
+                            f"Fetching GW{_tpl_gw} picks…"
                         )
-
-                        # ── Filter controls ────────────────────────────────
-                        _tf1, _tf2, _tf3 = st.columns([2, 1, 1])
-                        with _tf1:
-                            _tpl_search = st.text_input("Search player:", key="tpl_search", placeholder="e.g. Salah")
-                        with _tf2:
-                            _tpl_pos_f = st.selectbox("Position:", ["All","GKP","DEF","MID","FWD"], key="tpl_pos_f")
-                        with _tf3:
-                            _tpl_min_xi = st.slider("Min XI%:", 0.0, 100.0, 0.0, 1.0, key="tpl_min_xi")
-
-                        _filt = _tpl_df.copy()
-                        if _tpl_search:
-                            _filt = _filt[_filt["Player"].str.contains(_tpl_search, case=False, na=False)]
-                        if _tpl_pos_f != "All":
-                            _filt = _filt[_filt["Pos"] == _tpl_pos_f]
-                        _filt = _filt[_filt["XI%"] >= _tpl_min_xi]
-
-                        st.caption(
-                            f"League {_tpl_league_stored} · GW{current_gw} · "
-                            f"{_tpl_total} managers · {len(_filt)} players shown · "
-                            "XI% = in starting XI of that share of managers"
-                        )
-
-                        # ── Build styled HTML table ────────────────────────
-                        def _pct_cell(val, thresholds=((50,"#00ff85","#0d1117"),(25,"#50c369","#0d1117"),(10,"#2e4a38","#a8d8a8"),(0,"#1e1e1e","#555"))):
-                            for thr, bg, fg in thresholds:
-                                if val >= thr:
-                                    return bg, fg
-                            return "#1e1e1e", "#555"
-
-                        _th_s = ("padding:7px 10px;font-size:10px;font-weight:700;letter-spacing:.6px;"
-                                 "color:#555;border-bottom:2px solid #1e1e1e;text-align:center;white-space:nowrap")
-                        _tpl_header = (
-                            f'<th style="{_th_s};text-align:left">PLAYER</th>'
-                            f'<th style="{_th_s}">TEAM</th>'
-                            f'<th style="{_th_s}">POS</th>'
-                            f'<th style="{_th_s}">PRICE</th>'
-                            f'<th style="{_th_s}">XI%</th>'
-                            f'<th style="{_th_s}">SQUAD%</th>'
-                            f'<th style="{_th_s}">CAP%</th>'
-                            f'<th style="{_th_s}">VC%</th>'
-                            f'<th style="{_th_s}">FIXTURE</th>'
-                        )
-
-                        _tpl_rows_html = ""
-                        for _, _r in _filt.head(100).iterrows():
-                            club_bg, club_fg = club_style(_r["Team"])
-                            dot = (f'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;'
-                                   f'background:{club_bg};margin-right:6px;vertical-align:middle"></span>')
-                            pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}.get(_r["Pos"],"#888")
-
-                            xi_bg, xi_fg   = _pct_cell(_r["XI%"])
-                            sq_bg, sq_fg   = _pct_cell(_r["Squad%"])
-                            cap_bg, cap_fg = _pct_cell(_r["Cap%"],   ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
-                            vc_bg, vc_fg   = _pct_cell(_r["VC%"],    ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
-
-                            fdr_bg_c = FDR_BG.get(_r["_fdr"], "#444")
-                            fdr_fg_c = FDR_FG.get(_r["_fdr"], "#fff")
-
-                            _tpl_rows_html += (
-                                f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
-                                f'<td style="padding:7px 10px;font-weight:600;color:#e0e0e0;font-size:13px;border-bottom:1px solid #141414;white-space:nowrap">{_r["Player"]}</td>'
-                                f'<td style="padding:7px 10px;text-align:center;font-size:12px;border-bottom:1px solid #141414;white-space:nowrap">{dot}<span style="color:#aaa">{TEAM_ABBREVIATIONS.get(_r["Team"],_r["Team"][:3].upper())}</span></td>'
-                                f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
-                                f'<span style="background:{pos_c}18;color:{pos_c};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{_r["Pos"]}</span></td>'
-                                f'<td style="padding:7px 10px;text-align:center;color:#f4a261;font-size:12px;font-weight:600;border-bottom:1px solid #141414">£{_r["Price"]:.1f}m</td>'
-                                f'<td style="padding:7px 10px;text-align:center;background:{xi_bg};color:{xi_fg};font-size:13px;font-weight:800;border-bottom:1px solid #141414">{_r["XI%"]:.1f}%</td>'
-                                f'<td style="padding:7px 10px;text-align:center;background:{sq_bg};color:{sq_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Squad%"]:.1f}%</td>'
-                                f'<td style="padding:7px 10px;text-align:center;background:{cap_bg};color:{cap_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Cap%"]:.1f}%</td>'
-                                f'<td style="padding:7px 10px;text-align:center;background:{vc_bg};color:{vc_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["VC%"]:.1f}%</td>'
-                                f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
-                                f'<span style="background:{fdr_bg_c};color:{fdr_fg_c};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{_r["Fixture"]}</span></td>'
-                                f'</tr>'
+                        with st.spinner(f"Fetching GW{_tpl_gw} picks for {len(_tpl_entries)} teams…"):
+                            _tpl_counts, _tpl_total = fetch_template_picks(
+                                int(_tpl_league_stored), _tpl_gw, _tpl_pages
                             )
 
-                        _tpl_table_html = (
-                            f'<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e">'
-                            f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:Inter,sans-serif">'
-                            f'<thead><tr style="background:#161b22">{_tpl_header}</tr></thead>'
-                            f'<tbody>{_tpl_rows_html}</tbody></table></div>'
-                        )
-                        st.markdown(_tpl_table_html, unsafe_allow_html=True)
+                        if not _tpl_counts:
+                            st.warning(
+                                f"No picks found for GW{_tpl_gw}. "
+                                "Picks are only public after the GW deadline has passed. "
+                                "Try selecting an earlier finished GW."
+                            )
+                        else:
+                            # Build display DataFrame
+                            _el_map = {p["id"]: p for p in bootstrap["elements"]}
+                            _teams_df = pd.DataFrame(bootstrap["teams"])
+                            _id2short = dict(zip(_teams_df["id"], _teams_df["short_name"]))
+                            _POS = {1:"GKP", 2:"DEF", 3:"MID", 4:"FWD"}
+
+                            _tpl_rows = []
+                            for pid, cnt in _tpl_counts.items():
+                                el = _el_map.get(pid, {})
+                                if not el:
+                                    continue
+                                team_short = _id2short.get(el.get("team"), "?")
+                                team_name  = TEAM_NAME_MAP.get(team_short, team_short)
+                                xi_pct     = round(cnt["xi"]    / _tpl_total * 100, 1)
+                                sq_pct     = round(cnt["squad"] / _tpl_total * 100, 1)
+                                cap_pct    = round(cnt["cap"]   / _tpl_total * 100, 1)
+                                vc_pct     = round(cnt["vc"]    / _tpl_total * 100, 1)
+                                fix_str, fdr_num = get_fdr_for_team_gw(team_name, _tpl_gw, master_df_full)
+                                _tpl_rows.append({
+                                    "Player":   el.get("web_name", "?"),
+                                    "Team":     team_name,
+                                    "Pos":      _POS.get(el.get("element_type"), "?"),
+                                    "Price":    round(el.get("now_cost", 0) / 10, 1),
+                                    "XI%":      xi_pct,
+                                    "Squad%":   sq_pct,
+                                    "Cap%":     cap_pct,
+                                    "VC%":      vc_pct,
+                                    "Fixture":  fix_str,
+                                    "_fdr":     fdr_num,
+                                    "_code":    el.get("code"),
+                                })
+
+                            _tpl_df = (
+                                pd.DataFrame(_tpl_rows)
+                                .sort_values("XI%", ascending=False)
+                                .reset_index(drop=True)
+                            )
+
+                            # ── Filter controls ──────────────────────────
+                            _tf1, _tf2, _tf3 = st.columns([2, 1, 1])
+                            with _tf1:
+                                _tpl_search = st.text_input("Search player:", key="tpl_search", placeholder="e.g. Salah")
+                            with _tf2:
+                                _tpl_pos_f = st.selectbox("Position:", ["All","GKP","DEF","MID","FWD"], key="tpl_pos_f")
+                            with _tf3:
+                                _tpl_min_xi = st.slider("Min XI%:", 0.0, 100.0, 0.0, 1.0, key="tpl_min_xi")
+
+                            _filt = _tpl_df.copy()
+                            if _tpl_search:
+                                _filt = _filt[_filt["Player"].str.contains(_tpl_search, case=False, na=False)]
+                            if _tpl_pos_f != "All":
+                                _filt = _filt[_filt["Pos"] == _tpl_pos_f]
+                            _filt = _filt[_filt["XI%"] >= _tpl_min_xi]
+
+                            st.caption(
+                                f"League {_tpl_league_stored} · GW{_tpl_gw} · "
+                                f"{_tpl_total} managers · {len(_filt)} players shown · "
+                                "XI% = in starting XI of that share of managers"
+                            )
+
+                            # ── Build styled HTML table ────────────────────
+                            def _pct_cell(val, thresholds=((50,"#00ff85","#0d1117"),(25,"#50c369","#0d1117"),(10,"#2e4a38","#a8d8a8"),(0,"#1e1e1e","#555"))):
+                                for thr, bg, fg in thresholds:
+                                    if val >= thr:
+                                        return bg, fg
+                                return "#1e1e1e", "#555"
+
+                            _th_s = ("padding:7px 10px;font-size:10px;font-weight:700;letter-spacing:.6px;"
+                                     "color:#555;border-bottom:2px solid #1e1e1e;text-align:center;white-space:nowrap")
+                            _tpl_header = (
+                                f'<th style="{_th_s};text-align:left">PLAYER</th>'
+                                f'<th style="{_th_s}">TEAM</th>'
+                                f'<th style="{_th_s}">POS</th>'
+                                f'<th style="{_th_s}">PRICE</th>'
+                                f'<th style="{_th_s}">XI%</th>'
+                                f'<th style="{_th_s}">SQUAD%</th>'
+                                f'<th style="{_th_s}">CAP%</th>'
+                                f'<th style="{_th_s}">VC%</th>'
+                                f'<th style="{_th_s}">FIXTURE</th>'
+                            )
+
+                            _tpl_rows_html = ""
+                            for _, _r in _filt.head(100).iterrows():
+                                club_bg, club_fg = club_style(_r["Team"])
+                                dot = (f'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;'
+                                       f'background:{club_bg};margin-right:6px;vertical-align:middle"></span>')
+                                pos_c = {"GKP":"#f4a261","DEF":"#5aabff","MID":"#5fffb0","FWD":"#ff6060"}.get(_r["Pos"],"#888")
+
+                                xi_bg, xi_fg   = _pct_cell(_r["XI%"])
+                                sq_bg, sq_fg   = _pct_cell(_r["Squad%"])
+                                cap_bg, cap_fg = _pct_cell(_r["Cap%"],   ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
+                                vc_bg, vc_fg   = _pct_cell(_r["VC%"],    ((20,"#FFD700","#111"),(10,"#FFC107","#111"),(3,"#2e2e2e","#888"),(0,"#1e1e1e","#444")))
+
+                                fdr_bg_c = FDR_BG.get(_r["_fdr"], "#444")
+                                fdr_fg_c = FDR_FG.get(_r["_fdr"], "#fff")
+
+                                _tpl_rows_html += (
+                                    f'<tr onmouseover="this.style.background=\'#1a1a1a\'" onmouseout="this.style.background=\'transparent\'">'
+                                    f'<td style="padding:7px 10px;font-weight:600;color:#e0e0e0;font-size:13px;border-bottom:1px solid #141414;white-space:nowrap">{_r["Player"]}</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;font-size:12px;border-bottom:1px solid #141414;white-space:nowrap">{dot}<span style="color:#aaa">{TEAM_ABBREVIATIONS.get(_r["Team"],_r["Team"][:3].upper())}</span></td>'
+                                    f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
+                                    f'<span style="background:{pos_c}18;color:{pos_c};border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700">{_r["Pos"]}</span></td>'
+                                    f'<td style="padding:7px 10px;text-align:center;color:#f4a261;font-size:12px;font-weight:600;border-bottom:1px solid #141414">£{_r["Price"]:.1f}m</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;background:{xi_bg};color:{xi_fg};font-size:13px;font-weight:800;border-bottom:1px solid #141414">{_r["XI%"]:.1f}%</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;background:{sq_bg};color:{sq_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Squad%"]:.1f}%</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;background:{cap_bg};color:{cap_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["Cap%"]:.1f}%</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;background:{vc_bg};color:{vc_fg};font-size:12px;font-weight:700;border-bottom:1px solid #141414">{_r["VC%"]:.1f}%</td>'
+                                    f'<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #141414">'
+                                    f'<span style="background:{fdr_bg_c};color:{fdr_fg_c};padding:2px 7px;border-radius:3px;font-size:11px;font-weight:700">{_r["Fixture"]}</span></td>'
+                                    f'</tr>'
+                                )
+
+                            _tpl_table_html = (
+                                f'<div style="overflow-x:auto;border-radius:6px;border:1px solid #1e1e1e">'
+                                f'<table style="border-collapse:collapse;width:100%;background:#0d1117;font-family:Inter,sans-serif">'
+                                f'<thead><tr style="background:#161b22">{_tpl_header}</tr></thead>'
+                                f'<tbody>{_tpl_rows_html}</tbody></table></div>'
+                            )
+                            st.markdown(_tpl_table_html, unsafe_allow_html=True)
 
                 except Exception as _e:
                     st.error(f"Could not load template data: {_e}")
