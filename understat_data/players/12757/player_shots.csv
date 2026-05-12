@@ -1,0 +1,7 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+609892,51,MissedShots,0.9730000305175781,0.6179999923706054,0.2571773827075958,Harrison Armstrong,a,12757,OpenPlay,2024,Head,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,,None,Harrison Armstrong
+667310,32,MissedShots,0.8969999694824219,0.345,0.054434411227703094,Harrison Armstrong,a,12757,OpenPlay,2025,RightFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,,None,Harrison Armstrong
+667322,66,MissedShots,0.9540000152587891,0.64,0.06666698306798935,Harrison Armstrong,a,12757,SetPiece,2025,LeftFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Thierno Barry,None,Harrison Armstrong
+668205,90,BlockedShot,0.950999984741211,0.519000015258789,0.1314464956521988,Harrison Armstrong,h,12757,FromCorner,2025,Head,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,James Garner,Cross,Harrison Armstrong
+668206,90,SavedShot,0.9590000152587891,0.5470000076293945,0.09331127256155014,Harrison Armstrong,h,12757,FromCorner,2025,Head,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,Aerial,Harrison Armstrong
+670587,45,SavedShot,0.86,0.585,0.09324599802494049,Harrison Armstrong,h,12757,OpenPlay,2025,RightFoot,29042,Everton,Manchester United,0,1,2026-02-23 20:00:00,Kiernan Dewsbury-Hall,Pass,Harrison Armstrong

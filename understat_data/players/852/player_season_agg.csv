@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,3,0,0,210,0,0,0,0,2025,Liverpool,0,0,0,0,0.6411428824067116,0.6411428824067116,852,Freddie Woodman
+season,GK,4,0,0,360,0,0,0,0,2021,Newcastle United,0,0,0,0,0.3158474937081337,0.3158474937081337,852,Freddie Woodman

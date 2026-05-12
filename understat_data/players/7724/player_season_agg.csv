@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,1,0,0,0,0,2021,Aston Villa,0,0,0,0,0,0,7724,Wesley
+season,Sub,3,0,1,14,0.0328821986913681,0,0,0,2020,Aston Villa,0,0,0,0.0328821986913681,0.11823540180921555,0.08535320311784744,7724,Wesley
+season,FW,21,5,36,1806,7.270562741905451,1,0.8836157005280256,11,2019,Aston Villa,3,0,5,6.509392712265253,8.007937798276544,2.6747633749619126,7724,Wesley

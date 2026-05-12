@@ -1,0 +1,8 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+604338,19,MissedShots,0.8969999694824219,0.515,0.058029815554618835,Mamadou Sarr,a,11253,SetPiece,2024,OtherBodyPart,28159,Brest,Strasbourg,3,1,2024-11-30 18:00:00,Dilane Bakwa,Cross,Mamadou Sarr
+607584,89,MissedShots,0.9490000152587891,0.46900001525878904,0.11470265686511993,Mamadou Sarr,a,11253,FromCorner,2024,RightFoot,28175,Le Havre,Strasbourg,0,3,2024-12-15 16:00:00,Pape Diong,BallTouch,Mamadou Sarr
+620579,47,BlockedShot,0.95,0.4929999923706055,0.13099230825901031,Mamadou Sarr,a,11253,FromCorner,2024,RightFoot,28261,Auxerre,Strasbourg,0,1,2025-03-02 16:15:00,Andrey Santos,HeadPass,Mamadou Sarr
+621943,76,MissedShots,0.9490000152587891,0.43200000762939456,0.342389851808548,Mamadou Sarr,a,11253,FromCorner,2024,Head,28266,Nantes,Strasbourg,0,1,2025-03-09 16:15:00,Dilane Bakwa,Cross,Mamadou Sarr
+631512,19,MissedShots,0.9630000305175781,0.5570000076293945,0.4506809115409851,Mamadou Sarr,h,11253,FromCorner,2024,Head,28328,Strasbourg,Paris Saint Germain,2,1,2025-05-03 15:00:00,Dilane Bakwa,Cross,Mamadou Sarr
+653737,23,MissedShots,0.909000015258789,0.4759999847412109,0.049718208611011505,Mamadou Sarr,a,11253,SetPiece,2025,Head,29648,Lens,Strasbourg,1,0,2025-11-22 16:00:00,Ben Chilwell,Aerial,Mamadou Sarr
+671809,9,MissedShots,0.9459999847412109,0.5459999847412109,0.5694634318351746,Mamadou Sarr,a,11253,SetPiece,2025,LeftFoot,29049,Arsenal,Chelsea,2,1,2026-03-01 16:30:00,,None,Mamadou Sarr

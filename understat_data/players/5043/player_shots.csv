@@ -1,0 +1,43 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+137323,84,BlockedShot,0.915,0.34900001525878904,0.08087290078401566,Kiko Femenía,a,5043,OpenPlay,2016,RightFoot,1862,Real Sociedad,Alaves,3,0,2016-10-22 20:30:00,Cristian Espinoza,Pass,Kiko Femenía
+136821,23,BlockedShot,0.8590000152587891,0.43099998474121093,0.07128459960222244,Kiko Femenía,h,5043,OpenPlay,2016,LeftFoot,3310,Alaves,Real Madrid,1,4,2016-10-29 18:15:00,,None,Kiko Femenía
+140943,35,MissedShots,0.8880000305175781,0.27600000381469725,0.03087580017745495,Kiko Femenía,a,5043,SetPiece,2016,RightFoot,3899,Celta Vigo,Alaves,1,0,2017-01-15 19:15:00,,None,Kiko Femenía
+141699,46,MissedShots,0.7569999694824219,0.32099998474121094,0.018742600455880165,Kiko Femenía,h,5043,FromCorner,2016,RightFoot,4041,Alaves,Villarreal,2,1,2017-04-17 19:45:00,Víctor Camarasa,BallTouch,Kiko Femenía
+144110,52,SavedShot,0.7980000305175782,0.27,0.022470999509096146,Kiko Femenía,h,5043,OpenPlay,2016,RightFoot,4083,Alaves,Athletic Club,1,0,2017-05-07 11:00:00,Víctor Camarasa,Pass,Kiko Femenía
+158933,93,MissedShots,0.765,0.685,0.016697000712156296,Kiko Femenía,h,5043,SetPiece,2017,RightFoot,7143,Watford,Brighton,0,0,2017-08-26 15:00:00,Abdoulaye Doucouré,Pass,Kiko Femenía
+159900,31,SavedShot,0.7609999847412109,0.325,0.02239299938082695,Kiko Femenía,a,5043,OpenPlay,2017,RightFoot,7171,Swansea,Watford,1,2,2017-09-23 15:00:00,,None,Kiko Femenía
+160255,28,MissedShots,0.7230000305175781,0.49599998474121093,0.013131599873304367,Kiko Femenía,a,5043,OpenPlay,2017,RightFoot,7220,Everton,Watford,3,2,2017-11-05 16:30:00,,None,Kiko Femenía
+160946,32,MissedShots,0.850999984741211,0.33299999237060546,0.04596009850502014,Kiko Femenía,h,5043,OpenPlay,2017,RightFoot,7230,Watford,West Ham,2,0,2017-11-19 16:00:00,,Rebound,Kiko Femenía
+197531,78,SavedShot,0.92,0.2929999923706055,0.04131859913468361,Kiko Femenía,h,5043,OpenPlay,2017,RightFoot,7392,Watford,Everton,1,0,2018-02-24 17:30:00,Troy Deeney,BallRecovery,Kiko Femenía
+200552,47,BlockedShot,0.8530000305175781,0.3509999847412109,0.04862629994750023,Kiko Femenía,a,5043,OpenPlay,2017,RightFoot,7409,Arsenal,Watford,3,0,2018-03-11 13:30:00,Richarlison,HeadPass,Kiko Femenía
+203991,12,Goal,0.8530000305175781,0.46,0.043458398431539536,Kiko Femenía,h,5043,FromCorner,2017,RightFoot,7437,Watford,Bournemouth,2,2,2018-03-31 15:00:00,José Holebas,Cross,Kiko Femenía
+204007,46,MissedShots,0.9069999694824219,0.41700000762939454,0.038080401718616486,Kiko Femenía,h,5043,FromCorner,2017,RightFoot,7437,Watford,Bournemouth,2,2,2018-03-31 15:00:00,,Aerial,Kiko Femenía
+207079,42,BlockedShot,0.7959999847412109,0.32799999237060545,0.02700280025601387,Kiko Femenía,h,5043,OpenPlay,2017,LeftFoot,7447,Watford,Burnley,1,2,2018-04-07 14:00:00,Roberto Pereyra,Pass,Kiko Femenía
+249253,46,BlockedShot,0.7780000305175782,0.3390000152587891,0.028562400490045547,Kiko Femenía,a,5043,OpenPlay,2018,RightFoot,9278,Wolverhampton Wanderers,Watford,0,2,2018-10-20 14:00:00,,Dispossessed,Kiko Femenía
+250042,76,MissedShots,0.82,0.43599998474121093,0.03369919955730438,Kiko Femenía,a,5043,OpenPlay,2018,RightFoot,9308,Southampton,Watford,1,1,2018-11-10 15:00:00,Andre Gray,HeadPass,Kiko Femenía
+287519,61,SavedShot,0.7069999694824218,0.5520000076293945,0.013154399581253529,Kiko Femenía,a,5043,FromCorner,2018,RightFoot,9509,Manchester United,Watford,2,1,2019-03-30 15:00:00,,None,Kiko Femenía
+291028,4,BlockedShot,0.7709999847412109,0.29399999618530276,0.009685230441391468,Kiko Femenía,h,5043,OpenPlay,2018,RightFoot,9518,Watford,Fulham,4,1,2019-04-02 19:45:00,Troy Deeney,Chipped,Kiko Femenía
+291050,74,Goal,0.885,0.425,0.3995940089225769,Kiko Femenía,h,5043,OpenPlay,2018,RightFoot,9518,Watford,Fulham,4,1,2019-04-02 19:45:00,Andre Gray,Pass,Kiko Femenía
+291052,77,BlockedShot,0.7780000305175782,0.3820000076293945,0.014636600390076637,Kiko Femenía,h,5043,FromCorner,2018,RightFoot,9518,Watford,Fulham,4,1,2019-04-02 19:45:00,,Aerial,Kiko Femenía
+310005,35,MissedShots,0.7180000305175781,0.49700000762939456,0.013993100263178349,Kiko Femenía,h,5043,FromCorner,2019,RightFoot,11648,Watford,Brighton,0,3,2019-08-10 15:00:00,,None,Kiko Femenía
+315875,8,MissedShots,0.8119999694824219,0.5690000152587891,0.060954198241233826,Kiko Femenía,a,5043,OpenPlay,2019,RightFoot,11679,Newcastle United,Watford,1,1,2019-08-31 15:00:00,,None,Kiko Femenía
+318109,59,MissedShots,0.8109999847412109,0.285,0.012486199848353863,Kiko Femenía,h,5043,OpenPlay,2019,RightFoot,11691,Watford,Arsenal,2,2,2019-09-15 15:30:00,Abdoulaye Doucouré,Chipped,Kiko Femenía
+339208,77,SavedShot,0.7480000305175781,0.545,0.02526720054447651,Kiko Femenía,h,5043,SetPiece,2019,RightFoot,11821,Watford,Manchester United,2,0,2019-12-22 14:00:00,Roberto Pereyra,TakeOn,Kiko Femenía
+372273,42,BlockedShot,0.7119999694824218,0.31,0.009346339851617813,Kiko Femenía,a,5043,OpenPlay,2019,RightFoot,12001,West Ham,Watford,3,1,2020-07-17 19:00:00,Abdoulaye Doucouré,Pass,Kiko Femenía
+445667,96,BlockedShot,0.8130000305175781,0.425,0.015546600334346294,Kiko Femenía,h,5043,OpenPlay,2021,RightFoot,16509,Watford,Chelsea,1,2,2021-12-01 19:30:00,,Aerial,Kiko Femenía
+453240,80,BlockedShot,0.774000015258789,0.40799999237060547,0.014780799858272076,Kiko Femenía,a,5043,FromCorner,2021,RightFoot,16591,Newcastle United,Watford,1,1,2022-01-15 15:00:00,,Aerial,Kiko Femenía
+477812,30,SavedShot,0.889000015258789,0.2979999923706055,0.03136470168828964,Kiko Femenía,a,5043,OpenPlay,2021,RightFoot,16750,Chelsea,Watford,2,1,2022-05-22 15:00:00,Ken Sema,Cross,Kiko Femenía
+530893,7,BlockedShot,0.7280000305175781,0.4540000152587891,0.025953257456421852,Kiko Femenía,h,5043,FromCorner,2022,RightFoot,19333,Villarreal,Atletico Madrid,2,2,2023-06-04 18:00:00,Manu Trigueros,Pass,Kiko Femenía
+530897,23,MissedShots,0.895,0.28200000762939453,0.03902177885174751,Kiko Femenía,h,5043,OpenPlay,2022,RightFoot,19333,Villarreal,Atletico Madrid,2,2,2023-06-04 18:00:00,Samuel Chukwueze,Pass,Kiko Femenía
+561523,5,MissedShots,0.565,0.14,0.01807766780257225,Kiko Femenía,h,5043,DirectFreekick,2023,RightFoot,22913,Villarreal,Cadiz,0,0,2024-02-04 13:00:00,,Standard,Kiko Femenía
+587174,4,MissedShots,0.7719999694824219,0.29100000381469726,0.021128356456756592,Kiko Femenía,h,5043,OpenPlay,2024,RightFoot,27002,Villarreal,Celta Vigo,4,3,2024-08-26 19:30:00,Daniel Parejo,Pass,Kiko Femenía
+595054,39,BlockedShot,0.715,0.46900001525878904,0.02202155627310276,Kiko Femenía,h,5043,FromCorner,2024,RightFoot,27058,Villarreal,Las Palmas,3,1,2024-09-30 19:00:00,Denis Suárez,Pass,Kiko Femenía
+613058,35,MissedShots,0.8680000305175781,0.40900001525878904,0.2778981626033783,Kiko Femenía,h,5043,OpenPlay,2024,LeftFoot,27178,Villarreal,Mallorca,4,0,2025-01-20 20:00:00,Álex Baena,Pass,Kiko Femenía
+644518,74,MissedShots,0.7,0.43900001525878907,0.007633413653820753,Kiko Femenía,h,5043,OpenPlay,2025,RightFoot,29222,Getafe,Levante,1,1,2025-09-27 12:00:00,Coba da Costa,Chipped,Kiko Femenía
+654774,55,BlockedShot,0.874000015258789,0.3129999923706055,0.026448413729667664,Kiko Femenía,h,5043,OpenPlay,2025,RightFoot,29297,Getafe,Elche,1,0,2025-11-28 20:00:00,Nyom,Cross,Kiko Femenía
+658448,45,MissedShots,0.8090000152587891,0.31,0.0212261825799942,Kiko Femenía,h,5043,FromCorner,2025,RightFoot,29315,Getafe,Espanyol,0,1,2025-12-13 20:00:00,,None,Kiko Femenía
+667633,7,MissedShots,0.7930000305175782,0.4570000076293945,0.032644860446453094,Kiko Femenía,a,5043,FromCorner,2025,LeftFoot,29378,Alaves,Getafe,0,2,2026-02-08 13:00:00,Luis Milla,Cross,Kiko Femenía
+667646,50,SavedShot,0.8640000152587891,0.29100000381469726,0.03503945842385292,Kiko Femenía,a,5043,OpenPlay,2025,RightFoot,29378,Alaves,Getafe,0,2,2026-02-08 13:00:00,Luis Milla,Pass,Kiko Femenía
+672057,13,BlockedShot,0.86,0.44799999237060545,0.11631201207637787,Kiko Femenía,a,5043,OpenPlay,2025,LeftFoot,29416,Real Madrid,Getafe,0,1,2026-03-02 20:00:00,Mauro Arambarri,Pass,Kiko Femenía
+673156,27,Goal,0.960999984741211,0.3990000152587891,0.38988956809043884,Kiko Femenía,h,5043,OpenPlay,2025,RightFoot,29423,Getafe,Real Betis,2,0,2026-03-08 15:15:00,,Rebound,Kiko Femenía
+675369,98,MissedShots,0.8980000305175782,0.37799999237060544,0.33269739151000977,Kiko Femenía,a,5043,OpenPlay,2025,RightFoot,29442,Espanyol,Getafe,1,2,2026-03-21 15:15:00,Martín Satriano,Pass,Kiko Femenía

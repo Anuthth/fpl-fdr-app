@@ -1,0 +1,6 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+630599,75,BlockedShot,0.9059999847412109,0.5320000076293945,0.12555989623069763,Chido Obi-Martin,a,13466,OpenPlay,2024,LeftFoot,26932,Bournemouth,Manchester United,1,1,2025-04-27 13:00:00,Luke Shaw,Pass,Chido Obi-Martin
+630606,90,SavedShot,0.9469999694824218,0.6840000152587891,0.10133286565542221,Chido Obi-Martin,a,13466,OpenPlay,2024,LeftFoot,26932,Bournemouth,Manchester United,1,1,2025-04-27 13:00:00,Luke Shaw,Throughball,Chido Obi-Martin
+631871,58,BlockedShot,0.9169999694824219,0.5029999923706054,0.13453058898448944,Chido Obi-Martin,a,13466,OpenPlay,2024,RightFoot,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,Alejandro Garnacho,Pass,Chido Obi-Martin
+631882,89,BlockedShot,0.899000015258789,0.6090000152587891,0.15010151267051697,Chido Obi-Martin,a,13466,OpenPlay,2024,LeftFoot,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,Christian Eriksen,TakeOn,Chido Obi-Martin
+636472,96,MissedShots,0.9119999694824219,0.5270000076293946,0.04606904834508896,Chido Obi-Martin,h,13466,FromCorner,2024,Head,26974,Manchester United,Aston Villa,2,0,2025-05-25 15:00:00,,None,Chido Obi-Martin

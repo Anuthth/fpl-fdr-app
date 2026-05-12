@@ -1,0 +1,4 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+668396,37,SavedShot,0.745,0.4979999923706055,0.022448819130659103,Nilson Angulo,h,14424,OpenPlay,2025,RightFoot,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Noah Sadiki,TakeOn,Nilson Angulo
+668407,62,SavedShot,0.965,0.44799999237060545,0.20953857898712158,Nilson Angulo,h,14424,FromCorner,2025,Head,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Nordi Mukiele,Tackle,Nilson Angulo
+670178,67,MissedShots,0.8930000305175781,0.4129999923706055,0.32610023021698,Nilson Angulo,h,14424,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Brian Brobbey,Pass,Nilson Angulo

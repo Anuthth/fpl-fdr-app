@@ -1,0 +1,53 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+376623,75,MissedShots,0.6940000152587891,0.5209999847412109,0.03589870035648346,Kalvin Phillips,a,8719,DirectFreekick,2020,RightFoot,14090,Liverpool,Leeds,4,3,2020-09-12 16:30:00,,Standard,Kalvin Phillips
+380706,63,SavedShot,0.77,0.6519999694824219,0.017163600772619247,Kalvin Phillips,h,8719,OpenPlay,2020,RightFoot,14469,Leeds,Manchester City,1,1,2020-10-03 16:30:00,Mateusz Klich,Pass,Kalvin Phillips
+388088,37,MissedShots,0.705,0.53,0.011149699799716473,Kalvin Phillips,h,8719,OpenPlay,2020,RightFoot,14518,Leeds,Arsenal,0,0,2020-11-22 16:30:00,,Rebound,Kalvin Phillips
+388949,13,SavedShot,0.754000015258789,0.42400001525878905,0.021459100767970085,Kalvin Phillips,a,8719,OpenPlay,2020,RightFoot,14531,Everton,Leeds,0,1,2020-11-28 17:30:00,Stuart Dallas,Pass,Kalvin Phillips
+388971,63,BlockedShot,0.865,0.6329999923706054,0.0658252015709877,Kalvin Phillips,a,8719,OpenPlay,2020,LeftFoot,14531,Everton,Leeds,0,1,2020-11-28 17:30:00,,Dispossessed,Kalvin Phillips
+391334,68,MissedShots,0.7580000305175781,0.5659999847412109,0.021327199414372444,Kalvin Phillips,h,8719,OpenPlay,2020,LeftFoot,14548,Leeds,West Ham,1,2,2020-12-11 20:00:00,,None,Kalvin Phillips
+395925,21,SavedShot,0.7280000305175781,0.639000015258789,0.015509000048041344,Kalvin Phillips,a,8719,OpenPlay,2020,RightFoot,14590,West Bromwich Albion,Leeds,0,5,2020-12-29 18:00:00,Rodrigo,LayOff,Kalvin Phillips
+396303,73,MissedShots,0.8919999694824219,0.5570000076293945,0.03859670087695122,Kalvin Phillips,a,8719,FromCorner,2020,Head,14599,Tottenham,Leeds,3,0,2021-01-02 12:30:00,Raphinha,Cross,Kalvin Phillips
+409398,89,MissedShots,0.7390000152587891,0.7030000305175781,0.010517899878323078,Kalvin Phillips,a,8719,OpenPlay,2020,RightFoot,14704,West Ham,Leeds,2,0,2021-03-08 20:00:00,,BallRecovery,Kalvin Phillips
+411134,15,BlockedShot,0.725,0.549000015258789,0.04786580055952072,Kalvin Phillips,a,8719,DirectFreekick,2020,RightFoot,14718,Fulham,Leeds,1,2,2021-03-19 20:00:00,,Standard,Kalvin Phillips
+411155,87,MissedShots,0.7619999694824219,0.43900001525878907,0.023870499804615974,Kalvin Phillips,a,8719,FromCorner,2020,RightFoot,14718,Fulham,Leeds,1,2,2021-03-19 20:00:00,Raphinha,Cross,Kalvin Phillips
+412585,7,SavedShot,0.7269999694824218,0.5329999923706055,0.01643560081720352,Kalvin Phillips,h,8719,OpenPlay,2020,RightFoot,14729,Leeds,Sheffield United,2,1,2021-04-03 14:00:00,,BallRecovery,Kalvin Phillips
+412595,34,MissedShots,0.7269999694824218,0.4520000076293945,0.014510800130665302,Kalvin Phillips,h,8719,FromCorner,2020,RightFoot,14729,Leeds,Sheffield United,2,1,2021-04-03 14:00:00,,None,Kalvin Phillips
+423995,13,MissedShots,0.76,0.30100000381469727,0.016011200845241547,Kalvin Phillips,h,8719,OpenPlay,2020,RightFoot,14808,Leeds,West Bromwich Albion,3,1,2021-05-23 15:00:00,Stuart Dallas,Tackle,Kalvin Phillips
+424000,41,Goal,0.7319999694824219,0.749000015258789,0.03248180076479912,Kalvin Phillips,h,8719,DirectFreekick,2020,RightFoot,14808,Leeds,West Bromwich Albion,3,1,2021-05-23 15:00:00,,Standard,Kalvin Phillips
+427056,15,BlockedShot,0.7619999694824219,0.6459999847412109,0.01992419920861721,Kalvin Phillips,h,8719,FromCorner,2021,RightFoot,16390,Leeds,Everton,2,2,2021-08-21 14:00:00,Mateusz Klich,Pass,Kalvin Phillips
+429218,92,MissedShots,0.9159999847412109,0.53,0.08752080053091049,Kalvin Phillips,a,8719,FromCorner,2021,Head,16403,Burnley,Leeds,1,1,2021-08-29 13:00:00,Raphinha,Cross,Kalvin Phillips
+431009,28,MissedShots,0.7959999847412109,0.40400001525878904,0.039582498371601105,Kalvin Phillips,a,8719,OpenPlay,2021,RightFoot,16416,Newcastle United,Leeds,1,1,2021-09-17 19:00:00,Rodrigo,Pass,Kalvin Phillips
+433441,2,MissedShots,0.74,0.28299999237060547,0.01333060022443533,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16429,Leeds,West Ham,1,2,2021-09-25 14:00:00,Jamie Shackleton,Pass,Kalvin Phillips
+433476,94,MissedShots,0.7709999847412109,0.504000015258789,0.012208100408315659,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16429,Leeds,West Ham,1,2,2021-09-25 14:00:00,,Aerial,Kalvin Phillips
+441609,4,SavedShot,0.9540000152587891,0.40700000762939453,0.24969600141048431,Kalvin Phillips,h,8719,FromCorner,2021,Head,16482,Leeds,Leicester,1,1,2021-11-07 14:00:00,Raphinha,Cross,Kalvin Phillips
+441617,48,MissedShots,0.9430000305175781,0.445,0.11620599776506424,Kalvin Phillips,h,8719,FromCorner,2021,Head,16482,Leeds,Leicester,1,1,2021-11-07 14:00:00,Raphinha,Cross,Kalvin Phillips
+443374,1,SavedShot,0.7719999694824219,0.6719999694824219,0.05848110094666481,Kalvin Phillips,a,8719,DirectFreekick,2021,RightFoot,16493,Tottenham,Leeds,2,1,2021-11-21 16:30:00,,Standard,Kalvin Phillips
+443394,63,MissedShots,0.535,0.135,0.006419450044631958,Kalvin Phillips,a,8719,OpenPlay,2021,RightFoot,16493,Tottenham,Leeds,2,1,2021-11-21 16:30:00,,None,Kalvin Phillips
+445178,22,MissedShots,0.9080000305175782,0.26399999618530273,0.0420926995575428,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16508,Leeds,Crystal Palace,1,0,2021-11-30 20:15:00,,BallRecovery,Kalvin Phillips
+445186,59,BlockedShot,0.7680000305175781,0.575,0.01894339919090271,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16508,Leeds,Crystal Palace,1,0,2021-11-30 20:15:00,,Rebound,Kalvin Phillips
+446690,45,MissedShots,0.7369999694824219,0.5879999923706055,0.02118160016834736,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16518,Leeds,Brentford,2,2,2021-12-05 14:00:00,Daniel James,Pass,Kalvin Phillips
+466763,68,SavedShot,0.7519999694824219,0.4759999847412109,0.03193800151348114,Kalvin Phillips,a,8719,OpenPlay,2021,RightFoot,16686,Watford,Leeds,0,3,2022-04-09 14:00:00,Sam Greenwood,Tackle,Kalvin Phillips
+474071,89,BlockedShot,0.8019999694824219,0.37,0.023158200085163116,Kalvin Phillips,a,8719,FromCorner,2021,RightFoot,16735,Arsenal,Leeds,2,1,2022-05-08 13:00:00,,None,Kalvin Phillips
+476344,39,MissedShots,0.7730000305175782,0.3920000076293945,0.028485499322414398,Kalvin Phillips,h,8719,OpenPlay,2021,RightFoot,16743,Leeds,Brighton,1,1,2022-05-15 13:00:00,Mateusz Klich,Pass,Kalvin Phillips
+504958,79,BlockedShot,0.7559999847412109,0.46700000762939453,0.02438499964773655,Kalvin Phillips,h,8719,OpenPlay,2022,RightFoot,18409,Manchester City,Wolverhampton Wanderers,3,0,2023-01-22 14:00:00,Riyad Mahrez,Pass,Kalvin Phillips
+511040,73,MissedShots,0.86,0.41200000762939454,0.05032020062208176,Kalvin Phillips,a,8719,FromCorner,2022,RightFoot,18442,Bournemouth,Manchester City,1,4,2023-02-25 17:30:00,Riyad Mahrez,Pass,Kalvin Phillips
+528087,2,BlockedShot,0.81,0.4570000076293945,0.0734415054321289,Kalvin Phillips,h,8719,OpenPlay,2022,RightFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,,TakeOn,Kalvin Phillips
+528098,42,MissedShots,0.73,0.5779999923706055,0.020171592012047768,Kalvin Phillips,h,8719,OpenPlay,2022,RightFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,Sergio Gómez,Pass,Kalvin Phillips
+528104,57,ShotOnPost,0.874000015258789,0.4779999923706055,0.04497532919049263,Kalvin Phillips,h,8719,SetPiece,2022,Head,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,Riyad Mahrez,Cross,Kalvin Phillips
+529703,7,MissedShots,0.774000015258789,0.565,0.03119714744389057,Kalvin Phillips,a,8719,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Riyad Mahrez,Pass,Kalvin Phillips
+541164,74,MissedShots,0.7630000305175781,0.705,0.017704229801893234,Kalvin Phillips,a,8719,FromCorner,2023,RightFoot,21961,Wolverhampton Wanderers,Manchester City,2,1,2023-09-30 14:00:00,Jéremy Doku,Pass,Kalvin Phillips
+541167,93,BlockedShot,0.8430000305175781,0.5579999923706055,0.0721239447593689,Kalvin Phillips,a,8719,OpenPlay,2023,LeftFoot,21961,Wolverhampton Wanderers,Manchester City,2,1,2023-09-30 14:00:00,Jack Grealish,Pass,Kalvin Phillips
+560793,15,SavedShot,0.764000015258789,0.7180000305175781,0.01417081244289875,Kalvin Phillips,h,8719,OpenPlay,2023,RightFoot,22110,West Ham,Bournemouth,1,1,2024-02-01 19:30:00,Edson Álvarez,BallRecovery,Kalvin Phillips
+561624,79,MissedShots,0.7219999694824218,0.4159999847412109,0.009226606227457523,Kalvin Phillips,a,8719,OpenPlay,2023,RightFoot,22122,Manchester United,West Ham,3,0,2024-02-04 14:00:00,,None,Kalvin Phillips
+563885,27,SavedShot,0.835999984741211,0.53,0.08098243921995163,Kalvin Phillips,a,8719,OpenPlay,2023,LeftFoot,22142,Nottingham Forest,West Ham,2,0,2024-02-17 15:00:00,Jarrod Bowen,Pass,Kalvin Phillips
+594555,35,SavedShot,0.7809999847412109,0.38,0.018575390800833702,Kalvin Phillips,h,8719,SetPiece,2024,RightFoot,26659,Ipswich,Aston Villa,2,2,2024-09-29 13:00:00,,None,Kalvin Phillips
+595490,24,MissedShots,0.754000015258789,0.519000015258789,0.021862246096134186,Kalvin Phillips,a,8719,OpenPlay,2024,RightFoot,26665,West Ham,Ipswich,4,1,2024-10-05 14:00:00,Jack Clarke,Pass,Kalvin Phillips
+597141,45,MissedShots,0.7769999694824219,0.575,0.08406296372413635,Kalvin Phillips,h,8719,DirectFreekick,2024,RightFoot,26674,Ipswich,Everton,0,2,2024-10-19 14:00:00,,Standard,Kalvin Phillips
+600110,20,BlockedShot,0.8680000305175781,0.5379999923706055,0.04815436154603958,Kalvin Phillips,h,8719,FromCorner,2024,RightFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,Leif Davis,Cross,Kalvin Phillips
+600119,45,BlockedShot,0.9540000152587891,0.710999984741211,0.07215148210525513,Kalvin Phillips,h,8719,OpenPlay,2024,LeftFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,,TakeOn,Kalvin Phillips
+600123,69,BlockedShot,0.775,0.625999984741211,0.07100322842597961,Kalvin Phillips,h,8719,DirectFreekick,2024,RightFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,,Standard,Kalvin Phillips
+609273,56,BlockedShot,0.725999984741211,0.44599998474121094,0.015516168437898159,Kalvin Phillips,a,8719,OpenPlay,2024,RightFoot,26773,Arsenal,Ipswich,1,0,2024-12-27 20:15:00,,None,Kalvin Phillips
+617139,24,SavedShot,0.799000015258789,0.6780000305175782,0.07400285452604294,Kalvin Phillips,a,8719,DirectFreekick,2024,RightFoot,26842,Aston Villa,Ipswich,1,1,2025-02-15 15:00:00,,Standard,Kalvin Phillips
+618443,59,BlockedShot,0.7880000305175782,0.38799999237060545,0.019683774560689926,Kalvin Phillips,h,8719,SetPiece,2024,RightFoot,26857,Ipswich,Tottenham,1,4,2025-02-22 15:00:00,,Rebound,Kalvin Phillips
+622640,44,MissedShots,0.745999984741211,0.43099998474121093,0.017307255417108536,Kalvin Phillips,h,8719,OpenPlay,2024,RightFoot,26887,Ipswich,Nottingham Forest,2,4,2025-03-15 15:00:00,,Dispossessed,Kalvin Phillips
+631454,90,BlockedShot,0.775,0.654000015258789,0.016989577561616898,Kalvin Phillips,a,8719,FromCorner,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,,None,Kalvin Phillips

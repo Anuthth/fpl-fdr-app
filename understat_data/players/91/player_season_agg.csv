@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,51,0,0,0,0,2020,FC Cologne,0,0,0,0,0.17216500639915466,0.17216500639915466,91,Ron-Robert Zieler
+season,GK,34,0,0,3060,0,0,0.015048200264573097,1,2018,VfB Stuttgart,3,0,0,0,2.924752315506339,2.909704115241766,91,Ron-Robert Zieler
+season,GK,34,0,0,3060,0,0,0.03979330137372017,1,2017,VfB Stuttgart,3,0,0,0,0.7031182944774628,0.6633249931037426,91,Ron-Robert Zieler
+season,Sub,9,0,0,752,0,0,0,0,2016,Leicester,0,0,0,0,0.5712888091802597,0.5712888091802597,91,Ron-Robert Zieler
+season,GK,34,0,0,3060,0,0,0,0,2015,Hannover 96,3,0,0,0,2.560626596212387,2.560626596212387,91,Ron-Robert Zieler
+season,GK,34,0,0,3060,0,0,0.03629159927368164,1,2014,Hannover 96,3,0,0,0,1.715369550511241,1.6790779512375593,91,Ron-Robert Zieler

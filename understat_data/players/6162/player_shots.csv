@@ -1,0 +1,250 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+173046,87,BlockedShot,0.7980000305175782,0.42700000762939455,0.05612049996852875,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7510,Roma,Inter,1,3,2017-08-26 19:45:00,Kevin Strootman,TakeOn,Cengiz Ünder
+173507,16,ShotOnPost,0.93,0.31,0.05953120067715645,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7535,Roma,Verona,3,0,2017-09-16 19:45:00,Radja Nainggolan,Pass,Cengiz Ünder
+173526,66,MissedShots,0.8669999694824219,0.385,0.1532599925994873,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7535,Roma,Verona,3,0,2017-09-16 19:45:00,Edin Dzeko,Throughball,Cengiz Ünder
+173646,30,BlockedShot,0.8159999847412109,0.5540000152587891,0.036844901740550995,Cengiz Ünder,a,6162,FromCorner,2017,RightFoot,7540,Benevento,Roma,0,4,2017-09-20 17:00:00,,None,Cengiz Ünder
+174652,94,SavedShot,0.904000015258789,0.41900001525878905,0.07752940058708191,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7576,Roma,Napoli,0,1,2017-10-14 19:45:00,Aleksandar Kolarov,Cross,Cengiz Ünder
+174928,71,SavedShot,0.7869999694824219,0.43,0.040842898190021515,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7587,Torino,Roma,0,1,2017-10-22 14:00:00,Aleksandar Kolarov,Pass,Cengiz Ünder
+174931,88,SavedShot,0.845999984741211,0.48400001525878905,0.10195399820804596,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7587,Torino,Roma,0,1,2017-10-22 14:00:00,Radja Nainggolan,Pass,Cengiz Ünder
+176441,7,MissedShots,0.9590000152587891,0.5879999923706055,0.10125900059938431,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7646,Roma,SPAL 2013,3,1,2017-12-01 17:30:00,Edin Dzeko,HeadPass,Cengiz Ünder
+176446,16,SavedShot,0.785,0.23100000381469726,0.01216800045222044,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7646,Roma,SPAL 2013,3,1,2017-12-01 17:30:00,,None,Cengiz Ünder
+176461,39,BlockedShot,0.7380000305175781,0.37099998474121093,0.0162579994648695,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7646,Roma,SPAL 2013,3,1,2017-12-01 17:30:00,,None,Cengiz Ünder
+176462,43,SavedShot,0.8519999694824218,0.19600000381469726,0.030404100194573402,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7646,Roma,SPAL 2013,3,1,2017-12-01 17:30:00,Lorenzo Pellegrini,Pass,Cengiz Ünder
+176467,51,BlockedShot,0.7240000152587891,0.4520000076293945,0.02394860051572323,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7646,Roma,SPAL 2013,3,1,2017-12-01 17:30:00,Edin Dzeko,Pass,Cengiz Ünder
+180105,81,MissedShots,0.845,0.705,0.025205599144101143,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7650,Chievo,Roma,0,0,2017-12-10 11:30:00,,Rebound,Cengiz Ünder
+184923,86,MissedShots,0.745999984741211,0.515,0.021108999848365784,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7666,Roma,Cagliari,1,0,2017-12-16 19:45:00,,BallTouch,Cengiz Ünder
+185712,87,MissedShots,0.9669999694824218,0.415,0.22257000207901,Cengiz Ünder,a,6162,OpenPlay,2017,Head,7672,Juventus,Roma,1,0,2017-12-23 19:45:00,Edin Dzeko,HeadPass,Cengiz Ünder
+189653,12,MissedShots,0.6909999847412109,0.6029999923706054,0.01093290001153946,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7527,Sampdoria,Roma,1,1,2018-01-24 19:45:00,Radja Nainggolan,BallRecovery,Cengiz Ünder
+189667,48,MissedShots,0.9740000152587891,0.35900001525878905,0.05019579827785492,Cengiz Ünder,a,6162,FromCorner,2017,RightFoot,7527,Sampdoria,Roma,1,1,2018-01-24 19:45:00,Edin Dzeko,HeadPass,Cengiz Ünder
+190549,37,BlockedShot,0.9019999694824219,0.4279999923706055,0.08527020364999771,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7717,Roma,Sampdoria,0,1,2018-01-28 14:00:00,Lorenzo Pellegrini,Cross,Cengiz Ünder
+190552,42,MissedShots,0.8930000305175781,0.6270000076293946,0.05345990136265755,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7717,Roma,Sampdoria,0,1,2018-01-28 14:00:00,Radja Nainggolan,Cross,Cengiz Ünder
+190554,47,BlockedShot,0.8730000305175781,0.6990000152587891,0.04221310093998909,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7717,Roma,Sampdoria,0,1,2018-01-28 14:00:00,,None,Cengiz Ünder
+190556,48,SavedShot,0.9540000152587891,0.46900001525878904,0.5827919840812683,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7717,Roma,Sampdoria,0,1,2018-01-28 14:00:00,Alessandro Florenzi,Cross,Cengiz Ünder
+195719,0,Goal,0.785,0.375,0.026046600192785263,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7725,Verona,Roma,0,1,2018-02-04 11:30:00,Lorenzo Pellegrini,None,Cengiz Ünder
+195834,8,BlockedShot,0.769000015258789,0.28299999237060547,0.014421200379729271,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7730,Roma,Benevento,5,2,2018-02-11 19:45:00,,BallRecovery,Cengiz Ünder
+195850,61,Goal,0.8569999694824219,0.5820000076293945,0.09621509909629822,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7730,Roma,Benevento,5,2,2018-02-11 19:45:00,Diego Perotti,Pass,Cengiz Ünder
+195854,74,Goal,0.7880000305175782,0.33599998474121096,0.03682100027799606,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7730,Roma,Benevento,5,2,2018-02-11 19:45:00,Gerson,Pass,Cengiz Ünder
+196224,5,BlockedShot,0.9030000305175782,0.38,0.126119002699852,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7747,Udinese,Roma,0,2,2018-02-17 14:00:00,Stephan El Shaarawy,Pass,Cengiz Ünder
+196227,23,SavedShot,0.865,0.38799999237060545,0.08361519873142242,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7747,Udinese,Roma,0,2,2018-02-17 14:00:00,Alessandro Florenzi,Pass,Cengiz Ünder
+196233,33,MissedShots,0.9640000152587891,0.37099998474121093,0.059280700981616974,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7747,Udinese,Roma,0,2,2018-02-17 14:00:00,Radja Nainggolan,Cross,Cengiz Ünder
+196243,69,Goal,0.7959999847412109,0.365,0.03112109936773777,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7747,Udinese,Roma,0,2,2018-02-17 14:00:00,Daniele De Rossi,Pass,Cengiz Ünder
+198073,4,SavedShot,0.730999984741211,0.2520000076293945,0.014581100083887577,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7753,Roma,AC Milan,0,2,2018-02-25 19:45:00,Kevin Strootman,Pass,Cengiz Ünder
+198082,45,MissedShots,0.815,0.09300000190734864,0.01037409994751215,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7753,Roma,AC Milan,0,2,2018-02-25 19:45:00,Lorenzo Pellegrini,Interception,Cengiz Ünder
+198087,52,BlockedShot,0.889000015258789,0.5940000152587891,0.07250259816646576,Cengiz Ünder,h,6162,FromCorner,2017,LeftFoot,7753,Roma,AC Milan,0,2,2018-02-25 19:45:00,,None,Cengiz Ünder
+199230,6,Goal,0.89,0.3129999923706055,0.09910579770803452,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7766,Napoli,Roma,2,4,2018-03-03 19:45:00,Radja Nainggolan,Throughball,Cengiz Ünder
+199244,45,MissedShots,0.774000015258789,0.509000015258789,0.04424469918012619,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7766,Napoli,Roma,2,4,2018-03-03 19:45:00,Kevin Strootman,LayOff,Cengiz Ünder
+199735,13,BlockedShot,0.88,0.27100000381469724,0.038328200578689575,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7777,Roma,Torino,3,0,2018-03-09 19:45:00,Kevin Strootman,Pass,Cengiz Ünder
+199739,31,BlockedShot,0.8640000152587891,0.37900001525878907,0.06071380153298378,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7777,Roma,Torino,3,0,2018-03-09 19:45:00,,None,Cengiz Ünder
+199749,58,MissedShots,0.7190000152587891,0.415,0.017137499526143074,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7777,Roma,Torino,3,0,2018-03-09 19:45:00,,None,Cengiz Ünder
+202081,88,BlockedShot,0.9780000305175781,0.5459999847412109,0.8156960010528564,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7787,Crotone,Roma,0,2,2018-03-18 14:00:00,Alessandro Florenzi,Pass,Cengiz Ünder
+202083,91,BlockedShot,0.7219999694824218,0.5259999847412109,0.021950900554656982,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7787,Crotone,Roma,0,2,2018-03-18 14:00:00,Alessandro Florenzi,Pass,Cengiz Ünder
+209389,73,MissedShots,0.775,0.6569999694824219,0.019064100459218025,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7814,Lazio,Roma,0,0,2018-04-15 18:45:00,,None,Cengiz Ünder
+209805,13,SavedShot,0.905,0.31799999237060544,0.06497679650783539,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7823,Roma,Genoa,2,1,2018-04-18 18:45:00,Edin Dzeko,Pass,Cengiz Ünder
+209806,16,Goal,0.9669999694824218,0.45,0.5846049785614014,Cengiz Ünder,h,6162,SetPiece,2017,LeftFoot,7823,Roma,Genoa,2,1,2018-04-18 18:45:00,Aleksandar Kolarov,Cross,Cengiz Ünder
+209817,62,MissedShots,0.835999984741211,0.33799999237060546,0.04972900077700615,Cengiz Ünder,h,6162,OpenPlay,2017,RightFoot,7823,Roma,Genoa,2,1,2018-04-18 18:45:00,Alessandro Florenzi,Pass,Cengiz Ünder
+214130,12,BlockedShot,0.9209999847412109,0.43599998474121093,0.45694100856781006,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7856,Cagliari,Roma,0,1,2018-05-06 19:45:00,Gerson,Pass,Cengiz Ünder
+214131,14,Goal,0.8669999694824219,0.29200000762939454,0.04150160029530525,Cengiz Ünder,a,6162,OpenPlay,2017,LeftFoot,7856,Cagliari,Roma,0,1,2018-05-06 19:45:00,Edin Dzeko,Pass,Cengiz Ünder
+215882,25,BlockedShot,0.8540000152587891,0.40599998474121096,0.10030999779701233,Cengiz Ünder,h,6162,OpenPlay,2017,LeftFoot,7862,Roma,Juventus,0,0,2018-05-13 19:45:00,Radja Nainggolan,Pass,Cengiz Ünder
+218649,64,SavedShot,0.915,0.3170000076293945,0.03742700070142746,Cengiz Ünder,a,6162,FromCorner,2018,RightFoot,9579,Torino,Roma,0,1,2018-08-19 19:00:00,Edin Dzeko,BallTouch,Cengiz Ünder
+218650,65,MissedShots,0.77,0.34,0.023425599560141563,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9579,Torino,Roma,0,1,2018-08-19 19:00:00,Daniele De Rossi,Pass,Cengiz Ünder
+221160,9,SavedShot,0.9030000305175782,0.27700000762939453,0.12961100041866302,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9596,Roma,Atalanta,3,3,2018-08-27 21:30:00,Bryan Cristante,Throughball,Cengiz Ünder
+221162,10,MissedShots,0.7759999847412109,0.6969999694824218,0.019909899681806564,Cengiz Ünder,h,6162,FromCorner,2018,RightFoot,9596,Roma,Atalanta,3,3,2018-08-27 21:30:00,,Rebound,Cengiz Ünder
+221180,50,BlockedShot,0.8719999694824219,0.44,0.10413599759340286,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9596,Roma,Atalanta,3,3,2018-08-27 21:30:00,Edin Dzeko,Pass,Cengiz Ünder
+221181,50,SavedShot,0.9259999847412109,0.32799999237060545,0.039757899940013885,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9596,Roma,Atalanta,3,3,2018-08-27 21:30:00,,Rebound,Cengiz Ünder
+223989,4,BlockedShot,0.795,0.3820000076293945,0.033548999577760696,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9614,Roma,Chievo,2,2,2018-09-16 10:30:00,Edin Dzeko,Pass,Cengiz Ünder
+224003,44,SavedShot,0.8230000305175781,0.35400001525878905,0.057739000767469406,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9614,Roma,Chievo,2,2,2018-09-16 10:30:00,Bryan Cristante,Pass,Cengiz Ünder
+224007,61,SavedShot,0.9459999847412109,0.28200000762939453,0.12144199758768082,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9614,Roma,Chievo,2,2,2018-09-16 10:30:00,Bryan Cristante,Throughball,Cengiz Ünder
+226928,1,Goal,0.735,0.42900001525878906,0.017064200714230537,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9634,Roma,Frosinone,4,0,2018-09-26 19:00:00,,CornerAwarded,Cengiz Ünder
+226952,84,SavedShot,0.725,0.47200000762939454,0.017007999122142792,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9634,Roma,Frosinone,4,0,2018-09-26 19:00:00,,None,Cengiz Ünder
+252107,3,SavedShot,0.6819999694824219,0.4640000152587891,0.011518499813973904,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9649,Empoli,Roma,0,2,2018-10-06 18:30:00,,BallRecovery,Cengiz Ünder
+252113,23,BlockedShot,0.8919999694824219,0.5320000076293945,0.10605800151824951,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9649,Empoli,Roma,0,2,2018-10-06 18:30:00,Edin Dzeko,BallTouch,Cengiz Ünder
+252121,47,MissedShots,0.8009999847412109,0.41900001525878905,0.05681439861655235,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9649,Empoli,Roma,0,2,2018-10-06 18:30:00,Stephan El Shaarawy,Pass,Cengiz Ünder
+252125,60,MissedShots,0.9319999694824219,0.29100000381469726,0.05609000101685524,Cengiz Ünder,a,6162,OpenPlay,2018,RightFoot,9649,Empoli,Roma,0,2,2018-10-06 18:30:00,Alessandro Florenzi,Chipped,Cengiz Ünder
+252318,3,MissedShots,0.695,0.4759999847412109,0.01193660032004118,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9663,Roma,SPAL 2013,0,2,2018-10-20 13:00:00,Lorenzo Pellegrini,Pass,Cengiz Ünder
+252334,69,MissedShots,0.7859999847412109,0.44299999237060544,0.041237298399209976,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9663,Roma,SPAL 2013,0,2,2018-10-20 13:00:00,Lorenzo Pellegrini,Pass,Cengiz Ünder
+252772,31,BlockedShot,0.8119999694824219,0.32599998474121095,0.041118498891592026,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9676,Napoli,Roma,1,1,2018-10-28 18:30:00,Davide Santon,Pass,Cengiz Ünder
+253965,13,BlockedShot,0.85,0.305,0.042184699326753616,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,Steven N&#039;Zonzi,BallRecovery,Cengiz Ünder
+253978,50,Goal,0.725,0.2929999923706055,0.015368799678981304,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,Bryan Cristante,Pass,Cengiz Ünder
+253985,74,MissedShots,0.8690000152587891,0.5070000076293946,0.11084699630737305,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,Justin Kluivert,Pass,Cengiz Ünder
+254080,15,MissedShots,0.8680000305175781,0.37099998474121093,0.06607910245656967,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Justin Kluivert,Chipped,Cengiz Ünder
+254084,24,BlockedShot,0.775,0.37099998474121093,0.035776399075984955,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Alessandro Florenzi,BallRecovery,Cengiz Ünder
+254097,45,MissedShots,0.93,0.32799999237060545,0.05349560081958771,Cengiz Ünder,a,6162,OpenPlay,2018,RightFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Patrik Schick,Rebound,Cengiz Ünder
+254502,35,MissedShots,0.805,0.5690000152587891,0.0450471006333828,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9734,Roma,Genoa,3,2,2018-12-16 19:30:00,Aleksandar Kolarov,Pass,Cengiz Ünder
+254505,45,MissedShots,0.865,0.48200000762939454,0.34672701358795166,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9734,Roma,Genoa,3,2,2018-12-16 19:30:00,,None,Cengiz Ünder
+255135,21,MissedShots,0.8059999847412109,0.48900001525878906,0.06700730323791504,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Alessandro Florenzi,Pass,Cengiz Ünder
+255143,46,BlockedShot,0.8480000305175781,0.5790000152587891,0.10743000358343124,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Patrik Schick,Pass,Cengiz Ünder
+255150,73,MissedShots,0.8680000305175781,0.32799999237060545,0.0794043019413948,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Bryan Cristante,Pass,Cengiz Ünder
+255153,78,SavedShot,0.8819999694824219,0.4,0.40088000893592834,Cengiz Ünder,h,6162,OpenPlay,2018,RightFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Justin Kluivert,Pass,Cengiz Ünder
+263448,26,MissedShots,0.889000015258789,0.37099998474121093,0.0652455985546112,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9764,Parma Calcio 1913,Roma,0,2,2018-12-29 14:00:00,,Rebound,Cengiz Ünder
+263457,47,MissedShots,0.7519999694824219,0.5590000152587891,0.014522300101816654,Cengiz Ünder,a,6162,SetPiece,2018,LeftFoot,9764,Parma Calcio 1913,Roma,0,2,2018-12-29 14:00:00,Justin Kluivert,None,Cengiz Ünder
+263461,69,BlockedShot,0.8119999694824219,0.325,0.041389498859643936,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9764,Parma Calcio 1913,Roma,0,2,2018-12-29 14:00:00,Justin Kluivert,Pass,Cengiz Ünder
+263464,74,Goal,0.9069999694824219,0.425,0.43793201446533203,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9764,Parma Calcio 1913,Roma,0,2,2018-12-29 14:00:00,,None,Cengiz Ünder
+263469,83,MissedShots,0.9459999847412109,0.30700000762939456,0.0851885974407196,Cengiz Ünder,a,6162,OpenPlay,2018,LeftFoot,9764,Parma Calcio 1913,Roma,0,2,2018-12-29 14:00:00,Lorenzo Pellegrini,Pass,Cengiz Ünder
+291514,88,MissedShots,0.7219999694824218,0.17299999237060548,0.00732932984828949,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9873,Roma,Fiorentina,2,2,2019-04-03 20:00:00,Edin Dzeko,HeadPass,Cengiz Ünder
+293681,69,MissedShots,0.8519999694824218,0.24600000381469728,0.04477909952402115,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9892,Roma,Udinese,1,0,2019-04-13 17:00:00,Bryan Cristante,TakeOn,Cengiz Ünder
+293683,75,BlockedShot,0.7219999694824218,0.56,0.02037549950182438,Cengiz Ünder,h,6162,OpenPlay,2018,LeftFoot,9892,Roma,Udinese,1,0,2019-04-13 17:00:00,Edin Dzeko,Pass,Cengiz Ünder
+302622,6,SavedShot,0.9030000305175782,0.34,0.06518419831991196,Cengiz Ünder,a,6162,OpenPlay,2018,RightFoot,9944,Sassuolo,Roma,0,0,2019-05-18 18:30:00,Edin Dzeko,Pass,Cengiz Ünder
+313323,5,Goal,0.855999984741211,0.43,0.0983612984418869,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13093,Roma,Genoa,3,3,2019-08-25 19:45:00,Edin Dzeko,TakeOn,Cengiz Ünder
+313324,7,MissedShots,0.860999984741211,0.624000015258789,0.4521760046482086,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13093,Roma,Genoa,3,3,2019-08-25 19:45:00,Lorenzo Pellegrini,Throughball,Cengiz Ünder
+313327,26,BlockedShot,0.7430000305175781,0.38299999237060545,0.014024999924004078,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13093,Roma,Genoa,3,3,2019-08-25 19:45:00,,None,Cengiz Ünder
+313348,90,MissedShots,0.705,0.285,0.008973159827291965,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13093,Roma,Genoa,3,3,2019-08-25 19:45:00,,Aerial,Cengiz Ünder
+316570,18,MissedShots,0.8530000305175781,0.33099998474121095,0.05399680137634277,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13102,Lazio,Roma,1,1,2019-09-01 17:00:00,Edin Dzeko,Pass,Cengiz Ünder
+331597,84,SavedShot,0.7440000152587891,0.5279999923706055,0.022858500480651855,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13205,Parma Calcio 1913,Roma,2,0,2019-11-10 17:00:00,Jordan Veretout,Pass,Cengiz Ünder
+332909,88,MissedShots,0.7769999694824219,0.3,0.0356891006231308,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13214,Roma,Brescia,3,0,2019-11-24 14:00:00,Edin Dzeko,Chipped,Cengiz Ünder
+334611,29,MissedShots,0.875999984741211,0.4490000152587891,0.30331701040267944,Cengiz Ünder,a,6162,OpenPlay,2019,RightFoot,13223,Verona,Roma,1,3,2019-12-01 19:45:00,Aleksandar Kolarov,Cross,Cengiz Ünder
+334622,65,BlockedShot,0.955,0.6869999694824219,0.05066470056772232,Cengiz Ünder,a,6162,FromCorner,2019,LeftFoot,13223,Verona,Roma,1,3,2019-12-01 19:45:00,,Rebound,Cengiz Ünder
+354557,64,BlockedShot,0.9580000305175781,0.415,0.1135139986872673,Cengiz Ünder,h,6162,OpenPlay,2019,Head,13275,Roma,Juventus,1,2,2020-01-12 19:45:00,Edin Dzeko,Cross,Cengiz Ünder
+355331,2,MissedShots,0.7069999694824218,0.38299999237060545,0.016348199918866158,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13282,Genoa,Roma,1,3,2020-01-19 17:00:00,Edin Dzeko,Pass,Cengiz Ünder
+355332,4,Goal,0.774000015258789,0.18,0.00783540029078722,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13282,Genoa,Roma,1,3,2020-01-19 17:00:00,Justin Kluivert,Chipped,Cengiz Ünder
+355333,10,BlockedShot,0.9359999847412109,0.32,0.08344840258359909,Cengiz Ünder,a,6162,OpenPlay,2019,RightFoot,13282,Genoa,Roma,1,3,2020-01-19 17:00:00,Lorenzo Pellegrini,Pass,Cengiz Ünder
+355337,30,SavedShot,0.845999984741211,0.33599998474121096,0.06218289956450462,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13282,Genoa,Roma,1,3,2020-01-19 17:00:00,Justin Kluivert,Pass,Cengiz Ünder
+356378,4,BlockedShot,0.8730000305175781,0.5659999847412109,0.0720549002289772,Cengiz Ünder,h,6162,SetPiece,2019,LeftFoot,13294,Roma,Lazio,1,1,2020-01-26 17:00:00,Gianluca Mancini,HeadPass,Cengiz Ünder
+356383,26,BlockedShot,0.8680000305175781,0.40400001525878904,0.1308699995279312,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13294,Roma,Lazio,1,1,2020-01-26 17:00:00,Edin Dzeko,Pass,Cengiz Ünder
+356400,79,BlockedShot,0.79,0.4370000076293945,0.030310099944472313,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13294,Roma,Lazio,1,1,2020-01-26 17:00:00,Davide Santon,TakeOn,Cengiz Ünder
+357824,13,SavedShot,0.8690000152587891,0.6530000305175782,0.10125800222158432,Cengiz Ünder,h,6162,SetPiece,2019,LeftFoot,13315,Roma,Bologna,2,3,2020-02-07 19:45:00,Aleksandar Kolarov,Throughball,Cengiz Ünder
+357840,55,MissedShots,0.8180000305175781,0.3820000076293945,0.058550700545310974,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13315,Roma,Bologna,2,3,2020-02-07 19:45:00,Henrikh Mkhitaryan,TakeOn,Cengiz Ünder
+360361,8,MissedShots,0.710999984741211,0.36700000762939455,0.011074700392782688,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13335,Roma,Lecce,4,0,2020-02-23 17:00:00,Bruno Peres,TakeOn,Cengiz Ünder
+360363,12,Goal,0.8590000152587891,0.43099998474121093,0.3542509973049164,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13335,Roma,Lecce,4,0,2020-02-23 17:00:00,Henrikh Mkhitaryan,Throughball,Cengiz Ünder
+360364,14,SavedShot,0.8869999694824219,0.21700000762939453,0.12012200057506561,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13335,Roma,Lecce,4,0,2020-02-23 17:00:00,Lorenzo Pellegrini,Throughball,Cengiz Ünder
+360381,45,BlockedShot,0.9459999847412109,0.37099998474121093,0.09698119759559631,Cengiz Ünder,h,6162,OpenPlay,2019,LeftFoot,13335,Roma,Lecce,4,0,2020-02-23 17:00:00,Justin Kluivert,BallTouch,Cengiz Ünder
+361425,9,SavedShot,0.8190000152587891,0.3089999961853027,0.021803200244903564,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13339,Cagliari,Roma,3,4,2020-03-01 17:00:00,,TakeOn,Cengiz Ünder
+361441,74,BlockedShot,0.91,0.325,0.10938999801874161,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13339,Cagliari,Roma,3,4,2020-03-01 17:00:00,,TakeOn,Cengiz Ünder
+368436,34,SavedShot,0.7819999694824219,0.46700000762939453,0.04434889927506447,Cengiz Ünder,h,6162,OpenPlay,2019,RightFoot,13376,Roma,Udinese,0,2,2020-07-02 19:45:00,Carles Pérez,TakeOn,Cengiz Ünder
+374466,87,BlockedShot,0.875999984741211,0.40099998474121096,0.0889476016163826,Cengiz Ünder,a,6162,OpenPlay,2019,LeftFoot,13467,Juventus,Roma,1,3,2020-08-01 18:45:00,,None,Cengiz Ünder
+388192,64,BlockedShot,0.784000015258789,0.32799999237060545,0.02159930020570755,Cengiz Ünder,a,6162,OpenPlay,2020,LeftFoot,14519,Liverpool,Leicester,3,0,2020-11-22 19:15:00,James Maddison,Pass,Cengiz Ünder
+389793,80,BlockedShot,0.805,0.3390000152587891,0.029455799609422684,Cengiz Ünder,h,6162,FromCorner,2020,LeftFoot,14532,Leicester,Fulham,1,2,2020-11-30 17:30:00,Youri Tielemans,TakeOn,Cengiz Ünder
+392945,24,BlockedShot,0.77,0.3039999961853027,0.014952300116419792,Cengiz Ünder,h,6162,FromCorner,2020,LeftFoot,14559,Leicester,Everton,0,2,2020-12-16 18:00:00,,None,Cengiz Ünder
+392950,37,SavedShot,0.8180000305175781,0.544000015258789,0.046115800738334656,Cengiz Ünder,h,6162,OpenPlay,2020,RightFoot,14559,Leicester,Everton,0,2,2020-12-16 18:00:00,,None,Cengiz Ünder
+392952,60,BlockedShot,0.8209999847412109,0.7230000305175781,0.026219699531793594,Cengiz Ünder,h,6162,OpenPlay,2020,LeftFoot,14559,Leicester,Everton,0,2,2020-12-16 18:00:00,James Maddison,Pass,Cengiz Ünder
+401329,71,BlockedShot,0.7559999847412109,0.3729999923706055,0.018368199467658997,Cengiz Ünder,a,6162,OpenPlay,2020,LeftFoot,14627,Everton,Leicester,1,1,2021-01-27 20:15:00,Youri Tielemans,TakeOn,Cengiz Ünder
+401333,78,BlockedShot,0.905,0.3029999923706055,0.0557904988527298,Cengiz Ünder,a,6162,OpenPlay,2020,LeftFoot,14627,Everton,Leicester,1,1,2021-01-27 20:15:00,Wesley Fofana,Pass,Cengiz Ünder
+401337,86,BlockedShot,0.815,0.28200000762939453,0.025226600468158722,Cengiz Ünder,a,6162,OpenPlay,2020,LeftFoot,14627,Everton,Leicester,1,1,2021-01-27 20:15:00,Timothy Castagne,Pass,Cengiz Ünder
+402026,89,MissedShots,0.755,0.7,0.014874899759888649,Cengiz Ünder,h,6162,OpenPlay,2020,LeftFoot,14643,Leicester,Leeds,1,3,2021-01-31 14:00:00,Ayoze Pérez,Pass,Cengiz Ünder
+425476,1,BlockedShot,0.8690000152587891,0.47299999237060547,0.07404399663209915,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,Konrad De la Fuente,Chipped,Cengiz Ünder
+425479,18,BlockedShot,0.88,0.30100000381469727,0.04487200081348419,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,Boubacar Kamara,Pass,Cengiz Ünder
+425483,29,SavedShot,0.7980000305175782,0.4590000152587891,0.06692910194396973,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,,TakeOn,Cengiz Ünder
+425491,59,SavedShot,0.925,0.325,0.06060099974274635,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,William Saliba,Pass,Cengiz Ünder
+425496,67,Goal,0.950999984741211,0.4229999923706055,0.42218199372291565,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,Konrad De la Fuente,Pass,Cengiz Ünder
+425500,77,MissedShots,0.8490000152587891,0.3390000152587891,0.051631901413202286,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17831,Montpellier,Marseille,2,3,2021-08-08 18:45:00,Matteo Guendouzi,Pass,Cengiz Ünder
+426587,33,Goal,0.914000015258789,0.5159999847412109,0.49101001024246216,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17841,Marseille,Bordeaux,2,2,2021-08-15 18:45:00,Gerson,Pass,Cengiz Ünder
+426598,66,MissedShots,0.8969999694824219,0.38799999237060545,0.07681919634342194,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,17841,Marseille,Bordeaux,2,2,2021-08-15 18:45:00,Boubacar Kamara,HeadPass,Cengiz Ünder
+429001,56,BlockedShot,0.8319999694824218,0.5579999923706055,0.07800079882144928,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,17854,Marseille,Saint-Etienne,3,1,2021-08-28 19:00:00,Dimitri Payet,Pass,Cengiz Ünder
+429005,67,Goal,0.83,0.28899999618530275,0.041627101600170135,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17854,Marseille,Saint-Etienne,3,1,2021-08-28 19:00:00,Dimitri Payet,None,Cengiz Ünder
+429008,80,BlockedShot,0.8630000305175781,0.39799999237060546,0.09601479768753052,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17854,Marseille,Saint-Etienne,3,1,2021-08-28 19:00:00,Matteo Guendouzi,HeadPass,Cengiz Ünder
+431946,24,MissedShots,0.8980000305175782,0.29100000381469726,0.020734699442982674,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17877,Marseille,Rennes,2,0,2021-09-19 15:00:00,Dimitri Payet,Cross,Cengiz Ünder
+432798,78,BlockedShot,0.8809999847412109,0.24399999618530274,0.02861190028488636,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17883,Angers,Marseille,0,0,2021-09-22 19:00:00,Amine Harit,Pass,Cengiz Ünder
+434369,55,ShotOnPost,0.89,0.675,0.05478920042514801,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17896,Marseille,Lens,2,3,2021-09-26 18:45:00,,None,Cengiz Ünder
+434375,72,BlockedShot,0.7969999694824219,0.27700000762939453,0.018358999863266945,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17896,Marseille,Lens,2,3,2021-09-26 18:45:00,,None,Cengiz Ünder
+434380,80,BlockedShot,0.91,0.3189999961853027,0.07866410166025162,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,17896,Marseille,Lens,2,3,2021-09-26 18:45:00,Konrad De la Fuente,Pass,Cengiz Ünder
+435605,11,MissedShots,0.815,0.2539999961853027,0.06278470158576965,Cengiz Ünder,a,6162,DirectFreekick,2021,LeftFoot,17904,Lille,Marseille,2,0,2021-10-03 15:00:00,,Standard,Cengiz Ünder
+438675,15,MissedShots,0.9630000305175781,0.745,0.03698579967021942,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17925,Marseille,Paris Saint Germain,0,0,2021-10-24 18:45:00,,None,Cengiz Ünder
+438685,46,MissedShots,0.8969999694824219,0.7119999694824218,0.01947079971432686,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17925,Marseille,Paris Saint Germain,0,0,2021-10-24 18:45:00,Dimitri Payet,Cross,Cengiz Ünder
+438689,74,BlockedShot,0.9009999847412109,0.34599998474121096,0.06339330226182938,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17925,Marseille,Paris Saint Germain,0,0,2021-10-24 18:45:00,,None,Cengiz Ünder
+438690,76,BlockedShot,0.905,0.34299999237060547,0.0567626990377903,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17925,Marseille,Paris Saint Germain,0,0,2021-10-24 18:45:00,Dimitri Payet,Chipped,Cengiz Ünder
+440515,24,Goal,0.9030000305175782,0.27899999618530275,0.03979619964957237,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17935,Clermont Foot,Marseille,0,1,2021-10-31 19:45:00,Matteo Guendouzi,Pass,Cengiz Ünder
+440523,70,MissedShots,0.6890000152587891,0.539000015258789,0.017148200422525406,Cengiz Ünder,a,6162,OpenPlay,2021,RightFoot,17935,Clermont Foot,Marseille,0,1,2021-10-31 19:45:00,Luan Peres,Pass,Cengiz Ünder
+440524,72,SavedShot,0.874000015258789,0.6630000305175782,0.27052998542785645,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17935,Clermont Foot,Marseille,0,1,2021-10-31 19:45:00,Pol Lirola,Pass,Cengiz Ünder
+441439,22,BlockedShot,0.850999984741211,0.4620000076293945,0.0691051036119461,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17946,Marseille,Metz,0,0,2021-11-07 12:00:00,,Rebound,Cengiz Ünder
+441457,80,MissedShots,0.9469999694824218,0.33799999237060546,0.07242929935455322,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,17946,Marseille,Metz,0,0,2021-11-07 12:00:00,Dimitri Payet,Pass,Cengiz Ünder
+441460,98,BlockedShot,0.8090000152587891,0.6459999847412109,0.03428560122847557,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17946,Marseille,Metz,0,0,2021-11-07 12:00:00,Amine Harit,Pass,Cengiz Ünder
+446276,82,MissedShots,0.78,0.4229999923706055,0.028446899726986885,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,17987,Marseille,Brest,1,2,2021-12-04 16:00:00,Dimitri Payet,Pass,Cengiz Ünder
+450429,9,SavedShot,0.7759999847412109,0.325,0.01563660055398941,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18006,Marseille,Reims,1,1,2021-12-22 19:45:00,,Rebound,Cengiz Ünder
+450438,26,BlockedShot,0.7719999694824219,0.49900001525878906,0.031152600422501564,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18006,Marseille,Reims,1,1,2021-12-22 19:45:00,Matteo Guendouzi,Pass,Cengiz Ünder
+451874,26,MissedShots,0.85,0.37599998474121094,0.06306669861078262,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18016,Bordeaux,Marseille,0,1,2022-01-07 20:00:00,Luis Henrique,BallTouch,Cengiz Ünder
+451876,36,Goal,0.9,0.580999984741211,0.4039149880409241,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18016,Bordeaux,Marseille,0,1,2022-01-07 20:00:00,,BallRecovery,Cengiz Ünder
+451885,61,SavedShot,0.8819999694824219,0.5620000076293945,0.3084999918937683,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18016,Bordeaux,Marseille,0,1,2022-01-07 20:00:00,Dimitri Payet,Chipped,Cengiz Ünder
+451889,74,BlockedShot,0.855,0.5359999847412109,0.09922099858522415,Cengiz Ünder,a,6162,OpenPlay,2021,RightFoot,18016,Bordeaux,Marseille,0,1,2022-01-07 20:00:00,Boubacar Kamara,BallTouch,Cengiz Ünder
+451890,77,SavedShot,0.785,0.5790000152587891,0.041829898953437805,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18016,Bordeaux,Marseille,0,1,2022-01-07 20:00:00,Dimitri Payet,Pass,Cengiz Ünder
+453833,44,MissedShots,0.7630000305175781,0.6,0.009400449693202972,Cengiz Ünder,h,6162,FromCorner,2021,LeftFoot,18023,Marseille,Lille,1,1,2022-01-16 19:45:00,Dimitri Payet,Chipped,Cengiz Ünder
+453834,51,BlockedShot,0.86,0.645,0.04258989915251732,Cengiz Ünder,h,6162,FromCorner,2021,LeftFoot,18023,Marseille,Lille,1,1,2022-01-16 19:45:00,,None,Cengiz Ünder
+453841,74,Goal,0.8340000152587891,0.705999984741211,0.029642600566148758,Cengiz Ünder,h,6162,FromCorner,2021,RightFoot,18023,Marseille,Lille,1,1,2022-01-16 19:45:00,Dimitri Payet,Pass,Cengiz Ünder
+454830,8,SavedShot,0.7859999847412109,0.28299999237060547,0.02331629954278469,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18036,Lens,Marseille,0,2,2022-01-22 20:00:00,Valentin Rongier,Pass,Cengiz Ünder
+454831,14,MissedShots,0.91,0.30700000762939456,0.05016409978270531,Cengiz Ünder,a,6162,OpenPlay,2021,RightFoot,18036,Lens,Marseille,0,2,2022-01-22 20:00:00,Matteo Guendouzi,Pass,Cengiz Ünder
+454846,80,BlockedShot,0.840999984741211,0.509000015258789,0.10001199692487717,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18036,Lens,Marseille,0,2,2022-01-22 20:00:00,Cédric Bakambu,Pass,Cengiz Ünder
+455531,67,MissedShots,0.92,0.3220000076293945,0.2679080069065094,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,17955,Lyon,Marseille,2,1,2022-02-02 21:00:00,Pol Lirola,Pass,Cengiz Ünder
+455611,84,Goal,0.7830000305175782,0.43900001525878907,0.032094500958919525,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18046,Marseille,Angers,5,2,2022-02-04 20:00:00,,None,Cengiz Ünder
+459035,29,BlockedShot,0.91,0.5070000076293946,0.12451399862766266,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,18071,Marseille,Clermont Foot,0,2,2022-02-20 19:45:00,Pol Lirola,Pass,Cengiz Ünder
+459044,56,SavedShot,0.9519999694824218,0.38,0.033167000859975815,Cengiz Ünder,h,6162,FromCorner,2021,LeftFoot,18071,Marseille,Clermont Foot,0,2,2022-02-20 19:45:00,,Aerial,Cengiz Ünder
+459047,73,BlockedShot,0.8490000152587891,0.69,0.03567269816994667,Cengiz Ünder,h,6162,OpenPlay,2021,RightFoot,18071,Marseille,Clermont Foot,0,2,2022-02-20 19:45:00,Dimitri Payet,Pass,Cengiz Ünder
+460437,71,MissedShots,0.7909999847412109,0.2620000076293945,0.025280199944972992,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18072,Troyes,Marseille,1,1,2022-02-27 16:05:00,Matteo Guendouzi,Pass,Cengiz Ünder
+463396,91,Goal,0.8780000305175781,0.620999984741211,0.4437279999256134,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18093,Brest,Marseille,1,4,2022-03-13 19:45:00,Pau López,TakeOn,Cengiz Ünder
+464819,34,SavedShot,0.7280000305175781,0.26799999237060546,0.009116940200328827,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18106,Marseille,Nice,2,1,2022-03-20 19:45:00,Boubacar Kamara,Chipped,Cengiz Ünder
+464828,64,SavedShot,0.8669999694824219,0.29399999618530276,0.047999199479818344,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18106,Marseille,Nice,2,1,2022-03-20 19:45:00,Valentin Rongier,Pass,Cengiz Ünder
+467697,6,MissedShots,0.815,0.29399999618530276,0.027638999745249748,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18128,Marseille,Montpellier,2,0,2022-04-10 19:00:00,Amine Harit,Pass,Cengiz Ünder
+467700,18,Goal,0.885,0.5,0.7600950002670288,Cengiz Ünder,h,6162,Penalty,2021,LeftFoot,18128,Marseille,Montpellier,2,0,2022-04-10 19:00:00,,Standard,Cengiz Ünder
+470835,12,MissedShots,0.735999984741211,0.6880000305175781,0.01664559915661812,Cengiz Ünder,a,6162,SetPiece,2021,LeftFoot,18159,Reims,Marseille,0,1,2022-04-24 18:45:00,Valentin Rongier,Pass,Cengiz Ünder
+472409,44,MissedShots,0.4159999847412109,0.41900001525878905,0.006611709948629141,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18164,Marseille,Lyon,0,3,2022-05-01 18:45:00,Gerson,BallRecovery,Cengiz Ünder
+476050,46,MissedShots,0.8009999847412109,0.3659999847412109,0.032582998275756836,Cengiz Ünder,a,6162,OpenPlay,2021,LeftFoot,18186,Rennes,Marseille,2,0,2022-05-14 19:00:00,Pape Alassane Gueye,Pass,Cengiz Ünder
+477539,22,MissedShots,0.785,0.18299999237060546,0.015467899851500988,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18195,Marseille,Strasbourg,4,0,2022-05-21 19:00:00,Pape Alassane Gueye,Pass,Cengiz Ünder
+477549,60,MissedShots,0.9690000152587891,0.655,0.09212470054626465,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18195,Marseille,Strasbourg,4,0,2022-05-21 19:00:00,Amine Harit,Pass,Cengiz Ünder
+477552,72,Goal,0.845,0.504000015258789,0.35343098640441895,Cengiz Ünder,h,6162,OpenPlay,2021,LeftFoot,18195,Marseille,Strasbourg,4,0,2022-05-21 19:00:00,Amine Harit,Pass,Cengiz Ünder
+479970,0,MissedShots,0.840999984741211,0.73,0.02857539989054203,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19657,Marseille,Reims,4,1,2022-08-07 18:45:00,Gerson,Pass,Cengiz Ünder
+479972,16,SavedShot,0.9009999847412109,0.5270000076293946,0.3417010009288788,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19657,Marseille,Reims,4,1,2022-08-07 18:45:00,Nuno Tavares,Cross,Cengiz Ünder
+486048,0,BlockedShot,0.9380000305175781,0.335,0.08406499773263931,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19699,Auxerre,Marseille,0,2,2022-09-03 15:00:00,Luis Suárez,Pass,Cengiz Ünder
+486051,6,ShotOnPost,0.9459999847412109,0.2989999961853027,0.044877201318740845,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19699,Auxerre,Marseille,0,2,2022-09-03 15:00:00,Issa Kabore,TakeOn,Cengiz Ünder
+487709,29,BlockedShot,0.9230000305175782,0.46599998474121096,0.500294029712677,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19712,Marseille,Lille,2,1,2022-09-10 19:00:00,,Dispossessed,Cengiz Ünder
+487714,45,SavedShot,0.9080000305175782,0.335,0.2514129877090454,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,19712,Marseille,Lille,2,1,2022-09-10 19:00:00,Alexis Sánchez,Pass,Cengiz Ünder
+487715,50,SavedShot,0.850999984741211,0.3529999923706055,0.04615110158920288,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19712,Marseille,Lille,2,1,2022-09-10 19:00:00,Alexis Sánchez,Pass,Cengiz Ünder
+487720,62,BlockedShot,0.845999984741211,0.295,0.04631359875202179,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,19712,Marseille,Lille,2,1,2022-09-10 19:00:00,Alexis Sánchez,Pass,Cengiz Ünder
+487721,77,BlockedShot,0.7219999694824218,0.34700000762939454,0.014713900163769722,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19712,Marseille,Lille,2,1,2022-09-10 19:00:00,,None,Cengiz Ünder
+489798,90,BlockedShot,0.9590000152587891,0.674000015258789,0.08243940025568008,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19731,Angers,Marseille,0,3,2022-09-30 19:00:00,Issa Kabore,Chipped,Cengiz Ünder
+491683,87,BlockedShot,0.794000015258789,0.51,0.12105900049209595,Cengiz Ünder,h,6162,DirectFreekick,2022,LeftFoot,19744,Marseille,Ajaccio,1,2,2022-10-08 15:00:00,,Standard,Cengiz Ünder
+494091,93,SavedShot,0.764000015258789,0.3039999961853027,0.022772299125790596,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19752,Paris Saint Germain,Marseille,1,0,2022-10-16 18:45:00,,TakeOn,Cengiz Ünder
+496877,10,MissedShots,0.8690000152587891,0.32299999237060545,0.06541530042886734,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19775,Strasbourg,Marseille,2,2,2022-10-29 19:00:00,,None,Cengiz Ünder
+496878,15,SavedShot,0.8619999694824219,0.3890000152587891,0.07675129920244217,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19775,Strasbourg,Marseille,2,2,2022-10-29 19:00:00,Jordan Veretout,Pass,Cengiz Ünder
+496882,25,ShotOnPost,0.8869999694824219,0.6229999923706054,0.10402599722146988,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19775,Strasbourg,Marseille,2,2,2022-10-29 19:00:00,Ahmadou Bamba Dieng,Pass,Cengiz Ünder
+496890,57,MissedShots,0.9690000152587891,0.45799999237060546,0.7782549858093262,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19775,Strasbourg,Marseille,2,2,2022-10-29 19:00:00,Dimitri Payet,Pass,Cengiz Ünder
+501408,30,BlockedShot,0.8540000152587891,0.365,0.07718750089406967,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19803,Marseille,Toulouse,6,1,2022-12-29 20:00:00,Dimitri Payet,Pass,Cengiz Ünder
+501421,79,Goal,0.885,0.5,0.7600950002670288,Cengiz Ünder,h,6162,Penalty,2022,LeftFoot,19803,Marseille,Toulouse,6,1,2022-12-29 20:00:00,,Standard,Cengiz Ünder
+502088,5,SavedShot,0.955,0.2989999961853027,0.0554874986410141,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19812,Montpellier,Marseille,1,2,2023-01-02 18:00:00,Dimitri Payet,Pass,Cengiz Ünder
+502111,82,BlockedShot,0.8640000152587891,0.26600000381469724,0.02238590084016323,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19812,Montpellier,Marseille,1,2,2023-01-02 18:00:00,,Rebound,Cengiz Ünder
+503244,17,BlockedShot,0.8530000305175781,0.4520000076293945,0.09113050252199173,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19827,Troyes,Marseille,0,2,2023-01-11 20:00:00,,None,Cengiz Ünder
+503253,60,BlockedShot,0.9030000305175782,0.18799999237060547,0.06601180136203766,Cengiz Ünder,a,6162,DirectFreekick,2022,LeftFoot,19827,Troyes,Marseille,0,2,2023-01-11 20:00:00,,Standard,Cengiz Ünder
+503254,64,MissedShots,0.924000015258789,0.485,0.5862159729003906,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19827,Troyes,Marseille,0,2,2023-01-11 20:00:00,Jordan Veretout,Pass,Cengiz Ünder
+503255,64,BlockedShot,0.9030000305175782,0.5720000076293945,0.1388940066099167,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19827,Troyes,Marseille,0,2,2023-01-11 20:00:00,Sead Kolasinac,Pass,Cengiz Ünder
+503257,78,BlockedShot,0.9269999694824219,0.32099998474121094,0.06384740024805069,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19827,Troyes,Marseille,0,2,2023-01-11 20:00:00,Ahmadou Bamba Dieng,Cross,Cengiz Ünder
+503741,3,SavedShot,0.7709999847412109,0.265,0.017775699496269226,Cengiz Ünder,h,6162,FromCorner,2022,LeftFoot,19833,Marseille,Lorient,3,1,2023-01-14 18:00:00,Ruslan Malinovskiy,Pass,Cengiz Ünder
+503742,5,SavedShot,0.9009999847412109,0.4590000152587891,0.0431412011384964,Cengiz Ünder,h,6162,OpenPlay,2022,Head,19833,Marseille,Lorient,3,1,2023-01-14 18:00:00,Sead Kolasinac,Chipped,Cengiz Ünder
+503743,8,MissedShots,0.7119999694824218,0.22700000762939454,0.00835247989743948,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19833,Marseille,Lorient,3,1,2023-01-14 18:00:00,,None,Cengiz Ünder
+503761,81,MissedShots,0.9130000305175782,0.225,0.06444139778614044,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,19833,Marseille,Lorient,3,1,2023-01-14 18:00:00,Dimitri Payet,Chipped,Cengiz Ünder
+505998,29,SavedShot,0.865999984741211,0.32799999237060545,0.050728898495435715,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19843,Marseille,Monaco,1,1,2023-01-28 20:00:00,Ruslan Malinovskiy,Pass,Cengiz Ünder
+506005,49,BlockedShot,0.905,0.37400001525878906,0.09910979866981506,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19843,Marseille,Monaco,1,1,2023-01-28 20:00:00,Alexis Sánchez,Pass,Cengiz Ünder
+506006,49,MissedShots,0.9269999694824219,0.7019999694824218,0.0510874018073082,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19843,Marseille,Monaco,1,1,2023-01-28 20:00:00,,None,Cengiz Ünder
+506606,25,MissedShots,0.895,0.3220000076293945,0.2902109920978546,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19850,Nantes,Marseille,0,2,2023-02-01 18:00:00,Alexis Sánchez,Chipped,Cengiz Ünder
+506616,70,BlockedShot,0.8490000152587891,0.35700000762939454,0.06494469940662384,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19850,Nantes,Marseille,0,2,2023-02-01 18:00:00,Jonathan Clauss,Pass,Cengiz Ünder
+506617,70,BlockedShot,0.7980000305175782,0.5129999923706055,0.04681120067834854,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19850,Nantes,Marseille,0,2,2023-02-01 18:00:00,,Rebound,Cengiz Ünder
+506618,71,SavedShot,0.9540000152587891,0.6909999847412109,0.07002630084753036,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19850,Nantes,Marseille,0,2,2023-02-01 18:00:00,Nuno Tavares,Pass,Cengiz Ünder
+507877,17,BlockedShot,0.9059999847412109,0.29100000381469726,0.11566100269556046,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19862,Marseille,Nice,1,3,2023-02-05 19:45:00,Dimitri Payet,Throughball,Cengiz Ünder
+507879,21,SavedShot,0.8619999694824219,0.56,0.09898070245981216,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19862,Marseille,Nice,1,3,2023-02-05 19:45:00,Dimitri Payet,Pass,Cengiz Ünder
+507897,61,BlockedShot,0.8490000152587891,0.40599998474121096,0.05072470009326935,Cengiz Ünder,h,6162,FromCorner,2022,LeftFoot,19862,Marseille,Nice,1,3,2023-02-05 19:45:00,Chancel Mbemba,None,Cengiz Ünder
+510505,58,Goal,0.904000015258789,0.3139999961853027,0.041724901646375656,Cengiz Ünder,a,6162,FromCorner,2022,LeftFoot,19886,Toulouse,Marseille,2,3,2023-02-19 19:45:00,,None,Cengiz Ünder
+511532,7,BlockedShot,0.860999984741211,0.3629999923706055,0.045376699417829514,Cengiz Ünder,h,6162,FromCorner,2022,RightFoot,19896,Marseille,Paris Saint Germain,0,3,2023-02-26 19:45:00,,None,Cengiz Ünder
+511554,77,MissedShots,0.8569999694824219,0.4279999923706055,0.0820406973361969,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19896,Marseille,Paris Saint Germain,0,3,2023-02-26 19:45:00,Alexis Sánchez,Pass,Cengiz Ünder
+512969,10,SavedShot,0.904000015258789,0.24399999618530274,0.030651800334453583,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19904,Rennes,Marseille,0,1,2023-03-05 19:45:00,Nuno Tavares,Pass,Cengiz Ünder
+515886,3,MissedShots,0.7519999694824219,0.35700000762939454,0.022151999175548553,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Jonathan Clauss,Pass,Cengiz Ünder
+515888,8,SavedShot,0.9469999694824218,0.11600000381469727,0.011860200203955173,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Alexis Sánchez,Chipped,Cengiz Ünder
+515896,37,SavedShot,0.9159999847412109,0.32,0.09973820298910141,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Alexis Sánchez,Pass,Cengiz Ünder
+518905,11,SavedShot,0.8880000305175781,0.415,0.11051400005817413,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19940,Lorient,Marseille,0,0,2023-04-09 18:45:00,Alexis Sánchez,Pass,Cengiz Ünder
+518909,35,MissedShots,0.805,0.34700000762939454,0.03408199921250343,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19940,Lorient,Marseille,0,0,2023-04-09 18:45:00,,BallRecovery,Cengiz Ünder
+518913,46,MissedShots,0.8530000305175781,0.415,0.08319179713726044,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19940,Lorient,Marseille,0,0,2023-04-09 18:45:00,Alexis Sánchez,Pass,Cengiz Ünder
+518920,67,BlockedShot,0.8430000305175781,0.44299999237060544,0.07754989713430405,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19940,Lorient,Marseille,0,0,2023-04-09 18:45:00,Pau López,TakeOn,Cengiz Ünder
+520350,11,MissedShots,0.94,0.3609999847412109,0.3617840111255646,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,19952,Marseille,Troyes,3,1,2023-04-16 18:45:00,Issa Kabore,BallTouch,Cengiz Ünder
+520354,18,MissedShots,0.7909999847412109,0.295,0.02866319939494133,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19952,Marseille,Troyes,3,1,2023-04-16 18:45:00,Issa Kabore,Pass,Cengiz Ünder
+520353,18,MissedShots,0.8130000305175781,0.63,0.14614099264144897,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19952,Marseille,Troyes,3,1,2023-04-16 18:45:00,Vitinha,TakeOn,Cengiz Ünder
+520359,34,BlockedShot,0.8580000305175781,0.46700000762939453,0.1121319979429245,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19952,Marseille,Troyes,3,1,2023-04-16 18:45:00,Valentin Rongier,Pass,Cengiz Ünder
+520360,39,Goal,0.94,0.36200000762939455,0.35130101442337036,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19952,Marseille,Troyes,3,1,2023-04-16 18:45:00,Valentin Rongier,Throughball,Cengiz Ünder
+521763,16,SavedShot,0.7430000305175781,0.27,0.013029322028160095,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19965,Lyon,Marseille,1,2,2023-04-23 18:45:00,Ruslan Malinovskiy,BallRecovery,Cengiz Ünder
+521770,43,Goal,0.9169999694824219,0.4570000076293945,0.5918288826942444,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19965,Lyon,Marseille,1,2,2023-04-23 18:45:00,,Rebound,Cengiz Ünder
+521777,65,SavedShot,0.899000015258789,0.5820000076293945,0.4160771369934082,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,19965,Lyon,Marseille,1,2,2023-04-23 18:45:00,Valentin Rongier,Pass,Cengiz Ünder
+523615,74,Goal,0.914000015258789,0.34599998474121096,0.33174338936805725,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,19971,Marseille,Auxerre,2,1,2023-04-30 18:45:00,,None,Cengiz Ünder
+524868,6,BlockedShot,0.795,0.42700000762939455,0.03813384845852852,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,19985,Lens,Marseille,2,1,2023-05-06 19:00:00,Jonathan Clauss,Pass,Cengiz Ünder
+526901,86,MissedShots,0.78,0.54,0.045093268156051636,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,19991,Marseille,Angers,3,1,2023-05-14 18:45:00,Valentin Rongier,Pass,Cengiz Ünder
+527744,10,BlockedShot,0.7240000152587891,0.43099998474121093,0.018759943544864655,Cengiz Ünder,a,6162,SetPiece,2022,LeftFoot,20002,Lille,Marseille,2,1,2023-05-20 19:00:00,Jordan Veretout,Pass,Cengiz Ünder
+527752,57,SavedShot,0.8719999694824219,0.5379999923706055,0.11221232265233994,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,20002,Lille,Marseille,2,1,2023-05-20 19:00:00,Jonathan Clauss,Pass,Cengiz Ünder
+529290,59,MissedShots,0.875999984741211,0.605999984741211,0.061923760920763016,Cengiz Ünder,h,6162,FromCorner,2022,LeftFoot,20013,Marseille,Brest,1,2,2023-05-27 19:00:00,,None,Cengiz Ünder
+529291,62,MissedShots,0.9219999694824219,0.6809999847412109,0.05912664905190468,Cengiz Ünder,h,6162,OpenPlay,2022,LeftFoot,20013,Marseille,Brest,1,2,2023-05-27 19:00:00,Jordan Veretout,Pass,Cengiz Ünder
+529301,82,SavedShot,0.9130000305175782,0.34700000762939454,0.38875749707221985,Cengiz Ünder,h,6162,OpenPlay,2022,RightFoot,20013,Marseille,Brest,1,2,2023-05-27 19:00:00,Jordan Veretout,Pass,Cengiz Ünder
+530526,43,MissedShots,0.914000015258789,0.5509999847412109,0.11570898443460464,Cengiz Ünder,a,6162,OpenPlay,2022,Head,20018,Ajaccio,Marseille,1,0,2023-06-03 17:00:00,Alexis Sánchez,Cross,Cengiz Ünder
+530528,44,BlockedShot,0.845,0.6719999694824219,0.03356577083468437,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,20018,Ajaccio,Marseille,1,0,2023-06-03 17:00:00,,Rebound,Cengiz Ünder
+530529,44,BlockedShot,0.8540000152587891,0.6480000305175782,0.044144634157419205,Cengiz Ünder,a,6162,OpenPlay,2022,RightFoot,20018,Ajaccio,Marseille,1,0,2023-06-03 17:00:00,,Rebound,Cengiz Ünder
+530532,50,MissedShots,0.789000015258789,0.35400001525878905,0.028379252180457115,Cengiz Ünder,a,6162,OpenPlay,2022,LeftFoot,20018,Ajaccio,Marseille,1,0,2023-06-03 17:00:00,Ruslan Malinovskiy,Pass,Cengiz Ünder

@@ -1,0 +1,26 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+667237,33,ShotOnPost,0.91,0.4909999847412109,0.04630899801850319,Rayan,h,14395,FromCorner,2025,Head,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,,None,Rayan
+667239,46,BlockedShot,0.715,0.36200000762939455,0.01490323431789875,Rayan,h,14395,OpenPlay,2025,LeftFoot,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,Alex Scott,Pass,Rayan
+667242,54,Goal,0.8969999694824219,0.3559999847412109,0.06872839480638504,Rayan,h,14395,OpenPlay,2025,RightFoot,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,James Hill,Pass,Rayan
+668185,32,BlockedShot,0.7619999694824219,0.525,0.02537543699145317,Rayan,a,14395,OpenPlay,2025,LeftFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,None,Rayan
+668189,45,BlockedShot,0.73,0.40700000762939453,0.0179119985550642,Rayan,a,14395,OpenPlay,2025,LeftFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Alejandro Jiménez,Pass,Rayan
+668193,60,Goal,0.9740000152587891,0.46599998474121096,0.5969664454460144,Rayan,a,14395,OpenPlay,2025,Head,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Adrien Truffert,Cross,Rayan
+669883,4,SavedShot,0.73,0.2879999923706055,0.026850879192352295,Rayan,a,14395,OpenPlay,2025,LeftFoot,29047,West Ham,Bournemouth,0,0,2026-02-21 17:30:00,Alex Scott,Pass,Rayan
+669893,62,ShotOnPost,0.815,0.4590000152587891,0.1339045912027359,Rayan,a,14395,OpenPlay,2025,LeftFoot,29047,West Ham,Bournemouth,0,0,2026-02-21 17:30:00,Amine Adli,TakeOn,Rayan
+669900,73,BlockedShot,0.8669999694824219,0.36,0.0980076864361763,Rayan,a,14395,OpenPlay,2025,LeftFoot,29047,West Ham,Bournemouth,0,0,2026-02-21 17:30:00,David Brooks,Pass,Rayan
+670887,98,BlockedShot,0.8119999694824219,0.4829999923706055,0.05008460581302643,Rayan,h,14395,OpenPlay,2025,LeftFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,,None,Rayan
+670889,100,BlockedShot,0.735,0.23,0.010904570110142231,Rayan,h,14395,OpenPlay,2025,LeftFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,Alejandro Jiménez,TakeOn,Rayan
+673852,64,BlockedShot,0.7190000152587891,0.6569999694824219,0.01613164320588112,Rayan,a,14395,OpenPlay,2025,LeftFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Marcus Tavernier,Pass,Rayan
+675053,4,MissedShots,0.8909999847412109,0.32099998474121094,0.08162478357553482,Rayan,h,14395,OpenPlay,2025,RightFoot,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,Marcus Tavernier,Pass,Rayan
+675059,21,SavedShot,0.765,0.27399999618530274,0.01460057683289051,Rayan,h,14395,OpenPlay,2025,LeftFoot,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,James Hill,BallRecovery,Rayan
+675077,76,BlockedShot,0.825,0.29399999618530276,0.04916240647435188,Rayan,h,14395,OpenPlay,2025,LeftFoot,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,Alex Scott,Pass,Rayan
+679245,26,MissedShots,0.8119999694824219,0.335,0.032793618738651276,Rayan,a,14395,OpenPlay,2025,LeftFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,Evanilson,Pass,Rayan
+680376,74,SavedShot,0.870999984741211,0.7280000305175781,0.03374062851071358,Rayan,h,14395,OpenPlay,2025,LeftFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Marcus Tavernier,Pass,Rayan
+680381,85,Goal,0.9169999694824219,0.4979999923706055,0.35489028692245483,Rayan,h,14395,FromCorner,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Tyler Adams,Cross,Rayan
+682668,8,BlockedShot,0.835999984741211,0.34200000762939453,0.04086855426430702,Rayan,h,14395,FromCorner,2025,LeftFoot,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,,Rebound,Rayan
+682673,18,MissedShots,0.919000015258789,0.49700000762939456,0.07053396850824356,Rayan,h,14395,OpenPlay,2025,Head,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,Alejandro Jiménez,Aerial,Rayan
+682677,42,MissedShots,0.9230000305175782,0.5659999847412109,0.04133520647883415,Rayan,h,14395,OpenPlay,2025,Head,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,James Hill,Aerial,Rayan
+682679,46,MissedShots,0.955999984741211,0.3990000152587891,0.07704377174377441,Rayan,h,14395,OpenPlay,2025,Head,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,Adrien Truffert,Cross,Rayan
+682683,76,Goal,0.9119999694824219,0.34799999237060547,0.4942985773086548,Rayan,h,14395,OpenPlay,2025,RightFoot,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,David Brooks,Throughball,Rayan
+683686,52,MissedShots,0.9519999694824218,0.38,0.043068379163742065,Rayan,a,14395,SetPiece,2025,Head,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Marcus Tavernier,Cross,Rayan
+683690,52,Goal,0.745999984741211,0.34200000762939453,0.014338663779199123,Rayan,a,14395,OpenPlay,2025,LeftFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Adam Smith,Pass,Rayan

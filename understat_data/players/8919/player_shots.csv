@@ -1,0 +1,17 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+589225,58,BlockedShot,0.774000015258789,0.34400001525878904,0.06329117715358734,Leif Davis,h,8919,DirectFreekick,2024,LeftFoot,26625,Ipswich,Fulham,1,1,2024-08-31 14:00:00,,Standard,Leif Davis
+590758,76,MissedShots,0.8109999847412109,0.5929999923706055,0.04200310632586479,Leif Davis,a,8919,FromCorner,2024,LeftFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,,Rebound,Leif Davis
+592353,44,SavedShot,0.9519999694824218,0.654000015258789,0.061428334563970566,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26643,Southampton,Ipswich,1,1,2024-09-21 14:00:00,Omari Hutchinson,Chipped,Leif Davis
+594559,68,MissedShots,0.874000015258789,0.7080000305175781,0.04210132360458374,Leif Davis,h,8919,OpenPlay,2024,LeftFoot,26659,Ipswich,Aston Villa,2,2,2024-09-29 13:00:00,Jack Clarke,Pass,Leif Davis
+598462,38,MissedShots,0.79,0.55,0.04493486136198044,Leif Davis,a,8919,OpenPlay,2024,RightFoot,26685,Brentford,Ipswich,4,3,2024-10-26 14:00:00,Cameron Burgess,Pass,Leif Davis
+598464,39,MissedShots,0.8159999847412109,0.5209999847412109,0.029503660276532173,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26685,Brentford,Ipswich,4,3,2024-10-26 14:00:00,,Aerial,Leif Davis
+598468,47,MissedShots,0.754000015258789,0.519000015258789,0.014148526825010777,Leif Davis,a,8919,FromCorner,2024,RightFoot,26685,Brentford,Ipswich,4,3,2024-10-26 14:00:00,,Aerial,Leif Davis
+600120,54,Goal,0.9180000305175782,0.6659999847412109,0.06448014825582504,Leif Davis,h,8919,OpenPlay,2024,LeftFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,Sam Morsy,Chipped,Leif Davis
+602002,16,BlockedShot,0.860999984741211,0.7080000305175781,0.0693291574716568,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26709,Tottenham,Ipswich,1,2,2024-11-10 14:00:00,,None,Leif Davis
+606976,65,BlockedShot,0.9059999847412109,0.6719999694824219,0.08633164316415787,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26758,Wolverhampton Wanderers,Ipswich,1,2,2024-12-14 15:00:00,Omari Hutchinson,Pass,Leif Davis
+610209,82,MissedShots,0.8819999694824219,0.6759999847412109,0.06777077913284302,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26796,Fulham,Ipswich,2,2,2025-01-05 14:00:00,,None,Leif Davis
+614938,74,BlockedShot,0.7480000305175781,0.4570000076293945,0.062154993414878845,Leif Davis,h,8919,DirectFreekick,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,Standard,Leif Davis
+621296,48,MissedShots,0.7909999847412109,0.700999984741211,0.019623424857854843,Leif Davis,a,8919,SetPiece,2024,LeftFoot,26875,Crystal Palace,Ipswich,1,0,2025-03-08 15:00:00,Julio Enciso,Pass,Leif Davis
+622644,65,MissedShots,0.7719999694824219,0.615,0.021038174629211426,Leif Davis,h,8919,SetPiece,2024,LeftFoot,26887,Ipswich,Nottingham Forest,2,4,2025-03-15 15:00:00,Liam Delap,Pass,Leif Davis
+635067,6,BlockedShot,0.8569999694824219,0.654000015258789,0.05919394642114639,Leif Davis,a,8919,OpenPlay,2024,RightFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Julio Enciso,Pass,Leif Davis
+635068,6,ShotOnPost,0.889000015258789,0.66,0.050694506615400314,Leif Davis,a,8919,OpenPlay,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,,Rebound,Leif Davis

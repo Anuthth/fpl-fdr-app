@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,0,4,0,0,0,0,2025,Tottenham,0,0,0,0,0.05061304196715355,0.05061304196715355,9332,Dane Scarlett
+season,Sub,3,0,1,25,0.2694910168647766,1,0.07612059265375137,1,2024,Tottenham,0,0,0,0.2694910168647766,0.345611609518528,0,9332,Dane Scarlett
+season,Sub,4,0,0,16,0,0,0,0,2023,Tottenham,0,0,0,0,0,0,9332,Dane Scarlett
+season,Sub,1,0,0,2,0,0,0,0,2021,Tottenham,0,0,0,0,0,0,9332,Dane Scarlett
+season,Sub,1,0,0,1,0,0,0,0,2020,Tottenham,0,0,0,0,0,0,9332,Dane Scarlett

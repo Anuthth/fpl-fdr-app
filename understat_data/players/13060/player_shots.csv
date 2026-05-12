@@ -1,0 +1,10 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+592363,86,BlockedShot,0.8830000305175781,0.43,0.07464812695980072,Ross Stewart,h,13060,SetPiece,2024,RightFoot,26643,Southampton,Ipswich,1,1,2024-09-21 14:00:00,Taylor Harwood-Bellis,None,Ross Stewart
+595031,53,MissedShots,0.899000015258789,0.49900001525878906,0.05513033643364906,Ross Stewart,a,13060,OpenPlay,2024,Head,26661,Bournemouth,Southampton,3,1,2024-09-30 19:00:00,Charlie Taylor,Aerial,Ross Stewart
+630304,37,BlockedShot,0.894000015258789,0.4909999847412109,0.07707848399877548,Ross Stewart,h,13060,OpenPlay,2024,RightFoot,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,,Aerial,Ross Stewart
+631458,13,BlockedShot,0.9159999847412109,0.5779999923706055,0.06509781628847122,Ross Stewart,a,13060,FromCorner,2024,LeftFoot,26951,Leicester,Southampton,2,0,2025-05-03 14:00:00,Ryan Manning,Cross,Ross Stewart
+634862,61,SavedShot,0.9180000305175782,0.355,0.10326561331748962,Ross Stewart,a,13060,OpenPlay,2024,RightFoot,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,,TakeOn,Ross Stewart
+634866,86,MissedShots,0.9230000305175782,0.47,0.13608679175376892,Ross Stewart,a,13060,OpenPlay,2024,Head,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,William Smallbone,Cross,Ross Stewart
+634867,93,BlockedShot,0.8530000305175781,0.3559999847412109,0.10036911070346832,Ross Stewart,a,13060,OpenPlay,2024,RightFoot,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,Cameron Archer,Pass,Ross Stewart
+636337,29,MissedShots,0.924000015258789,0.4809999847412109,0.13613033294677734,Ross Stewart,h,13060,OpenPlay,2024,Head,26977,Southampton,Arsenal,1,2,2025-05-25 15:00:00,Mateus Fernandes,Cross,Ross Stewart
+636346,55,Goal,0.9540000152587891,0.51,0.1328890472650528,Ross Stewart,h,13060,FromCorner,2024,Head,26977,Southampton,Arsenal,1,2,2025-05-25 15:00:00,Mateus Fernandes,Cross,Ross Stewart

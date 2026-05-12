@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,16,0,0,1440,0,0,0.09384769946336746,1,2021,Venezia,2,0,0,0,0.6044665966182947,0.5106188971549273,560,Sergio Romero
+season,GK,1,0,0,90,0,0,0,0,2017,Manchester United,0,0,0,0,0.34458300471305847,0.34458300471305847,560,Sergio Romero
+season,GK,2,0,0,180,0,0,0,0,2016,Manchester United,0,0,0,0,0.11507060006260872,0.11507060006260872,560,Sergio Romero
+season,GK,4,0,0,360,0,0,0,0,2015,Manchester United,0,0,0,0,0.6442757081240416,0.6442757081240416,560,Sergio Romero
+season,Sub,10,0,0,879,0,0,0,0,2014,Sampdoria,1,0,0,0,0.6514985095709562,0.6514985095709562,560,Sergio Romero

@@ -1,0 +1,30 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+484497,91,BlockedShot,0.9209999847412109,0.41,0.11410800367593765,Djed Spence,a,10764,OpenPlay,2022,LeftFoot,18241,Nottingham Forest,Tottenham,0,2,2022-08-28 15:30:00,,None,Djed Spence
+507429,32,MissedShots,0.92,0.35900001525878905,0.10249000042676926,Djed Spence,h,10764,OpenPlay,2022,RightFoot,19866,Rennes,Lille,1,3,2023-02-04 20:00:00,Amine Gouiri,Pass,Djed Spence
+510167,60,MissedShots,0.84,0.5220000076293946,0.09043169766664505,Djed Spence,h,10764,OpenPlay,2022,LeftFoot,19885,Rennes,Clermont Foot,2,0,2023-02-19 14:00:00,Lovro Majer,Pass,Djed Spence
+515738,72,SavedShot,0.889000015258789,0.36700000762939455,0.2977930009365082,Djed Spence,a,10764,OpenPlay,2022,RightFoot,19922,Paris Saint Germain,Rennes,0,2,2023-03-19 16:05:00,Arnaud Kalimuendo Muinga,TakeOn,Djed Spence
+561057,77,BlockedShot,0.950999984741211,0.42700000762939455,0.06496912240982056,Djed Spence,a,10764,OpenPlay,2023,Head,22530,Empoli,Genoa,0,0,2024-02-03 14:00:00,Aarón Martín,Aerial,Djed Spence
+568314,57,BlockedShot,0.8490000152587891,0.6959999847412109,0.02452634647488594,Djed Spence,h,10764,OpenPlay,2023,RightFoot,22582,Genoa,Monza,2,3,2024-03-09 19:45:00,Stefano Sabelli,Cross,Djed Spence
+607774,9,MissedShots,0.8619999694824219,0.3920000076293945,0.05306229367852211,Djed Spence,a,10764,FromCorner,2024,RightFoot,26759,Southampton,Tottenham,0,5,2024-12-15 19:00:00,,None,Djed Spence
+609143,31,BlockedShot,0.7219999694824218,0.47099998474121096,0.016208704560995102,Djed Spence,a,10764,OpenPlay,2024,LeftFoot,26779,Nottingham Forest,Tottenham,1,0,2024-12-26 15:00:00,Radu Dragusin,Pass,Djed Spence
+612608,21,BlockedShot,0.7969999694824219,0.705999984741211,0.02440490573644638,Djed Spence,a,10764,OpenPlay,2024,RightFoot,26815,Everton,Tottenham,3,2,2025-01-19 14:00:00,Dejan Kulusevski,Pass,Djed Spence
+615380,23,BlockedShot,0.715,0.580999984741211,0.01711953990161419,Djed Spence,a,10764,OpenPlay,2024,RightFoot,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,Rodrigo Bentancur,Pass,Djed Spence
+617823,67,SavedShot,0.710999984741211,0.6419999694824219,0.011244582943618298,Djed Spence,h,10764,OpenPlay,2024,RightFoot,26850,Tottenham,Manchester United,1,0,2025-02-16 16:30:00,Rodrigo Bentancur,TakeOn,Djed Spence
+618446,76,Goal,0.87,0.6020000076293945,0.09795958548784256,Djed Spence,a,10764,OpenPlay,2024,RightFoot,26857,Ipswich,Tottenham,1,4,2025-02-22 15:00:00,James Maddison,Pass,Djed Spence
+625264,80,MissedShots,0.8190000152587891,0.48700000762939455,0.05134425312280655,Djed Spence,a,10764,FromCorner,2024,RightFoot,26897,Chelsea,Tottenham,1,0,2025-04-03 19:00:00,,Rebound,Djed Spence
+626210,51,SavedShot,0.92,0.66,0.09267505258321762,Djed Spence,h,10764,OpenPlay,2024,RightFoot,26910,Tottenham,Southampton,3,1,2025-04-06 13:00:00,Dominic Solanke,Pass,Djed Spence
+627605,37,OwnGoal,0.02,0.5120000076293946,0,Djed Spence,a,10764,OpenPlay,2024,OtherBodyPart,26919,Wolverhampton Wanderers,Tottenham,4,2,2025-04-13 13:00:00,,Save,Djed Spence
+629560,83,MissedShots,0.8519999694824218,0.63,0.04483107104897499,Djed Spence,h,10764,OpenPlay,2024,LeftFoot,26930,Tottenham,Nottingham Forest,1,2,2025-04-21 19:00:00,,None,Djed Spence
+630837,72,MissedShots,0.664000015258789,0.3060000038146973,0.008170257322490215,Djed Spence,a,10764,OpenPlay,2024,RightFoot,26936,Liverpool,Tottenham,5,1,2025-04-27 15:30:00,Kevin Danso,Pass,Djed Spence
+637719,39,MissedShots,0.774000015258789,0.6170000076293946,0.03260151296854019,Djed Spence,h,10764,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Mohammed Kudus,Pass,Djed Spence
+637734,83,SavedShot,0.960999984741211,0.669000015258789,0.06407608836889267,Djed Spence,h,10764,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Wilson Odobert,TakeOn,Djed Spence
+656980,50,SavedShot,0.9319999694824219,0.6370000076293946,0.4277614951133728,Djed Spence,h,10764,OpenPlay,2025,LeftFoot,28926,Tottenham,Brentford,2,0,2025-12-06 15:00:00,,None,Djed Spence
+658549,51,BlockedShot,0.9230000305175782,0.5209999847412109,0.06956400722265244,Djed Spence,a,10764,OpenPlay,2025,Head,28935,Nottingham Forest,Tottenham,3,0,2025-12-14 14:00:00,Mohammed Kudus,Aerial,Djed Spence
+659501,63,SavedShot,0.7430000305175781,0.7559999847412109,0.013211937621235847,Djed Spence,h,10764,OpenPlay,2025,RightFoot,28946,Tottenham,Liverpool,1,2,2025-12-20 17:30:00,Lucas Bergvall,Pass,Djed Spence
+663693,23,SavedShot,0.9669999694824218,0.6120000076293945,0.3344324231147766,Djed Spence,h,10764,OpenPlay,2025,RightFoot,28996,Tottenham,West Ham,1,2,2026-01-17 15:00:00,,Rebound,Djed Spence
+663707,49,MissedShots,0.7580000305175781,0.605999984741211,0.020892027765512466,Djed Spence,h,10764,OpenPlay,2025,RightFoot,28996,Tottenham,West Ham,1,2,2026-01-17 15:00:00,Xavi Simons,Pass,Djed Spence
+664790,2,SavedShot,0.89,0.7,0.05518742650747299,Djed Spence,a,10764,OpenPlay,2025,RightFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,Dominic Solanke,Pass,Djed Spence
+664808,66,SavedShot,0.715,0.385,0.013355312868952751,Djed Spence,a,10764,OpenPlay,2025,LeftFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,Wilson Odobert,Pass,Djed Spence
+674649,15,BlockedShot,0.7909999847412109,0.6809999847412109,0.017275482416152954,Djed Spence,a,10764,OpenPlay,2025,RightFoot,29073,Liverpool,Tottenham,1,1,2026-03-15 16:30:00,Mathys Tel,TakeOn,Djed Spence
+674667,73,SavedShot,0.855,0.7380000305175781,0.03237900137901306,Djed Spence,a,10764,OpenPlay,2025,RightFoot,29073,Liverpool,Tottenham,1,1,2026-03-15 16:30:00,Xavi Simons,Pass,Djed Spence
+681066,12,BlockedShot,0.8109999847412109,0.710999984741211,0.024413730949163437,Djed Spence,a,10764,OpenPlay,2025,RightFoot,29117,Wolverhampton Wanderers,Tottenham,0,1,2026-04-25 14:00:00,Xavi Simons,Pass,Djed Spence

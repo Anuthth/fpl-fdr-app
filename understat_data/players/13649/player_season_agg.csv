@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,14,1,16,555,1.874770125374198,1,0.9961352478712797,7,2025,Girona,3,0,1,1.874770125374198,3.563392296433449,1.1810829974710941,13649,Claudio Echeverri
+season,Sub,6,0,1,112,0.11350106447935104,0,0.04052872955799103,1,2025,Bayer Leverkusen,0,0,0,0.11350106447935104,0.2705470249056816,0.15704596042633057,13649,Claudio Echeverri
+season,Sub,1,0,0,4,0,0,0,0,2024,Manchester City,0,0,0,0,0,0,13649,Claudio Echeverri

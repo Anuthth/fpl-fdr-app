@@ -1,0 +1,126 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+385303,28,SavedShot,0.9009999847412109,0.41400001525878904,0.03746600076556206,Omar Alderete,h,8986,FromCorner,2020,Head,15192,Hertha Berlin,Wolfsburg,1,1,2020-11-01 17:00:00,Matheus Cunha,Chipped,Omar Alderete
+389440,25,MissedShots,0.710999984741211,0.590999984741211,0.015186299569904804,Omar Alderete,a,8986,OpenPlay,2020,LeftFoot,15215,Bayer Leverkusen,Hertha Berlin,0,0,2020-11-29 14:30:00,Niklas Stark,Pass,Omar Alderete
+396505,49,BlockedShot,0.8959999847412109,0.5929999923706055,0.013282200321555138,Omar Alderete,h,8986,FromCorner,2020,Head,15261,Hertha Berlin,Schalke 04,3,0,2021-01-02 17:30:00,Vladimir Darida,Aerial,Omar Alderete
+396510,67,SavedShot,0.8930000305175781,0.575999984741211,0.1060670018196106,Omar Alderete,h,8986,SetPiece,2020,LeftFoot,15261,Hertha Berlin,Schalke 04,3,0,2021-01-02 17:30:00,Vladimir Darida,Pass,Omar Alderete
+398944,62,MissedShots,0.9080000305175782,0.6719999694824219,0.016366299241781235,Omar Alderete,a,8986,SetPiece,2020,Head,15281,FC Cologne,Hertha Berlin,0,0,2021-01-16 14:30:00,Maximilian Mittelstädt,Cross,Omar Alderete
+404263,67,MissedShots,0.895,0.6719999694824219,0.01012479979544878,Omar Alderete,a,8986,FromCorner,2020,Head,15328,VfB Stuttgart,Hertha Berlin,1,1,2021-02-13 14:30:00,Matteo Guendouzi,Cross,Omar Alderete
+427315,40,MissedShots,0.6909999847412109,0.675,0.009762040339410305,Omar Alderete,a,8986,OpenPlay,2021,LeftFoot,17148,Granada,Valencia,1,1,2021-08-21 17:30:00,,BallRecovery,Omar Alderete
+428452,9,MissedShots,0.8980000305175782,0.4929999923706055,0.023889899253845215,Omar Alderete,h,8986,FromCorner,2021,Head,17157,Valencia,Alaves,3,0,2021-08-27 20:15:00,Carlos Soler,Aerial,Omar Alderete
+430521,72,Goal,0.924000015258789,0.44599998474121094,0.09777849912643433,Omar Alderete,a,8986,FromCorner,2021,Head,17172,Osasuna,Valencia,1,4,2021-09-12 14:15:00,Carlos Soler,Cross,Omar Alderete
+433521,30,MissedShots,0.9019999694824219,0.3920000076293945,0.04581800103187561,Omar Alderete,h,8986,SetPiece,2021,Head,17199,Valencia,Athletic Club,1,1,2021-09-25 14:15:00,Gonçalo Guedes,Cross,Omar Alderete
+433526,53,SavedShot,0.9819999694824219,0.3729999923706055,0.02859869971871376,Omar Alderete,h,8986,FromCorner,2021,Head,17199,Valencia,Athletic Club,1,1,2021-09-25 14:15:00,Maxi Gómez,HeadPass,Omar Alderete
+435106,41,MissedShots,0.8969999694824219,0.46900001525878904,0.09119530022144318,Omar Alderete,a,8986,SetPiece,2021,Head,17215,Cadiz,Valencia,0,0,2021-10-02 16:30:00,Gonçalo Guedes,Cross,Omar Alderete
+439884,69,MissedShots,0.8959999847412109,0.7559999847412109,0.02340639941394329,Omar Alderete,h,8986,SetPiece,2021,LeftFoot,17247,Valencia,Villarreal,2,0,2021-10-30 16:30:00,Marcos de Sousa,HeadPass,Omar Alderete
+443536,34,BlockedShot,0.935,0.415,0.04306510090827942,Omar Alderete,a,8986,SetPiece,2021,Head,17272,Real Sociedad,Valencia,0,0,2021-11-21 20:00:00,José Gayá,Aerial,Omar Alderete
+444154,87,SavedShot,0.85,0.545,0.01276480033993721,Omar Alderete,h,8986,FromCorner,2021,Head,17284,Valencia,Rayo Vallecano,1,1,2021-11-27 15:15:00,Carlos Soler,Aerial,Omar Alderete
+450926,50,Goal,0.9159999847412109,0.48400001525878905,0.34531500935554504,Omar Alderete,h,8986,FromCorner,2021,Head,17317,Valencia,Espanyol,1,2,2021-12-31 15:15:00,Hélder Costa,Cross,Omar Alderete
+454860,47,MissedShots,0.8340000152587891,0.715999984741211,0.04240899905562401,Omar Alderete,a,8986,OpenPlay,2021,LeftFoot,17347,Atletico Madrid,Valencia,3,2,2022-01-22 20:00:00,Dimitri Foulquier,BallTouch,Omar Alderete
+458805,35,MissedShots,0.9059999847412109,0.37900001525878907,0.034831300377845764,Omar Alderete,h,8986,SetPiece,2021,Head,17384,Valencia,Barcelona,1,4,2022-02-20 15:15:00,Bryan Gil Salvatierra,Cross,Omar Alderete
+464019,19,SavedShot,0.7730000305175782,0.5720000076293945,0.05853290110826492,Omar Alderete,a,8986,OpenPlay,2021,LeftFoot,17425,Elche,Valencia,0,1,2022-03-19 15:15:00,,TakeOn,Omar Alderete
+466054,7,MissedShots,0.6769999694824219,0.595999984741211,0.008502679876983166,Omar Alderete,h,8986,OpenPlay,2021,LeftFoot,17435,Valencia,Cadiz,0,0,2022-04-03 16:30:00,,None,Omar Alderete
+467746,22,MissedShots,0.9009999847412109,0.42400001525878905,0.05464629828929901,Omar Alderete,a,8986,FromCorner,2021,LeftFoot,17443,Rayo Vallecano,Valencia,1,1,2022-04-11 19:00:00,Gonçalo Guedes,Cross,Omar Alderete
+467747,23,MissedShots,0.6580000305175782,0.66,0.01016400009393692,Omar Alderete,a,8986,OpenPlay,2021,LeftFoot,17443,Rayo Vallecano,Valencia,1,1,2022-04-11 19:00:00,Yunus Musah,Pass,Omar Alderete
+471823,61,MissedShots,0.8690000152587891,0.534000015258789,0.04614879935979843,Omar Alderete,h,8986,SetPiece,2021,Head,17473,Valencia,Levante,1,1,2022-04-30 16:30:00,Carlos Soler,Cross,Omar Alderete
+497883,73,BlockedShot,0.7319999694824219,0.6669999694824219,0.018393199890851974,Omar Alderete,h,8986,OpenPlay,2022,LeftFoot,19090,Getafe,Cadiz,0,0,2022-11-05 14:00:00,,TakeOn,Omar Alderete
+499351,34,BlockedShot,0.8830000305175781,0.40700000762939453,0.010005700401961803,Omar Alderete,a,8986,SetPiece,2022,Head,19095,Almeria,Getafe,1,0,2022-11-09 18:00:00,Luis Milla,Aerial,Omar Alderete
+501475,65,SavedShot,0.9219999694824219,0.355,0.0224434994161129,Omar Alderete,h,8986,FromCorner,2022,Head,19105,Getafe,Mallorca,2,0,2022-12-30 16:00:00,Luis Milla,Cross,Omar Alderete
+503902,33,BlockedShot,0.9009999847412109,0.49,0.09771250188350677,Omar Alderete,h,8986,SetPiece,2022,Head,19130,Getafe,Espanyol,1,2,2023-01-15 13:00:00,Luis Milla,Cross,Omar Alderete
+507326,37,BlockedShot,0.8690000152587891,0.545,0.017939100041985512,Omar Alderete,a,8986,SetPiece,2022,Head,19153,Atletico Madrid,Getafe,1,1,2023-02-04 17:30:00,,None,Omar Alderete
+508785,30,SavedShot,0.9280000305175782,0.624000015258789,0.030461300164461136,Omar Alderete,h,8986,FromCorner,2022,Head,19162,Getafe,Rayo Vallecano,1,1,2023-02-12 13:00:00,Mauro Arambarri,Cross,Omar Alderete
+511900,30,SavedShot,0.715,0.6819999694824219,0.014340800233185291,Omar Alderete,h,8986,OpenPlay,2022,LeftFoot,19195,Getafe,Girona,3,2,2023-03-04 13:00:00,Portu,Pass,Omar Alderete
+513213,90,BlockedShot,0.75,0.6780000305175782,0.01319149974733591,Omar Alderete,a,8986,OpenPlay,2022,LeftFoot,19206,Cadiz,Getafe,2,2,2023-03-10 20:00:00,,None,Omar Alderete
+516438,33,SavedShot,0.9359999847412109,0.4259999847412109,0.09428200125694275,Omar Alderete,a,8986,FromCorner,2022,Head,19222,Athletic Club,Getafe,0,0,2023-04-01 14:15:00,Munir,Cross,Omar Alderete
+518281,5,SavedShot,0.88,0.625999984741211,0.02494160085916519,Omar Alderete,a,8986,SetPiece,2022,Head,19241,Real Sociedad,Getafe,2,0,2023-04-08 16:30:00,Damián Suárez,Cross,Omar Alderete
+522062,53,MissedShots,0.904000015258789,0.42200000762939455,0.05063672363758087,Omar Alderete,h,8986,FromCorner,2022,Head,19271,Getafe,Almeria,1,2,2023-04-26 17:30:00,Munir,Cross,Omar Alderete
+522064,64,MissedShots,0.9080000305175782,0.5129999923706055,0.035196833312511444,Omar Alderete,h,8986,FromCorner,2022,Head,19271,Getafe,Almeria,1,2,2023-04-26 17:30:00,Portu,Aerial,Omar Alderete
+522065,65,SavedShot,0.8880000305175781,0.6869999694824219,0.06171180307865143,Omar Alderete,h,8986,OpenPlay,2022,LeftFoot,19271,Getafe,Almeria,1,2,2023-04-26 17:30:00,Juan Latasa,Pass,Omar Alderete
+522078,84,MissedShots,0.88,0.6170000076293946,0.02733490616083145,Omar Alderete,h,8986,FromCorner,2022,LeftFoot,19271,Getafe,Almeria,1,2,2023-04-26 17:30:00,,Aerial,Omar Alderete
+527659,78,SavedShot,0.6940000152587891,0.5509999847412109,0.009829715825617313,Omar Alderete,h,8986,OpenPlay,2022,LeftFoot,19306,Getafe,Elche,1,1,2023-05-20 16:30:00,,None,Omar Alderete
+528641,17,MissedShots,0.7090000152587891,0.5609999847412109,0.013857360929250717,Omar Alderete,a,8986,OpenPlay,2022,LeftFoot,19312,Real Betis,Getafe,0,1,2023-05-24 20:00:00,,BallRecovery,Omar Alderete
+528653,68,Goal,0.9169999694824219,0.5670000076293945,0.07441461831331253,Omar Alderete,a,8986,FromCorner,2022,Head,19312,Real Betis,Getafe,0,1,2023-05-24 20:00:00,Luis Milla,Cross,Omar Alderete
+535702,67,MissedShots,0.9169999694824219,0.36200000762939455,0.031901244074106216,Omar Alderete,h,8986,SetPiece,2023,Head,22713,Getafe,Alaves,1,0,2023-08-28 17:30:00,Carles Aleñá,Cross,Omar Alderete
+535710,89,MissedShots,0.9459999847412109,0.41900001525878905,0.3901417553424835,Omar Alderete,h,8986,SetPiece,2023,Head,22713,Getafe,Alaves,1,0,2023-08-28 17:30:00,,None,Omar Alderete
+539543,71,MissedShots,0.860999984741211,0.705999984741211,0.015605300664901733,Omar Alderete,a,8986,SetPiece,2023,LeftFoot,22743,Real Sociedad,Getafe,4,3,2023-09-24 12:00:00,Damián Suárez,Cross,Omar Alderete
+549956,22,MissedShots,0.9309999847412109,0.5570000076293945,0.10651275515556335,Omar Alderete,h,8986,FromCorner,2023,Head,22820,Getafe,Almeria,2,1,2023-11-25 17:30:00,Luis Milla,Cross,Omar Alderete
+549964,41,MissedShots,0.88,0.5740000152587891,0.028447255492210388,Omar Alderete,h,8986,FromCorner,2023,Head,22820,Getafe,Almeria,2,1,2023-11-25 17:30:00,Luis Milla,Cross,Omar Alderete
+550895,7,MissedShots,0.590999984741211,0.740999984741211,0.007911120541393757,Omar Alderete,a,8986,OpenPlay,2023,LeftFoot,22832,Las Palmas,Getafe,2,0,2023-12-01 19:00:00,,BallRecovery,Omar Alderete
+559203,49,SavedShot,0.6790000152587891,0.2670000076293945,0.006375160533934832,Omar Alderete,a,8986,OpenPlay,2023,LeftFoot,22892,Osasuna,Getafe,3,2,2024-01-21 13:00:00,,None,Omar Alderete
+559215,84,BlockedShot,0.8530000305175781,0.5270000076293946,0.07036077976226807,Omar Alderete,a,8986,SetPiece,2023,LeftFoot,22892,Osasuna,Getafe,3,2,2024-01-21 13:00:00,Enes Ünal,BallTouch,Omar Alderete
+560495,30,BlockedShot,0.9309999847412109,0.6419999694824219,0.012996074743568897,Omar Alderete,h,8986,FromCorner,2023,Head,22898,Getafe,Granada,2,0,2024-01-29 20:00:00,Mason Greenwood,Aerial,Omar Alderete
+561942,73,MissedShots,0.855999984741211,0.39099998474121095,0.05589014291763306,Omar Alderete,a,8986,SetPiece,2023,LeftFoot,22906,Real Betis,Getafe,1,1,2024-02-04 17:30:00,,None,Omar Alderete
+561945,87,BlockedShot,0.8769999694824219,0.595999984741211,0.08078139275312424,Omar Alderete,a,8986,FromCorner,2023,LeftFoot,22906,Real Betis,Getafe,1,1,2024-02-04 17:30:00,,Rebound,Omar Alderete
+563605,79,MissedShots,0.8640000152587891,0.47099998474121096,0.04202154651284218,Omar Alderete,a,8986,SetPiece,2023,Head,22932,Villarreal,Getafe,1,1,2024-02-16 20:00:00,Carles Aleñá,Cross,Omar Alderete
+565276,41,SavedShot,0.6840000152587891,0.5620000076293945,0.010429869405925274,Omar Alderete,a,8986,OpenPlay,2023,LeftFoot,22936,Barcelona,Getafe,4,0,2024-02-24 15:15:00,,BallRecovery,Omar Alderete
+570403,21,MissedShots,0.7569999694824219,0.2670000076293945,0.04665876552462578,Omar Alderete,h,8986,DirectFreekick,2023,LeftFoot,22979,Getafe,Sevilla,0,1,2024-03-30 13:00:00,,Standard,Omar Alderete
+570412,50,BlockedShot,0.885,0.5370000076293945,0.09562978893518448,Omar Alderete,h,8986,SetPiece,2023,LeftFoot,22979,Getafe,Sevilla,0,1,2024-03-30 13:00:00,Jesús Santiago,Pass,Omar Alderete
+573811,70,BlockedShot,0.7119999694824218,0.605,0.009033811278641224,Omar Alderete,a,8986,OpenPlay,2023,LeftFoot,22993,Rayo Vallecano,Getafe,0,0,2024-04-13 14:15:00,Diego Rico,TakeOn,Omar Alderete
+576854,8,MissedShots,0.7130000305175781,0.49,0.049342311918735504,Omar Alderete,a,8986,DirectFreekick,2023,LeftFoot,23005,Almeria,Getafe,1,3,2024-04-27 14:15:00,,Standard,Omar Alderete
+578094,6,SavedShot,0.975999984741211,0.580999984741211,0.49269601702690125,Omar Alderete,h,8986,SetPiece,2023,LeftFoot,23017,Getafe,Athletic Club,0,2,2024-05-03 19:00:00,,None,Omar Alderete
+578114,69,MissedShots,0.675,0.644000015258789,0.006588670425117016,Omar Alderete,h,8986,OpenPlay,2023,LeftFoot,23017,Getafe,Athletic Club,0,2,2024-05-03 19:00:00,,None,Omar Alderete
+578128,90,SavedShot,0.9569999694824218,0.44799999237060545,0.3876655399799347,Omar Alderete,h,8986,FromCorner,2023,Head,23017,Getafe,Athletic Club,0,2,2024-05-03 19:00:00,Fabrizio Angileri,Cross,Omar Alderete
+581300,61,MissedShots,0.9109999847412109,0.4759999847412109,0.038062870502471924,Omar Alderete,h,8986,FromCorner,2023,Head,23039,Getafe,Atletico Madrid,0,3,2024-05-15 20:00:00,Mason Greenwood,Aerial,Omar Alderete
+581304,83,BlockedShot,0.7390000152587891,0.5970000076293945,0.014410702511668205,Omar Alderete,h,8986,OpenPlay,2023,LeftFoot,23039,Getafe,Atletico Madrid,0,3,2024-05-15 20:00:00,,TakeOn,Omar Alderete
+581856,51,SavedShot,0.8640000152587891,0.5579999923706055,0.02978205494582653,Omar Alderete,a,8986,SetPiece,2023,LeftFoot,23050,Alaves,Getafe,1,0,2024-05-18 19:00:00,Mason Greenwood,Cross,Omar Alderete
+584592,21,BlockedShot,0.8919999694824219,0.5570000076293945,0.06941878795623779,Omar Alderete,a,8986,SetPiece,2024,Head,26982,Athletic Club,Getafe,1,1,2024-08-15 17:00:00,Carles Pérez,Cross,Omar Alderete
+584598,53,BlockedShot,0.970999984741211,0.644000015258789,0.038119733333587646,Omar Alderete,a,8986,FromCorner,2024,LeftFoot,26982,Athletic Club,Getafe,1,1,2024-08-15 17:00:00,Luis Milla,Cross,Omar Alderete
+586541,82,MissedShots,0.865,0.53,0.011070949956774712,Omar Alderete,h,8986,SetPiece,2024,Head,26996,Getafe,Rayo Vallecano,0,0,2024-08-24 19:30:00,Peter,Aerial,Omar Alderete
+586543,93,MissedShots,0.874000015258789,0.5659999847412109,0.013404342345893383,Omar Alderete,h,8986,FromCorner,2024,Head,26996,Getafe,Rayo Vallecano,0,0,2024-08-24 19:30:00,Luis Milla,Aerial,Omar Alderete
+590141,70,SavedShot,0.6869999694824219,0.5829999923706055,0.010178891941905022,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27020,Getafe,Real Sociedad,0,0,2024-09-01 17:15:00,Juan Iglesias,HeadPass,Omar Alderete
+590147,89,MissedShots,0.7340000152587891,0.7030000305175781,0.016419775784015656,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27020,Getafe,Real Sociedad,0,0,2024-09-01 17:15:00,Luis Milla,Pass,Omar Alderete
+591890,63,SavedShot,0.8590000152587891,0.515,0.022676585242152214,Omar Alderete,a,8986,FromCorner,2024,Head,27007,Real Betis,Getafe,2,1,2024-09-18 17:00:00,Luis Milla,Cross,Omar Alderete
+591894,83,MissedShots,0.9119999694824219,0.46,0.08634965866804123,Omar Alderete,a,8986,FromCorner,2024,Head,27007,Real Betis,Getafe,2,1,2024-09-18 17:00:00,Diego Rico,Cross,Omar Alderete
+591896,90,MissedShots,0.6769999694824219,0.555,0.008570471778512001,Omar Alderete,a,8986,OpenPlay,2024,LeftFoot,27007,Real Betis,Getafe,2,1,2024-09-18 17:00:00,Carles Pérez,Pass,Omar Alderete
+592881,20,SavedShot,0.7090000152587891,0.4,0.04369520768523216,Omar Alderete,h,8986,DirectFreekick,2024,LeftFoot,27034,Getafe,Leganes,1,1,2024-09-22 12:00:00,,Standard,Omar Alderete
+593519,86,MissedShots,0.8830000305175781,0.5379999923706055,0.04295876994729042,Omar Alderete,a,8986,FromCorner,2024,Head,27043,Barcelona,Getafe,1,0,2024-09-25 19:00:00,Luis Milla,Cross,Omar Alderete
+593861,44,SavedShot,0.6959999847412109,0.519000015258789,0.013893569819629192,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27059,Getafe,Alaves,2,0,2024-09-28 12:00:00,,None,Omar Alderete
+593866,55,BlockedShot,0.9230000305175782,0.6509999847412109,0.02174055576324463,Omar Alderete,h,8986,SetPiece,2024,Head,27059,Getafe,Alaves,2,0,2024-09-28 12:00:00,Luis Milla,Cross,Omar Alderete
+595592,25,MissedShots,0.8619999694824219,0.455,0.020010218024253845,Omar Alderete,h,8986,SetPiece,2024,Head,27062,Getafe,Osasuna,1,1,2024-10-05 14:15:00,Alex Sola,Pass,Omar Alderete
+595598,53,SavedShot,0.745,0.42200000762939455,0.06518758088350296,Omar Alderete,h,8986,DirectFreekick,2024,LeftFoot,27062,Getafe,Osasuna,1,1,2024-10-05 14:15:00,,Standard,Omar Alderete
+599159,11,SavedShot,0.92,0.42200000762939455,0.09802805632352829,Omar Alderete,h,8986,SetPiece,2024,Head,27082,Getafe,Valencia,1,1,2024-10-27 15:15:00,Luis Milla,Cross,Omar Alderete
+602318,34,BlockedShot,0.845,0.14699999809265138,0.04616556316614151,Omar Alderete,h,8986,DirectFreekick,2024,LeftFoot,27104,Getafe,Girona,0,1,2024-11-10 17:30:00,,Standard,Omar Alderete
+604793,92,MissedShots,0.9209999847412109,0.56,0.033917516469955444,Omar Alderete,a,8986,FromCorner,2024,Head,27127,Real Madrid,Getafe,2,0,2024-12-01 15:15:00,Luis Milla,Aerial,Omar Alderete
+606750,66,ShotOnPost,0.9680000305175781,0.63,0.012712915427982807,Omar Alderete,h,8986,FromCorner,2024,Head,27132,Getafe,Espanyol,1,0,2024-12-09 20:00:00,Luis Milla,Aerial,Omar Alderete
+610994,34,BlockedShot,0.9030000305175782,0.73,0.03152763843536377,Omar Alderete,a,8986,SetPiece,2024,LeftFoot,27170,Las Palmas,Getafe,1,2,2025-01-12 13:00:00,,None,Omar Alderete
+613895,13,MissedShots,0.4540000152587891,0.6509999847412109,0.00689591933041811,Omar Alderete,a,8986,OpenPlay,2024,LeftFoot,27188,Real Sociedad,Getafe,0,3,2025-01-26 15:15:00,,BallRecovery,Omar Alderete
+613901,39,MissedShots,0.799000015258789,0.24600000381469728,0.058644745498895645,Omar Alderete,a,8986,DirectFreekick,2024,LeftFoot,27188,Real Sociedad,Getafe,0,3,2025-01-26 15:15:00,,Standard,Omar Alderete
+616327,35,SavedShot,0.720999984741211,0.73,0.007919593714177608,Omar Alderete,a,8986,SetPiece,2024,LeftFoot,27204,Alaves,Getafe,0,1,2025-02-09 13:00:00,,Aerial,Omar Alderete
+616980,45,BlockedShot,0.710999984741211,0.4420000076293945,0.04702022299170494,Omar Alderete,a,8986,DirectFreekick,2024,LeftFoot,27213,Girona,Getafe,1,2,2025-02-14 20:00:00,,Standard,Omar Alderete
+616985,58,BlockedShot,0.7819999694824219,0.5820000076293945,0.05497458577156067,Omar Alderete,a,8986,FromCorner,2024,LeftFoot,27213,Girona,Getafe,1,2,2025-02-14 20:00:00,,TakeOn,Omar Alderete
+616990,65,MissedShots,0.8859999847412109,0.48700000762939455,0.051450785249471664,Omar Alderete,a,8986,FromCorner,2024,Head,27213,Girona,Getafe,1,2,2025-02-14 20:00:00,Ramón Terrats,Cross,Omar Alderete
+621706,85,BlockedShot,0.8069999694824219,0.6919999694824219,0.02435874193906784,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27250,Getafe,Atletico Madrid,2,1,2025-03-09 13:00:00,,None,Omar Alderete
+624546,38,MissedShots,0.9640000152587891,0.44,0.4658794105052948,Omar Alderete,h,8986,SetPiece,2024,RightFoot,27264,Getafe,Villarreal,1,2,2025-03-30 13:00:00,Juan Iglesias,Aerial,Omar Alderete
+627244,18,Goal,0.9290000152587891,0.455,0.385195255279541,Omar Alderete,h,8986,SetPiece,2024,Head,27286,Getafe,Las Palmas,1,3,2025-04-12 14:15:00,Luis Milla,Cross,Omar Alderete
+627250,28,BlockedShot,0.735999984741211,0.48700000762939455,0.06293903291225433,Omar Alderete,h,8986,DirectFreekick,2024,LeftFoot,27286,Getafe,Las Palmas,1,3,2025-04-12 14:15:00,,Standard,Omar Alderete
+627264,94,MissedShots,0.765,0.47900001525878905,0.027442285791039467,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27286,Getafe,Las Palmas,1,3,2025-04-12 14:15:00,Coba da Costa,Pass,Omar Alderete
+629858,92,SavedShot,0.8919999694824219,0.7140000152587891,0.008643139153718948,Omar Alderete,h,8986,FromCorner,2024,Head,27308,Getafe,Real Madrid,0,1,2025-04-23 19:30:00,Luis Milla,Cross,Omar Alderete
+631174,12,MissedShots,0.6370000076293946,0.7019999694824218,0.008475854992866516,Omar Alderete,a,8986,OpenPlay,2024,LeftFoot,27318,Rayo Vallecano,Getafe,1,0,2025-05-02 19:00:00,,Dispossessed,Omar Alderete
+631187,57,MissedShots,0.95,0.4520000076293945,0.07365940511226654,Omar Alderete,a,8986,FromCorner,2024,Head,27318,Rayo Vallecano,Getafe,1,0,2025-05-02 19:00:00,Luis Milla,Aerial,Omar Alderete
+631197,91,MissedShots,0.795,0.5520000076293945,0.036818888038396835,Omar Alderete,a,8986,OpenPlay,2024,LeftFoot,27318,Rayo Vallecano,Getafe,1,0,2025-05-02 19:00:00,Luis Milla,Pass,Omar Alderete
+632554,11,SavedShot,0.740999984741211,0.37400001525878906,0.056714218109846115,Omar Alderete,a,8986,DirectFreekick,2024,LeftFoot,27330,Valencia,Getafe,3,0,2025-05-10 12:00:00,,Standard,Omar Alderete
+634183,38,BlockedShot,0.7319999694824219,0.48700000762939455,0.014096754603087902,Omar Alderete,h,8986,OpenPlay,2024,LeftFoot,27334,Getafe,Athletic Club,0,2,2025-05-15 19:30:00,Mauro Arambarri,None,Omar Alderete
+634184,38,BlockedShot,0.8859999847412109,0.5479999923706055,0.04516829922795296,Omar Alderete,h,8986,FromCorner,2024,Head,27334,Getafe,Athletic Club,0,2,2025-05-15 19:30:00,Luis Milla,Cross,Omar Alderete
+638867,80,BlockedShot,0.8569999694824219,0.600999984741211,0.0237965639680624,Omar Alderete,a,8986,FromCorner,2025,LeftFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,,Aerial,Omar Alderete
+638873,99,BlockedShot,0.8590000152587891,0.3920000076293945,0.04758099466562271,Omar Alderete,a,8986,FromCorner,2025,LeftFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Enzo Le Fée,Pass,Omar Alderete
+640271,43,BlockedShot,0.8340000152587891,0.6519999694824219,0.04248378053307533,Omar Alderete,h,8986,OpenPlay,2025,LeftFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,None,Omar Alderete
+643609,19,SavedShot,0.9080000305175782,0.590999984741211,0.034359678626060486,Omar Alderete,h,8986,OpenPlay,2025,Head,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Nordi Mukiele,Pass,Omar Alderete
+643618,50,ShotOnPost,0.9209999847412109,0.5820000076293945,0.05181761085987091,Omar Alderete,h,8986,OpenPlay,2025,Head,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Nordi Mukiele,Pass,Omar Alderete
+644922,37,Goal,0.9480000305175781,0.549000015258789,0.4132494628429413,Omar Alderete,a,8986,SetPiece,2025,Head,28834,Nottingham Forest,Sunderland,0,1,2025-09-27 16:30:00,Granit Xhaka,Chipped,Omar Alderete
+656341,27,SavedShot,0.7230000305175781,0.685,0.012263569980859756,Omar Alderete,a,8986,OpenPlay,2025,LeftFoot,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,Noah Sadiki,Pass,Omar Alderete
+656343,31,SavedShot,0.88,0.6359999847412109,0.05703161656856537,Omar Alderete,a,8986,SetPiece,2025,LeftFoot,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,,Rebound,Omar Alderete
+656363,60,ShotOnPost,0.9119999694824219,0.6459999847412109,0.013401092030107975,Omar Alderete,a,8986,FromCorner,2025,Head,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,Enzo Le Fée,Cross,Omar Alderete
+656941,87,BlockedShot,0.950999984741211,0.3579999923706055,0.014505606144666672,Omar Alderete,a,8986,FromCorner,2025,Head,28924,Manchester City,Sunderland,3,0,2025-12-06 15:00:00,Chemsdine Talbi,Cross,Omar Alderete
+659291,13,SavedShot,0.799000015258789,0.67,0.018393157050013542,Omar Alderete,a,8986,SetPiece,2025,LeftFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,,None,Omar Alderete
+659302,46,SavedShot,0.9440000152587891,0.5,0.12039218097925186,Omar Alderete,a,8986,OpenPlay,2025,Head,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Enzo Le Fée,Aerial,Omar Alderete
+660394,83,MissedShots,0.9490000152587891,0.6070000076293945,0.04348180443048477,Omar Alderete,h,8986,FromCorner,2025,Head,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Enzo Le Fée,Cross,Omar Alderete
+661416,84,BlockedShot,0.885,0.6070000076293945,0.03579150512814522,Omar Alderete,a,8986,FromCorner,2025,LeftFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,,TakeOn,Omar Alderete
+661948,53,MissedShots,0.9219999694824219,0.5529999923706055,0.28875303268432617,Omar Alderete,a,8986,SetPiece,2025,Head,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Enzo Le Fée,Cross,Omar Alderete
+663598,54,MissedShots,0.7909999847412109,0.45599998474121095,0.03803360089659691,Omar Alderete,h,8986,OpenPlay,2025,LeftFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,None,Omar Alderete
+667257,20,BlockedShot,0.7219999694824218,0.27799999237060546,0.007991546764969826,Omar Alderete,a,8986,SetPiece,2025,LeftFoot,29019,Arsenal,Sunderland,3,0,2026-02-07 15:00:00,,Aerial,Omar Alderete
+673866,15,SavedShot,0.6880000305175781,0.325,0.010682928375899792,Omar Alderete,h,8986,OpenPlay,2025,LeftFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Dan Ballard,BallRecovery,Omar Alderete
+673884,73,SavedShot,0.9169999694824219,0.47400001525878904,0.045680515468120575,Omar Alderete,h,8986,OpenPlay,2025,Head,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,None,Omar Alderete
+680665,25,MissedShots,0.885,0.5220000076293946,0.02889266237616539,Omar Alderete,h,8986,SetPiece,2025,Head,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,,None,Omar Alderete
+680672,56,SavedShot,0.8619999694824219,0.625999984741211,0.04214990511536598,Omar Alderete,h,8986,OpenPlay,2025,RightFoot,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,Granit Xhaka,Chipped,Omar Alderete
+680676,75,MissedShots,0.7919999694824219,0.524000015258789,0.03105030208826065,Omar Alderete,h,8986,SetPiece,2025,LeftFoot,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,,None,Omar Alderete
+680680,86,BlockedShot,0.950999984741211,0.44400001525878907,0.10827111452817917,Omar Alderete,h,8986,FromCorner,2025,LeftFoot,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,Brian Brobbey,BallTouch,Omar Alderete
+683703,7,MissedShots,0.914000015258789,0.6359999847412109,0.015512495301663876,Omar Alderete,h,8986,FromCorner,2025,Head,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,Enzo Le Fée,Cross,Omar Alderete

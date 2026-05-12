@@ -1,0 +1,31 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+590766,91,BlockedShot,0.799000015258789,0.5729999923706055,0.03909818083047867,Ferdi Kadioglu,h,13066,FromCorner,2024,RightFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,,Rebound,Ferdi Kadioglu
+597092,71,BlockedShot,0.8819999694824219,0.435,0.3732757270336151,Ferdi Kadioglu,a,13066,OpenPlay,2024,RightFoot,26676,Newcastle United,Brighton,0,1,2024-10-19 14:00:00,,None,Ferdi Kadioglu
+600138,13,Goal,0.8719999694824219,0.31,0.0506795309484005,Ferdi Kadioglu,a,13066,OpenPlay,2024,RightFoot,26696,Liverpool,Brighton,2,1,2024-11-02 15:00:00,Danny Welbeck,BallTouch,Ferdi Kadioglu
+600144,35,MissedShots,0.919000015258789,0.4209999847412109,0.13933981955051422,Ferdi Kadioglu,a,13066,OpenPlay,2024,RightFoot,26696,Liverpool,Brighton,2,1,2024-11-02 15:00:00,Kaoru Mitoma,Cross,Ferdi Kadioglu
+643125,79,MissedShots,0.960999984741211,0.675,0.07813909649848938,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,28821,Brighton,Tottenham,2,2,2025-09-20 14:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+646719,13,SavedShot,0.8909999847412109,0.6120000076293945,0.10398753732442856,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Yankuba Minteh,Pass,Ferdi Kadioglu
+649085,9,BlockedShot,0.850999984741211,0.49599998474121093,0.031940311193466187,Ferdi Kadioglu,a,13066,SetPiece,2025,RightFoot,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,,Aerial,Ferdi Kadioglu
+649107,87,SavedShot,0.7269999694824218,0.6070000076293945,0.009937935508787632,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,Danny Welbeck,Pass,Ferdi Kadioglu
+653647,72,MissedShots,0.740999984741211,0.5070000076293946,0.03992073982954025,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,,BallRecovery,Ferdi Kadioglu
+655696,9,BlockedShot,0.794000015258789,0.5709999847412109,0.03327560797333717,Ferdi Kadioglu,a,13066,FromCorner,2025,RightFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Maxim De Cuyper,Pass,Ferdi Kadioglu
+655718,66,SavedShot,0.8580000305175781,0.5709999847412109,0.09451913088560104,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,,Dispossessed,Ferdi Kadioglu
+658217,89,MissedShots,0.8680000305175781,0.6669999694824219,0.045571744441986084,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+659313,75,BlockedShot,0.8530000305175781,0.620999984741211,0.06467685848474503,Ferdi Kadioglu,h,13066,OpenPlay,2025,LeftFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+660636,71,SavedShot,0.83,0.6279999923706054,0.06892810761928558,Ferdi Kadioglu,a,13066,OpenPlay,2025,LeftFoot,28967,West Ham,Brighton,2,2,2025-12-30 19:30:00,Kaoru Mitoma,TakeOn,Ferdi Kadioglu
+660644,91,BlockedShot,0.8019999694824219,0.6559999847412109,0.025444908067584038,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28967,West Ham,Brighton,2,2,2025-12-30 19:30:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+661966,7,SavedShot,0.8809999847412109,0.27399999618530274,0.2925170063972473,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,28985,Manchester City,Brighton,1,1,2026-01-07 19:30:00,Georginio Rutter,Throughball,Ferdi Kadioglu
+664420,2,SavedShot,0.8,0.795,0.01115630753338337,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Jan Paul van Hecke,Chipped,Ferdi Kadioglu
+664444,88,BlockedShot,0.7619999694824219,0.36400001525878906,0.02192367985844612,Ferdi Kadioglu,h,13066,FromCorner,2025,RightFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Yankuba Minteh,Pass,Ferdi Kadioglu
+664824,29,BlockedShot,0.960999984741211,0.40200000762939453,0.28025099635124207,Ferdi Kadioglu,a,13066,OpenPlay,2025,Head,29004,Fulham,Brighton,2,1,2026-01-24 15:00:00,,Rebound,Ferdi Kadioglu
+668274,54,SavedShot,0.7780000305175782,0.715,0.015099793672561646,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,29028,Aston Villa,Brighton,1,0,2026-02-11 19:30:00,Danny Welbeck,Pass,Ferdi Kadioglu
+669730,29,ShotOnPost,0.7719999694824219,0.6930000305175781,0.01592346280813217,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,29039,Brentford,Brighton,0,2,2026-02-21 15:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+671515,54,MissedShots,0.740999984741211,0.5670000076293945,0.01557085756212473,Ferdi Kadioglu,h,13066,FromCorner,2025,RightFoot,29050,Brighton,Nottingham Forest,2,1,2026-03-01 14:00:00,,None,Ferdi Kadioglu
+671521,80,MissedShots,0.749000015258789,0.415,0.024154847487807274,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,29050,Brighton,Nottingham Forest,2,1,2026-03-01 14:00:00,Diego Gómez,Pass,Ferdi Kadioglu
+673867,16,BlockedShot,0.8369999694824218,0.4420000076293945,0.06461258232593536,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Jack Hinshelwood,Pass,Ferdi Kadioglu
+675115,51,SavedShot,0.7630000305175781,0.5429999923706055,0.025112969800829887,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,Yankuba Minteh,Pass,Ferdi Kadioglu
+677879,52,MissedShots,0.7559999847412109,0.77,0.016814235597848892,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,Pascal Groß,Pass,Ferdi Kadioglu
+679359,92,MissedShots,0.9480000305175781,0.3820000076293945,0.3446272015571594,Ferdi Kadioglu,a,13066,OpenPlay,2025,RightFoot,29107,Tottenham,Brighton,2,2,2026-04-18 16:30:00,Charalampos Kostoulas,Rebound,Ferdi Kadioglu
+680101,2,Goal,0.9119999694824219,0.4129999923706055,0.08933217078447342,Ferdi Kadioglu,h,13066,FromCorner,2025,RightFoot,29110,Brighton,Chelsea,3,0,2026-04-21 19:00:00,,None,Ferdi Kadioglu
+680112,64,SavedShot,0.8619999694824219,0.62,0.1214764416217804,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,29110,Brighton,Chelsea,3,0,2026-04-21 19:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu
+680113,65,SavedShot,0.7559999847412109,0.629000015258789,0.02033882960677147,Ferdi Kadioglu,h,13066,OpenPlay,2025,RightFoot,29110,Brighton,Chelsea,3,0,2026-04-21 19:00:00,Kaoru Mitoma,Pass,Ferdi Kadioglu

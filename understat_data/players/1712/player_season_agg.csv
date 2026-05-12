@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,AML,30,1,29,2214,2.140358505770564,3,2.293597299605608,29,2016,Middlesbrough,1,0,1,2.140358505770564,6.375499794259667,3.31012132903561,1712,Stewart Downing
+season,AMR,37,6,70,3315,4.136292829178274,8,6.626503786537796,85,2014,West Ham,3,0,6,4.136292829178274,13.64264209009707,7.331175375729799,1712,Stewart Downing

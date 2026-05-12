@@ -1,0 +1,308 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+443151,29,SavedShot,0.7530000305175781,0.41900001525878905,0.022988000884652138,Cole Palmer,h,8497,OpenPlay,2021,LeftFoot,16490,Manchester City,Everton,3,0,2021-11-21 14:00:00,Rodri,Pass,Cole Palmer
+443157,60,BlockedShot,0.9080000305175782,0.43400001525878906,0.12507499754428864,Cole Palmer,h,8497,OpenPlay,2021,RightFoot,16490,Manchester City,Everton,3,0,2021-11-21 14:00:00,Kyle Walker,Pass,Cole Palmer
+443159,73,MissedShots,0.75,0.38,0.027766799554228783,Cole Palmer,h,8497,OpenPlay,2021,LeftFoot,16490,Manchester City,Everton,3,0,2021-11-21 14:00:00,Bernardo Silva,Pass,Cole Palmer
+443161,85,BlockedShot,0.8390000152587891,0.43900001525878907,0.10489200055599213,Cole Palmer,h,8497,OpenPlay,2021,LeftFoot,16490,Manchester City,Everton,3,0,2021-11-21 14:00:00,Ilkay Gündogan,Pass,Cole Palmer
+488568,90,MissedShots,0.9630000305175781,0.6630000305175782,0.07090319693088531,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18274,Wolverhampton Wanderers,Manchester City,0,3,2022-09-17 11:30:00,João Cancelo,Cross,Cole Palmer
+491618,90,BlockedShot,0.8630000305175781,0.28100000381469725,0.05746040120720863,Cole Palmer,h,8497,OpenPlay,2022,LeftFoot,18298,Manchester City,Southampton,4,0,2022-10-08 14:00:00,Julián Álvarez,Pass,Cole Palmer
+528094,23,BlockedShot,0.9230000305175782,0.6680000305175782,0.09108145534992218,Cole Palmer,h,8497,OpenPlay,2022,LeftFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,Phil Foden,Pass,Cole Palmer
+528111,86,BlockedShot,0.899000015258789,0.26600000381469724,0.026821205392479897,Cole Palmer,h,8497,FromCorner,2022,LeftFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,John Stones,Pass,Cole Palmer
+528626,52,SavedShot,0.8680000305175781,0.720999984741211,0.027031848207116127,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18515,Brighton,Manchester City,1,1,2023-05-24 19:00:00,Ilkay Gündogan,Chipped,Cole Palmer
+529701,3,SavedShot,0.8859999847412109,0.615999984741211,0.1175507977604866,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Nathan Aké,TakeOn,Cole Palmer
+529704,15,BlockedShot,0.765,0.28600000381469726,0.01717437244951725,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Rico Lewis,Pass,Cole Palmer
+529714,50,SavedShot,0.919000015258789,0.3920000076293945,0.12711496651172638,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Phil Foden,Throughball,Cole Palmer
+529724,89,BlockedShot,0.899000015258789,0.5479999923706055,0.11025804281234741,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Sergio Gómez,Pass,Cole Palmer
+529725,89,BlockedShot,0.924000015258789,0.539000015258789,0.12396235764026642,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,,Rebound,Cole Palmer
+529726,89,BlockedShot,0.9580000305175781,0.5029999923706054,0.1440233737230301,Cole Palmer,a,8497,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Sergio Gómez,Pass,Cole Palmer
+538112,84,SavedShot,0.92,0.4520000076293945,0.14218410849571228,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,21942,Bournemouth,Chelsea,0,0,2023-09-17 13:00:00,Raheem Sterling,Pass,Cole Palmer
+539630,91,BlockedShot,0.8730000305175781,0.44,0.09272009134292603,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Axel Disasi,Pass,Cole Palmer
+539632,98,BlockedShot,0.785,0.37099998474121093,0.02440725825726986,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Conor Gallagher,Pass,Cole Palmer
+542136,39,MissedShots,0.48900001525878906,0.4,0.017975129187107086,Cole Palmer,a,8497,DirectFreekick,2023,LeftFoot,21964,Fulham,Chelsea,0,2,2023-10-02 19:00:00,,Standard,Cole Palmer
+542139,54,SavedShot,0.735,0.4379999923706055,0.021632656455039978,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,21964,Fulham,Chelsea,0,2,2023-10-02 19:00:00,,BallRecovery,Cole Palmer
+542618,8,MissedShots,0.7719999694824219,0.295,0.019257554784417152,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,21967,Burnley,Chelsea,1,4,2023-10-07 14:00:00,Marc Cucurella,Pass,Cole Palmer
+542625,43,BlockedShot,0.799000015258789,0.4759999847412109,0.04918980970978737,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,21967,Burnley,Chelsea,1,4,2023-10-07 14:00:00,Moisés Caicedo,Pass,Cole Palmer
+542626,49,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2023,LeftFoot,21967,Burnley,Chelsea,1,4,2023-10-07 14:00:00,,Standard,Cole Palmer
+544206,14,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,21978,Chelsea,Arsenal,2,2,2023-10-21 16:30:00,,Standard,Cole Palmer
+544208,29,MissedShots,0.8540000152587891,0.634000015258789,0.08365878462791443,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21978,Chelsea,Arsenal,2,2,2023-10-21 16:30:00,Conor Gallagher,Pass,Cole Palmer
+544218,56,SavedShot,0.8859999847412109,0.5920000076293945,0.430543452501297,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21978,Chelsea,Arsenal,2,2,2023-10-21 16:30:00,,BallRecovery,Cole Palmer
+544221,69,MissedShots,0.750999984741211,0.36700000762939455,0.020903555676341057,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21978,Chelsea,Arsenal,2,2,2023-10-21 16:30:00,Conor Gallagher,BallRecovery,Cole Palmer
+545221,43,MissedShots,0.7730000305175782,0.37099998474121093,0.06878116726875305,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,21989,Chelsea,Brentford,0,2,2023-10-28 11:30:00,,Standard,Cole Palmer
+545228,87,MissedShots,0.9,0.4370000076293945,0.11401442438364029,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,21989,Chelsea,Brentford,0,2,2023-10-28 11:30:00,Reece James,Pass,Cole Palmer
+547910,34,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2023,LeftFoot,22004,Tottenham,Chelsea,1,4,2023-11-06 20:00:00,,Standard,Cole Palmer
+547912,46,MissedShots,0.8159999847412109,0.4779999923706055,0.06557358056306839,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22004,Tottenham,Chelsea,1,4,2023-11-06 20:00:00,Conor Gallagher,Pass,Cole Palmer
+549080,11,BlockedShot,0.8909999847412109,0.3129999923706055,0.04885943979024887,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22009,Chelsea,Manchester City,4,4,2023-11-12 16:30:00,Reece James,Pass,Cole Palmer
+549101,59,SavedShot,0.8690000152587891,0.5220000076293946,0.4637688100337982,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22009,Chelsea,Manchester City,4,4,2023-11-12 16:30:00,Moisés Caicedo,TakeOn,Cole Palmer
+549109,94,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22009,Chelsea,Manchester City,4,4,2023-11-12 16:30:00,,Standard,Cole Palmer
+551669,94,SavedShot,0.6379999923706055,0.6170000076293946,0.011303035542368889,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,,BallRecovery,Cole Palmer
+552353,44,Goal,0.850999984741211,0.53,0.07793436199426651,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22044,Manchester United,Chelsea,2,1,2023-12-06 20:15:00,Mykhailo Mudryk,Pass,Cole Palmer
+553391,13,SavedShot,0.764000015258789,0.35200000762939454,0.022923318669199944,Cole Palmer,a,8497,FromCorner,2023,LeftFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,Conor Gallagher,Pass,Cole Palmer
+553394,39,MissedShots,0.8009999847412109,0.38599998474121094,0.02892284467816353,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,Armando Broja,Pass,Cole Palmer
+553395,41,BlockedShot,0.8019999694824219,0.2929999923706055,0.025107894092798233,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,Conor Gallagher,Pass,Cole Palmer
+553403,59,SavedShot,0.8169999694824219,0.3890000152587891,0.12636791169643402,Cole Palmer,a,8497,DirectFreekick,2023,LeftFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,,Standard,Cole Palmer
+553405,65,MissedShots,0.7809999847412109,0.38799999237060545,0.02844301238656044,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,Marc Cucurella,Pass,Cole Palmer
+554259,14,BlockedShot,0.7340000152587891,0.5420000076293945,0.022365624085068703,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,Moisés Caicedo,Pass,Cole Palmer
+554265,48,BlockedShot,0.92,0.3290000152587891,0.08055368810892105,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,Conor Gallagher,TakeOn,Cole Palmer
+554266,51,BlockedShot,0.7080000305175781,0.375,0.015312583185732365,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,Raheem Sterling,Pass,Cole Palmer
+554267,53,Goal,0.9419999694824219,0.5170000076293946,0.6091511249542236,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,Raheem Sterling,Pass,Cole Palmer
+554274,87,SavedShot,0.7630000305175781,0.3120000076293945,0.050668831914663315,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,,Standard,Cole Palmer
+556433,33,MissedShots,0.7369999694824219,0.355,0.015604667365550995,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22073,Wolverhampton Wanderers,Chelsea,2,1,2023-12-24 13:00:00,Malo Gusto,Pass,Cole Palmer
+556438,46,BlockedShot,0.815,0.45299999237060545,0.05575413256883621,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22073,Wolverhampton Wanderers,Chelsea,2,1,2023-12-24 13:00:00,,BallRecovery,Cole Palmer
+556884,9,SavedShot,0.785,0.27799999237060546,0.016599051654338837,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,Malo Gusto,Pass,Cole Palmer
+556886,11,Goal,0.889000015258789,0.6919999694824219,0.053648289293050766,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,,BallRecovery,Cole Palmer
+556896,50,MissedShots,0.7519999694824219,0.28899999618530275,0.01557866856455803,Cole Palmer,a,8497,FromCorner,2023,LeftFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,Noni Madueke,Pass,Cole Palmer
+556899,67,BlockedShot,0.8140000152587891,0.24799999237060547,0.019672492519021034,Cole Palmer,a,8497,FromCorner,2023,LeftFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,Noni Madueke,Pass,Cole Palmer
+556900,69,Goal,0.9519999694824218,0.4620000076293945,0.9273539781570435,Cole Palmer,a,8497,OpenPlay,2023,RightFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,Nicolas Jackson,TakeOn,Cole Palmer
+557893,28,SavedShot,0.789000015258789,0.35200000762939454,0.028216462582349777,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,Moisés Caicedo,Pass,Cole Palmer
+557899,48,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,,Standard,Cole Palmer
+557900,50,MissedShots,0.785,0.3770000076293945,0.030658818781375885,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,Malo Gusto,Pass,Cole Palmer
+561570,8,BlockedShot,0.8159999847412109,0.36400001525878906,0.03878650814294815,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22120,Chelsea,Wolverhampton Wanderers,2,4,2024-02-04 14:00:00,Enzo Fernández,Pass,Cole Palmer
+561571,18,Goal,0.9030000305175782,0.40299999237060546,0.35601821541786194,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22120,Chelsea,Wolverhampton Wanderers,2,4,2024-02-04 14:00:00,Moisés Caicedo,Throughball,Cole Palmer
+561584,60,BlockedShot,0.9059999847412109,0.34,0.06920342147350311,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22120,Chelsea,Wolverhampton Wanderers,2,4,2024-02-04 14:00:00,Conor Gallagher,Pass,Cole Palmer
+561586,61,MissedShots,0.835999984741211,0.295,0.033946700394153595,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22120,Chelsea,Wolverhampton Wanderers,2,4,2024-02-04 14:00:00,Christopher Nkunku,Pass,Cole Palmer
+563428,50,MissedShots,0.8430000305175781,0.3079999923706055,0.0341152548789978,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22126,Crystal Palace,Chelsea,1,3,2024-02-12 20:00:00,Malo Gusto,Pass,Cole Palmer
+563437,77,SavedShot,0.865,0.3240000152587891,0.05292776972055435,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22126,Crystal Palace,Chelsea,1,3,2024-02-12 20:00:00,,BallRecovery,Cole Palmer
+563438,79,BlockedShot,0.815,0.3559999847412109,0.014045660383999348,Cole Palmer,a,8497,SetPiece,2023,LeftFoot,22126,Crystal Palace,Chelsea,1,3,2024-02-12 20:00:00,Moisés Caicedo,Aerial,Cole Palmer
+566548,53,MissedShots,0.8859999847412109,0.55,0.042348116636276245,Cole Palmer,a,8497,OpenPlay,2023,Head,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,,None,Cole Palmer
+566551,60,MissedShots,0.8540000152587891,0.514000015258789,0.13003410398960114,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,Malo Gusto,Pass,Cole Palmer
+566556,82,SavedShot,0.730999984741211,0.529000015258789,0.01632223278284073,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,Malo Gusto,BallRecovery,Cole Palmer
+566559,88,BlockedShot,0.8280000305175781,0.3079999923706055,0.030485067516565323,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,,None,Cole Palmer
+566560,88,SavedShot,0.8130000305175781,0.4370000076293945,0.04965680092573166,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,Raheem Sterling,Pass,Cole Palmer
+566561,92,BlockedShot,0.749000015258789,0.375,0.017785288393497467,Cole Palmer,a,8497,SetPiece,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,Conor Gallagher,Pass,Cole Palmer
+569008,5,MissedShots,0.815,0.33599998474121096,0.03180784732103348,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22169,Chelsea,Newcastle United,3,2,2024-03-11 20:00:00,,None,Cole Palmer
+569010,12,SavedShot,0.8340000152587891,0.2560000038146973,0.03231799229979515,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22169,Chelsea,Newcastle United,3,2,2024-03-11 20:00:00,Conor Gallagher,Pass,Cole Palmer
+569022,56,Goal,0.805,0.3240000152587891,0.02973678708076477,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22169,Chelsea,Newcastle United,3,2,2024-03-11 20:00:00,Enzo Fernández,Pass,Cole Palmer
+570698,1,MissedShots,0.88,0.715999984741211,0.043396320194005966,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Marc Cucurella,Pass,Cole Palmer
+570705,11,MissedShots,0.7319999694824219,0.31799999237060544,0.011454416438937187,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Malo Gusto,None,Cole Palmer
+570706,12,MissedShots,0.9130000305175782,0.3320000076293945,0.12276924401521683,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Conor Gallagher,Throughball,Cole Palmer
+570709,16,BlockedShot,0.9080000305175782,0.37099998474121093,0.0997886210680008,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Malo Gusto,Pass,Cole Palmer
+570716,28,BlockedShot,0.850999984741211,0.38099998474121094,0.0661657378077507,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Malo Gusto,Pass,Cole Palmer
+570721,43,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,,Standard,Cole Palmer
+570736,74,SavedShot,0.8169999694824219,0.5320000076293945,0.05755560100078583,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Marc Cucurella,Pass,Cole Palmer
+570737,75,SavedShot,0.889000015258789,0.32,0.06635909527540207,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Malo Gusto,TakeOn,Cole Palmer
+570738,77,Goal,0.8590000152587891,0.565,0.36159247159957886,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Raheem Sterling,Throughball,Cole Palmer
+572009,18,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,,Standard,Cole Palmer
+572010,21,BlockedShot,0.8019999694824219,0.36,0.050676379352808,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Malo Gusto,Pass,Cole Palmer
+572026,48,BlockedShot,0.7809999847412109,0.529000015258789,0.06119554117321968,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Malo Gusto,Pass,Cole Palmer
+572029,52,BlockedShot,0.61,0.3110000038146973,0.007845491170883179,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Malo Gusto,Pass,Cole Palmer
+572034,57,SavedShot,0.845999984741211,0.32,0.04172400012612343,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Enzo Fernández,Pass,Cole Palmer
+572037,73,SavedShot,0.950999984741211,0.17600000381469727,0.0642126128077507,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,,Standard,Cole Palmer
+572041,78,BlockedShot,0.785,0.37,0.024656303226947784,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Nicolas Jackson,Pass,Cole Palmer
+572044,99,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,,Standard,Cole Palmer
+572046,100,Goal,0.8569999694824219,0.28399999618530275,0.029317373409867287,Cole Palmer,h,8497,FromCorner,2023,LeftFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Enzo Fernández,Pass,Cole Palmer
+573130,22,BlockedShot,0.8769999694824219,0.6659999847412109,0.07152841985225677,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22212,Sheffield United,Chelsea,2,2,2024-04-07 16:30:00,Enzo Fernández,Pass,Cole Palmer
+573140,71,SavedShot,0.7830000305175782,0.6959999847412109,0.028127344325184822,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22212,Sheffield United,Chelsea,2,2,2024-04-07 16:30:00,Conor Gallagher,Pass,Cole Palmer
+574582,12,Goal,0.8140000152587891,0.4540000152587891,0.06210532784461975,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,Nicolas Jackson,Pass,Cole Palmer
+574585,17,Goal,0.9740000152587891,0.4879999923706055,0.8727668523788452,Cole Palmer,h,8497,OpenPlay,2023,Head,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,,Rebound,Cole Palmer
+574587,28,Goal,0.7019999694824218,0.48,0.22258137166500092,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,,BallRecovery,Cole Palmer
+574594,53,SavedShot,0.85,0.5540000152587891,0.5252687931060791,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,Mykhailo Mudryk,Throughball,Cole Palmer
+574596,63,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2023,LeftFoot,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,,Standard,Cole Palmer
+577009,22,MissedShots,0.745999984741211,0.41900001525878905,0.020895138382911682,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Mykhailo Mudryk,Pass,Cole Palmer
+577011,28,BlockedShot,0.7669999694824219,0.4929999923706055,0.027594223618507385,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Thiago Silva,Pass,Cole Palmer
+577022,57,BlockedShot,0.7430000305175781,0.275,0.012144391424953938,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Nicolas Jackson,Pass,Cole Palmer
+577025,64,MissedShots,0.799000015258789,0.5420000076293945,0.12270545959472656,Cole Palmer,a,8497,DirectFreekick,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,,Standard,Cole Palmer
+577027,76,MissedShots,0.7559999847412109,0.46099998474121096,0.02301015518605709,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Marc Cucurella,Pass,Cole Palmer
+577033,93,SavedShot,0.850999984741211,0.4929999923706055,0.40067797899246216,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,,TakeOn,Cole Palmer
+577970,4,MissedShots,0.960999984741211,0.45599998474121095,0.7339301705360413,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22149,Chelsea,Tottenham,2,0,2024-05-02 18:30:00,,Rebound,Cole Palmer
+577984,51,MissedShots,0.87,0.37200000762939456,0.09541893005371094,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22149,Chelsea,Tottenham,2,0,2024-05-02 18:30:00,Noni Madueke,Pass,Cole Palmer
+577986,59,BlockedShot,0.9230000305175782,0.3509999847412109,0.25284719467163086,Cole Palmer,h,8497,OpenPlay,2023,RightFoot,22149,Chelsea,Tottenham,2,0,2024-05-02 18:30:00,Noni Madueke,TakeOn,Cole Palmer
+577991,71,ShotOnPost,0.7340000152587891,0.4759999847412109,0.05376102402806282,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,22149,Chelsea,Tottenham,2,0,2024-05-02 18:30:00,,Standard,Cole Palmer
+577994,86,SavedShot,0.7909999847412109,0.18,0.03604787215590477,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,22149,Chelsea,Tottenham,2,0,2024-05-02 18:30:00,,Standard,Cole Palmer
+578804,14,Goal,0.8819999694824219,0.44,0.0906350314617157,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22249,Chelsea,West Ham,5,0,2024-05-05 13:00:00,Nicolas Jackson,Rebound,Cole Palmer
+578810,27,MissedShots,0.775,0.3079999923706055,0.023059168830513954,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22249,Chelsea,West Ham,5,0,2024-05-05 13:00:00,Noni Madueke,Pass,Cole Palmer
+578819,45,BlockedShot,0.745999984741211,0.4259999847412109,0.05828813835978508,Cole Palmer,h,8497,DirectFreekick,2023,LeftFoot,22249,Chelsea,West Ham,5,0,2024-05-05 13:00:00,,Standard,Cole Palmer
+578826,63,SavedShot,0.8080000305175781,0.44299999237060544,0.07071162015199661,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22249,Chelsea,West Ham,5,0,2024-05-05 13:00:00,Noni Madueke,Pass,Cole Palmer
+580134,53,MissedShots,0.9230000305175782,0.6070000076293945,0.3581908345222473,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22261,Nottingham Forest,Chelsea,2,3,2024-05-11 16:30:00,Moisés Caicedo,Throughball,Cole Palmer
+580140,66,BlockedShot,0.82,0.48700000762939455,0.17609475553035736,Cole Palmer,a,8497,DirectFreekick,2023,LeftFoot,22261,Nottingham Forest,Chelsea,2,3,2024-05-11 16:30:00,,Standard,Cole Palmer
+581191,12,SavedShot,0.7880000305175782,0.35,0.020956071093678474,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Mykhailo Mudryk,Pass,Cole Palmer
+581194,29,BlockedShot,0.75,0.305,0.044050078839063644,Cole Palmer,a,8497,DirectFreekick,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,,Standard,Cole Palmer
+581195,29,BlockedShot,0.7530000305175781,0.36700000762939455,0.013697021640837193,Cole Palmer,a,8497,SetPiece,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,,Rebound,Cole Palmer
+581197,33,Goal,0.9159999847412109,0.600999984741211,0.04721684008836746,Cole Palmer,a,8497,OpenPlay,2023,Head,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Marc Cucurella,Cross,Cole Palmer
+581198,43,BlockedShot,0.899000015258789,0.39599998474121095,0.11669433861970901,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Malo Gusto,Pass,Cole Palmer
+581204,52,BlockedShot,0.874000015258789,0.6190000152587891,0.1216139867901802,Cole Palmer,a,8497,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Christopher Nkunku,Pass,Cole Palmer
+582210,2,MissedShots,0.8640000152587891,0.40099998474121096,0.1369228959083557,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22269,Chelsea,Bournemouth,2,1,2024-05-19 15:00:00,Raheem Sterling,TakeOn,Cole Palmer
+582233,53,BlockedShot,0.8030000305175782,0.4929999923706055,0.06344640254974365,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22269,Chelsea,Bournemouth,2,1,2024-05-19 15:00:00,Nicolas Jackson,Pass,Cole Palmer
+582242,86,BlockedShot,0.8669999694824219,0.3290000152587891,0.06488005816936493,Cole Palmer,h,8497,OpenPlay,2023,LeftFoot,22269,Chelsea,Bournemouth,2,1,2024-05-19 15:00:00,Chimuanya Ugochukwu,Pass,Cole Palmer
+585319,43,SavedShot,0.7880000305175782,0.35900001525878905,0.027254972606897354,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26610,Chelsea,Manchester City,0,2,2024-08-18 15:30:00,Christopher Nkunku,Pass,Cole Palmer
+585328,91,MissedShots,0.7869999694824219,0.3579999923706055,0.034946560859680176,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26610,Chelsea,Manchester City,0,2,2024-08-18 15:30:00,Moisés Caicedo,TakeOn,Cole Palmer
+586665,17,MissedShots,0.9209999847412109,0.44,0.12612594664096832,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26619,Wolverhampton Wanderers,Chelsea,2,6,2024-08-25 13:00:00,Noni Madueke,Cross,Cole Palmer
+586668,35,BlockedShot,0.759000015258789,0.32,0.05026724189519882,Cole Palmer,a,8497,DirectFreekick,2024,LeftFoot,26619,Wolverhampton Wanderers,Chelsea,2,6,2024-08-25 13:00:00,,Standard,Cole Palmer
+586673,44,Goal,0.755,0.5990000152587891,0.016395259648561478,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26619,Wolverhampton Wanderers,Chelsea,2,6,2024-08-25 13:00:00,Nicolas Jackson,Chipped,Cole Palmer
+586678,61,ShotOnPost,0.9530000305175781,0.32,0.13685302436351776,Cole Palmer,a,8497,OpenPlay,2024,RightFoot,26619,Wolverhampton Wanderers,Chelsea,2,6,2024-08-25 13:00:00,Nicolas Jackson,Chipped,Cole Palmer
+586680,69,BlockedShot,0.8019999694824219,0.5029999923706054,0.058506011962890625,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26619,Wolverhampton Wanderers,Chelsea,2,6,2024-08-25 13:00:00,Enzo Fernández,Pass,Cole Palmer
+589747,11,MissedShots,0.7930000305175782,0.3559999847412109,0.029846781864762306,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26630,Chelsea,Crystal Palace,1,1,2024-09-01 12:30:00,Wesley Fofana,Pass,Cole Palmer
+589756,47,SavedShot,0.7280000305175781,0.4779999923706055,0.05036655813455582,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26630,Chelsea,Crystal Palace,1,1,2024-09-01 12:30:00,,Standard,Cole Palmer
+592095,11,MissedShots,0.8469999694824218,0.5229999923706055,0.10261262953281403,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26642,West Ham,Chelsea,0,3,2024-09-21 11:30:00,Nicolas Jackson,Pass,Cole Palmer
+592106,46,Goal,0.860999984741211,0.644000015258789,0.2833598256111145,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26642,West Ham,Chelsea,0,3,2024-09-21 11:30:00,Nicolas Jackson,Pass,Cole Palmer
+594170,18,SavedShot,0.855,0.5359999847412109,0.3030575215816498,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,Enzo Fernández,Throughball,Cole Palmer
+594172,20,Goal,0.8540000152587891,0.4779999923706055,0.34908953309059143,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,Nicolas Jackson,Pass,Cole Palmer
+594173,27,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,Standard,Cole Palmer
+594174,30,Goal,0.7219999694824218,0.32799999237060545,0.037140220403671265,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,Standard,Cole Palmer
+594179,40,Goal,0.9119999694824219,0.634000015258789,0.1375078707933426,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,Jadon Sancho,Throughball,Cole Palmer
+594186,51,MissedShots,0.7709999847412109,0.6930000305175781,0.015126819722354412,Cole Palmer,h,8497,FromCorner,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,None,Cole Palmer
+594189,55,MissedShots,0.8909999847412109,0.42700000762939455,0.38792696595191956,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,Moisés Caicedo,Pass,Cole Palmer
+596059,43,BlockedShot,0.875999984741211,0.509000015258789,0.11527077853679657,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,Noni Madueke,Pass,Cole Palmer
+596063,46,BlockedShot,0.8680000305175781,0.39099998474121095,0.07507273554801941,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,Noni Madueke,Pass,Cole Palmer
+596073,65,MissedShots,0.7280000305175781,0.625999984741211,0.013694134540855885,Cole Palmer,h,8497,FromCorner,2024,LeftFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,,None,Cole Palmer
+596076,86,SavedShot,0.85,0.4370000076293945,0.08853352069854736,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,Noni Madueke,TakeOn,Cole Palmer
+596077,86,SavedShot,0.9180000305175782,0.3370000076293945,0.05705488100647926,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,,Rebound,Cole Palmer
+596083,95,MissedShots,0.7530000305175781,0.4929999923706055,0.026980992406606674,Cole Palmer,h,8497,FromCorner,2024,LeftFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,João Félix,Pass,Cole Palmer
+597741,24,BlockedShot,0.9169999694824219,0.4620000076293945,0.48817095160484314,Cole Palmer,a,8497,OpenPlay,2024,RightFoot,26679,Liverpool,Chelsea,2,1,2024-10-20 15:30:00,,None,Cole Palmer
+597747,50,MissedShots,0.8669999694824219,0.35200000762939454,0.05280282348394394,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26679,Liverpool,Chelsea,2,1,2024-10-20 15:30:00,Noni Madueke,Pass,Cole Palmer
+597752,63,BlockedShot,0.7759999847412109,0.7090000152587891,0.052365828305482864,Cole Palmer,a,8497,DirectFreekick,2024,LeftFoot,26679,Liverpool,Chelsea,2,1,2024-10-20 15:30:00,,Standard,Cole Palmer
+597753,70,BlockedShot,0.860999984741211,0.3920000076293945,0.07131922245025635,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26679,Liverpool,Chelsea,2,1,2024-10-20 15:30:00,Pedro Neto,Pass,Cole Palmer
+598909,46,Goal,0.8480000305175781,0.6519999694824219,0.049186959862709045,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26688,Chelsea,Newcastle United,2,1,2024-10-27 14:00:00,Romeo Lavia,Pass,Cole Palmer
+600830,8,BlockedShot,0.92,0.5659999847412109,0.12577305734157562,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26697,Manchester United,Chelsea,1,1,2024-11-03 16:30:00,Moisés Caicedo,Pass,Cole Palmer
+600837,34,BlockedShot,0.8590000152587891,0.5929999923706055,0.12359822541475296,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26697,Manchester United,Chelsea,1,1,2024-11-03 16:30:00,,BallRecovery,Cole Palmer
+600852,94,BlockedShot,0.8080000305175781,0.425,0.047867417335510254,Cole Palmer,a,8497,SetPiece,2024,LeftFoot,26697,Manchester United,Chelsea,1,1,2024-11-03 16:30:00,Marc Cucurella,TakeOn,Cole Palmer
+602209,2,SavedShot,0.7190000152587891,0.5629999923706055,0.0166802778840065,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26705,Chelsea,Arsenal,1,1,2024-11-10 16:30:00,Romeo Lavia,Pass,Cole Palmer
+602220,39,MissedShots,0.7130000305175781,0.7240000152587891,0.03075195848941803,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26705,Chelsea,Arsenal,1,1,2024-11-10 16:30:00,,Standard,Cole Palmer
+602221,44,BlockedShot,0.7830000305175782,0.33099998474121095,0.0658380389213562,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26705,Chelsea,Arsenal,1,1,2024-11-10 16:30:00,,Standard,Cole Palmer
+602222,47,BlockedShot,0.745999984741211,0.3890000152587891,0.05413925275206566,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26705,Chelsea,Arsenal,1,1,2024-11-10 16:30:00,,Standard,Cole Palmer
+602627,7,BlockedShot,0.8190000152587891,0.2560000038146973,0.02033885382115841,Cole Palmer,a,8497,FromCorner,2024,LeftFoot,26719,Leicester,Chelsea,1,2,2024-11-23 12:30:00,Enzo Fernández,Pass,Cole Palmer
+602639,53,BlockedShot,0.98,0.44400001525878907,0.682234525680542,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26719,Leicester,Chelsea,1,2,2024-11-23 12:30:00,,Rebound,Cole Palmer
+604671,22,SavedShot,0.8569999694824219,0.6680000305175782,0.06445897370576859,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26724,Chelsea,Aston Villa,3,0,2024-12-01 13:30:00,,BallRecovery,Cole Palmer
+604672,24,SavedShot,0.9119999694824219,0.4279999923706055,0.12034832686185837,Cole Palmer,h,8497,SetPiece,2024,LeftFoot,26724,Chelsea,Aston Villa,3,0,2024-12-01 13:30:00,Enzo Fernández,Pass,Cole Palmer
+604677,40,MissedShots,0.815,0.49,0.08030252158641815,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26724,Chelsea,Aston Villa,3,0,2024-12-01 13:30:00,Moisés Caicedo,Pass,Cole Palmer
+604685,74,BlockedShot,0.9030000305175782,0.3559999847412109,0.1196279376745224,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26724,Chelsea,Aston Villa,3,0,2024-12-01 13:30:00,Christopher Nkunku,Pass,Cole Palmer
+604686,82,Goal,0.8069999694824219,0.39299999237060546,0.03367389738559723,Cole Palmer,h,8497,SetPiece,2024,LeftFoot,26724,Chelsea,Aston Villa,3,0,2024-12-01 13:30:00,Noni Madueke,Pass,Cole Palmer
+605276,20,SavedShot,0.87,0.34200000762939453,0.0583588108420372,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,,Rebound,Cole Palmer
+605278,23,SavedShot,0.8809999847412109,0.4,0.36077311635017395,Cole Palmer,a,8497,OpenPlay,2024,RightFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,João Félix,Chipped,Cole Palmer
+605291,52,MissedShots,0.7480000305175781,0.659000015258789,0.023546744138002396,Cole Palmer,a,8497,FromCorner,2024,LeftFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,Moisés Caicedo,Pass,Cole Palmer
+605292,53,SavedShot,0.8519999694824218,0.5029999923706054,0.12137933075428009,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,João Félix,Pass,Cole Palmer
+605295,58,BlockedShot,0.909000015258789,0.6419999694824219,0.12479788810014725,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,Christopher Nkunku,Pass,Cole Palmer
+605299,76,Goal,0.9719999694824218,0.4909999847412109,0.8947972059249878,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,Christopher Nkunku,Rebound,Cole Palmer
+606505,30,SavedShot,0.779000015258789,0.5570000076293945,0.031214075163006783,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26745,Tottenham,Chelsea,3,4,2024-12-08 16:30:00,Romeo Lavia,ShieldBallOpp,Cole Palmer
+606516,60,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2024,LeftFoot,26745,Tottenham,Chelsea,3,4,2024-12-08 16:30:00,,Standard,Cole Palmer
+606519,72,BlockedShot,0.87,0.3390000152587891,0.07724519819021225,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26745,Tottenham,Chelsea,3,4,2024-12-08 16:30:00,Pedro Neto,TakeOn,Cole Palmer
+606522,83,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2024,LeftFoot,26745,Tottenham,Chelsea,3,4,2024-12-08 16:30:00,,Standard,Cole Palmer
+607740,12,BlockedShot,0.924000015258789,0.6730000305175782,0.07724382728338242,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,Jadon Sancho,Pass,Cole Palmer
+607742,13,SavedShot,0.830999984741211,0.555,0.05137373507022858,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,,Rebound,Cole Palmer
+607752,44,BlockedShot,0.749000015258789,0.5359999847412109,0.027692707255482674,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,Enzo Fernández,Pass,Cole Palmer
+607772,91,BlockedShot,0.8119999694824219,0.649000015258789,0.07292923331260681,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,Jadon Sancho,Pass,Cole Palmer
+608726,2,MissedShots,0.75,0.5629999923706055,0.024541223421692848,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26764,Everton,Chelsea,0,0,2024-12-22 14:00:00,Nicolas Jackson,Pass,Cole Palmer
+608737,59,BlockedShot,0.720999984741211,0.51,0.04688384011387825,Cole Palmer,a,8497,DirectFreekick,2024,LeftFoot,26764,Everton,Chelsea,0,0,2024-12-22 14:00:00,,Standard,Cole Palmer
+609085,15,Goal,0.8130000305175781,0.5670000076293945,0.05856556072831154,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Levi Colwill,TakeOn,Cole Palmer
+609086,19,SavedShot,0.855999984741211,0.47200000762939454,0.11529415845870972,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Nicolas Jackson,Pass,Cole Palmer
+609088,21,SavedShot,0.8119999694824219,0.3890000152587891,0.05603410303592682,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,,None,Cole Palmer
+609091,32,BlockedShot,0.73,0.4640000152587891,0.05106142535805702,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,,Standard,Cole Palmer
+609109,97,MissedShots,0.75,0.6419999694824219,0.016882002353668213,Cole Palmer,h,8497,SetPiece,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Malo Gusto,Pass,Cole Palmer
+609672,20,ShotOnPost,0.7830000305175782,0.565,0.02769603580236435,Cole Palmer,a,8497,SetPiece,2024,LeftFoot,26787,Ipswich,Chelsea,2,0,2024-12-30 19:45:00,Enzo Fernández,Pass,Cole Palmer
+609681,45,SavedShot,0.8159999847412109,0.4909999847412109,0.05387405678629875,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26787,Ipswich,Chelsea,2,0,2024-12-30 19:45:00,João Félix,Pass,Cole Palmer
+609684,46,BlockedShot,0.8130000305175781,0.515,0.05929629132151604,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26787,Ipswich,Chelsea,2,0,2024-12-30 19:45:00,Axel Disasi,Pass,Cole Palmer
+609690,69,BlockedShot,0.8530000305175781,0.6459999847412109,0.06530328840017319,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26787,Ipswich,Chelsea,2,0,2024-12-30 19:45:00,Levi Colwill,Pass,Cole Palmer
+609903,13,Goal,0.9309999847412109,0.5709999847412109,0.475597620010376,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26795,Crystal Palace,Chelsea,1,1,2025-01-04 15:00:00,Jadon Sancho,Pass,Cole Palmer
+609913,43,MissedShots,0.7319999694824219,0.40799999237060547,0.024027103558182716,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26795,Crystal Palace,Chelsea,1,1,2025-01-04 15:00:00,Malo Gusto,Pass,Cole Palmer
+611481,6,SavedShot,0.7430000305175781,0.3579999923706055,0.04856109246611595,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26809,Chelsea,Bournemouth,2,2,2025-01-14 19:30:00,,Standard,Cole Palmer
+611482,9,MissedShots,0.8669999694824219,0.66,0.09642195701599121,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26809,Chelsea,Bournemouth,2,2,2025-01-14 19:30:00,Jadon Sancho,Pass,Cole Palmer
+611483,12,Goal,0.8859999847412109,0.5609999847412109,0.3603881895542145,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26809,Chelsea,Bournemouth,2,2,2025-01-14 19:30:00,Nicolas Jackson,Throughball,Cole Palmer
+611490,38,SavedShot,0.7959999847412109,0.415,0.051222238689661026,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26809,Chelsea,Bournemouth,2,2,2025-01-14 19:30:00,Noni Madueke,Pass,Cole Palmer
+613026,11,MissedShots,0.8530000305175781,0.43,0.08248194307088852,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26814,Chelsea,Wolverhampton Wanderers,3,1,2025-01-20 20:00:00,Noni Madueke,Pass,Cole Palmer
+613027,16,SavedShot,0.8590000152587891,0.664000015258789,0.04924388229846954,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26814,Chelsea,Wolverhampton Wanderers,3,1,2025-01-20 20:00:00,,None,Cole Palmer
+613039,51,BlockedShot,0.894000015258789,0.6869999694824219,0.056152861565351486,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26814,Chelsea,Wolverhampton Wanderers,3,1,2025-01-20 20:00:00,Pedro Neto,Pass,Cole Palmer
+613528,27,SavedShot,0.7959999847412109,0.37599998474121094,0.036113157868385315,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26828,Manchester City,Chelsea,3,1,2025-01-25 17:30:00,Noni Madueke,TakeOn,Cole Palmer
+615792,6,BlockedShot,0.965999984741211,0.7169999694824218,0.05111962929368019,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,Marc Cucurella,Pass,Cole Palmer
+615796,22,MissedShots,0.7809999847412109,0.48200000762939454,0.0295023862272501,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,Nicolas Jackson,Pass,Cole Palmer
+615803,45,SavedShot,0.7169999694824218,0.39799999237060546,0.041145116090774536,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,,Standard,Cole Palmer
+615806,47,SavedShot,0.7330000305175781,0.385,0.01748284511268139,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,Reece James,Pass,Cole Palmer
+615808,49,BlockedShot,0.75,0.42700000762939455,0.019700132310390472,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,Noni Madueke,Pass,Cole Palmer
+615818,73,BlockedShot,0.8569999694824219,0.6480000305175782,0.05260462313890457,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,,None,Cole Palmer
+615821,78,MissedShots,0.8040000152587891,0.515,0.06718980520963669,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26835,Chelsea,West Ham,2,1,2025-02-03 20:00:00,Moisés Caicedo,Pass,Cole Palmer
+616949,3,MissedShots,0.775,0.42200000762939455,0.026981016620993614,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26843,Brighton,Chelsea,3,0,2025-02-14 20:00:00,Malo Gusto,Pass,Cole Palmer
+616951,17,MissedShots,0.8640000152587891,0.43599998474121093,0.10024192184209824,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26843,Brighton,Chelsea,3,0,2025-02-14 20:00:00,Noni Madueke,Pass,Cole Palmer
+618661,29,BlockedShot,0.8590000152587891,0.46900001525878904,0.09782113879919052,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26854,Aston Villa,Chelsea,2,1,2025-02-22 17:30:00,Pedro Neto,Pass,Cole Palmer
+618672,69,MissedShots,0.8090000152587891,0.43,0.05052921921014786,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26854,Aston Villa,Chelsea,2,1,2025-02-22 17:30:00,Pedro Neto,Pass,Cole Palmer
+618674,75,BlockedShot,0.8080000305175781,0.500999984741211,0.1171938106417656,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26854,Aston Villa,Chelsea,2,1,2025-02-22 17:30:00,Moisés Caicedo,Throughball,Cole Palmer
+619414,20,MissedShots,0.7959999847412109,0.49700000762939456,0.043765824288129807,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Enzo Fernández,Pass,Cole Palmer
+619415,22,SavedShot,0.909000015258789,0.5259999847412109,0.47617241740226746,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Enzo Fernández,Throughball,Cole Palmer
+619419,33,MissedShots,0.9119999694824219,0.3370000076293945,0.29194924235343933,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Jadon Sancho,Pass,Cole Palmer
+619424,53,SavedShot,0.8109999847412109,0.4809999847412109,0.07307165116071701,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Jadon Sancho,Pass,Cole Palmer
+619425,55,MissedShots,0.8590000152587891,0.519000015258789,0.12698142230510712,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Christopher Nkunku,Pass,Cole Palmer
+619434,82,MissedShots,0.884000015258789,0.7230000305175781,0.058257486671209335,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Levi Colwill,BallTouch,Cole Palmer
+619437,91,SavedShot,0.75,0.47,0.06435264647006989,Cole Palmer,h,8497,DirectFreekick,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,,Standard,Cole Palmer
+621827,7,BlockedShot,0.7440000152587891,0.4829999923706055,0.018479932099580765,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,Jadon Sancho,Pass,Cole Palmer
+621828,8,MissedShots,0.750999984741211,0.34400001525878904,0.016965804621577263,Cole Palmer,h,8497,FromCorner,2024,LeftFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,Enzo Fernández,Pass,Cole Palmer
+621829,21,SavedShot,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2024,LeftFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,,Standard,Cole Palmer
+621832,27,BlockedShot,0.8190000152587891,0.5540000152587891,0.05515630543231964,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,Levi Colwill,Pass,Cole Palmer
+621842,69,BlockedShot,0.845,0.655,0.06705348938703537,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,Pedro Neto,Pass,Cole Palmer
+625257,49,SavedShot,0.8809999847412109,0.669000015258789,0.06821193546056747,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26897,Chelsea,Tottenham,1,0,2025-04-03 19:00:00,Jadon Sancho,Pass,Cole Palmer
+625265,82,SavedShot,0.879000015258789,0.735999984741211,0.03382265940308571,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26897,Chelsea,Tottenham,1,0,2025-04-03 19:00:00,Malo Gusto,Pass,Cole Palmer
+626184,63,MissedShots,0.8469999694824218,0.5640000152587891,0.08066807687282562,Cole Palmer,a,8497,OpenPlay,2024,RightFoot,26903,Brentford,Chelsea,0,0,2025-04-06 13:00:00,Jadon Sancho,TakeOn,Cole Palmer
+626185,71,BlockedShot,0.830999984741211,0.5990000152587891,0.0573090985417366,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26903,Brentford,Chelsea,0,0,2025-04-06 13:00:00,Moisés Caicedo,BallTouch,Cole Palmer
+626196,93,MissedShots,0.8209999847412109,0.43599998474121093,0.06444381922483444,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26903,Brentford,Chelsea,0,0,2025-04-06 13:00:00,Malo Gusto,Pass,Cole Palmer
+627636,42,BlockedShot,0.7580000305175781,0.44599998474121094,0.023665636777877808,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Noni Madueke,Pass,Cole Palmer
+627646,54,BlockedShot,0.8590000152587891,0.40900001525878904,0.07553078979253769,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Malo Gusto,LayOff,Cole Palmer
+627647,56,BlockedShot,0.860999984741211,0.675,0.048074640333652496,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Pedro Neto,Pass,Cole Palmer
+627654,69,BlockedShot,0.855999984741211,0.6220000076293946,0.058851078152656555,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Jadon Sancho,Pass,Cole Palmer
+627662,85,MissedShots,0.7469999694824219,0.7230000305175781,0.01536745484918356,Cole Palmer,h,8497,FromCorner,2024,LeftFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Jadon Sancho,Pass,Cole Palmer
+627664,92,SavedShot,0.8159999847412109,0.534000015258789,0.07551456987857819,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Christopher Nkunku,LayOff,Cole Palmer
+629034,9,SavedShot,0.6990000152587891,0.4640000152587891,0.01021197997033596,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26926,Fulham,Chelsea,1,2,2025-04-20 13:00:00,,None,Cole Palmer
+629047,68,MissedShots,0.8959999847412109,0.6730000305175782,0.06398366391658783,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26926,Fulham,Chelsea,1,2,2025-04-20 13:00:00,Jadon Sancho,Pass,Cole Palmer
+632092,29,BlockedShot,0.9430000305175781,0.7069999694824218,0.08806664496660233,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,Enzo Fernández,Pass,Cole Palmer
+632108,80,ShotOnPost,0.985,0.6519999694824219,0.3546467125415802,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,Jadon Sancho,Pass,Cole Palmer
+632109,81,MissedShots,0.8819999694824219,0.3270000076293945,0.07295048236846924,Cole Palmer,h,8497,OpenPlay,2024,RightFoot,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,Malo Gusto,Pass,Cole Palmer
+632111,85,SavedShot,0.8190000152587891,0.3290000152587891,0.03483414277434349,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,Noni Madueke,Pass,Cole Palmer
+632113,95,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2024,LeftFoot,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,,Standard,Cole Palmer
+633325,19,BlockedShot,0.8059999847412109,0.5309999847412109,0.043495625257492065,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26957,Newcastle United,Chelsea,2,0,2025-05-11 11:00:00,,Rebound,Cole Palmer
+633324,19,BlockedShot,0.815,0.49700000762939456,0.03589726984500885,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26957,Newcastle United,Chelsea,2,0,2025-05-11 11:00:00,Enzo Fernández,HeadPass,Cole Palmer
+633337,48,SavedShot,0.7480000305175781,0.6359999847412109,0.015068015083670616,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26957,Newcastle United,Chelsea,2,0,2025-05-11 11:00:00,Moisés Caicedo,TakeOn,Cole Palmer
+634243,27,BlockedShot,0.7909999847412109,0.6730000305175782,0.02247297763824463,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26966,Chelsea,Manchester United,1,0,2025-05-16 19:15:00,,None,Cole Palmer
+634247,45,SavedShot,0.794000015258789,0.5929999923706055,0.03119596838951111,Cole Palmer,h,8497,OpenPlay,2024,LeftFoot,26966,Chelsea,Manchester United,1,0,2025-05-16 19:15:00,Noni Madueke,Pass,Cole Palmer
+636243,60,SavedShot,0.8969999694824219,0.764000015258789,0.03092736005783081,Cole Palmer,a,8497,OpenPlay,2024,LeftFoot,26972,Nottingham Forest,Chelsea,0,1,2025-05-25 15:00:00,Jadon Sancho,Pass,Cole Palmer
+638037,20,MissedShots,0.8319999694824218,0.7319999694824219,0.020660916343331337,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,Jamie Bynoe-Gittens,Pass,Cole Palmer
+638047,46,BlockedShot,0.8130000305175781,0.5220000076293946,0.056066226214170456,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,Reece James,Interception,Cole Palmer
+638052,58,BlockedShot,0.77,0.30100000381469727,0.0517423078417778,Cole Palmer,h,8497,DirectFreekick,2025,LeftFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,,Standard,Cole Palmer
+638054,63,BlockedShot,0.9209999847412109,0.40700000762939453,0.09504541754722595,Cole Palmer,h,8497,OpenPlay,2025,RightFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,,None,Cole Palmer
+642002,60,Goal,0.9,0.48,0.07754337042570114,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,João Pedro,BallTouch,Cole Palmer
+642004,64,BlockedShot,0.685,0.5890000152587891,0.0318642295897007,Cole Palmer,a,8497,DirectFreekick,2025,LeftFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,,Standard,Cole Palmer
+642005,64,BlockedShot,0.725999984741211,0.575999984741211,0.012451309710741043,Cole Palmer,a,8497,SetPiece,2025,LeftFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,,Rebound,Cole Palmer
+642008,74,SavedShot,0.8490000152587891,0.485,0.09508585184812546,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Pedro Neto,Pass,Cole Palmer
+642013,95,MissedShots,0.8809999847412109,0.6229999923706054,0.08198987692594528,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Alejandro Garnacho,Pass,Cole Palmer
+656344,68,MissedShots,0.8919999694824219,0.5659999847412109,0.1049608662724495,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,Alejandro Garnacho,Pass,Cole Palmer
+656892,51,SavedShot,0.8080000305175781,0.624000015258789,0.06050983443856239,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28918,Bournemouth,Chelsea,0,0,2025-12-06 15:00:00,Pedro Neto,Pass,Cole Palmer
+658165,20,Goal,0.9209999847412109,0.3770000076293945,0.3370308578014374,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28931,Chelsea,Everton,2,0,2025-12-13 15:00:00,Malo Gusto,Throughball,Cole Palmer
+659123,1,MissedShots,0.8630000305175781,0.725,0.028986860066652298,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28945,Newcastle United,Chelsea,2,2,2025-12-20 12:30:00,Alejandro Garnacho,Pass,Cole Palmer
+660302,1,MissedShots,0.8619999694824219,0.3559999847412109,0.059998366981744766,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28951,Chelsea,Aston Villa,1,2,2025-12-27 17:30:00,Moisés Caicedo,Chipped,Cole Palmer
+660305,20,BlockedShot,0.87,0.47400001525878904,0.09119447320699692,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28951,Chelsea,Aston Villa,1,2,2025-12-27 17:30:00,,Interception,Cole Palmer
+660311,41,SavedShot,0.799000015258789,0.40900001525878904,0.05325039103627205,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28951,Chelsea,Aston Villa,1,2,2025-12-27 17:30:00,,None,Cole Palmer
+660557,14,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,,Standard,Cole Palmer
+660579,60,BlockedShot,0.8830000305175781,0.37900001525878907,0.053813595324754715,Cole Palmer,h,8497,FromCorner,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Pedro Neto,TakeOn,Cole Palmer
+661640,88,MissedShots,0.9169999694824219,0.5929999923706055,0.07968544214963913,Cole Palmer,a,8497,OpenPlay,2025,RightFoot,28977,Manchester City,Chelsea,1,1,2026-01-04 17:30:00,Jorrel Hato,Cross,Cole Palmer
+662075,40,SavedShot,0.805,0.24700000762939453,0.03622984513640404,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Enzo Fernández,Pass,Cole Palmer
+662088,69,SavedShot,0.9730000305175781,0.28200000762939453,0.03400382399559021,Cole Palmer,a,8497,OpenPlay,2025,RightFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Reece James,Chipped,Cole Palmer
+663668,14,MissedShots,0.8119999694824219,0.39099998474121095,0.03966231271624565,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Pedro Neto,Pass,Cole Palmer
+663680,75,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2025,LeftFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,,Standard,Cole Palmer
+666199,18,SavedShot,0.754000015258789,0.33299999237060546,0.0501212477684021,Cole Palmer,h,8497,DirectFreekick,2025,LeftFoot,29009,Chelsea,West Ham,3,2,2026-01-31 17:30:00,,Standard,Cole Palmer
+666216,89,BlockedShot,0.8980000305175782,0.37200000762939456,0.072086863219738,Cole Palmer,h,8497,OpenPlay,2025,RightFoot,29009,Chelsea,West Ham,3,2,2026-01-31 17:30:00,,None,Cole Palmer
+666218,94,MissedShots,0.9109999847412109,0.5229999923706055,0.47369781136512756,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29009,Chelsea,West Ham,3,2,2026-01-31 17:30:00,Pedro Neto,Pass,Cole Palmer
+667331,12,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2025,LeftFoot,29027,Wolverhampton Wanderers,Chelsea,1,3,2026-02-07 15:00:00,,Standard,Cole Palmer
+667339,34,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,a,8497,Penalty,2025,LeftFoot,29027,Wolverhampton Wanderers,Chelsea,1,3,2026-02-07 15:00:00,,Standard,Cole Palmer
+667340,37,Goal,0.9230000305175782,0.5259999847412109,0.5898792743682861,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,29027,Wolverhampton Wanderers,Chelsea,1,3,2026-02-07 15:00:00,Marc Cucurella,Throughball,Cole Palmer
+668159,18,BlockedShot,0.76,0.664000015258789,0.018285848200321198,Cole Palmer,h,8497,OpenPlay,2025,RightFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,Enzo Fernández,Pass,Cole Palmer
+668163,26,SavedShot,0.74,0.48,0.02712629921734333,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,Enzo Fernández,Pass,Cole Palmer
+668167,53,BlockedShot,0.850999984741211,0.40599998474121096,0.08849306404590607,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,Malo Gusto,TakeOn,Cole Palmer
+668168,57,Goal,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2025,LeftFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,,Standard,Cole Palmer
+668179,93,MissedShots,0.9769999694824218,0.53,0.6738111972808838,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,Moisés Caicedo,Cross,Cole Palmer
+669749,11,BlockedShot,0.84,0.5990000152587891,0.07558166235685349,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,,BlockedPass,Cole Palmer
+669750,16,BlockedShot,0.7630000305175781,0.255,0.015094093978404999,Cole Palmer,h,8497,FromCorner,2025,LeftFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,Pedro Neto,Pass,Cole Palmer
+669752,36,SavedShot,0.7430000305175781,0.525,0.3905003070831299,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,,BallRecovery,Cole Palmer
+669755,45,MissedShots,0.8680000305175781,0.48700000762939455,0.10335394740104675,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,,None,Cole Palmer
+671806,5,MissedShots,0.75,0.35400001525878905,0.018637247383594513,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,29049,Arsenal,Chelsea,2,1,2026-03-01 16:30:00,Pedro Neto,Pass,Cole Palmer
+672205,14,SavedShot,0.79,0.5829999923706055,0.03208793327212334,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,29059,Aston Villa,Chelsea,1,4,2026-03-04 19:30:00,Alejandro Garnacho,Pass,Cole Palmer
+672219,54,Goal,0.855,0.4490000152587891,0.1363144814968109,Cole Palmer,a,8497,OpenPlay,2025,LeftFoot,29059,Aston Villa,Chelsea,1,4,2026-03-04 19:30:00,João Pedro,None,Cole Palmer
+674049,13,MissedShots,0.8640000152587891,0.4470000076293945,0.1044708788394928,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29071,Chelsea,Newcastle United,0,1,2026-03-14 17:30:00,Malo Gusto,Pass,Cole Palmer
+674054,29,BlockedShot,0.845,0.43,0.11130306124687195,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29071,Chelsea,Newcastle United,0,1,2026-03-14 17:30:00,Alejandro Garnacho,Pass,Cole Palmer
+674057,36,SavedShot,0.8209999847412109,0.5579999923706055,0.05796356499195099,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29071,Chelsea,Newcastle United,0,1,2026-03-14 17:30:00,Moisés Caicedo,Pass,Cole Palmer
+675441,84,MissedShots,0.7669999694824219,0.38299999237060545,0.015331875532865524,Cole Palmer,a,8497,SetPiece,2025,LeftFoot,29081,Everton,Chelsea,3,0,2026-03-21 17:30:00,,None,Cole Palmer
+678515,5,MissedShots,0.9680000305175781,0.6730000305175782,0.10494834929704666,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Pedro Neto,Pass,Cole Palmer
+678517,9,BlockedShot,0.79,0.40900001525878904,0.036156658083200455,Cole Palmer,h,8497,OpenPlay,2025,RightFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Andrey Santos,Pass,Cole Palmer
+678530,65,BlockedShot,0.8480000305175781,0.5629999923706055,0.038283899426460266,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Marc Cucurella,Cross,Cole Palmer
+678541,84,SavedShot,0.8159999847412109,0.3820000076293945,0.12053773552179337,Cole Palmer,h,8497,DirectFreekick,2025,LeftFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,,Standard,Cole Palmer
+679463,61,MissedShots,0.8690000152587891,0.47700000762939454,0.06819860637187958,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Malo Gusto,Cross,Cole Palmer
+679466,70,BlockedShot,0.765,0.5590000152587891,0.07459233701229095,Cole Palmer,h,8497,DirectFreekick,2025,LeftFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,,Standard,Cole Palmer
+679467,70,BlockedShot,0.8109999847412109,0.5079999923706054,0.036277592182159424,Cole Palmer,h,8497,SetPiece,2025,LeftFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,,Rebound,Cole Palmer
+679474,85,BlockedShot,0.8130000305175781,0.62,0.032176945358514786,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Alejandro Garnacho,Pass,Cole Palmer
+683239,17,MissedShots,0.865999984741211,0.26399999618530273,0.03611456975340843,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,Enzo Fernández,Pass,Cole Palmer
+683247,54,SavedShot,0.885,0.5,0.7611688375473022,Cole Palmer,h,8497,Penalty,2025,LeftFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,,Standard,Cole Palmer
+683254,84,SavedShot,0.7390000152587891,0.529000015258789,0.023206785321235657,Cole Palmer,h,8497,FromCorner,2025,RightFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,Enzo Fernández,Pass,Cole Palmer
+683256,87,BlockedShot,0.81,0.4209999847412109,0.053902409970760345,Cole Palmer,h,8497,OpenPlay,2025,RightFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,Malo Gusto,Pass,Cole Palmer
+683259,92,BlockedShot,0.7819999694824219,0.32599998474121095,0.014983336441218853,Cole Palmer,h,8497,OpenPlay,2025,LeftFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,Malo Gusto,Pass,Cole Palmer

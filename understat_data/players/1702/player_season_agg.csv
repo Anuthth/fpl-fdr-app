@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,13,0,0,0,0,2021,Arminia Bielefeld,0,0,0,0,0,0,1702,Mike van der Hoorn
+season,DC,22,0,5,1353,0.3088463954627514,0,0.10416200198233128,3,2020,Arminia Bielefeld,3,0,0,0.3088463954627514,1.0478359973058105,1.0478359973058105,1702,Mike van der Hoorn
+season,DC,24,1,10,1963,0.9428765969350934,0,0.6178052080795169,5,2017,Swansea,4,0,1,0.9428765969350934,1.99550262093544,1.3907501138746738,1702,Mike van der Hoorn
+season,DC,8,1,4,659,1.3173155840486288,0,0,0,2016,Swansea,1,0,1,1.3173155840486288,1.2172971926629543,0.7885931991040707,1702,Mike van der Hoorn

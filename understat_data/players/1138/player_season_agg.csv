@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,9,0,0,810,0,0,0,0,2018,Napoli,0,0,0,0,1.3868101760745049,1.3868101760745049,1138,Orestis Karnezis
+season,Sub,15,0,0,1290,0,0,0,0,2017,Watford,0,0,0,0,0.16668979823589325,0.16668979823589325,1138,Orestis Karnezis
+season,GK,33,0,0,2961,0,0,0.031085699796676636,1,2016,Udinese,3,0,0,0,1.13805999327451,1.1069742916151881,1138,Orestis Karnezis
+season,GK,38,0,0,3420,0,0,0,0,2015,Udinese,0,0,0,0,2.400981590151787,2.400981590151787,1138,Orestis Karnezis
+season,GK,37,0,0,3268,0,0,0,0,2014,Udinese,2,0,0,0,2.5994813041761518,2.5994813041761518,1138,Orestis Karnezis

@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,DC,16,1,12,1200,1.4095620028674603,0,0.22373549826443195,6,2019,Paderborn,5,1,0,0.6521107032895088,1.0101280026137829,0.8231428060680628,4258,Uwe Hünemeier
+season,Sub,1,0,0,16,0,0,0,0,2017,Brighton,0,0,0,0,0,0,4258,Uwe Hünemeier
+season,DC,32,2,30,2816,1.8722357265651226,2,1.2220481941476464,9,2014,Paderborn,4,0,2,1.8722357265651226,3.629909209907055,2.6886548157781363,4258,Uwe Hünemeier

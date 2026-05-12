@@ -1,0 +1,8 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,2,0,0,127,0,0,0,0,2023,Brentford,0,0,0,0,0,0,1214,Thomas Strakosha
+season,GK,23,0,0,2070,0,0,0.0246869008988142,1,2021,Lazio,2,0,0,0,2.3877945225685835,2.3877945225685835,1214,Thomas Strakosha
+season,GK,9,0,0,810,0,0,0,0,2020,Lazio,1,0,0,0,1.126893071923405,1.126893071923405,1214,Thomas Strakosha
+season,GK,38,0,0,3420,0,0,0.12416310049593449,2,2019,Lazio,2,0,0,0,5.913067174144089,5.788905086927116,1214,Thomas Strakosha
+season,GK,35,0,0,3150,0,0,0,0,2018,Lazio,4,0,0,0,3.609754728153348,3.609754728153348,1214,Thomas Strakosha
+season,GK,38,0,0,3420,0,0,0.04357760027050972,2,2017,Lazio,2,0,0,0,3.673392679542303,3.629814874380827,1214,Thomas Strakosha
+season,GK,21,0,0,1844,0,0,0,0,2016,Lazio,1,0,0,0,1.6435166718438268,1.6435166718438268,1214,Thomas Strakosha

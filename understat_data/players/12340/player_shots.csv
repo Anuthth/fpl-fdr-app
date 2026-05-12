@@ -1,0 +1,7 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+565240,42,BlockedShot,0.8119999694824219,0.5259999847412109,0.04880104586482048,Omari Forson,h,12340,SetPiece,2023,LeftFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Alejandro Garnacho,Pass,Omari Forson
+607374,88,MissedShots,0.745,0.445,0.021300366148352623,Omari Forson,a,12340,OpenPlay,2024,LeftFoot,27516,Lecce,Monza,2,1,2024-12-15 11:30:00,Warren Bondo,Pass,Omari Forson
+630906,81,BlockedShot,0.8119999694824219,0.375,0.04144047200679779,Omari Forson,a,12340,OpenPlay,2024,LeftFoot,27692,Juventus,Monza,2,0,2025-04-27 16:00:00,Andrea Petagna,LayOff,Omari Forson
+630909,87,BlockedShot,0.7719999694824219,0.33099998474121095,0.018688421696424484,Omari Forson,a,12340,SetPiece,2024,LeftFoot,27692,Juventus,Monza,2,0,2025-04-27 16:00:00,Patrick Ciurria,Pass,Omari Forson
+631833,76,SavedShot,0.9169999694824219,0.545,0.30540645122528076,Omari Forson,h,12340,OpenPlay,2024,Head,27708,Monza,Atalanta,0,4,2025-05-04 13:00:00,Dany Mota,Cross,Omari Forson
+633303,42,MissedShots,0.885,0.725999984741211,0.04119463637471199,Omari Forson,a,12340,OpenPlay,2024,LeftFoot,27720,Udinese,Monza,1,2,2025-05-11 10:30:00,Gaetano Castrovilli,TakeOn,Omari Forson

@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,3,0,0,56,0,0,0,0,2020,West Bromwich Albion,0,0,0,0,0,0,1013,Sam Field
+season,MC,10,1,5,545,0.5942727997899055,0,0.17947129905223846,4,2017,West Bromwich Albion,2,0,1,0.5942727997899055,1.0633245995268226,0.30974140483886003,1013,Sam Field
+season,AMC,8,0,1,278,0.049500901252031326,0,0.10928500071167946,3,2016,West Bromwich Albion,2,0,0,0.049500901252031326,0.3259259909391403,0.16714070178568363,1013,Sam Field
+season,Sub,1,0,0,1,0,0,0,0,2015,West Bromwich Albion,0,0,0,0,0,0,1013,Sam Field

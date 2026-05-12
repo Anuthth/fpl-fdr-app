@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,7,0,1,53,0.08515836298465729,1,0.45716217160224915,1,2025,Bournemouth,0,0,0,0.08515836298465729,1.4128027111291885,0.8704821839928627,11231,Ben Doak
+season,Sub,1,0,0,6,0,0,0,0,2023,Liverpool,0,0,0,0,0,0,11231,Ben Doak
+season,Sub,2,0,0,20,0,0,0,0,2022,Liverpool,0,0,0,0,0,0,11231,Ben Doak

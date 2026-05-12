@@ -1,0 +1,32 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+353566,71,MissedShots,0.7219999694824218,0.5629999923706055,0.01668260060250759,Faustino Anjorin,h,8383,OpenPlay,2019,RightFoot,11925,Chelsea,Everton,4,0,2020-03-08 14:00:00,,BallRecovery,Faustino Anjorin
+438741,79,BlockedShot,0.7380000305175781,0.3089999961853027,0.020344499498605728,Faustino Anjorin,h,8383,OpenPlay,2021,RightFoot,16228,Lokomotiv Moscow,PFC Sochi,2,1,2021-10-25 16:00:00,Konstantin Maradishvili,Pass,Faustino Anjorin
+439776,17,MissedShots,0.799000015258789,0.48200000762939454,0.026259899139404297,Faustino Anjorin,a,8383,FromCorner,2021,LeftFoot,16235,Nizhny Novgorod,Lokomotiv Moscow,1,2,2021-10-30 16:00:00,,BallTouch,Faustino Anjorin
+439785,61,SavedShot,0.8819999694824219,0.44599998474121094,0.013550199568271637,Faustino Anjorin,a,8383,FromCorner,2021,Head,16235,Nizhny Novgorod,Lokomotiv Moscow,1,2,2021-10-30 16:00:00,Maciej Rybus,Aerial,Faustino Anjorin
+594890,60,MissedShots,0.7580000305175781,0.6079999923706054,0.02200973965227604,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27415,Empoli,Fiorentina,0,0,2024-09-29 16:00:00,Giuseppe Pezzella,Pass,Faustino Anjorin
+596126,25,MissedShots,0.7119999694824218,0.585,0.019565103575587273,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27423,Lazio,Empoli,2,1,2024-10-06 13:00:00,Alberto Grassi,Pass,Faustino Anjorin
+596128,33,BlockedShot,0.7609999847412109,0.41200000762939454,0.11005963385105133,Faustino Anjorin,a,8383,OpenPlay,2024,LeftFoot,27423,Lazio,Empoli,2,1,2024-10-06 13:00:00,Ola Solbakken,TakeOn,Faustino Anjorin
+597421,29,MissedShots,0.6759999847412109,0.5820000076293945,0.013430595397949219,Faustino Anjorin,h,8383,SetPiece,2024,LeftFoot,27435,Empoli,Napoli,0,1,2024-10-20 10:30:00,Giuseppe Pezzella,Pass,Faustino Anjorin
+598824,45,MissedShots,0.7290000152587891,0.475,0.01918772980570793,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27449,Parma Calcio 1913,Empoli,1,1,2024-10-27 11:30:00,Lorenzo Colombo,Pass,Faustino Anjorin
+604322,44,BlockedShot,0.775,0.33799999237060546,0.011365354992449284,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27498,AC Milan,Empoli,3,0,2024-11-30 17:00:00,,Rebound,Faustino Anjorin
+604324,61,MissedShots,0.705,0.425,0.009523546323180199,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27498,AC Milan,Empoli,3,0,2024-11-30 17:00:00,Pietro Pellegri,Pass,Faustino Anjorin
+606335,24,MissedShots,0.73,0.3579999923706055,0.024315940216183662,Faustino Anjorin,a,8383,OpenPlay,2024,LeftFoot,27506,Verona,Empoli,1,4,2024-12-08 14:00:00,Lorenzo Colombo,Pass,Faustino Anjorin
+606345,45,MissedShots,0.8,0.5770000076293945,0.05127563700079918,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27506,Verona,Empoli,1,4,2024-12-08 14:00:00,Mattia Viti,BallRecovery,Faustino Anjorin
+606344,48,MissedShots,0.8419999694824218,0.36400001525878906,0.09274560213088989,Faustino Anjorin,a,8383,OpenPlay,2024,LeftFoot,27506,Verona,Empoli,1,4,2024-12-08 14:00:00,,None,Faustino Anjorin
+606845,23,SavedShot,0.845,0.7469999694824219,0.026439428329467773,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27513,Empoli,Torino,0,1,2024-12-13 19:45:00,Liberato Cacace,Pass,Faustino Anjorin
+606858,52,MissedShots,0.8440000152587891,0.4209999847412109,0.062185775488615036,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27513,Empoli,Torino,0,1,2024-12-13 19:45:00,,None,Faustino Anjorin
+609307,31,SavedShot,0.7769999694824219,0.575,0.02821369841694832,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27536,Empoli,Genoa,1,2,2024-12-28 14:00:00,,None,Faustino Anjorin
+609315,63,MissedShots,0.779000015258789,0.27,0.019110530614852905,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27536,Empoli,Genoa,1,2,2024-12-28 14:00:00,Sebastiano Esposito,Pass,Faustino Anjorin
+609320,72,SavedShot,0.7230000305175781,0.5309999847412109,0.009400362148880959,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27536,Empoli,Genoa,1,2,2024-12-28 14:00:00,,None,Faustino Anjorin
+609961,13,SavedShot,0.7930000305175782,0.38,0.02443321980535984,Faustino Anjorin,a,8383,OpenPlay,2024,LeftFoot,27551,Venezia,Empoli,1,1,2025-01-04 14:00:00,Sebastiano Esposito,Pass,Faustino Anjorin
+609969,40,BlockedShot,0.8209999847412109,0.475,0.06495874375104904,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27551,Venezia,Empoli,1,1,2025-01-04 14:00:00,Saba Goglichidze,Pass,Faustino Anjorin
+609971,48,BlockedShot,0.8369999694824218,0.500999984741211,0.06880014389753342,Faustino Anjorin,a,8383,OpenPlay,2024,RightFoot,27551,Venezia,Empoli,1,1,2025-01-04 14:00:00,Lorenzo Colombo,Pass,Faustino Anjorin
+629138,83,MissedShots,0.735999984741211,0.585,0.019143667072057724,Faustino Anjorin,h,8383,OpenPlay,2024,LeftFoot,27684,Empoli,Venezia,2,2,2025-04-20 13:00:00,Ola Solbakken,Pass,Faustino Anjorin
+629141,86,Goal,0.8280000305175781,0.7019999694824218,0.02642230875790119,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27684,Empoli,Venezia,2,2,2025-04-20 13:00:00,Liberato Cacace,BallTouch,Faustino Anjorin
+630617,35,MissedShots,0.735999984741211,0.7080000305175781,0.037829671055078506,Faustino Anjorin,a,8383,DirectFreekick,2024,RightFoot,27695,Fiorentina,Empoli,2,1,2025-04-27 13:00:00,,Standard,Faustino Anjorin
+633028,85,Goal,0.7240000152587891,0.51,0.014812319539487362,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27714,Empoli,Parma Calcio 1913,2,1,2025-05-10 18:45:00,Ismael Konaté,Pass,Faustino Anjorin
+636582,75,SavedShot,0.7040000152587891,0.3820000076293945,0.01403280533850193,Faustino Anjorin,h,8383,OpenPlay,2024,RightFoot,27736,Empoli,Verona,1,2,2025-05-25 18:45:00,Jacopo Fazzini,Pass,Faustino Anjorin
+639840,81,BlockedShot,0.8569999694824219,0.4179999923706055,0.06835472583770752,Faustino Anjorin,a,8383,OpenPlay,2025,RightFoot,29853,Inter,Torino,5,0,2025-08-25 18:45:00,Cesare Casadei,BallTouch,Faustino Anjorin
+666392,71,BlockedShot,0.9580000305175781,0.3870000076293945,0.10743570327758789,Faustino Anjorin,h,8383,OpenPlay,2025,RightFoot,30072,Torino,Lecce,1,0,2026-02-01 11:30:00,Marcus Pedersen,HeadPass,Faustino Anjorin
+667491,88,BlockedShot,0.8209999847412109,0.5109999847412109,0.04060970991849899,Faustino Anjorin,a,8383,OpenPlay,2025,LeftFoot,30079,Fiorentina,Torino,2,2,2026-02-07 19:45:00,Guillermo Maripán,TakeOn,Faustino Anjorin
+672426,85,SavedShot,0.9209999847412109,0.45599998474121095,0.3873968720436096,Faustino Anjorin,a,8383,SetPiece,2025,RightFoot,30114,Napoli,Torino,2,1,2026-03-06 19:45:00,Valentino Lazaro,Chipped,Faustino Anjorin

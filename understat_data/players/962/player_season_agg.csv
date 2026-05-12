@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,DC,9,0,1,718,0.009625939652323723,0,0,0,2015,Rayo Vallecano,4,0,0,0.009625939652323723,0.726658446714282,0.7170325070619583,962,José Ángel Crespo
+season,DC,1,0,0,90,0,0,0,0,2015,Aston Villa,0,0,0,0,0,0,962,José Ángel Crespo
+season,DL,27,0,6,2167,0.4389649536460638,0,1.19631552323699,12,2014,Cordoba,7,0,0,0.4389649536460638,2.137028392404318,1.022087898105383,962,José Ángel Crespo

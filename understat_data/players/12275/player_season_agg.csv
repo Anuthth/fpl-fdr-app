@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,6,0,0,0,0,2025,Villarreal,0,0,0,0,0.288352906703949,0.288352906703949,12275,Willy Kambwala
+season,DC,19,0,4,1097,0.22620321437716484,0,0.07206991314888,1,2024,Villarreal,1,1,0,0.22620321437716484,3.91528133302927,3.8578535318374634,12275,Willy Kambwala
+season,DC,8,0,0,318,0,0,0,0,2023,Manchester United,1,0,0,0,0.38690609484910965,0.38690609484910965,12275,Willy Kambwala

@@ -1,0 +1,10 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,5,0,0,450,0,0,0,0,2024,Southampton,0,0,0,0,0.4999673590064049,0.4999673590064049,635,Alex McCarthy
+season,GK,6,0,0,540,0,0,0,0,2022,Southampton,0,0,0,0,0.10223675705492496,0.10223675705492496,635,Alex McCarthy
+season,GK,17,0,0,1530,0,0,0.023409100249409676,1,2021,Southampton,1,0,0,0,2.0089015141129494,1.9854924138635397,635,Alex McCarthy
+season,GK,30,0,0,2700,0,0,0,0,2020,Southampton,2,0,0,0,2.7634329460561275,2.7634329460561275,635,Alex McCarthy
+season,GK,28,0,0,2520,0,0,0.023693500086665154,1,2019,Southampton,0,0,0,0,3.1542159132659435,3.1305224131792784,635,Alex McCarthy
+season,GK,25,0,0,2250,0,0,0,0,2018,Southampton,1,0,0,0,1.7642888613045216,1.7642888613045216,635,Alex McCarthy
+season,GK,18,0,0,1620,0,0,0,0,2017,Southampton,2,0,0,0,1.055135702714324,1.055135702714324,635,Alex McCarthy
+season,GK,7,0,0,630,0,0,0,0,2015,Crystal Palace,0,0,0,0,0,0,635,Alex McCarthy
+season,GK,3,0,0,237,0,0,0,0,2014,Queens Park Rangers,0,0,0,0,0.5550842136144638,0.5550842136144638,635,Alex McCarthy

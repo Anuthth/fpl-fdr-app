@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,1,0,0,0,0,2025,Brentford,0,0,0,0,0,0,10405,Josh Dasilva
+season,Sub,3,0,0,16,0,0,0.12691843509674072,2,2023,Brentford,0,0,0,0,0.10939022153615952,0,10405,Josh Dasilva
+season,Sub,36,4,18,1374,1.5916067343205214,2,2.0804033745080233,12,2022,Brentford,1,0,4,1.5916067343205214,6.89354763738811,3.8618766255676746,10405,Josh Dasilva
+season,Sub,9,0,1,242,0.10198599845170975,0,0.18233780562877655,3,2021,Brentford,0,1,0,0.10198599845170975,0.4496143078431487,0.16529020201414824,10405,Josh Dasilva

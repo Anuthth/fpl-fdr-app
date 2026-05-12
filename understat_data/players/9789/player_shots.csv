@@ -1,0 +1,36 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+444798,31,BlockedShot,0.8780000305175781,0.5129999923706055,0.07406909763813019,Brian Brobbey,h,9789,OpenPlay,2021,RightFoot,17631,RasenBallsport Leipzig,Bayer Leverkusen,1,3,2021-11-28 16:30:00,,None,Brian Brobbey
+445865,89,BlockedShot,0.9309999847412109,0.47299999237060547,0.09074769914150238,Brian Brobbey,a,9789,OpenPlay,2021,LeftFoot,17639,Union Berlin,RasenBallsport Leipzig,2,1,2021-12-03 19:30:00,André Silva,None,Brian Brobbey
+449405,94,BlockedShot,0.955999984741211,0.55,0.12045100331306458,Brian Brobbey,h,9789,FromCorner,2021,RightFoot,17667,RasenBallsport Leipzig,Arminia Bielefeld,0,2,2021-12-18 14:30:00,Mohamed Simakan,HeadPass,Brian Brobbey
+449406,95,MissedShots,0.9740000152587891,0.5729999923706055,0.054107699543237686,Brian Brobbey,h,9789,FromCorner,2021,Head,17667,RasenBallsport Leipzig,Arminia Bielefeld,0,2,2021-12-18 14:30:00,,Rebound,Brian Brobbey
+652440,93,Goal,0.9230000305175782,0.545,0.48943451046943665,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,28885,Sunderland,Arsenal,2,2,2025-11-08 17:30:00,,None,Brian Brobbey
+655103,63,SavedShot,0.9530000305175781,0.31799999237060544,0.06225531920790672,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Enzo Le Fée,Pass,Brian Brobbey
+655104,68,Goal,0.92,0.5379999923706055,0.038656484335660934,Brian Brobbey,h,9789,FromCorner,2025,Head,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Enzo Le Fée,Aerial,Brian Brobbey
+659294,20,MissedShots,0.955,0.4979999923706055,0.08423642069101334,Brian Brobbey,a,9789,FromCorner,2025,Head,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Enzo Le Fée,Aerial,Brian Brobbey
+659298,43,SavedShot,0.8830000305175781,0.3320000076293945,0.08367297053337097,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,,TakeOn,Brian Brobbey
+659305,51,BlockedShot,0.86,0.61,0.08172755688428879,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Lutsharel Geertruida,Pass,Brian Brobbey
+660379,46,MissedShots,0.8490000152587891,0.39599998474121095,0.2976710796356201,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Chris Rigg,Chipped,Brian Brobbey
+660380,47,ShotOnPost,0.96,0.4179999923706055,0.15665481984615326,Brian Brobbey,h,9789,OpenPlay,2025,Head,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Simon Adingra,Cross,Brian Brobbey
+660772,18,SavedShot,0.8919999694824219,0.34200000762939453,0.28205785155296326,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,Nordi Mukiele,Chipped,Brian Brobbey
+661408,53,BlockedShot,0.9230000305175782,0.3220000076293945,0.06356275826692581,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Eliezer Mayenda,Pass,Brian Brobbey
+661411,67,MissedShots,0.86,0.6129999923706054,0.008340106345713139,Brian Brobbey,a,9789,OpenPlay,2025,Head,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Lutsharel Geertruida,Aerial,Brian Brobbey
+661414,79,Goal,0.8809999847412109,0.425,0.0928911417722702,Brian Brobbey,a,9789,OpenPlay,2025,LeftFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Enzo Le Fée,Pass,Brian Brobbey
+661942,36,MissedShots,0.88,0.40700000762939453,0.0687408372759819,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,,Dispossessed,Brian Brobbey
+661953,66,BlockedShot,0.8769999694824219,0.4420000076293945,0.06776804476976395,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,,None,Brian Brobbey
+663589,22,MissedShots,0.955,0.610999984741211,0.08994228392839432,Brian Brobbey,h,9789,OpenPlay,2025,LeftFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,None,Brian Brobbey
+663599,70,Goal,0.9019999694824219,0.600999984741211,0.08358582854270935,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,None,Brian Brobbey
+664609,65,Goal,0.92,0.5279999923706055,0.318635493516922,Brian Brobbey,a,9789,OpenPlay,2025,Head,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,Nordi Mukiele,Cross,Brian Brobbey
+666883,63,SavedShot,0.88,0.5620000076293945,0.1336154192686081,Brian Brobbey,h,9789,OpenPlay,2025,LeftFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Habib Diarra,Pass,Brian Brobbey
+667254,7,BlockedShot,0.88,0.6359999847412109,0.3507857620716095,Brian Brobbey,a,9789,SetPiece,2025,RightFoot,29019,Arsenal,Sunderland,3,0,2026-02-07 15:00:00,Dan Ballard,Aerial,Brian Brobbey
+668385,18,BlockedShot,0.9169999694824219,0.45799999237060546,0.11521743983030319,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Nordi Mukiele,Cross,Brian Brobbey
+673877,52,MissedShots,0.8190000152587891,0.4620000076293945,0.05858844518661499,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,BallRecovery,Brian Brobbey
+675730,71,BlockedShot,0.950999984741211,0.43,0.13512638211250305,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Chris Rigg,Pass,Brian Brobbey
+675737,89,SavedShot,0.960999984741211,0.4540000152587891,0.5555026531219482,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Enzo Le Fée,Goal,Brian Brobbey
+675738,89,Goal,0.9630000305175781,0.5,0.6667835116386414,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,None,Brian Brobbey
+678293,18,MissedShots,0.9540000152587891,0.5079999923706054,0.573997974395752,Brian Brobbey,h,9789,OpenPlay,2025,Head,29090,Sunderland,Tottenham,1,0,2026-04-12 13:00:00,Enzo Le Fée,Chipped,Brian Brobbey
+678300,46,SavedShot,0.960999984741211,0.43,0.08737580478191376,Brian Brobbey,h,9789,SetPiece,2025,RightFoot,29090,Sunderland,Tottenham,1,0,2026-04-12 13:00:00,Chris Rigg,HeadPass,Brian Brobbey
+679545,67,SavedShot,0.9030000305175782,0.6669999694824219,0.06900599598884583,Brian Brobbey,a,9789,OpenPlay,2025,RightFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,Habib Diarra,Pass,Brian Brobbey
+682334,15,BlockedShot,0.8519999694824218,0.5590000152587891,0.09355446696281433,Brian Brobbey,a,9789,OpenPlay,2025,LeftFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Noah Sadiki,Pass,Brian Brobbey
+683705,10,SavedShot,0.9209999847412109,0.37,0.07413031905889511,Brian Brobbey,h,9789,SetPiece,2025,RightFoot,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,Granit Xhaka,Chipped,Brian Brobbey
+683710,31,MissedShots,0.914000015258789,0.30100000381469727,0.05897502228617668,Brian Brobbey,h,9789,OpenPlay,2025,RightFoot,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,Trai Hume,Pass,Brian Brobbey
+683719,62,SavedShot,0.8630000305175781,0.5170000076293946,0.10594549030065536,Brian Brobbey,h,9789,OpenPlay,2025,LeftFoot,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,Enzo Le Fée,Pass,Brian Brobbey

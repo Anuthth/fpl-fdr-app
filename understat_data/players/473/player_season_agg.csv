@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,0,132,0,0,0,0,2024,Leicester,0,0,0,0,0.07015308737754822,0.07015308737754822,473,Danny Ward
+season,GK,26,0,0,2340,0,0,0,0,2022,Leicester,0,0,0,0,2.5759871751070023,2.5759871751070023,473,Danny Ward
+season,GK,1,0,0,90,0,0,0,0,2021,Leicester,0,0,0,0,0.7123159766197205,0.7123159766197205,473,Danny Ward
+season,GK,2,0,0,180,0,0,0,0,2015,Liverpool,0,0,0,0,0.031090269796550274,0.031090269796550274,473,Danny Ward

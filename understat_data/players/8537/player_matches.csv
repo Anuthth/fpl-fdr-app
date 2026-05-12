@@ -1,0 +1,9 @@
+﻿goals,shots,xG,time,position,h_team,a_team,h_goals,a_goals,date,id,season,roster_id,xA,assists,key_passes,npg,npxG,xGChain,xGBuildup,player_id,player_name
+0,0,0,14,Sub,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02,29127,2025,787214,0,0,0,0,0,0.0715525671839714,0.0715525671839714,8537,Dennis Cirkin
+0,1,0.06635839492082596,3,Sub,Sunderland,Brighton,0,1,2026-03-14,29076,2025,776763,0,0,0,0,0.06635839492082596,0.06635839492082596,0,8537,Dennis Cirkin
+0,0,0,41,Sub,West Ham,Sunderland,3,1,2026-01-24,29007,2025,765377,0,0,0,0,0,0.04128555208444595,0.04128555208444595,8537,Dennis Cirkin
+0,0,0,1,Sub,Sunderland,Crystal Palace,2,1,2026-01-17,28995,2025,764200,0,0,0,0,0,0,0,8537,Dennis Cirkin
+0,0,0,11,Sub,Brentford,Sunderland,3,0,2026-01-07,28981,2025,762257,0,0,0,0,0,0,0,8537,Dennis Cirkin
+0,0,0,62,DL,Tottenham,Sunderland,1,1,2026-01-04,28969,2025,761581,0,0,0,0,0,0,0,8537,Dennis Cirkin
+0,0,0,90,DL,Sunderland,Manchester City,0,0,2026-01-01,28966,2025,760767,0,0,0,0,0,0.42338162660598755,0.42338162660598755,8537,Dennis Cirkin
+0,0,0,90,DL,Sunderland,Leeds,1,1,2025-12-28,28956,2025,760319,0,0,0,0,0,0,0,8537,Dennis Cirkin

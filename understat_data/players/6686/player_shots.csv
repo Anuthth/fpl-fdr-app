@@ -1,0 +1,313 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+226949,70,MissedShots,0.8440000152587891,0.5729999923706055,0.08439590036869049,Nicolo Zaniolo,h,6686,OpenPlay,2018,RightFoot,9634,Roma,Frosinone,4,0,2018-09-26 19:00:00,Patrik Schick,BallTouch,Nicolo Zaniolo
+226951,77,SavedShot,0.74,0.62,0.0254209004342556,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9634,Roma,Frosinone,4,0,2018-09-26 19:00:00,Daniele De Rossi,Pass,Nicolo Zaniolo
+252947,51,SavedShot,0.7930000305175782,0.45,0.04221440106630325,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9679,Fiorentina,Roma,1,1,2018-11-03 17:00:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+253479,93,BlockedShot,0.8119999694824219,0.524000015258789,0.04469669982790947,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9706,Udinese,Roma,1,0,2018-11-24 14:00:00,,None,Nicolo Zaniolo
+253481,95,SavedShot,0.7659999847412109,0.695,0.01028630044311285,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9706,Udinese,Roma,1,0,2018-11-24 14:00:00,,Aerial,Nicolo Zaniolo
+253960,4,MissedShots,0.925,0.68,0.05562109872698784,Nicolo Zaniolo,h,6686,OpenPlay,2018,RightFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,,None,Nicolo Zaniolo
+253967,24,MissedShots,0.8030000305175782,0.3609999847412109,0.03253829851746559,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,,None,Nicolo Zaniolo
+253971,31,SavedShot,0.7269999694824218,0.6140000152587891,0.019459299743175507,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,Steven N&#039;Zonzi,Pass,Nicolo Zaniolo
+253981,59,MissedShots,0.88,0.7269999694824218,0.04752949997782707,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9716,Roma,Inter,2,2,2018-12-02 19:30:00,Alessandro Florenzi,TakeOn,Nicolo Zaniolo
+254075,2,MissedShots,0.8159999847412109,0.53,0.06196989864110947,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Aleksandar Kolarov,Pass,Nicolo Zaniolo
+254085,25,SavedShot,0.889000015258789,0.639000015258789,0.03953839838504791,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,,Aerial,Nicolo Zaniolo
+254098,51,SavedShot,0.8959999847412109,0.6809999847412109,0.06340319663286209,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,,None,Nicolo Zaniolo
+254105,60,SavedShot,0.8980000305175782,0.3189999961853027,0.08798419684171677,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Patrik Schick,Pass,Nicolo Zaniolo
+254109,66,MissedShots,0.764000015258789,0.5220000076293946,0.03757869824767113,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,,BallRecovery,Nicolo Zaniolo
+254110,75,BlockedShot,0.789000015258789,0.3529999923706055,0.03779039904475212,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9724,Cagliari,Roma,2,2,2018-12-08 17:00:00,Steven N&#039;Zonzi,Pass,Nicolo Zaniolo
+254492,15,BlockedShot,0.889000015258789,0.3970000076293945,0.10307099670171738,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9734,Roma,Genoa,3,2,2018-12-16 19:30:00,Cengiz Ünder,Pass,Nicolo Zaniolo
+254892,46,BlockedShot,0.7859999847412109,0.5420000076293945,0.036945801228284836,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9746,Juventus,Roma,1,0,2018-12-22 19:30:00,Bryan Cristante,Pass,Nicolo Zaniolo
+254900,87,BlockedShot,0.799000015258789,0.4640000152587891,0.03581089898943901,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9746,Juventus,Roma,1,0,2018-12-22 19:30:00,Diego Perotti,Pass,Nicolo Zaniolo
+255137,29,MissedShots,0.94,0.6840000152587891,0.09088119864463806,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Patrik Schick,Pass,Nicolo Zaniolo
+255138,29,SavedShot,0.8909999847412109,0.40599998474121096,0.4474779963493347,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Patrik Schick,Throughball,Nicolo Zaniolo
+255146,58,Goal,0.9519999694824218,0.365,0.3099740147590637,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9753,Roma,Sassuolo,3,1,2018-12-26 17:00:00,Cengiz Ünder,Chipped,Nicolo Zaniolo
+276355,14,SavedShot,0.9590000152587891,0.40200000762939453,0.45514801144599915,Nicolo Zaniolo,h,6686,SetPiece,2018,LeftFoot,9774,Roma,Torino,3,2,2019-01-19 14:00:00,,None,Nicolo Zaniolo
+276356,14,Goal,0.9390000152587891,0.39799999237060546,0.11077000200748444,Nicolo Zaniolo,h,6686,SetPiece,2018,LeftFoot,9774,Roma,Torino,3,2,2019-01-19 14:00:00,,Rebound,Nicolo Zaniolo
+276369,52,BlockedShot,0.919000015258789,0.4879999923706055,0.14836199581623077,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9774,Roma,Torino,3,2,2019-01-19 14:00:00,Edin Dzeko,Pass,Nicolo Zaniolo
+276829,35,SavedShot,0.9219999694824219,0.345,0.14090299606323242,Nicolo Zaniolo,a,6686,OpenPlay,2018,RightFoot,9782,Atalanta,Roma,3,3,2019-01-27 14:00:00,Aleksandar Kolarov,Chipped,Nicolo Zaniolo
+277137,15,MissedShots,0.7169999694824218,0.41900001525878905,0.012532000429928303,Nicolo Zaniolo,h,6686,FromCorner,2018,LeftFoot,9796,Roma,AC Milan,1,1,2019-02-03 19:30:00,,Aerial,Nicolo Zaniolo
+277140,35,SavedShot,0.895,0.7169999694824218,0.043306898325681686,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9796,Roma,AC Milan,1,1,2019-02-03 19:30:00,Federico Fazio,Pass,Nicolo Zaniolo
+277142,42,MissedShots,0.764000015258789,0.6,0.02213140018284321,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9796,Roma,AC Milan,1,1,2019-02-03 19:30:00,,None,Nicolo Zaniolo
+277145,45,Goal,0.96,0.53,0.6044449806213379,Nicolo Zaniolo,h,6686,OpenPlay,2018,RightFoot,9796,Roma,AC Milan,1,1,2019-02-03 19:30:00,,None,Nicolo Zaniolo
+277222,6,SavedShot,0.7319999694824219,0.48,0.01832129992544651,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9799,Chievo,Roma,0,3,2019-02-08 19:30:00,Patrik Schick,Pass,Nicolo Zaniolo
+277718,19,MissedShots,0.8909999847412109,0.5179999923706055,0.12666499614715576,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9814,Roma,Bologna,2,1,2019-02-18 19:30:00,Justin Kluivert,Pass,Nicolo Zaniolo
+277729,51,MissedShots,0.774000015258789,0.48200000762939454,0.021624699234962463,Nicolo Zaniolo,h,6686,FromCorner,2018,LeftFoot,9814,Roma,Bologna,2,1,2019-02-18 19:30:00,,None,Nicolo Zaniolo
+277734,57,SavedShot,0.955999984741211,0.6719999694824219,0.1026500016450882,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9814,Roma,Bologna,2,1,2019-02-18 19:30:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+277745,90,BlockedShot,0.9330000305175781,0.675,0.05572349950671196,Nicolo Zaniolo,h,6686,FromCorner,2018,LeftFoot,9814,Roma,Bologna,2,1,2019-02-18 19:30:00,Steven N&#039;Zonzi,Rebound,Nicolo Zaniolo
+277810,70,MissedShots,0.8159999847412109,0.30100000381469727,0.019549600780010223,Nicolo Zaniolo,a,6686,FromCorner,2018,RightFoot,9820,Frosinone,Roma,2,3,2019-02-23 19:30:00,,None,Nicolo Zaniolo
+278063,46,MissedShots,0.845,0.46099998474121096,0.02744160033762455,Nicolo Zaniolo,a,6686,SetPiece,2018,LeftFoot,9834,Lazio,Roma,3,0,2019-03-02 19:30:00,,Aerial,Nicolo Zaniolo
+278068,59,BlockedShot,0.9059999847412109,0.34900001525878904,0.11309800297021866,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9834,Lazio,Roma,3,0,2019-03-02 19:30:00,Lorenzo Pellegrini,TakeOn,Nicolo Zaniolo
+285533,29,MissedShots,0.850999984741211,0.4490000152587891,0.34099501371383667,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9844,Roma,Empoli,2,1,2019-03-11 19:30:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+286372,60,MissedShots,0.75,0.5820000076293945,0.018109900876879692,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9854,SPAL 2013,Roma,2,1,2019-03-16 17:00:00,Steven N&#039;Zonzi,TakeOn,Nicolo Zaniolo
+286378,93,BlockedShot,0.775,0.345,0.01444109994918108,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9854,SPAL 2013,Roma,2,1,2019-03-16 17:00:00,Davide Santon,TakeOn,Nicolo Zaniolo
+291491,9,BlockedShot,0.8830000305175781,0.5220000076293946,0.14277799427509308,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9873,Roma,Fiorentina,2,2,2019-04-03 20:00:00,Edin Dzeko,TakeOn,Nicolo Zaniolo
+291494,13,Goal,0.9169999694824219,0.4540000152587891,0.30351701378822327,Nicolo Zaniolo,h,6686,OpenPlay,2018,Head,9873,Roma,Fiorentina,2,2,2019-04-03 20:00:00,Justin Kluivert,Cross,Nicolo Zaniolo
+291505,58,MissedShots,0.8859999847412109,0.6609999847412109,0.07418009638786316,Nicolo Zaniolo,h,6686,OpenPlay,2018,LeftFoot,9873,Roma,Fiorentina,2,2,2019-04-03 20:00:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+292305,53,MissedShots,0.9169999694824219,0.34299999237060547,0.059999000281095505,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9884,Sampdoria,Roma,0,1,2019-04-06 19:30:00,Patrik Schick,Rebound,Nicolo Zaniolo
+292312,72,BlockedShot,0.8680000305175781,0.31799999237060544,0.02535640075802803,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9884,Sampdoria,Roma,0,1,2019-04-06 19:30:00,Aleksandar Kolarov,Cross,Nicolo Zaniolo
+292314,73,BlockedShot,0.8169999694824219,0.27700000762939453,0.020849300548434258,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9884,Sampdoria,Roma,0,1,2019-04-06 19:30:00,Edin Dzeko,Chipped,Nicolo Zaniolo
+293678,65,BlockedShot,0.85,0.48700000762939455,0.031896598637104034,Nicolo Zaniolo,h,6686,FromCorner,2018,LeftFoot,9892,Roma,Udinese,1,0,2019-04-13 17:00:00,Iván Marcano,HeadPass,Nicolo Zaniolo
+300181,56,SavedShot,0.8069999694824219,0.2520000076293945,0.023097900673747063,Nicolo Zaniolo,a,6686,OpenPlay,2018,LeftFoot,9919,Genoa,Roma,1,1,2019-05-05 17:00:00,Alessandro Florenzi,Pass,Nicolo Zaniolo
+313331,33,BlockedShot,0.879000015258789,0.5879999923706055,0.09177610278129578,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13093,Roma,Genoa,3,3,2019-08-25 19:45:00,Aleksandar Kolarov,HeadPass,Nicolo Zaniolo
+316564,4,BlockedShot,0.7419999694824219,0.41400001525878904,0.01598520018160343,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13102,Lazio,Roma,1,1,2019-09-01 17:00:00,Bryan Cristante,TakeOn,Nicolo Zaniolo
+316577,26,ShotOnPost,0.7669999694824219,0.37799999237060544,0.023884300142526627,Nicolo Zaniolo,a,6686,FromCorner,2019,LeftFoot,13102,Lazio,Roma,1,1,2019-09-01 17:00:00,Bryan Cristante,Pass,Nicolo Zaniolo
+316583,45,MissedShots,0.749000015258789,0.47900001525878905,0.02944139949977398,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13102,Lazio,Roma,1,1,2019-09-01 17:00:00,Justin Kluivert,Pass,Nicolo Zaniolo
+321054,65,BlockedShot,0.87,0.3609999847412109,0.05912559852004051,Nicolo Zaniolo,a,6686,OpenPlay,2019,RightFoot,13120,Bologna,Roma,1,2,2019-09-22 13:00:00,,None,Nicolo Zaniolo
+321786,55,BlockedShot,0.855,0.5620000076293945,0.0936347022652626,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13136,Roma,Atalanta,0,2,2019-09-25 17:00:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+321787,58,BlockedShot,0.9030000305175782,0.4929999923706055,0.6584830284118652,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13136,Roma,Atalanta,0,2,2019-09-25 17:00:00,Lorenzo Pellegrini,TakeOn,Nicolo Zaniolo
+323274,91,SavedShot,0.980999984741211,0.6129999923706054,0.13454100489616394,Nicolo Zaniolo,a,6686,OpenPlay,2019,RightFoot,13142,Lecce,Roma,0,1,2019-09-29 13:00:00,,None,Nicolo Zaniolo
+324821,7,SavedShot,0.9059999847412109,0.44,0.13113699853420258,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13156,Roma,Cagliari,1,1,2019-10-06 14:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+324833,46,SavedShot,0.8859999847412109,0.4179999923706055,0.07899709790945053,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13156,Roma,Cagliari,1,1,2019-10-06 14:00:00,,None,Nicolo Zaniolo
+324837,53,MissedShots,0.8680000305175781,0.345,0.054842401295900345,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13156,Roma,Cagliari,1,1,2019-10-06 14:00:00,,None,Nicolo Zaniolo
+324843,72,SavedShot,0.8569999694824219,0.6609999847412109,0.04475479945540428,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13156,Roma,Cagliari,1,1,2019-10-06 14:00:00,Chris Smalling,TakeOn,Nicolo Zaniolo
+324846,82,SavedShot,0.86,0.5120000076293946,0.07624579966068268,Nicolo Zaniolo,h,6686,OpenPlay,2019,RightFoot,13156,Roma,Cagliari,1,1,2019-10-06 14:00:00,,None,Nicolo Zaniolo
+328098,36,SavedShot,0.715,0.265,0.012415099889039993,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13176,Roma,AC Milan,2,1,2019-10-27 17:00:00,Leonardo Spinazzola,Pass,Nicolo Zaniolo
+328107,57,Goal,0.8219999694824218,0.49900001525878906,0.05630109831690788,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13176,Roma,AC Milan,2,1,2019-10-27 17:00:00,,None,Nicolo Zaniolo
+328113,80,SavedShot,0.85,0.4209999847412109,0.08009029924869537,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13176,Roma,AC Milan,2,1,2019-10-27 17:00:00,,None,Nicolo Zaniolo
+328628,12,Goal,0.9069999694824219,0.585,0.3048489987850189,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13188,Udinese,Roma,0,4,2019-10-30 20:00:00,Aleksandar Kolarov,Chipped,Nicolo Zaniolo
+328632,29,MissedShots,0.8719999694824219,0.6229999923706054,0.09744270145893097,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13188,Udinese,Roma,0,4,2019-10-30 20:00:00,Justin Kluivert,Pass,Nicolo Zaniolo
+328960,18,Goal,0.850999984741211,0.4420000076293945,0.07661949843168259,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13196,Roma,Napoli,2,1,2019-11-02 14:00:00,Leonardo Spinazzola,Pass,Nicolo Zaniolo
+328967,31,MissedShots,0.86,0.4370000076293945,0.06673769652843475,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13196,Roma,Napoli,2,1,2019-11-02 14:00:00,Jordan Veretout,Cross,Nicolo Zaniolo
+328970,37,MissedShots,0.9159999847412109,0.34700000762939454,0.05856740102171898,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13196,Roma,Napoli,2,1,2019-11-02 14:00:00,Aleksandar Kolarov,Cross,Nicolo Zaniolo
+331581,21,BlockedShot,0.745,0.4620000076293945,0.022072400897741318,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13205,Parma Calcio 1913,Roma,2,0,2019-11-10 17:00:00,Leonardo Spinazzola,Pass,Nicolo Zaniolo
+331596,77,SavedShot,0.740999984741211,0.655,0.01738020032644272,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13205,Parma Calcio 1913,Roma,2,0,2019-11-10 17:00:00,Cengiz Ünder,Pass,Nicolo Zaniolo
+331603,90,MissedShots,0.8069999694824219,0.49,0.04973040148615837,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13205,Parma Calcio 1913,Roma,2,0,2019-11-10 17:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+335353,18,SavedShot,0.860999984741211,0.5690000152587891,0.07444439828395844,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13231,Inter,Roma,0,0,2019-12-06 19:45:00,Gianluca Mancini,HeadPass,Nicolo Zaniolo
+335361,52,BlockedShot,0.894000015258789,0.6370000076293946,0.08015800267457962,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13231,Inter,Roma,0,0,2019-12-06 19:45:00,Aleksandar Kolarov,Pass,Nicolo Zaniolo
+337763,4,MissedShots,0.7569999694824219,0.26399999618530273,0.009197079576551914,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13248,Roma,SPAL 2013,3,1,2019-12-15 17:00:00,Edin Dzeko,HeadPass,Nicolo Zaniolo
+337780,50,MissedShots,0.8169999694824219,0.435,0.040156200528144836,Nicolo Zaniolo,h,6686,SetPiece,2019,LeftFoot,13248,Roma,SPAL 2013,3,1,2019-12-15 17:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+337783,61,SavedShot,0.909000015258789,0.3390000152587891,0.3202359974384308,Nicolo Zaniolo,h,6686,OpenPlay,2019,RightFoot,13248,Roma,SPAL 2013,3,1,2019-12-15 17:00:00,,None,Nicolo Zaniolo
+337792,90,SavedShot,0.7619999694824219,0.2720000076293945,0.02140679955482483,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13248,Roma,SPAL 2013,3,1,2019-12-15 17:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+338338,26,BlockedShot,0.8769999694824219,0.5870000076293945,0.09382230043411255,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13250,Fiorentina,Roma,1,4,2019-12-20 19:45:00,,None,Nicolo Zaniolo
+338346,53,BlockedShot,0.8530000305175781,0.7230000305175781,0.0626152977347374,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13250,Fiorentina,Roma,1,4,2019-12-20 19:45:00,Diego Perotti,Pass,Nicolo Zaniolo
+338351,87,Goal,0.8669999694824219,0.325,0.17250600457191467,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13250,Fiorentina,Roma,1,4,2019-12-20 19:45:00,Edin Dzeko,Pass,Nicolo Zaniolo
+353892,2,SavedShot,0.8030000305175782,0.4,0.03445880115032196,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13267,Roma,Torino,0,2,2020-01-05 19:45:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+354548,25,BlockedShot,0.775,0.46900001525878904,0.034508999437093735,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13275,Roma,Juventus,1,2,2020-01-12 19:45:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+369980,93,BlockedShot,0.8619999694824219,0.664000015258789,0.09568219631910324,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13395,Roma,Parma Calcio 1913,2,1,2020-07-08 19:45:00,Carles Pérez,Pass,Nicolo Zaniolo
+370559,73,Goal,0.895,0.6630000305175782,0.08882799744606018,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13407,Brescia,Roma,0,3,2020-07-11 17:30:00,Diego Perotti,Pass,Nicolo Zaniolo
+370565,87,SavedShot,0.9519999694824218,0.38599998474121094,0.040901899337768555,Nicolo Zaniolo,a,6686,FromCorner,2019,Head,13407,Brescia,Roma,0,3,2020-07-11 17:30:00,Leonardo Spinazzola,Cross,Nicolo Zaniolo
+371778,83,SavedShot,0.870999984741211,0.6790000152587891,0.06550370156764984,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13415,Roma,Verona,2,1,2020-07-15 19:45:00,Henrikh Mkhitaryan,Pass,Nicolo Zaniolo
+373359,59,MissedShots,0.8180000305175781,0.4620000076293945,0.08333659917116165,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13436,SPAL 2013,Roma,1,6,2020-07-22 19:45:00,Carles Pérez,Pass,Nicolo Zaniolo
+373370,89,Goal,0.8859999847412109,0.4109999847412109,0.18850700557231903,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13436,SPAL 2013,Roma,1,6,2020-07-22 19:45:00,Chris Smalling,TakeOn,Nicolo Zaniolo
+373952,67,SavedShot,0.750999984741211,0.5770000076293945,0.022321999073028564,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13444,Roma,Fiorentina,2,1,2020-07-26 17:30:00,Bruno Peres,TakeOn,Nicolo Zaniolo
+373961,90,BlockedShot,0.8730000305175781,0.27700000762939453,0.12622599303722382,Nicolo Zaniolo,h,6686,OpenPlay,2019,LeftFoot,13444,Roma,Fiorentina,2,1,2020-07-26 17:30:00,Edin Dzeko,Throughball,Nicolo Zaniolo
+374295,75,MissedShots,0.8830000305175781,0.4520000076293945,0.31444498896598816,Nicolo Zaniolo,a,6686,OpenPlay,2019,RightFoot,13454,Torino,Roma,2,3,2020-07-29 19:45:00,Jordan Veretout,Cross,Nicolo Zaniolo
+374447,14,BlockedShot,0.8630000305175781,0.295,0.03499719873070717,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13467,Juventus,Roma,1,3,2020-08-01 18:45:00,Davide Zappacosta,BallTouch,Nicolo Zaniolo
+374452,44,SavedShot,0.855999984741211,0.5620000076293945,0.10058099776506424,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13467,Juventus,Roma,1,3,2020-08-01 18:45:00,Diego Perotti,Pass,Nicolo Zaniolo
+374456,54,BlockedShot,0.7669999694824219,0.25299999237060544,0.014681699685752392,Nicolo Zaniolo,a,6686,OpenPlay,2019,LeftFoot,13467,Juventus,Roma,1,3,2020-08-01 18:45:00,Davide Zappacosta,Pass,Nicolo Zaniolo
+427924,30,SavedShot,0.7269999694824218,0.32099998474121094,0.0122961001470685,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16763,Roma,Fiorentina,3,1,2021-08-22 18:45:00,,TakeOn,Nicolo Zaniolo
+432095,26,BlockedShot,0.7809999847412109,0.5,0.037602998316287994,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16788,Verona,Roma,3,2,2021-09-19 16:00:00,,BallTouch,Nicolo Zaniolo
+432098,38,BlockedShot,0.7730000305175782,0.47900001525878905,0.06267129629850388,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16788,Verona,Roma,3,2,2021-09-19 16:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+433043,7,ShotOnPost,0.980999984741211,0.415,0.30831700563430786,Nicolo Zaniolo,h,6686,OpenPlay,2021,Head,16801,Roma,Udinese,1,0,2021-09-23 18:45:00,Bryan Cristante,HeadPass,Nicolo Zaniolo
+433047,19,MissedShots,0.7719999694824219,0.34599998474121096,0.018404299393296242,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16801,Roma,Udinese,1,0,2021-09-23 18:45:00,,Rebound,Nicolo Zaniolo
+433048,32,BlockedShot,0.8540000152587891,0.7330000305175781,0.03211760148406029,Nicolo Zaniolo,h,6686,SetPiece,2021,LeftFoot,16801,Roma,Udinese,1,0,2021-09-23 18:45:00,Lorenzo Pellegrini,TakeOn,Nicolo Zaniolo
+434288,20,BlockedShot,0.6790000152587891,0.4540000152587891,0.007767059840261936,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16810,Lazio,Roma,3,2,2021-09-26 16:00:00,Rick Karsdorp,TakeOn,Nicolo Zaniolo
+434290,26,ShotOnPost,0.9590000152587891,0.43900001525878907,0.11898099631071091,Nicolo Zaniolo,a,6686,FromCorner,2021,Head,16810,Lazio,Roma,3,2,2021-09-26 16:00:00,Jordan Veretout,Cross,Nicolo Zaniolo
+434298,49,BlockedShot,0.9540000152587891,0.40099998474121096,0.03171909973025322,Nicolo Zaniolo,a,6686,OpenPlay,2021,Head,16810,Lazio,Roma,3,2,2021-09-26 16:00:00,Matias Viña,CornerAwarded,Nicolo Zaniolo
+434304,66,BlockedShot,0.860999984741211,0.285,0.030507100746035576,Nicolo Zaniolo,a,6686,SetPiece,2021,LeftFoot,16810,Lazio,Roma,3,2,2021-09-26 16:00:00,,TakeOn,Nicolo Zaniolo
+434307,72,SavedShot,0.9059999847412109,0.29100000381469726,0.044541601091623306,Nicolo Zaniolo,a,6686,OpenPlay,2021,RightFoot,16810,Lazio,Roma,3,2,2021-09-26 16:00:00,Tammy Abraham,Chipped,Nicolo Zaniolo
+435679,33,MissedShots,0.8009999847412109,0.3509999847412109,0.03204889968037605,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16821,Roma,Empoli,2,0,2021-10-03 16:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+437118,10,BlockedShot,0.710999984741211,0.5570000076293945,0.0162735003978014,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16829,Juventus,Roma,1,0,2021-10-17 18:45:00,Jordan Veretout,Pass,Nicolo Zaniolo
+438564,7,MissedShots,0.965999984741211,0.41200000762939454,0.07537700235843658,Nicolo Zaniolo,h,6686,FromCorner,2021,Head,16841,Roma,Napoli,0,0,2021-10-24 16:00:00,Lorenzo Pellegrini,Cross,Nicolo Zaniolo
+438584,83,BlockedShot,0.8219999694824218,0.3920000076293945,0.04855699837207794,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16841,Roma,Napoli,0,0,2021-10-24 16:00:00,Tammy Abraham,Pass,Nicolo Zaniolo
+439066,4,MissedShots,0.9940000152587891,0.66,0.02258249931037426,Nicolo Zaniolo,a,6686,FromCorner,2021,Head,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,Bryan Cristante,Rebound,Nicolo Zaniolo
+439069,16,BlockedShot,0.8859999847412109,0.415,0.07975559681653976,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,,None,Nicolo Zaniolo
+439072,46,MissedShots,0.7290000152587891,0.325,0.017342399805784225,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+439076,55,SavedShot,0.909000015258789,0.4370000076293945,0.034947801381349564,Nicolo Zaniolo,a,6686,OpenPlay,2021,Head,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,Rick Karsdorp,Aerial,Nicolo Zaniolo
+439082,62,MissedShots,0.9469999694824218,0.4640000152587891,0.48665401339530945,Nicolo Zaniolo,a,6686,OpenPlay,2021,Head,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,Stephan El Shaarawy,Aerial,Nicolo Zaniolo
+439088,72,BlockedShot,0.7880000305175782,0.47099998474121096,0.05518389865756035,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16846,Cagliari,Roma,1,2,2021-10-27 18:45:00,Tammy Abraham,LayOff,Nicolo Zaniolo
+440551,78,SavedShot,0.7430000305175781,0.3579999923706055,0.011979400180280209,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16862,Roma,AC Milan,1,2,2021-10-31 19:45:00,Rick Karsdorp,Pass,Nicolo Zaniolo
+440552,81,BlockedShot,0.9469999694824218,0.5829999923706055,0.33211299777030945,Nicolo Zaniolo,h,6686,SetPiece,2021,Head,16862,Roma,AC Milan,1,2,2021-10-31 19:45:00,Lorenzo Pellegrini,Cross,Nicolo Zaniolo
+440553,81,MissedShots,0.950999984741211,0.355,0.014034300111234188,Nicolo Zaniolo,h,6686,FromCorner,2021,Head,16862,Roma,AC Milan,1,2,2021-10-31 19:45:00,Jordan Veretout,Cross,Nicolo Zaniolo
+444862,54,MissedShots,0.9119999694824219,0.38599998474121094,0.06867899745702744,Nicolo Zaniolo,h,6686,SetPiece,2021,RightFoot,16891,Roma,Torino,1,0,2021-11-28 17:00:00,Gianluca Mancini,HeadPass,Nicolo Zaniolo
+444867,65,BlockedShot,0.805,0.2,0.018571199849247932,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16891,Roma,Torino,1,0,2021-11-28 17:00:00,,BallRecovery,Nicolo Zaniolo
+444869,83,MissedShots,0.8830000305175781,0.6320000076293946,0.13498499989509583,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16891,Roma,Torino,1,0,2021-11-28 17:00:00,Stephan El Shaarawy,Throughball,Nicolo Zaniolo
+445204,47,SavedShot,0.74,0.605999984741211,0.01571580022573471,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16897,Bologna,Roma,1,0,2021-12-01 17:30:00,Amadou Diawara,Chipped,Nicolo Zaniolo
+445206,47,BlockedShot,0.8019999694824219,0.37599998474121094,0.03776960074901581,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16897,Bologna,Roma,1,0,2021-12-01 17:30:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+445214,78,BlockedShot,0.88,0.30700000762939456,0.04830180108547211,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16897,Bologna,Roma,1,0,2021-12-01 17:30:00,Rick Karsdorp,Pass,Nicolo Zaniolo
+446316,32,SavedShot,0.919000015258789,0.5540000152587891,0.07765860110521317,Nicolo Zaniolo,h,6686,FromCorner,2021,Head,16912,Roma,Inter,0,3,2021-12-04 17:00:00,Jordan Veretout,Cross,Nicolo Zaniolo
+446324,81,MissedShots,0.8209999847412109,0.6270000076293946,0.05554509907960892,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16912,Roma,Inter,0,3,2021-12-04 17:00:00,Eldor Shomurodov,Pass,Nicolo Zaniolo
+449336,18,BlockedShot,0.8469999694824218,0.545,0.0864948034286499,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16926,Atalanta,Roma,1,4,2021-12-18 14:00:00,Rick Karsdorp,Chipped,Nicolo Zaniolo
+449341,26,Goal,0.924000015258789,0.555,0.6361500024795532,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16926,Atalanta,Roma,1,4,2021-12-18 14:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+449348,52,SavedShot,0.7559999847412109,0.5459999847412109,0.03859439864754677,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16926,Atalanta,Roma,1,4,2021-12-18 14:00:00,,TakeOn,Nicolo Zaniolo
+450159,40,MissedShots,0.7340000152587891,0.3509999847412109,0.014302600175142288,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16942,Roma,Sampdoria,1,1,2021-12-22 17:30:00,Jordan Veretout,Pass,Nicolo Zaniolo
+450165,55,MissedShots,0.749000015258789,0.7430000305175781,0.017115699127316475,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16942,Roma,Sampdoria,1,1,2021-12-22 17:30:00,Ibañez,Pass,Nicolo Zaniolo
+450166,61,SavedShot,0.7859999847412109,0.335,0.021879199892282486,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16942,Roma,Sampdoria,1,1,2021-12-22 17:30:00,,None,Nicolo Zaniolo
+451807,23,SavedShot,0.9409999847412109,0.6809999847412109,0.08535370230674744,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,Tammy Abraham,Throughball,Nicolo Zaniolo
+451812,39,BlockedShot,0.7580000305175781,0.32599998474121095,0.010939300060272217,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,,None,Nicolo Zaniolo
+451818,57,MissedShots,0.8490000152587891,0.509000015258789,0.07160820066928864,Nicolo Zaniolo,a,6686,SetPiece,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,Jordan Veretout,Chipped,Nicolo Zaniolo
+451828,82,BlockedShot,0.71,0.27299999237060546,0.007921960204839706,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,Stephan El Shaarawy,CornerAwarded,Nicolo Zaniolo
+453813,73,MissedShots,0.9030000305175782,0.36700000762939455,0.31058600544929504,Nicolo Zaniolo,h,6686,OpenPlay,2021,RightFoot,16971,Roma,Cagliari,1,0,2022-01-16 17:00:00,Sérgio Oliveira,TakeOn,Nicolo Zaniolo
+455354,21,BlockedShot,0.9009999847412109,0.42700000762939455,0.12454699724912643,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16977,Empoli,Roma,2,4,2022-01-23 17:00:00,Henrikh Mkhitaryan,Pass,Nicolo Zaniolo
+455362,36,Goal,0.9119999694824219,0.44599998474121094,0.1561480015516281,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,16977,Empoli,Roma,2,4,2022-01-23 17:00:00,Henrikh Mkhitaryan,Pass,Nicolo Zaniolo
+455637,21,MissedShots,0.7769999694824219,0.27299999237060546,0.018423300236463547,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16991,Roma,Genoa,0,0,2022-02-05 14:00:00,Rick Karsdorp,Pass,Nicolo Zaniolo
+455652,59,MissedShots,0.87,0.46,0.10706599801778793,Nicolo Zaniolo,h,6686,OpenPlay,2021,RightFoot,16991,Roma,Genoa,0,0,2022-02-05 14:00:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+455664,94,MissedShots,0.7440000152587891,0.5670000076293945,0.02087010070681572,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,16991,Roma,Genoa,0,0,2022-02-05 14:00:00,Bryan Cristante,Pass,Nicolo Zaniolo
+460473,48,BlockedShot,0.919000015258789,0.53,0.49595001339912415,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,17024,Spezia,Roma,0,1,2022-02-27 17:00:00,Jordan Veretout,Pass,Nicolo Zaniolo
+460483,68,MissedShots,0.715,0.39599998474121095,0.010632400400936604,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,17024,Spezia,Roma,0,1,2022-02-27 17:00:00,,None,Nicolo Zaniolo
+460486,73,SavedShot,0.87,0.3629999923706055,0.07771740108728409,Nicolo Zaniolo,a,6686,OpenPlay,2021,RightFoot,17024,Spezia,Roma,0,1,2022-02-27 17:00:00,Bryan Cristante,Pass,Nicolo Zaniolo
+460488,76,SavedShot,0.8580000305175781,0.3160000038146973,0.04353810101747513,Nicolo Zaniolo,a,6686,FromCorner,2021,LeftFoot,17024,Spezia,Roma,0,1,2022-02-27 17:00:00,Stephan El Shaarawy,Pass,Nicolo Zaniolo
+460492,81,BlockedShot,0.7909999847412109,0.49700000762939456,0.04315299913287163,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,17024,Spezia,Roma,0,1,2022-02-27 17:00:00,Henrikh Mkhitaryan,Pass,Nicolo Zaniolo
+461219,17,SavedShot,0.8080000305175781,0.6659999847412109,0.05351550132036209,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17033,Roma,Atalanta,1,0,2022-03-05 17:00:00,Nicola Zalewski,Pass,Nicolo Zaniolo
+461222,29,SavedShot,0.7919999694824219,0.43,0.03700150176882744,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17033,Roma,Atalanta,1,0,2022-03-05 17:00:00,Rick Karsdorp,Pass,Nicolo Zaniolo
+461232,71,BlockedShot,0.8590000152587891,0.6719999694824219,0.08121649920940399,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17033,Roma,Atalanta,1,0,2022-03-05 17:00:00,Tammy Abraham,Pass,Nicolo Zaniolo
+463317,34,MissedShots,0.884000015258789,0.6140000152587891,0.027254700660705566,Nicolo Zaniolo,a,6686,FromCorner,2021,LeftFoot,17045,Udinese,Roma,1,1,2022-03-13 17:00:00,,Aerial,Nicolo Zaniolo
+467535,50,BlockedShot,0.8540000152587891,0.58,0.07807789742946625,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,Sérgio Oliveira,Pass,Nicolo Zaniolo
+467536,56,BlockedShot,0.8490000152587891,0.3160000038146973,0.04231800138950348,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,Felix Afena-Gyan,Pass,Nicolo Zaniolo
+467538,61,BlockedShot,0.855,0.48200000762939454,0.06781680136919022,Nicolo Zaniolo,h,6686,SetPiece,2021,LeftFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,,None,Nicolo Zaniolo
+467539,61,SavedShot,0.749000015258789,0.2539999961853027,0.008200550451874733,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,Sérgio Oliveira,Chipped,Nicolo Zaniolo
+467540,62,SavedShot,0.87,0.3189999961853027,0.04299920052289963,Nicolo Zaniolo,h,6686,OpenPlay,2021,RightFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,,None,Nicolo Zaniolo
+467548,91,MissedShots,0.91,0.6419999694824219,0.29715898633003235,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17072,Roma,Salernitana,2,1,2022-04-10 16:00:00,Eldor Shomurodov,Pass,Nicolo Zaniolo
+469000,75,SavedShot,0.8959999847412109,0.6120000076293945,0.275424987077713,Nicolo Zaniolo,a,6686,OpenPlay,2021,LeftFoot,17082,Napoli,Roma,1,1,2022-04-18 17:00:00,Stephan El Shaarawy,Chipped,Nicolo Zaniolo
+472375,8,BlockedShot,0.9030000305175782,0.6409999847412109,0.10290300101041794,Nicolo Zaniolo,h,6686,OpenPlay,2021,RightFoot,17102,Roma,Bologna,0,0,2022-05-01 18:45:00,,TakeOn,Nicolo Zaniolo
+472376,13,BlockedShot,0.7269999694824218,0.34700000762939454,0.013703900389373302,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17102,Roma,Bologna,0,0,2022-05-01 18:45:00,Carles Pérez,Pass,Nicolo Zaniolo
+472380,27,SavedShot,0.904000015258789,0.66,0.058850400149822235,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17102,Roma,Bologna,0,0,2022-05-01 18:45:00,Ainsley Maitland-Niles,Chipped,Nicolo Zaniolo
+472391,66,SavedShot,0.909000015258789,0.605,0.02823990024626255,Nicolo Zaniolo,h,6686,FromCorner,2021,Head,17102,Roma,Bologna,0,0,2022-05-01 18:45:00,Lorenzo Pellegrini,Cross,Nicolo Zaniolo
+472396,86,BlockedShot,0.8480000305175781,0.34099998474121096,0.045389801263809204,Nicolo Zaniolo,h,6686,OpenPlay,2021,LeftFoot,17102,Roma,Bologna,0,0,2022-05-01 18:45:00,Bryan Cristante,Chipped,Nicolo Zaniolo
+474969,82,MissedShots,0.9159999847412109,0.3029999923706055,0.057610299438238144,Nicolo Zaniolo,a,6686,OpenPlay,2021,RightFoot,17106,Fiorentina,Roma,2,0,2022-05-09 18:45:00,Tammy Abraham,Pass,Nicolo Zaniolo
+481216,3,MissedShots,0.9119999694824219,0.644000015258789,0.5187349915504456,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18589,Salernitana,Roma,0,1,2022-08-14 18:45:00,,BallRecovery,Nicolo Zaniolo
+481217,9,SavedShot,0.9519999694824218,0.6029999923706054,0.2964490056037903,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18589,Salernitana,Roma,0,1,2022-08-14 18:45:00,Gianluca Mancini,Chipped,Nicolo Zaniolo
+481222,24,MissedShots,0.8230000305175781,0.5359999847412109,0.27047398686408997,Nicolo Zaniolo,a,6686,OpenPlay,2022,RightFoot,18589,Salernitana,Roma,0,1,2022-08-14 18:45:00,Paulo Dybala,Pass,Nicolo Zaniolo
+481241,66,MissedShots,0.7440000152587891,0.2979999923706055,0.01874990016222,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18589,Salernitana,Roma,0,1,2022-08-14 18:45:00,Paulo Dybala,Pass,Nicolo Zaniolo
+482997,2,BlockedShot,0.78,0.39099998474121095,0.027802100405097008,Nicolo Zaniolo,h,6686,FromCorner,2022,LeftFoot,18600,Roma,Cremonese,1,0,2022-08-22 16:30:00,Paulo Dybala,Cross,Nicolo Zaniolo
+483003,17,SavedShot,0.8209999847412109,0.6780000305175782,0.05907139927148819,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18600,Roma,Cremonese,1,0,2022-08-22 16:30:00,Paulo Dybala,Pass,Nicolo Zaniolo
+483009,30,BlockedShot,0.9,0.674000015258789,0.06627369672060013,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18600,Roma,Cremonese,1,0,2022-08-22 16:30:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+489542,72,MissedShots,0.8919999694824219,0.3129999923706055,0.05317160114645958,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18647,Roma,Atalanta,0,1,2022-09-18 16:00:00,Andrea Belotti,Pass,Nicolo Zaniolo
+489544,77,MissedShots,0.8440000152587891,0.46,0.06112480163574219,Nicolo Zaniolo,h,6686,SetPiece,2022,LeftFoot,18647,Roma,Atalanta,0,1,2022-09-18 16:00:00,,None,Nicolo Zaniolo
+490309,78,BlockedShot,0.7709999847412109,0.42200000762939455,0.03628319874405861,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18655,Inter,Roma,1,2,2022-10-01 16:00:00,Mehmet Zeki Çelik,Pass,Nicolo Zaniolo
+492519,26,MissedShots,0.9109999847412109,0.509000015258789,0.1290999948978424,Nicolo Zaniolo,h,6686,OpenPlay,2022,Head,18667,Roma,Lecce,2,1,2022-10-09 18:45:00,Gianluca Mancini,Cross,Nicolo Zaniolo
+492526,41,BlockedShot,0.9440000152587891,0.395,0.10118699818849564,Nicolo Zaniolo,h,6686,OpenPlay,2022,RightFoot,18667,Roma,Lecce,2,1,2022-10-09 18:45:00,,CornerAwarded,Nicolo Zaniolo
+494129,70,SavedShot,0.9169999694824219,0.34400001525878904,0.2783919870853424,Nicolo Zaniolo,a,6686,OpenPlay,2022,RightFoot,18679,Sampdoria,Roma,0,1,2022-10-17 16:30:00,Nicola Zalewski,Pass,Nicolo Zaniolo
+494131,75,MissedShots,0.9119999694824219,0.35400001525878905,0.3457750082015991,Nicolo Zaniolo,a,6686,OpenPlay,2022,RightFoot,18679,Sampdoria,Roma,0,1,2022-10-17 16:30:00,,BallRecovery,Nicolo Zaniolo
+495908,5,MissedShots,0.845,0.20799999237060546,0.022461699321866035,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18688,Roma,Napoli,0,1,2022-10-23 18:45:00,Rick Karsdorp,Pass,Nicolo Zaniolo
+497559,46,Goal,0.9640000152587891,0.44299999237060544,0.5785279870033264,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18694,Verona,Roma,1,3,2022-10-31 17:30:00,,Rebound,Nicolo Zaniolo
+498862,4,MissedShots,0.8019999694824219,0.59,0.04253549873828888,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18708,Roma,Lazio,0,1,2022-11-06 17:00:00,Lorenzo Pellegrini,Pass,Nicolo Zaniolo
+498865,32,BlockedShot,0.845999984741211,0.3160000038146973,0.03768499940633774,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18708,Roma,Lazio,0,1,2022-11-06 17:00:00,Tammy Abraham,Pass,Nicolo Zaniolo
+499315,76,BlockedShot,0.884000015258789,0.3079999923706055,0.07033950090408325,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18719,Sassuolo,Roma,1,1,2022-11-09 17:30:00,Bryan Cristante,Pass,Nicolo Zaniolo
+500632,18,MissedShots,0.91,0.66,0.07864339649677277,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18730,Roma,Torino,1,1,2022-11-13 14:00:00,Tammy Abraham,Pass,Nicolo Zaniolo
+500639,40,MissedShots,0.845999984741211,0.42400001525878905,0.013852899894118309,Nicolo Zaniolo,h,6686,OpenPlay,2022,Head,18730,Roma,Torino,1,1,2022-11-13 14:00:00,Bryan Cristante,Cross,Nicolo Zaniolo
+500647,82,SavedShot,0.7619999694824219,0.515,0.02661300078034401,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18730,Roma,Torino,1,1,2022-11-13 14:00:00,Mehmet Zeki Çelik,Pass,Nicolo Zaniolo
+502344,16,MissedShots,0.8719999694824219,0.4640000152587891,0.10455299913883209,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18736,Roma,Bologna,1,0,2023-01-04 15:30:00,Gianluca Mancini,None,Nicolo Zaniolo
+502345,19,SavedShot,0.720999984741211,0.580999984741211,0.07396750152111053,Nicolo Zaniolo,h,6686,OpenPlay,2022,LeftFoot,18736,Roma,Bologna,1,0,2023-01-04 15:30:00,Lorenzo Pellegrini,Chipped,Nicolo Zaniolo
+502354,43,MissedShots,0.899000015258789,0.625,0.07000619918107986,Nicolo Zaniolo,h,6686,FromCorner,2022,LeftFoot,18736,Roma,Bologna,1,0,2023-01-04 15:30:00,,Rebound,Nicolo Zaniolo
+502355,47,SavedShot,0.970999984741211,0.435,0.6095250248908997,Nicolo Zaniolo,h,6686,OpenPlay,2022,RightFoot,18736,Roma,Bologna,1,0,2023-01-04 15:30:00,,None,Nicolo Zaniolo
+502999,3,BlockedShot,0.710999984741211,0.659000015258789,0.015740400180220604,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,Paulo Dybala,Pass,Nicolo Zaniolo
+503000,22,BlockedShot,0.8130000305175781,0.295,0.025673700496554375,Nicolo Zaniolo,a,6686,OpenPlay,2022,LeftFoot,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,Mehmet Zeki Çelik,Pass,Nicolo Zaniolo
+535200,74,BlockedShot,0.8540000152587891,0.42400001525878905,0.14183387160301208,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22302,Burnley,Aston Villa,1,3,2023-08-27 13:00:00,Boubacar Kamara,Chipped,Nicolo Zaniolo
+535204,81,MissedShots,0.749000015258789,0.40900001525878904,0.024731922894716263,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22302,Burnley,Aston Villa,1,3,2023-08-27 13:00:00,,BallRecovery,Nicolo Zaniolo
+537712,21,BlockedShot,0.915,0.7019999694824218,0.055160555988550186,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21938,Aston Villa,Crystal Palace,3,1,2023-09-16 14:00:00,,BallRecovery,Nicolo Zaniolo
+539614,38,SavedShot,0.8969999694824219,0.5570000076293945,0.08370991796255112,Nicolo Zaniolo,a,6686,FromCorner,2023,LeftFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Boubacar Kamara,HeadPass,Nicolo Zaniolo
+539620,61,BlockedShot,0.8480000305175781,0.5840000152587891,0.06978297233581543,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Boubacar Kamara,BallTouch,Nicolo Zaniolo
+540859,46,BlockedShot,0.850999984741211,0.6509999847412109,0.03176683560013771,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21955,Aston Villa,Brighton,6,1,2023-09-30 11:30:00,,Rebound,Nicolo Zaniolo
+540861,47,SavedShot,0.9580000305175781,0.6869999694824219,0.06626531481742859,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21955,Aston Villa,Brighton,6,1,2023-09-30 11:30:00,Douglas Luiz,Chipped,Nicolo Zaniolo
+543105,98,MissedShots,0.9640000152587891,0.5690000152587891,0.11837517470121384,Nicolo Zaniolo,a,6686,FromCorner,2023,RightFoot,21974,Wolverhampton Wanderers,Aston Villa,1,1,2023-10-08 13:00:00,,None,Nicolo Zaniolo
+544763,27,MissedShots,0.725999984741211,0.625999984741211,0.016592660918831825,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21976,Aston Villa,West Ham,4,1,2023-10-22 15:30:00,Douglas Luiz,Pass,Nicolo Zaniolo
+545952,1,BlockedShot,0.8480000305175781,0.7090000152587891,0.03192472457885742,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Lucas Digne,Pass,Nicolo Zaniolo
+545954,3,MissedShots,0.865999984741211,0.47,0.0966448187828064,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Ollie Watkins,Pass,Nicolo Zaniolo
+545955,8,BlockedShot,0.97,0.5840000152587891,0.13843180239200592,Nicolo Zaniolo,h,6686,OpenPlay,2023,RightFoot,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Lucas Digne,Pass,Nicolo Zaniolo
+545959,19,SavedShot,0.9740000152587891,0.4520000076293945,0.5871236324310303,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Ollie Watkins,CornerAwarded,Nicolo Zaniolo
+545961,23,BlockedShot,0.769000015258789,0.500999984741211,0.03931352496147156,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Matthew Cash,Pass,Nicolo Zaniolo
+545963,43,MissedShots,0.9230000305175782,0.5740000152587891,0.03814525902271271,Nicolo Zaniolo,h,6686,SetPiece,2023,Head,21987,Aston Villa,Luton,3,1,2023-10-29 14:00:00,Lucas Digne,End,Nicolo Zaniolo
+547293,14,MissedShots,0.91,0.485,0.3197536766529083,Nicolo Zaniolo,a,6686,OpenPlay,2023,Head,22002,Nottingham Forest,Aston Villa,2,0,2023-11-05 14:00:00,Matthew Cash,Cross,Nicolo Zaniolo
+547295,35,SavedShot,0.9209999847412109,0.6359999847412109,0.07777895033359528,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22002,Nottingham Forest,Aston Villa,2,0,2023-11-05 14:00:00,Moussa Diaby,Pass,Nicolo Zaniolo
+551563,2,MissedShots,0.765,0.4229999923706055,0.026525596156716347,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22025,Bournemouth,Aston Villa,2,2,2023-12-03 14:00:00,Douglas Luiz,Pass,Nicolo Zaniolo
+556091,96,Goal,0.9309999847412109,0.49599998474121093,0.37071576714515686,Nicolo Zaniolo,h,6686,OpenPlay,2023,Head,22065,Aston Villa,Sheffield United,1,1,2023-12-22 20:00:00,Douglas Luiz,Aerial,Nicolo Zaniolo
+568455,83,SavedShot,0.970999984741211,0.5890000152587891,0.39724597334861755,Nicolo Zaniolo,h,6686,FromCorner,2023,LeftFoot,22167,Aston Villa,Tottenham,0,4,2024-03-10 13:00:00,,Rebound,Nicolo Zaniolo
+569836,78,Goal,0.92,0.45099998474121095,0.47995930910110474,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22183,West Ham,Aston Villa,1,1,2024-03-17 14:00:00,Moussa Diaby,Pass,Nicolo Zaniolo
+570945,65,SavedShot,0.8690000152587891,0.5620000076293945,0.12514019012451172,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,22186,Aston Villa,Wolverhampton Wanderers,2,0,2024-03-30 17:30:00,Moussa Diaby,Pass,Nicolo Zaniolo
+570946,66,SavedShot,0.955999984741211,0.6659999847412109,0.10207683593034744,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,22186,Aston Villa,Wolverhampton Wanderers,2,0,2024-03-30 17:30:00,Douglas Luiz,Chipped,Nicolo Zaniolo
+570949,91,BlockedShot,0.8280000305175781,0.6419999694824219,0.015534060075879097,Nicolo Zaniolo,h,6686,SetPiece,2023,LeftFoot,22186,Aston Villa,Wolverhampton Wanderers,2,0,2024-03-30 17:30:00,,Aerial,Nicolo Zaniolo
+571933,58,BlockedShot,0.914000015258789,0.6709999847412109,0.06658069789409637,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22204,Manchester City,Aston Villa,4,1,2024-04-03 19:15:00,Douglas Luiz,Pass,Nicolo Zaniolo
+574359,53,BlockedShot,0.874000015258789,0.629000015258789,0.0840081050992012,Nicolo Zaniolo,a,6686,OpenPlay,2023,LeftFoot,22216,Arsenal,Aston Villa,0,2,2024-04-14 15:30:00,Ollie Watkins,Pass,Nicolo Zaniolo
+580917,68,SavedShot,0.8619999694824219,0.4909999847412109,0.0995507761836052,Nicolo Zaniolo,h,6686,OpenPlay,2023,LeftFoot,22256,Aston Villa,Liverpool,3,3,2024-05-13 19:00:00,Moussa Diaby,Pass,Nicolo Zaniolo
+586940,75,MissedShots,0.9209999847412109,0.5170000076293946,0.11797728389501572,Nicolo Zaniolo,a,6686,OpenPlay,2024,Head,27377,Torino,Atalanta,2,1,2024-08-25 16:30:00,Marco Palestra,Cross,Nicolo Zaniolo
+586942,79,MissedShots,0.904000015258789,0.6659999847412109,0.0649179145693779,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27377,Torino,Atalanta,2,1,2024-08-25 16:30:00,Charles De Ketelaere,Pass,Nicolo Zaniolo
+594437,86,BlockedShot,0.7230000305175781,0.41900001525878905,0.017638765275478363,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27412,Bologna,Atalanta,1,1,2024-09-28 18:45:00,Juan Cuadrado,Pass,Nicolo Zaniolo
+594442,91,BlockedShot,0.779000015258789,0.3609999847412109,0.025592325255274773,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27412,Bologna,Atalanta,1,1,2024-09-28 18:45:00,Mario Pasalic,Pass,Nicolo Zaniolo
+595686,76,ShotOnPost,0.8919999694824219,0.6170000076293946,0.11112820357084274,Nicolo Zaniolo,h,6686,OpenPlay,2024,LeftFoot,27422,Atalanta,Genoa,5,1,2024-10-05 16:00:00,Mateo Retegui,Pass,Nicolo Zaniolo
+605097,84,SavedShot,0.9219999694824219,0.5059999847412109,0.07257741689682007,Nicolo Zaniolo,a,6686,OpenPlay,2024,Head,27493,Roma,Atalanta,0,2,2024-12-02 19:45:00,Berat Gjimshiti,Aerial,Nicolo Zaniolo
+605099,88,Goal,0.9680000305175781,0.6320000076293946,0.016061434522271156,Nicolo Zaniolo,a,6686,FromCorner,2024,Head,27493,Roma,Atalanta,0,2,2024-12-02 19:45:00,Juan Cuadrado,Cross,Nicolo Zaniolo
+606913,65,Goal,0.9230000305175782,0.425,0.4458511769771576,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27517,Cagliari,Atalanta,0,1,2024-12-14 14:00:00,Raoul Bellanova,Pass,Nicolo Zaniolo
+606916,74,MissedShots,0.6980000305175781,0.505,0.021499047055840492,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27517,Cagliari,Atalanta,0,1,2024-12-14 14:00:00,Marten de Roon,Pass,Nicolo Zaniolo
+608869,64,MissedShots,0.970999984741211,0.62,0.0315641313791275,Nicolo Zaniolo,h,6686,SetPiece,2024,Head,27525,Atalanta,Empoli,3,2,2024-12-22 17:00:00,Éderson,Cross,Nicolo Zaniolo
+611571,83,SavedShot,0.9180000305175782,0.40700000762939453,0.30051079392433167,Nicolo Zaniolo,h,6686,OpenPlay,2024,LeftFoot,27542,Atalanta,Juventus,1,1,2025-01-14 19:45:00,Marco Carnesecchi,TakeOn,Nicolo Zaniolo
+616813,84,BlockedShot,0.730999984741211,0.46299999237060546,0.05184777453541756,Nicolo Zaniolo,a,6686,DirectFreekick,2024,LeftFoot,27596,Inter,Fiorentina,2,1,2025-02-10 19:45:00,,Standard,Nicolo Zaniolo
+617534,0,MissedShots,0.8219999694824218,0.4779999923706055,0.07162723690271378,Nicolo Zaniolo,h,6686,OpenPlay,2024,LeftFoot,27611,Fiorentina,Como,0,2,2025-02-16 11:30:00,Lucas Beltrán,Pass,Nicolo Zaniolo
+617536,4,SavedShot,0.7730000305175782,0.32,0.01965303346514702,Nicolo Zaniolo,h,6686,OpenPlay,2024,LeftFoot,27611,Fiorentina,Como,0,2,2025-02-16 11:30:00,David de Gea,Pass,Nicolo Zaniolo
+618930,0,MissedShots,0.7930000305175782,0.39,0.03100341372191906,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27613,Verona,Fiorentina,1,0,2025-02-23 14:00:00,,None,Nicolo Zaniolo
+618932,19,SavedShot,0.9119999694824219,0.514000015258789,0.33558323979377747,Nicolo Zaniolo,a,6686,OpenPlay,2024,Head,27613,Verona,Fiorentina,1,0,2025-02-23 14:00:00,Michael Folorunsho,Cross,Nicolo Zaniolo
+619768,72,SavedShot,0.8109999847412109,0.42400001525878905,0.03807578608393669,Nicolo Zaniolo,h,6686,SetPiece,2024,RightFoot,27624,Fiorentina,Lecce,1,0,2025-02-28 19:45:00,,None,Nicolo Zaniolo
+624607,93,BlockedShot,0.9109999847412109,0.28399999618530275,0.04464750364422798,Nicolo Zaniolo,h,6686,SetPiece,2024,RightFoot,27661,Fiorentina,Atalanta,1,0,2025-03-30 14:00:00,Marin Pongracic,Chipped,Nicolo Zaniolo
+629686,93,SavedShot,0.92,0.30200000762939455,0.07647334039211273,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27683,Cagliari,Fiorentina,1,2,2025-04-23 16:30:00,Dodô,Pass,Nicolo Zaniolo
+632143,57,MissedShots,0.75,0.37400001525878906,0.020678093656897545,Nicolo Zaniolo,a,6686,OpenPlay,2024,LeftFoot,27710,Roma,Fiorentina,1,0,2025-05-04 16:00:00,Nicolo Fagioli,Pass,Nicolo Zaniolo
+643394,64,BlockedShot,0.8040000152587891,0.37099998474121093,0.03541726619005203,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29875,Udinese,AC Milan,0,3,2025-09-20 18:45:00,Arthur Atta,Pass,Nicolo Zaniolo
+643398,78,MissedShots,0.7269999694824218,0.43900001525878907,0.011227043345570564,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29875,Udinese,AC Milan,0,3,2025-09-20 18:45:00,Arthur Atta,Pass,Nicolo Zaniolo
+645140,5,SavedShot,0.765,0.28,0.020306559279561043,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29893,Sassuolo,Udinese,3,1,2025-09-28 10:30:00,Alessandro Zanoli,Pass,Nicolo Zaniolo
+645144,22,MissedShots,0.7530000305175781,0.6630000305175782,0.01363053172826767,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29893,Sassuolo,Udinese,3,1,2025-09-28 10:30:00,Oumar Solet,Chipped,Nicolo Zaniolo
+645149,49,MissedShots,0.8869999694824219,0.5220000076293946,0.039831217378377914,Nicolo Zaniolo,a,6686,OpenPlay,2025,Head,29893,Sassuolo,Udinese,3,1,2025-09-28 10:30:00,Arthur Atta,Aerial,Nicolo Zaniolo
+645157,72,SavedShot,0.815,0.48400001525878905,0.04661700502038002,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29893,Sassuolo,Udinese,3,1,2025-09-28 10:30:00,,None,Nicolo Zaniolo
+646518,7,ShotOnPost,0.9519999694824218,0.6869999694824219,0.06071446090936661,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29902,Udinese,Cagliari,1,1,2025-10-05 10:30:00,Jakub Piotrowski,BallRecovery,Nicolo Zaniolo
+646525,35,BlockedShot,0.715999984741211,0.36,0.014505978673696518,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29902,Udinese,Cagliari,1,1,2025-10-05 10:30:00,Jakub Piotrowski,Pass,Nicolo Zaniolo
+646537,69,BlockedShot,0.6669999694824219,0.2620000076293945,0.009805969893932343,Nicolo Zaniolo,h,6686,SetPiece,2025,LeftFoot,29902,Udinese,Cagliari,1,1,2025-10-05 10:30:00,Arthur Atta,Pass,Nicolo Zaniolo
+646538,73,MissedShots,0.914000015258789,0.525,0.49533382058143616,Nicolo Zaniolo,h,6686,OpenPlay,2025,RightFoot,29902,Udinese,Cagliari,1,1,2025-10-05 10:30:00,Keinan Davis,Pass,Nicolo Zaniolo
+646539,74,BlockedShot,0.7730000305175782,0.32099998474121094,0.016721021384000778,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29902,Udinese,Cagliari,1,1,2025-10-05 10:30:00,Keinan Davis,Pass,Nicolo Zaniolo
+648504,50,Goal,0.950999984741211,0.6,0.244074285030365,Nicolo Zaniolo,a,6686,OpenPlay,2025,Head,29908,Cremonese,Udinese,1,1,2025-10-20 18:45:00,Alessandro Zanoli,Chipped,Nicolo Zaniolo
+648752,19,ShotOnPost,0.860999984741211,0.624000015258789,0.08745679259300232,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29914,Udinese,Lecce,3,2,2025-10-25 13:00:00,Hassane Kamara,Pass,Nicolo Zaniolo
+650134,18,BlockedShot,0.8390000152587891,0.5379999923706055,0.0758059173822403,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29930,Juventus,Udinese,3,1,2025-10-29 16:30:00,,TakeOn,Nicolo Zaniolo
+650143,45,Goal,0.8669999694824219,0.4929999923706055,0.07317253947257996,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29930,Juventus,Udinese,3,1,2025-10-29 16:30:00,,Rebound,Nicolo Zaniolo
+650628,14,SavedShot,0.7190000152587891,0.48900001525878906,0.014373481273651123,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29942,Udinese,Atalanta,1,0,2025-11-01 14:00:00,Jurgen Ekkelenkamp,LayOff,Nicolo Zaniolo
+650629,16,BlockedShot,0.87,0.5820000076293945,0.09742768108844757,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29942,Udinese,Atalanta,1,0,2025-11-01 14:00:00,Oumar Solet,Pass,Nicolo Zaniolo
+650634,39,Goal,0.879000015258789,0.5379999923706055,0.30486273765563965,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29942,Udinese,Atalanta,1,0,2025-11-01 14:00:00,Hassane Kamara,Cross,Nicolo Zaniolo
+650637,56,SavedShot,0.7230000305175781,0.25,0.030786124989390373,Nicolo Zaniolo,h,6686,DirectFreekick,2025,LeftFoot,29942,Udinese,Atalanta,1,0,2025-11-01 14:00:00,,Standard,Nicolo Zaniolo
+653073,71,SavedShot,0.8680000305175781,0.485,0.3246864080429077,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29953,Roma,Udinese,2,0,2025-11-09 17:00:00,,FormationChange,Nicolo Zaniolo
+653421,45,BlockedShot,0.889000015258789,0.5729999923706055,0.11621523648500443,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29963,Udinese,Bologna,0,3,2025-11-22 14:00:00,Hassane Kamara,Pass,Nicolo Zaniolo
+654941,2,MissedShots,0.6930000305175781,0.5129999923706055,0.011819965206086636,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29971,Parma Calcio 1913,Udinese,0,2,2025-11-29 14:00:00,Jesper Karlström,BallRecovery,Nicolo Zaniolo
+654942,10,Goal,0.9130000305175782,0.25,0.2791920006275177,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29971,Parma Calcio 1913,Udinese,0,2,2025-11-29 14:00:00,Nicolò Bertola,Chipped,Nicolo Zaniolo
+654962,72,MissedShots,0.759000015258789,0.41200000762939454,0.021090898662805557,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29971,Parma Calcio 1913,Udinese,0,2,2025-11-29 14:00:00,Adam Buksa,Pass,Nicolo Zaniolo
+657770,55,MissedShots,0.8719999694824219,0.6419999694824219,0.06166301295161247,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29982,Udinese,Genoa,1,2,2025-12-08 17:00:00,Jakub Piotrowski,Pass,Nicolo Zaniolo
+657776,79,SavedShot,0.8109999847412109,0.4909999847412109,0.05573227256536484,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29982,Udinese,Genoa,1,2,2025-12-08 17:00:00,,Dispossessed,Nicolo Zaniolo
+657780,84,BlockedShot,0.6980000305175781,0.2589999961853027,0.012624133378267288,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29982,Udinese,Genoa,1,2,2025-12-08 17:00:00,Kingsley Ehizibue,Pass,Nicolo Zaniolo
+658595,30,BlockedShot,0.77,0.5220000076293946,0.028507014736533165,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29993,Udinese,Napoli,1,0,2025-12-14 14:00:00,Alessandro Zanoli,Pass,Nicolo Zaniolo
+658596,31,BlockedShot,0.74,0.40400001525878904,0.052742134779691696,Nicolo Zaniolo,h,6686,DirectFreekick,2025,LeftFoot,29993,Udinese,Napoli,1,0,2025-12-14 14:00:00,,Standard,Nicolo Zaniolo
+658604,58,BlockedShot,0.860999984741211,0.4809999847412109,0.07736441493034363,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29993,Udinese,Napoli,1,0,2025-12-14 14:00:00,,Rebound,Nicolo Zaniolo
+658606,67,MissedShots,0.8959999847412109,0.42200000762939455,0.3780713379383087,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,29993,Udinese,Napoli,1,0,2025-12-14 14:00:00,Jurgen Ekkelenkamp,Pass,Nicolo Zaniolo
+659826,22,BlockedShot,0.76,0.549000015258789,0.02461487427353859,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,29996,Fiorentina,Udinese,5,1,2025-12-21 17:00:00,Alessandro Zanoli,Pass,Nicolo Zaniolo
+659830,37,MissedShots,0.9290000152587891,0.3089999961853027,0.06219877302646637,Nicolo Zaniolo,a,6686,OpenPlay,2025,RightFoot,29996,Fiorentina,Udinese,5,1,2025-12-21 17:00:00,Alessandro Zanoli,Pass,Nicolo Zaniolo
+660280,25,SavedShot,0.745999984741211,0.5120000076293946,0.026446063071489334,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30012,Udinese,Lazio,1,1,2025-12-27 17:00:00,Keinan Davis,LayOff,Nicolo Zaniolo
+660295,76,BlockedShot,0.805,0.5070000076293946,0.05546466261148453,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30012,Udinese,Lazio,1,1,2025-12-27 17:00:00,Jurgen Ekkelenkamp,Pass,Nicolo Zaniolo
+660297,84,SavedShot,0.7869999694824219,0.27100000381469724,0.05289479345083237,Nicolo Zaniolo,h,6686,DirectFreekick,2025,LeftFoot,30012,Udinese,Lazio,1,1,2025-12-27 17:00:00,,Standard,Nicolo Zaniolo
+660300,94,BlockedShot,0.799000015258789,0.3370000076293945,0.024165546521544456,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30012,Udinese,Lazio,1,1,2025-12-27 17:00:00,,BallRecovery,Nicolo Zaniolo
+660864,12,MissedShots,0.730999984741211,0.47200000762939454,0.017420964315533638,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30016,Como,Udinese,1,0,2026-01-03 11:30:00,Jurgen Ekkelenkamp,BallRecovery,Nicolo Zaniolo
+662023,22,MissedShots,0.8390000152587891,0.495,0.04819770157337189,Nicolo Zaniolo,a,6686,OpenPlay,2025,RightFoot,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Keinan Davis,HeadPass,Nicolo Zaniolo
+662028,37,SavedShot,0.8830000305175781,0.4490000152587891,0.36600521206855774,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Jurgen Ekkelenkamp,Pass,Nicolo Zaniolo
+662029,49,Goal,0.889000015258789,0.5379999923706055,0.3959901034832001,Nicolo Zaniolo,a,6686,OpenPlay,2025,RightFoot,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Alessandro Zanoli,Pass,Nicolo Zaniolo
+662384,47,BlockedShot,0.8590000152587891,0.6090000152587891,0.036097683012485504,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30042,Udinese,Pisa,2,2,2026-01-10 14:00:00,,Aerial,Nicolo Zaniolo
+667676,73,MissedShots,0.784000015258789,0.6129999923706054,0.027852818369865417,Nicolo Zaniolo,a,6686,OpenPlay,2025,RightFoot,30082,Lecce,Udinese,2,1,2026-02-08 14:00:00,,None,Nicolo Zaniolo
+667678,79,MissedShots,0.6819999694824219,0.500999984741211,0.016331469640135765,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30082,Lecce,Udinese,2,1,2026-02-08 14:00:00,Maduka Okoye,Pass,Nicolo Zaniolo
+668973,25,BlockedShot,0.855999984741211,0.47,0.11404581367969513,Nicolo Zaniolo,h,6686,OpenPlay,2025,RightFoot,30093,Udinese,Sassuolo,1,2,2026-02-15 11:30:00,Jordan Zemura,Pass,Nicolo Zaniolo
+668977,49,BlockedShot,0.9459999847412109,0.6930000305175781,0.07279382646083832,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30093,Udinese,Sassuolo,1,2,2026-02-15 11:30:00,Jordan Zemura,BallTouch,Nicolo Zaniolo
+670557,5,BlockedShot,0.8809999847412109,0.565,0.13362151384353638,Nicolo Zaniolo,a,6686,OpenPlay,2025,RightFoot,30095,Bologna,Udinese,1,0,2026-02-23 19:45:00,,Dispossessed,Nicolo Zaniolo
+670573,83,MissedShots,0.9230000305175782,0.7419999694824219,0.04121444374322891,Nicolo Zaniolo,a,6686,FromCorner,2025,LeftFoot,30095,Bologna,Udinese,1,0,2026-02-23 19:45:00,Arthur Atta,Pass,Nicolo Zaniolo
+670575,90,BlockedShot,0.8680000305175781,0.5259999847412109,0.09372550994157791,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30095,Bologna,Udinese,1,0,2026-02-23 19:45:00,Jakub Piotrowski,Pass,Nicolo Zaniolo
+672037,36,MissedShots,0.71,0.35700000762939454,0.015818318352103233,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30110,Udinese,Fiorentina,3,0,2026-03-02 19:45:00,Jesper Karlström,Pass,Nicolo Zaniolo
+672041,55,BlockedShot,0.850999984741211,0.34200000762939453,0.0875844657421112,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30110,Udinese,Fiorentina,3,0,2026-03-02 19:45:00,Keinan Davis,Pass,Nicolo Zaniolo
+672048,84,SavedShot,0.784000015258789,0.3039999961853027,0.02077249065041542,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30110,Udinese,Fiorentina,3,0,2026-03-02 19:45:00,,None,Nicolo Zaniolo
+674168,91,MissedShots,0.7130000305175781,0.24299999237060546,0.028655430302023888,Nicolo Zaniolo,h,6686,DirectFreekick,2025,LeftFoot,30132,Udinese,Juventus,0,1,2026-03-14 19:45:00,,Standard,Nicolo Zaniolo
+674961,38,SavedShot,0.74,0.5109999847412109,0.014688633382320404,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30139,Genoa,Udinese,0,2,2026-03-20 19:45:00,Keinan Davis,HeadPass,Nicolo Zaniolo
+674975,92,SavedShot,0.8030000305175782,0.28899999618530275,0.08704916387796402,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30139,Genoa,Udinese,0,2,2026-03-20 19:45:00,Nicolò Bertola,Chipped,Nicolo Zaniolo
+677300,81,BlockedShot,0.9209999847412109,0.5729999923706055,0.13502967357635498,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30152,Udinese,Como,0,0,2026-04-06 10:30:00,Juan Arizala,Pass,Nicolo Zaniolo
+677920,2,SavedShot,0.749000015258789,0.45099998474121095,0.04492373391985893,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30160,AC Milan,Udinese,0,3,2026-04-11 16:00:00,Arthur Atta,Pass,Nicolo Zaniolo
+677933,44,MissedShots,0.5890000152587891,0.10699999809265137,0.009035464376211166,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30160,AC Milan,Udinese,0,3,2026-04-11 16:00:00,Keinan Davis,BallTouch,Nicolo Zaniolo
+679041,6,MissedShots,0.830999984741211,0.5890000152587891,0.05666566267609596,Nicolo Zaniolo,h,6686,OpenPlay,2025,RightFoot,30171,Udinese,Parma Calcio 1913,0,1,2026-04-18 13:00:00,Hassane Kamara,Pass,Nicolo Zaniolo
+679051,45,MissedShots,0.73,0.33299999237060546,0.018843740224838257,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30171,Udinese,Parma Calcio 1913,0,1,2026-04-18 13:00:00,Kingsley Ehizibue,Pass,Nicolo Zaniolo
+679059,75,MissedShots,0.960999984741211,0.4420000076293945,0.38976624608039856,Nicolo Zaniolo,h,6686,OpenPlay,2025,Head,30171,Udinese,Parma Calcio 1913,0,1,2026-04-18 13:00:00,,Rebound,Nicolo Zaniolo
+679065,95,SavedShot,0.855999984741211,0.38299999237060545,0.043430231511592865,Nicolo Zaniolo,h,6686,OpenPlay,2025,RightFoot,30171,Udinese,Parma Calcio 1913,0,1,2026-04-18 13:00:00,Adam Buksa,HeadPass,Nicolo Zaniolo
+681843,46,MissedShots,0.6759999847412109,0.46599998474121096,0.013871323317289352,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30178,Lazio,Udinese,3,3,2026-04-27 18:45:00,,Dispossessed,Nicolo Zaniolo
+681854,90,SavedShot,0.7619999694824219,0.585,0.040905095636844635,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30178,Lazio,Udinese,3,3,2026-04-27 18:45:00,Lennon Miller,Pass,Nicolo Zaniolo
+681856,91,BlockedShot,0.914000015258789,0.6730000305175782,0.055476050823926926,Nicolo Zaniolo,a,6686,FromCorner,2025,LeftFoot,30178,Lazio,Udinese,3,3,2026-04-27 18:45:00,Lennon Miller,Rebound,Nicolo Zaniolo
+682099,15,BlockedShot,0.8440000152587891,0.4179999923706055,0.05502961575984955,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,Maduka Okoye,Pass,Nicolo Zaniolo
+682102,18,MissedShots,0.6880000305175781,0.5509999847412109,0.00976508017629385,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,Adam Buksa,LayOff,Nicolo Zaniolo
+682104,31,BlockedShot,0.8590000152587891,0.4109999847412109,0.11994991451501846,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,Kingsley Ehizibue,TakeOn,Nicolo Zaniolo
+682109,48,BlockedShot,0.720999984741211,0.37200000762939456,0.040887437760829926,Nicolo Zaniolo,h,6686,DirectFreekick,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,,Standard,Nicolo Zaniolo
+682116,79,MissedShots,0.754000015258789,0.5109999847412109,0.04126841202378273,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,Oumar Solet,Pass,Nicolo Zaniolo
+682120,88,SavedShot,0.8030000305175782,0.3320000076293945,0.04458468407392502,Nicolo Zaniolo,h,6686,OpenPlay,2025,LeftFoot,30193,Udinese,Torino,2,0,2026-05-02 13:00:00,Jurgen Ekkelenkamp,Pass,Nicolo Zaniolo
+683540,51,SavedShot,0.8030000305175782,0.32799999237060545,0.049051739275455475,Nicolo Zaniolo,a,6686,OpenPlay,2025,LeftFoot,30195,Cagliari,Udinese,0,2,2026-05-09 13:00:00,Adam Buksa,Pass,Nicolo Zaniolo

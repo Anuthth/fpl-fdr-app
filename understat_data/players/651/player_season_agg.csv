@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,2,0,0,180,0,0,0,0,2018,Tottenham,0,0,0,0,0.1521739959716797,0.1521739959716797,651,Michel Vorm
+season,GK,1,0,0,90,0,0,0,0,2017,Tottenham,0,0,0,0,0.023387400433421135,0.023387400433421135,651,Michel Vorm
+season,Sub,5,0,0,416,0,0,0,0,2016,Tottenham,0,0,0,0,0.25676970183849335,0.25676970183849335,651,Michel Vorm
+season,GK,1,0,0,90,0,0,0,0,2015,Tottenham,0,0,0,0,0,0,651,Michel Vorm
+season,Sub,4,0,0,357,0,0,0.025591399520635605,1,2014,Tottenham,0,0,0,0,0.7053749859333038,0.6797835864126682,651,Michel Vorm

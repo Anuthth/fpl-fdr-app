@@ -1,0 +1,13 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+643611,31,MissedShots,0.860999984741211,0.5259999847412109,0.07086944580078125,Chris Rigg,h,13719,SetPiece,2025,RightFoot,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Nordi Mukiele,HeadPass,Chris Rigg
+644929,50,MissedShots,0.8190000152587891,0.4879999923706055,0.04101390019059181,Chris Rigg,a,13719,FromCorner,2025,LeftFoot,28834,Nottingham Forest,Sunderland,0,1,2025-09-27 16:30:00,,None,Chris Rigg
+659299,44,MissedShots,0.825,0.3629999923706055,0.03193539381027222,Chris Rigg,a,13719,OpenPlay,2025,LeftFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,,Rebound,Chris Rigg
+659300,44,BlockedShot,0.9119999694824219,0.5670000076293945,0.10504184663295746,Chris Rigg,a,13719,OpenPlay,2025,LeftFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Nordi Mukiele,HeadPass,Chris Rigg
+673873,39,MissedShots,0.9059999847412109,0.4420000076293945,0.09858622401952744,Chris Rigg,h,13719,OpenPlay,2025,LeftFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,None,Chris Rigg
+675713,23,MissedShots,0.8390000152587891,0.495,0.05427192151546478,Chris Rigg,a,13719,FromCorner,2025,LeftFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,None,Chris Rigg
+675714,30,BlockedShot,0.8719999694824219,0.505,0.07187926024198532,Chris Rigg,a,13719,OpenPlay,2025,LeftFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,None,Chris Rigg
+675720,55,SavedShot,0.8969999694824219,0.3509999847412109,0.07390424609184265,Chris Rigg,a,13719,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Chemsdine Talbi,Pass,Chris Rigg
+678311,80,BlockedShot,0.8180000305175781,0.485,0.067990243434906,Chris Rigg,h,13719,OpenPlay,2025,LeftFoot,29090,Sunderland,Tottenham,1,0,2026-04-12 13:00:00,Noah Sadiki,Pass,Chris Rigg
+679532,3,MissedShots,0.9019999694824219,0.345,0.051774438470602036,Chris Rigg,a,13719,OpenPlay,2025,LeftFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,Nordi Mukiele,Cross,Chris Rigg
+679534,8,Goal,0.8640000152587891,0.34799999237060547,0.04882390424609184,Chris Rigg,a,13719,OpenPlay,2025,LeftFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,Noah Sadiki,Pass,Chris Rigg
+680659,7,SavedShot,0.8909999847412109,0.355,0.08400985598564148,Chris Rigg,h,13719,OpenPlay,2025,LeftFoot,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,Enzo Le Fée,Pass,Chris Rigg

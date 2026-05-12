@@ -1,0 +1,176 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+496533,76,SavedShot,0.7080000305175781,0.504000015258789,0.024374699220061302,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18335,Brighton,Chelsea,4,1,2022-10-29 14:00:00,Estupiñán,Pass,Julio Enciso
+496534,77,BlockedShot,0.8319999694824218,0.5479999923706055,0.22874100506305695,Julio Enciso,h,11058,OpenPlay,2022,LeftFoot,18335,Brighton,Chelsea,4,1,2022-10-29 14:00:00,Pascal Groß,TakeOn,Julio Enciso
+496537,91,SavedShot,0.720999984741211,0.4420000076293945,0.024058399721980095,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18335,Brighton,Chelsea,4,1,2022-10-29 14:00:00,Alexis Mac Allister,Pass,Julio Enciso
+496538,91,SavedShot,0.8630000305175781,0.435,0.07385549694299698,Julio Enciso,h,11058,OpenPlay,2022,LeftFoot,18335,Brighton,Chelsea,4,1,2022-10-29 14:00:00,,Rebound,Julio Enciso
+502214,72,SavedShot,0.769000015258789,0.46599998474121096,0.04706310108304024,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18387,Everton,Brighton,1,4,2023-01-03 19:45:00,Pascal Groß,Pass,Julio Enciso
+502219,87,SavedShot,0.755,0.42900001525878906,0.0349837988615036,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18387,Everton,Brighton,1,4,2023-01-03 19:45:00,Moisés Caicedo,Pass,Julio Enciso
+502220,89,SavedShot,0.9280000305175782,0.7469999694824219,0.05789539963006973,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18387,Everton,Brighton,1,4,2023-01-03 19:45:00,Estupiñán,Pass,Julio Enciso
+507181,92,MissedShots,0.775,0.5179999923706055,0.04266360029578209,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,Facundo Buonanotte,Pass,Julio Enciso
+512195,83,SavedShot,0.8819999694824219,0.575999984741211,0.10076499730348587,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18455,Brighton,West Ham,4,0,2023-03-04 15:00:00,,None,Julio Enciso
+512196,83,SavedShot,0.7269999694824218,0.5629999923706055,0.02418760024011135,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18455,Brighton,West Ham,4,0,2023-03-04 15:00:00,Alexis Mac Allister,Pass,Julio Enciso
+514553,88,MissedShots,0.8019999694824219,0.62,0.048937201499938965,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18276,Brighton,Crystal Palace,1,0,2023-03-15 19:30:00,Pascal Groß,Pass,Julio Enciso
+516406,75,MissedShots,0.8169999694824219,0.2520000076293945,0.020477699115872383,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18484,Brighton,Brentford,3,3,2023-04-01 14:00:00,Moisés Caicedo,TakeOn,Julio Enciso
+517458,81,MissedShots,0.9,0.5790000152587891,0.12875400483608246,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18266,Bournemouth,Brighton,0,2,2023-04-04 18:45:00,Yasin Ayari,Pass,Julio Enciso
+517462,90,Goal,0.9519999694824218,0.49599998474121093,0.8410170078277588,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18266,Bournemouth,Brighton,0,2,2023-04-04 18:45:00,Pascal Groß,TakeOn,Julio Enciso
+518043,90,BlockedShot,0.895,0.47900001525878905,0.0692925974726677,Julio Enciso,a,11058,OpenPlay,2022,Head,18500,Tottenham,Brighton,2,1,2023-04-08 14:00:00,Solly March,Cross,Julio Enciso
+519461,47,SavedShot,0.7119999694824218,0.5220000076293946,0.012530799955129623,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18503,Chelsea,Brighton,1,2,2023-04-15 14:00:00,Danny Welbeck,LayOff,Julio Enciso
+519464,52,SavedShot,0.9119999694824219,0.6780000305175782,0.05523020029067993,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18503,Chelsea,Brighton,1,2,2023-04-15 14:00:00,Kaoru Mitoma,TakeOn,Julio Enciso
+519469,59,ShotOnPost,0.9359999847412109,0.6969999694824218,0.051425401121377945,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18503,Chelsea,Brighton,1,2,2023-04-15 14:00:00,,None,Julio Enciso
+519475,68,Goal,0.7340000152587891,0.5529999923706055,0.017508799210190773,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18503,Chelsea,Brighton,1,2,2023-04-15 14:00:00,Solly March,Pass,Julio Enciso
+522091,15,SavedShot,0.914000015258789,0.525,0.49513673782348633,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18524,Nottingham Forest,Brighton,3,1,2023-04-26 18:30:00,,None,Julio Enciso
+522093,25,BlockedShot,0.8859999847412109,0.605999984741211,0.08846065402030945,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18524,Nottingham Forest,Brighton,3,1,2023-04-26 18:30:00,Kaoru Mitoma,Pass,Julio Enciso
+522734,24,MissedShots,0.7730000305175782,0.715999984741211,0.026999101042747498,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18535,Brighton,Wolverhampton Wanderers,6,0,2023-04-29 14:00:00,Danny Welbeck,Pass,Julio Enciso
+522738,31,SavedShot,0.8730000305175781,0.725,0.0651191920042038,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18535,Brighton,Wolverhampton Wanderers,6,0,2023-04-29 14:00:00,,TakeOn,Julio Enciso
+524300,36,MissedShots,0.840999984741211,0.315,0.038158297538757324,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Danny Welbeck,Pass,Julio Enciso
+524304,46,MissedShots,0.749000015258789,0.6530000305175782,0.017013471573591232,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Estupiñán,TakeOn,Julio Enciso
+524306,51,BlockedShot,0.8590000152587891,0.605999984741211,0.07041516900062561,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Estupiñán,BallTouch,Julio Enciso
+524312,64,BlockedShot,0.7859999847412109,0.5459999847412109,0.038689665496349335,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Alexis Mac Allister,BallTouch,Julio Enciso
+524316,74,MissedShots,0.8059999847412109,0.3079999923706055,0.022693533450365067,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Solly March,Pass,Julio Enciso
+526727,11,SavedShot,0.8969999694824219,0.675,0.08188824355602264,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18552,Arsenal,Brighton,0,3,2023-05-14 15:30:00,,TakeOn,Julio Enciso
+526732,36,MissedShots,0.9059999847412109,0.44,0.4095444679260254,Julio Enciso,a,11058,OpenPlay,2022,LeftFoot,18552,Arsenal,Brighton,0,3,2023-05-14 15:30:00,,None,Julio Enciso
+526738,50,Goal,0.9580000305175781,0.51,0.6185113191604614,Julio Enciso,a,11058,OpenPlay,2022,Head,18552,Arsenal,Brighton,0,3,2023-05-14 15:30:00,Estupiñán,Cross,Julio Enciso
+527032,68,MissedShots,0.894000015258789,0.47200000762939454,0.06154848635196686,Julio Enciso,a,11058,OpenPlay,2022,Head,18449,Newcastle United,Brighton,4,1,2023-05-18 18:30:00,Moisés Caicedo,Cross,Julio Enciso
+527039,97,MissedShots,0.9019999694824219,0.580999984741211,0.08434855937957764,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18449,Newcastle United,Brighton,4,1,2023-05-18 18:30:00,Evan Ferguson,BallTouch,Julio Enciso
+527941,1,BlockedShot,0.8019999694824219,0.5129999923706055,0.03792262822389603,Julio Enciso,h,11058,OpenPlay,2022,LeftFoot,18563,Brighton,Southampton,3,1,2023-05-21 13:00:00,Alexis Mac Allister,Pass,Julio Enciso
+527946,22,BlockedShot,0.8019999694824219,0.4640000152587891,0.04899502545595169,Julio Enciso,h,11058,OpenPlay,2022,LeftFoot,18563,Brighton,Southampton,3,1,2023-05-21 13:00:00,Kaoru Mitoma,Pass,Julio Enciso
+528616,29,BlockedShot,0.755,0.5659999847412109,0.023875337094068527,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18515,Brighton,Manchester City,1,1,2023-05-24 19:00:00,Danny Welbeck,Pass,Julio Enciso
+528621,37,Goal,0.7219999694824218,0.644000015258789,0.016079405322670937,Julio Enciso,h,11058,OpenPlay,2022,RightFoot,18515,Brighton,Manchester City,1,1,2023-05-24 19:00:00,Levi Colwill,Pass,Julio Enciso
+529687,31,SavedShot,0.9669999694824218,0.675,0.06509201973676682,Julio Enciso,a,11058,OpenPlay,2022,RightFoot,18573,Aston Villa,Brighton,2,1,2023-05-28 15:30:00,Evan Ferguson,Pass,Julio Enciso
+533139,11,MissedShots,0.7709999847412109,0.5820000076293945,0.026693962514400482,Julio Enciso,a,11058,OpenPlay,2023,LeftFoot,22286,Wolverhampton Wanderers,Brighton,1,4,2023-08-19 14:00:00,Pascal Groß,Pass,Julio Enciso
+533143,26,BlockedShot,0.8809999847412109,0.735,0.05964342877268791,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22286,Wolverhampton Wanderers,Brighton,1,4,2023-08-19 14:00:00,Estupiñán,TakeOn,Julio Enciso
+533147,32,MissedShots,0.774000015258789,0.5270000076293946,0.03828192129731178,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22286,Wolverhampton Wanderers,Brighton,1,4,2023-08-19 14:00:00,Kaoru Mitoma,Pass,Julio Enciso
+533155,53,SavedShot,0.8580000305175781,0.28200000762939453,0.3136484622955322,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22286,Wolverhampton Wanderers,Brighton,1,4,2023-08-19 14:00:00,James Milner,Throughball,Julio Enciso
+565201,85,SavedShot,0.8880000305175781,0.7140000152587891,0.04573347792029381,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Lewis Dunk,Pass,Julio Enciso
+565204,89,BlockedShot,0.895,0.6569999694824219,0.056457001715898514,Julio Enciso,h,11058,SetPiece,2023,RightFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,,None,Julio Enciso
+566596,1,SavedShot,0.765,0.750999984741211,0.013900537975132465,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Estupiñán,TakeOn,Julio Enciso
+566601,27,MissedShots,0.794000015258789,0.590999984741211,0.03827158361673355,Julio Enciso,a,11058,OpenPlay,2023,LeftFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Jan Paul van Hecke,TakeOn,Julio Enciso
+566603,33,MissedShots,0.8640000152587891,0.5120000076293946,0.058931510895490646,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Adam Lallana,Cross,Julio Enciso
+568522,86,MissedShots,0.700999984741211,0.5,0.01936517283320427,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22168,Brighton,Nottingham Forest,1,0,2024-03-10 14:00:00,Carlos Baleba,Pass,Julio Enciso
+571901,71,MissedShots,0.7569999694824219,0.5770000076293945,0.045215677469968796,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22200,Brentford,Brighton,0,0,2024-04-03 18:30:00,João Pedro,Pass,Julio Enciso
+571905,80,SavedShot,0.7580000305175781,0.7090000152587891,0.012024582363665104,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22200,Brentford,Brighton,0,0,2024-04-03 18:30:00,Pascal Groß,LayOff,Julio Enciso
+572546,8,MissedShots,0.8430000305175781,0.49900001525878906,0.09027963876724243,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,Tariq Lamptey,Pass,Julio Enciso
+572556,43,SavedShot,0.784000015258789,0.6869999694824219,0.02062321826815605,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,,None,Julio Enciso
+572560,45,SavedShot,0.7559999847412109,0.5790000152587891,0.019168080762028694,Julio Enciso,h,11058,OpenPlay,2023,LeftFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,,BallRecovery,Julio Enciso
+572566,56,MissedShots,0.8730000305175781,0.5779999923706055,0.06776165962219238,Julio Enciso,h,11058,FromCorner,2023,LeftFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,,None,Julio Enciso
+577208,69,MissedShots,0.8669999694824219,0.500999984741211,0.06814653426408768,Julio Enciso,a,11058,OpenPlay,2023,LeftFoot,22235,Bournemouth,Brighton,3,0,2024-04-28 13:00:00,,Rebound,Julio Enciso
+577210,71,MissedShots,0.7580000305175781,0.624000015258789,0.01898464374244213,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22235,Bournemouth,Brighton,3,0,2024-04-28 13:00:00,Danny Welbeck,Pass,Julio Enciso
+578873,66,MissedShots,0.8180000305175781,0.5659999847412109,0.10353711247444153,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,Simon Adingra,Chipped,Julio Enciso
+578874,67,BlockedShot,0.759000015258789,0.34400001525878904,0.01637253724038601,Julio Enciso,h,11058,OpenPlay,2023,RightFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,João Pedro,LayOff,Julio Enciso
+578880,90,BlockedShot,0.8569999694824219,0.5879999923706055,0.04855433106422424,Julio Enciso,h,11058,OpenPlay,2023,LeftFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,Simon Adingra,TakeOn,Julio Enciso
+579937,41,MissedShots,0.909000015258789,0.41700000762939454,0.29683148860931396,Julio Enciso,a,11058,OpenPlay,2023,Head,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Simon Adingra,Chipped,Julio Enciso
+579938,41,SavedShot,0.7290000152587891,0.54,0.023713167756795883,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Danny Welbeck,Pass,Julio Enciso
+579939,42,BlockedShot,0.855999984741211,0.3559999847412109,0.08029931038618088,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Pascal Groß,Pass,Julio Enciso
+579940,42,MissedShots,0.9019999694824219,0.3659999847412109,0.08377867192029953,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,,Rebound,Julio Enciso
+579947,58,SavedShot,0.8240000152587891,0.64,0.04053248465061188,Julio Enciso,a,11058,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,,None,Julio Enciso
+581192,24,MissedShots,0.8640000152587891,0.534000015258789,0.023817455396056175,Julio Enciso,h,11058,OpenPlay,2023,Head,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Tariq Lamptey,Cross,Julio Enciso
+581203,52,BlockedShot,0.8019999694824219,0.539000015258789,0.04019701108336449,Julio Enciso,h,11058,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,,None,Julio Enciso
+585867,92,MissedShots,0.7719999694824219,0.6509999847412109,0.016331244260072708,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26612,Brighton,Manchester United,2,1,2024-08-24 11:30:00,Lewis Dunk,TakeOn,Julio Enciso
+590754,68,SavedShot,0.815,0.4879999923706055,0.06262125074863434,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,Yasin Ayari,Pass,Julio Enciso
+594195,88,SavedShot,0.72,0.634000015258789,0.03982255607843399,Julio Enciso,a,11058,DirectFreekick,2024,RightFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,Standard,Julio Enciso
+594196,90,MissedShots,0.7709999847412109,0.44799999237060545,0.02578776888549328,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,Dispossessed,Julio Enciso
+597098,96,SavedShot,0.7619999694824219,0.7440000152587891,0.015796368941664696,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26676,Newcastle United,Brighton,0,1,2024-10-19 14:00:00,,None,Julio Enciso
+607448,56,SavedShot,0.7730000305175782,0.5509999847412109,0.022184250876307487,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,Carlos Baleba,TakeOn,Julio Enciso
+607454,80,SavedShot,0.700999984741211,0.6359999847412109,0.008728337474167347,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,Kaoru Mitoma,Pass,Julio Enciso
+607459,93,SavedShot,0.8480000305175781,0.5120000076293946,0.08202888071537018,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,Evan Ferguson,Pass,Julio Enciso
+608385,78,BlockedShot,0.8780000305175781,0.71,0.03708609193563461,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26767,West Ham,Brighton,1,1,2024-12-21 15:00:00,Carlos Baleba,Chipped,Julio Enciso
+608391,92,BlockedShot,0.94,0.624000015258789,0.08666586130857468,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26767,West Ham,Brighton,1,1,2024-12-21 15:00:00,,Rebound,Julio Enciso
+608392,93,SavedShot,0.825999984741211,0.735,0.01905183121562004,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26767,West Ham,Brighton,1,1,2024-12-21 15:00:00,João Pedro,Pass,Julio Enciso
+609234,3,ShotOnPost,0.855,0.5790000152587891,0.09032414108514786,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,João Pedro,Pass,Julio Enciso
+609235,4,MissedShots,0.8090000152587891,0.509000015258789,0.020244793966412544,Julio Enciso,h,11058,OpenPlay,2024,Head,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,Jan Paul van Hecke,Chipped,Julio Enciso
+609238,8,BlockedShot,0.8590000152587891,0.539000015258789,0.0710233524441719,Julio Enciso,h,11058,FromCorner,2024,LeftFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,,Rebound,Julio Enciso
+609239,12,SavedShot,0.919000015258789,0.45,0.11647413671016693,Julio Enciso,h,11058,SetPiece,2024,Head,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,Kaoru Mitoma,Cross,Julio Enciso
+609241,21,SavedShot,0.9109999847412109,0.485,0.11536072939634323,Julio Enciso,h,11058,OpenPlay,2024,Head,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,Matt O&#039;Riley,Cross,Julio Enciso
+609243,29,MissedShots,0.8280000305175781,0.43200000762939456,0.06308373808860779,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,Brajan Gruda,Pass,Julio Enciso
+609244,37,SavedShot,0.7709999847412109,0.6869999694824219,0.016169073060154915,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,Kaoru Mitoma,Pass,Julio Enciso
+609246,38,MissedShots,0.8119999694824219,0.46599998474121096,0.041066695004701614,Julio Enciso,h,11058,OpenPlay,2024,LeftFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,,Rebound,Julio Enciso
+609755,26,SavedShot,0.7709999847412109,0.6809999847412109,0.02665466070175171,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26782,Aston Villa,Brighton,2,2,2024-12-30 19:45:00,João Pedro,Chipped,Julio Enciso
+614917,4,BlockedShot,0.7290000152587891,0.5670000076293945,0.021174238994717598,Julio Enciso,h,11058,OpenPlay,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,Jacob Greaves,Pass,Julio Enciso
+614918,8,SavedShot,0.7519999694824219,0.3820000076293945,0.019100643694400787,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,Tackle,Julio Enciso
+614919,16,BlockedShot,0.8019999694824219,0.654000015258789,0.03117244318127632,Julio Enciso,h,11058,OpenPlay,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,Jens Cajuste,Pass,Julio Enciso
+614927,40,MissedShots,0.769000015258789,0.285,0.04815051332116127,Julio Enciso,h,11058,DirectFreekick,2024,RightFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,Standard,Julio Enciso
+614931,57,MissedShots,0.8580000305175781,0.48700000762939455,0.061039038002491,Julio Enciso,h,11058,OpenPlay,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,Jacob Greaves,HeadPass,Julio Enciso
+614937,70,SavedShot,0.840999984741211,0.46299999237060546,0.09809579700231552,Julio Enciso,h,11058,SetPiece,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,TakeOn,Julio Enciso
+617137,12,SavedShot,0.720999984741211,0.6029999923706054,0.016687076538801193,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26842,Aston Villa,Ipswich,1,1,2025-02-15 15:00:00,,TakeOn,Julio Enciso
+621291,23,SavedShot,0.8930000305175781,0.28,0.03720858320593834,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26875,Crystal Palace,Ipswich,1,0,2025-03-08 15:00:00,Jaden Philogene-Bidace,TakeOn,Julio Enciso
+621292,24,BlockedShot,0.8180000305175781,0.5070000076293946,0.02044394426047802,Julio Enciso,a,11058,FromCorner,2024,RightFoot,26875,Crystal Palace,Ipswich,1,0,2025-03-08 15:00:00,,Aerial,Julio Enciso
+621301,56,BlockedShot,0.7380000305175781,0.595999984741211,0.016956493258476257,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26875,Crystal Palace,Ipswich,1,0,2025-03-08 15:00:00,Jack Clarke,Pass,Julio Enciso
+621303,60,SavedShot,0.7140000152587891,0.445,0.029506472870707512,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26875,Crystal Palace,Ipswich,1,0,2025-03-08 15:00:00,Jack Clarke,Pass,Julio Enciso
+622632,13,BlockedShot,0.7959999847412109,0.6409999847412109,0.04532952234148979,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26887,Ipswich,Nottingham Forest,2,4,2025-03-15 15:00:00,,TakeOn,Julio Enciso
+625111,23,BlockedShot,0.860999984741211,0.54,0.06561725586652756,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,Cameron Burgess,HeadPass,Julio Enciso
+625113,28,MissedShots,0.715999984741211,0.7269999694824218,0.015277410857379436,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,Jens Cajuste,Pass,Julio Enciso
+625128,66,MissedShots,0.9259999847412109,0.6029999923706054,0.01781482808291912,Julio Enciso,a,11058,FromCorner,2024,Head,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,,Aerial,Julio Enciso
+627629,18,Goal,0.9369999694824219,0.4209999847412109,0.5981020927429199,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Ben Johnson,Pass,Julio Enciso
+627631,28,MissedShots,0.6840000152587891,0.3940000152587891,0.01103370450437069,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,,None,Julio Enciso
+627650,64,SavedShot,0.7880000305175782,0.555,0.04933391511440277,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Jack Clarke,Pass,Julio Enciso
+629054,8,BlockedShot,0.8219999694824218,0.7480000305175781,0.04463735967874527,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,Jack Clarke,Pass,Julio Enciso
+630270,31,MissedShots,0.8240000152587891,0.295,0.023329006507992744,Julio Enciso,a,11058,SetPiece,2024,RightFoot,26938,Newcastle United,Ipswich,3,0,2025-04-26 14:00:00,Sam Morsy,Pass,Julio Enciso
+631441,19,MissedShots,0.8040000152587891,0.7569999694824219,0.01382377278059721,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,,Rebound,Julio Enciso
+631445,36,SavedShot,0.765,0.4909999847412109,0.024256501346826553,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,Conor Chaplin,Pass,Julio Enciso
+631447,38,MissedShots,0.899000015258789,0.675,0.10236316919326782,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,Omari Hutchinson,Pass,Julio Enciso
+631448,40,Goal,0.7040000152587891,0.5420000076293945,0.01346988882869482,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,Cameron Burgess,TakeOn,Julio Enciso
+631450,57,SavedShot,0.8440000152587891,0.515,0.07812319695949554,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,Liam Delap,Pass,Julio Enciso
+631451,75,MissedShots,0.8469999694824218,0.55,0.06151195615530014,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,George Hirst,Pass,Julio Enciso
+632760,19,BlockedShot,0.74,0.7530000305175781,0.008326788432896137,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Jacob Greaves,TakeOn,Julio Enciso
+632781,84,MissedShots,0.705,0.6320000076293946,0.013766512274742126,Julio Enciso,h,11058,OpenPlay,2024,RightFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Sam Morsy,Pass,Julio Enciso
+635070,16,MissedShots,0.74,0.415,0.014293023385107517,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Omari Hutchinson,TakeOn,Julio Enciso
+635079,50,SavedShot,0.8440000152587891,0.27100000381469724,0.03180503472685814,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Sam Morsy,Pass,Julio Enciso
+635081,53,MissedShots,0.7680000305175781,0.4540000152587891,0.026344675570726395,Julio Enciso,a,11058,OpenPlay,2024,RightFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Jack Clarke,Pass,Julio Enciso
+635083,59,BlockedShot,0.9119999694824219,0.51,0.10544455796480179,Julio Enciso,a,11058,OpenPlay,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Jens Cajuste,Cross,Julio Enciso
+646917,86,BlockedShot,0.7680000305175781,0.7290000152587891,0.03439994156360626,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,Rafael Luís,Chipped,Julio Enciso
+646918,94,SavedShot,0.7180000305175781,0.4640000152587891,0.021522002294659615,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,Rafael Luís,Pass,Julio Enciso
+647162,10,SavedShot,0.909000015258789,0.500999984741211,0.46726465225219727,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,,Rebound,Julio Enciso
+647163,17,BlockedShot,0.9490000152587891,0.315,0.060723885893821716,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,Guela Doué,Pass,Julio Enciso
+647170,36,MissedShots,0.889000015258789,0.3990000152587891,0.07521043717861176,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,Joaquín Panichelli,HeadPass,Julio Enciso
+647171,37,SavedShot,0.7609999847412109,0.4470000076293945,0.02525177039206028,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,Guela Doué,BallRecovery,Julio Enciso
+647173,46,SavedShot,0.785,0.575,0.047798316925764084,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,,None,Julio Enciso
+647176,55,MissedShots,0.830999984741211,0.3220000076293945,0.04552973061800003,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29608,Paris Saint Germain,Strasbourg,3,3,2025-10-17 18:45:00,Joaquín Panichelli,Pass,Julio Enciso
+649943,16,SavedShot,0.8369999694824218,0.47,0.07929107546806335,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29616,Lyon,Strasbourg,2,1,2025-10-26 18:45:00,Valentín Barco,Pass,Julio Enciso
+649945,28,MissedShots,0.7390000152587891,0.66,0.024948230013251305,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29616,Lyon,Strasbourg,2,1,2025-10-26 18:45:00,Samir El Mourabet,TakeOn,Julio Enciso
+649950,46,BlockedShot,0.8219999694824218,0.34,0.03688916936516762,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29616,Lyon,Strasbourg,2,1,2025-10-26 18:45:00,Joaquín Panichelli,Pass,Julio Enciso
+651414,23,BlockedShot,0.9119999694824219,0.5320000076293945,0.48071280121803284,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,Diego Moreira,Pass,Julio Enciso
+651429,68,BlockedShot,0.9109999847412109,0.44799999237060545,0.09996113926172256,Julio Enciso,a,11058,FromCorner,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,,None,Julio Enciso
+651430,73,BlockedShot,0.7219999694824218,0.43,0.014364336617290974,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,Sebastian Nanasi,LayOff,Julio Enciso
+655860,29,SavedShot,0.7440000152587891,0.5559999847412109,0.061201293021440506,Julio Enciso,h,11058,DirectFreekick,2025,RightFoot,29663,Strasbourg,Brest,1,2,2025-11-30 14:00:00,,Standard,Julio Enciso
+655868,68,BlockedShot,0.9419999694824219,0.40700000762939453,0.27662357687950134,Julio Enciso,h,11058,OpenPlay,2025,Head,29663,Strasbourg,Brest,1,2,2025-11-30 14:00:00,Ben Chilwell,Cross,Julio Enciso
+655870,69,MissedShots,0.725,0.4379999923706055,0.08036599308252335,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29663,Strasbourg,Brest,1,2,2025-11-30 14:00:00,Joaquín Panichelli,TakeOn,Julio Enciso
+657178,7,BlockedShot,0.960999984741211,0.6730000305175782,0.018155569210648537,Julio Enciso,a,11058,OpenPlay,2025,Head,29672,Toulouse,Strasbourg,1,0,2025-12-06 18:00:00,Diego Moreira,Chipped,Julio Enciso
+661162,63,SavedShot,0.905,0.5109999847412109,0.316501647233963,Julio Enciso,a,11058,OpenPlay,2025,Head,29688,Nice,Strasbourg,1,1,2026-01-03 18:00:00,Joaquín Panichelli,Chipped,Julio Enciso
+664056,39,BlockedShot,0.779000015258789,0.6980000305175781,0.05888879671692848,Julio Enciso,h,11058,DirectFreekick,2025,RightFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,,Standard,Julio Enciso
+664060,45,MissedShots,0.835999984741211,0.63,0.06296084821224213,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Martial Godo,Pass,Julio Enciso
+664063,53,SavedShot,0.86,0.57,0.3759581744670868,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Joaquín Panichelli,BallRecovery,Julio Enciso
+665528,10,BlockedShot,0.730999984741211,0.5320000076293945,0.054167795926332474,Julio Enciso,a,11058,DirectFreekick,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,,Standard,Julio Enciso
+665532,18,MissedShots,0.75,0.5259999847412109,0.022362347692251205,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Diego Moreira,Pass,Julio Enciso
+665534,25,Goal,0.8959999847412109,0.495,0.462069571018219,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Joaquín Panichelli,Pass,Julio Enciso
+665537,32,MissedShots,0.905,0.515,0.42388013005256653,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Ben Chilwell,Cross,Julio Enciso
+665553,65,SavedShot,0.9309999847412109,0.28399999618530275,0.03835377097129822,Julio Enciso,a,11058,SetPiece,2025,LeftFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Diego Moreira,TakeOn,Julio Enciso
+665555,73,MissedShots,0.759000015258789,0.5129999923706055,0.024507373571395874,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,,None,Julio Enciso
+666789,40,SavedShot,0.9159999847412109,0.7080000305175781,0.05245218425989151,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29716,Strasbourg,Paris Saint Germain,1,2,2026-02-01 19:45:00,Ben Chilwell,Pass,Julio Enciso
+667822,5,SavedShot,0.799000015258789,0.3220000076293945,0.02780984714627266,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,Samir El Mourabet,BallRecovery,Julio Enciso
+667821,5,BlockedShot,0.874000015258789,0.3029999923706055,0.05224856734275818,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,Junior Mwanga,Pass,Julio Enciso
+667829,39,BlockedShot,0.75,0.6270000076293946,0.02031133696436882,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,Samir El Mourabet,TakeOn,Julio Enciso
+667830,39,BlockedShot,0.8490000152587891,0.4809999847412109,0.09402817487716675,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,Valentín Barco,Pass,Julio Enciso
+670478,33,MissedShots,0.8669999694824219,0.29100000381469726,0.0616527758538723,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29743,Strasbourg,Lyon,3,1,2026-02-22 19:45:00,Diego Moreira,Pass,Julio Enciso
+670706,10,SavedShot,0.8119999694824219,0.36400001525878906,0.28886541724205017,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29753,Strasbourg,Lens,1,1,2026-02-27 19:45:00,Samir El Mourabet,Throughball,Julio Enciso
+670713,33,MissedShots,0.870999984741211,0.7140000152587891,0.04724191129207611,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29753,Strasbourg,Lens,1,1,2026-02-27 19:45:00,Diego Moreira,TakeOn,Julio Enciso
+672846,13,MissedShots,0.8140000152587891,0.37,0.06138144060969353,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29754,Auxerre,Strasbourg,0,0,2026-03-07 18:00:00,,TakeOn,Julio Enciso
+672857,67,SavedShot,0.7090000152587891,0.36,0.01660536788403988,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29754,Auxerre,Strasbourg,0,0,2026-03-07 18:00:00,Samir El Mourabet,Pass,Julio Enciso
+672860,76,MissedShots,0.8030000305175782,0.649000015258789,0.022505048662424088,Julio Enciso,a,11058,FromCorner,2025,LeftFoot,29754,Auxerre,Strasbourg,0,0,2026-03-07 18:00:00,,None,Julio Enciso
+674470,13,BlockedShot,0.8640000152587891,0.649000015258789,0.0553322471678257,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29771,Strasbourg,Paris FC,0,0,2026-03-15 14:00:00,,None,Julio Enciso
+676226,91,SavedShot,0.794000015258789,0.685,0.07137555629014969,Julio Enciso,a,11058,DirectFreekick,2025,RightFoot,29776,Nantes,Strasbourg,2,3,2026-03-22 19:45:00,,Standard,Julio Enciso
+676690,16,MissedShots,0.924000015258789,0.4540000152587891,0.06045878678560257,Julio Enciso,h,11058,OpenPlay,2025,Head,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Samir El Mourabet,Aerial,Julio Enciso
+676693,24,SavedShot,0.9080000305175782,0.37799999237060544,0.07487311959266663,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,,None,Julio Enciso
+676697,35,Goal,0.924000015258789,0.565,0.9046694040298462,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Samir El Mourabet,TakeOn,Julio Enciso
+676701,48,MissedShots,0.9359999847412109,0.4279999923706055,0.0491635762155056,Julio Enciso,h,11058,OpenPlay,2025,Head,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Guela Doué,Aerial,Julio Enciso
+676706,66,SavedShot,0.8809999847412109,0.44099998474121094,0.02610132470726967,Julio Enciso,h,11058,OpenPlay,2025,Head,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Martial Godo,Aerial,Julio Enciso
+679772,88,MissedShots,0.775,0.5979999923706054,0.028361300006508827,Julio Enciso,h,11058,OpenPlay,2025,LeftFoot,29807,Strasbourg,Rennes,0,3,2026-04-19 15:15:00,Junior Mwanga,Pass,Julio Enciso
+683008,72,BlockedShot,0.8919999694824219,0.24399999618530274,0.030173514038324356,Julio Enciso,h,11058,OpenPlay,2025,RightFoot,29825,Strasbourg,Toulouse,1,2,2026-05-03 15:15:00,Samuel Amo-Ameyaw,Pass,Julio Enciso
+684418,26,MissedShots,0.6940000152587891,0.5420000076293945,0.01840093918144703,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Mathis Amougou,Pass,Julio Enciso
+684419,31,MissedShots,0.899000015258789,0.6480000305175782,0.06418401002883911,Julio Enciso,a,11058,OpenPlay,2025,LeftFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,,None,Julio Enciso
+684421,47,Goal,0.885,0.5,0.7600951194763184,Julio Enciso,a,11058,Penalty,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,,Standard,Julio Enciso
+684426,50,BlockedShot,0.8169999694824219,0.5840000152587891,0.06723619997501373,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,,BlockedPass,Julio Enciso
+684427,53,SavedShot,0.7390000152587891,0.5609999847412109,0.025049662217497826,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Guela Doué,Pass,Julio Enciso
+684428,60,MissedShots,0.905,0.3659999847412109,0.3182309567928314,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Guela Doué,Throughball,Julio Enciso
+684430,65,MissedShots,0.7390000152587891,0.5870000076293945,0.02312888391315937,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Martial Godo,Pass,Julio Enciso
+684436,79,SavedShot,0.9080000305175782,0.4329999923706055,0.08251554518938065,Julio Enciso,a,11058,OpenPlay,2025,Head,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Martial Godo,Cross,Julio Enciso
+684438,95,MissedShots,0.8209999847412109,0.5329999923706055,0.06626034528017044,Julio Enciso,a,11058,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Martial Godo,Pass,Julio Enciso

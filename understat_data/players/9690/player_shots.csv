@@ -1,0 +1,301 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+425570,30,MissedShots,0.9159999847412109,0.515,0.09649530053138733,Folarin Balogun,a,9690,OpenPlay,2021,RightFoot,16376,Brentford,Arsenal,2,0,2021-08-13 19:00:00,,BallTouch,Folarin Balogun
+425572,37,MissedShots,0.825,0.7480000305175781,0.019192200154066086,Folarin Balogun,a,9690,OpenPlay,2021,RightFoot,16376,Brentford,Arsenal,2,0,2021-08-13 19:00:00,,BallTouch,Folarin Balogun
+425573,41,MissedShots,0.905,0.5179999923706055,0.04176729917526245,Folarin Balogun,a,9690,OpenPlay,2021,Head,16376,Brentford,Arsenal,2,0,2021-08-13 19:00:00,Kieran Tierney,Aerial,Folarin Balogun
+479994,83,Goal,0.9119999694824219,0.4879999923706055,0.06328350305557251,Folarin Balogun,a,9690,OpenPlay,2022,Head,19657,Marseille,Reims,4,1,2022-08-07 18:45:00,,None,Folarin Balogun
+480001,91,MissedShots,0.82,0.519000015258789,0.04922030121088028,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19657,Marseille,Reims,4,1,2022-08-07 18:45:00,Kamory Doumbia,HeadPass,Folarin Balogun
+480808,23,BlockedShot,0.9109999847412109,0.365,0.11082399636507034,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19664,Reims,Clermont Foot,2,4,2022-08-14 13:00:00,Mitchell van Bergen,Pass,Folarin Balogun
+480809,29,Goal,0.885,0.5,0.7600950002670288,Folarin Balogun,h,9690,Penalty,2022,RightFoot,19664,Reims,Clermont Foot,2,4,2022-08-14 13:00:00,,Standard,Folarin Balogun
+480811,34,SavedShot,0.8590000152587891,0.5879999923706055,0.09125419706106186,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19664,Reims,Clermont Foot,2,4,2022-08-14 13:00:00,,BallRecovery,Folarin Balogun
+482233,13,MissedShots,0.9,0.4279999923706055,0.4038670063018799,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19675,Strasbourg,Reims,1,1,2022-08-21 11:00:00,Junya Ito,Pass,Folarin Balogun
+482237,43,SavedShot,0.795,0.7440000152587891,0.05470310151576996,Folarin Balogun,a,9690,DirectFreekick,2022,RightFoot,19675,Strasbourg,Reims,1,1,2022-08-21 11:00:00,,Standard,Folarin Balogun
+482251,80,Goal,0.965,0.5220000076293946,0.7181659936904907,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19675,Strasbourg,Reims,1,1,2022-08-21 11:00:00,Alexis Flips,Pass,Folarin Balogun
+484446,26,SavedShot,0.8440000152587891,0.5,0.43995898962020874,Folarin Balogun,h,9690,OpenPlay,2022,Head,19686,Reims,Lyon,1,1,2022-08-28 15:05:00,Junya Ito,Throughball,Folarin Balogun
+485114,69,Goal,0.885,0.5,0.7600950002670288,Folarin Balogun,a,9690,Penalty,2022,RightFoot,19689,Angers,Reims,2,4,2022-08-31 17:00:00,,Standard,Folarin Balogun
+486443,12,SavedShot,0.905,0.5790000152587891,0.08458299934864044,Folarin Balogun,h,9690,SetPiece,2022,LeftFoot,19706,Reims,Lens,1,1,2022-09-04 13:00:00,Alexis Flips,Pass,Folarin Balogun
+486452,34,MissedShots,0.9330000305175781,0.735999984741211,0.11232899874448776,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19706,Reims,Lens,1,1,2022-09-04 13:00:00,Bradley Locko,Throughball,Folarin Balogun
+486458,47,MissedShots,0.9180000305175782,0.6090000152587891,0.2626250088214874,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19706,Reims,Lens,1,1,2022-09-04 13:00:00,Alexis Flips,Cross,Folarin Balogun
+486469,70,Goal,0.9490000152587891,0.52,0.6699789762496948,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19706,Reims,Lens,1,1,2022-09-04 13:00:00,Kamory Doumbia,Pass,Folarin Balogun
+487891,6,SavedShot,0.8019999694824219,0.664000015258789,0.031249500811100006,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19717,Toulouse,Reims,1,0,2022-09-11 13:00:00,Junya Ito,BallRecovery,Folarin Balogun
+487900,48,BlockedShot,0.8630000305175781,0.6190000152587891,0.06512130051851273,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19717,Toulouse,Reims,1,0,2022-09-11 13:00:00,Marshall Munetsi,Pass,Folarin Balogun
+487903,55,BlockedShot,0.9130000305175782,0.34900001525878904,0.06956549733877182,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19717,Toulouse,Reims,1,0,2022-09-11 13:00:00,Junya Ito,Pass,Folarin Balogun
+487906,65,MissedShots,0.8819999694824219,0.509000015258789,0.04154440015554428,Folarin Balogun,a,9690,OpenPlay,2022,Head,19717,Toulouse,Reims,1,0,2022-09-11 13:00:00,Junya Ito,Chipped,Folarin Balogun
+489086,6,MissedShots,0.634000015258789,0.26799999237060546,0.008123540319502354,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19727,Reims,Monaco,0,3,2022-09-18 11:00:00,,BallRecovery,Folarin Balogun
+489093,31,MissedShots,0.97,0.6890000152587891,0.049389101564884186,Folarin Balogun,h,9690,SetPiece,2022,LeftFoot,19727,Reims,Monaco,0,3,2022-09-18 11:00:00,Andrew Gravillon,Chipped,Folarin Balogun
+490610,12,Goal,0.9459999847412109,0.5079999923706054,0.5761460065841675,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19737,Troyes,Reims,2,2,2022-10-02 13:00:00,Junya Ito,Cross,Folarin Balogun
+491877,44,BlockedShot,0.92,0.6519999694824219,0.09087680280208588,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19747,Reims,Paris Saint Germain,0,0,2022-10-08 19:00:00,Arbër Zeneli,Pass,Folarin Balogun
+491892,76,BlockedShot,0.7669999694824219,0.4640000152587891,0.029217099770903587,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19747,Reims,Paris Saint Germain,0,0,2022-10-08 19:00:00,Marshall Munetsi,Pass,Folarin Balogun
+491899,85,MissedShots,0.9280000305175782,0.47900001525878905,0.068995401263237,Folarin Balogun,h,9690,OpenPlay,2022,Head,19747,Reims,Paris Saint Germain,0,0,2022-10-08 19:00:00,Bradley Locko,Aerial,Folarin Balogun
+493159,69,MissedShots,0.85,0.655,0.04924929887056351,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19750,Lorient,Reims,0,0,2022-10-15 15:00:00,Yunis Abdelhamid,Pass,Folarin Balogun
+495572,23,SavedShot,0.9180000305175782,0.700999984741211,0.0512567013502121,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19765,Reims,Auxerre,2,1,2022-10-23 13:00:00,Dion Lopy,Pass,Folarin Balogun
+495574,27,SavedShot,0.9009999847412109,0.6229999923706054,0.3107439875602722,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19765,Reims,Auxerre,2,1,2022-10-23 13:00:00,Junya Ito,Pass,Folarin Balogun
+495575,27,Goal,0.8909999847412109,0.6170000076293946,0.34388700127601624,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19765,Reims,Auxerre,2,1,2022-10-23 13:00:00,Arbër Zeneli,Throughball,Folarin Balogun
+495581,52,SavedShot,0.8440000152587891,0.51,0.09053339809179306,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19765,Reims,Auxerre,2,1,2022-10-23 13:00:00,Arbër Zeneli,Pass,Folarin Balogun
+495586,75,ShotOnPost,0.9780000305175781,0.5840000152587891,0.3235360085964203,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19765,Reims,Auxerre,2,1,2022-10-23 13:00:00,Alexis Flips,Cross,Folarin Balogun
+497088,22,BlockedShot,0.8930000305175781,0.580999984741211,0.11780399829149246,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19776,Brest,Reims,0,0,2022-10-30 14:00:00,Junya Ito,Pass,Folarin Balogun
+497091,32,MissedShots,0.9030000305175782,0.6409999847412109,0.09112770110368729,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19776,Brest,Reims,0,0,2022-10-30 14:00:00,Arbër Zeneli,TakeOn,Folarin Balogun
+497103,76,MissedShots,0.9209999847412109,0.355,0.08874999731779099,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19776,Brest,Reims,0,0,2022-10-30 14:00:00,Junya Ito,Pass,Folarin Balogun
+497108,89,MissedShots,0.9390000152587891,0.715,0.06499270349740982,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19776,Brest,Reims,0,0,2022-10-30 14:00:00,Junya Ito,Pass,Folarin Balogun
+498506,3,BlockedShot,0.8909999847412109,0.6370000076293946,0.057437799870967865,Folarin Balogun,h,9690,FromCorner,2022,LeftFoot,19785,Reims,Nantes,1,0,2022-11-06 14:00:00,,None,Folarin Balogun
+498534,70,MissedShots,0.9059999847412109,0.3270000076293945,0.05847420170903206,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19785,Reims,Nantes,1,0,2022-11-06 14:00:00,,None,Folarin Balogun
+498535,76,SavedShot,0.9119999694824219,0.5429999923706055,0.2630470097064972,Folarin Balogun,h,9690,OpenPlay,2022,Head,19785,Reims,Nantes,1,0,2022-11-06 14:00:00,Alexis Flips,Cross,Folarin Balogun
+498536,82,Goal,0.885,0.5,0.7600950002670288,Folarin Balogun,h,9690,Penalty,2022,RightFoot,19785,Reims,Nantes,1,0,2022-11-06 14:00:00,,Standard,Folarin Balogun
+500571,59,BlockedShot,0.8859999847412109,0.5420000076293945,0.08153309673070908,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19791,Montpellier,Reims,1,1,2022-11-13 14:00:00,Marshall Munetsi,Cross,Folarin Balogun
+501363,4,SavedShot,0.914000015258789,0.725999984741211,0.03942589834332466,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19806,Reims,Rennes,3,1,2022-12-29 18:00:00,Arbër Zeneli,Pass,Folarin Balogun
+501364,5,Goal,0.9019999694824219,0.5379999923706055,0.09833130240440369,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19806,Reims,Rennes,3,1,2022-12-29 18:00:00,Alexis Flips,Cross,Folarin Balogun
+501371,28,MissedShots,0.919000015258789,0.3,0.0866423025727272,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19806,Reims,Rennes,3,1,2022-12-29 18:00:00,Emmanuel Agbadou,Chipped,Folarin Balogun
+501381,83,Goal,0.919000015258789,0.524000015258789,0.45576199889183044,Folarin Balogun,h,9690,OpenPlay,2022,Head,19806,Reims,Rennes,3,1,2022-12-29 18:00:00,,None,Folarin Balogun
+504071,0,SavedShot,0.9019999694824219,0.6530000305175782,0.07944519817829132,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19836,Reims,Nice,0,0,2023-01-15 14:00:00,Marshall Munetsi,Pass,Folarin Balogun
+504085,82,SavedShot,0.88,0.6179999923706054,0.29836300015449524,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19836,Reims,Nice,0,0,2023-01-15 14:00:00,Maxime Busi,Pass,Folarin Balogun
+506382,10,SavedShot,0.8690000152587891,0.5690000152587891,0.10214199870824814,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Alexis Flips,Pass,Folarin Balogun
+506384,21,MissedShots,0.904000015258789,0.6270000076293946,0.07096459716558456,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Alexis Flips,Chipped,Folarin Balogun
+506396,59,BlockedShot,0.715,0.5270000076293946,0.017218999564647675,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Azor Matusiwa,Pass,Folarin Balogun
+506401,74,MissedShots,0.9459999847412109,0.7080000305175781,0.09494750201702118,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Alexis Flips,Throughball,Folarin Balogun
+506408,90,BlockedShot,0.9219999694824219,0.35900001525878905,0.06705799698829651,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Mitchell van Bergen,Pass,Folarin Balogun
+506409,95,Goal,0.93,0.4370000076293945,0.6369079947471619,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19844,Paris Saint Germain,Reims,1,1,2023-01-29 19:45:00,Kamory Doumbia,TakeOn,Folarin Balogun
+506524,23,MissedShots,0.8130000305175781,0.46700000762939453,0.046567000448703766,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,,None,Folarin Balogun
+506525,25,SavedShot,0.9740000152587891,0.49700000762939456,0.8327699899673462,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,,None,Folarin Balogun
+506528,30,SavedShot,0.8530000305175781,0.6759999847412109,0.04853019863367081,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Kamory Doumbia,Pass,Folarin Balogun
+506531,43,Goal,0.885,0.5,0.7600950002670288,Folarin Balogun,h,9690,Penalty,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,,Standard,Folarin Balogun
+506537,46,SavedShot,0.915,0.485,0.04731379821896553,Folarin Balogun,h,9690,OpenPlay,2022,Head,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Alexis Flips,Aerial,Folarin Balogun
+506541,55,BlockedShot,0.8590000152587891,0.585999984741211,0.07669279724359512,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Kamory Doumbia,BallTouch,Folarin Balogun
+506546,59,BlockedShot,0.8519999694824218,0.5,0.07268449664115906,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,,Rebound,Folarin Balogun
+506545,59,SavedShot,0.8490000152587891,0.51,0.12182799726724625,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Arbër Zeneli,Throughball,Folarin Balogun
+506547,60,Goal,0.925,0.4370000076293945,0.09929659962654114,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,,None,Folarin Balogun
+506549,63,Goal,0.909000015258789,0.6609999847412109,0.0781409963965416,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Emmanuel Agbadou,Chipped,Folarin Balogun
+506558,81,BlockedShot,0.8690000152587891,0.445,0.13175900280475616,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19856,Reims,Lorient,4,2,2023-02-01 18:00:00,Marshall Munetsi,Pass,Folarin Balogun
+507617,13,SavedShot,0.7609999847412109,0.4329999923706055,0.026712099090218544,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19859,Auxerre,Reims,0,0,2023-02-05 14:00:00,Jens Cajuste,Pass,Folarin Balogun
+508838,34,MissedShots,0.9469999694824218,0.4520000076293945,0.139164000749588,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19876,Reims,Troyes,4,0,2023-02-12 14:00:00,Junya Ito,Cross,Folarin Balogun
+508839,39,MissedShots,0.8280000305175781,0.3160000038146973,0.05080689862370491,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19876,Reims,Troyes,4,0,2023-02-12 14:00:00,Azor Matusiwa,Chipped,Folarin Balogun
+508842,49,Goal,0.860999984741211,0.4279999923706055,0.5026940107345581,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19876,Reims,Troyes,4,0,2023-02-12 14:00:00,Alexis Flips,Throughball,Folarin Balogun
+508850,74,MissedShots,0.904000015258789,0.46900001525878904,0.13630899786949158,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19876,Reims,Troyes,4,0,2023-02-12 14:00:00,,Rebound,Folarin Balogun
+509795,46,BlockedShot,0.8969999694824219,0.6309999847412109,0.09594249725341797,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19880,Nice,Reims,0,0,2023-02-18 16:00:00,Junya Ito,Pass,Folarin Balogun
+509797,54,SavedShot,0.885,0.5,0.7600950002670288,Folarin Balogun,a,9690,Penalty,2022,RightFoot,19880,Nice,Reims,0,0,2023-02-18 16:00:00,,Standard,Folarin Balogun
+509798,54,MissedShots,0.9130000305175782,0.5720000076293945,0.44254401326179504,Folarin Balogun,a,9690,SetPiece,2022,LeftFoot,19880,Nice,Reims,0,0,2023-02-18 16:00:00,,Rebound,Folarin Balogun
+511329,48,SavedShot,0.875,0.6730000305175782,0.10868600010871887,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19897,Reims,Toulouse,3,0,2023-02-26 14:00:00,Dion Lopy,Pass,Folarin Balogun
+511337,69,SavedShot,0.925,0.5279999923706055,0.12726399302482605,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19897,Reims,Toulouse,3,0,2023-02-26 14:00:00,,None,Folarin Balogun
+511340,79,ShotOnPost,0.875999984741211,0.575999984741211,0.11297400295734406,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19897,Reims,Toulouse,3,0,2023-02-26 14:00:00,Mitchell van Bergen,Cross,Folarin Balogun
+512690,54,MissedShots,0.7090000152587891,0.5420000076293945,0.016934499144554138,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19905,Reims,Ajaccio,1,0,2023-03-05 14:00:00,Dion Lopy,Pass,Folarin Balogun
+512692,58,MissedShots,0.879000015258789,0.6020000076293945,0.07509750127792358,Folarin Balogun,h,9690,SetPiece,2022,RightFoot,19905,Reims,Ajaccio,1,0,2023-03-05 14:00:00,,Rebound,Folarin Balogun
+512697,76,BlockedShot,0.845999984741211,0.40200000762939453,0.0923433005809784,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19905,Reims,Ajaccio,1,0,2023-03-05 14:00:00,,TakeOn,Folarin Balogun
+514190,17,BlockedShot,0.8530000305175781,0.5220000076293946,0.08248060196638107,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19910,Monaco,Reims,0,1,2023-03-12 16:05:00,,Dispossessed,Folarin Balogun
+514191,18,MissedShots,0.909000015258789,0.48200000762939454,0.06655909866094589,Folarin Balogun,a,9690,OpenPlay,2022,OtherBodyPart,19910,Monaco,Reims,0,1,2023-03-12 16:05:00,Thomas Foket,Aerial,Folarin Balogun
+514195,39,SavedShot,0.914000015258789,0.3559999847412109,0.32475799322128296,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19910,Monaco,Reims,0,1,2023-03-12 16:05:00,Junya Ito,Throughball,Folarin Balogun
+514201,50,Goal,0.895,0.6359999847412109,0.1162939965724945,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19910,Monaco,Reims,0,1,2023-03-12 16:05:00,Alexis Flips,Throughball,Folarin Balogun
+514211,85,SavedShot,0.8209999847412109,0.4470000076293945,0.4910829961299896,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19910,Monaco,Reims,0,1,2023-03-12 16:05:00,,BallRecovery,Folarin Balogun
+515884,1,SavedShot,0.8730000305175781,0.605999984741211,0.10707300156354904,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Alexis Flips,Pass,Folarin Balogun
+515891,12,Goal,0.895,0.534000015258789,0.43156999349594116,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Marshall Munetsi,Pass,Folarin Balogun
+515894,23,BlockedShot,0.8280000305175781,0.534000015258789,0.0745726004242897,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Marshall Munetsi,Pass,Folarin Balogun
+515910,85,MissedShots,0.9309999847412109,0.31799999237060544,0.05736729875206947,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Emmanuel Agbadou,Pass,Folarin Balogun
+515913,92,ShotOnPost,0.935,0.524000015258789,0.5671510100364685,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19925,Reims,Marseille,1,2,2023-03-19 19:45:00,Emmanuel Agbadou,Rebound,Folarin Balogun
+516878,30,SavedShot,0.8880000305175781,0.5379999923706055,0.09135589748620987,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19932,Nantes,Reims,0,3,2023-04-02 13:00:00,Thomas Foket,Cross,Folarin Balogun
+516879,30,ShotOnPost,0.8119999694824219,0.6409999847412109,0.038357000797986984,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19932,Nantes,Reims,0,3,2023-04-02 13:00:00,Alexis Flips,Pass,Folarin Balogun
+516884,52,SavedShot,0.8630000305175781,0.365,0.09006179869174957,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19932,Nantes,Reims,0,3,2023-04-02 13:00:00,Alexis Flips,Pass,Folarin Balogun
+516888,57,SavedShot,0.93,0.5379999923706055,0.49045899510383606,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19932,Nantes,Reims,0,3,2023-04-02 13:00:00,Alexis Flips,Cross,Folarin Balogun
+518595,24,MissedShots,0.94,0.509000015258789,0.43009400367736816,Folarin Balogun,h,9690,FromCorner,2022,Head,19946,Reims,Brest,1,1,2023-04-09 13:00:00,Junya Ito,Cross,Folarin Balogun
+518598,28,SavedShot,0.9540000152587891,0.4779999923706055,0.5147749781608582,Folarin Balogun,h,9690,OpenPlay,2022,Head,19946,Reims,Brest,1,1,2023-04-09 13:00:00,Thomas Foket,Chipped,Folarin Balogun
+518599,28,MissedShots,0.9630000305175781,0.4929999923706055,0.11437299847602844,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19946,Reims,Brest,1,1,2023-04-09 13:00:00,,None,Folarin Balogun
+518601,32,MissedShots,0.9330000305175781,0.5209999847412109,0.11240699887275696,Folarin Balogun,h,9690,OpenPlay,2022,Head,19946,Reims,Brest,1,1,2023-04-09 13:00:00,Thibault De Smet,Cross,Folarin Balogun
+518616,73,MissedShots,0.8440000152587891,0.28299999237060547,0.026288500055670738,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19946,Reims,Brest,1,1,2023-04-09 13:00:00,Junya Ito,Pass,Folarin Balogun
+518621,90,Goal,0.885,0.5,0.7600290179252625,Folarin Balogun,h,9690,Penalty,2022,RightFoot,19946,Reims,Brest,1,1,2023-04-09 13:00:00,,Standard,Folarin Balogun
+519593,59,MissedShots,0.874000015258789,0.6730000305175782,0.035251401364803314,Folarin Balogun,a,9690,FromCorner,2022,RightFoot,19956,Rennes,Reims,3,0,2023-04-15 15:00:00,Marshall Munetsi,BallTouch,Folarin Balogun
+521249,13,BlockedShot,0.8190000152587891,0.5220000076293946,0.0857546329498291,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19967,Reims,Strasbourg,0,2,2023-04-23 11:00:00,Emmanuel Agbadou,TakeOn,Folarin Balogun
+521253,27,SavedShot,0.755,0.4640000152587891,0.07104117423295975,Folarin Balogun,h,9690,DirectFreekick,2022,RightFoot,19967,Reims,Strasbourg,0,2,2023-04-23 11:00:00,,Standard,Folarin Balogun
+521254,27,SavedShot,0.7659999847412109,0.68,0.015459759160876274,Folarin Balogun,h,9690,FromCorner,2022,RightFoot,19967,Reims,Strasbourg,0,2,2023-04-23 11:00:00,,None,Folarin Balogun
+521270,90,MissedShots,0.9030000305175782,0.5720000076293945,0.11696241050958633,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19967,Reims,Strasbourg,0,2,2023-04-23 11:00:00,Thibault De Smet,Pass,Folarin Balogun
+523099,38,SavedShot,0.8959999847412109,0.75,0.032275374978780746,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,19969,Clermont Foot,Reims,1,0,2023-04-30 13:00:00,Azor Matusiwa,BallRecovery,Folarin Balogun
+523106,84,BlockedShot,0.904000015258789,0.68,0.03269258514046669,Folarin Balogun,a,9690,FromCorner,2022,RightFoot,19969,Clermont Foot,Reims,1,0,2023-04-30 13:00:00,Mitchell van Bergen,Chipped,Folarin Balogun
+524817,12,MissedShots,0.855,0.4420000076293945,0.3399687707424164,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Kamory Doumbia,Throughball,Folarin Balogun
+524819,20,ShotOnPost,0.9390000152587891,0.515,0.595845639705658,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,,Rebound,Folarin Balogun
+524822,25,MissedShots,0.8530000305175781,0.305,0.04970300942659378,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Thomas Foket,Pass,Folarin Balogun
+524825,41,SavedShot,0.915,0.45099998474121095,0.06143752485513687,Folarin Balogun,h,9690,OpenPlay,2022,Head,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Junya Ito,Aerial,Folarin Balogun
+524830,55,SavedShot,0.885,0.6780000305175782,0.0735054686665535,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,,BallRecovery,Folarin Balogun
+524833,63,MissedShots,0.8669999694824219,0.6659999847412109,0.11800247430801392,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Marshall Munetsi,Chipped,Folarin Balogun
+524836,75,BlockedShot,0.875999984741211,0.35,0.07213039696216583,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Junya Ito,Pass,Folarin Balogun
+525617,22,Goal,0.885,0.5,0.7600951194763184,Folarin Balogun,a,9690,Penalty,2022,RightFoot,19993,Lens,Reims,2,1,2023-05-12 19:00:00,,Standard,Folarin Balogun
+525625,52,SavedShot,0.9109999847412109,0.5020000076293946,0.32861587405204773,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19993,Lens,Reims,2,1,2023-05-12 19:00:00,Emmanuel Agbadou,Chipped,Folarin Balogun
+525627,59,BlockedShot,0.805,0.3609999847412109,0.04216781631112099,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,19993,Lens,Reims,2,1,2023-05-12 19:00:00,Jens Cajuste,TakeOn,Folarin Balogun
+525630,64,MissedShots,0.8369999694824218,0.5690000152587891,0.04157746210694313,Folarin Balogun,a,9690,FromCorner,2022,LeftFoot,19993,Lens,Reims,2,1,2023-05-12 19:00:00,Yunis Abdelhamid,Card,Folarin Balogun
+525635,89,BlockedShot,0.9030000305175782,0.5629999923706055,0.06604587286710739,Folarin Balogun,a,9690,OpenPlay,2022,Head,19993,Lens,Reims,2,1,2023-05-12 19:00:00,Thomas Foket,Cross,Folarin Balogun
+527928,53,Goal,0.9019999694824219,0.575,0.24780160188674927,Folarin Balogun,h,9690,FromCorner,2022,RightFoot,20006,Reims,Angers,2,2,2023-05-21 13:00:00,Emmanuel Agbadou,BallTouch,Folarin Balogun
+527931,64,BlockedShot,0.9130000305175782,0.534000015258789,0.4796401560306549,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,20006,Reims,Angers,2,2,2023-05-21 13:00:00,Myziane Maolida,Pass,Folarin Balogun
+527936,78,SavedShot,0.92,0.4540000152587891,0.34897103905677795,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,20006,Reims,Angers,2,2,2023-05-21 13:00:00,Junya Ito,Cross,Folarin Balogun
+527938,80,MissedShots,0.855999984741211,0.5840000152587891,0.07083059847354889,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,20006,Reims,Angers,2,2,2023-05-21 13:00:00,Jens Cajuste,BallRecovery,Folarin Balogun
+529441,0,MissedShots,0.9669999694824218,0.4179999923706055,0.060828451067209244,Folarin Balogun,a,9690,OpenPlay,2022,Head,20012,Lyon,Reims,3,0,2023-05-27 19:00:00,Valentin Atangana Edoa,Aerial,Folarin Balogun
+529443,3,MissedShots,0.8980000305175782,0.6990000152587891,0.04548806697130203,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,20012,Lyon,Reims,3,0,2023-05-27 19:00:00,Azor Matusiwa,Pass,Folarin Balogun
+529454,35,MissedShots,0.8490000152587891,0.3320000076293945,0.034586843103170395,Folarin Balogun,a,9690,OpenPlay,2022,RightFoot,20012,Lyon,Reims,3,0,2023-05-27 19:00:00,,None,Folarin Balogun
+529456,45,BlockedShot,0.8119999694824219,0.445,0.040611907839775085,Folarin Balogun,a,9690,FromCorner,2022,RightFoot,20012,Lyon,Reims,3,0,2023-05-27 19:00:00,Jens Cajuste,Pass,Folarin Balogun
+529464,62,SavedShot,0.9130000305175782,0.7119999694824218,0.05015653744339943,Folarin Balogun,a,9690,OpenPlay,2022,LeftFoot,20012,Lyon,Reims,3,0,2023-05-27 19:00:00,Thomas Foket,Pass,Folarin Balogun
+530738,8,MissedShots,0.9259999847412109,0.5420000076293945,0.45524054765701294,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,20026,Reims,Montpellier,1,3,2023-06-03 17:00:00,Marshall Munetsi,HeadPass,Folarin Balogun
+530742,27,Goal,0.9690000152587891,0.514000015258789,0.8140828013420105,Folarin Balogun,h,9690,FromCorner,2022,RightFoot,20026,Reims,Montpellier,1,3,2023-06-03 17:00:00,Thomas Foket,Pass,Folarin Balogun
+530747,35,MissedShots,0.81,0.3129999923706055,0.03990384563803673,Folarin Balogun,h,9690,OpenPlay,2022,RightFoot,20026,Reims,Montpellier,1,3,2023-06-03 17:00:00,Junya Ito,Chipped,Folarin Balogun
+530752,59,MissedShots,0.720999984741211,0.43599998474121093,0.012957554310560226,Folarin Balogun,h,9690,OpenPlay,2022,LeftFoot,20026,Reims,Montpellier,1,3,2023-06-03 17:00:00,,TakeOn,Folarin Balogun
+538061,68,Goal,0.950999984741211,0.6619999694824219,0.07616070657968521,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23411,Lorient,Monaco,2,2,2023-09-17 11:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+538062,70,BlockedShot,0.855,0.37599998474121094,0.08734579384326935,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23411,Lorient,Monaco,2,2,2023-09-17 11:00:00,Wilfried Stephane Singo,Pass,Folarin Balogun
+538064,83,BlockedShot,0.8930000305175781,0.649000015258789,0.12310145795345306,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23411,Lorient,Monaco,2,2,2023-09-17 11:00:00,Eliot Matazo,OffsidePass,Folarin Balogun
+538068,94,MissedShots,0.8630000305175781,0.6220000076293946,0.08731634169816971,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23411,Lorient,Monaco,2,2,2023-09-17 11:00:00,Ismail Jakobs,Pass,Folarin Balogun
+538802,5,BlockedShot,0.7730000305175782,0.67,0.08273608982563019,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23417,Monaco,Nice,0,1,2023-09-22 19:00:00,Youssouf Fofana,TakeOn,Folarin Balogun
+538803,11,SavedShot,0.885,0.5,0.7600951194763184,Folarin Balogun,h,9690,Penalty,2023,RightFoot,23417,Monaco,Nice,0,1,2023-09-22 19:00:00,,Standard,Folarin Balogun
+538812,48,ShotOnPost,0.9880000305175781,0.6179999923706054,0.017064472660422325,Folarin Balogun,h,9690,FromCorner,2023,Head,23417,Monaco,Nice,0,1,2023-09-22 19:00:00,Caio Henrique,Cross,Folarin Balogun
+538813,54,SavedShot,0.885,0.5,0.7600951194763184,Folarin Balogun,h,9690,Penalty,2023,RightFoot,23417,Monaco,Nice,0,1,2023-09-22 19:00:00,,Standard,Folarin Balogun
+541540,22,Goal,0.8590000152587891,0.38299999237060545,0.08807258307933807,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23429,Monaco,Marseille,3,2,2023-09-30 19:00:00,Maghnes Akliouche,TakeOn,Folarin Balogun
+541542,23,SavedShot,0.9369999694824219,0.55,0.5327285528182983,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23429,Monaco,Marseille,3,2,2023-09-30 19:00:00,,Rebound,Folarin Balogun
+542909,16,BlockedShot,0.8780000305175781,0.674000015258789,0.05578099563717842,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23438,Reims,Monaco,1,3,2023-10-07 19:00:00,Ismail Jakobs,Pass,Folarin Balogun
+542913,30,BlockedShot,0.9330000305175781,0.5529999923706055,0.10152629762887955,Folarin Balogun,a,9690,FromCorner,2023,RightFoot,23438,Reims,Monaco,1,3,2023-10-07 19:00:00,Youssouf Fofana,BallTouch,Folarin Balogun
+542919,45,Goal,0.8880000305175781,0.30200000762939455,0.061319079250097275,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23438,Reims,Monaco,1,3,2023-10-07 19:00:00,Youssouf Fofana,Pass,Folarin Balogun
+544745,68,SavedShot,0.8580000305175781,0.3390000152587891,0.08703625202178955,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23446,Monaco,Metz,2,1,2023-10-22 15:05:00,Aleksandr Golovin,TakeOn,Folarin Balogun
+547470,55,BlockedShot,0.9290000152587891,0.6630000305175782,0.07972041517496109,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23466,Monaco,Brest,2,0,2023-11-05 16:05:00,,None,Folarin Balogun
+548671,93,SavedShot,0.8630000305175781,0.32299999237060545,0.04693691059947014,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23475,Le Havre,Monaco,0,0,2023-11-11 20:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+549386,74,Goal,0.8590000152587891,0.33599998474121096,0.2891612648963928,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23479,Paris Saint Germain,Monaco,5,2,2023-11-24 20:00:00,Takumi Minamino,Throughball,Folarin Balogun
+549388,83,BlockedShot,0.825999984741211,0.635,0.01821454055607319,Folarin Balogun,a,9690,FromCorner,2023,RightFoot,23479,Paris Saint Germain,Monaco,5,2,2023-11-24 20:00:00,,Aerial,Folarin Balogun
+549395,94,BlockedShot,0.91,0.539000015258789,0.08459968864917755,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23479,Paris Saint Germain,Monaco,5,2,2023-11-24 20:00:00,Ismail Jakobs,HeadPass,Folarin Balogun
+551610,1,MissedShots,0.835999984741211,0.48700000762939455,0.04901587590575218,Folarin Balogun,h,9690,FromCorner,2023,RightFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+551611,5,SavedShot,0.8809999847412109,0.29600000381469727,0.04976107180118561,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,Vanderson,Pass,Folarin Balogun
+551617,23,BlockedShot,0.8640000152587891,0.5159999847412109,0.11860288679599762,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,Takumi Minamino,Pass,Folarin Balogun
+551620,26,MissedShots,0.85,0.745999984741211,0.033076222985982895,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,Denis Zakaria,Pass,Folarin Balogun
+551630,50,MissedShots,0.9669999694824218,0.6919999694824219,0.06588038057088852,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,Takumi Minamino,Chipped,Folarin Balogun
+551633,55,BlockedShot,0.895,0.485,0.16522349417209625,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23490,Monaco,Montpellier,2,0,2023-12-03 14:00:00,,Rebound,Folarin Balogun
+552998,31,MissedShots,0.9019999694824219,0.509000015258789,0.11271583288908005,Folarin Balogun,a,9690,OpenPlay,2023,Head,23499,Rennes,Monaco,1,2,2023-12-09 16:00:00,Ismail Jakobs,Cross,Folarin Balogun
+553000,40,SavedShot,0.8769999694824219,0.6279999923706054,0.06426451355218887,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23499,Rennes,Monaco,1,2,2023-12-09 16:00:00,Youssouf Fofana,Chipped,Folarin Balogun
+553008,67,MissedShots,0.9119999694824219,0.664000015258789,0.09127761423587799,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23499,Rennes,Monaco,1,2,2023-12-09 16:00:00,Youssouf Fofana,Pass,Folarin Balogun
+554035,11,SavedShot,0.92,0.67,0.07153397798538208,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23509,Monaco,Lyon,0,1,2023-12-15 20:00:00,Takumi Minamino,Pass,Folarin Balogun
+554039,36,SavedShot,0.8730000305175781,0.649000015258789,0.07355092465877533,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23509,Monaco,Lyon,0,1,2023-12-15 20:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+554040,37,MissedShots,0.915,0.47900001525878905,0.1252269595861435,Folarin Balogun,h,9690,OpenPlay,2023,Head,23509,Monaco,Lyon,0,1,2023-12-15 20:00:00,Youssouf Fofana,Cross,Folarin Balogun
+554049,65,MissedShots,0.8369999694824218,0.590999984741211,0.06644297391176224,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23509,Monaco,Lyon,0,1,2023-12-15 20:00:00,Mohamed Camara,Pass,Folarin Balogun
+554051,66,SavedShot,0.9109999847412109,0.4159999847412109,0.10849088430404663,Folarin Balogun,h,9690,SetPiece,2023,LeftFoot,23509,Monaco,Lyon,0,1,2023-12-15 20:00:00,Youssouf Fofana,Rebound,Folarin Balogun
+555802,23,SavedShot,0.9019999694824219,0.43200000762939456,0.4162931442260742,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23517,Toulouse,Monaco,1,2,2023-12-20 20:00:00,Wissam Ben Yedder,Pass,Folarin Balogun
+558156,93,SavedShot,0.8830000305175781,0.6220000076293946,0.0748102068901062,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23526,Monaco,Reims,1,3,2024-01-13 16:00:00,Vanderson,Pass,Folarin Balogun
+563285,86,MissedShots,0.97,0.509000015258789,0.8397678732872009,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23555,Nice,Monaco,2,3,2024-02-11 19:45:00,Wissam Ben Yedder,Pass,Folarin Balogun
+564384,1,SavedShot,0.9159999847412109,0.3820000076293945,0.36723411083221436,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23562,Monaco,Toulouse,1,2,2024-02-18 14:00:00,Takumi Minamino,Throughball,Folarin Balogun
+564403,50,BlockedShot,0.879000015258789,0.44400001525878907,0.11133189499378204,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23562,Monaco,Toulouse,1,2,2024-02-18 14:00:00,Takumi Minamino,Pass,Folarin Balogun
+564405,52,BlockedShot,0.874000015258789,0.6480000305175782,0.06845682859420776,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23562,Monaco,Toulouse,1,2,2024-02-18 14:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+564412,67,BlockedShot,0.88,0.475,0.09903731197118759,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23562,Monaco,Toulouse,1,2,2024-02-18 14:00:00,Thilo Kehrer,BallTouch,Folarin Balogun
+565533,0,SavedShot,0.894000015258789,0.3220000076293945,0.06507149338722229,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23572,Lens,Monaco,2,3,2024-02-25 12:00:00,Youssouf Fofana,Pass,Folarin Balogun
+565539,9,SavedShot,0.905,0.754000015258789,0.031954921782016754,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23572,Lens,Monaco,2,3,2024-02-25 12:00:00,Denis Zakaria,Pass,Folarin Balogun
+565542,18,Goal,0.960999984741211,0.5829999923706055,0.40465018153190613,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23572,Lens,Monaco,2,3,2024-02-25 12:00:00,Mohammed Salisu,TakeOn,Folarin Balogun
+565562,81,SavedShot,0.8969999694824219,0.53,0.4471195340156555,Folarin Balogun,a,9690,SetPiece,2023,LeftFoot,23572,Lens,Monaco,2,3,2024-02-25 12:00:00,,Rebound,Folarin Balogun
+565561,81,SavedShot,0.885,0.5,0.7600951194763184,Folarin Balogun,a,9690,Penalty,2023,RightFoot,23572,Lens,Monaco,2,3,2024-02-25 12:00:00,,Standard,Folarin Balogun
+566245,4,SavedShot,0.915,0.33799999237060546,0.32307079434394836,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23580,Monaco,Paris Saint Germain,0,0,2024-03-01 20:00:00,Wissam Ben Yedder,Throughball,Folarin Balogun
+566247,14,BlockedShot,0.9480000305175781,0.6890000152587891,0.06481605768203735,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23580,Monaco,Paris Saint Germain,0,0,2024-03-01 20:00:00,Takumi Minamino,TakeOn,Folarin Balogun
+566260,51,BlockedShot,0.875,0.710999984741211,0.06564082950353622,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23580,Monaco,Paris Saint Germain,0,0,2024-03-01 20:00:00,Takumi Minamino,Pass,Folarin Balogun
+566269,70,BlockedShot,0.9169999694824219,0.315,0.05479064956307411,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23580,Monaco,Paris Saint Germain,0,0,2024-03-01 20:00:00,,None,Folarin Balogun
+568599,10,MissedShots,0.9209999847412109,0.48900001525878906,0.3841154873371124,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,Wilfried Stephane Singo,Cross,Folarin Balogun
+568604,36,MissedShots,0.8430000305175781,0.39299999237060546,0.07259871810674667,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,Takumi Minamino,Pass,Folarin Balogun
+568607,42,SavedShot,0.865999984741211,0.4520000076293945,0.0785226970911026,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,,None,Folarin Balogun
+568609,53,BlockedShot,0.9209999847412109,0.43099998474121093,0.13600684702396393,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,Takumi Minamino,Pass,Folarin Balogun
+568618,83,BlockedShot,0.9030000305175782,0.669000015258789,0.0787966251373291,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,Wissam Ben Yedder,Chipped,Folarin Balogun
+570892,69,BlockedShot,0.8530000305175781,0.43,0.10895316302776337,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23613,Metz,Monaco,2,5,2024-03-30 16:00:00,Wissam Ben Yedder,Pass,Folarin Balogun
+570896,75,Goal,0.9169999694824219,0.4620000076293945,0.4454959034919739,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23613,Metz,Monaco,2,5,2024-03-30 16:00:00,,BlockedPass,Folarin Balogun
+570902,86,Goal,0.9519999694824218,0.5470000076293945,0.5610563158988953,Folarin Balogun,a,9690,FromCorner,2023,RightFoot,23613,Metz,Monaco,2,5,2024-03-30 16:00:00,Thilo Kehrer,None,Folarin Balogun
+573044,91,MissedShots,0.889000015258789,0.3340000152587891,0.06964672356843948,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23616,Monaco,Rennes,1,0,2024-04-07 15:05:00,Krépin Diatta,Pass,Folarin Balogun
+575604,74,SavedShot,0.870999984741211,0.64,0.2467520833015442,Folarin Balogun,a,9690,OpenPlay,2023,LeftFoot,23640,Brest,Monaco,0,2,2024-04-21 15:05:00,Maghnes Akliouche,Pass,Folarin Balogun
+576158,11,BlockedShot,0.9180000305175782,0.69,0.059595413506031036,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23626,Monaco,Lille,1,0,2024-04-24 19:00:00,Wissam Ben Yedder,Pass,Folarin Balogun
+577615,0,MissedShots,0.950999984741211,0.49,0.6189022064208984,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23646,Lyon,Monaco,3,2,2024-04-28 17:00:00,,None,Folarin Balogun
+578546,73,SavedShot,0.9019999694824219,0.6129999923706054,0.44567665457725525,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23651,Monaco,Clermont Foot,4,1,2024-05-04 15:00:00,Wissam Ben Yedder,Throughball,Folarin Balogun
+578551,86,SavedShot,0.8780000305175781,0.485,0.11314950883388519,Folarin Balogun,h,9690,OpenPlay,2023,LeftFoot,23651,Monaco,Clermont Foot,4,1,2024-05-04 15:00:00,,Rebound,Folarin Balogun
+580826,92,BlockedShot,0.8580000305175781,0.6519999694824219,0.07979300618171692,Folarin Balogun,a,9690,OpenPlay,2023,RightFoot,23666,Montpellier,Monaco,0,2,2024-05-12 19:00:00,Caio Henrique,Pass,Folarin Balogun
+582866,26,ShotOnPost,0.855999984741211,0.5170000076293946,0.11783669888973236,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23675,Monaco,Nantes,4,0,2024-05-19 19:00:00,Ben Seghir,Pass,Folarin Balogun
+582872,59,BlockedShot,0.9009999847412109,0.74,0.05670105293393135,Folarin Balogun,h,9690,OpenPlay,2023,RightFoot,23675,Monaco,Nantes,4,0,2024-05-19 19:00:00,,Dispossessed,Folarin Balogun
+585081,4,SavedShot,0.9369999694824219,0.46799999237060547,0.43096935749053955,Folarin Balogun,h,9690,FromCorner,2024,RightFoot,28051,Monaco,Saint-Etienne,1,0,2024-08-17 19:00:00,Vanderson,Cross,Folarin Balogun
+585088,25,MissedShots,0.8719999694824219,0.44400001525878907,0.37393301725387573,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28051,Monaco,Saint-Etienne,1,0,2024-08-17 19:00:00,Takumi Minamino,Throughball,Folarin Balogun
+585094,41,BlockedShot,0.8680000305175781,0.3579999923706055,0.08098632097244263,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28051,Monaco,Saint-Etienne,1,0,2024-08-17 19:00:00,Takumi Minamino,Pass,Folarin Balogun
+585100,57,BlockedShot,0.9319999694824219,0.6909999847412109,0.07551657408475876,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28051,Monaco,Saint-Etienne,1,0,2024-08-17 19:00:00,,CornerAwarded,Folarin Balogun
+589807,41,BlockedShot,0.8919999694824219,0.6229999923706054,0.11597289890050888,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28070,Monaco,Lens,1,1,2024-09-01 13:00:00,Takumi Minamino,Pass,Folarin Balogun
+589814,60,SavedShot,0.8880000305175781,0.6659999847412109,0.06409548968076706,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28070,Monaco,Lens,1,1,2024-09-01 13:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+591083,65,SavedShot,0.8719999694824219,0.37599998474121094,0.11607968062162399,Folarin Balogun,a,9690,OpenPlay,2024,RightFoot,28077,Auxerre,Monaco,0,3,2024-09-14 17:00:00,George Ilenikhena,Pass,Folarin Balogun
+591087,85,MissedShots,0.9030000305175782,0.6969999694824218,0.06873387843370438,Folarin Balogun,a,9690,OpenPlay,2024,LeftFoot,28077,Auxerre,Monaco,0,3,2024-09-14 17:00:00,Takumi Minamino,Pass,Folarin Balogun
+592917,8,BlockedShot,0.85,0.6909999847412109,0.06281688064336777,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28092,Monaco,Le Havre,3,1,2024-09-22 13:00:00,,TakeOn,Folarin Balogun
+592919,16,BlockedShot,0.9169999694824219,0.6880000305175781,0.034708667546510696,Folarin Balogun,h,9690,FromCorner,2024,RightFoot,28092,Monaco,Le Havre,3,1,2024-09-22 13:00:00,Caio Henrique,Cross,Folarin Balogun
+592923,48,MissedShots,0.919000015258789,0.42900001525878906,0.13315719366073608,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28092,Monaco,Le Havre,3,1,2024-09-22 13:00:00,Jordan Teze,Pass,Folarin Balogun
+592924,54,BlockedShot,0.8430000305175781,0.6959999847412109,0.030443891882896423,Folarin Balogun,h,9690,FromCorner,2024,RightFoot,28092,Monaco,Le Havre,3,1,2024-09-22 13:00:00,Aleksandr Golovin,Cross,Folarin Balogun
+592927,69,Goal,0.875999984741211,0.5179999923706055,0.41706183552742004,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28092,Monaco,Le Havre,3,1,2024-09-22 13:00:00,George Ilenikhena,Pass,Folarin Balogun
+594452,12,MissedShots,0.9830000305175781,0.4229999923706055,0.1267400085926056,Folarin Balogun,h,9690,SetPiece,2024,RightFoot,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,,Rebound,Folarin Balogun
+594455,18,MissedShots,0.874000015258789,0.37799999237060544,0.10098016262054443,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,Aleksandr Golovin,Throughball,Folarin Balogun
+594456,21,MissedShots,0.9290000152587891,0.4929999923706055,0.13426929712295532,Folarin Balogun,h,9690,SetPiece,2024,Head,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,Caio Henrique,Cross,Folarin Balogun
+594459,31,Goal,0.924000015258789,0.615,0.6328351497650146,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,Breel Embolo,Throughball,Folarin Balogun
+594467,64,ShotOnPost,0.9130000305175782,0.5879999923706055,0.39032110571861267,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,Ben Seghir,Pass,Folarin Balogun
+594471,74,MissedShots,0.9519999694824218,0.54,0.08462689816951752,Folarin Balogun,h,9690,FromCorner,2024,Head,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,,None,Folarin Balogun
+594472,80,BlockedShot,0.855,0.53,0.0951024666428566,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28100,Monaco,Montpellier,2,1,2024-09-28 19:00:00,Lamine Camara,Pass,Folarin Balogun
+595902,21,Goal,0.9359999847412109,0.6480000305175782,0.2665571868419647,Folarin Balogun,a,9690,OpenPlay,2024,LeftFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Ben Seghir,Pass,Folarin Balogun
+595906,47,BlockedShot,0.895,0.37,0.10295238345861435,Folarin Balogun,a,9690,OpenPlay,2024,RightFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Vanderson,Pass,Folarin Balogun
+605004,56,BlockedShot,0.8769999694824219,0.5990000152587891,0.09902025014162064,Folarin Balogun,a,9690,OpenPlay,2024,LeftFoot,28162,Marseille,Monaco,2,1,2024-12-01 19:45:00,Aleksandr Golovin,Pass,Folarin Balogun
+624459,81,MissedShots,0.91,0.6759999847412109,0.09506538510322571,Folarin Balogun,h,9690,OpenPlay,2024,LeftFoot,28290,Monaco,Nice,2,1,2025-03-29 20:05:00,Takumi Minamino,Pass,Folarin Balogun
+625963,92,BlockedShot,0.9080000305175782,0.6580000305175782,0.10136772692203522,Folarin Balogun,a,9690,OpenPlay,2024,LeftFoot,28293,Brest,Monaco,2,1,2025-04-05 17:00:00,Ben Seghir,Pass,Folarin Balogun
+627287,90,SavedShot,0.92,0.3170000076293945,0.24094237387180328,Folarin Balogun,h,9690,OpenPlay,2024,RightFoot,28308,Monaco,Marseille,3,0,2025-04-12 15:00:00,George Ilenikhena,Pass,Folarin Balogun
+628887,82,SavedShot,0.904000015258789,0.509000015258789,0.28456005454063416,Folarin Balogun,h,9690,OpenPlay,2024,Head,28316,Monaco,Strasbourg,0,0,2025-04-19 17:00:00,Soungoutou Magassa,Cross,Folarin Balogun
+630482,86,BlockedShot,0.850999984741211,0.644000015258789,0.07379648089408875,Folarin Balogun,a,9690,OpenPlay,2024,RightFoot,28318,Le Havre,Monaco,1,1,2025-04-26 17:00:00,Al Musrati,Pass,Folarin Balogun
+631718,17,SavedShot,0.8480000305175781,0.7469999694824219,0.03400806337594986,Folarin Balogun,a,9690,OpenPlay,2024,LeftFoot,28334,Saint-Etienne,Monaco,1,3,2025-05-03 19:05:00,Takumi Minamino,Pass,Folarin Balogun
+631726,62,MissedShots,0.8119999694824219,0.6959999847412109,0.037056948989629745,Folarin Balogun,a,9690,OpenPlay,2024,RightFoot,28334,Saint-Etienne,Monaco,1,3,2025-05-03 19:05:00,Takumi Minamino,Pass,Folarin Balogun
+631731,77,Goal,0.8219999694824218,0.4329999923706055,0.2537071704864502,Folarin Balogun,a,9690,OpenPlay,2024,RightFoot,28334,Saint-Etienne,Monaco,1,3,2025-05-03 19:05:00,Maghnes Akliouche,Pass,Folarin Balogun
+639650,13,MissedShots,0.924000015258789,0.5209999847412109,0.39013680815696716,Folarin Balogun,a,9690,OpenPlay,2025,Head,29555,Lille,Monaco,1,0,2025-08-24 18:45:00,Maghnes Akliouche,Cross,Folarin Balogun
+640915,3,MissedShots,0.9359999847412109,0.5620000076293945,0.4031301736831665,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29563,Monaco,Strasbourg,3,2,2025-08-31 15:15:00,Denis Zakaria,Cross,Folarin Balogun
+640923,38,SavedShot,0.8959999847412109,0.3559999847412109,0.1494944542646408,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29563,Monaco,Strasbourg,3,2,2025-08-31 15:15:00,Jordan Teze,Throughball,Folarin Balogun
+640924,47,Goal,0.905,0.3870000076293945,0.39915284514427185,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29563,Monaco,Strasbourg,3,2,2025-08-31 15:15:00,Lamine Camara,Pass,Folarin Balogun
+640933,81,MissedShots,0.9209999847412109,0.44400001525878907,0.032615549862384796,Folarin Balogun,h,9690,FromCorner,2025,Head,29563,Monaco,Strasbourg,3,2,2025-08-31 15:15:00,Caio Henrique,Aerial,Folarin Balogun
+642031,7,BlockedShot,0.92,0.34700000762939454,0.012782233767211437,Folarin Balogun,a,9690,FromCorner,2025,Head,29565,Auxerre,Monaco,1,2,2025-09-13 19:05:00,Maghnes Akliouche,Aerial,Folarin Balogun
+642033,11,MissedShots,0.8590000152587891,0.595999984741211,0.08236704021692276,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29565,Auxerre,Monaco,1,2,2025-09-13 19:05:00,Mika Biereth,Pass,Folarin Balogun
+642041,35,MissedShots,0.9769999694824218,0.5790000152587891,0.050050750374794006,Folarin Balogun,a,9690,FromCorner,2025,Head,29565,Auxerre,Monaco,1,2,2025-09-13 19:05:00,Vanderson,Aerial,Folarin Balogun
+642043,56,MissedShots,0.8640000152587891,0.7090000152587891,0.05443271994590759,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29565,Auxerre,Monaco,1,2,2025-09-13 19:05:00,Kassoum Ouattara,Pass,Folarin Balogun
+644830,88,MissedShots,0.8669999694824219,0.36400001525878906,0.09015319496393204,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29585,Lorient,Monaco,3,1,2025-09-27 15:00:00,Stanis Idumbo Muzambo,Pass,Folarin Balogun
+646884,69,SavedShot,0.8390000152587891,0.6859999847412109,0.03518657758831978,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29598,Monaco,Nice,2,2,2025-10-05 15:15:00,Stanis Idumbo Muzambo,Pass,Folarin Balogun
+647928,68,SavedShot,0.8680000305175781,0.3370000076293945,0.052867092192173004,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29601,Angers,Monaco,1,1,2025-10-18 17:00:00,,None,Folarin Balogun
+647929,71,Goal,0.8959999847412109,0.3870000076293945,0.359849750995636,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29601,Angers,Monaco,1,1,2025-10-18 17:00:00,Takumi Minamino,Throughball,Folarin Balogun
+649168,34,SavedShot,0.9330000305175781,0.514000015258789,0.597364068031311,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29615,Monaco,Toulouse,1,0,2025-10-25 17:00:00,Kassoum Ouattara,Pass,Folarin Balogun
+649171,43,MissedShots,0.914000015258789,0.45599998474121095,0.11602023988962173,Folarin Balogun,h,9690,OpenPlay,2025,Head,29615,Monaco,Toulouse,1,0,2025-10-25 17:00:00,Kassoum Ouattara,Cross,Folarin Balogun
+650412,13,MissedShots,0.845999984741211,0.40799999237060547,0.29905226826667786,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29624,Nantes,Monaco,3,5,2025-10-29 19:05:00,Maghnes Akliouche,Chipped,Folarin Balogun
+650420,40,Goal,0.850999984741211,0.43,0.33632439374923706,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29624,Nantes,Monaco,3,5,2025-10-29 19:05:00,Mamadou Coulibaly,Throughball,Folarin Balogun
+650421,46,ShotOnPost,0.98,0.30100000381469727,0.05896983668208122,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29624,Nantes,Monaco,3,5,2025-10-29 19:05:00,Takumi Minamino,Chipped,Folarin Balogun
+650428,72,MissedShots,0.9419999694824219,0.6969999694824218,0.09776920825242996,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29624,Nantes,Monaco,3,5,2025-10-29 19:05:00,Kassoum Ouattara,TakeOn,Folarin Balogun
+651124,63,MissedShots,0.8009999847412109,0.590999984741211,0.03657848387956619,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29632,Monaco,Paris FC,0,1,2025-11-01 18:00:00,,Rebound,Folarin Balogun
+652562,5,SavedShot,0.8880000305175781,0.5890000152587891,0.10364736616611481,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29643,Monaco,Lens,1,4,2025-11-08 20:05:00,Aleksandr Golovin,Pass,Folarin Balogun
+652564,9,MissedShots,0.865,0.51,0.08566562086343765,Folarin Balogun,h,9690,OpenPlay,2025,Head,29643,Monaco,Lens,1,4,2025-11-08 20:05:00,Mika Biereth,Cross,Folarin Balogun
+652571,36,Goal,0.885,0.5,0.7600951194763184,Folarin Balogun,h,9690,Penalty,2025,RightFoot,29643,Monaco,Lens,1,4,2025-11-08 20:05:00,,Standard,Folarin Balogun
+658908,42,BlockedShot,0.8580000305175781,0.5679999923706055,0.08887965232133865,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29678,Marseille,Monaco,1,0,2025-12-14 19:45:00,Aleksandr Golovin,Pass,Folarin Balogun
+658909,42,BlockedShot,0.87,0.5279999923706055,0.08985348045825958,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29678,Marseille,Monaco,1,0,2025-12-14 19:45:00,,Rebound,Folarin Balogun
+658915,46,BlockedShot,0.735,0.515,0.018056590110063553,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29678,Marseille,Monaco,1,0,2025-12-14 19:45:00,Takumi Minamino,BallRecovery,Folarin Balogun
+661049,43,BlockedShot,0.879000015258789,0.34,0.05036846548318863,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29687,Monaco,Lyon,1,3,2026-01-03 16:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+661052,50,BlockedShot,0.88,0.42900001525878906,0.07118561863899231,Folarin Balogun,h,9690,SetPiece,2025,LeftFoot,29687,Monaco,Lyon,1,3,2026-01-03 16:00:00,Maghnes Akliouche,HeadPass,Folarin Balogun
+663229,1,SavedShot,0.8769999694824219,0.7290000152587891,0.034909557551145554,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29694,Monaco,Lorient,1,3,2026-01-16 18:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+663230,6,SavedShot,0.899000015258789,0.5259999847412109,0.09542287886142731,Folarin Balogun,h,9690,OpenPlay,2025,Head,29694,Monaco,Lorient,1,3,2026-01-16 18:00:00,Kassoum Ouattara,Cross,Folarin Balogun
+663247,59,MissedShots,0.874000015258789,0.4540000152587891,0.019459543749690056,Folarin Balogun,h,9690,OpenPlay,2025,Head,29694,Monaco,Lorient,1,3,2026-01-16 18:00:00,Caio Henrique,Aerial,Folarin Balogun
+663256,90,MissedShots,0.9030000305175782,0.47900001525878905,0.07723787426948547,Folarin Balogun,h,9690,FromCorner,2025,Head,29694,Monaco,Lorient,1,3,2026-01-16 18:00:00,Aleksandr Golovin,Cross,Folarin Balogun
+665023,28,SavedShot,0.7869999694824219,0.40099998474121096,0.030080867931246758,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29702,Le Havre,Monaco,0,0,2026-01-24 18:00:00,,None,Folarin Balogun
+665035,76,SavedShot,0.8640000152587891,0.7609999847412109,0.019461238756775856,Folarin Balogun,a,9690,FromCorner,2025,RightFoot,29702,Le Havre,Monaco,0,0,2026-01-24 18:00:00,,None,Folarin Balogun
+666355,49,SavedShot,0.924000015258789,0.6890000152587891,0.07961771637201309,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29713,Monaco,Rennes,4,0,2026-01-31 20:05:00,Aleksandr Golovin,Pass,Folarin Balogun
+667726,2,ShotOnPost,0.960999984741211,0.56,0.4480637013912201,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29725,Nice,Monaco,0,0,2026-02-08 14:00:00,Lamine Camara,Chipped,Folarin Balogun
+667729,30,SavedShot,0.9019999694824219,0.3240000152587891,0.06775455176830292,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29725,Nice,Monaco,0,0,2026-02-08 14:00:00,Lamine Camara,Pass,Folarin Balogun
+667730,31,BlockedShot,0.9019999694824219,0.6930000305175781,0.0530870296061039,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29725,Nice,Monaco,0,0,2026-02-08 14:00:00,Simon Adingra,Pass,Folarin Balogun
+668511,7,BlockedShot,0.8730000305175781,0.6619999694824219,0.05504368618130684,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Caio Henrique,Pass,Folarin Balogun
+668514,17,SavedShot,0.8690000152587891,0.3029999923706055,0.049673911184072495,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Vanderson,BallRecovery,Folarin Balogun
+668516,21,MissedShots,0.9359999847412109,0.4329999923706055,0.11355625838041306,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Lamine Camara,Cross,Folarin Balogun
+668526,55,BlockedShot,0.8480000305175781,0.3089999961853027,0.09342663735151291,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Aleksandr Golovin,Pass,Folarin Balogun
+669804,20,SavedShot,0.8930000305175781,0.4909999847412109,0.3606945872306824,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29739,Lens,Monaco,2,3,2026-02-21 16:00:00,,Dispossessed,Folarin Balogun
+669807,25,MissedShots,0.9430000305175781,0.5070000076293946,0.4377375841140747,Folarin Balogun,a,9690,OpenPlay,2025,Head,29739,Lens,Monaco,2,3,2026-02-21 16:00:00,Krépin Diatta,Cross,Folarin Balogun
+669812,42,SavedShot,0.8219999694824218,0.4809999847412109,0.3064216375350952,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29739,Lens,Monaco,2,3,2026-02-21 16:00:00,Jordan Teze,Pass,Folarin Balogun
+669819,61,Goal,0.8590000152587891,0.4209999847412109,0.08932790160179138,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29739,Lens,Monaco,2,3,2026-02-21 16:00:00,Mamadou Coulibaly,Pass,Folarin Balogun
+671303,56,BlockedShot,0.9530000305175781,0.585,0.1711910218000412,Folarin Balogun,h,9690,OpenPlay,2025,Head,29750,Monaco,Angers,2,0,2026-02-28 18:00:00,Jordan Teze,Goal,Folarin Balogun
+671304,56,Goal,0.9830000305175781,0.5320000076293945,0.9263904690742493,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29750,Monaco,Angers,2,0,2026-02-28 18:00:00,,Aerial,Folarin Balogun
+672398,72,Goal,0.7619999694824219,0.6530000305175782,0.026328248903155327,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29761,Paris Saint Germain,Monaco,1,3,2026-03-06 19:45:00,Maghnes Akliouche,None,Folarin Balogun
+674223,18,Goal,0.9259999847412109,0.5220000076293946,0.5467957854270935,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29768,Monaco,Brest,2,0,2026-03-14 20:05:00,Lamine Camara,None,Folarin Balogun
+674229,34,MissedShots,0.9519999694824218,0.5529999923706055,0.5640924572944641,Folarin Balogun,h,9690,SetPiece,2025,LeftFoot,29768,Monaco,Brest,2,0,2026-03-14 20:05:00,,None,Folarin Balogun
+674235,67,MissedShots,0.9440000152587891,0.67,0.32834646105766296,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29768,Monaco,Brest,2,0,2026-03-14 20:05:00,Mamadou Coulibaly,Throughball,Folarin Balogun
+675800,10,BlockedShot,0.8680000305175781,0.544000015258789,0.10444009304046631,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+675806,25,BlockedShot,0.8540000152587891,0.27100000381469724,0.032018691301345825,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Aleksandr Golovin,Pass,Folarin Balogun
+675810,34,SavedShot,0.875999984741211,0.5709999847412109,0.02504715509712696,Folarin Balogun,a,9690,FromCorner,2025,Head,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Aleksandr Golovin,Chipped,Folarin Balogun
+675820,71,Goal,0.885,0.5,0.7600951194763184,Folarin Balogun,a,9690,Penalty,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,,Standard,Folarin Balogun
+675824,79,BlockedShot,0.9480000305175781,0.580999984741211,0.14620551466941833,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Christian Mawissa Elebi,Pass,Folarin Balogun
+675825,79,MissedShots,0.9080000305175782,0.56,0.43773165345191956,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Jordan Teze,BallRecovery,Folarin Balogun
+675827,83,MissedShots,0.855,0.3089999961853027,0.1107596606016159,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Jordan Teze,Chipped,Folarin Balogun
+677219,73,Goal,0.8690000152587891,0.265,0.09291049838066101,Folarin Balogun,h,9690,OpenPlay,2025,RightFoot,29787,Monaco,Marseille,2,1,2026-04-05 18:45:00,,BallRecovery,Folarin Balogun
+677424,14,BlockedShot,0.9330000305175781,0.5,0.11812485754489899,Folarin Balogun,a,9690,FromCorner,2025,Head,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Simon Adingra,Cross,Folarin Balogun
+677428,20,BlockedShot,0.9269999694824219,0.5320000076293945,0.13070347905158997,Folarin Balogun,a,9690,FromCorner,2025,RightFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Lamine Camara,Rebound,Folarin Balogun
+677432,33,MissedShots,0.97,0.4379999923706055,0.3817002773284912,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Simon Adingra,Chipped,Folarin Balogun
+677433,35,Goal,0.8530000305175781,0.48200000762939454,0.30313196778297424,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Aladji Bamba,Throughball,Folarin Balogun
+677447,73,MissedShots,0.8909999847412109,0.33,0.04584655165672302,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,,None,Folarin Balogun
+679596,12,SavedShot,0.9290000152587891,0.6990000152587891,0.05256740003824234,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+679601,22,BlockedShot,0.955,0.544000015258789,0.13845199346542358,Folarin Balogun,h,9690,OpenPlay,2025,LeftFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Jordan Teze,Pass,Folarin Balogun
+679609,50,SavedShot,0.9780000305175781,0.6120000076293945,0.030076518654823303,Folarin Balogun,h,9690,FromCorner,2025,Head,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Maghnes Akliouche,Cross,Folarin Balogun
+679614,58,Goal,0.885,0.5,0.7600951194763184,Folarin Balogun,h,9690,Penalty,2025,RightFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,,Standard,Folarin Balogun
+682737,60,Goal,0.8569999694824219,0.620999984741211,0.06009364500641823,Folarin Balogun,a,9690,OpenPlay,2025,RightFoot,29820,Metz,Monaco,1,2,2026-05-03 13:00:00,Maghnes Akliouche,Pass,Folarin Balogun
+682738,65,MissedShots,0.8169999694824219,0.4620000076293945,0.05946113169193268,Folarin Balogun,a,9690,OpenPlay,2025,LeftFoot,29820,Metz,Monaco,1,2,2026-05-03 13:00:00,Anssumane Fati,Pass,Folarin Balogun
+684500,8,BlockedShot,0.9059999847412109,0.5159999847412109,0.03690682724118233,Folarin Balogun,h,9690,OpenPlay,2025,Head,29831,Monaco,Lille,0,1,2026-05-10 19:00:00,Lamine Camara,Rebound,Folarin Balogun

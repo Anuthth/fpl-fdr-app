@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,1,26,0.06255101412534714,0,0,0,2024,Manchester City,0,0,0,0.06255101412534714,0,0,11242,Divin Mubama
+season,Sub,5,0,1,67,0.05428127571940422,0,0,0,2023,West Ham,0,0,0,0.05428127571940422,0.05428127571940422,0,11242,Divin Mubama
+season,Sub,3,0,0,30,0,0,0.05916547402739525,1,2022,West Ham,0,0,0,0,0.3962714932858944,0.33710601925849915,11242,Divin Mubama

@@ -1,0 +1,14 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+637692,43,BlockedShot,0.9169999694824219,0.40900001525878904,0.09001695364713669,Eliezer Mayenda,h,13718,FromCorner,2025,RightFoot,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,,None,Eliezer Mayenda
+637697,60,Goal,0.9019999694824219,0.44299999237060544,0.03667960315942764,Eliezer Mayenda,h,13718,OpenPlay,2025,Head,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Omar Alderete,Aerial,Eliezer Mayenda
+638858,3,SavedShot,0.93,0.5220000076293946,0.5299577713012695,Eliezer Mayenda,a,13718,SetPiece,2025,RightFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Dan Ballard,HeadPass,Eliezer Mayenda
+646166,78,MissedShots,0.8159999847412109,0.4620000076293945,0.0658116266131401,Eliezer Mayenda,a,13718,OpenPlay,2025,LeftFoot,28845,Manchester United,Sunderland,2,0,2025-10-04 14:00:00,Chemsdine Talbi,Pass,Eliezer Mayenda
+660393,75,BlockedShot,0.860999984741211,0.43599998474121093,0.09753860533237457,Eliezer Mayenda,h,13718,OpenPlay,2025,LeftFoot,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Enzo Le Fée,TakeOn,Eliezer Mayenda
+660774,33,BlockedShot,0.8240000152587891,0.36,0.04568951949477196,Eliezer Mayenda,h,13718,OpenPlay,2025,LeftFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,,BallRecovery,Eliezer Mayenda
+660775,34,MissedShots,0.9669999694824218,0.4379999923706055,0.06840761750936508,Eliezer Mayenda,h,13718,FromCorner,2025,Head,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,Enzo Le Fée,Aerial,Eliezer Mayenda
+660783,53,SavedShot,0.8640000152587891,0.4209999847412109,0.13410988450050354,Eliezer Mayenda,h,13718,OpenPlay,2025,LeftFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,Enzo Le Fée,Throughball,Eliezer Mayenda
+661406,48,SavedShot,0.9080000305175782,0.47,0.03537650406360626,Eliezer Mayenda,a,13718,OpenPlay,2025,Head,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Nordi Mukiele,Aerial,Eliezer Mayenda
+663603,89,SavedShot,0.909000015258789,0.509000015258789,0.13176771998405457,Eliezer Mayenda,h,13718,OpenPlay,2025,LeftFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,None,Eliezer Mayenda
+670187,98,BlockedShot,0.8440000152587891,0.46900001525878904,0.029384801164269447,Eliezer Mayenda,h,13718,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Dan Ballard,HeadPass,Eliezer Mayenda
+670866,17,Goal,0.9569999694824218,0.5220000076293946,0.6764673590660095,Eliezer Mayenda,a,13718,OpenPlay,2025,LeftFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,,Rebound,Eliezer Mayenda
+670883,80,BlockedShot,0.885,0.6,0.06968483328819275,Eliezer Mayenda,a,13718,SetPiece,2025,RightFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,,None,Eliezer Mayenda

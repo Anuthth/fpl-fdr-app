@@ -1,0 +1,39 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+249275,46,MissedShots,0.8419999694824218,0.35900001525878905,0.05089360103011131,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9279,West Ham,Tottenham,0,1,2018-10-20 14:00:00,Marko Arnautovic,Pass,Grady Diangana
+249623,58,MissedShots,0.7659999847412109,0.66,0.02773289941251278,Grady Diangana,a,6651,OpenPlay,2018,LeftFoot,9293,Leicester,West Ham,1,1,2018-10-27 16:30:00,,TakeOn,Grady Diangana
+249793,72,BlockedShot,0.91,0.30700000762939456,0.05481849983334541,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9298,West Ham,Burnley,4,2,2018-11-03 15:00:00,,Rebound,Grady Diangana
+250806,85,SavedShot,0.8930000305175781,0.3609999847412109,0.12268300354480743,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9340,West Ham,Cardiff,3,1,2018-12-04 19:45:00,,TakeOn,Grady Diangana
+250807,86,SavedShot,0.9440000152587891,0.6659999847412109,0.1030300036072731,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9340,West Ham,Cardiff,3,1,2018-12-04 19:45:00,Felipe Anderson,Chipped,Grady Diangana
+251044,82,SavedShot,0.98,0.38799999237060545,0.11044900119304657,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9347,West Ham,Crystal Palace,3,2,2018-12-08 15:00:00,Robert Snodgrass,Pass,Grady Diangana
+251975,17,MissedShots,0.8830000305175781,0.45799999237060546,0.04842820018529892,Grady Diangana,a,6651,OpenPlay,2018,Head,9379,Southampton,West Ham,1,2,2018-12-27 19:45:00,Felipe Anderson,Cross,Grady Diangana
+293748,83,BlockedShot,0.8780000305175781,0.590999984741211,0.06704170256853104,Grady Diangana,a,6651,OpenPlay,2018,LeftFoot,9530,Manchester United,West Ham,2,1,2019-04-13 17:30:00,Michail Antonio,BallTouch,Grady Diangana
+299290,7,MissedShots,0.705,0.3129999923706055,0.009768280200660229,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9558,West Ham,Southampton,3,0,2019-05-04 14:00:00,,None,Grady Diangana
+299291,10,BlockedShot,0.825,0.39,0.04318829998373985,Grady Diangana,h,6651,OpenPlay,2018,LeftFoot,9558,West Ham,Southampton,3,0,2019-05-04 14:00:00,Marko Arnautovic,Pass,Grady Diangana
+376834,8,MissedShots,0.9690000152587891,0.4159999847412109,0.14022700488567352,Grady Diangana,h,6651,OpenPlay,2020,RightFoot,14092,West Bromwich Albion,Leicester,0,3,2020-09-13 13:00:00,Darnell Furlong,Pass,Grady Diangana
+377330,0,SavedShot,0.8590000152587891,0.67,0.043270401656627655,Grady Diangana,a,6651,OpenPlay,2020,LeftFoot,14096,Everton,West Bromwich Albion,5,2,2020-09-19 11:30:00,Callum Robinson,Pass,Grady Diangana
+377333,9,Goal,0.7480000305175781,0.5970000076293945,0.04497389867901802,Grady Diangana,a,6651,OpenPlay,2020,LeftFoot,14096,Everton,West Bromwich Albion,5,2,2020-09-19 11:30:00,Matheus Pereira,BallRecovery,Grady Diangana
+379023,43,MissedShots,0.8319999694824218,0.44299999237060544,0.09195780009031296,Grady Diangana,h,6651,OpenPlay,2020,LeftFoot,14108,West Bromwich Albion,Chelsea,3,3,2020-09-26 16:30:00,Romaine Sawyers,Pass,Grady Diangana
+379024,44,BlockedShot,0.8130000305175781,0.34599998474121096,0.04902379959821701,Grady Diangana,h,6651,OpenPlay,2020,LeftFoot,14108,West Bromwich Albion,Chelsea,3,3,2020-09-26 16:30:00,Jake Livermore,Pass,Grady Diangana
+380959,50,MissedShots,0.8719999694824219,0.649000015258789,0.04086120054125786,Grady Diangana,a,6651,SetPiece,2020,LeftFoot,14473,Southampton,West Bromwich Albion,2,0,2020-10-04 11:00:00,Matheus Pereira,Pass,Grady Diangana
+382892,57,SavedShot,0.9540000152587891,0.7290000152587891,0.043325599282979965,Grady Diangana,h,6651,FromCorner,2020,RightFoot,14484,West Bromwich Albion,Burnley,0,0,2020-10-19 16:30:00,Matheus Pereira,Pass,Grady Diangana
+385498,30,MissedShots,0.9019999694824219,0.485,0.05329990014433861,Grady Diangana,a,6651,OpenPlay,2020,Head,14497,Fulham,West Bromwich Albion,2,0,2020-11-02 17:30:00,Jake Livermore,Aerial,Grady Diangana
+385505,64,BlockedShot,0.7609999847412109,0.5690000152587891,0.01911349967122078,Grady Diangana,a,6651,OpenPlay,2020,RightFoot,14497,Fulham,West Bromwich Albion,2,0,2020-11-02 17:30:00,Romaine Sawyers,BallTouch,Grady Diangana
+387639,40,BlockedShot,0.8769999694824219,0.7140000152587891,0.04263709858059883,Grady Diangana,a,6651,OpenPlay,2020,LeftFoot,14520,Manchester United,West Bromwich Albion,1,0,2020-11-21 20:00:00,Conor Gallagher,Pass,Grady Diangana
+395796,67,MissedShots,0.845,0.5420000076293945,0.04812610149383545,Grady Diangana,a,6651,OpenPlay,2020,LeftFoot,14580,Liverpool,West Bromwich Albion,1,1,2020-12-27 16:30:00,Callum Robinson,Cross,Grady Diangana
+395934,55,SavedShot,0.8930000305175781,0.4979999923706055,0.36410999298095703,Grady Diangana,h,6651,OpenPlay,2020,LeftFoot,14590,West Bromwich Albion,Leeds,0,5,2020-12-29 18:00:00,,Interception,Grady Diangana
+423395,72,MissedShots,0.785,0.295,0.02073119953274727,Grady Diangana,h,6651,OpenPlay,2020,LeftFoot,14804,West Bromwich Albion,West Ham,1,3,2021-05-19 19:15:00,Semi Ajayi,Pass,Grady Diangana
+424013,67,MissedShots,0.8619999694824219,0.5220000076293946,0.09616389870643616,Grady Diangana,a,6651,OpenPlay,2020,RightFoot,14808,Leeds,West Bromwich Albion,3,1,2021-05-23 15:00:00,Ainsley Maitland-Niles,Pass,Grady Diangana
+644293,53,BlockedShot,0.8719999694824219,0.4490000152587891,0.0796082466840744,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29214,Osasuna,Elche,1,1,2025-09-25 17:30:00,,Rebound,Grady Diangana
+654533,15,BlockedShot,0.7709999847412109,0.54,0.02859632298350334,Grady Diangana,h,6651,OpenPlay,2025,LeftFoot,29280,Elche,Real Madrid,2,2,2025-11-23 20:00:00,Victor Chust,Pass,Grady Diangana
+654544,44,BlockedShot,0.7230000305175781,0.44799999237060545,0.016241520643234253,Grady Diangana,h,6651,OpenPlay,2025,LeftFoot,29280,Elche,Real Madrid,2,2,2025-11-23 20:00:00,André Silva,Pass,Grady Diangana
+654768,25,BlockedShot,0.8,0.4809999847412109,0.049318578094244,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29297,Getafe,Elche,1,0,2025-11-28 20:00:00,André Silva,Pass,Grady Diangana
+657316,8,BlockedShot,0.7669999694824219,0.4779999923706055,0.02196827530860901,Grady Diangana,h,6651,FromCorner,2025,LeftFoot,29300,Elche,Girona,3,0,2025-12-07 13:00:00,,None,Grady Diangana
+661139,74,BlockedShot,0.905,0.4879999923706055,0.09895123541355133,Grady Diangana,h,6651,OpenPlay,2025,Head,29330,Elche,Villarreal,1,3,2026-01-03 17:30:00,Alvaro Rodríguez,Cross,Grady Diangana
+662636,74,Goal,0.7959999847412109,0.3160000038146973,0.025524811819195747,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29345,Valencia,Elche,1,1,2026-01-10 20:00:00,Adrià Pedrosa,Pass,Grady Diangana
+664409,61,BlockedShot,0.89,0.3890000152587891,0.1205240860581398,Grady Diangana,h,6651,OpenPlay,2025,LeftFoot,29354,Elche,Sevilla,2,2,2026-01-19 20:00:00,Alvaro Rodríguez,Pass,Grady Diangana
+664563,3,MissedShots,0.795,0.33299999237060546,0.027179982513189316,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29363,Levante,Elche,3,2,2026-01-23 20:00:00,German Valera,TakeOn,Grady Diangana
+667565,1,MissedShots,0.8109999847412109,0.7230000305175781,0.024178707972168922,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29383,Real Sociedad,Elche,3,1,2026-02-07 20:00:00,André Silva,Pass,Grady Diangana
+667569,15,MissedShots,0.9109999847412109,0.40099998474121096,0.10655849426984787,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29383,Real Sociedad,Elche,3,1,2026-02-07 20:00:00,German Valera,Rebound,Grady Diangana
+671498,94,SavedShot,0.8390000152587891,0.4179999923706055,0.07063081115484238,Grady Diangana,h,6651,OpenPlay,2025,LeftFoot,29410,Elche,Espanyol,2,2,2026-03-01 13:00:00,Aleix Febas,TakeOn,Grady Diangana
+674209,73,BlockedShot,0.9109999847412109,0.5020000076293946,0.4257749021053314,Grady Diangana,a,6651,OpenPlay,2025,LeftFoot,29434,Real Madrid,Elche,4,1,2026-03-14 20:00:00,,Dispossessed,Grady Diangana
+675151,18,MissedShots,0.9269999694824219,0.415,0.12864276766777039,Grady Diangana,h,6651,OpenPlay,2025,RightFoot,29440,Elche,Mallorca,2,1,2026-03-21 13:00:00,Tete Morente,Pass,Grady Diangana

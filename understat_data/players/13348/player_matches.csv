@@ -1,0 +1,12 @@
+﻿goals,shots,xG,time,position,h_team,a_team,h_goals,a_goals,date,id,season,roster_id,xA,assists,key_passes,npg,npxG,xGChain,xGBuildup,player_id,player_name
+0,0,0,90,GK,Tottenham,Leeds,1,1,2026-05-11,29136,2025,790165,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Aston Villa,Tottenham,1,2,2026-05-03,29120,2025,788160,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Wolverhampton Wanderers,Tottenham,0,1,2026-04-25,29117,2025,785577,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Tottenham,Brighton,2,2,2026-04-18,29107,2025,783428,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Sunderland,Tottenham,1,0,2026-04-12,29090,2025,782191,0,0,0,0,0,0.03264720365405083,0.03264720365405083,13348,Antonín Kinsky
+0,0,0,90,GK,Aston Villa,Tottenham,2,0,2025-05-16,26963,2024,727518,0,0,0,0,0,0.4079810380935669,0.4079810380935669,13348,Antonín Kinsky
+0,0,0,90,GK,Tottenham,Crystal Palace,0,2,2025-05-11,26960,2024,726633,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Brentford,Tottenham,0,2,2025-02-02,26834,2024,703930,0,0,0,0,0,0.32958465814590454,0.32958465814590454,13348,Antonín Kinsky
+0,0,0,90,GK,Tottenham,Leicester,1,2,2025-01-26,26830,2024,702017,0.22034624218940735,0,1,0,0,0.27519479393959045,0.27519479393959045,13348,Antonín Kinsky
+0,0,0,90,GK,Everton,Tottenham,3,2,2025-01-19,26815,2024,700454,0,0,0,0,0,0,0,13348,Antonín Kinsky
+0,0,0,90,GK,Arsenal,Tottenham,2,1,2025-01-15,26802,2024,699520,0,0,0,0,0,0.151689350605011,0.151689350605011,13348,Antonín Kinsky

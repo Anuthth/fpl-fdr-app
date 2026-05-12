@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,DML,10,0,2,499,0.9397587776184082,0,0.012994728051126003,1,2023,Sheffield United,1,0,0,0.9397587776184082,1.840770854614675,0.8880173694342375,8918,Max Lowe
+season,DML,8,0,2,554,0.08675809763371944,0,0.18749800324440002,2,2020,Sheffield United,1,0,0,0.08675809763371944,1.3047473207116127,1.0304902158677578,8918,Max Lowe

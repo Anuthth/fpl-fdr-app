@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,24,0,0,2130,0,0,0,0,2017,Watford,0,0,0,0,1.5974555807188153,1.5974555807188153,564,Heurelho Gomes
+season,GK,38,0,0,3339,0,0,0.04041919857263565,1,2016,Watford,1,0,0,0,0.7291128942742944,0.7291128942742944,564,Heurelho Gomes
+season,GK,38,0,0,3398,0,0,0,0,2015,Watford,4,0,0,0,1.2916556289419532,1.2916556289419532,564,Heurelho Gomes

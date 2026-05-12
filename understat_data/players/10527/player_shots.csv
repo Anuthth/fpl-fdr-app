@@ -1,0 +1,98 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+495905,88,MissedShots,0.7659999847412109,0.5609999847412109,0.019637100398540497,Carlos Baleba,h,10527,FromCorner,2022,LeftFoot,19761,Lille,Monaco,4,3,2022-10-23 18:45:00,,None,Carlos Baleba
+503115,5,SavedShot,0.7759999847412109,0.605999984741211,0.04269469901919365,Carlos Baleba,a,10527,SetPiece,2022,LeftFoot,19826,Brest,Lille,0,0,2023-01-11 18:00:00,Angel Gomes,TakeOn,Carlos Baleba
+503116,8,MissedShots,0.8090000152587891,0.539000015258789,0.035466600209474564,Carlos Baleba,a,10527,FromCorner,2022,LeftFoot,19826,Brest,Lille,0,0,2023-01-11 18:00:00,,None,Carlos Baleba
+503870,21,BlockedShot,0.785,0.4779999923706055,0.04586799815297127,Carlos Baleba,h,10527,OpenPlay,2022,LeftFoot,19830,Lille,Troyes,5,1,2023-01-15 12:00:00,Edon Zhegrova,Pass,Carlos Baleba
+506565,0,BlockedShot,0.74,0.519000015258789,0.017727499827742577,Carlos Baleba,h,10527,OpenPlay,2022,LeftFoot,19851,Lille,Clermont Foot,0,0,2023-02-01 18:00:00,Angel Gomes,Pass,Carlos Baleba
+506577,37,BlockedShot,0.7330000305175781,0.43400001525878906,0.011649499647319317,Carlos Baleba,h,10527,SetPiece,2022,LeftFoot,19851,Lille,Clermont Foot,0,0,2023-02-01 18:00:00,,None,Carlos Baleba
+510025,90,SavedShot,0.7419999694824219,0.4329999923706055,0.017667800188064575,Carlos Baleba,a,10527,OpenPlay,2022,LeftFoot,19881,Paris Saint Germain,Lille,4,3,2023-02-19 12:00:00,Jonathan Christian David,Pass,Carlos Baleba
+522822,86,MissedShots,0.8280000305175781,0.49,0.04339275509119034,Carlos Baleba,h,10527,OpenPlay,2022,RightFoot,19970,Lille,Ajaccio,3,0,2023-04-29 14:00:00,,Rebound,Carlos Baleba
+527743,5,MissedShots,0.8019999694824219,0.7169999694824218,0.02311469241976738,Carlos Baleba,h,10527,OpenPlay,2022,LeftFoot,20002,Lille,Marseille,2,1,2023-05-20 19:00:00,Ismaily,Pass,Carlos Baleba
+529515,29,MissedShots,0.715999984741211,0.644000015258789,0.014499557204544544,Carlos Baleba,h,10527,OpenPlay,2022,LeftFoot,20010,Lille,Nantes,2,1,2023-05-27 19:00:00,Timothy Weah,Pass,Carlos Baleba
+529517,37,MissedShots,0.8380000305175781,0.5479999923706055,0.05571284517645836,Carlos Baleba,h,10527,SetPiece,2022,LeftFoot,20010,Lille,Nantes,2,1,2023-05-27 19:00:00,,Rebound,Carlos Baleba
+529524,79,BlockedShot,0.8590000152587891,0.610999984741211,0.07161439210176468,Carlos Baleba,h,10527,OpenPlay,2022,LeftFoot,20010,Lille,Nantes,2,1,2023-05-27 19:00:00,Gabriel Gudmundsson,Pass,Carlos Baleba
+532288,2,SavedShot,0.755,0.3370000076293945,0.01649082638323307,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,23377,Nice,Lille,1,1,2023-08-12 18:00:00,Alan Virginius,Pass,Carlos Baleba
+532292,17,BlockedShot,0.715,0.6370000076293946,0.013858124613761902,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,23377,Nice,Lille,1,1,2023-08-12 18:00:00,Jonathan Christian David,Pass,Carlos Baleba
+543048,30,MissedShots,0.7959999847412109,0.4370000076293945,0.04990694671869278,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,21966,Brighton,Liverpool,2,2,2023-10-08 13:00:00,Igor Julio,Pass,Carlos Baleba
+546107,6,SavedShot,0.7369999694824219,0.51,0.019001804292201996,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,Mahmoud Dahoud,Pass,Carlos Baleba
+546109,7,MissedShots,0.7190000152587891,0.44799999237060545,0.013894392177462578,Carlos Baleba,h,10527,FromCorner,2023,LeftFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,,None,Carlos Baleba
+546111,12,MissedShots,0.850999984741211,0.5720000076293945,0.07322923839092255,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,,BallTouch,Carlos Baleba
+546120,59,MissedShots,0.8,0.57,0.04258172586560249,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,Mahmoud Dahoud,Pass,Carlos Baleba
+551653,46,BlockedShot,0.7069999694824218,0.5120000076293946,0.015159697271883488,Carlos Baleba,a,10527,OpenPlay,2023,RightFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,Simon Adingra,Pass,Carlos Baleba
+551655,48,SavedShot,0.77,0.37799999237060544,0.02354227378964424,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,Facundo Buonanotte,Pass,Carlos Baleba
+555883,18,MissedShots,0.8169999694824219,0.49900001525878906,0.05373252183198929,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22066,Crystal Palace,Brighton,1,1,2023-12-21 20:00:00,,None,Carlos Baleba
+566609,57,BlockedShot,0.7130000305175781,0.47299999237060547,0.012186706997454166,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Joël Veltman,Pass,Carlos Baleba
+566617,74,MissedShots,0.904000015258789,0.5640000152587891,0.06912647187709808,Carlos Baleba,a,10527,OpenPlay,2023,Head,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Estupiñán,Cross,Carlos Baleba
+568506,10,MissedShots,0.7119999694824218,0.355,0.014776930212974548,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,22168,Brighton,Nottingham Forest,1,0,2024-03-10 14:00:00,Jakub Moder,Pass,Carlos Baleba
+568509,14,MissedShots,0.914000015258789,0.5620000076293945,0.12164491415023804,Carlos Baleba,h,10527,SetPiece,2023,RightFoot,22168,Brighton,Nottingham Forest,1,0,2024-03-10 14:00:00,,Rebound,Carlos Baleba
+571222,56,MissedShots,0.7269999694824218,0.6419999694824219,0.011972160078585148,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22189,Liverpool,Brighton,2,1,2024-03-31 14:00:00,,None,Carlos Baleba
+571226,65,BlockedShot,0.8059999847412109,0.48,0.042676519602537155,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22189,Liverpool,Brighton,2,1,2024-03-31 14:00:00,,None,Carlos Baleba
+571895,45,SavedShot,0.7659999847412109,0.66,0.019222795963287354,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22200,Brentford,Brighton,0,0,2024-04-03 18:30:00,Pascal Groß,HeadPass,Carlos Baleba
+571903,74,MissedShots,0.8380000305175781,0.5690000152587891,0.058799248188734055,Carlos Baleba,a,10527,OpenPlay,2023,RightFoot,22200,Brentford,Brighton,0,0,2024-04-03 18:30:00,,None,Carlos Baleba
+573685,35,SavedShot,0.7530000305175781,0.4909999847412109,0.021410245448350906,Carlos Baleba,a,10527,OpenPlay,2023,RightFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,João Pedro,Pass,Carlos Baleba
+573695,57,BlockedShot,0.8569999694824219,0.685,0.045381080359220505,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,Jakub Moder,Pass,Carlos Baleba
+573702,79,SavedShot,0.75,0.34099998474121096,0.02121042273938656,Carlos Baleba,a,10527,OpenPlay,2023,LeftFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,,TakeOn,Carlos Baleba
+581212,99,BlockedShot,0.7609999847412109,0.6,0.01719745621085167,Carlos Baleba,h,10527,FromCorner,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,,None,Carlos Baleba
+582135,27,BlockedShot,0.799000015258789,0.37,0.026056284084916115,Carlos Baleba,h,10527,OpenPlay,2023,LeftFoot,22267,Brighton,Manchester United,0,2,2024-05-19 15:00:00,Adam Lallana,Pass,Carlos Baleba
+588957,52,BlockedShot,0.7909999847412109,0.47900001525878905,0.035116735845804214,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26622,Arsenal,Brighton,1,1,2024-08-31 11:30:00,,Dispossessed,Carlos Baleba
+588966,75,BlockedShot,0.76,0.44599998474121094,0.024914979934692383,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26622,Arsenal,Brighton,1,1,2024-08-31 11:30:00,,BallTouch,Carlos Baleba
+588973,88,BlockedShot,0.7480000305175781,0.55,0.028043018653988838,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26622,Arsenal,Brighton,1,1,2024-08-31 11:30:00,,TakeOn,Carlos Baleba
+588974,88,MissedShots,0.8180000305175781,0.5170000076293946,0.04329141974449158,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26622,Arsenal,Brighton,1,1,2024-08-31 11:30:00,,Rebound,Carlos Baleba
+590741,3,SavedShot,0.8009999847412109,0.539000015258789,0.06379520148038864,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,,TakeOn,Carlos Baleba
+590748,45,MissedShots,0.7369999694824219,0.41200000762939454,0.01606517843902111,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,Georginio Rutter,Pass,Carlos Baleba
+590750,48,BlockedShot,0.960999984741211,0.40599998474121096,0.0999099388718605,Carlos Baleba,h,10527,FromCorner,2024,LeftFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,,None,Carlos Baleba
+590767,93,BlockedShot,0.75,0.48700000762939455,0.014808342792093754,Carlos Baleba,h,10527,SetPiece,2024,RightFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,,None,Carlos Baleba
+592936,15,BlockedShot,0.7230000305175781,0.5470000076293945,0.017821693792939186,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26650,Brighton,Nottingham Forest,2,2,2024-09-22 13:00:00,Jack Hinshelwood,Pass,Carlos Baleba
+594175,33,Goal,0.8969999694824219,0.590999984741211,0.3184616267681122,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,Interception,Carlos Baleba
+594176,33,SavedShot,0.7680000305175781,0.435,0.02576512098312378,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,,None,Carlos Baleba
+594188,54,MissedShots,0.769000015258789,0.4979999923706055,0.03167226165533066,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26657,Chelsea,Brighton,4,2,2024-09-28 14:00:00,Jack Hinshelwood,Pass,Carlos Baleba
+598492,22,SavedShot,0.745999984741211,0.53,0.01652047596871853,Carlos Baleba,h,10527,FromCorner,2024,LeftFoot,26686,Brighton,Wolverhampton Wanderers,2,2,2024-10-26 14:00:00,,None,Carlos Baleba
+598500,38,BlockedShot,0.78,0.66,0.017078356817364693,Carlos Baleba,h,10527,OpenPlay,2024,RightFoot,26686,Brighton,Wolverhampton Wanderers,2,2,2024-10-26 14:00:00,,Rebound,Carlos Baleba
+598509,69,SavedShot,0.7190000152587891,0.4229999923706055,0.017558950930833817,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26686,Brighton,Wolverhampton Wanderers,2,2,2024-10-26 14:00:00,,None,Carlos Baleba
+601664,96,BlockedShot,0.7769999694824219,0.4879999923706055,0.0376175194978714,Carlos Baleba,h,10527,OpenPlay,2024,RightFoot,26703,Brighton,Manchester City,2,1,2024-11-09 17:30:00,Brajan Gruda,Pass,Carlos Baleba
+605392,9,MissedShots,0.7880000305175782,0.505,0.013432929292321205,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,,Aerial,Carlos Baleba
+605405,55,Goal,0.7869999694824219,0.38299999237060545,0.02794589288532734,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,João Pedro,Pass,Carlos Baleba
+607433,15,MissedShots,0.735,0.6819999694824219,0.011927623301744461,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,,None,Carlos Baleba
+607440,38,BlockedShot,0.745999984741211,0.595999984741211,0.012765184044837952,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,Kaoru Mitoma,Pass,Carlos Baleba
+609236,7,SavedShot,0.86,0.705999984741211,0.03757898882031441,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26774,Brighton,Brentford,0,0,2024-12-27 19:30:00,,None,Carlos Baleba
+609757,27,BlockedShot,0.759000015258789,0.4209999847412109,0.043741997331380844,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26782,Aston Villa,Brighton,2,2,2024-12-30 19:45:00,Brajan Gruda,Pass,Carlos Baleba
+609774,74,MissedShots,0.77,0.3920000076293945,0.0234532430768013,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26782,Aston Villa,Brighton,2,2,2024-12-30 19:45:00,,None,Carlos Baleba
+610087,42,MissedShots,0.7719999694824219,0.6070000076293945,0.025591040030121803,Carlos Baleba,h,10527,OpenPlay,2024,RightFoot,26794,Brighton,Arsenal,1,1,2025-01-04 17:30:00,Yasin Ayari,Pass,Carlos Baleba
+612636,46,MissedShots,0.7280000305175781,0.504000015258789,0.015040203928947449,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26818,Manchester United,Brighton,1,3,2025-01-19 14:00:00,Kaoru Mitoma,Pass,Carlos Baleba
+613323,48,MissedShots,0.7240000152587891,0.5020000076293946,0.017688971012830734,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26824,Brighton,Everton,0,1,2025-01-25 15:00:00,Brajan Gruda,Pass,Carlos Baleba
+613327,58,BlockedShot,0.745,0.5179999923706055,0.01647013984620571,Carlos Baleba,h,10527,FromCorner,2024,LeftFoot,26824,Brighton,Everton,0,1,2025-01-25 15:00:00,,None,Carlos Baleba
+613334,76,MissedShots,0.775,0.43900001525878907,0.025833459571003914,Carlos Baleba,h,10527,OpenPlay,2024,RightFoot,26824,Brighton,Everton,0,1,2025-01-25 15:00:00,,BallTouch,Carlos Baleba
+616953,28,MissedShots,0.7330000305175781,0.38799999237060545,0.01938948966562748,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26843,Brighton,Chelsea,3,0,2025-02-14 20:00:00,,None,Carlos Baleba
+616960,60,BlockedShot,0.7859999847412109,0.485,0.05000702291727066,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26843,Brighton,Chelsea,3,0,2025-02-14 20:00:00,,BallRecovery,Carlos Baleba
+618473,15,BlockedShot,0.7369999694824219,0.44299999237060544,0.013259435072541237,Carlos Baleba,a,10527,FromCorner,2024,LeftFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,Georginio Rutter,Aerial,Carlos Baleba
+618472,15,BlockedShot,0.8109999847412109,0.38,0.1119099110364914,Carlos Baleba,a,10527,DirectFreekick,2024,LeftFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,,Standard,Carlos Baleba
+618487,77,SavedShot,0.9309999847412109,0.38299999237060545,0.4944705367088318,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,João Pedro,Chipped,Carlos Baleba
+618492,91,SavedShot,0.9059999847412109,0.4620000076293945,0.4575207233428955,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,Jan Paul van Hecke,Pass,Carlos Baleba
+622667,50,MissedShots,0.740999984741211,0.4809999847412109,0.017329663038253784,Carlos Baleba,a,10527,OpenPlay,2024,RightFoot,26889,Manchester City,Brighton,2,2,2025-03-15 15:00:00,,None,Carlos Baleba
+622677,81,MissedShots,0.875,0.46700000762939453,0.49272701144218445,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26889,Manchester City,Brighton,2,2,2025-03-15 15:00:00,João Pedro,Pass,Carlos Baleba
+625205,88,MissedShots,0.7369999694824219,0.36200000762939455,0.010383612476289272,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26893,Brighton,Aston Villa,0,3,2025-04-02 19:45:00,Mats Wieffer,Pass,Carlos Baleba
+625690,12,SavedShot,0.7290000152587891,0.295,0.01145664881914854,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26904,Crystal Palace,Brighton,2,1,2025-04-05 14:00:00,,None,Carlos Baleba
+625701,94,MissedShots,0.76,0.5229999923706055,0.021146491169929504,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26904,Crystal Palace,Brighton,2,1,2025-04-05 14:00:00,João Pedro,Pass,Carlos Baleba
+630384,91,Goal,0.700999984741211,0.4370000076293945,0.017912039533257484,Carlos Baleba,h,10527,FromCorner,2024,LeftFoot,26934,Brighton,West Ham,3,2,2025-04-26 14:00:00,Brajan Gruda,Pass,Carlos Baleba
+631905,12,BlockedShot,0.725,0.49700000762939456,0.015997735783457756,Carlos Baleba,h,10527,OpenPlay,2024,LeftFoot,26944,Brighton,Newcastle United,1,1,2025-05-04 13:00:00,Danny Welbeck,Pass,Carlos Baleba
+636370,36,BlockedShot,0.735,0.5559999847412109,0.017841441556811333,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Igor Julio,Pass,Carlos Baleba
+636379,61,BlockedShot,0.7880000305175782,0.5509999847412109,0.024678820744156837,Carlos Baleba,a,10527,FromCorner,2024,LeftFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,,None,Carlos Baleba
+636383,76,BlockedShot,0.740999984741211,0.46099998474121096,0.0265313982963562,Carlos Baleba,a,10527,OpenPlay,2024,LeftFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Mats Wieffer,BallRecovery,Carlos Baleba
+638424,13,MissedShots,0.74,0.4640000152587891,0.019268060103058815,Carlos Baleba,h,10527,OpenPlay,2025,RightFoot,28780,Brighton,Fulham,1,1,2025-08-16 14:00:00,,Dispossessed,Carlos Baleba
+641692,85,MissedShots,0.76,0.4929999923706055,0.023395296186208725,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,28810,Bournemouth,Brighton,2,1,2025-09-13 14:00:00,,None,Carlos Baleba
+644668,5,BlockedShot,0.7469999694824219,0.27600000381469725,0.012917870655655861,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,,BallRecovery,Carlos Baleba
+647598,11,BlockedShot,0.745,0.445,0.02054816670715809,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,28848,Brighton,Newcastle United,2,1,2025-10-18 14:00:00,Yasin Ayari,Pass,Carlos Baleba
+647606,46,MissedShots,0.7219999694824218,0.4620000076293945,0.014188283123075962,Carlos Baleba,h,10527,FromCorner,2025,RightFoot,28848,Brighton,Newcastle United,2,1,2025-10-18 14:00:00,,None,Carlos Baleba
+649086,9,MissedShots,0.750999984741211,0.4809999847412109,0.020446961745619774,Carlos Baleba,a,10527,SetPiece,2025,RightFoot,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,Yankuba Minteh,Pass,Carlos Baleba
+649096,46,MissedShots,0.6930000305175781,0.5609999847412109,0.008929295465350151,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,Mats Wieffer,Pass,Carlos Baleba
+650811,1,MissedShots,0.725,0.24299999237060546,0.010648563504219055,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,Mats Wieffer,Pass,Carlos Baleba
+653642,48,MissedShots,0.6880000305175781,0.5929999923706055,0.010688317008316517,Carlos Baleba,h,10527,OpenPlay,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,,None,Carlos Baleba
+658196,15,BlockedShot,0.8680000305175781,0.6480000305175782,0.06593327224254608,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Ferdi Kadioglu,Pass,Carlos Baleba
+664447,97,BlockedShot,0.8669999694824219,0.5079999923706054,0.08195333927869797,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,,None,Carlos Baleba
+664825,34,BlockedShot,0.7780000305175782,0.51,0.04678454250097275,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,29004,Fulham,Brighton,2,1,2026-01-24 15:00:00,,BallTouch,Carlos Baleba
+672185,2,BlockedShot,0.7480000305175781,0.4229999923706055,0.020098354667425156,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,29060,Brighton,Arsenal,0,1,2026-03-04 19:30:00,,BallRecovery,Carlos Baleba
+672189,21,MissedShots,0.7090000152587891,0.4909999847412109,0.01319762784987688,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,29060,Brighton,Arsenal,0,1,2026-03-04 19:30:00,Jack Hinshelwood,LayOff,Carlos Baleba
+672199,68,BlockedShot,0.7480000305175781,0.5670000076293945,0.01998482085764408,Carlos Baleba,h,10527,OpenPlay,2025,LeftFoot,29060,Brighton,Arsenal,0,1,2026-03-04 19:30:00,Yankuba Minteh,Pass,Carlos Baleba
+682309,8,ShotOnPost,0.749000015258789,0.31799999237060544,0.025548679754137993,Carlos Baleba,a,10527,FromCorner,2025,LeftFoot,29126,Newcastle United,Brighton,3,1,2026-05-02 14:00:00,Ferdi Kadioglu,Pass,Carlos Baleba
+682320,49,BlockedShot,0.7319999694824219,0.475,0.01190737634897232,Carlos Baleba,a,10527,OpenPlay,2025,LeftFoot,29126,Newcastle United,Brighton,3,1,2026-05-02 14:00:00,,None,Carlos Baleba
+683670,53,MissedShots,0.8040000152587891,0.46900001525878904,0.09365004301071167,Carlos Baleba,h,10527,OpenPlay,2025,RightFoot,29128,Brighton,Wolverhampton Wanderers,3,0,2026-05-09 14:00:00,,TakeOn,Carlos Baleba

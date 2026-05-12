@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,5,0,0,251,0,0,0,0,2025,RasenBallsport Leipzig,0,0,0,0,0.3027626611292362,0.3027626611292362,12775,Kosta Nedeljkovic
+season,Sub,10,0,4,479,0.6430388912558556,0,0.28491421788930893,3,2024,RasenBallsport Leipzig,1,0,0,0.6430388912558556,1.2428867742419243,0.5224717259407043,12775,Kosta Nedeljkovic
+season,Sub,5,0,0,109,0,0,0,0,2024,Aston Villa,0,0,0,0,0.18579712882637978,0.18579712882637978,12775,Kosta Nedeljkovic

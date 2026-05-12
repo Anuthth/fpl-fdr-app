@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,3,0,0,0,0,2022,Nottingham Forest,0,0,0,0,0,0,5646,Cafú
+season,DMC,10,0,5,681,0.5712345959618688,0,0.1572826001793146,5,2017,Metz,2,0,0,0.5712345959618688,1.3004075717180967,1.1186094088479877,5646,Cafú
+season,DMC,18,0,17,1188,1.0929562263190746,2,1.1473671086132526,17,2016,Lorient,3,0,0,1.0929562263190746,4.63499272800982,2.732147396542132,5646,Cafú

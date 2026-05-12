@@ -1,0 +1,8 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+656940,78,MissedShots,0.805,0.73,0.019344884902238846,Romaine Mundle,a,11461,OpenPlay,2025,RightFoot,28924,Manchester City,Sunderland,3,0,2025-12-06 15:00:00,Lutsharel Geertruida,Pass,Romaine Mundle
+659311,65,SavedShot,0.825999984741211,0.535,0.04278724640607834,Romaine Mundle,a,11461,OpenPlay,2025,RightFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Enzo Le Fée,Cross,Romaine Mundle
+659312,66,BlockedShot,0.87,0.715,0.06454700976610184,Romaine Mundle,a,11461,OpenPlay,2025,RightFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Granit Xhaka,Pass,Romaine Mundle
+661949,53,MissedShots,0.8669999694824219,0.5470000076293945,0.09108181297779083,Romaine Mundle,a,11461,OpenPlay,2025,LeftFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Enzo Le Fée,Pass,Romaine Mundle
+661962,88,SavedShot,0.8540000152587891,0.6029999923706054,0.0715620368719101,Romaine Mundle,a,11461,OpenPlay,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Trai Hume,TakeOn,Romaine Mundle
+670174,51,MissedShots,0.875,0.5429999923706055,0.34584930539131165,Romaine Mundle,h,11461,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Lutsharel Geertruida,Pass,Romaine Mundle
+670186,95,BlockedShot,0.915,0.7290000152587891,0.03822212293744087,Romaine Mundle,h,11461,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,,BallTouch,Romaine Mundle

@@ -1,0 +1,20 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+609878,25,MissedShots,0.7809999847412109,0.29100000381469726,0.015457920730113983,James Hill,h,10747,OpenPlay,2024,RightFoot,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,Dango Ouattara,HeadPass,James Hill
+618506,33,MissedShots,0.9069999694824219,0.53,0.025471599772572517,James Hill,h,10747,FromCorner,2024,Head,26852,Bournemouth,Wolverhampton Wanderers,0,1,2025-02-22 15:00:00,Justin Kluivert,Aerial,James Hill
+619475,28,BlockedShot,0.904000015258789,0.529000015258789,0.06472857296466827,James Hill,a,10747,FromCorner,2024,Head,26863,Brighton,Bournemouth,2,1,2025-02-25 19:30:00,Justin Kluivert,Cross,James Hill
+619491,78,MissedShots,0.9369999694824219,0.5209999847412109,0.06553822755813599,James Hill,a,10747,FromCorner,2024,Head,26863,Brighton,Bournemouth,2,1,2025-02-25 19:30:00,Justin Kluivert,Aerial,James Hill
+621813,59,MissedShots,0.8809999847412109,0.4329999923706055,0.013318185694515705,James Hill,a,10747,FromCorner,2024,Head,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Ryan Christie,Aerial,James Hill
+622914,88,BlockedShot,0.85,0.37400001525878906,0.010000516660511494,James Hill,h,10747,OpenPlay,2024,Head,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Milos Kerkez,Aerial,James Hill
+641691,84,SavedShot,0.9540000152587891,0.44299999237060544,0.06587860733270645,James Hill,h,10747,FromCorner,2025,Head,28810,Bournemouth,Brighton,2,1,2025-09-13 14:00:00,Justin Kluivert,Aerial,James Hill
+643605,92,MissedShots,0.6630000305175782,0.39,0.008657212369143963,James Hill,h,10747,OpenPlay,2025,RightFoot,28823,Bournemouth,Newcastle United,0,0,2025-09-21 13:00:00,,Aerial,James Hill
+660572,43,MissedShots,0.89,0.4259999847412109,0.015601486898958683,James Hill,a,10747,SetPiece,2025,Head,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,David Brooks,Aerial,James Hill
+664434,51,BlockedShot,0.785,0.4540000152587891,0.016147611662745476,James Hill,a,10747,FromCorner,2025,LeftFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,,Aerial,James Hill
+664945,17,MissedShots,0.8719999694824219,0.4620000076293945,0.06314650177955627,James Hill,h,10747,FromCorner,2025,RightFoot,28998,Bournemouth,Liverpool,3,2,2026-01-24 17:30:00,Evanilson,BallTouch,James Hill
+672080,33,MissedShots,0.955,0.544000015258789,0.4336467683315277,James Hill,h,10747,FromCorner,2025,Head,29058,Bournemouth,Brentford,0,0,2026-03-03 19:30:00,Adrien Truffert,Aerial,James Hill
+673828,6,MissedShots,0.9340000152587891,0.5890000152587891,0.06069323047995567,James Hill,a,10747,FromCorner,2025,Head,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Marcus Tavernier,Cross,James Hill
+673855,73,MissedShots,0.9640000152587891,0.5159999847412109,0.09203419089317322,James Hill,a,10747,FromCorner,2025,Head,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Marcus Tavernier,Aerial,James Hill
+675074,70,OwnGoal,0.022999999523162843,0.53,0,James Hill,h,10747,FromCorner,2025,Head,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,,Clearance,James Hill
+679237,3,SavedShot,0.895,0.624000015258789,0.010609015822410583,James Hill,a,10747,FromCorner,2025,Head,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,Alejandro Jiménez,Aerial,James Hill
+679253,74,MissedShots,0.8590000152587891,0.18299999237060546,0.015955839306116104,James Hill,a,10747,OpenPlay,2025,RightFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,,None,James Hill
+680375,67,OwnGoal,0.03799999952316284,0.5209999847412109,0,James Hill,h,10747,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,,BallTouch,James Hill
+680377,75,MissedShots,0.93,0.5209999847412109,0.05716155469417572,James Hill,h,10747,FromCorner,2025,Head,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Alex Scott,Aerial,James Hill

@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,2,0,0,180,0,0,0,0,2017,Leicester,0,0,0,0,0.25029709935188293,0.25029709935188293,1697,Eldin Jakupovic
+season,GK,22,0,0,1980,0,0,0,0,2016,Hull,0,0,0,0,0.6517614088952541,0.6517614088952541,1697,Eldin Jakupovic
+season,GK,3,0,0,228,0,0,0,0,2014,Hull,0,0,0,0,0.14961989596486092,0.14961989596486092,1697,Eldin Jakupovic

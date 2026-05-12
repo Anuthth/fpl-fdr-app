@@ -1,0 +1,26 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638860,13,MissedShots,0.9269999694824219,0.67,0.31338781118392944,Chemsdine Talbi,a,13717,OpenPlay,2025,LeftFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Simon Adingra,Throughball,Chemsdine Talbi
+640266,8,MissedShots,0.9230000305175782,0.4420000076293945,0.10804285854101181,Chemsdine Talbi,h,13717,FromCorner,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,None,Chemsdine Talbi
+641698,40,BlockedShot,0.9359999847412109,0.41900001525878905,0.10243286937475204,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,Simon Adingra,Cross,Chemsdine Talbi
+643617,48,MissedShots,0.855,0.664000015258789,0.018578199669718742,Chemsdine Talbi,h,13717,OpenPlay,2025,LeftFoot,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,,Aerial,Chemsdine Talbi
+643625,74,BlockedShot,0.8009999847412109,0.73,0.022139864042401314,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Noah Sadiki,Pass,Chemsdine Talbi
+644928,49,MissedShots,0.855,0.34599998474121096,0.03673868253827095,Chemsdine Talbi,a,13717,SetPiece,2025,LeftFoot,28834,Nottingham Forest,Sunderland,0,1,2025-09-27 16:30:00,,Rebound,Chemsdine Talbi
+646164,65,BlockedShot,0.8490000152587891,0.649000015258789,0.037513796240091324,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,28845,Manchester United,Sunderland,2,0,2025-10-04 14:00:00,,None,Chemsdine Talbi
+646170,89,SavedShot,0.8830000305175781,0.6170000076293946,0.2839544713497162,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,28845,Manchester United,Sunderland,2,0,2025-10-04 14:00:00,Eliezer Mayenda,Pass,Chemsdine Talbi
+648949,92,Goal,0.8469999694824218,0.6029999923706054,0.11022110283374786,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Brian Brobbey,Pass,Chemsdine Talbi
+655081,3,BlockedShot,0.9080000305175782,0.669000015258789,0.06586183607578278,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Enzo Le Fée,Pass,Chemsdine Talbi
+655082,4,MissedShots,0.850999984741211,0.675,0.06881124526262283,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Bertrand Traoré,Pass,Chemsdine Talbi
+656356,45,SavedShot,0.7730000305175782,0.4590000152587891,0.020918039605021477,Chemsdine Talbi,a,13717,FromCorner,2025,RightFoot,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,,None,Chemsdine Talbi
+656364,66,Goal,0.7380000305175781,0.32299999237060545,0.018612148240208626,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,Enzo Le Fée,Pass,Chemsdine Talbi
+664606,57,MissedShots,0.745,0.590999984741211,0.015589778311550617,Chemsdine Talbi,a,13717,FromCorner,2025,RightFoot,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,,None,Chemsdine Talbi
+666875,16,MissedShots,0.875,0.4229999923706055,0.07544966787099838,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Nordi Mukiele,Cross,Chemsdine Talbi
+666886,71,Goal,0.8019999694824219,0.6940000152587891,0.040096040815114975,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Reinildo,Pass,Chemsdine Talbi
+667265,48,SavedShot,0.830999984741211,0.73,0.02736898884177208,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,29019,Arsenal,Sunderland,3,0,2026-02-07 15:00:00,Noah Sadiki,Pass,Chemsdine Talbi
+673864,11,BlockedShot,0.904000015258789,0.6129999923706054,0.08946765959262848,Chemsdine Talbi,h,13717,OpenPlay,2025,LeftFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Brian Brobbey,BallTouch,Chemsdine Talbi
+675712,23,SavedShot,0.7609999847412109,0.735,0.014657450839877129,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Granit Xhaka,Pass,Chemsdine Talbi
+675716,39,MissedShots,0.8769999694824219,0.6930000305175781,0.027392609044909477,Chemsdine Talbi,a,13717,OpenPlay,2025,LeftFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Chris Rigg,Cross,Chemsdine Talbi
+675723,56,Goal,0.9569999694824218,0.49599998474121093,0.6482296586036682,Chemsdine Talbi,a,13717,FromCorner,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,Rebound,Chemsdine Talbi
+675735,83,MissedShots,0.785,0.5579999923706055,0.03274032101035118,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Omar Alderete,Pass,Chemsdine Talbi
+682337,27,SavedShot,0.8440000152587891,0.6129999923706054,0.07621511816978455,Chemsdine Talbi,a,13717,OpenPlay,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Noah Sadiki,Pass,Chemsdine Talbi
+682352,66,BlockedShot,0.775,0.3659999847412109,0.025477182120084763,Chemsdine Talbi,a,13717,OpenPlay,2025,LeftFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Reinildo,Pass,Chemsdine Talbi
+683701,4,MissedShots,0.8040000152587891,0.590999984741211,0.04387650638818741,Chemsdine Talbi,h,13717,OpenPlay,2025,RightFoot,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,Enzo Le Fée,Pass,Chemsdine Talbi

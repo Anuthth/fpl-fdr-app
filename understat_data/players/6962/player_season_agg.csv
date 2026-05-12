@@ -1,0 +1,8 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,4,0,0,211,0,0,0,0,2024,Aston Villa,0,0,0,0,0.4604295790195465,0.4604295790195465,6962,Robin Olsen
+season,GK,5,0,0,398,0,0,0,0,2023,Aston Villa,0,0,0,0,0.27475402504205704,0.27475402504205704,6962,Robin Olsen
+season,Sub,4,0,0,277,0,0,0,0,2022,Aston Villa,0,0,0,0,0.029771799221634865,0.029771799221634865,6962,Robin Olsen
+season,GK,1,0,0,90,0,0,0,0,2021,Aston Villa,0,0,0,0,0.07991970330476761,0.07991970330476761,6962,Robin Olsen
+season,GK,7,0,0,630,0,0,0,0,2020,Everton,1,0,0,0,0.8195909857749939,0.8195909857749939,6962,Robin Olsen
+season,GK,17,0,0,1530,0,0,0,0,2019,Cagliari,0,1,0,0,0.3852012222632766,0.3852012222632766,6962,Robin Olsen
+season,GK,27,0,0,2430,0,0,0.0573744997382164,1,2018,Roma,2,0,0,0,5.992856077849865,5.935481980443001,6962,Robin Olsen

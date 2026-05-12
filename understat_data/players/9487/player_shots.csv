@@ -1,0 +1,39 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+474893,23,SavedShot,0.97,0.505,0.5444070100784302,Maxime Estève,h,9487,FromCorner,2021,RightFoot,18098,Montpellier,Nice,0,0,2022-03-12 16:00:00,Téji Savanier,Cross,Maxime Estève
+474910,83,BlockedShot,0.9719999694824218,0.4129999923706055,0.1007860004901886,Maxime Estève,h,9487,FromCorner,2021,LeftFoot,18098,Montpellier,Nice,0,0,2022-03-12 16:00:00,,None,Maxime Estève
+468579,71,MissedShots,0.8969999694824219,0.524000015258789,0.05987570062279701,Maxime Estève,h,9487,FromCorner,2021,Head,18135,Montpellier,Reims,0,0,2022-04-17 13:00:00,Téji Savanier,Cross,Maxime Estève
+472134,17,MissedShots,0.955,0.40700000762939453,0.024661600589752197,Maxime Estève,h,9487,FromCorner,2021,Head,18166,Montpellier,Metz,2,2,2022-05-01 13:00:00,Florent Mollet,Aerial,Maxime Estève
+472152,66,MissedShots,0.8819999694824219,0.62,0.00841614045202732,Maxime Estève,h,9487,SetPiece,2021,Head,18166,Montpellier,Metz,2,2,2022-05-01 13:00:00,Florent Mollet,Aerial,Maxime Estève
+491940,71,MissedShots,0.9790000152587891,0.41,0.04025790095329285,Maxime Estève,h,9487,FromCorner,2022,Head,19741,Montpellier,Monaco,0,2,2022-10-09 11:00:00,,None,Maxime Estève
+493314,22,BlockedShot,0.924000015258789,0.42400001525878905,0.09886109828948975,Maxime Estève,a,9487,FromCorner,2022,RightFoot,19753,Lens,Montpellier,1,0,2022-10-15 19:00:00,,None,Maxime Estève
+493315,22,MissedShots,0.93,0.4209999847412109,0.02573779970407486,Maxime Estève,a,9487,FromCorner,2022,Head,19753,Lens,Montpellier,1,0,2022-10-15 19:00:00,Téji Savanier,Aerial,Maxime Estève
+502104,60,OwnGoal,0.02700000047683716,0.47200000762939454,0,Maxime Estève,h,9487,FromCorner,2022,Head,19812,Montpellier,Marseille,1,2,2023-01-02 18:00:00,,CornerAwarded,Maxime Estève
+507576,83,MissedShots,0.9019999694824219,0.4570000076293945,0.06121259927749634,Maxime Estève,a,9487,FromCorner,2022,Head,19864,Strasbourg,Montpellier,2,0,2023-02-05 14:00:00,Faitout Maouassa,Cross,Maxime Estève
+525145,83,MissedShots,0.95,0.5770000076293945,0.12316200882196426,Maxime Estève,a,9487,SetPiece,2022,Head,19984,Lyon,Montpellier,5,4,2023-05-07 15:05:00,Joris Chotard,Cross,Maxime Estève
+527542,46,MissedShots,0.855,0.5329999923706055,0.074686199426651,Maxime Estève,a,9487,SetPiece,2022,LeftFoot,20001,Nantes,Montpellier,0,3,2023-05-20 15:00:00,,Rebound,Maxime Estève
+545991,47,MissedShots,0.860999984741211,0.5579999923706055,0.00905440654605627,Maxime Estève,h,9487,SetPiece,2023,Head,23459,Montpellier,Toulouse,3,0,2023-10-29 14:00:00,Téji Savanier,Aerial,Maxime Estève
+548017,27,MissedShots,0.905,0.6220000076293946,0.03858448937535286,Maxime Estève,h,9487,SetPiece,2023,Head,23477,Montpellier,Nice,0,0,2023-11-10 20:00:00,Téji Savanier,Chipped,Maxime Estève
+550321,12,MissedShots,0.9209999847412109,0.4229999923706055,0.021713873371481895,Maxime Estève,h,9487,FromCorner,2023,Head,23487,Montpellier,Brest,1,3,2023-11-26 14:00:00,Téji Savanier,Aerial,Maxime Estève
+550325,19,OwnGoal,0.04099999904632568,0.545,0,Maxime Estève,h,9487,OpenPlay,2023,Head,23487,Montpellier,Brest,1,3,2023-11-26 14:00:00,,Save,Maxime Estève
+550332,48,MissedShots,0.9009999847412109,0.3990000152587891,0.03801390156149864,Maxime Estève,h,9487,SetPiece,2023,Head,23487,Montpellier,Brest,1,3,2023-11-26 14:00:00,Téji Savanier,Cross,Maxime Estève
+554700,8,Goal,0.9680000305175781,0.42700000762939455,0.2134092003107071,Maxime Estève,a,9487,FromCorner,2023,Head,23514,Metz,Montpellier,0,1,2023-12-17 14:00:00,Téji Savanier,Aerial,Maxime Estève
+558550,89,SavedShot,0.9269999694824219,0.47,0.11252182722091675,Maxime Estève,a,9487,FromCorner,2023,Head,23532,Brest,Montpellier,2,0,2024-01-14 14:00:00,Téji Savanier,Cross,Maxime Estève
+567034,2,BlockedShot,0.7709999847412109,0.7019999694824218,0.016685109585523605,Maxime Estève,h,9487,OpenPlay,2023,LeftFoot,22156,Burnley,Bournemouth,0,2,2024-03-03 13:00:00,Sander Berge,Pass,Maxime Estève
+567060,84,MissedShots,0.9180000305175782,0.5570000076293945,0.08236683905124664,Maxime Estève,h,9487,FromCorner,2023,Head,22156,Burnley,Bournemouth,0,2,2024-03-03 13:00:00,Wilson Odobert,Cross,Maxime Estève
+570708,14,MissedShots,0.899000015258789,0.4540000152587891,0.05129183828830719,Maxime Estève,a,9487,FromCorner,2023,Head,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Jacob Bruun Larsen,Cross,Maxime Estève
+570722,46,MissedShots,0.8640000152587891,0.624000015258789,0.028502458706498146,Maxime Estève,a,9487,SetPiece,2023,Head,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Jacob Bruun Larsen,Chipped,Maxime Estève
+571833,56,BlockedShot,0.7290000152587891,0.634000015258789,0.012298221699893475,Maxime Estève,h,9487,OpenPlay,2023,LeftFoot,22197,Burnley,Wolverhampton Wanderers,1,1,2024-04-02 18:45:00,,None,Maxime Estève
+579915,57,MissedShots,0.925,0.555,0.03778507560491562,Maxime Estève,a,9487,FromCorner,2023,Head,22262,Tottenham,Burnley,2,1,2024-05-11 14:00:00,Dara O&#039;Shea,Aerial,Maxime Estève
+582105,25,MissedShots,0.7090000152587891,0.56,0.01165295671671629,Maxime Estève,h,9487,OpenPlay,2023,LeftFoot,22268,Burnley,Nottingham Forest,1,2,2024-05-19 15:00:00,,BallRecovery,Maxime Estève
+637716,28,SavedShot,0.92,0.505,0.045311152935028076,Maxime Estève,a,9487,FromCorner,2025,OtherBodyPart,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Jaidon Anthony,Aerial,Maxime Estève
+643145,44,MissedShots,0.8930000305175781,0.44599998474121094,0.02126903086900711,Maxime Estève,h,9487,SetPiece,2025,Head,28822,Burnley,Nottingham Forest,1,1,2025-09-20 14:00:00,Quilindschy Hartman,Aerial,Maxime Estève
+643150,63,MissedShots,0.9230000305175782,0.4779999923706055,0.05264423415064812,Maxime Estève,h,9487,FromCorner,2025,Head,28822,Burnley,Nottingham Forest,1,1,2025-09-20 14:00:00,Jaidon Anthony,Aerial,Maxime Estève
+644761,11,OwnGoal,0.04300000190734863,0.47400001525878904,0,Maxime Estève,a,9487,OpenPlay,2025,LeftFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,,Save,Maxime Estève
+644778,56,MissedShots,0.8019999694824219,0.69,0.018914276733994484,Maxime Estève,a,9487,OpenPlay,2025,LeftFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,,Rebound,Maxime Estève
+644781,64,OwnGoal,0.08899999618530273,0.580999984741211,0,Maxime Estève,a,9487,OpenPlay,2025,RightFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,,None,Maxime Estève
+658314,45,MissedShots,0.955,0.39599998474121095,0.01564914546906948,Maxime Estève,h,9487,FromCorner,2025,Head,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Jacob Bruun Larsen,Aerial,Maxime Estève
+658315,53,MissedShots,0.9569999694824218,0.42700000762939455,0.05109383165836334,Maxime Estève,h,9487,FromCorner,2025,Head,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Jacob Bruun Larsen,Aerial,Maxime Estève
+666881,56,MissedShots,0.8669999694824219,0.3970000076293945,0.019499480724334717,Maxime Estève,a,9487,SetPiece,2025,Head,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Kyle Walker,Cross,Maxime Estève
+669764,86,MissedShots,0.9169999694824219,0.4909999847412109,0.09875679761171341,Maxime Estève,a,9487,FromCorner,2025,Head,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,Loum Tchaouna,Cross,Maxime Estève
+671080,64,MissedShots,0.885,0.46299999237060546,0.09094974398612976,Maxime Estève,h,9487,OpenPlay,2025,RightFoot,29051,Burnley,Brentford,3,4,2026-02-28 15:00:00,James Ward-Prowse,Cross,Maxime Estève
+679591,82,BlockedShot,0.8969999694824219,0.6580000305175782,0.03752078488469124,Maxime Estève,a,9487,FromCorner,2025,LeftFoot,29106,Nottingham Forest,Burnley,4,1,2026-04-19 13:00:00,James Ward-Prowse,Cross,Maxime Estève

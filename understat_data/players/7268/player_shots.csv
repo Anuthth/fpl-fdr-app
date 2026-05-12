@@ -1,0 +1,65 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+303505,32,Goal,0.8730000305175781,0.48700000762939455,0.07909630239009857,Bafode Diakite,a,7268,FromCorner,2018,LeftFoot,11016,Dijon,Toulouse,2,1,2019-05-24 19:05:00,,None,Bafode Diakite
+310117,48,BlockedShot,0.9269999694824219,0.51,0.3511410057544708,Bafode Diakite,a,7268,FromCorner,2019,RightFoot,12711,Brest,Toulouse,1,1,2019-08-10 19:00:00,Mathieu Dossevi,Cross,Bafode Diakite
+310937,60,MissedShots,0.905,0.5320000076293945,0.02457120083272457,Bafode Diakite,h,7268,FromCorner,2019,Head,12725,Toulouse,Dijon,1,0,2019-08-17 19:00:00,Mathieu Dossevi,Aerial,Bafode Diakite
+318086,66,MissedShots,0.925,0.49599998474121093,0.06965070217847824,Bafode Diakite,a,7268,SetPiece,2019,Head,12754,Saint-Etienne,Toulouse,2,2,2019-09-15 15:00:00,Max Gradel,Aerial,Bafode Diakite
+320680,68,MissedShots,0.955,0.47099998474121096,0.4937250018119812,Bafode Diakite,a,7268,FromCorner,2019,Head,12765,Nimes,Toulouse,1,0,2019-09-21 18:00:00,Mathieu Dossevi,Cross,Bafode Diakite
+354221,15,Goal,0.9330000305175781,0.47299999237060547,0.3775779902935028,Bafode Diakite,h,7268,FromCorner,2019,Head,12899,Toulouse,Brest,2,5,2020-01-11 19:00:00,Mathieu Dossevi,Cross,Bafode Diakite
+354226,20,Goal,0.95,0.5270000076293946,0.4680649936199188,Bafode Diakite,h,7268,FromCorner,2019,Head,12899,Toulouse,Brest,2,5,2020-01-11 19:00:00,Quentin Boisgard,Cross,Bafode Diakite
+357605,66,MissedShots,0.9540000152587891,0.53,0.4788599908351898,Bafode Diakite,h,7268,FromCorner,2019,Head,12930,Toulouse,Strasbourg,0,1,2020-02-05 18:00:00,Quentin Boisgard,Cross,Bafode Diakite
+359159,40,SavedShot,0.935,0.59,0.04244710132479668,Bafode Diakite,h,7268,FromCorner,2019,Head,12953,Toulouse,Nice,0,2,2020-02-15 19:00:00,,None,Bafode Diakite
+359173,91,SavedShot,0.9180000305175782,0.4929999923706055,0.06614819914102554,Bafode Diakite,h,7268,SetPiece,2019,Head,12953,Toulouse,Nice,0,2,2020-02-15 19:00:00,Agustín Rogel,HeadPass,Bafode Diakite
+361033,43,SavedShot,0.909000015258789,0.47,0.07802289724349976,Bafode Diakite,h,7268,FromCorner,2019,Head,12974,Toulouse,Rennes,0,2,2020-02-29 19:00:00,Mathieu Dossevi,Cross,Bafode Diakite
+482878,45,BlockedShot,0.9169999694824219,0.4909999847412109,0.125450000166893,Bafode Diakite,h,7268,SetPiece,2022,Head,19671,Lille,Paris Saint Germain,1,7,2022-08-21 18:45:00,Angel Gomes,Cross,Bafode Diakite
+485339,56,BlockedShot,0.870999984741211,0.43400001525878906,0.020079100504517555,Bafode Diakite,h,7268,FromCorner,2022,Head,19690,Lille,Nice,1,2,2022-08-31 19:00:00,Yusuf Yazici,Cross,Bafode Diakite
+486364,72,BlockedShot,0.9019999694824219,0.5529999923706055,0.09418679773807526,Bafode Diakite,a,7268,FromCorner,2022,RightFoot,19702,Montpellier,Lille,1,3,2022-09-04 11:00:00,,None,Bafode Diakite
+489025,60,MissedShots,0.8980000305175782,0.5820000076293945,0.03362879902124405,Bafode Diakite,h,7268,FromCorner,2022,Head,19721,Lille,Toulouse,2,1,2022-09-17 19:00:00,Adam Ounas,Cross,Bafode Diakite
+490559,8,OwnGoal,0.01100000023841858,0.49700000762939456,0,Bafode Diakite,a,7268,OpenPlay,2022,RightFoot,19732,Lorient,Lille,2,1,2022-10-02 11:00:00,,BallTouch,Bafode Diakite
+490571,56,BlockedShot,0.8909999847412109,0.265,0.030292600393295288,Bafode Diakite,a,7268,OpenPlay,2022,LeftFoot,19732,Lorient,Lille,2,1,2022-10-02 11:00:00,Adam Ounas,Pass,Bafode Diakite
+490573,57,MissedShots,0.945,0.4329999923706055,0.07437419891357422,Bafode Diakite,a,7268,OpenPlay,2022,LeftFoot,19732,Lorient,Lille,2,1,2022-10-02 11:00:00,,Aerial,Bafode Diakite
+495878,3,MissedShots,0.9209999847412109,0.5970000076293945,0.035981401801109314,Bafode Diakite,h,7268,FromCorner,2022,Head,19761,Lille,Monaco,4,3,2022-10-23 18:45:00,André Gomes,Chipped,Bafode Diakite
+495885,32,SavedShot,0.904000015258789,0.585,0.03742529824376106,Bafode Diakite,h,7268,FromCorner,2022,OtherBodyPart,19761,Lille,Monaco,4,3,2022-10-23 18:45:00,Adam Ounas,Aerial,Bafode Diakite
+502058,83,MissedShots,0.9319999694824219,0.59,0.05975089967250824,Bafode Diakite,h,7268,FromCorner,2022,Head,19811,Lille,Reims,1,1,2023-01-02 16:00:00,Adam Ounas,Cross,Bafode Diakite
+503872,26,BlockedShot,0.750999984741211,0.4329999923706055,0.02970059961080551,Bafode Diakite,h,7268,OpenPlay,2022,RightFoot,19830,Lille,Troyes,5,1,2023-01-15 12:00:00,Carlos Baleba,Pass,Bafode Diakite
+506078,47,SavedShot,0.905,0.634000015258789,0.016101699322462082,Bafode Diakite,a,7268,FromCorner,2022,Head,19842,Nice,Lille,1,0,2023-01-29 12:00:00,Rémy Cabella,Cross,Bafode Diakite
+510008,23,Goal,0.9130000305175782,0.53,0.2568959891796112,Bafode Diakite,a,7268,FromCorner,2022,Head,19881,Paris Saint Germain,Lille,4,3,2023-02-19 12:00:00,André Gomes,Cross,Bafode Diakite
+510628,59,Goal,0.9080000305175782,0.525,0.02921229973435402,Bafode Diakite,h,7268,FromCorner,2022,Head,19894,Lille,Brest,2,1,2023-02-24 20:00:00,Edon Zhegrova,Aerial,Bafode Diakite
+524824,40,MissedShots,0.919000015258789,0.46799999237060547,0.058508507907390594,Bafode Diakite,a,7268,SetPiece,2022,Head,19986,Reims,Lille,1,0,2023-05-06 17:00:00,Rémy Cabella,Aerial,Bafode Diakite
+527753,63,MissedShots,0.93,0.6480000305175782,0.01548737846314907,Bafode Diakite,h,7268,FromCorner,2022,Head,20002,Lille,Marseille,2,1,2023-05-20 19:00:00,Jonas Martin,Cross,Bafode Diakite
+529523,62,MissedShots,0.7719999694824219,0.26799999237060546,0.01455016154795885,Bafode Diakite,h,7268,OpenPlay,2022,LeftFoot,20010,Lille,Nantes,2,1,2023-05-27 19:00:00,Adam Ounas,Pass,Bafode Diakite
+530764,9,BlockedShot,0.9340000152587891,0.575,0.08245563507080078,Bafode Diakite,a,7268,FromCorner,2022,Head,20027,Troyes,Lille,1,1,2023-06-03 17:00:00,Rémy Cabella,Cross,Bafode Diakite
+530779,51,Goal,0.9209999847412109,0.5329999923706055,0.14368201792240143,Bafode Diakite,a,7268,OpenPlay,2022,LeftFoot,20027,Troyes,Lille,1,1,2023-06-03 17:00:00,Jonathan Bamba,Pass,Bafode Diakite
+530783,73,MissedShots,0.9269999694824219,0.51,0.13131946325302124,Bafode Diakite,a,7268,SetPiece,2022,Head,20027,Troyes,Lille,1,1,2023-06-03 17:00:00,Edon Zhegrova,Cross,Bafode Diakite
+532307,93,Goal,0.9459999847412109,0.52,0.5563109517097473,Bafode Diakite,a,7268,SetPiece,2023,Head,23377,Nice,Lille,1,1,2023-08-12 18:00:00,Angel Gomes,Cross,Bafode Diakite
+535376,75,MissedShots,0.9530000305175781,0.524000015258789,0.08401654660701752,Bafode Diakite,a,7268,FromCorner,2023,Head,23393,Lorient,Lille,4,1,2023-08-27 15:05:00,Ivan Cavaleiro,Aerial,Bafode Diakite
+537758,61,Goal,0.97,0.4109999847412109,0.46311789751052856,Bafode Diakite,a,7268,SetPiece,2023,LeftFoot,23409,Rennes,Lille,2,2,2023-09-16 15:00:00,,Rebound,Bafode Diakite
+541690,1,SavedShot,0.8809999847412109,0.5729999923706055,0.01560464221984148,Bafode Diakite,a,7268,SetPiece,2023,Head,23433,Le Havre,Lille,0,2,2023-10-01 13:00:00,Rémy Cabella,Interception,Bafode Diakite
+541707,59,MissedShots,0.8590000152587891,0.5259999847412109,0.038599882274866104,Bafode Diakite,a,7268,SetPiece,2023,LeftFoot,23433,Le Havre,Lille,0,2,2023-10-01 13:00:00,Edon Zhegrova,Cross,Bafode Diakite
+541709,77,MissedShots,0.9,0.3820000076293945,0.020612480118870735,Bafode Diakite,a,7268,SetPiece,2023,OtherBodyPart,23433,Le Havre,Lille,0,2,2023-10-01 13:00:00,Ivan Cavaleiro,Cross,Bafode Diakite
+544606,56,BlockedShot,0.9630000305175781,0.4909999847412109,0.5289552807807922,Bafode Diakite,h,7268,FromCorner,2023,Head,23447,Lille,Brest,1,0,2023-10-22 13:00:00,Yusuf Yazici,Cross,Bafode Diakite
+546045,41,Goal,0.8719999694824219,0.37,0.09359283000230789,Bafode Diakite,h,7268,OpenPlay,2023,RightFoot,23454,Lille,Monaco,2,0,2023-10-29 14:00:00,Edon Zhegrova,Pass,Bafode Diakite
+568770,60,SavedShot,0.8959999847412109,0.46099998474121096,0.05866459757089615,Bafode Diakite,h,7268,SetPiece,2023,Head,23591,Lille,Rennes,2,2,2024-03-10 16:00:00,Edon Zhegrova,Chipped,Bafode Diakite
+576166,29,BlockedShot,0.915,0.4809999847412109,0.09388770163059235,Bafode Diakite,a,7268,FromCorner,2023,Head,23626,Monaco,Lille,1,0,2024-04-24 19:00:00,Nabil Bentaleb,Cross,Bafode Diakite
+577142,62,BlockedShot,0.9630000305175781,0.4520000076293945,0.08246541768312454,Bafode Diakite,a,7268,FromCorner,2023,Head,23648,Metz,Lille,1,2,2024-04-28 11:00:00,Edon Zhegrova,Aerial,Bafode Diakite
+579456,20,Goal,0.914000015258789,0.5259999847412109,0.32716840505599976,Bafode Diakite,h,7268,SetPiece,2023,Head,23652,Lille,Lyon,3,4,2024-05-06 19:00:00,Yusuf Yazici,Chipped,Bafode Diakite
+579468,84,Goal,0.9419999694824219,0.4929999923706055,0.4434036612510681,Bafode Diakite,h,7268,FromCorner,2023,Head,23652,Lille,Lyon,3,4,2024-05-06 19:00:00,Angel Gomes,Cross,Bafode Diakite
+579470,89,MissedShots,0.86,0.4909999847412109,0.06923337280750275,Bafode Diakite,h,7268,OpenPlay,2023,RightFoot,23652,Lille,Lyon,3,4,2024-05-06 19:00:00,Tiago Santos,Cross,Bafode Diakite
+580774,7,MissedShots,0.9290000152587891,0.6,0.03954165428876877,Bafode Diakite,a,7268,FromCorner,2023,Head,23665,Nantes,Lille,1,2,2024-05-12 19:00:00,Tiago Santos,None,Bafode Diakite
+580778,24,MissedShots,0.92,0.4490000152587891,0.056277595460414886,Bafode Diakite,a,7268,OpenPlay,2023,Head,23665,Nantes,Lille,1,2,2024-05-12 19:00:00,Hákon Haraldsson,Aerial,Bafode Diakite
+585016,74,Goal,0.9259999847412109,0.46,0.10995110124349594,Bafode Diakite,a,7268,FromCorner,2024,LeftFoot,28050,Reims,Lille,0,2,2024-08-17 17:00:00,,None,Bafode Diakite
+585018,79,MissedShots,0.9280000305175782,0.5209999847412109,0.11643838882446289,Bafode Diakite,a,7268,FromCorner,2024,Head,28050,Reims,Lille,0,2,2024-08-17 17:00:00,Rémy Cabella,Cross,Bafode Diakite
+592554,38,MissedShots,0.965999984741211,0.5059999847412109,0.5732387900352478,Bafode Diakite,h,7268,FromCorner,2024,Head,28090,Lille,Strasbourg,3,3,2024-09-21 15:00:00,,Rebound,Bafode Diakite
+594405,31,SavedShot,0.905,0.48400001525878905,0.035066213458776474,Bafode Diakite,a,7268,FromCorner,2024,Head,28098,Le Havre,Lille,0,3,2024-09-28 17:00:00,Jonathan Christian David,Aerial,Bafode Diakite
+601970,85,SavedShot,0.87,0.4520000076293945,0.0380215123295784,Bafode Diakite,a,7268,SetPiece,2024,Head,28141,Nice,Lille,2,2,2024-11-10 14:00:00,Angel Gomes,Cross,Bafode Diakite
+607160,59,MissedShots,0.9009999847412109,0.54,0.020281348377466202,Bafode Diakite,a,7268,FromCorner,2024,Head,28181,Marseille,Lille,1,1,2024-12-14 16:00:00,Matias Fernandez-Pardo,Aerial,Bafode Diakite
+607167,86,Goal,0.9109999847412109,0.52,0.27506160736083984,Bafode Diakite,a,7268,SetPiece,2024,Head,28181,Marseille,Lille,1,1,2024-12-14 16:00:00,Rémy Cabella,Cross,Bafode Diakite
+610522,31,BlockedShot,0.9019999694824219,0.5029999923706054,0.024984482675790787,Bafode Diakite,a,7268,FromCorner,2024,Head,28194,Auxerre,Lille,0,0,2025-01-10 20:00:00,Rémy Cabella,Aerial,Bafode Diakite
+612039,62,Goal,0.9719999694824218,0.5659999847412109,0.5592790246009827,Bafode Diakite,h,7268,FromCorner,2024,RightFoot,28203,Lille,Nice,2,1,2025-01-17 20:05:00,,Rebound,Bafode Diakite
+612040,64,MissedShots,0.93,0.455,0.10748373717069626,Bafode Diakite,h,7268,FromCorner,2024,Head,28203,Lille,Nice,2,1,2025-01-17 20:05:00,Mitchel Bakker,Cross,Bafode Diakite
+617981,8,SavedShot,0.94,0.3579999923706055,0.07282919436693192,Bafode Diakite,a,7268,FromCorner,2024,LeftFoot,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,,Rebound,Bafode Diakite
+618000,92,MissedShots,0.9290000152587891,0.5690000152587891,0.2641938030719757,Bafode Diakite,a,7268,FromCorner,2024,Head,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Mitchel Bakker,Cross,Bafode Diakite
+626020,0,Goal,0.9309999847412109,0.53,0.06600925326347351,Bafode Diakite,a,7268,FromCorner,2024,Head,28295,Lyon,Lille,2,1,2025-04-05 19:05:00,Benjamin André,HeadPass,Bafode Diakite
+626022,17,MissedShots,0.9169999694824219,0.5,0.1003311425447464,Bafode Diakite,a,7268,FromCorner,2024,Head,28295,Lyon,Lille,2,1,2025-04-05 19:05:00,Hákon Haraldsson,Cross,Bafode Diakite
+629100,18,MissedShots,0.9159999847412109,0.46700000762939453,0.28267785906791687,Bafode Diakite,h,7268,FromCorner,2024,Head,28312,Lille,Auxerre,3,1,2025-04-20 13:00:00,Hákon Haraldsson,Cross,Bafode Diakite
+634580,73,MissedShots,0.9519999694824218,0.555,0.12637916207313538,Bafode Diakite,h,7268,FromCorner,2024,Head,28353,Lille,Reims,2,1,2025-05-17 19:00:00,Matias Fernandez-Pardo,Cross,Bafode Diakite
+655100,49,MissedShots,0.9230000305175782,0.659000015258789,0.013867756351828575,Bafode Diakite,a,7268,OpenPlay,2025,Head,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Antoine Semenyo,Aerial,Bafode Diakite

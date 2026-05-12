@@ -1,0 +1,45 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+576431,36,BlockedShot,0.8830000305175781,0.7709999847412109,0.013543174602091312,Valentín Barco,h,12498,OpenPlay,2023,LeftFoot,22176,Brighton,Manchester City,0,4,2024-04-25 19:00:00,João Pedro,Cross,Valentín Barco
+577204,59,BlockedShot,0.715,0.6509999847412109,0.009662320837378502,Valentín Barco,a,12498,OpenPlay,2023,LeftFoot,22235,Bournemouth,Brighton,3,0,2024-04-28 13:00:00,João Pedro,Pass,Valentín Barco
+581208,79,SavedShot,0.6859999847412109,0.625,0.009568397887051105,Valentín Barco,h,12498,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Igor Julio,Pass,Valentín Barco
+582130,11,SavedShot,0.9069999694824219,0.6569999694824219,0.27490857243537903,Valentín Barco,h,12498,OpenPlay,2023,LeftFoot,22267,Brighton,Manchester United,0,2,2024-05-19 15:00:00,Carlos Baleba,Pass,Valentín Barco
+590106,4,MissedShots,0.79,0.6220000076293946,0.020360790193080902,Valentín Barco,h,12498,SetPiece,2024,LeftFoot,27019,Sevilla,Girona,0,2,2024-09-01 17:00:00,,Rebound,Valentín Barco
+590105,4,BlockedShot,0.7830000305175782,0.6359999847412109,0.08403220772743225,Valentín Barco,h,12498,DirectFreekick,2024,LeftFoot,27019,Sevilla,Girona,0,2,2024-09-01 17:00:00,,Standard,Valentín Barco
+590131,87,MissedShots,0.7519999694824219,0.6359999847412109,0.06161506101489067,Valentín Barco,h,12498,DirectFreekick,2024,LeftFoot,27019,Sevilla,Girona,0,2,2024-09-01 17:00:00,,Standard,Valentín Barco
+593404,44,BlockedShot,0.8169999694824219,0.49900001525878906,0.06183392554521561,Valentín Barco,h,12498,OpenPlay,2024,RightFoot,27046,Sevilla,Real Valladolid,2,1,2024-09-24 17:00:00,,BallTouch,Valentín Barco
+593407,53,MissedShots,0.7519999694824219,0.5790000152587891,0.02760978229343891,Valentín Barco,h,12498,OpenPlay,2024,LeftFoot,27046,Sevilla,Real Valladolid,2,1,2024-09-24 17:00:00,Kelechi Iheanacho,Pass,Valentín Barco
+593417,79,MissedShots,0.705,0.740999984741211,0.013807668350636959,Valentín Barco,h,12498,OpenPlay,2024,LeftFoot,27046,Sevilla,Real Valladolid,2,1,2024-09-24 17:00:00,Suso,Pass,Valentín Barco
+593420,86,MissedShots,0.7269999694824218,0.69,0.015959007665514946,Valentín Barco,h,12498,OpenPlay,2024,LeftFoot,27046,Sevilla,Real Valladolid,2,1,2024-09-24 17:00:00,Peque,Pass,Valentín Barco
+616462,6,MissedShots,0.7519999694824219,0.33099998474121095,0.051142554730176926,Valentín Barco,h,12498,DirectFreekick,2024,LeftFoot,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,,Standard,Valentín Barco
+621942,66,MissedShots,0.7619999694824219,0.6120000076293945,0.023519370704889297,Valentín Barco,a,12498,OpenPlay,2024,LeftFoot,28266,Nantes,Strasbourg,0,1,2025-03-09 16:15:00,Andrey Santos,Pass,Valentín Barco
+623886,52,BlockedShot,0.7819999694824219,0.735,0.01466805674135685,Valentín Barco,h,12498,FromCorner,2024,LeftFoot,28285,Strasbourg,Lyon,4,2,2025-03-28 19:45:00,,None,Valentín Barco
+626405,75,MissedShots,0.7809999847412109,0.48700000762939455,0.03970237448811531,Valentín Barco,a,12498,OpenPlay,2024,LeftFoot,28298,Reims,Strasbourg,0,1,2025-04-06 15:15:00,Dilane Bakwa,Pass,Valentín Barco
+627474,45,BlockedShot,0.8119999694824219,0.47299999237060547,0.0555385984480381,Valentín Barco,h,12498,OpenPlay,2024,LeftFoot,28304,Strasbourg,Nice,2,2,2025-04-12 19:05:00,Dilane Bakwa,Pass,Valentín Barco
+628882,65,MissedShots,0.8630000305175781,0.4879999923706055,0.10558366775512695,Valentín Barco,a,12498,OpenPlay,2024,LeftFoot,28316,Monaco,Strasbourg,0,0,2025-04-19 17:00:00,Diego Moreira,Pass,Valentín Barco
+628883,65,SavedShot,0.750999984741211,0.5670000076293945,0.021597210317850113,Valentín Barco,a,12498,OpenPlay,2024,LeftFoot,28316,Monaco,Strasbourg,0,0,2025-04-19 17:00:00,Felix Lemarechal,BallRecovery,Valentín Barco
+630405,51,BlockedShot,0.8169999694824219,0.61,0.03504006564617157,Valentín Barco,h,12498,OpenPlay,2024,LeftFoot,28319,Strasbourg,Saint-Etienne,3,1,2025-04-26 15:00:00,,Rebound,Valentín Barco
+631521,64,BlockedShot,0.875,0.5720000076293945,0.07111579179763794,Valentín Barco,h,12498,FromCorner,2024,LeftFoot,28328,Strasbourg,Paris Saint Germain,2,1,2025-05-03 15:00:00,,None,Valentín Barco
+640918,21,BlockedShot,0.9059999847412109,0.7030000305175781,0.0553390271961689,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29563,Monaco,Strasbourg,3,2,2025-08-31 15:15:00,Diego Moreira,Pass,Valentín Barco
+642407,13,SavedShot,0.9119999694824219,0.5729999923706055,0.08867114037275314,Valentín Barco,h,12498,OpenPlay,2025,Head,29573,Strasbourg,Le Havre,1,0,2025-09-14 15:15:00,Diego Moreira,Cross,Valentín Barco
+642410,31,SavedShot,0.8669999694824219,0.6220000076293946,0.05897190049290657,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29573,Strasbourg,Le Havre,1,0,2025-09-14 15:15:00,Mathis Amougou,Chipped,Valentín Barco
+644403,19,MissedShots,0.93,0.32299999237060545,0.28912386298179626,Valentín Barco,h,12498,OpenPlay,2025,RightFoot,29590,Strasbourg,Marseille,1,2,2025-09-26 18:45:00,Diego Moreira,Pass,Valentín Barco
+646902,33,MissedShots,0.66,0.7,0.024945920333266258,Valentín Barco,h,12498,DirectFreekick,2025,LeftFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,,Standard,Valentín Barco
+650485,59,Goal,0.9519999694824218,0.649000015258789,0.07201064378023148,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29627,Strasbourg,Auxerre,3,0,2025-10-29 19:05:00,,Rebound,Valentín Barco
+651425,56,SavedShot,0.9640000152587891,0.6609999847412109,0.23544330894947052,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,Diego Moreira,Pass,Valentín Barco
+651426,57,MissedShots,0.8980000305175782,0.3390000152587891,0.0742628276348114,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,Sebastian Nanasi,Pass,Valentín Barco
+651435,93,BlockedShot,0.8569999694824219,0.2539999961853027,0.027026774361729622,Valentín Barco,a,12498,FromCorner,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,Sebastian Nanasi,Pass,Valentín Barco
+651438,94,MissedShots,0.7869999694824219,0.7319999694824219,0.01942247338593006,Valentín Barco,a,12498,FromCorner,2025,LeftFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,,Rebound,Valentín Barco
+652976,49,MissedShots,0.74,0.6869999694824219,0.0225147046148777,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29645,Strasbourg,Lille,2,0,2025-11-09 16:15:00,Joaquín Panichelli,Pass,Valentín Barco
+653738,33,BlockedShot,0.750999984741211,0.5,0.06883493065834045,Valentín Barco,a,12498,DirectFreekick,2025,LeftFoot,29648,Lens,Strasbourg,1,0,2025-11-22 16:00:00,,Standard,Valentín Barco
+653745,57,BlockedShot,0.905,0.685,0.05460348725318909,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29648,Lens,Strasbourg,1,0,2025-11-22 16:00:00,,None,Valentín Barco
+658776,22,MissedShots,0.884000015258789,0.18200000762939453,0.05996132642030716,Valentín Barco,h,12498,DirectFreekick,2025,LeftFoot,29680,Strasbourg,Lorient,0,0,2025-12-14 16:15:00,,Standard,Valentín Barco
+658792,94,BlockedShot,0.7280000305175781,0.4109999847412109,0.018476352095603943,Valentín Barco,h,12498,OpenPlay,2025,RightFoot,29680,Strasbourg,Lorient,0,0,2025-12-14 16:15:00,Guela Doué,Pass,Valentín Barco
+658793,96,BlockedShot,0.7659999847412109,0.615,0.021152164787054062,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29680,Strasbourg,Lorient,0,0,2025-12-14 16:15:00,Kendry Páez,Pass,Valentín Barco
+661167,76,BlockedShot,0.8569999694824219,0.6120000076293945,0.07413260638713837,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29688,Nice,Strasbourg,1,1,2026-01-03 18:00:00,Diego Moreira,Pass,Valentín Barco
+664064,59,MissedShots,0.9030000305175782,0.7219999694824218,0.05251910910010338,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Samir El Mourabet,Pass,Valentín Barco
+672859,69,SavedShot,0.8680000305175781,0.6409999847412109,0.28330764174461365,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29754,Auxerre,Strasbourg,0,0,2026-03-07 18:00:00,,Rebound,Valentín Barco
+674478,52,BlockedShot,0.7680000305175781,0.27399999618530274,0.04782703518867493,Valentín Barco,h,12498,DirectFreekick,2025,LeftFoot,29771,Strasbourg,Paris FC,0,0,2026-03-15 14:00:00,,Standard,Valentín Barco
+674481,61,BlockedShot,0.960999984741211,0.7,0.11850158870220184,Valentín Barco,h,12498,OpenPlay,2025,LeftFoot,29771,Strasbourg,Paris FC,0,0,2026-03-15 14:00:00,Martial Godo,Throughball,Valentín Barco
+676210,21,SavedShot,0.9730000305175781,0.44,0.4879339039325714,Valentín Barco,a,12498,OpenPlay,2025,Head,29776,Nantes,Strasbourg,2,3,2026-03-22 19:45:00,Martial Godo,Cross,Valentín Barco
+676213,30,SavedShot,0.8580000305175781,0.465,0.08271169662475586,Valentín Barco,a,12498,OpenPlay,2025,LeftFoot,29776,Nantes,Strasbourg,2,3,2026-03-22 19:45:00,Martial Godo,Pass,Valentín Barco
+676217,44,BlockedShot,0.8669999694824219,0.33,0.04799061641097069,Valentín Barco,a,12498,OpenPlay,2025,RightFoot,29776,Nantes,Strasbourg,2,3,2026-03-22 19:45:00,Samuel Amo-Ameyaw,TakeOn,Valentín Barco

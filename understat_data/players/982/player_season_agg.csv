@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,29,0,0,2610,0,0,0.47920700907707214,1,2021,Norwich,1,0,0,0,2.564329088665545,2.564329088665545,982,Tim Krul
+season,GK,36,0,0,3240,0,0,0,0,2019,Norwich,4,0,0,0,3.5150500126183033,3.5150500126183033,982,Tim Krul
+season,GK,8,0,0,720,0,0,0,0,2015,Newcastle United,0,0,0,0,0.10725149512290955,0.10725149512290955,982,Tim Krul
+season,GK,30,0,0,2700,0,1,0.2590459883213043,1,2014,Newcastle United,1,0,0,0,1.189519913867116,1.189519913867116,982,Tim Krul

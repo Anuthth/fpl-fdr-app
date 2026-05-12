@@ -1,0 +1,620 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+14439,83,MissedShots,0.9569999694824218,0.710999984741211,0.050206899642944336,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4755,Arsenal,Crystal Palace,2,1,2014-08-16 17:30:00,Alexis Sánchez,Pass,Olivier Giroud
+14739,45,MissedShots,0.9540000152587891,0.59,0.28176599740982056,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4764,Everton,Arsenal,2,2,2014-08-23 17:30:00,Alex Oxlade-Chamberlain,Chipped,Olivier Giroud
+14741,66,MissedShots,0.8030000305175782,0.4159999847412109,0.05226169899106026,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4764,Everton,Arsenal,2,2,2014-08-23 17:30:00,Jack Wilshere,Pass,Olivier Giroud
+14742,68,SavedShot,0.8769999694824219,0.4179999923706055,0.06098350137472153,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4764,Everton,Arsenal,2,2,2014-08-23 17:30:00,,None,Olivier Giroud
+14747,85,MissedShots,0.9159999847412109,0.45099998474121095,0.07618279755115509,Olivier Giroud,a,502,FromCorner,2014,Head,4764,Everton,Arsenal,2,2,2014-08-23 17:30:00,Santiago Cazorla,Cross,Olivier Giroud
+14748,89,Goal,0.925,0.5179999923706055,0.11228200048208237,Olivier Giroud,a,502,OpenPlay,2014,Head,4764,Everton,Arsenal,2,2,2014-08-23 17:30:00,Nacho Monreal,Cross,Olivier Giroud
+16078,76,MissedShots,0.9159999847412109,0.5029999923706054,0.09443330019712448,Olivier Giroud,h,502,FromCorner,2014,Head,4675,Arsenal,Manchester United,1,2,2014-11-22 17:30:00,Alexis Sánchez,Cross,Olivier Giroud
+16083,94,Goal,0.8230000305175781,0.66,0.028996599838137627,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4675,Arsenal,Manchester United,1,2,2014-11-22 17:30:00,Mikel Arteta,Chipped,Olivier Giroud
+18601,26,MissedShots,0.9640000152587891,0.85,0.01772570051252842,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4679,West Bromwich Albion,Arsenal,0,1,2014-11-29 12:45:00,,BallRecovery,Olivier Giroud
+18796,68,SavedShot,0.9080000305175782,0.7419999694824219,0.03227889910340309,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4598,Arsenal,Southampton,1,0,2014-12-03 19:45:00,Alexis Sánchez,Chipped,Olivier Giroud
+18799,69,BlockedShot,0.9580000305175781,0.40099998474121096,0.11998700350522995,Olivier Giroud,h,502,OpenPlay,2014,RightFoot,4598,Arsenal,Southampton,1,0,2014-12-03 19:45:00,,Rebound,Olivier Giroud
+18804,86,SavedShot,0.9169999694824219,0.4490000152587891,0.2767919898033142,Olivier Giroud,h,502,OpenPlay,2014,Head,4598,Arsenal,Southampton,1,0,2014-12-03 19:45:00,Lukas Podolski,Cross,Olivier Giroud
+20163,10,MissedShots,0.924000015258789,0.590999984741211,0.2873300015926361,Olivier Giroud,a,502,OpenPlay,2014,Head,4601,Stoke,Arsenal,3,2,2014-12-06 15:00:00,Héctor Bellerín,Cross,Olivier Giroud
+20165,15,BlockedShot,0.924000015258789,0.4420000076293945,0.08691839873790741,Olivier Giroud,a,502,OpenPlay,2014,Head,4601,Stoke,Arsenal,3,2,2014-12-06 15:00:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+20176,37,SavedShot,0.909000015258789,0.509000015258789,0.0796336978673935,Olivier Giroud,a,502,FromCorner,2014,Head,4601,Stoke,Arsenal,3,2,2014-12-06 15:00:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+17634,14,Goal,0.904000015258789,0.509000015258789,0.04741320013999939,Olivier Giroud,h,502,OpenPlay,2014,Head,4615,Arsenal,Newcastle United,4,1,2014-12-13 17:30:00,Alexis Sánchez,Aerial,Olivier Giroud
+17641,42,BlockedShot,0.92,0.41,0.04353319853544235,Olivier Giroud,h,502,OpenPlay,2014,Head,4615,Arsenal,Newcastle United,4,1,2014-12-13 17:30:00,Alexis Sánchez,Aerial,Olivier Giroud
+17643,57,Goal,0.965,0.41,0.5226079821586609,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4615,Arsenal,Newcastle United,4,1,2014-12-13 17:30:00,Héctor Bellerín,Pass,Olivier Giroud
+18855,21,MissedShots,0.85,0.475,0.01654909923672676,Olivier Giroud,a,502,OpenPlay,2014,Head,4627,Liverpool,Arsenal,2,2,2014-12-21 16:00:00,Alexis Sánchez,Aerial,Olivier Giroud
+18866,62,MissedShots,0.7830000305175782,0.5609999847412109,0.03418070077896118,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4627,Liverpool,Arsenal,2,2,2014-12-21 16:00:00,Alexis Sánchez,Pass,Olivier Giroud
+18867,64,Goal,0.924000015258789,0.575,0.4230020046234131,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4627,Liverpool,Arsenal,2,2,2014-12-21 16:00:00,Santiago Cazorla,Pass,Olivier Giroud
+19689,24,MissedShots,0.7119999694824218,0.634000015258789,0.013495800085365772,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4638,Arsenal,Queens Park Rangers,2,1,2014-12-26 17:30:00,Danny Welbeck,Pass,Olivier Giroud
+19691,27,SavedShot,0.7780000305175782,0.395,0.07853399962186813,Olivier Giroud,h,502,DirectFreekick,2014,LeftFoot,4638,Arsenal,Queens Park Rangers,2,1,2014-12-26 17:30:00,,Standard,Olivier Giroud
+19692,31,BlockedShot,0.8240000152587891,0.3240000152587891,0.03060230053961277,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4638,Arsenal,Queens Park Rangers,2,1,2014-12-26 17:30:00,Alexis Sánchez,Pass,Olivier Giroud
+20127,19,SavedShot,0.8219999694824218,0.5359999847412109,0.07204479724168777,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4569,Arsenal,Stoke,3,0,2015-01-11 13:30:00,Alexis Sánchez,Pass,Olivier Giroud
+20128,20,MissedShots,0.8690000152587891,0.6869999694824219,0.3293049931526184,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4569,Arsenal,Stoke,3,0,2015-01-11 13:30:00,Tomas Rosicky,Throughball,Olivier Giroud
+18829,17,BlockedShot,0.95,0.42400001525878905,0.12166199833154678,Olivier Giroud,a,502,OpenPlay,2014,Head,4579,Manchester City,Arsenal,0,2,2015-01-18 16:00:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+18832,41,MissedShots,0.889000015258789,0.5029999923706054,0.024086400866508484,Olivier Giroud,a,502,SetPiece,2014,Head,4579,Manchester City,Arsenal,0,2,2015-01-18 16:00:00,Santiago Cazorla,Aerial,Olivier Giroud
+18842,66,Goal,0.9019999694824219,0.485,0.2734130024909973,Olivier Giroud,a,502,SetPiece,2014,Head,4579,Manchester City,Arsenal,0,2,2015-01-18 16:00:00,Santiago Cazorla,Chipped,Olivier Giroud
+19461,7,Goal,0.86,0.5590000152587891,0.34302398562431335,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4513,Arsenal,Aston Villa,5,0,2015-02-01 13:30:00,Mesut Özil,Throughball,Olivier Giroud
+19472,68,ShotOnPost,0.9159999847412109,0.549000015258789,0.048028599470853806,Olivier Giroud,h,502,SetPiece,2014,Head,4513,Arsenal,Aston Villa,5,0,2015-02-01 13:30:00,Santiago Cazorla,Aerial,Olivier Giroud
+23606,10,MissedShots,0.865,0.44299999237060544,0.10295099765062332,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4515,Tottenham,Arsenal,2,1,2015-02-07 12:45:00,Danny Welbeck,Pass,Olivier Giroud
+23631,74,MissedShots,0.9159999847412109,0.5129999923706055,0.12259799987077713,Olivier Giroud,a,502,OpenPlay,2014,Head,4515,Tottenham,Arsenal,2,1,2015-02-07 12:45:00,Mesut Özil,Cross,Olivier Giroud
+23799,45,Goal,0.9459999847412109,0.5220000076293946,0.6232519745826721,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,,Rebound,Olivier Giroud
+23805,59,BlockedShot,0.8169999694824219,0.355,0.05042770132422447,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,Calum Chambers,Pass,Olivier Giroud
+23806,59,BlockedShot,0.8269999694824218,0.49599998474121093,0.04292299970984459,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,,Rebound,Olivier Giroud
+23815,85,SavedShot,0.8859999847412109,0.5529999923706055,0.01612119935452938,Olivier Giroud,a,502,SetPiece,2014,Head,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,Santiago Cazorla,Aerial,Olivier Giroud
+23035,26,MissedShots,0.9269999694824219,0.5059999847412109,0.4143669903278351,Olivier Giroud,h,502,OpenPlay,2014,Head,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Alexis Sánchez,Cross,Olivier Giroud
+23036,29,BlockedShot,0.8469999694824218,0.735,0.028729800134897232,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Mesut Özil,Pass,Olivier Giroud
+23040,38,Goal,0.889000015258789,0.4640000152587891,0.058330100029706955,Olivier Giroud,h,502,FromCorner,2014,RightFoot,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Mesut Özil,Cross,Olivier Giroud
+23044,52,BlockedShot,0.9290000152587891,0.3509999847412109,0.0685259997844696,Olivier Giroud,h,502,OpenPlay,2014,RightFoot,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+23051,79,BlockedShot,0.7769999694824219,0.5629999923706055,0.03782210126519203,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Alexis Sánchez,Pass,Olivier Giroud
+23054,91,MissedShots,0.9219999694824219,0.43,0.2925350069999695,Olivier Giroud,h,502,OpenPlay,2014,Head,4481,Arsenal,Everton,2,0,2015-03-01 14:05:00,Héctor Bellerín,Cross,Olivier Giroud
+24227,22,SavedShot,0.884000015258789,0.7119999694824218,0.03103869967162609,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4490,Queens Park Rangers,Arsenal,1,2,2015-03-04 19:45:00,David Ospina,Pass,Olivier Giroud
+24230,32,SavedShot,0.7669999694824219,0.7469999694824219,0.014386500231921673,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4490,Queens Park Rangers,Arsenal,1,2,2015-03-04 19:45:00,Tomas Rosicky,Pass,Olivier Giroud
+24244,63,Goal,0.9719999694824218,0.575,0.49269500374794006,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4490,Queens Park Rangers,Arsenal,1,2,2015-03-04 19:45:00,,Rebound,Olivier Giroud
+21921,23,MissedShots,0.9380000305175781,0.7090000152587891,0.052120599895715714,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4494,Arsenal,West Ham,3,0,2015-03-14 15:00:00,Aaron Ramsey,Pass,Olivier Giroud
+21931,45,Goal,0.889000015258789,0.3509999847412109,0.08425039798021317,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4494,Arsenal,West Ham,3,0,2015-03-14 15:00:00,Aaron Ramsey,Pass,Olivier Giroud
+21937,74,MissedShots,0.8919999694824219,0.5309999847412109,0.0586153008043766,Olivier Giroud,h,502,FromCorner,2014,Head,4494,Arsenal,West Ham,3,0,2015-03-14 15:00:00,Mesut Özil,Cross,Olivier Giroud
+22019,23,Goal,0.9209999847412109,0.47900001525878905,0.13480299711227417,Olivier Giroud,a,502,SetPiece,2014,LeftFoot,4508,Newcastle United,Arsenal,1,2,2015-03-21 15:00:00,Danny Welbeck,Rebound,Olivier Giroud
+22021,27,Goal,0.94,0.504000015258789,0.1264909952878952,Olivier Giroud,a,502,FromCorner,2014,Head,4508,Newcastle United,Arsenal,1,2,2015-03-21 15:00:00,Santiago Cazorla,Cross,Olivier Giroud
+22029,53,BlockedShot,0.87,0.745,0.04356030002236366,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4508,Newcastle United,Arsenal,1,2,2015-03-21 15:00:00,Francis Coquelin,Chipped,Olivier Giroud
+20791,41,MissedShots,0.914000015258789,0.5070000076293946,0.03807989880442619,Olivier Giroud,h,502,FromCorner,2014,Head,4440,Arsenal,Liverpool,4,1,2015-04-04 12:45:00,Mesut Özil,Aerial,Olivier Giroud
+20793,50,SavedShot,0.7919999694824219,0.24899999618530275,0.018292099237442017,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4440,Arsenal,Liverpool,4,1,2015-04-04 12:45:00,,None,Olivier Giroud
+20795,54,SavedShot,0.92,0.5120000076293946,0.059483498334884644,Olivier Giroud,h,502,OpenPlay,2014,Head,4440,Arsenal,Liverpool,4,1,2015-04-04 12:45:00,Mesut Özil,Aerial,Olivier Giroud
+20796,54,SavedShot,0.899000015258789,0.519000015258789,0.06033239886164665,Olivier Giroud,h,502,FromCorner,2014,Head,4440,Arsenal,Liverpool,4,1,2015-04-04 12:45:00,Mesut Özil,Cross,Olivier Giroud
+20810,90,Goal,0.8130000305175781,0.4520000076293945,0.07425480335950851,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4440,Arsenal,Liverpool,4,1,2015-04-04 12:45:00,Alexis Sánchez,Pass,Olivier Giroud
+22823,7,MissedShots,0.6830000305175781,0.4570000076293945,0.01575770042836666,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4457,Burnley,Arsenal,0,1,2015-04-11 17:30:00,David Ospina,Pass,Olivier Giroud
+21733,25,MissedShots,0.8909999847412109,0.6359999847412109,0.05719440057873726,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4477,Arsenal,Chelsea,0,0,2015-04-26 16:00:00,Mesut Özil,Cross,Olivier Giroud
+21736,38,MissedShots,0.9259999847412109,0.45799999237060546,0.04483490064740181,Olivier Giroud,h,502,FromCorner,2014,Head,4477,Arsenal,Chelsea,0,0,2015-04-26 16:00:00,Mesut Özil,Aerial,Olivier Giroud
+20927,13,MissedShots,0.925,0.5479999923706055,0.12307500094175339,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4408,Hull,Arsenal,1,3,2015-05-04 20:00:00,Alexis Sánchez,Cross,Olivier Giroud
+20945,82,BlockedShot,0.715,0.425,0.022922400385141373,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4408,Hull,Arsenal,1,3,2015-05-04 20:00:00,Jack Wilshere,Pass,Olivier Giroud
+22652,2,MissedShots,0.9159999847412109,0.47299999237060547,0.06446480005979538,Olivier Giroud,h,502,OpenPlay,2014,Head,4418,Arsenal,Swansea,0,1,2015-05-11 20:00:00,Aaron Ramsey,Chipped,Olivier Giroud
+22661,41,MissedShots,0.7469999694824219,0.5209999847412109,0.023874299600720406,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4418,Arsenal,Swansea,0,1,2015-05-11 20:00:00,Alexis Sánchez,Pass,Olivier Giroud
+22666,58,SavedShot,0.855,0.5320000076293945,0.09943269938230515,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4418,Arsenal,Swansea,0,1,2015-05-11 20:00:00,Mesut Özil,Pass,Olivier Giroud
+22621,62,SavedShot,0.9440000152587891,0.5629999923706055,0.511693000793457,Olivier Giroud,a,502,OpenPlay,2014,RightFoot,4427,Manchester United,Arsenal,1,1,2015-05-17 16:00:00,Mesut Özil,Pass,Olivier Giroud
+22625,83,MissedShots,0.9519999694824218,0.5929999923706055,0.4325520098209381,Olivier Giroud,a,502,OpenPlay,2014,LeftFoot,4427,Manchester United,Arsenal,1,1,2015-05-17 16:00:00,Mesut Özil,Pass,Olivier Giroud
+22046,30,MissedShots,0.9219999694824219,0.64,0.07929150015115738,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4429,Arsenal,Sunderland,0,0,2015-05-20 19:45:00,Jack Wilshere,Chipped,Olivier Giroud
+22052,53,MissedShots,0.9,0.5609999847412109,0.07621850073337555,Olivier Giroud,h,502,OpenPlay,2014,Head,4429,Arsenal,Sunderland,0,0,2015-05-20 19:45:00,Mesut Özil,Cross,Olivier Giroud
+22054,55,SavedShot,0.9180000305175782,0.385,0.06878729909658432,Olivier Giroud,h,502,OpenPlay,2014,LeftFoot,4429,Arsenal,Sunderland,0,0,2015-05-20 19:45:00,Héctor Bellerín,Cross,Olivier Giroud
+51480,25,BlockedShot,0.919000015258789,0.6270000076293946,0.06939149647951126,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,88,Arsenal,West Ham,0,2,2015-08-09 16:30:00,Francis Coquelin,Cross,Olivier Giroud
+51492,54,MissedShots,0.9030000305175782,0.6790000152587891,0.06115930154919624,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,88,Arsenal,West Ham,0,2,2015-08-09 16:30:00,Mesut Özil,Pass,Olivier Giroud
+51493,55,SavedShot,0.845,0.415,0.07066380232572556,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,88,Arsenal,West Ham,0,2,2015-08-09 16:30:00,Alex Oxlade-Chamberlain,Pass,Olivier Giroud
+51495,64,SavedShot,0.92,0.5209999847412109,0.0607202984392643,Olivier Giroud,h,502,SetPiece,2015,Head,88,Arsenal,West Ham,0,2,2015-08-09 16:30:00,Santiago Cazorla,Aerial,Olivier Giroud
+51502,88,MissedShots,0.9430000305175781,0.4129999923706055,0.2760219871997833,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,88,Arsenal,West Ham,0,2,2015-08-09 16:30:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+51732,4,BlockedShot,0.9219999694824219,0.6020000076293945,0.11764100193977356,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,98,Crystal Palace,Arsenal,1,2,2015-08-16 16:30:00,Aaron Ramsey,Pass,Olivier Giroud
+51741,15,Goal,0.885,0.4620000076293945,0.09460029751062393,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,98,Crystal Palace,Arsenal,1,2,2015-08-16 16:30:00,Mesut Özil,Cross,Olivier Giroud
+51745,31,MissedShots,0.875999984741211,0.5709999847412109,0.09701699763536453,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,98,Crystal Palace,Arsenal,1,2,2015-08-16 16:30:00,Santiago Cazorla,Pass,Olivier Giroud
+56368,17,SavedShot,0.8730000305175781,0.5070000076293946,0.013836200349032879,Olivier Giroud,h,502,FromCorner,2015,Head,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,Mesut Özil,Aerial,Olivier Giroud
+56376,52,BlockedShot,0.9209999847412109,0.44599998474121094,0.13768400251865387,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,Alexis Sánchez,Pass,Olivier Giroud
+56377,56,MissedShots,0.8190000152587891,0.6359999847412109,0.039771199226379395,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,Alexis Sánchez,Pass,Olivier Giroud
+56383,67,BlockedShot,0.945,0.555,0.14792199432849884,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,Nacho Monreal,Pass,Olivier Giroud
+56384,69,SavedShot,0.9219999694824219,0.49900001525878906,0.5659390091896057,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,Aaron Ramsey,Pass,Olivier Giroud
+57641,71,MissedShots,0.8580000305175781,0.77,0.025055300444364548,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,111,Newcastle United,Arsenal,0,1,2015-08-29 15:45:00,Alexis Sánchez,Chipped,Olivier Giroud
+57643,76,SavedShot,0.845999984741211,0.6090000152587891,0.07470239698886871,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,111,Newcastle United,Arsenal,0,1,2015-08-29 15:45:00,Nacho Monreal,Pass,Olivier Giroud
+57647,92,SavedShot,0.89,0.4279999923706055,0.41736799478530884,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,111,Newcastle United,Arsenal,0,1,2015-08-29 15:45:00,Aaron Ramsey,Throughball,Olivier Giroud
+57809,75,MissedShots,0.9109999847412109,0.5629999923706055,0.381648987531662,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,122,Arsenal,Stoke,2,0,2015-09-12 18:00:00,,Rebound,Olivier Giroud
+57811,84,Goal,0.9419999694824219,0.529000015258789,0.510604977607727,Olivier Giroud,h,502,SetPiece,2015,Head,122,Arsenal,Stoke,2,0,2015-09-12 18:00:00,Santiago Cazorla,Cross,Olivier Giroud
+58371,92,Goal,0.885,0.54,0.12612099945545197,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,144,Leicester,Arsenal,2,5,2015-09-26 18:00:00,Nacho Monreal,Cross,Olivier Giroud
+58642,85,SavedShot,0.8640000152587891,0.534000015258789,0.12916199862957,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,160,Arsenal,Manchester United,3,0,2015-10-04 19:00:00,Alex Oxlade-Chamberlain,Pass,Olivier Giroud
+59164,67,Goal,0.9330000305175781,0.4620000076293945,0.5748249888420105,Olivier Giroud,a,502,OpenPlay,2015,RightFoot,168,Watford,Arsenal,0,3,2015-10-17 20:30:00,Mesut Özil,Pass,Olivier Giroud
+59168,82,SavedShot,0.9269999694824219,0.39,0.03167629987001419,Olivier Giroud,a,502,FromCorner,2015,Head,168,Watford,Arsenal,0,3,2015-10-17 20:30:00,Santiago Cazorla,Cross,Olivier Giroud
+59170,91,MissedShots,0.845999984741211,0.67,0.08755510300397873,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,168,Watford,Arsenal,0,3,2015-10-17 20:30:00,,TakeOn,Olivier Giroud
+59189,7,MissedShots,0.9390000152587891,0.4159999847412109,0.02604839950799942,Olivier Giroud,h,502,FromCorner,2015,Head,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,Santiago Cazorla,Aerial,Olivier Giroud
+59195,35,Goal,0.9469999694824218,0.4929999923706055,0.5385599732398987,Olivier Giroud,h,502,OpenPlay,2015,Head,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,Mesut Özil,Cross,Olivier Giroud
+59202,55,SavedShot,0.9159999847412109,0.3390000152587891,0.0867106020450592,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,Alex Oxlade-Chamberlain,HeadPass,Olivier Giroud
+59207,68,ShotOnPost,0.8490000152587891,0.30700000762939456,0.050096601247787476,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,Mesut Özil,Pass,Olivier Giroud
+59211,83,MissedShots,0.889000015258789,0.5129999923706055,0.04728670045733452,Olivier Giroud,h,502,OpenPlay,2015,Head,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,,BallTouch,Olivier Giroud
+59225,92,BlockedShot,0.9169999694824219,0.6020000076293945,0.12828600406646729,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,Mesut Özil,Pass,Olivier Giroud
+52988,28,MissedShots,0.8580000305175781,0.43900001525878907,0.31294599175453186,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,185,Swansea,Arsenal,0,3,2015-10-31 19:00:00,Alexis Sánchez,Pass,Olivier Giroud
+52993,48,Goal,0.9230000305175782,0.5359999847412109,0.312747985124588,Olivier Giroud,a,502,FromCorner,2015,Head,185,Swansea,Arsenal,0,3,2015-10-31 19:00:00,Mesut Özil,Cross,Olivier Giroud
+54029,53,ShotOnPost,0.9469999694824218,0.5220000076293946,0.4947429895401001,Olivier Giroud,h,502,SetPiece,2015,Head,199,Arsenal,Tottenham,1,1,2015-11-08 20:00:00,Mesut Özil,Cross,Olivier Giroud
+54031,59,MissedShots,0.9390000152587891,0.4909999847412109,0.42378100752830505,Olivier Giroud,h,502,FromCorner,2015,Head,199,Arsenal,Tottenham,1,1,2015-11-08 20:00:00,Mesut Özil,Cross,Olivier Giroud
+54038,75,BlockedShot,0.86,0.45799999237060546,0.01621050015091896,Olivier Giroud,h,502,OpenPlay,2015,Head,199,Arsenal,Tottenham,1,1,2015-11-08 20:00:00,Nacho Monreal,Aerial,Olivier Giroud
+54041,78,MissedShots,0.8859999847412109,0.5420000076293945,0.05565350130200386,Olivier Giroud,h,502,FromCorner,2015,LeftFoot,199,Arsenal,Tottenham,1,1,2015-11-08 20:00:00,Mesut Özil,Cross,Olivier Giroud
+54042,83,SavedShot,0.9069999694824219,0.4540000152587891,0.07258690148591995,Olivier Giroud,h,502,FromCorner,2015,Head,199,Arsenal,Tottenham,1,1,2015-11-08 20:00:00,Mesut Özil,Cross,Olivier Giroud
+55508,27,Goal,0.9290000152587891,0.5109999847412109,0.4253450036048889,Olivier Giroud,a,502,SetPiece,2015,Head,204,West Bromwich Albion,Arsenal,2,1,2015-11-21 19:00:00,Mesut Özil,Cross,Olivier Giroud
+52462,18,MissedShots,0.955999984741211,0.575,0.11690399795770645,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,220,Norwich,Arsenal,1,1,2015-11-29 20:15:00,Nacho Monreal,Cross,Olivier Giroud
+52476,76,MissedShots,0.9269999694824219,0.49,0.07775600254535675,Olivier Giroud,a,502,OpenPlay,2015,Head,220,Norwich,Arsenal,1,1,2015-11-29 20:15:00,Alex Oxlade-Chamberlain,Aerial,Olivier Giroud
+53476,44,OwnGoal,0.048000001907348634,0.42700000762939455,0,Olivier Giroud,h,502,SetPiece,2015,LeftFoot,225,Arsenal,Sunderland,3,1,2015-12-05 19:00:00,,None,Olivier Giroud
+53484,62,Goal,0.91,0.5479999923706055,0.10531800240278244,Olivier Giroud,h,502,OpenPlay,2015,Head,225,Arsenal,Sunderland,3,1,2015-12-05 19:00:00,Aaron Ramsey,Cross,Olivier Giroud
+53487,65,BlockedShot,0.93,0.45,0.10076099634170532,Olivier Giroud,h,502,FromCorner,2015,Head,225,Arsenal,Sunderland,3,1,2015-12-05 19:00:00,Mesut Özil,Cross,Olivier Giroud
+53036,7,Goal,0.885,0.5,0.7611690163612366,Olivier Giroud,a,502,Penalty,2015,LeftFoot,237,Aston Villa,Arsenal,0,2,2015-12-13 17:30:00,,Standard,Olivier Giroud
+55530,45,Goal,0.915,0.6719999694824219,0.08681219816207886,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,250,Arsenal,Manchester City,2,1,2015-12-22 00:00:00,Mesut Özil,Pass,Olivier Giroud
+55155,1,MissedShots,0.875,0.5770000076293945,0.01778010092675686,Olivier Giroud,a,502,FromCorner,2015,Head,260,Southampton,Arsenal,4,0,2015-12-26 23:45:00,Mesut Özil,Cross,Olivier Giroud
+55157,16,MissedShots,0.8780000305175781,0.515,0.028543300926685333,Olivier Giroud,a,502,OpenPlay,2015,Head,260,Southampton,Arsenal,4,0,2015-12-26 23:45:00,Mesut Özil,Aerial,Olivier Giroud
+55171,83,SavedShot,0.874000015258789,0.5279999923706055,0.028401099145412445,Olivier Giroud,a,502,OpenPlay,2015,Head,260,Southampton,Arsenal,4,0,2015-12-26 23:45:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+52313,35,MissedShots,0.895,0.5790000152587891,0.029165400192141533,Olivier Giroud,h,502,FromCorner,2015,Head,266,Arsenal,Bournemouth,2,0,2015-12-28 21:30:00,Mesut Özil,Cross,Olivier Giroud
+52319,70,SavedShot,0.8130000305175781,0.39,0.04528779909014702,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,266,Arsenal,Bournemouth,2,0,2015-12-28 21:30:00,,None,Olivier Giroud
+52322,78,MissedShots,0.8719999694824219,0.529000015258789,0.13205799460411072,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,266,Arsenal,Bournemouth,2,0,2015-12-28 21:30:00,Mesut Özil,Pass,Olivier Giroud
+54868,36,MissedShots,0.9,0.5129999923706055,0.021549299359321594,Olivier Giroud,h,502,FromCorner,2015,Head,273,Arsenal,Newcastle United,1,0,2016-01-02 19:00:00,Mesut Özil,Aerial,Olivier Giroud
+54867,36,BlockedShot,0.8959999847412109,0.7319999694824219,0.03688880056142807,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,273,Arsenal,Newcastle United,1,0,2016-01-02 19:00:00,Alex Oxlade-Chamberlain,Pass,Olivier Giroud
+54874,47,MissedShots,0.945,0.5670000076293945,0.12761899828910828,Olivier Giroud,h,502,OpenPlay,2015,Head,273,Arsenal,Newcastle United,1,0,2016-01-02 19:00:00,Nacho Monreal,Cross,Olivier Giroud
+54877,58,MissedShots,0.9419999694824219,0.6659999847412109,0.07620230317115784,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,273,Arsenal,Newcastle United,1,0,2016-01-02 19:00:00,Laurent Koscielny,Pass,Olivier Giroud
+53894,24,Goal,0.9830000305175781,0.59,0.23548899590969086,Olivier Giroud,a,502,FromCorner,2015,LeftFoot,289,Liverpool,Arsenal,3,3,2016-01-14 00:00:00,Aaron Ramsey,Cross,Olivier Giroud
+53895,27,MissedShots,0.9719999694824218,0.5259999847412109,0.87192702293396,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,289,Liverpool,Arsenal,3,3,2016-01-14 00:00:00,Theo Walcott,Pass,Olivier Giroud
+53905,53,MissedShots,0.87,0.5570000076293945,0.033098600804805756,Olivier Giroud,a,502,SetPiece,2015,Head,289,Liverpool,Arsenal,3,3,2016-01-14 00:00:00,Mesut Özil,Cross,Olivier Giroud
+53906,54,Goal,0.885,0.46,0.09063190221786499,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,289,Liverpool,Arsenal,3,3,2016-01-14 00:00:00,,None,Olivier Giroud
+53911,62,BlockedShot,0.8480000305175781,0.4879999923706055,0.10344299674034119,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,289,Liverpool,Arsenal,3,3,2016-01-14 00:00:00,Joel Campbell,Pass,Olivier Giroud
+52826,20,SavedShot,0.9069999694824219,0.34200000762939453,0.318342000246048,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,299,Stoke,Arsenal,0,0,2016-01-17 20:15:00,Joel Campbell,Throughball,Olivier Giroud
+52832,46,SavedShot,0.9030000305175782,0.46,0.059950899332761765,Olivier Giroud,a,502,FromCorner,2015,Head,299,Stoke,Arsenal,0,0,2016-01-17 20:15:00,Aaron Ramsey,Cross,Olivier Giroud
+53603,15,MissedShots,0.7190000152587891,0.524000015258789,0.01590609923005104,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,310,Arsenal,Chelsea,0,1,2016-01-24 20:00:00,Theo Walcott,Pass,Olivier Giroud
+53190,42,BlockedShot,0.919000015258789,0.45599998474121095,0.07115290313959122,Olivier Giroud,h,502,OpenPlay,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Alexis Sánchez,Chipped,Olivier Giroud
+53191,47,SavedShot,0.8630000305175781,0.5479999923706055,0.1081869974732399,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Aaron Ramsey,Pass,Olivier Giroud
+53196,55,BlockedShot,0.98,0.6580000305175782,0.06458549946546555,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Alexis Sánchez,Pass,Olivier Giroud
+53197,55,SavedShot,0.9230000305175782,0.5579999923706055,0.08071409910917282,Olivier Giroud,h,502,FromCorner,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Mesut Özil,Cross,Olivier Giroud
+53206,69,BlockedShot,0.9080000305175782,0.629000015258789,0.01648169942200184,Olivier Giroud,h,502,FromCorner,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Mesut Özil,Cross,Olivier Giroud
+53210,71,MissedShots,0.9230000305175782,0.4779999923706055,0.06462880223989487,Olivier Giroud,h,502,OpenPlay,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Mesut Özil,Aerial,Olivier Giroud
+53211,72,BlockedShot,0.9669999694824218,0.595999984741211,0.05882269889116287,Olivier Giroud,h,502,FromCorner,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Alexis Sánchez,Cross,Olivier Giroud
+53215,79,SavedShot,0.9069999694824219,0.5420000076293945,0.10140100121498108,Olivier Giroud,h,502,SetPiece,2015,Head,311,Arsenal,Southampton,0,0,2016-02-02 23:45:00,Mesut Özil,Cross,Olivier Giroud
+55840,54,SavedShot,0.92,0.45599998474121095,0.03606700152158737,Olivier Giroud,a,502,FromCorner,2015,Head,329,Bournemouth,Arsenal,0,2,2016-02-07 17:30:00,Mesut Özil,Aerial,Olivier Giroud
+54212,25,MissedShots,0.9530000305175781,0.509000015258789,0.08339100331068039,Olivier Giroud,h,502,FromCorner,2015,Head,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,Alex Oxlade-Chamberlain,Aerial,Olivier Giroud
+54213,36,BlockedShot,0.9209999847412109,0.49700000762939456,0.06993000209331512,Olivier Giroud,h,502,FromCorner,2015,OtherBodyPart,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,Mesut Özil,Cross,Olivier Giroud
+54219,52,MissedShots,0.9230000305175782,0.45799999237060546,0.04525249823927879,Olivier Giroud,h,502,OpenPlay,2015,Head,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,Nacho Monreal,Aerial,Olivier Giroud
+54224,73,BlockedShot,0.9159999847412109,0.5070000076293946,0.12331999838352203,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,Alexis Sánchez,Cross,Olivier Giroud
+54230,83,SavedShot,0.889000015258789,0.5309999847412109,0.039025500416755676,Olivier Giroud,h,502,OpenPlay,2015,Head,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,Héctor Bellerín,Aerial,Olivier Giroud
+54234,86,SavedShot,0.91,0.48900001525878906,0.1056390032172203,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,,None,Olivier Giroud
+54235,87,SavedShot,0.9280000305175782,0.49900001525878906,0.07257150113582611,Olivier Giroud,h,502,OpenPlay,2015,Head,338,Arsenal,Leicester,2,1,2016-02-14 16:00:00,,Aerial,Olivier Giroud
+59708,79,MissedShots,0.915,0.5779999923706055,0.029315700754523277,Olivier Giroud,a,502,OpenPlay,2015,Head,348,Manchester United,Arsenal,3,2,2016-02-28 18:05:00,Alexis Sánchez,Aerial,Olivier Giroud
+60504,2,BlockedShot,0.8530000305175781,0.5129999923706055,0.10350699722766876,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,355,Arsenal,Swansea,1,2,2016-03-02 23:45:00,Alexis Sánchez,Pass,Olivier Giroud
+60507,6,BlockedShot,0.899000015258789,0.4279999923706055,0.12298800051212311,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,355,Arsenal,Swansea,1,2,2016-03-02 23:45:00,Héctor Bellerín,Pass,Olivier Giroud
+60526,40,ShotOnPost,0.9,0.5120000076293946,0.32401299476623535,Olivier Giroud,h,502,FromCorner,2015,RightFoot,355,Arsenal,Swansea,1,2,2016-03-02 23:45:00,Per Mertesacker,LayOff,Olivier Giroud
+60536,75,SavedShot,0.9,0.5829999923706055,0.031866900622844696,Olivier Giroud,h,502,FromCorner,2015,Head,355,Arsenal,Swansea,1,2,2016-03-02 23:45:00,Mesut Özil,Cross,Olivier Giroud
+60189,81,BlockedShot,0.7340000152587891,0.5570000076293945,0.026991499587893486,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,374,Everton,Arsenal,0,2,2016-03-19 16:45:00,,TakeOn,Olivier Giroud
+60191,92,MissedShots,0.9009999847412109,0.6459999847412109,0.1053759977221489,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,374,Everton,Arsenal,0,2,2016-03-19 16:45:00,Calum Chambers,Pass,Olivier Giroud
+60985,72,SavedShot,0.924000015258789,0.4979999923706055,0.0521881990134716,Olivier Giroud,h,502,FromCorner,2015,Head,385,Arsenal,Watford,4,0,2016-04-02 18:00:00,Mesut Özil,Aerial,Olivier Giroud
+61284,75,MissedShots,0.8909999847412109,0.504000015258789,0.06590379774570465,Olivier Giroud,a,502,OpenPlay,2015,Head,394,West Ham,Arsenal,3,3,2016-04-09 15:45:00,Nacho Monreal,Cross,Olivier Giroud
+61288,76,SavedShot,0.9330000305175781,0.46,0.13163499534130096,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,413,Arsenal,Crystal Palace,1,1,2016-04-17 19:00:00,Mesut Özil,Cross,Olivier Giroud
+60666,47,SavedShot,0.865999984741211,0.7030000305175781,0.06568639725446701,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,419,Arsenal,West Bromwich Albion,2,0,2016-04-21 22:45:00,Alex Iwobi,Pass,Olivier Giroud
+60672,63,BlockedShot,0.9119999694824219,0.5820000076293945,0.06049950048327446,Olivier Giroud,h,502,FromCorner,2015,LeftFoot,419,Arsenal,West Bromwich Albion,2,0,2016-04-21 22:45:00,Mesut Özil,Cross,Olivier Giroud
+60690,87,SavedShot,0.924000015258789,0.64,0.11669400334358215,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,419,Arsenal,West Bromwich Albion,2,0,2016-04-21 22:45:00,Joel Campbell,Pass,Olivier Giroud
+60694,87,MissedShots,0.9409999847412109,0.5870000076293945,0.14566799998283386,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,419,Arsenal,West Bromwich Albion,2,0,2016-04-21 22:45:00,Joel Campbell,Pass,Olivier Giroud
+56514,8,BlockedShot,0.9769999694824218,0.3320000076293945,0.05655819922685623,Olivier Giroud,a,502,OpenPlay,2015,RightFoot,424,Sunderland,Arsenal,0,0,2016-04-24 17:05:00,Alexis Sánchez,Chipped,Olivier Giroud
+56521,23,MissedShots,0.98,0.5990000152587891,0.08438070118427277,Olivier Giroud,a,502,OpenPlay,2015,RightFoot,424,Sunderland,Arsenal,0,0,2016-04-24 17:05:00,Nacho Monreal,Cross,Olivier Giroud
+56826,10,BlockedShot,0.8719999694824219,0.46599998474121096,0.1145320013165474,Olivier Giroud,h,502,OpenPlay,2015,RightFoot,432,Arsenal,Norwich,1,0,2016-04-30 20:30:00,Aaron Ramsey,Pass,Olivier Giroud
+56837,56,MissedShots,0.91,0.6140000152587891,0.048590898513793945,Olivier Giroud,h,502,FromCorner,2015,RightFoot,432,Arsenal,Norwich,1,0,2016-04-30 20:30:00,Mesut Özil,Cross,Olivier Giroud
+56545,9,Goal,0.935,0.495,0.24396400153636932,Olivier Giroud,a,502,FromCorner,2015,Head,446,Manchester City,Arsenal,2,2,2016-05-08 19:00:00,Mohamed Elneny,Aerial,Olivier Giroud
+56555,60,MissedShots,0.8280000305175781,0.315,0.031138300895690918,Olivier Giroud,a,502,OpenPlay,2015,LeftFoot,446,Manchester City,Arsenal,2,2,2016-05-08 19:00:00,,None,Olivier Giroud
+51967,4,Goal,0.89,0.515,0.07021880149841309,Olivier Giroud,h,502,OpenPlay,2015,Head,451,Arsenal,Aston Villa,4,0,2016-05-15 18:00:00,Nacho Monreal,Cross,Olivier Giroud
+51968,5,BlockedShot,0.785,0.4129999923706055,0.03869200125336647,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,451,Arsenal,Aston Villa,4,0,2016-05-15 18:00:00,Alexis Sánchez,Pass,Olivier Giroud
+51980,77,Goal,0.9480000305175781,0.58,0.1485919952392578,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,451,Arsenal,Aston Villa,4,0,2016-05-15 18:00:00,Mesut Özil,Pass,Olivier Giroud
+51981,79,Goal,0.925,0.5709999847412109,0.5207329988479614,Olivier Giroud,h,502,OpenPlay,2015,LeftFoot,451,Arsenal,Aston Villa,4,0,2016-05-15 18:00:00,Héctor Bellerín,Throughball,Olivier Giroud
+113165,78,MissedShots,0.8969999694824219,0.5279999923706055,0.055416498333215714,Olivier Giroud,h,502,FromCorner,2016,Head,494,Arsenal,Southampton,2,1,2016-09-10 18:00:00,Santiago Cazorla,Cross,Olivier Giroud
+113168,84,MissedShots,0.9369999694824219,0.5690000152587891,0.3220899999141693,Olivier Giroud,h,502,OpenPlay,2016,Head,494,Arsenal,Southampton,2,1,2016-09-10 18:00:00,Santiago Cazorla,Cross,Olivier Giroud
+113727,84,MissedShots,0.9369999694824219,0.5870000076293945,0.1310490071773529,Olivier Giroud,h,502,OpenPlay,2016,RightFoot,518,Arsenal,Chelsea,3,0,2016-09-24 20:30:00,Kieran Gibbs,Cross,Olivier Giroud
+114963,70,Goal,0.9059999847412109,0.5259999847412109,0.10699000209569931,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,2677,Sunderland,Arsenal,1,4,2016-10-29 15:30:00,Kieran Gibbs,Cross,Olivier Giroud
+114966,75,Goal,0.94,0.415,0.025754300877451897,Olivier Giroud,a,502,FromCorner,2016,Head,2677,Sunderland,Arsenal,1,4,2016-10-29 15:30:00,Mesut Özil,Aerial,Olivier Giroud
+115084,89,SavedShot,0.915,0.5179999923706055,0.06346149742603302,Olivier Giroud,h,502,OpenPlay,2016,Head,2692,Arsenal,Tottenham,1,1,2016-11-06 16:00:00,Alexis Sánchez,Aerial,Olivier Giroud
+115513,88,Goal,0.955999984741211,0.534000015258789,0.4597879946231842,Olivier Giroud,a,502,OpenPlay,2016,Head,2697,Manchester United,Arsenal,1,1,2016-11-19 16:30:00,Alex Oxlade-Chamberlain,Cross,Olivier Giroud
+116091,81,MissedShots,0.9580000305175781,0.585,0.13347400724887848,Olivier Giroud,h,502,OpenPlay,2016,Head,2714,Arsenal,Bournemouth,3,1,2016-11-27 18:15:00,Alexis Sánchez,Cross,Olivier Giroud
+116092,85,MissedShots,0.9330000305175781,0.5479999923706055,0.36978599429130554,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,2714,Arsenal,Bournemouth,3,1,2016-11-27 18:15:00,Aaron Ramsey,Chipped,Olivier Giroud
+116518,92,MissedShots,0.9159999847412109,0.509000015258789,0.20841699838638306,Olivier Giroud,h,502,OpenPlay,2016,OtherBodyPart,3118,Arsenal,Stoke,3,1,2016-12-10 19:00:00,Héctor Bellerín,Cross,Olivier Giroud
+116101,11,MissedShots,0.7530000305175781,0.509000015258789,0.022600999101996422,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3149,Arsenal,West Bromwich Albion,1,0,2016-12-26 19:00:00,Kieran Gibbs,Pass,Olivier Giroud
+116115,55,SavedShot,0.915,0.47900001525878905,0.0920381024479866,Olivier Giroud,h,502,FromCorner,2016,Head,3149,Arsenal,West Bromwich Albion,1,0,2016-12-26 19:00:00,Alexis Sánchez,Cross,Olivier Giroud
+116117,58,SavedShot,0.8919999694824219,0.639000015258789,0.0911479964852333,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3149,Arsenal,West Bromwich Albion,1,0,2016-12-26 19:00:00,Mesut Özil,Pass,Olivier Giroud
+116121,85,Goal,0.92,0.5159999847412109,0.08476930111646652,Olivier Giroud,h,502,OpenPlay,2016,Head,3149,Arsenal,West Bromwich Albion,1,0,2016-12-26 19:00:00,Mesut Özil,Chipped,Olivier Giroud
+116126,92,BlockedShot,0.9169999694824219,0.5179999923706055,0.08107250183820724,Olivier Giroud,h,502,OpenPlay,2016,Head,3149,Arsenal,West Bromwich Albion,1,0,2016-12-26 19:00:00,Aaron Ramsey,Chipped,Olivier Giroud
+116998,16,Goal,0.9069999694824219,0.5820000076293945,0.12205599993467331,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3329,Arsenal,Crystal Palace,2,0,2017-01-01 20:00:00,Alexis Sánchez,Cross,Olivier Giroud
+117973,49,MissedShots,0.9230000305175782,0.43400001525878906,0.05816840007901192,Olivier Giroud,a,502,OpenPlay,2016,Head,3336,Bournemouth,Arsenal,3,3,2017-01-03 23:45:00,Alex Oxlade-Chamberlain,Aerial,Olivier Giroud
+117980,72,SavedShot,0.759000015258789,0.519000015258789,0.02538990043103695,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3336,Bournemouth,Arsenal,3,3,2017-01-03 23:45:00,Alexis Sánchez,BallRecovery,Olivier Giroud
+117986,88,BlockedShot,0.9530000305175781,0.5970000076293945,0.11115500330924988,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3336,Bournemouth,Arsenal,3,3,2017-01-03 23:45:00,Lucas Pérez,Pass,Olivier Giroud
+117987,91,Goal,0.9119999694824219,0.5179999923706055,0.0438821017742157,Olivier Giroud,a,502,OpenPlay,2016,Head,3336,Bournemouth,Arsenal,3,3,2017-01-03 23:45:00,Granit Xhaka,Aerial,Olivier Giroud
+117769,36,Goal,0.9630000305175781,0.5259999847412109,0.6988970041275024,Olivier Giroud,a,502,OpenPlay,2016,RightFoot,3343,Swansea,Arsenal,0,4,2017-01-14 19:00:00,,Rebound,Olivier Giroud
+118118,6,BlockedShot,0.9069999694824219,0.6140000152587891,0.030618000775575638,Olivier Giroud,h,502,OpenPlay,2016,Head,3358,Arsenal,Burnley,2,1,2017-01-22 17:15:00,Alexis Sánchez,Chipped,Olivier Giroud
+118127,19,MissedShots,0.8480000305175781,0.5459999847412109,0.09013939648866653,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3358,Arsenal,Burnley,2,1,2017-01-22 17:15:00,Mesut Özil,Pass,Olivier Giroud
+116357,90,Goal,0.9119999694824219,0.5370000076293945,0.29176199436187744,Olivier Giroud,a,502,OpenPlay,2016,Head,3370,Chelsea,Arsenal,3,1,2017-02-04 12:30:00,Nacho Monreal,Cross,Olivier Giroud
+119477,47,SavedShot,0.919000015258789,0.5070000076293946,0.13861499726772308,Olivier Giroud,a,502,OpenPlay,2016,Head,3401,Liverpool,Arsenal,3,1,2017-03-04 17:30:00,Nacho Monreal,Cross,Olivier Giroud
+119962,78,BlockedShot,0.9519999694824218,0.6719999694824219,0.05245969817042351,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3440,Arsenal,West Ham,3,0,2017-04-05 19:45:00,,Rebound,Olivier Giroud
+119963,82,Goal,0.8719999694824219,0.27,0.054382599890232086,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3440,Arsenal,West Ham,3,0,2017-04-05 19:45:00,Alex Oxlade-Chamberlain,Pass,Olivier Giroud
+121254,56,BlockedShot,0.9219999694824219,0.5329999923706055,0.13388000428676605,Olivier Giroud,a,502,SetPiece,2016,LeftFoot,3461,Middlesbrough,Arsenal,1,2,2017-04-17 20:00:00,,Rebound,Olivier Giroud
+121261,80,MissedShots,0.830999984741211,0.5179999923706055,0.09341009706258774,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3461,Middlesbrough,Arsenal,1,2,2017-04-17 20:00:00,Alexis Sánchez,Pass,Olivier Giroud
+121266,93,MissedShots,0.794000015258789,0.37400001525878906,0.051906801760196686,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3461,Middlesbrough,Arsenal,1,2,2017-04-17 20:00:00,Aaron Ramsey,Chipped,Olivier Giroud
+120365,90,MissedShots,0.81,0.33299999237060546,0.038978200405836105,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3410,Arsenal,Leicester,1,0,2017-04-26 19:45:00,Aaron Ramsey,Pass,Olivier Giroud
+121108,51,MissedShots,0.9030000305175782,0.5979999923706054,0.03362499922513962,Olivier Giroud,a,502,FromCorner,2016,LeftFoot,3487,Tottenham,Arsenal,2,0,2017-04-30 16:30:00,,Aerial,Olivier Giroud
+121112,59,SavedShot,0.9019999694824219,0.6519999694824219,0.05141419917345047,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3487,Tottenham,Arsenal,2,0,2017-04-30 16:30:00,,None,Olivier Giroud
+118699,82,Goal,0.9490000152587891,0.524000015258789,0.5695499777793884,Olivier Giroud,a,502,OpenPlay,2016,Head,3390,Southampton,Arsenal,0,2,2017-05-10 19:45:00,Aaron Ramsey,HeadPass,Olivier Giroud
+120276,41,Goal,0.9769999694824218,0.5129999923706055,0.9383159875869751,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3505,Stoke,Arsenal,1,4,2017-05-13 17:30:00,Héctor Bellerín,Pass,Olivier Giroud
+120286,79,Goal,0.9459999847412109,0.500999984741211,0.6407880187034607,Olivier Giroud,a,502,OpenPlay,2016,LeftFoot,3505,Stoke,Arsenal,1,4,2017-05-13 17:30:00,Aaron Ramsey,Pass,Olivier Giroud
+121604,9,SavedShot,0.88,0.5570000076293945,0.3620850145816803,Olivier Giroud,h,502,OpenPlay,2016,LeftFoot,3470,Arsenal,Sunderland,2,0,2017-05-16 19:45:00,Aaron Ramsey,Throughball,Olivier Giroud
+121625,65,MissedShots,0.874000015258789,0.4640000152587891,0.03732309862971306,Olivier Giroud,h,502,OpenPlay,2016,Head,3470,Arsenal,Sunderland,2,0,2017-05-16 19:45:00,Rob Holding,Cross,Olivier Giroud
+121634,80,SavedShot,0.9730000305175781,0.585,0.08243290334939957,Olivier Giroud,h,502,FromCorner,2016,LeftFoot,3470,Arsenal,Sunderland,2,0,2017-05-16 19:45:00,Shkodran Mustafi,Cross,Olivier Giroud
+158164,84,Goal,0.925,0.53,0.04866969957947731,Olivier Giroud,h,502,FromCorner,2017,Head,7119,Arsenal,Leicester,4,3,2017-08-11 19:45:00,Granit Xhaka,Aerial,Olivier Giroud
+158565,93,MissedShots,0.8859999847412109,0.46700000762939453,0.053137801587581635,Olivier Giroud,a,502,OpenPlay,2017,Head,7135,Stoke,Arsenal,1,0,2017-08-19 17:30:00,Nacho Monreal,Cross,Olivier Giroud
+158689,88,MissedShots,0.92,0.49900001525878906,0.12703199684619904,Olivier Giroud,a,502,SetPiece,2017,Head,7148,Liverpool,Arsenal,4,0,2017-08-27 16:00:00,Mesut Özil,Cross,Olivier Giroud
+159051,78,SavedShot,0.9640000152587891,0.6580000305175782,0.22130200266838074,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7152,Arsenal,Bournemouth,3,0,2017-09-09 15:00:00,Alexis Sánchez,Pass,Olivier Giroud
+160021,92,MissedShots,0.9540000152587891,0.5059999847412109,0.1520570069551468,Olivier Giroud,h,502,OpenPlay,2017,Head,7186,Arsenal,Brighton,2,0,2017-10-01 12:00:00,Alexis Sánchez,Rebound,Olivier Giroud
+161774,93,SavedShot,0.8419999694824218,0.5590000152587891,0.023884300142526627,Olivier Giroud,a,502,OpenPlay,2017,Head,7198,Watford,Arsenal,2,1,2017-10-14 17:30:00,Mesut Özil,Chipped,Olivier Giroud
+159705,85,MissedShots,0.9669999694824218,0.5729999923706055,0.43676498532295227,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7209,Arsenal,Swansea,2,1,2017-10-28 15:00:00,Nacho Monreal,Cross,Olivier Giroud
+159706,88,MissedShots,0.7880000305175782,0.5690000152587891,0.048413798213005066,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7209,Arsenal,Swansea,2,1,2017-10-28 15:00:00,Mesut Özil,Pass,Olivier Giroud
+160726,50,BlockedShot,0.9340000152587891,0.42700000762939455,0.1550150066614151,Olivier Giroud,h,502,OpenPlay,2017,RightFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,Héctor Bellerín,Pass,Olivier Giroud
+160731,57,MissedShots,0.9740000152587891,0.6819999694824219,0.05684040114283562,Olivier Giroud,h,502,OpenPlay,2017,RightFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,,Rebound,Olivier Giroud
+160730,57,ShotOnPost,0.955999984741211,0.6120000076293945,0.7293499708175659,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,Aaron Ramsey,TakeOn,Olivier Giroud
+160733,67,Goal,0.9159999847412109,0.5670000076293945,0.45214900374412537,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,Mesut Özil,Pass,Olivier Giroud
+160739,82,MissedShots,0.9030000305175782,0.5629999923706055,0.14113099873065948,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,Sead Kolasinac,Pass,Olivier Giroud
+160740,86,Goal,0.935,0.4929999923706055,0.6281750202178955,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7254,Arsenal,Huddersfield,5,0,2017-11-29 19:45:00,Sead Kolasinac,Pass,Olivier Giroud
+179308,87,Goal,0.9169999694824219,0.5320000076293945,0.09313400089740753,Olivier Giroud,a,502,OpenPlay,2017,Head,7278,Southampton,Arsenal,1,1,2017-12-10 12:00:00,Alexis Sánchez,Cross,Olivier Giroud
+182816,38,BlockedShot,0.9130000305175782,0.40599998474121096,0.08103449642658234,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7286,West Ham,Arsenal,0,0,2017-12-13 20:00:00,Ainsley Maitland-Niles,Cross,Olivier Giroud
+182823,52,BlockedShot,0.9130000305175782,0.46799999237060547,0.050420500338077545,Olivier Giroud,a,502,OpenPlay,2017,Head,7286,West Ham,Arsenal,0,0,2017-12-13 20:00:00,Ainsley Maitland-Niles,Aerial,Olivier Giroud
+183166,87,BlockedShot,0.9009999847412109,0.2620000076293945,0.05183330178260803,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7289,Arsenal,Newcastle United,1,0,2017-12-16 15:00:00,Héctor Bellerín,Pass,Olivier Giroud
+193784,67,BlockedShot,0.9169999694824219,0.47,0.044429801404476166,Olivier Giroud,a,502,OpenPlay,2017,Head,7377,Watford,Chelsea,4,1,2018-02-05 20:00:00,César Azpilicueta,Aerial,Olivier Giroud
+193796,95,SavedShot,0.915,0.5570000076293945,0.2813679873943329,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7377,Watford,Chelsea,4,1,2018-02-05 20:00:00,Eden Hazard,HeadPass,Olivier Giroud
+193821,7,BlockedShot,0.9209999847412109,0.7030000305175781,0.05729210004210472,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,Pedro,Pass,Olivier Giroud
+193822,10,BlockedShot,0.9030000305175782,0.39799999237060546,0.041838500648736954,Olivier Giroud,h,502,OpenPlay,2017,Head,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,César Azpilicueta,Cross,Olivier Giroud
+193825,19,SavedShot,0.9059999847412109,0.5529999923706055,0.3854939937591553,Olivier Giroud,h,502,FromCorner,2017,RightFoot,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,Eden Hazard,Pass,Olivier Giroud
+193826,20,MissedShots,0.875999984741211,0.5729999923706055,0.02565140090882778,Olivier Giroud,h,502,OpenPlay,2017,Head,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,Davide Zappacosta,Cross,Olivier Giroud
+193832,34,MissedShots,0.9490000152587891,0.56,0.13982699811458588,Olivier Giroud,h,502,FromCorner,2017,LeftFoot,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,,Rebound,Olivier Giroud
+193834,44,MissedShots,0.915,0.47400001525878904,0.08837839961051941,Olivier Giroud,h,502,OpenPlay,2017,Head,7379,Chelsea,West Bromwich Albion,3,0,2018-02-12 20:00:00,Victor Moses,Pass,Olivier Giroud
+197835,91,BlockedShot,0.8090000152587891,0.4540000152587891,0.046227600425481796,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7393,Manchester United,Chelsea,2,1,2018-02-25 14:05:00,Álvaro Morata,Pass,Olivier Giroud
+199450,80,MissedShots,0.825999984741211,0.6469999694824219,0.01526550017297268,Olivier Giroud,a,502,OpenPlay,2017,Head,7404,Manchester City,Chelsea,1,0,2018-03-04 16:00:00,Cesc Fàbregas,Chipped,Olivier Giroud
+200132,4,MissedShots,0.9119999694824219,0.41900001525878905,0.03876090049743652,Olivier Giroud,h,502,OpenPlay,2017,Head,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,Davide Zappacosta,Aerial,Olivier Giroud
+200134,8,SavedShot,0.935,0.5029999923706054,0.5881710052490234,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,N&#039;Golo Kanté,Rebound,Olivier Giroud
+200143,29,MissedShots,0.9169999694824219,0.5520000076293945,0.05860200151801109,Olivier Giroud,h,502,OpenPlay,2017,Head,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,,Aerial,Olivier Giroud
+200149,44,BlockedShot,0.9280000305175782,0.46900001525878904,0.5991100072860718,Olivier Giroud,h,502,OpenPlay,2017,RightFoot,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,Eden Hazard,Pass,Olivier Giroud
+200160,60,MissedShots,0.965,0.47,0.1501139998435974,Olivier Giroud,h,502,OpenPlay,2017,Head,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,Willian,Cross,Olivier Giroud
+200162,66,ShotOnPost,0.8680000305175781,0.49900001525878906,0.4249579906463623,Olivier Giroud,h,502,OpenPlay,2017,RightFoot,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,Marcos Alonso,Pass,Olivier Giroud
+200163,66,MissedShots,0.919000015258789,0.495,0.14816799759864807,Olivier Giroud,h,502,OpenPlay,2017,RightFoot,7411,Chelsea,Crystal Palace,2,1,2018-03-10 17:30:00,,Rebound,Olivier Giroud
+206982,87,SavedShot,0.924000015258789,0.524000015258789,0.06262759864330292,Olivier Giroud,h,502,OpenPlay,2017,Head,7442,Chelsea,West Ham,1,1,2018-04-08 15:30:00,Willian,Aerial,Olivier Giroud
+209343,69,Goal,0.875999984741211,0.5670000076293945,0.029173800721764565,Olivier Giroud,a,502,OpenPlay,2017,Head,7455,Southampton,Chelsea,2,3,2018-04-14 11:30:00,Marcos Alonso,Cross,Olivier Giroud
+209346,77,Goal,0.8530000305175781,0.495,0.03307989984750748,Olivier Giroud,a,502,SetPiece,2017,LeftFoot,7455,Southampton,Chelsea,2,3,2018-04-14 11:30:00,,Aerial,Olivier Giroud
+210040,5,BlockedShot,0.9069999694824219,0.42200000762939455,0.08787299692630768,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7420,Burnley,Chelsea,1,2,2018-04-19 18:45:00,Victor Moses,Cross,Olivier Giroud
+210048,50,BlockedShot,0.845,0.7130000305175781,0.0428939014673233,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7420,Burnley,Chelsea,1,2,2018-04-19 18:45:00,Pedro,Pass,Olivier Giroud
+210057,81,BlockedShot,0.9530000305175781,0.69,0.07319120317697525,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7420,Burnley,Chelsea,1,2,2018-04-19 18:45:00,Eden Hazard,Pass,Olivier Giroud
+211826,17,MissedShots,0.975,0.515,0.15306200087070465,Olivier Giroud,a,502,FromCorner,2017,Head,7476,Swansea,Chelsea,0,1,2018-04-28 16:30:00,Cesc Fàbregas,Aerial,Olivier Giroud
+213986,13,BlockedShot,0.8530000305175781,0.5509999847412109,0.08690190315246582,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7485,Chelsea,Liverpool,1,0,2018-05-06 16:30:00,Victor Moses,Pass,Olivier Giroud
+213993,31,Goal,0.9390000152587891,0.44299999237060544,0.1354459971189499,Olivier Giroud,h,502,OpenPlay,2017,Head,7485,Chelsea,Liverpool,1,0,2018-05-06 16:30:00,Victor Moses,Cross,Olivier Giroud
+214409,89,MissedShots,0.9180000305175782,0.5570000076293945,0.13090699911117554,Olivier Giroud,h,502,OpenPlay,2017,LeftFoot,7460,Chelsea,Huddersfield,1,1,2018-05-09 19:45:00,,Rebound,Olivier Giroud
+215781,51,SavedShot,0.8619999694824219,0.3890000152587891,0.04610409960150719,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7497,Newcastle United,Chelsea,3,0,2018-05-13 15:00:00,Ross Barkley,Cross,Olivier Giroud
+215787,69,MissedShots,0.9540000152587891,0.654000015258789,0.039452098309993744,Olivier Giroud,a,502,OpenPlay,2017,LeftFoot,7497,Newcastle United,Chelsea,3,0,2018-05-13 15:00:00,Victor Moses,Cross,Olivier Giroud
+233030,86,SavedShot,0.9,0.62,0.10660599917173386,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9212,Chelsea,Arsenal,3,2,2018-08-18 19:30:00,Marcos Alonso,Pass,Olivier Giroud
+233032,92,SavedShot,0.9069999694824219,0.6309999847412109,0.1382880061864853,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9212,Chelsea,Arsenal,3,2,2018-08-18 19:30:00,Eden Hazard,Pass,Olivier Giroud
+233390,74,MissedShots,0.9359999847412109,0.45599998474121095,0.11428499966859818,Olivier Giroud,a,502,FromCorner,2018,Head,9225,Newcastle United,Chelsea,1,2,2018-08-26 18:00:00,Willian,Cross,Olivier Giroud
+233576,68,BlockedShot,0.7830000305175782,0.32799999237060545,0.019980499520897865,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9231,Chelsea,Bournemouth,2,0,2018-09-01 14:00:00,,None,Olivier Giroud
+233764,5,MissedShots,0.915,0.49400001525878906,0.05867930129170418,Olivier Giroud,h,502,OpenPlay,2018,Head,9241,Chelsea,Cardiff,4,1,2018-09-15 14:00:00,César Azpilicueta,Aerial,Olivier Giroud
+233765,8,MissedShots,0.9319999694824219,0.59,0.13130199909210205,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9241,Chelsea,Cardiff,4,1,2018-09-15 14:00:00,Marcos Alonso,Pass,Olivier Giroud
+233770,19,BlockedShot,0.8780000305175781,0.62,0.07394439727067947,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9241,Chelsea,Cardiff,4,1,2018-09-15 14:00:00,Eden Hazard,Pass,Olivier Giroud
+234221,8,SavedShot,0.9069999694824219,0.46,0.07446339726448059,Olivier Giroud,a,502,FromCorner,2018,RightFoot,9255,West Ham,Chelsea,0,0,2018-09-23 12:30:00,Willian,Cross,Olivier Giroud
+234227,22,MissedShots,0.9009999847412109,0.40700000762939453,0.12902399897575378,Olivier Giroud,a,502,OpenPlay,2018,LeftFoot,9255,West Ham,Chelsea,0,0,2018-09-23 12:30:00,Jorginho,Throughball,Olivier Giroud
+234235,63,MissedShots,0.92,0.43,0.043355200439691544,Olivier Giroud,a,502,OpenPlay,2018,Head,9255,West Ham,Chelsea,0,0,2018-09-23 12:30:00,N&#039;Golo Kanté,Aerial,Olivier Giroud
+234317,27,MissedShots,0.8930000305175781,0.500999984741211,0.04624680057168007,Olivier Giroud,h,502,OpenPlay,2018,Head,9264,Chelsea,Liverpool,1,1,2018-09-29 16:30:00,Jorginho,Aerial,Olivier Giroud
+234320,46,MissedShots,0.970999984741211,0.580999984741211,0.14863300323486328,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9264,Chelsea,Liverpool,1,1,2018-09-29 16:30:00,Willian,Pass,Olivier Giroud
+249189,56,MissedShots,0.93,0.29100000381469726,0.04925389960408211,Olivier Giroud,a,502,SetPiece,2018,LeftFoot,9275,Southampton,Chelsea,0,3,2018-10-07 13:15:00,Willian,Chipped,Olivier Giroud
+249683,77,MissedShots,0.8480000305175781,0.6309999847412109,0.07928229868412018,Olivier Giroud,a,502,OpenPlay,2018,LeftFoot,9295,Burnley,Chelsea,0,4,2018-10-28 12:30:00,Willian,Pass,Olivier Giroud
+249687,90,SavedShot,0.91,0.5309999847412109,0.3684769868850708,Olivier Giroud,a,502,OpenPlay,2018,Head,9295,Burnley,Chelsea,0,4,2018-10-28 12:30:00,César Azpilicueta,Aerial,Olivier Giroud
+249692,93,MissedShots,0.8580000305175781,0.32099998474121094,0.07778239995241165,Olivier Giroud,a,502,OpenPlay,2018,LeftFoot,9295,Burnley,Chelsea,0,4,2018-10-28 12:30:00,Marcos Alonso,Chipped,Olivier Giroud
+250412,84,Goal,0.9319999694824219,0.53,0.3498300015926361,Olivier Giroud,a,502,OpenPlay,2018,Head,9323,Tottenham,Chelsea,3,1,2018-11-24 17:30:00,César Azpilicueta,Cross,Olivier Giroud
+250681,23,SavedShot,0.955999984741211,0.6840000152587891,0.13188700377941132,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9334,Chelsea,Fulham,2,0,2018-12-02 12:00:00,Eden Hazard,Throughball,Olivier Giroud
+250684,42,SavedShot,0.9569999694824218,0.46599998474121096,0.15977300703525543,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9334,Chelsea,Fulham,2,0,2018-12-02 12:00:00,César Azpilicueta,Pass,Olivier Giroud
+250685,43,BlockedShot,0.879000015258789,0.6969999694824218,0.06276749819517136,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9334,Chelsea,Fulham,2,0,2018-12-02 12:00:00,,Tackle,Olivier Giroud
+250859,79,BlockedShot,0.775,0.5279999923706055,0.02753389999270439,Olivier Giroud,a,502,OpenPlay,2018,LeftFoot,9339,Wolverhampton Wanderers,Chelsea,2,1,2018-12-05 19:45:00,Eden Hazard,Pass,Olivier Giroud
+250860,83,MissedShots,0.9180000305175782,0.43599998474121093,0.04068509861826897,Olivier Giroud,a,502,FromCorner,2018,OtherBodyPart,9339,Wolverhampton Wanderers,Chelsea,2,1,2018-12-05 19:45:00,Eden Hazard,Aerial,Olivier Giroud
+286907,93,BlockedShot,0.9530000305175781,0.49900001525878906,0.11435899883508682,Olivier Giroud,a,502,FromCorner,2018,Head,9503,Everton,Chelsea,2,0,2019-03-17 16:30:00,David Luiz,HeadPass,Olivier Giroud
+291366,11,MissedShots,0.9630000305175781,0.5179999923706055,0.4923270046710968,Olivier Giroud,h,502,FromCorner,2018,Head,9462,Chelsea,Brighton,3,0,2019-04-03 19:45:00,Eden Hazard,Aerial,Olivier Giroud
+291368,17,BlockedShot,0.8490000152587891,0.49,0.0769558995962143,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9462,Chelsea,Brighton,3,0,2019-04-03 19:45:00,Jorginho,Chipped,Olivier Giroud
+291370,26,MissedShots,0.894000015258789,0.47,0.04207510128617287,Olivier Giroud,h,502,OpenPlay,2018,Head,9462,Chelsea,Brighton,3,0,2019-04-03 19:45:00,César Azpilicueta,Aerial,Olivier Giroud
+291371,28,BlockedShot,0.9009999847412109,0.49599998474121093,0.10801500082015991,Olivier Giroud,h,502,OpenPlay,2018,RightFoot,9462,Chelsea,Brighton,3,0,2019-04-03 19:45:00,Callum Hudson-Odoi,Cross,Olivier Giroud
+291375,37,Goal,0.9640000152587891,0.47,0.6146469712257385,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9462,Chelsea,Brighton,3,0,2019-04-03 19:45:00,Callum Hudson-Odoi,Cross,Olivier Giroud
+293046,85,SavedShot,0.9590000152587891,0.6659999847412109,0.09034779667854309,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9525,Chelsea,West Ham,2,0,2019-04-08 20:00:00,Ross Barkley,Pass,Olivier Giroud
+299855,85,MissedShots,0.9,0.49400001525878906,0.40483298897743225,Olivier Giroud,h,502,OpenPlay,2018,RightFoot,9563,Chelsea,Watford,3,0,2019-05-05 13:00:00,David Luiz,Cross,Olivier Giroud
+299856,86,MissedShots,0.9259999847412109,0.5220000076293946,0.59340900182724,Olivier Giroud,h,502,OpenPlay,2018,RightFoot,9563,Chelsea,Watford,3,0,2019-05-05 13:00:00,,None,Olivier Giroud
+299860,91,SavedShot,0.9269999694824219,0.7090000152587891,0.09182540327310562,Olivier Giroud,h,502,OpenPlay,2018,LeftFoot,9563,Chelsea,Watford,3,0,2019-05-05 13:00:00,Jorginho,Chipped,Olivier Giroud
+311173,52,SavedShot,0.895,0.605,0.03834199905395508,Olivier Giroud,h,502,OpenPlay,2019,Head,11661,Chelsea,Leicester,1,1,2019-08-18 16:30:00,Emerson,Cross,Olivier Giroud
+333629,42,SavedShot,0.9490000152587891,0.5579999923706055,0.5486159920692444,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11774,Chelsea,West Ham,0,1,2019-11-30 15:00:00,,Rebound,Olivier Giroud
+333632,56,MissedShots,0.9159999847412109,0.485,0.03971559926867485,Olivier Giroud,h,502,FromCorner,2019,Head,11774,Chelsea,West Ham,0,1,2019-11-30 15:00:00,Mason Mount,Aerial,Olivier Giroud
+352899,11,BlockedShot,0.9540000152587891,0.5459999847412109,0.07330489903688431,Olivier Giroud,h,502,FromCorner,2019,Head,11906,Chelsea,Tottenham,2,1,2020-02-22 12:30:00,Reece James,Aerial,Olivier Giroud
+352901,14,SavedShot,0.9209999847412109,0.33599998474121096,0.11892399936914444,Olivier Giroud,h,502,OpenPlay,2019,RightFoot,11906,Chelsea,Tottenham,2,1,2020-02-22 12:30:00,Jorginho,Throughball,Olivier Giroud
+352903,14,Goal,0.8730000305175781,0.3509999847412109,0.04933929815888405,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11906,Chelsea,Tottenham,2,1,2020-02-22 12:30:00,,Rebound,Olivier Giroud
+352905,30,MissedShots,0.7230000305175781,0.40700000762939453,0.01936030015349388,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11906,Chelsea,Tottenham,2,1,2020-02-22 12:30:00,Reece James,BallTouch,Olivier Giroud
+353267,32,ShotOnPost,0.955,0.4,0.10342899709939957,Olivier Giroud,a,502,OpenPlay,2019,LeftFoot,11914,Bournemouth,Chelsea,2,2,2020-02-29 15:00:00,Reece James,Cross,Olivier Giroud
+353272,46,MissedShots,0.924000015258789,0.51,0.565837025642395,Olivier Giroud,a,502,OpenPlay,2019,LeftFoot,11914,Bournemouth,Chelsea,2,2,2020-02-29 15:00:00,Marcos Alonso,Pass,Olivier Giroud
+353280,65,MissedShots,0.9319999694824219,0.45799999237060546,0.050834499299526215,Olivier Giroud,a,502,OpenPlay,2019,Head,11914,Bournemouth,Chelsea,2,2,2020-02-29 15:00:00,Reece James,Aerial,Olivier Giroud
+353557,34,SavedShot,0.8190000152587891,0.37099998474121093,0.05500569939613342,Olivier Giroud,h,502,OpenPlay,2019,RightFoot,11925,Chelsea,Everton,4,0,2020-03-08 14:00:00,Mason Mount,Pass,Olivier Giroud
+353560,53,Goal,0.9669999694824218,0.47299999237060547,0.5565760135650635,Olivier Giroud,h,502,FromCorner,2019,LeftFoot,11925,Chelsea,Everton,4,0,2020-03-08 14:00:00,Willian,Cross,Olivier Giroud
+365804,54,MissedShots,0.9030000305175782,0.590999984741211,0.021279700100421906,Olivier Giroud,a,502,OpenPlay,2019,Head,11933,Aston Villa,Chelsea,1,2,2020-06-21 15:15:00,N&#039;Golo Kanté,Aerial,Olivier Giroud
+365806,61,Goal,0.8640000152587891,0.5070000076293946,0.10814899951219559,Olivier Giroud,a,502,OpenPlay,2019,RightFoot,11933,Aston Villa,Chelsea,1,2,2020-06-21 15:15:00,César Azpilicueta,Pass,Olivier Giroud
+366624,56,SavedShot,0.9,0.5709999847412109,0.014634599909186363,Olivier Giroud,h,502,FromCorner,2019,Head,11946,Chelsea,Manchester City,2,1,2020-06-25 19:15:00,Willian,Aerial,Olivier Giroud
+368144,65,SavedShot,0.8819999694824219,0.4590000152587891,0.03286920115351677,Olivier Giroud,a,502,SetPiece,2019,OtherBodyPart,11962,West Ham,Chelsea,3,2,2020-07-01 19:15:00,Mason Mount,Aerial,Olivier Giroud
+368150,82,MissedShots,0.904000015258789,0.5629999923706055,0.09375649690628052,Olivier Giroud,a,502,OpenPlay,2019,LeftFoot,11962,West Ham,Chelsea,3,2,2020-07-01 19:15:00,Marcos Alonso,Cross,Olivier Giroud
+368802,4,BlockedShot,0.779000015258789,0.2979999923706055,0.05534140020608902,Olivier Giroud,h,502,DirectFreekick,2019,LeftFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,,Standard,Olivier Giroud
+368803,4,MissedShots,0.774000015258789,0.295,0.01321440003812313,Olivier Giroud,h,502,SetPiece,2019,RightFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,,Rebound,Olivier Giroud
+368806,18,SavedShot,0.9059999847412109,0.66,0.07564389705657959,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,Christian Pulisic,Pass,Olivier Giroud
+368810,27,Goal,0.9080000305175782,0.585,0.12566199898719788,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,Ross Barkley,Throughball,Olivier Giroud
+368818,58,SavedShot,0.9490000152587891,0.6079999923706054,0.4942759871482849,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,,None,Olivier Giroud
+368819,62,BlockedShot,0.8619999694824219,0.6270000076293946,0.06730789691209793,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11964,Chelsea,Watford,3,0,2020-07-04 19:00:00,,None,Olivier Giroud
+369412,5,Goal,0.93,0.43900001525878907,0.4810050129890442,Olivier Giroud,a,502,OpenPlay,2019,RightFoot,11977,Crystal Palace,Chelsea,2,3,2020-07-07 17:00:00,Willian,Pass,Olivier Giroud
+369423,53,MissedShots,0.9309999847412109,0.5179999923706055,0.40525099635124207,Olivier Giroud,a,502,SetPiece,2019,Head,11977,Crystal Palace,Chelsea,2,3,2020-07-07 17:00:00,Reece James,Aerial,Olivier Giroud
+370508,65,MissedShots,0.8190000152587891,0.66,0.028139600530266762,Olivier Giroud,a,502,OpenPlay,2019,LeftFoot,11989,Sheffield United,Chelsea,3,0,2020-07-11 16:30:00,Antonio Rüdiger,Chipped,Olivier Giroud
+370515,78,SavedShot,0.8980000305175782,0.49,0.051342301070690155,Olivier Giroud,a,502,OpenPlay,2019,Head,11989,Sheffield United,Chelsea,3,0,2020-07-11 16:30:00,César Azpilicueta,Aerial,Olivier Giroud
+371315,19,SavedShot,0.899000015258789,0.555,0.4184649884700775,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,,None,Olivier Giroud
+371317,29,MissedShots,0.9030000305175782,0.39799999237060546,0.3010700047016144,Olivier Giroud,h,502,OpenPlay,2019,RightFoot,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,César Azpilicueta,Cross,Olivier Giroud
+371322,40,MissedShots,0.9019999694824219,0.485,0.0742276981472969,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,,Aerial,Olivier Giroud
+371324,47,Goal,0.9630000305175781,0.48700000762939455,0.6225259900093079,Olivier Giroud,h,502,OpenPlay,2019,Head,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,Christian Pulisic,Cross,Olivier Giroud
+371323,47,BlockedShot,0.92,0.495,0.1278589963912964,Olivier Giroud,h,502,OpenPlay,2019,Head,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,Marcos Alonso,Cross,Olivier Giroud
+371327,52,MissedShots,0.9259999847412109,0.45,0.09278350323438644,Olivier Giroud,h,502,FromCorner,2019,Head,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,Willian,Cross,Olivier Giroud
+371331,71,MissedShots,0.9159999847412109,0.5220000076293946,0.07326210290193558,Olivier Giroud,h,502,OpenPlay,2019,Head,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,César Azpilicueta,Aerial,Olivier Giroud
+371334,84,MissedShots,0.9640000152587891,0.44299999237060544,0.14071500301361084,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,11995,Chelsea,Norwich,1,0,2020-07-14 19:15:00,Willian,Cross,Olivier Giroud
+373308,39,SavedShot,0.8959999847412109,0.45599998474121095,0.04602130129933357,Olivier Giroud,a,502,OpenPlay,2019,Head,12006,Liverpool,Chelsea,5,3,2020-07-22 19:15:00,Reece James,Aerial,Olivier Giroud
+373311,47,Goal,0.9669999694824218,0.47299999237060547,0.6623439788818359,Olivier Giroud,a,502,OpenPlay,2019,LeftFoot,12006,Liverpool,Chelsea,5,3,2020-07-22 19:15:00,,Rebound,Olivier Giroud
+373679,38,MissedShots,0.9330000305175781,0.4370000076293945,0.1274230033159256,Olivier Giroud,h,502,OpenPlay,2019,Head,12021,Chelsea,Wolverhampton Wanderers,2,0,2020-07-26 15:00:00,Mason Mount,Cross,Olivier Giroud
+373683,48,Goal,0.925,0.539000015258789,0.42704400420188904,Olivier Giroud,h,502,OpenPlay,2019,LeftFoot,12021,Chelsea,Wolverhampton Wanderers,2,0,2020-07-26 15:00:00,Mason Mount,TakeOn,Olivier Giroud
+389559,91,SavedShot,0.875,0.6730000305175782,0.05096390098333359,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14529,Chelsea,Tottenham,0,0,2020-11-29 16:30:00,,None,Olivier Giroud
+390446,1,MissedShots,0.955999984741211,0.5870000076293945,0.07870139926671982,Olivier Giroud,h,502,FromCorner,2020,Head,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,Mason Mount,Cross,Olivier Giroud
+390449,8,BlockedShot,0.9369999694824219,0.575,0.0821726992726326,Olivier Giroud,h,502,FromCorner,2020,Head,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,Mason Mount,Cross,Olivier Giroud
+390453,21,MissedShots,0.8169999694824219,0.5220000076293946,0.046957600861787796,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,,BallRecovery,Olivier Giroud
+390456,26,Goal,0.9480000305175781,0.44099998474121094,0.46156299114227295,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,Reece James,Cross,Olivier Giroud
+390467,67,MissedShots,0.950999984741211,0.5570000076293945,0.591651976108551,Olivier Giroud,h,502,OpenPlay,2020,RightFoot,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,,None,Olivier Giroud
+390470,76,MissedShots,0.9219999694824219,0.46299999237060546,0.30636098980903625,Olivier Giroud,h,502,FromCorner,2020,Head,14538,Chelsea,Leeds,3,1,2020-12-05 20:00:00,Mason Mount,Cross,Olivier Giroud
+391801,40,BlockedShot,0.8119999694824219,0.5309999847412109,0.04471300169825554,Olivier Giroud,a,502,OpenPlay,2020,LeftFoot,14546,Everton,Chelsea,1,0,2020-12-12 20:00:00,,None,Olivier Giroud
+391809,83,MissedShots,0.894000015258789,0.43099998474121093,0.08278349786996841,Olivier Giroud,a,502,OpenPlay,2020,RightFoot,14546,Everton,Chelsea,1,0,2020-12-12 20:00:00,Timo Werner,Cross,Olivier Giroud
+392593,19,MissedShots,0.9390000152587891,0.4909999847412109,0.422529011964798,Olivier Giroud,a,502,FromCorner,2020,Head,14562,Wolverhampton Wanderers,Chelsea,2,1,2020-12-15 18:00:00,Ben Chilwell,Cross,Olivier Giroud
+392599,44,MissedShots,0.9719999694824218,0.445,0.5847470164299011,Olivier Giroud,a,502,FromCorner,2020,RightFoot,14562,Wolverhampton Wanderers,Chelsea,2,1,2020-12-15 18:00:00,,None,Olivier Giroud
+392602,48,Goal,0.9290000152587891,0.5570000076293945,0.1123339980840683,Olivier Giroud,a,502,OpenPlay,2020,LeftFoot,14562,Wolverhampton Wanderers,Chelsea,2,1,2020-12-15 18:00:00,Ben Chilwell,Cross,Olivier Giroud
+395851,31,BlockedShot,0.924000015258789,0.49900001525878906,0.09613160043954849,Olivier Giroud,h,502,OpenPlay,2020,OtherBodyPart,14586,Chelsea,Aston Villa,1,1,2020-12-28 17:30:00,César Azpilicueta,Aerial,Olivier Giroud
+395853,33,Goal,0.9180000305175782,0.5570000076293945,0.05985809862613678,Olivier Giroud,h,502,OpenPlay,2020,Head,14586,Chelsea,Aston Villa,1,1,2020-12-28 17:30:00,Ben Chilwell,Pass,Olivier Giroud
+399098,8,SavedShot,0.8109999847412109,0.31,0.021690599620342255,Olivier Giroud,a,502,OpenPlay,2020,LeftFoot,14617,Fulham,Chelsea,0,1,2021-01-16 17:30:00,Mason Mount,CornerAwarded,Olivier Giroud
+399099,15,MissedShots,0.8590000152587891,0.605999984741211,0.06693519651889801,Olivier Giroud,a,502,OpenPlay,2020,LeftFoot,14617,Fulham,Chelsea,0,1,2021-01-16 17:30:00,Thiago Silva,Chipped,Olivier Giroud
+399110,50,BlockedShot,0.955,0.43099998474121093,0.14286300539970398,Olivier Giroud,a,502,OpenPlay,2020,RightFoot,14617,Fulham,Chelsea,0,1,2021-01-16 17:30:00,Mason Mount,Pass,Olivier Giroud
+399112,52,SavedShot,0.905,0.5070000076293946,0.02636989951133728,Olivier Giroud,a,502,FromCorner,2020,Head,14617,Fulham,Chelsea,0,1,2021-01-16 17:30:00,Mason Mount,Aerial,Olivier Giroud
+401227,58,SavedShot,0.9830000305175781,0.29200000762939454,0.03665509819984436,Olivier Giroud,h,502,FromCorner,2020,LeftFoot,14630,Chelsea,Wolverhampton Wanderers,0,0,2021-01-27 18:00:00,César Azpilicueta,HeadPass,Olivier Giroud
+401229,63,SavedShot,0.9569999694824218,0.40200000762939453,0.13019900023937225,Olivier Giroud,h,502,OpenPlay,2020,RightFoot,14630,Chelsea,Wolverhampton Wanderers,0,0,2021-01-27 18:00:00,Hakim Ziyech,Pass,Olivier Giroud
+405116,30,Goal,0.9009999847412109,0.5540000152587891,0.4151900112628937,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14667,Chelsea,Newcastle United,2,0,2021-02-15 20:00:00,,None,Olivier Giroud
+405129,65,BlockedShot,0.9069999694824219,0.545,0.02176620066165924,Olivier Giroud,h,502,FromCorner,2020,Head,14667,Chelsea,Newcastle United,2,0,2021-02-15 20:00:00,Mason Mount,Aerial,Olivier Giroud
+407442,31,MissedShots,0.725,0.46700000762939453,0.016087399795651436,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14685,Chelsea,Manchester United,0,0,2021-02-28 16:30:00,,BallRecovery,Olivier Giroud
+407443,35,MissedShots,0.95,0.47200000762939454,0.5464609861373901,Olivier Giroud,h,502,OpenPlay,2020,Head,14685,Chelsea,Manchester United,0,0,2021-02-28 16:30:00,Callum Hudson-Odoi,Cross,Olivier Giroud
+416305,84,MissedShots,0.884000015258789,0.6079999923706054,0.06123780086636543,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14747,Chelsea,Brighton,0,0,2021-04-20 19:00:00,Callum Hudson-Odoi,Cross,Olivier Giroud
+416307,92,SavedShot,0.9,0.48400001525878905,0.09585259854793549,Olivier Giroud,h,502,SetPiece,2020,Head,14747,Chelsea,Brighton,0,0,2021-04-20 19:00:00,Reece James,Cross,Olivier Giroud
+421514,68,MissedShots,0.805,0.555,0.043698299676179886,Olivier Giroud,h,502,OpenPlay,2020,LeftFoot,14790,Chelsea,Arsenal,0,1,2021-05-12 19:15:00,Mason Mount,BallRecovery,Olivier Giroud
+421517,80,MissedShots,0.8919999694824219,0.48700000762939455,0.06329549849033356,Olivier Giroud,h,502,OpenPlay,2020,Head,14790,Chelsea,Arsenal,0,1,2021-05-12 19:15:00,Reece James,Cross,Olivier Giroud
+421520,89,ShotOnPost,0.9740000152587891,0.40299999237060546,0.36064600944519043,Olivier Giroud,h,502,OpenPlay,2020,RightFoot,14790,Chelsea,Arsenal,0,1,2021-05-12 19:15:00,,Rebound,Olivier Giroud
+429484,1,MissedShots,0.9359999847412109,0.5220000076293946,0.4451870024204254,Olivier Giroud,h,502,OpenPlay,2021,Head,16774,AC Milan,Cagliari,4,1,2021-08-29 18:45:00,Alexis Saelemaekers,Aerial,Olivier Giroud
+429490,23,Goal,0.8919999694824219,0.38799999237060545,0.3462730050086975,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,16774,AC Milan,Cagliari,4,1,2021-08-29 18:45:00,Brahim Diaz,LayOff,Olivier Giroud
+429496,42,Goal,0.885,0.5,0.7612990140914917,Olivier Giroud,h,502,Penalty,2021,LeftFoot,16774,AC Milan,Cagliari,4,1,2021-08-29 18:45:00,,Standard,Olivier Giroud
+429500,57,BlockedShot,0.9209999847412109,0.5070000076293946,0.06384620070457458,Olivier Giroud,h,502,OpenPlay,2021,Head,16774,AC Milan,Cagliari,4,1,2021-08-29 18:45:00,Davide Calabria,Aerial,Olivier Giroud
+436553,58,Goal,0.9290000152587891,0.500999984741211,0.06021310016512871,Olivier Giroud,h,502,FromCorner,2021,Head,16831,AC Milan,Verona,3,2,2021-10-16 18:45:00,Rafael Leão,Aerial,Olivier Giroud
+436554,63,MissedShots,0.9109999847412109,0.53,0.038093201816082,Olivier Giroud,h,502,OpenPlay,2021,Head,16831,AC Milan,Verona,3,2,2021-10-16 18:45:00,Ismael Bennacer,Aerial,Olivier Giroud
+438027,75,SavedShot,0.8959999847412109,0.43599998474121093,0.02670310065150261,Olivier Giroud,a,502,OpenPlay,2021,Head,16837,Bologna,AC Milan,2,4,2021-10-23 18:45:00,Ismael Bennacer,Aerial,Olivier Giroud
+438845,13,Goal,0.98,0.5309999847412109,0.8903480172157288,Olivier Giroud,h,502,FromCorner,2021,LeftFoot,16850,AC Milan,Torino,1,0,2021-10-26 18:45:00,Rade Krunic,Rebound,Olivier Giroud
+449981,72,MissedShots,0.92,0.5609999847412109,0.08148899674415588,Olivier Giroud,h,502,OpenPlay,2021,Head,16931,AC Milan,Napoli,0,1,2021-12-19 19:45:00,Junior Messias,Cross,Olivier Giroud
+450315,46,SavedShot,0.970999984741211,0.54,0.4674830138683319,Olivier Giroud,a,502,FromCorner,2021,LeftFoot,16936,Empoli,AC Milan,2,4,2021-12-22 19:45:00,,BallTouch,Olivier Giroud
+450321,56,MissedShots,0.93,0.425,0.060417599976062775,Olivier Giroud,a,502,OpenPlay,2021,Head,16936,Empoli,AC Milan,2,4,2021-12-22 19:45:00,,None,Olivier Giroud
+451803,7,Goal,0.885,0.5,0.7612990140914917,Olivier Giroud,h,502,Penalty,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,,Standard,Olivier Giroud
+451805,16,ShotOnPost,0.9590000152587891,0.3340000152587891,0.3225330114364624,Olivier Giroud,h,502,OpenPlay,2021,RightFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,,BallRecovery,Olivier Giroud
+451808,25,BlockedShot,0.914000015258789,0.644000015258789,0.11517299711704254,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,16951,AC Milan,Roma,3,1,2022-01-06 17:30:00,Alexis Saelemaekers,Pass,Olivier Giroud
+453928,91,BlockedShot,0.9130000305175782,0.5659999847412109,0.1336430013179779,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,16970,AC Milan,Spezia,1,2,2022-01-17 17:30:00,Ante Rebic,Pass,Olivier Giroud
+455444,33,BlockedShot,0.7719999694824219,0.43400001525878906,0.08079949766397476,Olivier Giroud,h,502,DirectFreekick,2021,LeftFoot,16982,AC Milan,Juventus,0,0,2022-01-23 19:45:00,,Standard,Olivier Giroud
+455455,68,SavedShot,0.91,0.504000015258789,0.12221299856901169,Olivier Giroud,h,502,OpenPlay,2021,Head,16982,AC Milan,Juventus,0,0,2022-01-23 19:45:00,Alexis Saelemaekers,Cross,Olivier Giroud
+455456,74,MissedShots,0.9259999847412109,0.46,0.13157400488853455,Olivier Giroud,h,502,OpenPlay,2021,Head,16982,AC Milan,Juventus,0,0,2022-01-23 19:45:00,Theo Hernández,Cross,Olivier Giroud
+455886,74,Goal,0.9619999694824218,0.534000015258789,0.6660889983177185,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,16989,Inter,AC Milan,1,2,2022-02-05 17:00:00,,Rebound,Olivier Giroud
+455887,77,Goal,0.879000015258789,0.36200000762939455,0.07907310128211975,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,16989,Inter,AC Milan,1,2,2022-02-05 17:00:00,Davide Calabria,Pass,Olivier Giroud
+457308,0,BlockedShot,0.7340000152587891,0.5279999923706055,0.01795239932835102,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,17001,AC Milan,Sampdoria,1,0,2022-02-13 11:30:00,,BallRecovery,Olivier Giroud
+457311,41,MissedShots,0.8169999694824219,0.580999984741211,0.05009710043668747,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,17001,AC Milan,Sampdoria,1,0,2022-02-13 11:30:00,Junior Messias,HeadPass,Olivier Giroud
+457314,49,MissedShots,0.9269999694824219,0.534000015258789,0.24496999382972717,Olivier Giroud,h,502,OpenPlay,2021,OtherBodyPart,17001,AC Milan,Sampdoria,1,0,2022-02-13 11:30:00,Davide Calabria,Cross,Olivier Giroud
+457318,59,SavedShot,0.9669999694824218,0.4159999847412109,0.12693800032138824,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,17001,AC Milan,Sampdoria,1,0,2022-02-13 11:30:00,Ante Rebic,Chipped,Olivier Giroud
+457320,69,SavedShot,0.914000015258789,0.549000015258789,0.036964301019907,Olivier Giroud,h,502,FromCorner,2021,Head,17001,AC Milan,Sampdoria,1,0,2022-02-13 11:30:00,Ismael Bennacer,Aerial,Olivier Giroud
+458513,44,MissedShots,0.8209999847412109,0.6990000152587891,0.006077370140701532,Olivier Giroud,a,502,OpenPlay,2021,Head,17012,Salernitana,AC Milan,2,2,2022-02-19 19:45:00,Fikayo Tomori,Pass,Olivier Giroud
+458516,53,MissedShots,0.9309999847412109,0.475,0.0634882003068924,Olivier Giroud,a,502,FromCorner,2021,Head,17012,Salernitana,AC Milan,2,2,2022-02-19 19:45:00,Alessio Romagnoli,HeadPass,Olivier Giroud
+458517,59,SavedShot,0.905,0.3679999923706055,0.3315559923648834,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17012,Salernitana,AC Milan,2,2,2022-02-19 19:45:00,Junior Messias,Throughball,Olivier Giroud
+458522,79,MissedShots,0.91,0.46299999237060546,0.04936109855771065,Olivier Giroud,a,502,OpenPlay,2021,Head,17012,Salernitana,AC Milan,2,2,2022-02-19 19:45:00,Theo Hernández,Aerial,Olivier Giroud
+461896,48,Goal,0.909000015258789,0.4909999847412109,0.498104989528656,Olivier Giroud,a,502,SetPiece,2021,LeftFoot,17032,Napoli,AC Milan,0,1,2022-03-06 19:45:00,Davide Calabria,Rebound,Olivier Giroud
+461900,55,BlockedShot,0.9059999847412109,0.45799999237060546,0.021885400637984276,Olivier Giroud,a,502,FromCorner,2021,Head,17032,Napoli,AC Milan,0,1,2022-03-06 19:45:00,Theo Hernández,Aerial,Olivier Giroud
+462721,18,BlockedShot,0.805,0.29600000381469727,0.06921830028295517,Olivier Giroud,h,502,DirectFreekick,2021,LeftFoot,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,,Standard,Olivier Giroud
+462723,27,BlockedShot,0.9,0.3340000152587891,0.037870198488235474,Olivier Giroud,h,502,FromCorner,2021,LeftFoot,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,Alessandro Florenzi,Cross,Olivier Giroud
+462726,42,MissedShots,0.889000015258789,0.47200000762939454,0.0879112035036087,Olivier Giroud,h,502,OpenPlay,2021,Head,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,Davide Calabria,Cross,Olivier Giroud
+462727,43,BlockedShot,0.9059999847412109,0.5820000076293945,0.13227799534797668,Olivier Giroud,h,502,OpenPlay,2021,LeftFoot,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,Rafael Leão,Pass,Olivier Giroud
+462728,44,SavedShot,0.8680000305175781,0.524000015258789,0.012070000171661377,Olivier Giroud,h,502,SetPiece,2021,Head,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,Davide Calabria,Aerial,Olivier Giroud
+462729,44,BlockedShot,0.8669999694824219,0.5729999923706055,0.07499569654464722,Olivier Giroud,h,502,SetPiece,2021,LeftFoot,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,,Rebound,Olivier Giroud
+462736,76,MissedShots,0.875,0.5320000076293945,0.04062369838356972,Olivier Giroud,h,502,FromCorner,2021,Head,17040,AC Milan,Empoli,1,0,2022-03-12 19:45:00,Sandro Tonali,Cross,Olivier Giroud
+464182,6,MissedShots,0.9230000305175782,0.5379999923706055,0.530331015586853,Olivier Giroud,a,502,OpenPlay,2021,RightFoot,17047,Cagliari,AC Milan,0,1,2022-03-19 19:45:00,,None,Olivier Giroud
+464197,61,BlockedShot,0.91,0.48200000762939454,0.14866499602794647,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17047,Cagliari,AC Milan,0,1,2022-03-19 19:45:00,Junior Messias,Pass,Olivier Giroud
+464205,83,MissedShots,0.97,0.40700000762939453,0.1089320033788681,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17047,Cagliari,AC Milan,0,1,2022-03-19 19:45:00,Alexis Saelemaekers,Cross,Olivier Giroud
+464208,85,BlockedShot,0.9180000305175782,0.43099998474121093,0.021523600444197655,Olivier Giroud,a,502,FromCorner,2021,Head,17047,Cagliari,AC Milan,0,1,2022-03-19 19:45:00,Theo Hernández,Aerial,Olivier Giroud
+466183,2,MissedShots,0.8619999694824219,0.4929999923706055,0.04669779911637306,Olivier Giroud,h,502,FromCorner,2021,LeftFoot,17061,AC Milan,Bologna,0,0,2022-04-04 18:45:00,Theo Hernández,Cross,Olivier Giroud
+466194,22,BlockedShot,0.9130000305175782,0.505,0.06799499690532684,Olivier Giroud,h,502,OpenPlay,2021,Head,17061,AC Milan,Bologna,0,0,2022-04-04 18:45:00,Junior Messias,Chipped,Olivier Giroud
+466203,41,SavedShot,0.91,0.4520000076293945,0.051049601286649704,Olivier Giroud,h,502,OpenPlay,2021,Head,17061,AC Milan,Bologna,0,0,2022-04-04 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+466204,45,SavedShot,0.9,0.46700000762939453,0.04162289947271347,Olivier Giroud,h,502,OpenPlay,2021,Head,17061,AC Milan,Bologna,0,0,2022-04-04 18:45:00,Sandro Tonali,Aerial,Olivier Giroud
+467655,59,BlockedShot,0.874000015258789,0.7230000305175781,0.03583360090851784,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17074,Torino,AC Milan,0,0,2022-04-10 18:45:00,Rafael Leão,Pass,Olivier Giroud
+467669,92,SavedShot,0.9109999847412109,0.415,0.03875330090522766,Olivier Giroud,a,502,FromCorner,2021,OtherBodyPart,17074,Torino,AC Milan,0,0,2022-04-10 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+467821,56,MissedShots,0.905,0.5329999923706055,0.36390000581741333,Olivier Giroud,h,502,SetPiece,2021,RightFoot,17081,AC Milan,Genoa,2,0,2022-04-15 19:00:00,Alexis Saelemaekers,Cross,Olivier Giroud
+470859,16,MissedShots,0.9290000152587891,0.4540000152587891,0.05917850136756897,Olivier Giroud,a,502,OpenPlay,2021,Head,17091,Lazio,AC Milan,1,2,2022-04-24 18:45:00,Junior Messias,Chipped,Olivier Giroud
+470866,36,MissedShots,0.9569999694824218,0.5309999847412109,0.06843960285186768,Olivier Giroud,a,502,OpenPlay,2021,Head,17091,Lazio,AC Milan,1,2,2022-04-24 18:45:00,Davide Calabria,Aerial,Olivier Giroud
+470871,46,BlockedShot,0.8569999694824219,0.3729999923706055,0.06207700073719025,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17091,Lazio,AC Milan,1,2,2022-04-24 18:45:00,Brahim Diaz,Pass,Olivier Giroud
+470873,49,Goal,0.9530000305175781,0.5279999923706055,0.5978829860687256,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17091,Lazio,AC Milan,1,2,2022-04-24 18:45:00,Rafael Leão,Pass,Olivier Giroud
+472111,13,MissedShots,0.9259999847412109,0.6140000152587891,0.10834600031375885,Olivier Giroud,h,502,SetPiece,2021,Head,17100,AC Milan,Fiorentina,1,0,2022-05-01 13:00:00,Sandro Tonali,Cross,Olivier Giroud
+472122,51,BlockedShot,0.86,0.49400001525878906,0.07748769968748093,Olivier Giroud,h,502,SetPiece,2021,RightFoot,17100,AC Milan,Fiorentina,1,0,2022-05-01 13:00:00,Davide Calabria,BallTouch,Olivier Giroud
+474559,13,BlockedShot,0.915,0.47200000762939454,0.09275340288877487,Olivier Giroud,a,502,FromCorner,2021,RightFoot,17108,Verona,AC Milan,1,3,2022-05-08 18:45:00,Rade Krunic,Cross,Olivier Giroud
+474561,21,SavedShot,0.9169999694824219,0.5359999847412109,0.035711098462343216,Olivier Giroud,a,502,FromCorner,2021,Head,17108,Verona,AC Milan,1,3,2022-05-08 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+478053,6,SavedShot,0.9259999847412109,0.5829999923706055,0.21726900339126587,Olivier Giroud,a,502,SetPiece,2021,Head,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,Alexis Saelemaekers,Chipped,Olivier Giroud
+478058,16,Goal,0.894000015258789,0.5320000076293945,0.13246600329875946,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,,None,Olivier Giroud
+478059,21,BlockedShot,0.9440000152587891,0.575,0.50689697265625,Olivier Giroud,a,502,OpenPlay,2021,RightFoot,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,Rafael Leão,Pass,Olivier Giroud
+478065,31,Goal,0.9230000305175782,0.5590000152587891,0.44891300797462463,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,Rafael Leão,Pass,Olivier Giroud
+478067,38,SavedShot,0.924000015258789,0.44599998474121094,0.049738701432943344,Olivier Giroud,a,502,OpenPlay,2021,Head,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,Alexis Saelemaekers,Aerial,Olivier Giroud
+478075,62,MissedShots,0.75,0.7230000305175781,0.021326400339603424,Olivier Giroud,a,502,OpenPlay,2021,LeftFoot,17132,Sassuolo,AC Milan,0,3,2022-05-22 16:00:00,Rafael Leão,Pass,Olivier Giroud
+480538,80,BlockedShot,0.85,0.49599998474121093,0.12083400040864944,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18582,AC Milan,Udinese,4,2,2022-08-13 16:30:00,Charles De Ketelaere,Pass,Olivier Giroud
+482823,63,SavedShot,0.8980000305175782,0.5929999923706055,0.018203500658273697,Olivier Giroud,a,502,OpenPlay,2022,Head,18599,Atalanta,AC Milan,1,1,2022-08-21 18:45:00,Ismael Bennacer,Aerial,Olivier Giroud
+483989,44,MissedShots,0.8390000152587891,0.4329999923706055,0.09266159683465958,Olivier Giroud,h,502,OpenPlay,2022,RightFoot,18606,AC Milan,Bologna,2,0,2022-08-27 18:45:00,Sandro Tonali,Pass,Olivier Giroud
+483995,56,MissedShots,0.919000015258789,0.46099998474121096,0.08894380182027817,Olivier Giroud,h,502,FromCorner,2022,Head,18606,AC Milan,Bologna,2,0,2022-08-27 18:45:00,Sandro Tonali,Cross,Olivier Giroud
+483996,57,Goal,0.9230000305175782,0.5259999847412109,0.5175989866256714,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18606,AC Milan,Bologna,2,0,2022-08-27 18:45:00,Rafael Leão,Throughball,Olivier Giroud
+484816,39,MissedShots,0.86,0.47,0.11339499801397324,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18612,Sassuolo,AC Milan,0,0,2022-08-30 16:30:00,,None,Olivier Giroud
+486104,25,MissedShots,0.9119999694824219,0.6120000076293945,0.07765249907970428,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18623,AC Milan,Inter,3,2,2022-09-03 16:00:00,Sandro Tonali,Chipped,Olivier Giroud
+486106,33,MissedShots,0.8619999694824219,0.5659999847412109,0.12144500017166138,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18623,AC Milan,Inter,3,2,2022-09-03 16:00:00,Sandro Tonali,Throughball,Olivier Giroud
+486113,42,MissedShots,0.905,0.40700000762939453,0.02032870054244995,Olivier Giroud,h,502,OpenPlay,2022,Head,18623,AC Milan,Inter,3,2,2022-09-03 16:00:00,Ismael Bennacer,Aerial,Olivier Giroud
+486119,53,Goal,0.904000015258789,0.580999984741211,0.08370819687843323,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18623,AC Milan,Inter,3,2,2022-09-03 16:00:00,Rafael Leão,Cross,Olivier Giroud
+487682,2,MissedShots,0.9019999694824219,0.46599998474121096,0.0956467017531395,Olivier Giroud,a,502,OpenPlay,2022,Head,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,Junior Messias,Cross,Olivier Giroud
+487689,40,MissedShots,0.91,0.4779999923706055,0.03054329939186573,Olivier Giroud,a,502,FromCorner,2022,Head,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+487691,41,SavedShot,0.9030000305175782,0.5329999923706055,0.12641899287700653,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,,None,Olivier Giroud
+487692,41,MissedShots,0.9359999847412109,0.5879999923706055,0.143312007188797,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,Rafael Leão,Pass,Olivier Giroud
+487698,63,BlockedShot,0.9340000152587891,0.48700000762939455,0.06357669830322266,Olivier Giroud,a,502,FromCorner,2022,Head,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,Sandro Tonali,Aerial,Olivier Giroud
+487699,66,Goal,0.885,0.5,0.7612990140914917,Olivier Giroud,a,502,Penalty,2022,LeftFoot,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,,Standard,Olivier Giroud
+487701,84,BlockedShot,0.785,0.3770000076293945,0.038947101682424545,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18640,Sampdoria,AC Milan,1,2,2022-09-10 18:45:00,Pierre Kalulu Kyatengwa,Pass,Olivier Giroud
+489618,6,MissedShots,0.9069999694824219,0.47,0.12282499670982361,Olivier Giroud,h,502,FromCorner,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Theo Hernández,Rebound,Olivier Giroud
+489619,11,MissedShots,0.9219999694824219,0.565,0.10391400009393692,Olivier Giroud,h,502,OpenPlay,2022,Head,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Sandro Tonali,Cross,Olivier Giroud
+489620,12,SavedShot,0.8919999694824219,0.53,0.13328899443149567,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Rade Krunic,Throughball,Olivier Giroud
+489622,20,MissedShots,0.925,0.5320000076293945,0.06091810017824173,Olivier Giroud,h,502,OpenPlay,2022,Head,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+489623,24,MissedShots,0.9640000152587891,0.55,0.1505260020494461,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Charles De Ketelaere,Pass,Olivier Giroud
+489633,58,BlockedShot,0.92,0.41,0.09035129845142365,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Fikayo Tomori,Chipped,Olivier Giroud
+489638,68,Goal,0.919000015258789,0.5220000076293946,0.4845939874649048,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Theo Hernández,Pass,Olivier Giroud
+489639,74,MissedShots,0.8219999694824218,0.629000015258789,0.049061600118875504,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18645,AC Milan,Napoli,1,2,2022-09-18 18:45:00,Charles De Ketelaere,Pass,Olivier Giroud
+490410,6,BlockedShot,0.98,0.425,0.11848100274801254,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18653,Empoli,AC Milan,1,3,2022-10-01 18:45:00,Rafael Leão,Cross,Olivier Giroud
+490426,56,ShotOnPost,0.7830000305175782,0.56,0.09447360038757324,Olivier Giroud,a,502,DirectFreekick,2022,LeftFoot,18653,Empoli,AC Milan,1,3,2022-10-01 18:45:00,,Standard,Olivier Giroud
+490433,69,BlockedShot,0.865999984741211,0.6140000152587891,0.06978689879179001,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18653,Empoli,AC Milan,1,3,2022-10-01 18:45:00,Fikayo Tomori,Chipped,Olivier Giroud
+491723,30,BlockedShot,0.88,0.42700000762939455,0.02156670019030571,Olivier Giroud,h,502,FromCorner,2022,Head,18665,AC Milan,Juventus,2,0,2022-10-08 16:00:00,Theo Hernández,Cross,Olivier Giroud
+491728,45,BlockedShot,0.875999984741211,0.49700000762939456,0.08215069770812988,Olivier Giroud,h,502,FromCorner,2022,LeftFoot,18665,AC Milan,Juventus,2,0,2022-10-08 16:00:00,,None,Olivier Giroud
+491732,59,MissedShots,0.9230000305175782,0.46700000762939453,0.06311210244894028,Olivier Giroud,h,502,OpenPlay,2022,Head,18665,AC Milan,Juventus,2,0,2022-10-08 16:00:00,Ismael Bennacer,Aerial,Olivier Giroud
+493974,2,MissedShots,0.750999984741211,0.5670000076293945,0.048788901418447495,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18674,Verona,AC Milan,1,2,2022-10-16 18:45:00,Yacine Adli,Pass,Olivier Giroud
+493978,10,MissedShots,0.8909999847412109,0.5690000152587891,0.4772860109806061,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18674,Verona,AC Milan,1,2,2022-10-16 18:45:00,Brahim Diaz,Pass,Olivier Giroud
+493981,20,BlockedShot,0.9,0.4929999923706055,0.021908799186348915,Olivier Giroud,a,502,FromCorner,2022,Head,18674,Verona,AC Milan,1,2,2022-10-16 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+497527,91,MissedShots,0.924000015258789,0.5279999923706055,0.10331399738788605,Olivier Giroud,a,502,FromCorner,2022,Head,18701,Torino,AC Milan,2,1,2022-10-30 19:45:00,Ismael Bennacer,Cross,Olivier Giroud
+498320,88,Goal,0.9690000152587891,0.5659999847412109,0.4656110107898712,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18706,AC Milan,Spezia,2,1,2022-11-05 19:45:00,Sandro Tonali,Chipped,Olivier Giroud
+500853,49,SavedShot,0.9540000152587891,0.4370000076293945,0.43647998571395874,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18727,AC Milan,Fiorentina,2,1,2022-11-13 17:00:00,Pierre Kalulu Kyatengwa,Cross,Olivier Giroud
+500857,71,MissedShots,0.9180000305175782,0.43099998474121093,0.10151399672031403,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18727,AC Milan,Fiorentina,2,1,2022-11-13 17:00:00,Rafael Leão,Cross,Olivier Giroud
+502282,31,SavedShot,0.93,0.4420000076293945,0.5717080235481262,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18737,Salernitana,AC Milan,1,2,2023-01-04 11:30:00,Rafael Leão,Pass,Olivier Giroud
+502285,48,SavedShot,0.8530000305175781,0.6270000076293946,0.2694059908390045,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18737,Salernitana,AC Milan,1,2,2023-01-04 11:30:00,Rafael Leão,Pass,Olivier Giroud
+502290,81,SavedShot,0.9290000152587891,0.6469999694824219,0.2847760021686554,Olivier Giroud,a,502,SetPiece,2022,LeftFoot,18737,Salernitana,AC Milan,1,2,2023-01-04 11:30:00,Sandro Tonali,Chipped,Olivier Giroud
+502998,2,MissedShots,0.9159999847412109,0.45799999237060546,0.04343799874186516,Olivier Giroud,h,502,OpenPlay,2022,Head,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,Sandro Tonali,Rebound,Olivier Giroud
+503001,24,MissedShots,0.8919999694824219,0.5479999923706055,0.05888209864497185,Olivier Giroud,h,502,FromCorner,2022,LeftFoot,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,Ismael Bennacer,Cross,Olivier Giroud
+503009,53,SavedShot,0.9030000305175782,0.46299999237060546,0.05480000004172325,Olivier Giroud,h,502,OpenPlay,2022,Head,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,Davide Calabria,Aerial,Olivier Giroud
+503016,82,BlockedShot,0.7809999847412109,0.30200000762939455,0.057580698281526566,Olivier Giroud,h,502,DirectFreekick,2022,LeftFoot,18747,AC Milan,Roma,2,2,2023-01-08 19:45:00,,Standard,Olivier Giroud
+503675,9,MissedShots,0.905,0.4159999847412109,0.3753789961338043,Olivier Giroud,a,502,OpenPlay,2022,RightFoot,18756,Lecce,AC Milan,2,2,2023-01-14 17:00:00,,Rebound,Olivier Giroud
+503688,42,SavedShot,0.9080000305175782,0.4640000152587891,0.05532100051641464,Olivier Giroud,a,502,OpenPlay,2022,Head,18756,Lecce,AC Milan,2,2,2023-01-14 17:00:00,Davide Calabria,Aerial,Olivier Giroud
+503691,57,SavedShot,0.905,0.37400001525878906,0.09726040065288544,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18756,Lecce,AC Milan,2,2,2023-01-14 17:00:00,Tommaso Pobega,Pass,Olivier Giroud
+506046,23,Goal,0.895,0.5129999923706055,0.08051940053701401,Olivier Giroud,h,502,OpenPlay,2022,Head,18779,AC Milan,Sassuolo,2,5,2023-01-29 11:30:00,Davide Calabria,Cross,Olivier Giroud
+506049,34,MissedShots,0.92,0.5690000152587891,0.08328989893198013,Olivier Giroud,h,502,OpenPlay,2022,Head,18779,AC Milan,Sassuolo,2,5,2023-01-29 11:30:00,Alexis Saelemaekers,Cross,Olivier Giroud
+506050,38,MissedShots,0.8919999694824219,0.4209999847412109,0.04687289893627167,Olivier Giroud,h,502,SetPiece,2022,Head,18779,AC Milan,Sassuolo,2,5,2023-01-29 11:30:00,Theo Hernández,Cross,Olivier Giroud
+507865,57,MissedShots,0.875,0.5690000152587891,0.030448799952864647,Olivier Giroud,a,502,OpenPlay,2022,Head,18785,Inter,AC Milan,1,0,2023-02-05 19:45:00,Theo Hernández,Cross,Olivier Giroud
+507868,77,MissedShots,0.7819999694824219,0.3340000152587891,0.06632380187511444,Olivier Giroud,a,502,DirectFreekick,2022,LeftFoot,18785,Inter,AC Milan,1,0,2023-02-05 19:45:00,,Standard,Olivier Giroud
+508123,28,SavedShot,0.9590000152587891,0.5459999847412109,0.13145700097084045,Olivier Giroud,h,502,FromCorner,2022,Head,18799,AC Milan,Torino,1,0,2023-02-10 19:45:00,Sandro Tonali,Cross,Olivier Giroud
+508130,55,SavedShot,0.899000015258789,0.605999984741211,0.3521769940853119,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18799,AC Milan,Torino,1,0,2023-02-10 19:45:00,Brahim Diaz,Pass,Olivier Giroud
+508134,61,Goal,0.909000015258789,0.565,0.08651109784841537,Olivier Giroud,h,502,SetPiece,2022,Head,18799,AC Milan,Torino,1,0,2023-02-10 19:45:00,Theo Hernández,Cross,Olivier Giroud
+511512,0,MissedShots,0.935,0.6990000152587891,0.048764199018478394,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18814,AC Milan,Atalanta,2,0,2023-02-26 19:45:00,Rafael Leão,Chipped,Olivier Giroud
+511514,6,MissedShots,0.915,0.509000015258789,0.3659690022468567,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18814,AC Milan,Atalanta,2,0,2023-02-26 19:45:00,Rafael Leão,Cross,Olivier Giroud
+511521,59,SavedShot,0.8859999847412109,0.46,0.4072880148887634,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18814,AC Milan,Atalanta,2,0,2023-02-26 19:45:00,Brahim Diaz,Pass,Olivier Giroud
+512412,31,SavedShot,0.9169999694824219,0.6170000076293946,0.08715999871492386,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18823,Fiorentina,AC Milan,2,1,2023-03-04 19:45:00,Ismael Bennacer,Chipped,Olivier Giroud
+512416,50,SavedShot,0.94,0.49700000762939456,0.12496600300073624,Olivier Giroud,a,502,FromCorner,2022,Head,18823,Fiorentina,AC Milan,2,1,2023-03-04 19:45:00,Ante Rebic,Cross,Olivier Giroud
+514469,19,BlockedShot,0.8469999694824218,0.4979999923706055,0.10481200367212296,Olivier Giroud,h,502,OpenPlay,2022,RightFoot,18838,AC Milan,Salernitana,1,1,2023-03-13 19:45:00,,TakeOn,Olivier Giroud
+514471,28,MissedShots,0.8819999694824219,0.46,0.052924398332834244,Olivier Giroud,h,502,FromCorner,2022,LeftFoot,18838,AC Milan,Salernitana,1,1,2023-03-13 19:45:00,Ismael Bennacer,Cross,Olivier Giroud
+514474,38,MissedShots,0.8909999847412109,0.4,0.02682650089263916,Olivier Giroud,h,502,OpenPlay,2022,Head,18838,AC Milan,Salernitana,1,1,2023-03-13 19:45:00,Alexis Saelemaekers,Cross,Olivier Giroud
+514480,45,Goal,0.9590000152587891,0.4759999847412109,0.43755701184272766,Olivier Giroud,h,502,FromCorner,2022,Head,18838,AC Milan,Salernitana,1,1,2023-03-13 19:45:00,Ismael Bennacer,Aerial,Olivier Giroud
+517251,49,MissedShots,0.93,0.6619999694824219,0.2928769886493683,Olivier Giroud,a,502,OpenPlay,2022,LeftFoot,18859,Napoli,AC Milan,0,4,2023-04-02 18:45:00,Ismael Bennacer,Pass,Olivier Giroud
+517680,82,BlockedShot,0.9730000305175781,0.6090000152587891,0.44094300270080566,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18867,AC Milan,Empoli,0,0,2023-04-07 19:00:00,,Rebound,Olivier Giroud
+522867,86,BlockedShot,0.7680000305175781,0.34299999237060547,0.05969073250889778,Olivier Giroud,a,502,DirectFreekick,2022,LeftFoot,18898,Roma,AC Milan,1,1,2023-04-29 16:00:00,,Standard,Olivier Giroud
+524446,16,MissedShots,0.8580000305175781,0.5459999847412109,0.06742873787879944,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18916,AC Milan,Lazio,2,0,2023-05-06 13:00:00,Theo Hernández,Cross,Olivier Giroud
+526136,90,BlockedShot,0.740999984741211,0.4109999847412109,0.05402573198080063,Olivier Giroud,a,502,DirectFreekick,2022,LeftFoot,18931,Spezia,AC Milan,2,0,2023-05-13 16:00:00,,Standard,Olivier Giroud
+527698,22,Goal,0.9540000152587891,0.49900001525878906,0.48776912689208984,Olivier Giroud,h,502,FromCorner,2022,Head,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Brahim Diaz,Cross,Olivier Giroud
+527699,28,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,h,502,Penalty,2022,LeftFoot,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,,Standard,Olivier Giroud
+527700,32,SavedShot,0.9159999847412109,0.435,0.227162167429924,Olivier Giroud,h,502,OpenPlay,2022,Head,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Sandro Tonali,Cross,Olivier Giroud
+527705,46,BlockedShot,0.9030000305175782,0.6079999923706054,0.0998576357960701,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,,None,Olivier Giroud
+527709,60,SavedShot,0.9319999694824219,0.5609999847412109,0.394157737493515,Olivier Giroud,h,502,OpenPlay,2022,Head,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Davide Calabria,Cross,Olivier Giroud
+527712,67,Goal,0.98,0.505,0.9107363820075989,Olivier Giroud,h,502,OpenPlay,2022,LeftFoot,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Rafael Leão,Cross,Olivier Giroud
+527715,78,SavedShot,0.9580000305175781,0.675,0.05383565276861191,Olivier Giroud,h,502,FromCorner,2022,LeftFoot,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Davide Calabria,Rebound,Olivier Giroud
+530267,39,Goal,0.895,0.5570000076293945,0.1725730001926422,Olivier Giroud,a,502,OpenPlay,2022,Head,18946,Juventus,AC Milan,0,1,2023-05-28 18:45:00,Davide Calabria,Cross,Olivier Giroud
+530271,61,MissedShots,0.755,0.38599998474121094,0.05943652242422104,Olivier Giroud,a,502,DirectFreekick,2022,LeftFoot,18946,Juventus,AC Milan,0,1,2023-05-28 18:45:00,,Standard,Olivier Giroud
+531170,46,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,h,502,Penalty,2022,LeftFoot,18956,AC Milan,Verona,3,1,2023-06-04 19:00:00,,Standard,Olivier Giroud
+531177,75,SavedShot,0.9330000305175781,0.5209999847412109,0.12005496770143509,Olivier Giroud,h,502,FromCorner,2022,Head,18956,AC Milan,Verona,3,1,2023-06-04 19:00:00,Sandro Tonali,Cross,Olivier Giroud
+534182,10,Goal,0.955,0.40299999237060546,0.4216753840446472,Olivier Giroud,a,502,OpenPlay,2023,RightFoot,22314,Bologna,AC Milan,0,2,2023-08-21 18:45:00,Tijjani Reijnders,Pass,Olivier Giroud
+534189,27,SavedShot,0.9119999694824219,0.674000015258789,0.06117437779903412,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22314,Bologna,AC Milan,0,2,2023-08-21 18:45:00,Christian Pulisic,Cross,Olivier Giroud
+535045,8,MissedShots,0.8180000305175781,0.6140000152587891,0.03023560158908367,Olivier Giroud,h,502,FromCorner,2023,LeftFoot,22317,AC Milan,Torino,4,1,2023-08-26 18:45:00,,None,Olivier Giroud
+535055,42,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,h,502,Penalty,2023,LeftFoot,22317,AC Milan,Torino,4,1,2023-08-26 18:45:00,,Standard,Olivier Giroud
+535060,64,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,h,502,Penalty,2023,LeftFoot,22317,AC Milan,Torino,4,1,2023-08-26 18:45:00,,Standard,Olivier Giroud
+535836,8,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,a,502,Penalty,2023,LeftFoot,22326,Roma,AC Milan,1,2,2023-09-01 18:45:00,,Standard,Olivier Giroud
+537780,46,MissedShots,0.815,0.5320000076293945,0.1597842574119568,Olivier Giroud,a,502,DirectFreekick,2023,LeftFoot,22336,Inter,AC Milan,5,1,2023-09-16 16:00:00,,Standard,Olivier Giroud
+538909,12,BlockedShot,0.895,0.549000015258789,0.042139776051044464,Olivier Giroud,h,502,OpenPlay,2023,Head,22352,AC Milan,Verona,1,0,2023-09-23 13:00:00,Rafael Leão,Aerial,Olivier Giroud
+538912,32,MissedShots,0.89,0.5329999923706055,0.019568156450986862,Olivier Giroud,h,502,FromCorner,2023,Head,22352,AC Milan,Verona,1,0,2023-09-23 13:00:00,,Aerial,Olivier Giroud
+538913,43,MissedShots,0.8090000152587891,0.51,0.06750887632369995,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22352,AC Milan,Verona,1,0,2023-09-23 13:00:00,Simon Kjaer,Chipped,Olivier Giroud
+538920,61,SavedShot,0.9690000152587891,0.3990000152587891,0.13028639554977417,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22352,AC Milan,Verona,1,0,2023-09-23 13:00:00,Yunus Musah,Pass,Olivier Giroud
+541406,44,SavedShot,0.905,0.45299999237060545,0.09972731024026871,Olivier Giroud,h,502,OpenPlay,2023,RightFoot,22373,AC Milan,Lazio,2,0,2023-09-30 16:00:00,,None,Olivier Giroud
+544905,13,SavedShot,0.94,0.6459999847412109,0.051221031695604324,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22391,AC Milan,Juventus,0,1,2023-10-22 18:45:00,Rafael Leão,Cross,Olivier Giroud
+546350,1,BlockedShot,0.855999984741211,0.5579999923706055,0.06778372824192047,Olivier Giroud,a,502,OpenPlay,2023,RightFoot,22404,Napoli,AC Milan,2,2,2023-10-29 19:45:00,,Rebound,Olivier Giroud
+546354,21,Goal,0.9459999847412109,0.5029999923706054,0.5515933632850647,Olivier Giroud,a,502,OpenPlay,2023,Head,22404,Napoli,AC Milan,2,2,2023-10-29 19:45:00,Christian Pulisic,Cross,Olivier Giroud
+546357,30,Goal,0.9309999847412109,0.504000015258789,0.10321370512247086,Olivier Giroud,a,502,OpenPlay,2023,Head,22404,Napoli,AC Milan,2,2,2023-10-29 19:45:00,Davide Calabria,Aerial,Olivier Giroud
+546364,48,SavedShot,0.8730000305175781,0.4129999923706055,0.0910244956612587,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22404,Napoli,AC Milan,2,2,2023-10-29 19:45:00,,None,Olivier Giroud
+547114,89,SavedShot,0.950999984741211,0.4909999847412109,0.483155220746994,Olivier Giroud,h,502,OpenPlay,2023,Head,22410,AC Milan,Udinese,0,1,2023-11-04 19:45:00,Rafael Leão,Aerial,Olivier Giroud
+547117,93,MissedShots,0.855999984741211,0.580999984741211,0.04724659025669098,Olivier Giroud,h,502,FromCorner,2023,LeftFoot,22410,AC Milan,Udinese,0,1,2023-11-04 19:45:00,Ruben Loftus-Cheek,BallTouch,Olivier Giroud
+548225,27,Goal,0.960999984741211,0.5279999923706055,0.7938435673713684,Olivier Giroud,a,502,OpenPlay,2023,OtherBodyPart,22417,Lecce,AC Milan,2,2,2023-11-11 14:00:00,Theo Hernández,Pass,Olivier Giroud
+553039,3,BlockedShot,0.899000015258789,0.5479999923706055,0.09246903657913208,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22445,Atalanta,AC Milan,3,2,2023-12-09 17:00:00,,None,Olivier Giroud
+553043,26,BlockedShot,0.7880000305175782,0.3629999923706055,0.02934274636209011,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22445,Atalanta,AC Milan,3,2,2023-12-09 17:00:00,,BallRecovery,Olivier Giroud
+553050,46,MissedShots,0.905,0.4329999923706055,0.09839818626642227,Olivier Giroud,a,502,OpenPlay,2023,RightFoot,22445,Atalanta,AC Milan,3,2,2023-12-09 17:00:00,Ruben Loftus-Cheek,Cross,Olivier Giroud
+553049,47,Goal,0.8980000305175782,0.46799999237060547,0.05713219195604324,Olivier Giroud,a,502,FromCorner,2023,Head,22445,Atalanta,AC Milan,3,2,2023-12-09 17:00:00,Alessandro Florenzi,Cross,Olivier Giroud
+554576,2,MissedShots,0.92,0.4779999923706055,0.12737895548343658,Olivier Giroud,h,502,OpenPlay,2023,Head,22459,AC Milan,Monza,3,0,2023-12-17 11:30:00,Christian Pulisic,Cross,Olivier Giroud
+554603,61,MissedShots,0.8830000305175781,0.5309999847412109,0.11694403737783432,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22459,AC Milan,Monza,3,0,2023-12-17 11:30:00,Theo Hernández,Cross,Olivier Giroud
+554612,89,BlockedShot,0.9230000305175782,0.615,0.1336095929145813,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22459,AC Milan,Monza,3,0,2023-12-17 11:30:00,Samuel Chukwueze,Pass,Olivier Giroud
+556021,9,MissedShots,0.899000015258789,0.5059999847412109,0.026673998683691025,Olivier Giroud,a,502,FromCorner,2023,Head,22473,Salernitana,AC Milan,2,2,2023-12-22 19:45:00,,Aerial,Olivier Giroud
+556023,16,BlockedShot,0.965,0.4520000076293945,0.522159218788147,Olivier Giroud,a,502,SetPiece,2023,LeftFoot,22473,Salernitana,AC Milan,2,2,2023-12-22 19:45:00,Rafael Leão,Goal,Olivier Giroud
+556036,45,MissedShots,0.9169999694824219,0.4909999847412109,0.09666944295167923,Olivier Giroud,a,502,FromCorner,2023,Head,22473,Salernitana,AC Milan,2,2,2023-12-22 19:45:00,Tijjani Reijnders,Cross,Olivier Giroud
+557648,30,Goal,0.885,0.5,0.7612988352775574,Olivier Giroud,a,502,Penalty,2023,LeftFoot,22486,Empoli,AC Milan,0,3,2024-01-07 11:30:00,,Standard,Olivier Giroud
+558726,0,SavedShot,0.8830000305175781,0.6990000152587891,0.04452480748295784,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22500,AC Milan,Roma,3,1,2024-01-14 19:45:00,Theo Hernández,Pass,Olivier Giroud
+558729,15,MissedShots,0.919000015258789,0.504000015258789,0.0916108563542366,Olivier Giroud,h,502,SetPiece,2023,LeftFoot,22500,AC Milan,Roma,3,1,2024-01-14 19:45:00,Matteo Gabbia,HeadPass,Olivier Giroud
+558743,55,Goal,0.955999984741211,0.524000015258789,0.4253075122833252,Olivier Giroud,h,502,FromCorner,2023,Head,22500,AC Milan,Roma,3,1,2024-01-14 19:45:00,Simon Kjaer,HeadPass,Olivier Giroud
+559132,15,SavedShot,0.9259999847412109,0.6630000305175782,0.3207706809043884,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Rafael Leão,Throughball,Olivier Giroud
+559134,17,SavedShot,0.9009999847412109,0.5220000076293946,0.3136325478553772,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Theo Hernández,Cross,Olivier Giroud
+559140,58,SavedShot,0.9009999847412109,0.48200000762939454,0.046933386474847794,Olivier Giroud,a,502,OpenPlay,2023,Head,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Christian Pulisic,Aerial,Olivier Giroud
+559149,80,MissedShots,0.894000015258789,0.4779999923706055,0.0653361901640892,Olivier Giroud,a,502,OpenPlay,2023,Head,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Yacine Adli,Cross,Olivier Giroud
+559150,82,BlockedShot,0.899000015258789,0.6279999923706054,0.06216450408101082,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,,None,Olivier Giroud
+559153,91,SavedShot,0.7869999694824219,0.639000015258789,0.019661258906126022,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Luka Jovic,Rebound,Olivier Giroud
+559154,92,MissedShots,0.8630000305175781,0.5259999847412109,0.020014949142932892,Olivier Giroud,a,502,FromCorner,2023,Head,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Alessandro Florenzi,Cross,Olivier Giroud
+559993,41,SavedShot,0.885,0.5,0.7612988352775574,Olivier Giroud,h,502,Penalty,2023,LeftFoot,22518,AC Milan,Bologna,2,2,2024-01-27 19:45:00,,Standard,Olivier Giroud
+561323,15,MissedShots,0.9169999694824219,0.6909999847412109,0.05942712351679802,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22531,Frosinone,AC Milan,2,3,2024-02-03 17:00:00,,BallTouch,Olivier Giroud
+561324,16,Goal,0.94,0.44599998474121094,0.38395148515701294,Olivier Giroud,a,502,OpenPlay,2023,Head,22531,Frosinone,AC Milan,2,3,2024-02-03 17:00:00,Rafael Leão,Cross,Olivier Giroud
+561333,62,MissedShots,0.89,0.4520000076293945,0.03102823719382286,Olivier Giroud,a,502,OpenPlay,2023,Head,22531,Frosinone,AC Milan,2,3,2024-02-03 17:00:00,Yacine Adli,Aerial,Olivier Giroud
+561338,74,MissedShots,0.7869999694824219,0.6869999694824219,0.018999192863702774,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22531,Frosinone,AC Milan,2,3,2024-02-03 17:00:00,,None,Olivier Giroud
+563248,47,SavedShot,0.955999984741211,0.46599998474121096,0.6290567517280579,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22539,AC Milan,Napoli,1,0,2024-02-11 19:45:00,,None,Olivier Giroud
+564715,63,Goal,0.93,0.5279999923706055,0.3723738193511963,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22548,Monza,AC Milan,4,2,2024-02-18 19:45:00,Christian Pulisic,HeadPass,Olivier Giroud
+565886,0,BlockedShot,0.88,0.5320000076293945,0.08227699249982834,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22560,AC Milan,Atalanta,1,1,2024-02-25 19:45:00,Theo Hernández,Cross,Olivier Giroud
+565899,43,MissedShots,0.9009999847412109,0.48400001525878905,0.03960825502872467,Olivier Giroud,h,502,SetPiece,2023,Head,22560,AC Milan,Atalanta,1,1,2024-02-25 19:45:00,Alessandro Florenzi,Aerial,Olivier Giroud
+565911,79,BlockedShot,0.93,0.634000015258789,0.07665519416332245,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22560,AC Milan,Atalanta,1,1,2024-02-25 19:45:00,,Rebound,Olivier Giroud
+566205,15,MissedShots,0.914000015258789,0.5270000076293946,0.055034980177879333,Olivier Giroud,a,502,OpenPlay,2023,Head,22568,Lazio,AC Milan,0,1,2024-03-01 19:45:00,Alessandro Florenzi,Aerial,Olivier Giroud
+566211,46,MissedShots,0.9569999694824218,0.6359999847412109,0.14282236993312836,Olivier Giroud,a,502,FromCorner,2023,Head,22568,Lazio,AC Milan,0,1,2024-03-01 19:45:00,Theo Hernández,Cross,Olivier Giroud
+566213,55,MissedShots,0.9009999847412109,0.39299999237060546,0.04617747664451599,Olivier Giroud,a,502,FromCorner,2023,LeftFoot,22568,Lazio,AC Milan,0,1,2024-03-01 19:45:00,Christian Pulisic,Cross,Olivier Giroud
+566215,64,SavedShot,0.8530000305175781,0.5020000076293946,0.10260865092277527,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22568,Lazio,AC Milan,0,1,2024-03-01 19:45:00,Ruben Loftus-Cheek,Pass,Olivier Giroud
+566223,87,BlockedShot,0.9669999694824218,0.600999984741211,0.11165884882211685,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22568,Lazio,AC Milan,0,1,2024-03-01 19:45:00,,Rebound,Olivier Giroud
+571005,3,MissedShots,0.9280000305175782,0.4779999923706055,0.05484626069664955,Olivier Giroud,a,502,FromCorner,2023,Head,22601,Fiorentina,AC Milan,1,2,2024-03-30 19:45:00,Alessandro Florenzi,Aerial,Olivier Giroud
+571006,7,SavedShot,0.905,0.45799999237060546,0.44993671774864197,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22601,Fiorentina,AC Milan,1,2,2024-03-30 19:45:00,Samuel Chukwueze,Pass,Olivier Giroud
+571019,43,MissedShots,0.8769999694824219,0.5420000076293945,0.37057259678840637,Olivier Giroud,a,502,OpenPlay,2023,RightFoot,22601,Fiorentina,AC Milan,1,2,2024-03-30 19:45:00,Rafael Leão,Pass,Olivier Giroud
+572181,13,SavedShot,0.79,0.36900001525878906,0.01544041559100151,Olivier Giroud,h,502,OpenPlay,2023,Head,22612,AC Milan,Lecce,3,0,2024-04-06 13:00:00,Samuel Chukwueze,Chipped,Olivier Giroud
+572182,19,Goal,0.9540000152587891,0.5359999847412109,0.1309715211391449,Olivier Giroud,h,502,FromCorner,2023,Head,22612,AC Milan,Lecce,3,0,2024-04-06 13:00:00,Yacine Adli,Cross,Olivier Giroud
+572189,60,MissedShots,0.9430000305175781,0.6509999847412109,0.13696053624153137,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22612,AC Milan,Lecce,3,0,2024-04-06 13:00:00,Rafael Leão,Throughball,Olivier Giroud
+574242,61,MissedShots,0.924000015258789,0.445,0.04332182928919792,Olivier Giroud,a,502,OpenPlay,2023,Head,22620,Sassuolo,AC Milan,3,3,2024-04-14 13:00:00,Alessandro Florenzi,Aerial,Olivier Giroud
+574248,85,MissedShots,0.9019999694824219,0.43599998474121093,0.42351293563842773,Olivier Giroud,a,502,OpenPlay,2023,LeftFoot,22620,Sassuolo,AC Milan,3,3,2024-04-14 13:00:00,,None,Olivier Giroud
+579093,15,BlockedShot,0.7419999694824219,0.4879999923706055,0.059442125260829926,Olivier Giroud,h,502,DirectFreekick,2023,LeftFoot,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,,Standard,Olivier Giroud
+579100,35,MissedShots,0.8669999694824219,0.47099998474121096,0.06972413510084152,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,Samuel Chukwueze,BallTouch,Olivier Giroud
+579113,68,MissedShots,0.8719999694824219,0.46099998474121096,0.3682606518268585,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,Noah Okafor,Pass,Olivier Giroud
+579116,74,Goal,0.9530000305175781,0.585999984741211,0.3398280143737793,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,Christian Pulisic,Cross,Olivier Giroud
+579121,94,MissedShots,0.955999984741211,0.5890000152587891,0.045626070350408554,Olivier Giroud,h,502,SetPiece,2023,Head,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,Yacine Adli,Aerial,Olivier Giroud
+580185,15,SavedShot,0.9309999847412109,0.500999984741211,0.06416990607976913,Olivier Giroud,h,502,FromCorner,2023,Head,22663,AC Milan,Cagliari,5,1,2024-05-11 18:45:00,,None,Olivier Giroud
+581841,82,MissedShots,0.8580000305175781,0.57,0.013552380725741386,Olivier Giroud,a,502,FromCorner,2023,Head,22674,Torino,AC Milan,3,1,2024-05-18 18:45:00,Alessandro Florenzi,Cross,Olivier Giroud
+583337,1,SavedShot,0.95,0.654000015258789,0.07446324080228806,Olivier Giroud,h,502,OpenPlay,2023,LeftFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Rafael Leão,BallTouch,Olivier Giroud
+583339,2,MissedShots,0.9309999847412109,0.43099998474121093,0.04047505557537079,Olivier Giroud,h,502,FromCorner,2023,Head,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Theo Hernández,Aerial,Olivier Giroud
+583340,8,MissedShots,0.9109999847412109,0.519000015258789,0.11215762794017792,Olivier Giroud,h,502,OpenPlay,2023,Head,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Davide Calabria,Cross,Olivier Giroud
+583347,26,Goal,0.9290000152587891,0.5059999847412109,0.3846234083175659,Olivier Giroud,h,502,FromCorner,2023,LeftFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Alessandro Florenzi,Cross,Olivier Giroud
+583363,71,SavedShot,0.889000015258789,0.40099998474121096,0.44183799624443054,Olivier Giroud,h,502,OpenPlay,2023,RightFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Ismael Bennacer,Pass,Olivier Giroud
+583364,74,MissedShots,0.8590000152587891,0.5270000076293946,0.033529192209243774,Olivier Giroud,h,502,OpenPlay,2023,Head,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Yacine Adli,Chipped,Olivier Giroud
+638085,10,Goal,0.894000015258789,0.644000015258789,0.12164933979511261,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29542,Brest,Lille,3,3,2025-08-17 13:00:00,Felix Correia,Throughball,Olivier Giroud
+638092,39,BlockedShot,0.7980000305175782,0.5079999923706054,0.057257335633039474,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29542,Brest,Lille,3,3,2025-08-17 13:00:00,Marius Broholm,Pass,Olivier Giroud
+638096,46,SavedShot,0.7909999847412109,0.48200000762939454,0.10664241015911102,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29542,Brest,Lille,3,3,2025-08-17 13:00:00,Hákon Haraldsson,Chipped,Olivier Giroud
+638102,63,BlockedShot,0.9069999694824219,0.600999984741211,0.10966425389051437,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29542,Brest,Lille,3,3,2025-08-17 13:00:00,Romain Perraud,Pass,Olivier Giroud
+639660,60,MissedShots,0.915,0.43599998474121093,0.07742679119110107,Olivier Giroud,h,502,FromCorner,2025,Head,29555,Lille,Monaco,1,0,2025-08-24 18:45:00,Felix Correia,Cross,Olivier Giroud
+639662,72,MissedShots,0.9109999847412109,0.5129999923706055,0.3498440384864807,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29555,Lille,Monaco,1,0,2025-08-24 18:45:00,Felix Correia,Cross,Olivier Giroud
+639670,90,Goal,0.905,0.5179999923706055,0.46911829710006714,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29555,Lille,Monaco,1,0,2025-08-24 18:45:00,Matias Fernandez-Pardo,Pass,Olivier Giroud
+639671,98,MissedShots,0.885,0.5,0.7600951194763184,Olivier Giroud,h,502,Penalty,2025,LeftFoot,29555,Lille,Monaco,1,0,2025-08-24 18:45:00,,Standard,Olivier Giroud
+642229,22,BlockedShot,0.8640000152587891,0.46700000762939453,0.10620014369487762,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29567,Lille,Toulouse,2,1,2025-09-14 13:00:00,Ayyoub Bouaddi,Pass,Olivier Giroud
+642230,31,MissedShots,0.915,0.5559999847412109,0.055022455751895905,Olivier Giroud,h,502,OpenPlay,2025,Head,29567,Lille,Toulouse,2,1,2025-09-14 13:00:00,,Aerial,Olivier Giroud
+642231,31,MissedShots,0.9269999694824219,0.5170000076293946,0.08172979950904846,Olivier Giroud,h,502,OpenPlay,2025,Head,29567,Lille,Toulouse,2,1,2025-09-14 13:00:00,Aissa Mandi,Aerial,Olivier Giroud
+642235,46,SavedShot,0.895,0.635,0.0695779100060463,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29567,Lille,Toulouse,2,1,2025-09-14 13:00:00,,None,Olivier Giroud
+642243,73,BlockedShot,0.884000015258789,0.515,0.055893346667289734,Olivier Giroud,h,502,OpenPlay,2025,Head,29567,Lille,Toulouse,2,1,2025-09-14 13:00:00,Romain Perraud,Cross,Olivier Giroud
+643455,5,MissedShots,0.9059999847412109,0.5229999923706055,0.13379688560962677,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29577,Lens,Lille,3,0,2025-09-20 19:05:00,Romain Perraud,Cross,Olivier Giroud
+647059,23,SavedShot,0.9009999847412109,0.4909999847412109,0.06884834915399551,Olivier Giroud,h,502,FromCorner,2025,Head,29595,Lille,Paris Saint Germain,1,1,2025-10-05 18:45:00,Hákon Haraldsson,Cross,Olivier Giroud
+647066,45,MissedShots,0.9009999847412109,0.515,0.1084776520729065,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29595,Lille,Paris Saint Germain,1,1,2025-10-05 18:45:00,Romain Perraud,Cross,Olivier Giroud
+648418,10,MissedShots,0.9080000305175782,0.4859999847412109,0.1288967728614807,Olivier Giroud,a,502,OpenPlay,2025,Head,29605,Nantes,Lille,0,2,2025-10-19 18:45:00,Thomas Meunier,Cross,Olivier Giroud
+648440,74,MissedShots,0.975999984741211,0.40299999237060546,0.12823957204818726,Olivier Giroud,a,502,OpenPlay,2025,RightFoot,29605,Nantes,Lille,0,2,2025-10-19 18:45:00,,Rebound,Olivier Giroud
+650256,86,MissedShots,0.8959999847412109,0.5229999923706055,0.019540846347808838,Olivier Giroud,a,502,FromCorner,2025,Head,29623,Nice,Lille,2,0,2025-10-29 17:00:00,Romain Perraud,Aerial,Olivier Giroud
+651538,53,MissedShots,0.925,0.47700000762939454,0.40384629368782043,Olivier Giroud,h,502,OpenPlay,2025,Head,29631,Lille,Angers,1,0,2025-11-02 16:15:00,Thomas Meunier,Cross,Olivier Giroud
+651543,67,SavedShot,0.9290000152587891,0.4829999923706055,0.40263813734054565,Olivier Giroud,h,502,OpenPlay,2025,Head,29631,Lille,Angers,1,0,2025-11-02 16:15:00,Thomas Meunier,Chipped,Olivier Giroud
+652973,31,MissedShots,0.8,0.63,0.036839574575424194,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29645,Strasbourg,Lille,2,0,2025-11-09 16:15:00,Hákon Haraldsson,BallTouch,Olivier Giroud
+654482,15,SavedShot,0.9469999694824218,0.505,0.44081881642341614,Olivier Giroud,h,502,OpenPlay,2025,Head,29649,Lille,Paris FC,4,2,2025-11-23 19:45:00,Hamza Igamane,Aerial,Olivier Giroud
+654487,39,Goal,0.9009999847412109,0.5470000076293945,0.418532133102417,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29649,Lille,Paris FC,4,2,2025-11-23 19:45:00,Romain Perraud,Pass,Olivier Giroud
+654488,41,SavedShot,0.915,0.49200000762939455,0.3867862820625305,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29649,Lille,Paris FC,4,2,2025-11-23 19:45:00,Felix Correia,Cross,Olivier Giroud
+654497,76,Goal,0.885,0.5,0.7600951194763184,Olivier Giroud,h,502,Penalty,2025,LeftFoot,29649,Lille,Paris FC,4,2,2025-11-23 19:45:00,,Standard,Olivier Giroud
+661225,26,MissedShots,0.6980000305175781,0.5479999923706055,0.01782819628715515,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29684,Lille,Rennes,0,2,2026-01-03 20:05:00,Berke Özer,Pass,Olivier Giroud
+661240,58,BlockedShot,0.914000015258789,0.605,0.0612209178507328,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29684,Lille,Rennes,0,2,2026-01-03 20:05:00,Benjamin André,Cross,Olivier Giroud
+663278,1,ShotOnPost,0.759000015258789,0.4520000076293945,0.025578822940587997,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29696,Paris Saint Germain,Lille,3,0,2026-01-16 20:00:00,,Dispossessed,Olivier Giroud
+665527,5,MissedShots,0.9369999694824219,0.575,0.1004398986697197,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Romain Perraud,Cross,Olivier Giroud
+665529,13,MissedShots,0.909000015258789,0.43599998474121093,0.04644908756017685,Olivier Giroud,h,502,OpenPlay,2025,Head,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Tiago Santos,Chipped,Olivier Giroud
+665538,34,MissedShots,0.9080000305175782,0.52,0.04944581538438797,Olivier Giroud,h,502,SetPiece,2025,Head,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Matias Fernandez-Pardo,Aerial,Olivier Giroud
+665549,55,SavedShot,0.9490000152587891,0.37599998474121094,0.04995792731642723,Olivier Giroud,h,502,OpenPlay,2025,LeftFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Tiago Santos,Cross,Olivier Giroud
+667547,41,MissedShots,0.905,0.5029999923706054,0.0937763899564743,Olivier Giroud,a,502,OpenPlay,2025,LeftFoot,29723,Metz,Lille,0,0,2026-02-08 14:00:00,Romain Perraud,End,Olivier Giroud
+667554,58,MissedShots,0.855999984741211,0.40599998474121096,0.10528357326984406,Olivier Giroud,a,502,OpenPlay,2025,RightFoot,29723,Metz,Lille,0,0,2026-02-08 14:00:00,Noah Edjouma,Pass,Olivier Giroud
+667555,60,MissedShots,0.9119999694824219,0.5070000076293946,0.09344760328531265,Olivier Giroud,a,502,FromCorner,2025,Head,29723,Metz,Lille,0,0,2026-02-08 14:00:00,Hákon Haraldsson,Cross,Olivier Giroud
+670301,46,Goal,0.885,0.5,0.7600951194763184,Olivier Giroud,a,502,Penalty,2025,LeftFoot,29736,Angers,Lille,0,1,2026-02-22 16:15:00,,Standard,Olivier Giroud
+670307,57,SavedShot,0.89,0.5209999847412109,0.0488535575568676,Olivier Giroud,a,502,OpenPlay,2025,Head,29736,Angers,Lille,0,1,2026-02-22 16:15:00,Calvin Verdonk,Aerial,Olivier Giroud
+676071,85,Goal,0.9309999847412109,0.535,0.4353148639202118,Olivier Giroud,a,502,OpenPlay,2025,Head,29775,Marseille,Lille,1,2,2026-03-22 16:15:00,Thomas Meunier,Aerial,Olivier Giroud
+678514,87,Goal,0.885,0.5,0.7600951194763184,Olivier Giroud,a,502,Penalty,2025,LeftFoot,29798,Toulouse,Lille,0,4,2026-04-12 15:15:00,,Standard,Olivier Giroud

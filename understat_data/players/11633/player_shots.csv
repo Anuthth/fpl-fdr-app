@@ -1,0 +1,18 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+544979,79,Goal,0.904000015258789,0.6840000152587891,0.31662631034851074,Marc Guiu,h,11633,OpenPlay,2023,RightFoot,22777,Barcelona,Athletic Club,1,0,2023-10-22 19:00:00,João Félix,Throughball,Marc Guiu
+563309,91,MissedShots,0.955,0.46599998474121096,0.5418446660041809,Marc Guiu,h,11633,OpenPlay,2023,Head,22916,Barcelona,Granada,3,3,2024-02-11 20:00:00,,None,Marc Guiu
+567708,28,BlockedShot,0.86,0.33,0.070375956594944,Marc Guiu,h,11633,OpenPlay,2023,RightFoot,22956,Barcelona,Mallorca,1,0,2024-03-08 20:00:00,Lamine Yamal,Pass,Marc Guiu
+567724,58,BlockedShot,0.9119999694824219,0.39099998474121095,0.02318313717842102,Marc Guiu,h,11633,OpenPlay,2023,Head,22956,Barcelona,Mallorca,1,0,2024-03-08 20:00:00,Fermín López,Foul,Marc Guiu
+638868,81,MissedShots,0.8769999694824219,0.33299999237060546,0.04138287156820297,Marc Guiu,a,11633,OpenPlay,2025,RightFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Granit Xhaka,HeadPass,Marc Guiu
+646294,75,MissedShots,0.870999984741211,0.45599998474121095,0.04020346701145172,Marc Guiu,h,11633,OpenPlay,2025,Head,28842,Chelsea,Liverpool,2,1,2025-10-04 16:30:00,Estêvão,Cross,Marc Guiu
+647297,61,BlockedShot,0.914000015258789,0.40900001525878904,0.47843483090400696,Marc Guiu,a,11633,OpenPlay,2025,RightFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,Malo Gusto,Throughball,Marc Guiu
+647302,68,MissedShots,0.925,0.5059999847412109,0.131173774600029,Marc Guiu,a,11633,OpenPlay,2025,Head,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,Pedro Neto,Cross,Marc Guiu
+647304,70,MissedShots,0.8109999847412109,0.6079999923706054,0.10206042230129242,Marc Guiu,a,11633,OpenPlay,2025,RightFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,Trevoh Chalobah,BallRecovery,Marc Guiu
+648929,12,MissedShots,0.9680000305175781,0.5509999847412109,0.10994356870651245,Marc Guiu,h,11633,FromCorner,2025,Head,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Enzo Fernández,HeadPass,Marc Guiu
+648936,32,SavedShot,0.904000015258789,0.3060000038146973,0.05157195031642914,Marc Guiu,h,11633,OpenPlay,2025,RightFoot,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Enzo Fernández,Pass,Marc Guiu
+652557,77,ShotOnPost,0.9640000152587891,0.565,0.6160615682601929,Marc Guiu,h,11633,OpenPlay,2025,LeftFoot,28880,Chelsea,Wolverhampton Wanderers,3,0,2025-11-08 20:00:00,,Rebound,Marc Guiu
+652558,81,MissedShots,0.9619999694824218,0.5579999923706055,0.6195635199546814,Marc Guiu,h,11633,OpenPlay,2025,RightFoot,28880,Chelsea,Wolverhampton Wanderers,3,0,2025-11-08 20:00:00,Estêvão,Pass,Marc Guiu
+656355,82,MissedShots,0.8959999847412109,0.46799999237060547,0.07848873734474182,Marc Guiu,a,11633,OpenPlay,2025,Head,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,Malo Gusto,Cross,Marc Guiu
+656894,60,SavedShot,0.7959999847412109,0.3870000076293945,0.07608651369810104,Marc Guiu,a,11633,OpenPlay,2025,RightFoot,28918,Bournemouth,Chelsea,0,0,2025-12-06 15:00:00,Alejandro Garnacho,BlockedPass,Marc Guiu
+656895,65,MissedShots,0.9269999694824219,0.5790000152587891,0.1098637655377388,Marc Guiu,a,11633,OpenPlay,2025,LeftFoot,28918,Bournemouth,Chelsea,0,0,2025-12-06 15:00:00,,BallTouch,Marc Guiu
+680118,79,BlockedShot,0.8440000152587891,0.5520000076293945,0.05226871371269226,Marc Guiu,a,11633,OpenPlay,2025,RightFoot,29110,Brighton,Chelsea,3,0,2026-04-21 19:00:00,,None,Marc Guiu

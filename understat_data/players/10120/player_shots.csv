@@ -1,0 +1,30 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+559340,38,BlockedShot,0.7919999694824219,0.36,0.028520707041025162,Conor Bradley,a,10120,OpenPlay,2023,RightFoot,22102,Bournemouth,Liverpool,0,4,2024-01-21 16:30:00,Darwin Núñez,Pass,Conor Bradley
+559347,52,MissedShots,0.9590000152587891,0.4229999923706055,0.07562779635190964,Conor Bradley,a,10120,OpenPlay,2023,Head,22102,Bournemouth,Liverpool,0,4,2024-01-21 16:30:00,Darwin Núñez,Chipped,Conor Bradley
+559348,52,SavedShot,0.8440000152587891,0.5070000076293946,0.05766810476779938,Conor Bradley,a,10120,FromCorner,2023,LeftFoot,22102,Bournemouth,Liverpool,0,4,2024-01-21 16:30:00,,None,Conor Bradley
+560771,38,Goal,0.85,0.35200000762939454,0.0693047046661377,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22113,Liverpool,Chelsea,4,1,2024-01-31 20:15:00,Luis Díaz,Pass,Conor Bradley
+563610,9,SavedShot,0.87,0.45,0.24980883300304413,Conor Bradley,a,10120,OpenPlay,2023,RightFoot,22135,Brentford,Liverpool,1,4,2024-02-17 12:30:00,Luis Díaz,TakeOn,Conor Bradley
+563626,59,MissedShots,0.7280000305175781,0.41900001525878905,0.02501789480447769,Conor Bradley,a,10120,OpenPlay,2023,RightFoot,22135,Brentford,Liverpool,1,4,2024-02-17 12:30:00,Alexis Mac Allister,Pass,Conor Bradley
+564862,57,SavedShot,0.8780000305175781,0.4179999923706055,0.10386589169502258,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22151,Liverpool,Luton,4,1,2024-02-21 15:00:00,Harvey Elliott,Pass,Conor Bradley
+568705,33,BlockedShot,0.8619999694824219,0.32099998474121094,0.040986839681863785,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22171,Liverpool,Manchester City,1,1,2024-03-10 15:45:00,,BallRecovery,Conor Bradley
+571213,37,MissedShots,0.874000015258789,0.32299999237060545,0.05505726486444473,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22189,Liverpool,Brighton,2,1,2024-03-31 14:00:00,Mohamed Salah,Foul,Conor Bradley
+571218,52,BlockedShot,0.8430000305175781,0.34799999237060547,0.05208880826830864,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22189,Liverpool,Brighton,2,1,2024-03-31 14:00:00,Darwin Núñez,Pass,Conor Bradley
+571972,19,MissedShots,0.7669999694824219,0.38099998474121094,0.03157231584191322,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22203,Liverpool,Sheffield United,3,1,2024-04-04 18:30:00,Alexis Mac Allister,Pass,Conor Bradley
+571987,57,OwnGoal,0.04099999904632568,0.445,0,Conor Bradley,h,10120,OpenPlay,2023,RightFoot,22203,Liverpool,Sheffield United,3,1,2024-04-04 18:30:00,,None,Conor Bradley
+572994,46,BlockedShot,0.91,0.36400001525878906,0.11334756761789322,Conor Bradley,a,10120,OpenPlay,2023,LeftFoot,22211,Manchester United,Liverpool,2,2,2024-04-07 14:30:00,Dominik Szoboszlai,Pass,Conor Bradley
+584708,93,BlockedShot,0.885,0.40200000762939453,0.07648533582687378,Conor Bradley,a,10120,OpenPlay,2024,RightFoot,26603,Ipswich,Liverpool,0,2,2024-08-17 11:30:00,,Rebound,Conor Bradley
+584709,93,SavedShot,0.9640000152587891,0.4209999847412109,0.5641074180603027,Conor Bradley,a,10120,OpenPlay,2024,RightFoot,26603,Ipswich,Liverpool,0,2,2024-08-17 11:30:00,Luis Díaz,Pass,Conor Bradley
+603453,28,SavedShot,0.7909999847412109,0.4,0.04231169447302818,Conor Bradley,a,10120,OpenPlay,2024,LeftFoot,26721,Southampton,Liverpool,2,3,2024-11-24 14:00:00,Mohamed Salah,TakeOn,Conor Bradley
+603464,63,MissedShots,0.87,0.315,0.05208693817257881,Conor Bradley,a,10120,OpenPlay,2024,RightFoot,26721,Southampton,Liverpool,2,3,2024-11-24 14:00:00,Luis Díaz,Pass,Conor Bradley
+603470,70,BlockedShot,0.865999984741211,0.4229999923706055,0.09441055357456207,Conor Bradley,a,10120,OpenPlay,2024,RightFoot,26721,Southampton,Liverpool,2,3,2024-11-24 14:00:00,Luis Díaz,Pass,Conor Bradley
+610341,89,SavedShot,0.970999984741211,0.29700000762939455,0.06696677207946777,Conor Bradley,h,10120,OpenPlay,2024,RightFoot,26797,Liverpool,Manchester United,2,2,2025-01-05 16:30:00,,TakeOn,Conor Bradley
+614888,72,BlockedShot,0.865999984741211,0.605999984741211,0.04278656840324402,Conor Bradley,a,10120,FromCorner,2024,RightFoot,26832,Bournemouth,Liverpool,0,2,2025-02-01 15:00:00,Ryan Gravenberch,Pass,Conor Bradley
+627671,13,BlockedShot,0.85,0.44799999237060545,0.031880948692560196,Conor Bradley,h,10120,OpenPlay,2024,RightFoot,26916,Liverpool,West Ham,2,1,2025-04-13 13:00:00,,Aerial,Conor Bradley
+629299,22,BlockedShot,0.95,0.315,0.06194306164979935,Conor Bradley,a,10120,OpenPlay,2024,LeftFoot,26928,Leicester,Liverpool,0,1,2025-04-20 15:30:00,Mohamed Salah,TakeOn,Conor Bradley
+635633,21,MissedShots,0.8930000305175781,0.35900001525878905,0.1025237962603569,Conor Bradley,a,10120,OpenPlay,2024,RightFoot,26965,Brighton,Liverpool,3,2,2025-05-19 19:00:00,Federico Chiesa,Pass,Conor Bradley
+642150,48,BlockedShot,0.87,0.4490000152587891,0.01457576360553503,Conor Bradley,a,10120,OpenPlay,2025,Head,28816,Burnley,Liverpool,0,1,2025-09-14 13:00:00,Andrew Robertson,Aerial,Conor Bradley
+642852,18,BlockedShot,0.8809999847412109,0.295,0.045539069920778275,Conor Bradley,h,10120,OpenPlay,2025,RightFoot,28818,Liverpool,Everton,2,1,2025-09-20 11:30:00,,Rebound,Conor Bradley
+651170,48,MissedShots,0.725,0.46799999237060547,0.014446502551436424,Conor Bradley,h,10120,FromCorner,2025,RightFoot,28872,Liverpool,Aston Villa,2,0,2025-11-01 20:00:00,,None,Conor Bradley
+660743,53,BlockedShot,0.9180000305175782,0.48700000762939455,0.07494258135557175,Conor Bradley,h,10120,OpenPlay,2025,OtherBodyPart,28963,Liverpool,Leeds,0,0,2026-01-01 17:30:00,Curtis Jones,Aerial,Conor Bradley
+660744,54,BlockedShot,0.8490000152587891,0.47900001525878905,0.05440857261419296,Conor Bradley,h,10120,FromCorner,2025,RightFoot,28963,Liverpool,Leeds,0,0,2026-01-01 17:30:00,Florian Wirtz,Pass,Conor Bradley
+662267,26,ShotOnPost,0.764000015258789,0.31799999237060544,0.015916677191853523,Conor Bradley,a,10120,OpenPlay,2025,RightFoot,28980,Arsenal,Liverpool,0,0,2026-01-08 20:00:00,,None,Conor Bradley

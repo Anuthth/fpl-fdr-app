@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,31,0,0,2790,0,0,0.07186521589756012,1,2025,Tottenham,1,0,0,0,3.5112377842888236,3.4393725832924247,8858,Guglielmo Vicario
+season,GK,24,0,0,2160,0,0,0,0,2024,Tottenham,1,0,0,0,5.163849472999573,5.163849472999573,8858,Guglielmo Vicario
+season,GK,38,0,0,3420,0,0,0,0,2023,Tottenham,2,0,0,0,6.606127485632896,6.606127485632896,8858,Guglielmo Vicario
+season,GK,31,0,0,2784,0,0,0,0,2022,Empoli,3,0,0,0,2.2249075658619404,2.2249075658619404,8858,Guglielmo Vicario
+season,GK,38,0,0,3420,0,0,0.01197030022740364,1,2021,Empoli,1,0,0,0,6.050675278529525,6.038704281672835,8858,Guglielmo Vicario
+season,GK,4,0,0,360,0,0,0,0,2020,Cagliari,0,0,0,0,1.5896199941635132,1.5896199941635132,8858,Guglielmo Vicario

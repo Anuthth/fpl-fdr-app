@@ -1,0 +1,11 @@
+﻿goals,shots,xG,time,position,h_team,a_team,h_goals,a_goals,date,id,season,roster_id,xA,assists,key_passes,npg,npxG,xGChain,xGBuildup,player_id,player_name
+0,0,0,90,DC,Aston Villa,Sunderland,4,3,2026-04-19,29098,2025,783694,0,0,0,0,0,0.14092586934566498,0.14092586934566498,14099,Luke O&#039;Nien
+0,1,0.03503738343715668,90,DC,Sunderland,Tottenham,1,0,2026-04-12,29090,2025,782180,0,0,0,0,0.03503738343715668,0.693408191204071,0.6583707928657532,14099,Luke O&#039;Nien
+0,0,0,90,DC,Newcastle United,Sunderland,1,2,2026-03-22,29085,2025,779036,0,0,0,0,0,0.13512638211250305,0.13512638211250305,14099,Luke O&#039;Nien
+0,0,0,24,Sub,Sunderland,Brighton,0,1,2026-03-14,29076,2025,776762,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,90,DR,Leeds,Sunderland,0,1,2026-03-03,29063,2025,774586,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,1,Sub,Sunderland,Burnley,3,0,2026-02-02,29011,2025,768164,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,4,Sub,West Ham,Sunderland,3,1,2026-01-24,29007,2025,765376,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,7,Sub,Brentford,Sunderland,3,0,2026-01-07,28981,2025,762255,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,1,Sub,Manchester City,Sunderland,3,0,2025-12-06,28924,2025,755995,0,0,0,0,0,0,0,14099,Luke O&#039;Nien
+0,0,0,1,Sub,Liverpool,Sunderland,1,1,2025-12-03,28914,2025,755294,0,0,0,0,0,0,0,14099,Luke O&#039;Nien

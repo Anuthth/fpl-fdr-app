@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,18,2,39,1220,1.8684169184416533,3,3.0042659156024456,36,2014,Sampdoria,1,0,2,1.8684169184416533,5.856265338137746,2.933490085415542,3814,Samuel Eto&#039;o
+season,Sub,14,3,28,765,2.365505775436759,1,1.0087521178647876,11,2014,Everton,1,0,3,2.365505775436759,4.095037302002311,2.0122713074088097,3814,Samuel Eto&#039;o

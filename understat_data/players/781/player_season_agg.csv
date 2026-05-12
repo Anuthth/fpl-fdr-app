@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,3,64,0.1271509975194931,0,0.19003400206565857,2,2016,Sunderland,0,0,0,0.1271509975194931,0.5295471027493477,0.25969109684228897,781,Jeremain Lens
+season,ML,20,3,26,1299,1.33960447832942,3,2.9814170990139246,18,2015,Sunderland,3,1,3,1.33960447832942,5.8241102527827024,2.4477846082299948,781,Jeremain Lens

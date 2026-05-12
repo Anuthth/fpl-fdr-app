@@ -1,0 +1,51 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+250150,65,Goal,0.9740000152587891,0.5520000076293945,0.48204100131988525,Juan Foyth,a,6306,FromCorner,2018,Head,9312,Crystal Palace,Tottenham,0,1,2018-11-10 17:30:00,,Rebound,Juan Foyth
+250397,29,MissedShots,0.9530000305175781,0.47,0.14666900038719177,Juan Foyth,h,6306,FromCorner,2018,RightFoot,9323,Tottenham,Chelsea,3,1,2018-11-24 17:30:00,,Rebound,Juan Foyth
+275726,52,MissedShots,0.9169999694824219,0.5359999847412109,0.05421220138669014,Juan Foyth,a,6306,SetPiece,2018,Head,9464,Burnley,Tottenham,2,1,2019-02-23 12:30:00,Christian Eriksen,Aerial,Juan Foyth
+297194,43,MissedShots,0.7709999847412109,0.3160000038146973,0.019044000655412674,Juan Foyth,h,6306,OpenPlay,2018,RightFoot,9548,Tottenham,West Ham,0,1,2019-04-27 12:30:00,,BallTouch,Juan Foyth
+414258,11,MissedShots,0.93,0.4779999923706055,0.1376360058784485,Juan Foyth,h,6306,SetPiece,2020,Head,15077,Villarreal,Osasuna,1,2,2021-04-11 12:00:00,Daniel Parejo,Cross,Juan Foyth
+442288,9,MissedShots,0.945,0.35200000762939454,0.011657900176942348,Juan Foyth,a,6306,FromCorner,2021,Head,17268,Celta Vigo,Villarreal,1,1,2021-11-20 13:00:00,Daniel Parejo,Aerial,Juan Foyth
+449489,51,MissedShots,0.7630000305175781,0.3,0.01731489971280098,Juan Foyth,a,6306,OpenPlay,2021,RightFoot,17312,Real Sociedad,Villarreal,1,3,2021-12-18 15:15:00,Yeremi Pino,BallTouch,Juan Foyth
+465342,64,ShotOnPost,0.985999984741211,0.345,0.055133599787950516,Juan Foyth,a,6306,OpenPlay,2021,RightFoot,17433,Levante,Villarreal,2,0,2022-04-02 14:15:00,Yeremi Pino,Pass,Juan Foyth
+474196,3,SavedShot,0.925,0.47400001525878904,0.07140050083398819,Juan Foyth,h,6306,FromCorner,2021,Head,17485,Villarreal,Sevilla,1,1,2022-05-08 14:15:00,Francis Coquelin,Pass,Juan Foyth
+475351,26,Goal,0.97,0.49700000762939456,0.8248400092124939,Juan Foyth,a,6306,SetPiece,2021,Head,17494,Rayo Vallecano,Villarreal,1,5,2022-05-12 18:00:00,Pau Torres,Aerial,Juan Foyth
+476781,12,BlockedShot,0.855999984741211,0.3120000076293945,0.04001329839229584,Juan Foyth,h,6306,OpenPlay,2021,RightFoot,17505,Villarreal,Real Sociedad,1,2,2022-05-15 17:30:00,Daniel Parejo,Pass,Juan Foyth
+484527,41,SavedShot,0.9209999847412109,0.43099998474121093,0.22584499418735504,Juan Foyth,a,6306,FromCorner,2022,Head,18987,Getafe,Villarreal,0,0,2022-08-28 15:30:00,Daniel Parejo,Cross,Juan Foyth
+501804,88,Goal,0.9669999694824218,0.4620000076293945,0.495712012052536,Juan Foyth,h,6306,FromCorner,2022,Head,19110,Villarreal,Valencia,2,1,2022-12-31 15:15:00,Daniel Parejo,Cross,Juan Foyth
+507219,18,MissedShots,0.7959999847412109,0.27100000381469724,0.020390300080180168,Juan Foyth,a,6306,OpenPlay,2022,RightFoot,19156,Elche,Villarreal,3,1,2023-02-04 15:15:00,Raúl Albiol,Pass,Juan Foyth
+512237,20,MissedShots,0.9319999694824219,0.41200000762939454,0.2280450016260147,Juan Foyth,a,6306,OpenPlay,2022,Head,19196,Almeria,Villarreal,0,2,2023-03-04 15:15:00,Pau Torres,Cross,Juan Foyth
+512244,52,SavedShot,0.860999984741211,0.5370000076293945,0.022549699991941452,Juan Foyth,a,6306,FromCorner,2022,Head,19196,Almeria,Villarreal,0,2,2023-03-04 15:15:00,Daniel Parejo,Cross,Juan Foyth
+512250,74,MissedShots,0.875999984741211,0.5359999847412109,0.03465009853243828,Juan Foyth,a,6306,FromCorner,2022,Head,19196,Almeria,Villarreal,0,2,2023-03-04 15:15:00,Daniel Parejo,Cross,Juan Foyth
+514336,43,BlockedShot,0.9119999694824219,0.4859999847412109,0.04544280096888542,Juan Foyth,h,6306,FromCorner,2022,Head,19208,Villarreal,Real Betis,1,1,2023-03-12 17:30:00,,Aerial,Juan Foyth
+518426,45,SavedShot,0.8969999694824219,0.68,0.04848029837012291,Juan Foyth,a,6306,SetPiece,2022,LeftFoot,19234,Real Madrid,Villarreal,2,3,2023-04-08 19:00:00,,None,Juan Foyth
+518432,57,BlockedShot,0.91,0.505,0.03902740031480789,Juan Foyth,a,6306,FromCorner,2022,Head,19234,Real Madrid,Villarreal,2,3,2023-04-08 19:00:00,Daniel Parejo,Aerial,Juan Foyth
+518440,76,MissedShots,0.8680000305175781,0.5329999923706055,0.027828600257635117,Juan Foyth,a,6306,FromCorner,2022,Head,19234,Real Madrid,Villarreal,2,3,2023-04-08 19:00:00,Daniel Parejo,Cross,Juan Foyth
+521801,47,MissedShots,0.9219999694824219,0.5559999847412109,0.053987156599760056,Juan Foyth,a,6306,SetPiece,2022,Head,19253,Sevilla,Villarreal,2,1,2023-04-23 19:00:00,Daniel Parejo,Aerial,Juan Foyth
+522277,37,MissedShots,0.755,0.46099998474121096,0.025172021239995956,Juan Foyth,h,6306,OpenPlay,2022,RightFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,Yeremi Pino,Pass,Juan Foyth
+523968,13,BlockedShot,0.95,0.4540000152587891,0.1326058804988861,Juan Foyth,a,6306,FromCorner,2022,Head,19286,Valencia,Villarreal,1,1,2023-05-03 17:30:00,Ramón Terrats,Cross,Juan Foyth
+526169,26,MissedShots,0.7980000305175782,0.34,0.01762985810637474,Juan Foyth,h,6306,OpenPlay,2022,RightFoot,19297,Villarreal,Athletic Club,5,1,2023-05-13 16:30:00,,Aerial,Juan Foyth
+532647,51,ShotOnPost,0.9069999694824219,0.59,0.015443340875208378,Juan Foyth,h,6306,FromCorner,2023,Head,22691,Villarreal,Real Betis,1,2,2023-08-13 17:30:00,Álex Baena,Aerial,Juan Foyth
+535426,25,Goal,0.92,0.5429999923706055,0.3112618029117584,Juan Foyth,h,6306,FromCorner,2023,Head,22710,Villarreal,Barcelona,3,4,2023-08-27 15:30:00,Álex Baena,Cross,Juan Foyth
+535435,53,BlockedShot,0.925,0.23299999237060548,0.05154891312122345,Juan Foyth,h,6306,OpenPlay,2023,RightFoot,22710,Villarreal,Barcelona,3,4,2023-08-27 15:30:00,Etienne Capoue,Chipped,Juan Foyth
+536155,69,SavedShot,0.9069999694824219,0.4329999923706055,0.019786523655056953,Juan Foyth,a,6306,FromCorner,2023,Head,22718,Cadiz,Villarreal,3,1,2023-09-01 17:30:00,Denis Suárez,Aerial,Juan Foyth
+550205,44,MissedShots,0.9630000305175781,0.53,0.49928539991378784,Juan Foyth,h,6306,FromCorner,2023,RightFoot,22824,Villarreal,Osasuna,3,1,2023-11-26 13:00:00,Raúl Albiol,Aerial,Juan Foyth
+553124,90,BlockedShot,0.7909999847412109,0.33599998474121096,0.013520662672817707,Juan Foyth,h,6306,OpenPlay,2023,RightFoot,22844,Villarreal,Real Sociedad,0,3,2023-12-09 17:30:00,,Rebound,Juan Foyth
+611293,47,SavedShot,0.7819999694824219,0.565,0.02491903118789196,Juan Foyth,a,6306,FromCorner,2024,RightFoot,27164,Real Sociedad,Villarreal,1,0,2025-01-13 20:00:00,,None,Juan Foyth
+614967,8,MissedShots,0.9230000305175782,0.475,0.10215668380260468,Juan Foyth,h,6306,FromCorner,2024,RightFoot,27196,Villarreal,Real Valladolid,5,1,2025-02-01 15:15:00,,None,Juan Foyth
+614973,36,SavedShot,0.9569999694824218,0.515,0.5411489605903625,Juan Foyth,h,6306,SetPiece,2024,Head,27196,Villarreal,Real Valladolid,5,1,2025-02-01 15:15:00,Álex Baena,Cross,Juan Foyth
+621363,46,MissedShots,0.755,0.40599998474121096,0.022488713264465332,Juan Foyth,a,6306,OpenPlay,2024,RightFoot,27249,Alaves,Villarreal,1,0,2025-03-08 15:15:00,Pape Alassane Gueye,Pass,Juan Foyth
+621370,76,MissedShots,0.82,0.545,0.052041392773389816,Juan Foyth,a,6306,SetPiece,2024,LeftFoot,27249,Alaves,Villarreal,1,0,2025-03-08 15:15:00,Logan Costa,Pass,Juan Foyth
+621380,104,MissedShots,0.91,0.5570000076293945,0.09107313305139542,Juan Foyth,a,6306,OpenPlay,2024,Head,27249,Alaves,Villarreal,1,0,2025-03-08 15:15:00,Alfonso,Cross,Juan Foyth
+622820,6,Goal,0.9640000152587891,0.5120000076293946,0.6272118091583252,Juan Foyth,h,6306,FromCorner,2024,LeftFoot,27259,Villarreal,Real Madrid,1,2,2025-03-15 17:30:00,,None,Juan Foyth
+622834,52,MissedShots,0.915,0.509000015258789,0.08971062302589417,Juan Foyth,h,6306,FromCorner,2024,RightFoot,27259,Villarreal,Real Madrid,1,2,2025-03-15 17:30:00,Álex Baena,Cross,Juan Foyth
+626626,37,MissedShots,0.919000015258789,0.47299999237060547,0.04896676167845726,Juan Foyth,h,6306,FromCorner,2024,Head,27276,Villarreal,Athletic Club,0,0,2025-04-06 19:00:00,Álex Baena,Aerial,Juan Foyth
+626630,49,MissedShots,0.9540000152587891,0.4909999847412109,0.1376371532678604,Juan Foyth,h,6306,FromCorner,2024,Head,27276,Villarreal,Athletic Club,0,0,2025-04-06 19:00:00,Álex Baena,Cross,Juan Foyth
+629195,35,ShotOnPost,0.95,0.5720000076293945,0.11281128227710724,Juan Foyth,h,6306,FromCorner,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Daniel Parejo,Cross,Juan Foyth
+629207,83,BlockedShot,0.9319999694824219,0.54,0.10341488569974899,Juan Foyth,h,6306,FromCorner,2024,LeftFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Pape Alassane Gueye,BallTouch,Juan Foyth
+631478,9,BlockedShot,0.9109999847412109,0.4470000076293945,0.07944565266370773,Juan Foyth,h,6306,FromCorner,2024,RightFoot,27319,Villarreal,Osasuna,4,2,2025-05-03 14:15:00,Nicolas Pepe,CornerAwarded,Juan Foyth
+631484,31,BlockedShot,0.7240000152587891,0.4909999847412109,0.022983361035585403,Juan Foyth,h,6306,OpenPlay,2024,RightFoot,27319,Villarreal,Osasuna,4,2,2025-05-03 14:15:00,Ayoze Pérez,Pass,Juan Foyth
+632917,29,SavedShot,0.9569999694824218,0.5659999847412109,0.1307000368833542,Juan Foyth,a,6306,SetPiece,2024,Head,27327,Girona,Villarreal,0,1,2025-05-10 16:30:00,Álex Baena,Cross,Juan Foyth
+634034,14,SavedShot,0.8869999694824219,0.580999984741211,0.013724120333790779,Juan Foyth,h,6306,FromCorner,2024,Head,27341,Villarreal,Leganes,3,0,2025-05-14 17:00:00,Daniel Parejo,Aerial,Juan Foyth
+634052,61,MissedShots,0.895,0.485,0.062164779752492905,Juan Foyth,h,6306,FromCorner,2024,RightFoot,27341,Villarreal,Leganes,3,0,2025-05-14 17:00:00,Álex Baena,Cross,Juan Foyth
+640837,85,MissedShots,0.9390000152587891,0.4759999847412109,0.05850503593683243,Juan Foyth,a,6306,FromCorner,2025,Head,29185,Celta Vigo,Villarreal,1,1,2025-08-31 15:00:00,Ilias Akhomach,Foul,Juan Foyth
+655480,94,BlockedShot,0.924000015258789,0.6120000076293945,0.015227625146508217,Juan Foyth,a,6306,FromCorner,2025,Head,29293,Real Sociedad,Villarreal,2,3,2025-11-30 13:00:00,Daniel Parejo,Aerial,Juan Foyth

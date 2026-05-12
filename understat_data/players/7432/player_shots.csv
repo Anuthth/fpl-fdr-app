@@ -1,0 +1,32 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+356467,7,BlockedShot,0.8230000305175781,0.7090000152587891,0.0272172000259161,Reinildo,h,7432,OpenPlay,2019,RightFoot,12917,Lille,Paris Saint Germain,0,2,2020-01-26 20:00:00,Luiz Araujo,Pass,Reinildo
+359578,8,MissedShots,0.7080000305175781,0.6659999847412109,0.01056739967316389,Reinildo,h,7432,SetPiece,2019,LeftFoot,12956,Lille,Marseille,1,2,2020-02-16 20:00:00,,Rebound,Reinildo
+359589,65,OwnGoal,0.022999999523162843,0.5929999923706055,0,Reinildo,h,7432,FromCorner,2019,Head,12956,Lille,Marseille,1,2,2020-02-16 20:00:00,,None,Reinildo
+397624,26,BlockedShot,0.7809999847412109,0.7169999694824218,0.010468900203704834,Reinildo,h,7432,OpenPlay,2020,LeftFoot,15926,Lille,Angers,1,2,2021-01-06 20:00:00,,None,Reinildo
+408099,21,MissedShots,0.835,0.6509999847412109,0.041599299758672714,Reinildo,h,7432,OpenPlay,2020,RightFoot,16028,Lille,Marseille,2,0,2021-03-03 20:00:00,Benjamin André,Chipped,Reinildo
+415030,24,MissedShots,0.765,0.67,0.019095100462436676,Reinildo,h,7432,OpenPlay,2020,LeftFoot,16082,Lille,Montpellier,1,1,2021-04-16 19:00:00,,Rebound,Reinildo
+418836,44,BlockedShot,0.7969999694824219,0.7169999694824218,0.02871840074658394,Reinildo,h,7432,OpenPlay,2020,LeftFoot,16098,Lille,Nice,2,0,2021-05-01 19:00:00,Jonathan Bamba,Pass,Reinildo
+444189,63,SavedShot,0.850999984741211,0.7380000305175781,0.04222379997372627,Reinildo,h,7432,OpenPlay,2021,RightFoot,17966,Lille,Nantes,1,1,2021-11-27 16:00:00,Jonathan Ikone,TakeOn,Reinildo
+445506,19,MissedShots,0.730999984741211,0.5540000152587891,0.035356998443603516,Reinildo,a,7432,OpenPlay,2021,RightFoot,17979,Rennes,Lille,1,2,2021-12-01 20:00:00,,TakeOn,Reinildo
+446421,27,SavedShot,0.924000015258789,0.5,0.3491170108318329,Reinildo,h,7432,FromCorner,2021,Head,17982,Lille,Troyes,2,1,2021-12-04 18:00:00,Xeka,Cross,Reinildo
+446431,55,MissedShots,0.935,0.664000015258789,0.012362400069832802,Reinildo,h,7432,FromCorner,2021,Head,17982,Lille,Troyes,2,1,2021-12-04 18:00:00,Jonathan Bamba,Aerial,Reinildo
+454090,30,Goal,0.9009999847412109,0.5379999923706055,0.17051400244235992,Reinildo,h,7432,SetPiece,2021,Head,18020,Lille,Lorient,3,1,2022-01-19 20:00:00,Renato Sanches,Cross,Reinildo
+454101,60,MissedShots,0.925,0.46,0.05631610006093979,Reinildo,h,7432,FromCorner,2021,Head,18020,Lille,Lorient,3,1,2022-01-19 20:00:00,Sven Botman,HeadPass,Reinildo
+464220,24,MissedShots,0.935,0.4540000152587891,0.1288820058107376,Reinildo,a,7432,SetPiece,2021,Head,17424,Rayo Vallecano,Atletico Madrid,0,1,2022-03-19 20:00:00,Rodrigo de Paul,Cross,Reinildo
+476592,7,MissedShots,0.9130000305175782,0.475,0.12450399994850159,Reinildo,h,7432,SetPiece,2021,Head,17497,Atletico Madrid,Sevilla,1,1,2022-05-15 17:30:00,Rodrigo de Paul,Cross,Reinildo
+489691,84,BlockedShot,0.6909999847412109,0.644000015258789,0.008358869701623917,Reinildo,h,7432,SetPiece,2022,LeftFoot,19021,Atletico Madrid,Real Madrid,1,2,2022-09-18 19:00:00,,None,Reinildo
+490343,12,MissedShots,0.7280000305175781,0.39,0.014420700259506702,Reinildo,a,7432,FromCorner,2022,RightFoot,19026,Sevilla,Atletico Madrid,0,2,2022-10-01 16:30:00,,None,Reinildo
+494265,49,BlockedShot,0.8219999694824218,0.6840000152587891,0.03838939964771271,Reinildo,h,7432,OpenPlay,2022,RightFoot,19052,Atletico Madrid,Rayo Vallecano,1,1,2022-10-18 19:00:00,Antoine Griezmann,Pass,Reinildo
+503033,42,BlockedShot,0.96,0.515,0.5072479844093323,Reinildo,h,7432,FromCorner,2022,Head,19113,Atletico Madrid,Barcelona,0,1,2023-01-08 20:00:00,Antoine Griezmann,Cross,Reinildo
+503036,43,BlockedShot,0.7119999694824218,0.6469999694824219,0.013473199680447578,Reinildo,h,7432,OpenPlay,2022,LeftFoot,19113,Atletico Madrid,Barcelona,0,1,2023-01-08 20:00:00,,Rebound,Reinildo
+506240,38,MissedShots,0.8959999847412109,0.57,0.034609999507665634,Reinildo,a,7432,OpenPlay,2022,Head,19146,Osasuna,Atletico Madrid,0,1,2023-01-29 15:15:00,Thomas Lemar,Aerial,Reinildo
+560747,34,Goal,0.9130000305175782,0.43900001525878907,0.28567585349082947,Reinildo,h,7432,SetPiece,2023,Head,22877,Atletico Madrid,Rayo Vallecano,2,1,2024-01-31 20:00:00,Rodrigo Riquelme,Aerial,Reinildo
+563657,79,SavedShot,0.960999984741211,0.5590000152587891,0.07163447886705399,Reinildo,h,7432,FromCorner,2023,Head,22926,Atletico Madrid,Las Palmas,5,0,2024-02-17 13:00:00,Stefan Savic,Aerial,Reinildo
+565485,29,MissedShots,0.9130000305175782,0.495,0.09940313547849655,Reinildo,a,7432,FromCorner,2023,Head,22935,Almeria,Atletico Madrid,2,2,2024-02-24 20:00:00,Memphis Depay,Cross,Reinildo
+575718,79,BlockedShot,0.79,0.5940000152587891,0.020411156117916107,Reinildo,a,7432,OpenPlay,2023,RightFoot,22999,Alaves,Atletico Madrid,2,0,2024-04-21 16:30:00,Nahuel Molina,TakeOn,Reinildo
+583248,92,Goal,0.9680000305175781,0.5320000076293945,0.7768903374671936,Reinildo,a,7432,OpenPlay,2023,LeftFoot,23061,Real Sociedad,Atletico Madrid,0,2,2024-05-25 14:15:00,Álvaro Morata,Pass,Reinildo
+599305,28,SavedShot,0.919000015258789,0.47200000762939454,0.05156291276216507,Reinildo,a,7432,FromCorner,2024,Head,27084,Real Betis,Atletico Madrid,1,0,2024-10-27 17:30:00,,Aerial,Reinildo
+640268,11,BlockedShot,0.7219999694824218,0.5879999923706055,0.01499317865818739,Reinildo,h,7432,OpenPlay,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,BallRecovery,Reinildo
+651855,62,BlockedShot,0.9230000305175782,0.6719999694824219,0.06001298129558563,Reinildo,h,7432,SetPiece,2025,LeftFoot,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Dan Ballard,Pass,Reinildo
+655095,38,MissedShots,0.874000015258789,0.545,0.0159795843064785,Reinildo,h,7432,OpenPlay,2025,Head,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Granit Xhaka,Aerial,Reinildo
+666882,60,MissedShots,0.8419999694824218,0.63,0.07901902496814728,Reinildo,h,7432,OpenPlay,2025,LeftFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Chemsdine Talbi,Pass,Reinildo

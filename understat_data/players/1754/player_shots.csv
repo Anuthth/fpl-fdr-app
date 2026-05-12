@@ -1,0 +1,11 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+537945,36,Goal,0.9490000152587891,0.4759999847412109,0.6081414818763733,Joel Asoro,a,1754,OpenPlay,2023,RightFoot,23415,Lens,Metz,0,1,2023-09-16 19:00:00,,None,Joel Asoro
+546024,30,MissedShots,0.855,0.40200000762939453,0.08051576465368271,Joel Asoro,h,1754,OpenPlay,2023,RightFoot,23458,Metz,Le Havre,0,0,2023-10-29 14:00:00,Kévin Van Den Kerkhof,Pass,Joel Asoro
+548993,84,Goal,0.8619999694824219,0.610999984741211,0.07589209824800491,Joel Asoro,h,1754,OpenPlay,2023,RightFoot,23476,Metz,Nantes,3,1,2023-11-12 14:00:00,Kévin Van Den Kerkhof,Cross,Joel Asoro
+554715,70,BlockedShot,0.7719999694824219,0.615,0.014458171091973782,Joel Asoro,h,1754,FromCorner,2023,RightFoot,23514,Metz,Montpellier,0,1,2023-12-17 14:00:00,,Aerial,Joel Asoro
+554716,73,BlockedShot,0.870999984741211,0.3189999961853027,0.019486427307128906,Joel Asoro,h,1754,FromCorner,2023,RightFoot,23514,Metz,Montpellier,0,1,2023-12-17 14:00:00,,Aerial,Joel Asoro
+561649,93,SavedShot,0.9259999847412109,0.46700000762939453,0.051758479326963425,Joel Asoro,h,1754,OpenPlay,2023,Head,23549,Metz,Lorient,1,2,2024-02-04 14:00:00,Matthieu Udol,Aerial,Joel Asoro
+651574,95,MissedShots,0.855,0.39099998474121095,0.08815059810876846,Joel Asoro,a,1754,OpenPlay,2025,RightFoot,29633,Nantes,Metz,0,2,2025-11-02 16:15:00,Giorgi Abuashvili,Tackle,Joel Asoro
+654297,62,MissedShots,0.9259999847412109,0.47900001525878905,0.536151647567749,Joel Asoro,a,1754,OpenPlay,2025,LeftFoot,29647,Brest,Metz,3,2,2025-11-23 16:15:00,Cheick Tidiane Sabaly,Pass,Joel Asoro
+654749,42,BlockedShot,0.9209999847412109,0.3659999847412109,0.06490081548690796,Joel Asoro,h,1754,OpenPlay,2025,RightFoot,29660,Metz,Rennes,0,1,2025-11-28 19:45:00,,None,Joel Asoro
+654758,90,SavedShot,0.8590000152587891,0.32299999237060545,0.09499199688434601,Joel Asoro,h,1754,OpenPlay,2025,RightFoot,29660,Metz,Rennes,0,1,2025-11-28 19:45:00,Gauthier Hein,Throughball,Joel Asoro

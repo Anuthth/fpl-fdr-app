@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,14,2,5,1036,1.2354809269309044,0,0.5944582391530275,6,2025,Nottingham Forest,2,0,2,1.2354809269309044,3.0064694937318563,1.5372497662901878,12905,Nicolò Savona
+season,Sub,28,2,6,1724,0.6217741407454014,1,1.6131829097867012,16,2024,Juventus,5,0,2,0.6217741407454014,6.450548764318228,5.277569431811571,12905,Nicolò Savona

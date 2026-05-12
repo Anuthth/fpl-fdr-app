@@ -1,0 +1,45 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+559052,29,MissedShots,0.9230000305175782,0.6519999694824219,0.2942340075969696,Dean Huijsen,h,11943,SetPiece,2023,LeftFoot,22510,Roma,Verona,2,1,2024-01-20 17:00:00,,Rebound,Dean Huijsen
+559058,67,MissedShots,0.965,0.6120000076293945,0.041950684040784836,Dean Huijsen,h,11943,SetPiece,2023,Head,22510,Roma,Verona,2,1,2024-01-20 17:00:00,Stephan El Shaarawy,Chipped,Dean Huijsen
+563331,57,BlockedShot,0.9169999694824219,0.47900001525878905,0.04369188845157623,Dean Huijsen,h,11943,FromCorner,2023,Head,22533,Roma,Cagliari,4,0,2024-02-05 19:45:00,Paulo Dybala,CornerAwarded,Dean Huijsen
+563332,57,MissedShots,0.9580000305175781,0.3940000152587891,0.08866176754236221,Dean Huijsen,h,11943,FromCorner,2023,RightFoot,22533,Roma,Cagliari,4,0,2024-02-05 19:45:00,,None,Dean Huijsen
+563333,58,Goal,0.9219999694824219,0.51,0.049421537667512894,Dean Huijsen,h,11943,FromCorner,2023,Head,22533,Roma,Cagliari,4,0,2024-02-05 19:45:00,Leandro Paredes,Aerial,Dean Huijsen
+564627,37,Goal,0.76,0.625999984741211,0.01967920921742916,Dean Huijsen,a,11943,OpenPlay,2023,RightFoot,22552,Frosinone,Roma,0,3,2024-02-18 17:00:00,Gianluca Mancini,TakeOn,Dean Huijsen
+565980,87,OwnGoal,0.03,0.55,0,Dean Huijsen,h,11943,OpenPlay,2023,LeftFoot,22559,Roma,Torino,3,2,2024-02-26 17:30:00,,None,Dean Huijsen
+592422,76,MissedShots,0.899000015258789,0.4929999923706055,0.0731285884976387,Dean Huijsen,a,11943,FromCorner,2024,Head,26645,Liverpool,Bournemouth,3,0,2024-09-21 14:00:00,Milos Kerkez,Cross,Dean Huijsen
+601429,96,BlockedShot,0.9540000152587891,0.46599998474121096,0.1263756901025772,Dean Huijsen,a,11943,OpenPlay,2024,Head,26702,Brentford,Bournemouth,3,2,2024-11-09 15:00:00,Marcus Tavernier,Cross,Dean Huijsen
+602860,87,BlockedShot,0.7180000305175781,0.55,0.009346801787614822,Dean Huijsen,h,11943,OpenPlay,2024,LeftFoot,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,,Rebound,Dean Huijsen
+605414,16,Goal,0.9740000152587891,0.565,0.4044710695743561,Dean Huijsen,h,11943,FromCorner,2024,Head,26732,Bournemouth,Tottenham,1,0,2024-12-05 20:15:00,Marcus Tavernier,Cross,Dean Huijsen
+608698,28,Goal,0.924000015258789,0.4520000076293945,0.12156583368778229,Dean Huijsen,a,11943,SetPiece,2024,Head,26769,Manchester United,Bournemouth,0,3,2024-12-22 14:00:00,Ryan Christie,Cross,Dean Huijsen
+609504,6,BlockedShot,0.9580000305175781,0.4420000076293945,0.06603983789682388,Dean Huijsen,a,11943,FromCorner,2024,Head,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Lewis Cook,Aerial,Dean Huijsen
+609511,25,BlockedShot,0.97,0.41900001525878905,0.04172208532691002,Dean Huijsen,a,11943,FromCorner,2024,Head,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Lewis Cook,Aerial,Dean Huijsen
+609888,49,MissedShots,0.9730000305175781,0.385,0.13393430411815643,Dean Huijsen,h,11943,FromCorner,2024,Head,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,Lewis Cook,Cross,Dean Huijsen
+612058,46,MissedShots,0.9569999694824218,0.5620000076293945,0.06234021112322807,Dean Huijsen,a,11943,FromCorner,2024,Head,26819,Newcastle United,Bournemouth,1,4,2025-01-18 12:30:00,David Brooks,Aerial,Dean Huijsen
+614893,91,MissedShots,0.7290000152587891,0.7090000152587891,0.011561792343854904,Dean Huijsen,h,11943,OpenPlay,2024,RightFoot,26832,Bournemouth,Liverpool,0,2,2025-02-01 15:00:00,,TakeOn,Dean Huijsen
+621821,73,MissedShots,0.9669999694824218,0.5879999923706055,0.032703571021556854,Dean Huijsen,a,11943,FromCorner,2024,Head,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,,Aerial,Dean Huijsen
+621822,78,MissedShots,0.9530000305175781,0.5779999923706055,0.0419086292386055,Dean Huijsen,a,11943,FromCorner,2024,Head,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Marcus Tavernier,Aerial,Dean Huijsen
+622893,8,BlockedShot,0.8130000305175781,0.66,0.033710822463035583,Dean Huijsen,h,11943,OpenPlay,2024,LeftFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Tyler Adams,Pass,Dean Huijsen
+625723,93,MissedShots,0.9,0.4779999923706055,0.06156526133418083,Dean Huijsen,a,11943,FromCorner,2024,Head,26911,West Ham,Bournemouth,2,2,2025-04-05 14:00:00,David Brooks,Cross,Dean Huijsen
+628577,53,MissedShots,0.740999984741211,0.669000015258789,0.016354229301214218,Dean Huijsen,a,11943,OpenPlay,2024,LeftFoot,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,Tyler Adams,Pass,Dean Huijsen
+628585,88,BlockedShot,0.7630000305175781,0.6,0.02313190884888172,Dean Huijsen,a,11943,OpenPlay,2024,RightFoot,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,David Brooks,Pass,Dean Huijsen
+631566,66,Goal,0.9480000305175781,0.45099998474121095,0.31302663683891296,Dean Huijsen,a,11943,OpenPlay,2024,Head,26945,Arsenal,Bournemouth,1,2,2025-05-03 16:30:00,Antoine Semenyo,Pass,Dean Huijsen
+638465,17,SavedShot,0.6780000305175782,0.56,0.008114251308143139,Dean Huijsen,h,11943,OpenPlay,2025,RightFoot,29167,Real Madrid,Osasuna,1,0,2025-08-19 19:00:00,Arda Güler,Chipped,Dean Huijsen
+638473,42,MissedShots,0.715999984741211,0.5209999847412109,0.016776427626609802,Dean Huijsen,h,11943,OpenPlay,2025,RightFoot,29167,Real Madrid,Osasuna,1,0,2025-08-19 19:00:00,Kylian Mbappe-Lottin,LayOff,Dean Huijsen
+639755,43,MissedShots,0.6990000152587891,0.549000015258789,0.01732051372528076,Dean Huijsen,a,11943,OpenPlay,2025,RightFoot,29175,Real Oviedo,Real Madrid,0,3,2025-08-24 19:30:00,Kylian Mbappe-Lottin,Pass,Dean Huijsen
+640665,61,BlockedShot,0.855999984741211,0.49400001525878906,0.11090762168169022,Dean Huijsen,h,11943,OpenPlay,2025,RightFoot,29184,Real Madrid,Mallorca,2,1,2025-08-30 19:30:00,Kylian Mbappe-Lottin,Pass,Dean Huijsen
+641766,26,MissedShots,0.9069999694824219,0.5409999847412109,0.07661022245883942,Dean Huijsen,a,11943,FromCorner,2025,Head,29195,Real Sociedad,Real Madrid,1,2,2025-09-13 14:15:00,Arda Güler,Cross,Dean Huijsen
+644160,22,MissedShots,0.865999984741211,0.26799999237060546,0.03850638493895531,Dean Huijsen,a,11943,FromCorner,2025,RightFoot,29210,Levante,Real Madrid,1,4,2025-09-23 19:30:00,,Rebound,Dean Huijsen
+646443,24,BlockedShot,0.7730000305175782,0.715,0.017043905332684517,Dean Huijsen,h,11943,OpenPlay,2025,RightFoot,29231,Real Madrid,Villarreal,3,1,2025-10-04 19:00:00,Vinícius Júnior,Pass,Dean Huijsen
+646454,55,MissedShots,0.9359999847412109,0.7,0.12435849756002426,Dean Huijsen,h,11943,OpenPlay,2025,LeftFoot,29231,Real Madrid,Villarreal,3,1,2025-10-04 19:00:00,Vinícius Júnior,Throughball,Dean Huijsen
+649663,29,SavedShot,0.9180000305175782,0.45599998474121095,0.2776578664779663,Dean Huijsen,h,11943,FromCorner,2025,RightFoot,29254,Real Madrid,Barcelona,2,1,2025-10-26 15:15:00,Aurelien Tchouameni,Chipped,Dean Huijsen
+654546,47,MissedShots,0.925,0.5620000076293945,0.09048362076282501,Dean Huijsen,a,11943,FromCorner,2025,Head,29280,Elche,Real Madrid,2,2,2025-11-23 20:00:00,Trent Alexander-Arnold,Cross,Dean Huijsen
+654552,77,Goal,0.955999984741211,0.5129999923706055,0.43183085322380066,Dean Huijsen,a,11943,FromCorner,2025,RightFoot,29280,Elche,Real Madrid,2,2,2025-11-23 20:00:00,Jude Bellingham,BallTouch,Dean Huijsen
+659592,22,MissedShots,0.9590000152587891,0.4809999847412109,0.09201483428478241,Dean Huijsen,h,11943,FromCorner,2025,Head,29322,Real Madrid,Sevilla,2,0,2025-12-20 20:00:00,Rodrygo,Aerial,Dean Huijsen
+659593,23,MissedShots,0.9280000305175782,0.544000015258789,0.3275335133075714,Dean Huijsen,h,11943,FromCorner,2025,Head,29322,Real Madrid,Sevilla,2,0,2025-12-20 20:00:00,Rodrygo,Cross,Dean Huijsen
+665064,38,BlockedShot,0.9330000305175781,0.5559999847412109,0.10762397944927216,Dean Huijsen,a,11943,FromCorner,2025,Head,29367,Villarreal,Real Madrid,0,2,2026-01-24 20:00:00,Arda Güler,Cross,Dean Huijsen
+665071,51,MissedShots,0.9130000305175782,0.47200000762939454,0.05591009557247162,Dean Huijsen,a,11943,SetPiece,2025,Head,29367,Villarreal,Real Madrid,0,2,2026-01-24 20:00:00,,None,Dean Huijsen
+666408,44,BlockedShot,0.894000015258789,0.33099998474121095,0.089908167719841,Dean Huijsen,h,11943,SetPiece,2025,RightFoot,29377,Real Madrid,Rayo Vallecano,2,1,2026-02-01 13:00:00,Arda Güler,Throughball,Dean Huijsen
+674206,65,Goal,0.9159999847412109,0.5059999847412109,0.35096117854118347,Dean Huijsen,h,11943,SetPiece,2025,Head,29434,Real Madrid,Elche,4,1,2026-03-14 20:00:00,Daniel Yáñez,Cross,Dean Huijsen
+677556,78,MissedShots,0.9059999847412109,0.47200000762939454,0.047536224126815796,Dean Huijsen,h,11943,SetPiece,2025,Head,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,Fran García,Aerial,Dean Huijsen
+680695,52,SavedShot,0.879000015258789,0.48700000762939455,0.035101454704999924,Dean Huijsen,a,11943,FromCorner,2025,OtherBodyPart,29474,Real Betis,Real Madrid,1,1,2026-04-24 19:00:00,Trent Alexander-Arnold,Cross,Dean Huijsen
+683209,14,MissedShots,0.9530000305175781,0.34200000762939453,0.01118310634046793,Dean Huijsen,a,11943,FromCorner,2025,Head,29494,Espanyol,Real Madrid,0,2,2026-05-03 19:00:00,Trent Alexander-Arnold,Aerial,Dean Huijsen

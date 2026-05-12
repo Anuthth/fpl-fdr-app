@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,31,0,0,2790,0,0,0,0,2025,Sevilla,1,0,0,0,2.2417896259576082,2.2417896259576082,375,Odisseas Vlachodimos
+season,GK,5,0,0,450,0,0,0.03266533091664314,1,2023,Nottingham Forest,0,0,0,0,1.0999388750642538,1.0672735627740622,375,Odisseas Vlachodimos
+season,Sub,3,0,0,200,0,0,0,0,2015,VfB Stuttgart,0,0,0,0,0.018434999510645866,0.018434999510645866,375,Odisseas Vlachodimos

@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,3,0,0,270,0,0,0,0,2020,West Ham,0,0,0,0,0.2751617059111595,0.2751617059111595,540,Darren Randolph
+season,GK,2,0,0,180,0,0,0,0,2019,West Ham,0,0,0,0,0,0,540,Darren Randolph
+season,GK,22,0,0,1980,0,0,0,0,2016,West Ham,1,0,0,0,0.7022444903850555,0.7022444903850555,540,Darren Randolph
+season,GK,6,0,1,540,0.07647579908370972,0,0,0,2015,West Ham,0,0,0,0.07647579908370972,0.4852911904454231,0.4852911904454231,540,Darren Randolph

@@ -1,0 +1,23 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+542020,11,Goal,0.9580000305175781,0.5690000152587891,0.40636134147644043,Lucas Pires,a,11824,OpenPlay,2023,LeftFoot,22756,Atletico Madrid,Cadiz,3,2,2023-10-01 19:00:00,Chris Ramos,Cross,Lucas Pires
+542035,68,MissedShots,0.7559999847412109,0.7169999694824218,0.010414881631731987,Lucas Pires,a,11824,SetPiece,2023,LeftFoot,22756,Atletico Madrid,Cadiz,3,2,2023-10-01 19:00:00,,None,Lucas Pires
+545069,88,SavedShot,0.909000015258789,0.6120000076293945,0.08740055561065674,Lucas Pires,a,11824,OpenPlay,2023,LeftFoot,22780,Valencia,Cadiz,2,0,2023-10-23 19:00:00,Rubén Sobrino,Pass,Lucas Pires
+550570,32,MissedShots,0.8930000305175781,0.11600000381469727,0.046400781720876694,Lucas Pires,h,11824,DirectFreekick,2023,LeftFoot,22817,Cadiz,Real Madrid,0,3,2023-11-26 17:30:00,,Standard,Lucas Pires
+555830,9,MissedShots,0.8630000305175781,0.6580000305175782,0.04213855415582657,Lucas Pires,h,11824,FromCorner,2023,LeftFoot,22858,Cadiz,Real Sociedad,0,0,2023-12-21 18:00:00,,None,Lucas Pires
+560310,45,MissedShots,0.87,0.13699999809265137,0.04834301024675369,Lucas Pires,h,11824,DirectFreekick,2023,LeftFoot,22900,Cadiz,Athletic Club,0,0,2024-01-28 15:15:00,,Standard,Lucas Pires
+561545,85,SavedShot,0.7730000305175782,0.3529999923706055,0.07326938211917877,Lucas Pires,a,11824,DirectFreekick,2023,LeftFoot,22913,Villarreal,Cadiz,0,0,2024-02-04 13:00:00,,Standard,Lucas Pires
+562242,18,MissedShots,0.8230000305175781,0.6179999923706054,0.03371690586209297,Lucas Pires,h,11824,FromCorner,2023,LeftFoot,22921,Cadiz,Real Betis,0,2,2024-02-09 20:00:00,Iván Alejo,Cross,Lucas Pires
+563979,89,BlockedShot,0.6790000152587891,0.6430000305175781,0.012473681010305882,Lucas Pires,a,11824,OpenPlay,2023,LeftFoot,22931,Osasuna,Cadiz,2,0,2024-02-17 15:15:00,Diadie Samassékou,Pass,Lucas Pires
+575277,55,SavedShot,0.85,0.5020000076293946,0.049230463802814484,Lucas Pires,a,11824,FromCorner,2023,LeftFoot,23002,Girona,Cadiz,4,1,2024-04-20 19:00:00,Iván Alejo,CornerAwarded,Lucas Pires
+583304,74,MissedShots,0.7730000305175782,0.6859999847412109,0.013344903476536274,Lucas Pires,a,11824,OpenPlay,2023,LeftFoot,23055,Almeria,Cadiz,6,1,2024-05-25 16:30:00,,None,Lucas Pires
+659285,85,BlockedShot,0.7959999847412109,0.6790000152587891,0.02732398919761181,Lucas Pires,a,11824,OpenPlay,2025,LeftFoot,28938,Bournemouth,Burnley,1,1,2025-12-20 15:00:00,Josh Cullen,Pass,Lucas Pires
+659287,86,MissedShots,0.76,0.3220000076293945,0.018474886193871498,Lucas Pires,a,11824,FromCorner,2025,LeftFoot,28938,Bournemouth,Burnley,1,1,2025-12-20 15:00:00,,Rebound,Lucas Pires
+660195,6,MissedShots,0.785,0.47,0.035773295909166336,Lucas Pires,h,11824,FromCorner,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,Rebound,Lucas Pires
+660524,22,MissedShots,0.789000015258789,0.61,0.03464085981249809,Lucas Pires,h,11824,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Marcus Edwards,Pass,Lucas Pires
+660546,71,MissedShots,0.905,0.710999984741211,0.04814406484365463,Lucas Pires,h,11824,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Marcus Edwards,Pass,Lucas Pires
+660549,84,BlockedShot,0.8,0.7019999694824218,0.03918452188372612,Lucas Pires,h,11824,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Chimuanya Ugochukwu,Pass,Lucas Pires
+661002,46,SavedShot,0.915,0.6769999694824219,0.05845271050930023,Lucas Pires,a,11824,OpenPlay,2025,LeftFoot,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,Jacob Bruun Larsen,Pass,Lucas Pires
+662128,31,MissedShots,0.8830000305175781,0.73,0.04410156235098839,Lucas Pires,h,11824,OpenPlay,2025,LeftFoot,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,Marcus Edwards,Pass,Lucas Pires
+663553,15,BlockedShot,0.8830000305175781,0.6509999847412109,0.06034375727176666,Lucas Pires,a,11824,OpenPlay,2025,LeftFoot,28992,Liverpool,Burnley,1,1,2026-01-17 15:00:00,,None,Lucas Pires
+666880,48,MissedShots,0.9519999694824218,0.7559999847412109,0.07176382094621658,Lucas Pires,a,11824,OpenPlay,2025,LeftFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Jaidon Anthony,Pass,Lucas Pires
+672112,97,BlockedShot,0.88,0.6769999694824219,0.03800184279680252,Lucas Pires,a,11824,FromCorner,2025,RightFoot,29061,Everton,Burnley,2,0,2026-03-03 19:30:00,,None,Lucas Pires

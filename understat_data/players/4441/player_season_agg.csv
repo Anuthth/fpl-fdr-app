@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,3,0,0,0,0,2019,Leicester,0,0,0,0,0,0,4441,Matthew James
+season,MC,13,0,11,997,0.866982389241457,0,0.11408549919724464,2,2017,Leicester,2,0,0,0.866982389241457,1.3232965245842934,0.9102421179413795,4441,Matthew James
+season,Sub,1,0,0,1,0,0,0,0,2016,Leicester,0,0,0,0,0,0,4441,Matthew James
+season,Sub,27,0,27,1884,1.7331535071134567,1,2.196557796560228,37,2014,Leicester,2,1,0,1.7331535071134567,5.696065437048674,3.5342563427984715,4441,Matthew James

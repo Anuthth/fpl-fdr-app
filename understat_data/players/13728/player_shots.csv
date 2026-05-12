@@ -1,0 +1,16 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+637712,22,SavedShot,0.7430000305175781,0.3990000152587891,0.01934977062046528,Josh Laurent,a,13728,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Jaidon Anthony,Pass,Josh Laurent
+637717,29,MissedShots,0.865999984741211,0.7019999694824218,0.03751162067055702,Josh Laurent,a,13728,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Quilindschy Hartman,Pass,Josh Laurent
+637720,42,SavedShot,0.784000015258789,0.41200000762939454,0.02691812254488468,Josh Laurent,a,13728,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Oliver Sonne,Pass,Josh Laurent
+642159,73,MissedShots,0.764000015258789,0.355,0.013411472551524639,Josh Laurent,h,13728,SetPiece,2025,RightFoot,28816,Burnley,Liverpool,0,1,2025-09-14 13:00:00,,None,Josh Laurent
+644768,29,BlockedShot,0.8590000152587891,0.2989999961853027,0.0366329625248909,Josh Laurent,a,13728,OpenPlay,2025,RightFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,,Rebound,Josh Laurent
+660199,20,MissedShots,0.8109999847412109,0.35,0.03364318981766701,Josh Laurent,h,13728,OpenPlay,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,None,Josh Laurent
+660525,22,Goal,0.93,0.34,0.04639299213886261,Josh Laurent,h,13728,OpenPlay,2025,RightFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Armando Broja,HeadPass,Josh Laurent
+660543,60,ShotOnPost,0.919000015258789,0.4490000152587891,0.040717415511608124,Josh Laurent,h,13728,OpenPlay,2025,Head,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Lucas Pires,Aerial,Josh Laurent
+667283,46,BlockedShot,0.9080000305175782,0.5129999923706055,0.08712281286716461,Josh Laurent,h,13728,OpenPlay,2025,Head,29021,Burnley,West Ham,0,2,2026-02-07 15:00:00,Bashir Humphreys,Cross,Josh Laurent
+667286,50,BlockedShot,0.725999984741211,0.36700000762939455,0.011927110143005848,Josh Laurent,h,13728,OpenPlay,2025,RightFoot,29021,Burnley,West Ham,0,2,2026-02-07 15:00:00,Maxime Estève,Pass,Josh Laurent
+668357,25,BlockedShot,0.795,0.39599998474121095,0.02549188770353794,Josh Laurent,a,13728,SetPiece,2025,RightFoot,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,Marcus Edwards,None,Josh Laurent
+668378,83,MissedShots,0.8,0.44,0.02852865867316723,Josh Laurent,a,13728,FromCorner,2025,RightFoot,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,,None,Josh Laurent
+669760,76,SavedShot,0.9269999694824219,0.395,0.10777582973241806,Josh Laurent,a,13728,OpenPlay,2025,LeftFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,Jaidon Anthony,Pass,Josh Laurent
+675306,74,BlockedShot,0.95,0.46099998474121096,0.5155233144760132,Josh Laurent,a,13728,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Jaidon Anthony,Aerial,Josh Laurent
+681998,44,MissedShots,0.6840000152587891,0.4590000152587891,0.01272792462259531,Josh Laurent,a,13728,OpenPlay,2025,RightFoot,29124,Leeds,Burnley,3,1,2026-05-01 19:00:00,Hjalmar Ekdal,Pass,Josh Laurent

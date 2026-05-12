@@ -1,0 +1,231 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+310469,3,MissedShots,0.835,0.3110000038146973,0.04912929981946945,Harry Wilson,a,5596,OpenPlay,2019,RightFoot,11654,Aston Villa,Bournemouth,1,2,2019-08-17 15:00:00,Callum Wilson,BallTouch,Harry Wilson
+310472,11,Goal,0.7430000305175781,0.539000015258789,0.02749989926815033,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11654,Aston Villa,Bournemouth,1,2,2019-08-17 15:00:00,,BallRecovery,Harry Wilson
+310477,27,MissedShots,0.9180000305175782,0.33,0.06587540358304977,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11654,Aston Villa,Bournemouth,1,2,2019-08-17 15:00:00,Charlie Daniels,Cross,Harry Wilson
+310482,44,SavedShot,0.924000015258789,0.345,0.09229709953069687,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11654,Aston Villa,Bournemouth,1,2,2019-08-17 15:00:00,Callum Wilson,Pass,Harry Wilson
+310487,58,BlockedShot,0.715,0.44799999237060545,0.018788600340485573,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11654,Aston Villa,Bournemouth,1,2,2019-08-17 15:00:00,Callum Wilson,Pass,Harry Wilson
+312927,47,Goal,0.765,0.5459999847412109,0.07602319866418839,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11671,Bournemouth,Manchester City,1,3,2019-08-25 14:00:00,,Standard,Harry Wilson
+312934,54,BlockedShot,0.8669999694824219,0.4520000076293945,0.09146620333194733,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11671,Bournemouth,Manchester City,1,3,2019-08-25 14:00:00,Callum Wilson,Pass,Harry Wilson
+315841,47,BlockedShot,0.8640000152587891,0.5790000152587891,0.05283790081739426,Harry Wilson,a,5596,FromCorner,2019,LeftFoot,11677,Leicester,Bournemouth,3,1,2019-08-31 15:00:00,Ryan Fraser,Pass,Harry Wilson
+317873,12,SavedShot,0.7569999694824219,0.6170000076293946,0.059944599866867065,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11690,Bournemouth,Everton,3,1,2019-09-15 13:00:00,,Standard,Harry Wilson
+317881,31,BlockedShot,0.735,0.5940000152587891,0.049973201006650925,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11690,Bournemouth,Everton,3,1,2019-09-15 13:00:00,,Standard,Harry Wilson
+320106,34,Goal,0.905,0.6120000076293945,0.3580619990825653,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11693,Southampton,Bournemouth,1,3,2019-09-20 19:00:00,Philip Billing,Pass,Harry Wilson
+325714,29,BlockedShot,0.7430000305175781,0.38599998474121094,0.05210600048303604,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11724,Bournemouth,Norwich,0,0,2019-10-19 15:00:00,,Standard,Harry Wilson
+327202,84,BlockedShot,0.9,0.32,0.04791349917650223,Harry Wilson,a,5596,FromCorner,2019,LeftFoot,11741,Watford,Bournemouth,0,0,2019-10-26 15:00:00,Jefferson Lerma,Pass,Harry Wilson
+327203,85,ShotOnPost,0.7669999694824219,0.43,0.0749645009636879,Harry Wilson,a,5596,DirectFreekick,2019,LeftFoot,11741,Watford,Bournemouth,0,0,2019-10-26 15:00:00,,Standard,Harry Wilson
+328896,15,BlockedShot,0.8490000152587891,0.395,0.08934090286493301,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11745,Bournemouth,Manchester United,1,0,2019-11-02 12:30:00,,TakeOn,Harry Wilson
+328902,38,BlockedShot,0.799000015258789,0.4759999847412109,0.015658600255846977,Harry Wilson,h,5596,SetPiece,2019,LeftFoot,11745,Bournemouth,Manchester United,1,0,2019-11-02 12:30:00,,Aerial,Harry Wilson
+328908,62,SavedShot,0.8540000152587891,0.555,0.08159790188074112,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11745,Bournemouth,Manchester United,1,0,2019-11-02 12:30:00,,Rebound,Harry Wilson
+328910,67,MissedShots,0.815,0.35200000762939454,0.10193199664354324,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11745,Bournemouth,Manchester United,1,0,2019-11-02 12:30:00,,Standard,Harry Wilson
+328913,74,SavedShot,0.8440000152587891,0.46599998474121096,0.09682869911193848,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11745,Bournemouth,Manchester United,1,0,2019-11-02 12:30:00,Callum Wilson,Pass,Harry Wilson
+330691,13,Goal,0.879000015258789,0.5570000076293945,0.06517670303583145,Harry Wilson,a,5596,FromCorner,2019,LeftFoot,11756,Newcastle United,Bournemouth,2,1,2019-11-09 15:00:00,Ryan Fraser,Pass,Harry Wilson
+330696,37,MissedShots,0.7319999694824219,0.53,0.05240520089864731,Harry Wilson,a,5596,DirectFreekick,2019,LeftFoot,11756,Newcastle United,Bournemouth,2,1,2019-11-09 15:00:00,,Standard,Harry Wilson
+330705,48,BlockedShot,0.9290000152587891,0.25299999237060544,0.01755630038678646,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11756,Newcastle United,Bournemouth,2,1,2019-11-09 15:00:00,Ryan Fraser,Cross,Harry Wilson
+332150,34,BlockedShot,0.7919999694824219,0.26799999237060546,0.009822010062634945,Harry Wilson,h,5596,SetPiece,2019,LeftFoot,11765,Bournemouth,Wolverhampton Wanderers,1,2,2019-11-23 15:00:00,,Aerial,Harry Wilson
+333690,63,MissedShots,0.86,0.3629999923706055,0.07417760044336319,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11779,Tottenham,Bournemouth,3,2,2019-11-30 15:00:00,Lewis Cook,Pass,Harry Wilson
+333694,70,BlockedShot,0.8530000305175781,0.3990000152587891,0.05004030093550682,Harry Wilson,a,5596,FromCorner,2019,LeftFoot,11779,Tottenham,Bournemouth,3,2,2019-11-30 15:00:00,,None,Harry Wilson
+333696,72,Goal,0.7859999847412109,0.46700000762939453,0.10258699953556061,Harry Wilson,a,5596,DirectFreekick,2019,LeftFoot,11779,Tottenham,Bournemouth,3,2,2019-11-30 15:00:00,,Standard,Harry Wilson
+333698,80,BlockedShot,0.8169999694824219,0.3970000076293945,0.08177469670772552,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11779,Tottenham,Bournemouth,3,2,2019-11-30 15:00:00,Dan Gosling,TakeOn,Harry Wilson
+333702,95,Goal,0.899000015258789,0.519000015258789,0.0819970965385437,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11779,Tottenham,Bournemouth,3,2,2019-11-30 15:00:00,,None,Harry Wilson
+339526,80,SavedShot,0.840999984741211,0.31799999237060544,0.03322039917111397,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11824,Bournemouth,Arsenal,1,1,2019-12-26 15:00:00,Jefferson Lerma,Chipped,Harry Wilson
+339530,93,SavedShot,0.8159999847412109,0.17600000381469727,0.04052659869194031,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11824,Bournemouth,Arsenal,1,1,2019-12-26 15:00:00,,Standard,Harry Wilson
+339723,23,BlockedShot,0.79,0.40900001525878904,0.024740900844335556,Harry Wilson,a,5596,SetPiece,2019,LeftFoot,11834,Brighton,Bournemouth,2,0,2019-12-28 12:30:00,,None,Harry Wilson
+339727,33,BlockedShot,0.8480000305175781,0.42200000762939455,0.11462999880313873,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11834,Brighton,Bournemouth,2,0,2019-12-28 12:30:00,Joshua King,Pass,Harry Wilson
+351798,8,SavedShot,0.7290000152587891,0.515,0.051052600145339966,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11857,Bournemouth,Watford,0,3,2020-01-12 14:00:00,,Standard,Harry Wilson
+351803,30,BlockedShot,0.7330000305175781,0.38799999237060545,0.019804799929261208,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11857,Bournemouth,Watford,0,3,2020-01-12 14:00:00,Ryan Fraser,Pass,Harry Wilson
+352153,32,BlockedShot,0.8319999694824218,0.29399999618530276,0.03235799819231033,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11878,Bournemouth,Brighton,3,1,2020-01-21 19:30:00,Callum Wilson,BallRecovery,Harry Wilson
+352154,33,BlockedShot,0.8669999694824219,0.500999984741211,0.06250619888305664,Harry Wilson,h,5596,FromCorner,2019,LeftFoot,11878,Bournemouth,Brighton,3,1,2020-01-21 19:30:00,Ryan Fraser,Pass,Harry Wilson
+352156,35,Goal,0.879000015258789,0.38299999237060545,0.09641049802303314,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11878,Bournemouth,Brighton,3,1,2020-01-21 19:30:00,Dominic Solanke,Pass,Harry Wilson
+352165,61,BlockedShot,0.8469999694824218,0.4490000152587891,0.09440810233354568,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11878,Bournemouth,Brighton,3,1,2020-01-21 19:30:00,Callum Wilson,BallTouch,Harry Wilson
+352503,0,MissedShots,0.8019999694824219,0.3820000076293945,0.034305501729249954,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11883,Bournemouth,Aston Villa,2,1,2020-02-01 15:00:00,,None,Harry Wilson
+352509,21,SavedShot,0.715,0.509000015258789,0.04403800144791603,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11883,Bournemouth,Aston Villa,2,1,2020-02-01 15:00:00,,Standard,Harry Wilson
+352516,43,BlockedShot,0.74,0.6170000076293946,0.050172701478004456,Harry Wilson,h,5596,DirectFreekick,2019,LeftFoot,11883,Bournemouth,Aston Villa,2,1,2020-02-01 15:00:00,,Standard,Harry Wilson
+352534,80,BlockedShot,0.785,0.6120000076293945,0.02086859941482544,Harry Wilson,h,5596,SetPiece,2019,LeftFoot,11883,Bournemouth,Aston Villa,2,1,2020-02-01 15:00:00,Philip Billing,HeadPass,Harry Wilson
+352691,6,MissedShots,0.88,0.504000015258789,0.04534060135483742,Harry Wilson,a,5596,OpenPlay,2019,Head,11900,Sheffield United,Bournemouth,2,1,2020-02-09 14:00:00,Ryan Fraser,Cross,Harry Wilson
+352693,12,BlockedShot,0.9109999847412109,0.5329999923706055,0.1394689977169037,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11900,Sheffield United,Bournemouth,2,1,2020-02-09 14:00:00,Ryan Fraser,Pass,Harry Wilson
+352711,65,MissedShots,0.745999984741211,0.5379999923706055,0.015587200410664082,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11900,Sheffield United,Bournemouth,2,1,2020-02-09 14:00:00,Callum Wilson,HeadPass,Harry Wilson
+352974,17,MissedShots,0.7369999694824219,0.38299999237060545,0.01090839970856905,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,11907,Burnley,Bournemouth,3,0,2020-02-22 15:00:00,,Aerial,Harry Wilson
+352976,22,SavedShot,0.9330000305175781,0.4620000076293945,0.40428000688552856,Harry Wilson,a,5596,OpenPlay,2019,Head,11907,Burnley,Bournemouth,3,0,2020-02-22 15:00:00,Joshua King,Cross,Harry Wilson
+367985,80,BlockedShot,0.7919999694824219,0.30100000381469727,0.015260599553585052,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11955,Bournemouth,Newcastle United,1,4,2020-07-01 17:00:00,Joshua King,Pass,Harry Wilson
+367988,90,BlockedShot,0.8030000305175782,0.30700000762939456,0.024702800437808037,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11955,Bournemouth,Newcastle United,1,4,2020-07-01 17:00:00,Dan Gosling,Pass,Harry Wilson
+370108,70,BlockedShot,0.9690000152587891,0.5570000076293945,0.1318719983100891,Harry Wilson,h,5596,OpenPlay,2019,RightFoot,11975,Bournemouth,Tottenham,0,0,2020-07-09 17:00:00,Joshua King,CornerAwarded,Harry Wilson
+370114,95,SavedShot,0.9069999694824219,0.40400001525878904,0.4456480145454407,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,11975,Bournemouth,Tottenham,0,0,2020-07-09 17:00:00,Joshua King,Pass,Harry Wilson
+372438,60,BlockedShot,0.73,0.455,0.014778800308704376,Harry Wilson,h,5596,FromCorner,2019,LeftFoot,12004,Bournemouth,Southampton,0,2,2020-07-19 13:00:00,,None,Harry Wilson
+372439,65,SavedShot,0.8780000305175781,0.3609999847412109,0.07031950354576111,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,12004,Bournemouth,Southampton,0,2,2020-07-19 13:00:00,Joshua King,Pass,Harry Wilson
+372440,67,BlockedShot,0.77,0.43,0.019516300410032272,Harry Wilson,h,5596,FromCorner,2019,LeftFoot,12004,Bournemouth,Southampton,0,2,2020-07-19 13:00:00,,None,Harry Wilson
+372450,89,SavedShot,0.85,0.38599998474121094,0.019448399543762207,Harry Wilson,h,5596,OpenPlay,2019,LeftFoot,12004,Bournemouth,Southampton,0,2,2020-07-19 13:00:00,Callum Wilson,Aerial,Harry Wilson
+373736,91,MissedShots,0.795,0.4159999847412109,0.0510484017431736,Harry Wilson,a,5596,OpenPlay,2019,LeftFoot,12019,Everton,Bournemouth,1,3,2020-07-26 15:00:00,Callum Wilson,Pass,Harry Wilson
+493112,65,MissedShots,0.875,0.48400001525878905,0.027505600824952126,Harry Wilson,h,5596,OpenPlay,2022,Head,18304,Fulham,Bournemouth,2,2,2022-10-15 14:00:00,Bobby Reid,Aerial,Harry Wilson
+495502,31,BlockedShot,0.8230000305175781,0.5629999923706055,0.03556700050830841,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18325,Leeds,Fulham,2,3,2022-10-23 13:00:00,Antonee Robinson,Cross,Harry Wilson
+495508,60,BlockedShot,0.9080000305175782,0.445,0.10587599873542786,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18325,Leeds,Fulham,2,3,2022-10-23 13:00:00,Harrison Reed,Cross,Harry Wilson
+496806,70,MissedShots,0.8919999694824219,0.5729999923706055,0.024913599714636803,Harry Wilson,h,5596,OpenPlay,2022,Head,18337,Fulham,Everton,0,0,2022-10-29 16:30:00,Aleksandar Mitrovic,Aerial,Harry Wilson
+498065,61,MissedShots,0.8630000305175781,0.34599998474121096,0.05197570100426674,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18346,Manchester City,Fulham,2,1,2022-11-05 15:00:00,Harrison Reed,Chipped,Harry Wilson
+500819,27,SavedShot,0.8009999847412109,0.41900001525878905,0.0362371988594532,Harry Wilson,h,5596,OpenPlay,2022,LeftFoot,18354,Fulham,Manchester United,1,2,2022-11-13 16:30:00,Willian,TakeOn,Harry Wilson
+501018,86,MissedShots,0.8969999694824219,0.5529999923706055,0.05373239889740944,Harry Wilson,a,5596,OpenPlay,2022,Head,18366,Crystal Palace,Fulham,0,3,2022-12-26 15:00:00,Antonee Robinson,Cross,Harry Wilson
+502166,90,MissedShots,0.865999984741211,0.45799999237060546,0.5465880036354065,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18389,Leicester,Fulham,0,1,2023-01-03 19:45:00,Tom Cairney,Throughball,Harry Wilson
+514118,86,MissedShots,0.8590000152587891,0.6179999923706054,0.0826949030160904,Harry Wilson,h,5596,OpenPlay,2022,LeftFoot,18465,Fulham,Arsenal,0,3,2023-03-12 14:00:00,Harrison Reed,Pass,Harry Wilson
+519482,17,SavedShot,0.8240000152587891,0.455,0.054743800312280655,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,,None,Harry Wilson
+519484,21,ShotOnPost,0.769000015258789,0.32,0.01508999988436699,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,Harrison Reed,Chipped,Harry Wilson
+519497,50,Goal,0.9080000305175782,0.5379999923706055,0.44713398814201355,Harry Wilson,a,5596,OpenPlay,2022,LeftFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,Willian,Pass,Harry Wilson
+519511,85,BlockedShot,0.7809999847412109,0.62,0.034258801490068436,Harry Wilson,a,5596,OpenPlay,2022,RightFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,Daniel James,BallRecovery,Harry Wilson
+520626,19,BlockedShot,0.8530000305175781,0.5929999923706055,0.06193716451525688,Harry Wilson,h,5596,OpenPlay,2022,LeftFoot,18517,Fulham,Leeds,2,1,2023-04-22 11:30:00,,None,Harry Wilson
+520635,57,Goal,0.9130000305175782,0.41200000762939454,0.09256905317306519,Harry Wilson,h,5596,OpenPlay,2022,LeftFoot,18517,Fulham,Leeds,2,1,2023-04-22 11:30:00,,None,Harry Wilson
+523991,26,BlockedShot,0.855999984741211,0.634000015258789,0.04263141006231308,Harry Wilson,a,5596,FromCorner,2022,LeftFoot,18477,Liverpool,Fulham,1,0,2023-05-03 19:00:00,,None,Harry Wilson
+527452,46,BlockedShot,0.955999984741211,0.4229999923706055,0.1028120294213295,Harry Wilson,h,5596,FromCorner,2022,LeftFoot,18564,Fulham,Crystal Palace,2,2,2023-05-20 14:00:00,Tom Cairney,Cross,Harry Wilson
+529880,64,MissedShots,0.7759999847412109,0.2989999961853027,0.054122041910886765,Harry Wilson,a,5596,DirectFreekick,2022,LeftFoot,18580,Manchester United,Fulham,2,1,2023-05-28 15:30:00,,Standard,Harry Wilson
+532097,68,MissedShots,0.8540000152587891,0.6270000076293946,0.050611864775419235,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22279,Everton,Fulham,0,1,2023-08-12 14:00:00,Sasa Lukic,Chipped,Harry Wilson
+533186,57,SavedShot,0.754000015258789,0.6179999923706054,0.01702742464840412,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22287,Fulham,Brentford,0,3,2023-08-19 14:00:00,Andreas Pereira,BallTouch,Harry Wilson
+534708,25,MissedShots,0.7340000152587891,0.580999984741211,0.022949175909161568,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22297,Arsenal,Fulham,2,2,2023-08-26 14:00:00,Andreas Pereira,Pass,Harry Wilson
+537669,21,SavedShot,0.749000015258789,0.39799999237060546,0.05705202743411064,Harry Wilson,h,5596,DirectFreekick,2023,LeftFoot,21939,Fulham,Luton,1,0,2023-09-16 14:00:00,,Standard,Harry Wilson
+537672,35,MissedShots,0.725999984741211,0.425,0.04692205786705017,Harry Wilson,h,5596,DirectFreekick,2023,LeftFoot,21939,Fulham,Luton,1,0,2023-09-16 14:00:00,,Standard,Harry Wilson
+539088,79,BlockedShot,0.82,0.34200000762939453,0.0349813774228096,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,21948,Crystal Palace,Fulham,0,0,2023-09-23 14:00:00,Alex Iwobi,Pass,Harry Wilson
+542696,82,ShotOnPost,0.759000015258789,0.38599998474121094,0.02919241227209568,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,21970,Fulham,Sheffield United,3,1,2023-10-07 14:00:00,Rodrigo Muniz,BallRecovery,Harry Wilson
+545054,91,BlockedShot,0.91,0.36200000762939455,0.05066582188010216,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,21984,Tottenham,Fulham,2,0,2023-10-23 19:00:00,Willian,Chipped,Harry Wilson
+545055,94,BlockedShot,0.845,0.485,0.09298159182071686,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,21984,Tottenham,Fulham,2,0,2023-10-23 19:00:00,Alex Iwobi,Throughball,Harry Wilson
+546568,22,MissedShots,0.779000015258789,0.34400001525878904,0.01737545244395733,Harry Wilson,h,5596,FromCorner,2023,LeftFoot,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,,None,Harry Wilson
+546570,30,BlockedShot,0.745,0.5120000076293946,0.04319944977760315,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,Alex Iwobi,Pass,Harry Wilson
+546582,60,SavedShot,0.805,0.3079999923706055,0.025120411068201065,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,Alex Iwobi,Pass,Harry Wilson
+546592,88,MissedShots,0.7780000305175782,0.34,0.06491334736347198,Harry Wilson,h,5596,DirectFreekick,2023,LeftFoot,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,,Standard,Harry Wilson
+548892,56,MissedShots,0.860999984741211,0.4909999847412109,0.020871803164482117,Harry Wilson,a,5596,OpenPlay,2023,Head,22007,Aston Villa,Fulham,3,1,2023-11-12 14:00:00,Antonee Robinson,Cross,Harry Wilson
+551723,23,Goal,0.9519999694824218,0.5829999923706055,0.11629118025302887,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22030,Liverpool,Fulham,4,3,2023-12-03 14:00:00,Antonee Robinson,Pass,Harry Wilson
+552232,94,BlockedShot,0.774000015258789,0.5320000076293945,0.045620352029800415,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22038,Fulham,Nottingham Forest,5,0,2023-12-06 19:30:00,Tom Cairney,Pass,Harry Wilson
+553429,55,SavedShot,0.92,0.395,0.44416049122810364,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22049,Fulham,West Ham,5,0,2023-12-10 14:00:00,Andreas Pereira,TakeOn,Harry Wilson
+553431,59,Goal,0.7869999694824219,0.3120000076293945,0.051749859005212784,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22049,Fulham,West Ham,5,0,2023-12-10 14:00:00,Tom Cairney,Chipped,Harry Wilson
+556274,12,SavedShot,0.870999984741211,0.39099998474121095,0.0662778839468956,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22067,Fulham,Burnley,0,2,2023-12-23 15:00:00,,None,Harry Wilson
+556280,43,BlockedShot,0.8440000152587891,0.3870000076293945,0.07118289917707443,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22067,Fulham,Burnley,0,2,2023-12-23 15:00:00,Timothy Castagne,Pass,Harry Wilson
+557172,83,MissedShots,0.835999984741211,0.36900001525878906,0.01895732432603836,Harry Wilson,h,5596,FromCorner,2023,LeftFoot,22087,Fulham,Arsenal,2,1,2023-12-31 14:00:00,,Aerial,Harry Wilson
+557891,26,SavedShot,0.96,0.34599998474121096,0.03998953849077225,Harry Wilson,a,5596,OpenPlay,2023,RightFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,Antonee Robinson,Cross,Harry Wilson
+557898,43,BlockedShot,0.7909999847412109,0.45799999237060546,0.037809547036886215,Harry Wilson,a,5596,FromCorner,2023,LeftFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,,Rebound,Harry Wilson
+563876,78,MissedShots,0.7769999694824219,0.740999984741211,0.020728573203086853,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,,Rebound,Harry Wilson
+565252,78,MissedShots,0.7780000305175782,0.505,0.08800341933965683,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,,None,Harry Wilson
+566599,20,Goal,0.8530000305175781,0.40299999237060546,0.06678299605846405,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Rodrigo Muniz,HeadPass,Harry Wilson
+566605,48,MissedShots,0.8880000305175781,0.34,0.08385908603668213,Harry Wilson,h,5596,OpenPlay,2023,RightFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Sasa Lukic,Pass,Harry Wilson
+566606,50,BlockedShot,0.9519999694824218,0.4159999847412109,0.14503654837608337,Harry Wilson,h,5596,OpenPlay,2023,RightFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Rodrigo Muniz,Pass,Harry Wilson
+566616,66,BlockedShot,0.9309999847412109,0.615,0.12205056101083755,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Alex Iwobi,Cross,Harry Wilson
+568096,24,MissedShots,0.775,0.5259999847412109,0.2999548614025116,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Alex Iwobi,Throughball,Harry Wilson
+568098,34,BlockedShot,0.91,0.40599998474121096,0.07235531508922577,Harry Wilson,a,5596,FromCorner,2023,LeftFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Alex Iwobi,Pass,Harry Wilson
+568101,48,MissedShots,0.815,0.2560000038146973,0.01758066564798355,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Alex Iwobi,Chipped,Harry Wilson
+569587,89,SavedShot,0.8369999694824218,0.6780000305175782,0.14710257947444916,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22180,Fulham,Tottenham,3,0,2024-03-16 17:30:00,Raúl Jiménez,Throughball,Harry Wilson
+571754,27,MissedShots,0.9340000152587891,0.48200000762939454,0.09798578172922134,Harry Wilson,a,5596,OpenPlay,2023,Head,22198,Nottingham Forest,Fulham,3,1,2024-04-02 18:30:00,Andreas Pereira,Aerial,Harry Wilson
+575660,96,SavedShot,0.9340000152587891,0.6519999694824219,0.01899019442498684,Harry Wilson,h,5596,OpenPlay,2023,Head,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,Adama Traoré,Chipped,Harry Wilson
+576772,94,BlockedShot,0.8040000152587891,0.3890000152587891,0.0346793532371521,Harry Wilson,h,5596,OpenPlay,2023,LeftFoot,22238,Fulham,Crystal Palace,1,1,2024-04-27 14:00:00,Timothy Castagne,Pass,Harry Wilson
+581982,18,MissedShots,0.895,0.27600000381469725,0.03268522024154663,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22272,Luton,Fulham,2,4,2024-05-19 15:00:00,Alex Iwobi,TakeOn,Harry Wilson
+581998,59,ShotOnPost,0.8169999694824219,0.40200000762939453,0.041987791657447815,Harry Wilson,a,5596,SetPiece,2023,LeftFoot,22272,Luton,Fulham,2,4,2024-05-19 15:00:00,Harrison Reed,Pass,Harry Wilson
+582000,67,Goal,0.8059999847412109,0.4640000152587891,0.06385345757007599,Harry Wilson,a,5596,OpenPlay,2023,LeftFoot,22272,Luton,Fulham,2,4,2024-05-19 15:00:00,Adama Traoré,Pass,Harry Wilson
+601032,89,BlockedShot,0.9169999694824219,0.6359999847412109,0.10326938331127167,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Alex Iwobi,Throughball,Harry Wilson
+601033,91,Goal,0.9230000305175782,0.43200000762939456,0.10150918364524841,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Adama Traoré,Cross,Harry Wilson
+601036,96,Goal,0.8980000305175782,0.5559999847412109,0.039238136261701584,Harry Wilson,h,5596,OpenPlay,2024,Head,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Antonee Robinson,Chipped,Harry Wilson
+601458,82,Goal,0.9130000305175782,0.6090000152587891,0.5460522770881653,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26706,Crystal Palace,Fulham,0,2,2024-11-09 15:00:00,Alex Iwobi,Throughball,Harry Wilson
+602876,69,ShotOnPost,0.7969999694824219,0.3189999961853027,0.025561397895216942,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26717,Fulham,Wolverhampton Wanderers,1,4,2024-11-23 15:00:00,Alex Iwobi,Pass,Harry Wilson
+605403,45,MissedShots,0.8590000152587891,0.4520000076293945,0.09575507789850235,Harry Wilson,h,5596,OpenPlay,2024,RightFoot,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Alex Iwobi,Chipped,Harry Wilson
+607103,20,MissedShots,0.774000015258789,0.3029999923706055,0.05404127761721611,Harry Wilson,a,5596,DirectFreekick,2024,LeftFoot,26752,Liverpool,Fulham,2,2,2024-12-14 15:00:00,,Standard,Harry Wilson
+607105,30,BlockedShot,0.8619999694824219,0.485,0.1425458788871765,Harry Wilson,a,5596,OpenPlay,2024,RightFoot,26752,Liverpool,Fulham,2,2,2024-12-14 15:00:00,Andreas Pereira,Pass,Harry Wilson
+607110,49,MissedShots,0.8640000152587891,0.5520000076293945,0.11505907773971558,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26752,Liverpool,Fulham,2,2,2024-12-14 15:00:00,Antonee Robinson,Cross,Harry Wilson
+607114,59,MissedShots,0.9259999847412109,0.57,0.11533290147781372,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26752,Liverpool,Fulham,2,2,2024-12-14 15:00:00,Antonee Robinson,Cross,Harry Wilson
+608631,7,BlockedShot,0.7919999694824219,0.4809999847412109,0.038493528962135315,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,Joshua King,Pass,Harry Wilson
+608633,25,MissedShots,0.8159999847412109,0.500999984741211,0.05285279452800751,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,,None,Harry Wilson
+608634,27,MissedShots,0.74,0.6419999694824219,0.016945065930485725,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,Alex Iwobi,Pass,Harry Wilson
+608643,66,SavedShot,0.9519999694824218,0.6029999923706054,0.2774585485458374,Harry Wilson,h,5596,FromCorner,2024,LeftFoot,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,Adama Traoré,Cross,Harry Wilson
+609100,75,MissedShots,0.8109999847412109,0.3270000076293945,0.022533226758241653,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Timothy Castagne,HeadPass,Harry Wilson
+609103,81,Goal,0.980999984741211,0.5629999923706055,0.37324225902557373,Harry Wilson,a,5596,OpenPlay,2024,Head,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Timothy Castagne,None,Harry Wilson
+609507,9,SavedShot,0.865,0.534000015258789,0.10652637481689453,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Antonee Robinson,Pass,Harry Wilson
+609508,13,SavedShot,0.8330000305175781,0.5790000152587891,0.06805878132581711,Harry Wilson,h,5596,OpenPlay,2024,RightFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Alex Iwobi,Pass,Harry Wilson
+609519,56,BlockedShot,0.8230000305175781,0.4279999923706055,0.07328694313764572,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Andreas Pereira,Pass,Harry Wilson
+609526,71,Goal,0.904000015258789,0.4620000076293945,0.09223707765340805,Harry Wilson,h,5596,OpenPlay,2024,Head,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,Antonee Robinson,Cross,Harry Wilson
+610198,41,BlockedShot,0.8519999694824218,0.534000015258789,0.08156686276197433,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26796,Fulham,Ipswich,2,2,2025-01-05 14:00:00,Alex Iwobi,Pass,Harry Wilson
+610200,43,BlockedShot,0.8159999847412109,0.5690000152587891,0.019086986780166626,Harry Wilson,h,5596,FromCorner,2024,LeftFoot,26796,Fulham,Ipswich,2,2,2025-01-05 14:00:00,,Aerial,Harry Wilson
+610210,86,BlockedShot,0.7609999847412109,0.47700000762939454,0.02551901340484619,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26796,Fulham,Ipswich,2,2,2025-01-05 14:00:00,Adama Traoré,Pass,Harry Wilson
+611514,5,ShotOnPost,0.93,0.4929999923706055,0.1394617110490799,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26808,West Ham,Fulham,3,2,2025-01-14 19:30:00,Alex Iwobi,Chipped,Harry Wilson
+611515,11,MissedShots,0.7759999847412109,0.3290000152587891,0.023842396214604378,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26808,West Ham,Fulham,3,2,2025-01-14 19:30:00,Timothy Castagne,Pass,Harry Wilson
+611525,51,MissedShots,0.725999984741211,0.4809999847412109,0.01943914406001568,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26808,West Ham,Fulham,3,2,2025-01-14 19:30:00,Antonee Robinson,Pass,Harry Wilson
+611529,70,SavedShot,0.8619999694824219,0.40900001525878904,0.0627138689160347,Harry Wilson,a,5596,SetPiece,2024,RightFoot,26808,West Ham,Fulham,3,2,2025-01-14 19:30:00,,None,Harry Wilson
+612280,10,BlockedShot,0.845999984741211,0.3659999847412109,0.051601067185401917,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26817,Leicester,Fulham,0,2,2025-01-18 15:00:00,,None,Harry Wilson
+630312,53,MissedShots,0.7419999694824219,0.36200000762939455,0.022034376859664917,Harry Wilson,a,5596,FromCorner,2024,LeftFoot,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,Sasa Lukic,Pass,Harry Wilson
+631201,21,BlockedShot,0.8869999694824219,0.38799999237060545,0.07219864428043365,Harry Wilson,a,5596,OpenPlay,2024,RightFoot,26946,Aston Villa,Fulham,1,0,2025-05-03 11:30:00,Ryan Sessegnon,Pass,Harry Wilson
+631208,53,SavedShot,0.8169999694824219,0.5129999923706055,0.19439643621444702,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26946,Aston Villa,Fulham,1,0,2025-05-03 11:30:00,Alex Iwobi,Pass,Harry Wilson
+631211,64,SavedShot,0.9169999694824219,0.40400001525878904,0.05372357368469238,Harry Wilson,a,5596,OpenPlay,2024,Head,26946,Aston Villa,Fulham,1,0,2025-05-03 11:30:00,Calvin Bassey,Cross,Harry Wilson
+632730,4,BlockedShot,0.8480000305175781,0.35400001525878905,0.04922627657651901,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,,None,Harry Wilson
+632731,4,SavedShot,0.7719999694824219,0.36,0.02430715598165989,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Sander Berge,Pass,Harry Wilson
+632735,21,MissedShots,0.750999984741211,0.7140000152587891,0.016945138573646545,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Alex Iwobi,Pass,Harry Wilson
+632738,37,BlockedShot,0.87,0.2979999923706055,0.055063288658857346,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Raúl Jiménez,Pass,Harry Wilson
+632741,43,SavedShot,0.78,0.445,0.03646407276391983,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Raúl Jiménez,Pass,Harry Wilson
+632748,52,SavedShot,0.8969999694824219,0.21,0.025853512808680534,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Kenny Tete,Chipped,Harry Wilson
+632749,57,MissedShots,0.7669999694824219,0.3820000076293945,0.02245749905705452,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Kenny Tete,Pass,Harry Wilson
+632750,60,MissedShots,0.9080000305175782,0.539000015258789,0.052807893604040146,Harry Wilson,h,5596,OpenPlay,2024,Head,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Alex Iwobi,Aerial,Harry Wilson
+635061,69,Goal,0.7140000152587891,0.37900001525878907,0.016319679096341133,Harry Wilson,a,5596,OpenPlay,2024,LeftFoot,26964,Brentford,Fulham,2,3,2025-05-18 14:00:00,Adama Traoré,Pass,Harry Wilson
+636414,25,SavedShot,0.8880000305175781,0.3029999923706055,0.04231084883213043,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26981,Fulham,Manchester City,0,2,2025-05-25 15:00:00,,None,Harry Wilson
+636423,42,SavedShot,0.8780000305175781,0.285,0.03836985304951668,Harry Wilson,h,5596,OpenPlay,2024,LeftFoot,26981,Fulham,Manchester City,0,2,2025-05-25 15:00:00,Tom Cairney,Pass,Harry Wilson
+638429,42,MissedShots,0.965999984741211,0.385,0.04193772003054619,Harry Wilson,a,5596,OpenPlay,2025,Head,28780,Brighton,Fulham,1,1,2025-08-16 14:00:00,Alex Iwobi,Cross,Harry Wilson
+640099,97,BlockedShot,0.9569999694824218,0.6830000305175781,0.06276560574769974,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28798,Chelsea,Fulham,2,0,2025-08-30 11:30:00,Emile Smith-Rowe,Pass,Harry Wilson
+641748,57,SavedShot,0.7709999847412109,0.43,0.07876777648925781,Harry Wilson,h,5596,DirectFreekick,2025,LeftFoot,28813,Fulham,Leeds,1,0,2025-09-13 14:00:00,,Standard,Harry Wilson
+643410,13,BlockedShot,0.8690000152587891,0.4909999847412109,0.09372397512197495,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,Rodrigo Muniz,Dispossessed,Harry Wilson
+643420,39,Goal,0.8819999694824219,0.3679999923706055,0.27521511912345886,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,Alex Iwobi,Pass,Harry Wilson
+645287,28,BlockedShot,0.754000015258789,0.4179999923706055,0.023829974234104156,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28831,Aston Villa,Fulham,3,1,2025-09-28 13:00:00,Calvin Bassey,Chipped,Harry Wilson
+645290,39,BlockedShot,0.749000015258789,0.5729999923706055,0.029906651005148888,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28831,Aston Villa,Fulham,3,1,2025-09-28 13:00:00,Joshua King,Pass,Harry Wilson
+645293,47,MissedShots,0.855999984741211,0.525,0.09630493074655533,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28831,Aston Villa,Fulham,3,1,2025-09-28 13:00:00,Sasa Lukic,Pass,Harry Wilson
+645854,57,SavedShot,0.875,0.6559999847412109,0.06420940160751343,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28838,Bournemouth,Fulham,3,1,2025-10-03 19:00:00,Alex Iwobi,Chipped,Harry Wilson
+647847,12,MissedShots,0.8830000305175781,0.3039999961853027,0.04588120058178902,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28851,Fulham,Arsenal,0,1,2025-10-18 16:30:00,Sander Berge,Pass,Harry Wilson
+647850,25,MissedShots,0.84,0.43,0.07671300321817398,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28851,Fulham,Arsenal,0,1,2025-10-18 16:30:00,Alex Iwobi,Pass,Harry Wilson
+647860,51,MissedShots,0.7980000305175782,0.4370000076293945,0.04247715324163437,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28851,Fulham,Arsenal,0,1,2025-10-18 16:30:00,Alex Iwobi,Pass,Harry Wilson
+647861,54,MissedShots,0.8569999694824219,0.5070000076293946,0.06168025732040405,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28851,Fulham,Arsenal,0,1,2025-10-18 16:30:00,Alex Iwobi,Chipped,Harry Wilson
+650863,16,MissedShots,0.784000015258789,0.385,0.010526735335588455,Harry Wilson,h,5596,FromCorner,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Alex Iwobi,Chipped,Harry Wilson
+650865,21,BlockedShot,0.7180000305175781,0.3659999847412109,0.014163708314299583,Harry Wilson,h,5596,SetPiece,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Alex Iwobi,Pass,Harry Wilson
+650866,30,MissedShots,0.9009999847412109,0.34,0.09377039968967438,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Joshua King,Pass,Harry Wilson
+650875,61,Goal,0.81,0.405,0.04649535194039345,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,,Rebound,Harry Wilson
+650877,69,SavedShot,0.784000015258789,0.41200000762939454,0.08950056880712509,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Sander Berge,Pass,Harry Wilson
+652270,47,BlockedShot,0.8440000152587891,0.26600000381469724,0.02896733395755291,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,Joshua King,Pass,Harry Wilson
+653657,20,MissedShots,0.8269999694824218,0.33299999237060546,0.05736570060253143,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Sander Berge,Pass,Harry Wilson
+653660,28,BlockedShot,0.8530000305175781,0.42900001525878906,0.09064584970474243,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Joshua King,Pass,Harry Wilson
+653671,67,MissedShots,0.86,0.5409999847412109,0.10153767466545105,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Ryan Sessegnon,Pass,Harry Wilson
+653678,81,BlockedShot,0.865999984741211,0.5309999847412109,0.10476841777563095,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Emile Smith-Rowe,Pass,Harry Wilson
+655302,5,Goal,0.7969999694824219,0.06699999809265136,0.013996370136737823,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28906,Tottenham,Fulham,1,2,2025-11-29 20:00:00,Joshua King,Pass,Harry Wilson
+655305,13,BlockedShot,0.8869999694824219,0.600999984741211,0.12613609433174133,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28906,Tottenham,Fulham,1,2,2025-11-29 20:00:00,Samuel Chukwueze,Pass,Harry Wilson
+657582,37,Goal,0.835999984741211,0.43099998474121093,0.06809937953948975,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Raúl Jiménez,Pass,Harry Wilson
+657592,84,SavedShot,0.7630000305175781,0.3039999961853027,0.016400383785367012,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Raúl Jiménez,Pass,Harry Wilson
+658311,37,SavedShot,0.855999984741211,0.5320000076293945,0.1268358826637268,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Sander Berge,Pass,Harry Wilson
+658318,57,Goal,0.8730000305175781,0.37400001525878906,0.11966221034526825,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Samuel Chukwueze,Pass,Harry Wilson
+659948,37,BlockedShot,0.7269999694824218,0.5929999923706055,0.021705154329538345,Harry Wilson,h,5596,FromCorner,2025,LeftFoot,28942,Fulham,Nottingham Forest,1,0,2025-12-22 20:00:00,Sasa Lukic,Pass,Harry Wilson
+660248,6,SavedShot,0.7469999694824219,0.45299999237060545,0.013697338290512562,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28957,West Ham,Fulham,0,1,2025-12-27 15:00:00,Raúl Jiménez,TakeOn,Harry Wilson
+660255,31,MissedShots,0.91,0.45599998474121095,0.12903426587581635,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28957,West Ham,Fulham,0,1,2025-12-27 15:00:00,,Rebound,Harry Wilson
+660705,23,SavedShot,0.9259999847412109,0.325,0.05180002376437187,Harry Wilson,a,5596,OpenPlay,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Emile Smith-Rowe,Rebound,Harry Wilson
+660716,47,BlockedShot,0.9419999694824219,0.6609999847412109,0.05712513253092766,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,,Rebound,Harry Wilson
+661447,16,Goal,0.85,0.639000015258789,0.21948546171188354,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28975,Fulham,Liverpool,2,2,2026-01-04 15:00:00,Raúl Jiménez,Pass,Harry Wilson
+661456,71,BlockedShot,0.75,0.49599998474121093,0.042607225477695465,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28975,Fulham,Liverpool,2,2,2026-01-04 15:00:00,Tom Cairney,Pass,Harry Wilson
+661458,76,ShotOnPost,0.8090000152587891,0.6370000076293946,0.08005871623754501,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28975,Fulham,Liverpool,2,2,2026-01-04 15:00:00,,BallTouch,Harry Wilson
+662067,1,SavedShot,0.9119999694824219,0.33,0.07752349227666855,Harry Wilson,h,5596,OpenPlay,2025,RightFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Timothy Castagne,Pass,Harry Wilson
+662068,14,SavedShot,0.79,0.4859999847412109,0.04776323214173317,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Emile Smith-Rowe,BallRecovery,Harry Wilson
+662073,26,BlockedShot,0.8190000152587891,0.43599998474121093,0.1572026163339615,Harry Wilson,h,5596,DirectFreekick,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,,Standard,Harry Wilson
+662079,48,BlockedShot,0.794000015258789,0.6509999847412109,0.029457032680511475,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Tom Cairney,Pass,Harry Wilson
+662090,76,BlockedShot,0.8680000305175781,0.6530000305175782,0.061572927981615067,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Raúl Jiménez,Pass,Harry Wilson
+662091,77,BlockedShot,0.9540000152587891,0.5870000076293945,0.10472644865512848,Harry Wilson,h,5596,OpenPlay,2025,RightFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,,None,Harry Wilson
+662094,80,Goal,0.86,0.445,0.062483735382556915,Harry Wilson,h,5596,OpenPlay,2025,RightFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,,TakeOn,Harry Wilson
+662096,87,BlockedShot,0.8930000305175781,0.61,0.12038126587867737,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Sasa Lukic,LayOff,Harry Wilson
+663608,9,MissedShots,0.764000015258789,0.500999984741211,0.024821747094392776,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,Emile Smith-Rowe,Pass,Harry Wilson
+663623,79,BlockedShot,0.749000015258789,0.37900001525878907,0.017803262919187546,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,,Interception,Harry Wilson
+664819,20,MissedShots,0.7030000305175781,0.529000015258789,0.013214520178735256,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29004,Fulham,Brighton,2,1,2026-01-24 15:00:00,Raúl Jiménez,Pass,Harry Wilson
+664827,46,SavedShot,0.7340000152587891,0.2539999961853027,0.014709190465509892,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29004,Fulham,Brighton,2,1,2026-01-24 15:00:00,Alex Iwobi,Pass,Harry Wilson
+664841,91,Goal,0.7340000152587891,0.34,0.04248672351241112,Harry Wilson,h,5596,DirectFreekick,2025,LeftFoot,29004,Fulham,Brighton,2,1,2026-01-24 15:00:00,,Standard,Harry Wilson
+666432,34,BlockedShot,0.8719999694824219,0.7140000152587891,0.039962589740753174,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29012,Manchester United,Fulham,3,2,2026-02-01 14:00:00,Samuel Chukwueze,Pass,Harry Wilson
+666439,51,SavedShot,0.8109999847412109,0.285,0.0684889703989029,Harry Wilson,a,5596,DirectFreekick,2025,LeftFoot,29012,Manchester United,Fulham,3,2,2026-02-01 14:00:00,,Standard,Harry Wilson
+667312,40,MissedShots,0.8680000305175781,0.43,0.09789542853832245,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,,None,Harry Wilson
+668294,28,SavedShot,0.860999984741211,0.5170000076293946,0.06609126180410385,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29033,Manchester City,Fulham,3,0,2026-02-11 19:30:00,,None,Harry Wilson
+670184,91,MissedShots,0.8530000305175781,0.6459999847412109,0.07384701818227768,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Ryan Sessegnon,Pass,Harry Wilson
+670188,98,SavedShot,0.745999984741211,0.5520000076293945,0.026152554899454117,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Calvin Bassey,BallRecovery,Harry Wilson
+671528,6,Goal,0.9359999847412109,0.47200000762939454,0.5784841775894165,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,,None,Harry Wilson
+671547,56,BlockedShot,0.8769999694824219,0.42700000762939455,0.127191424369812,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,Raúl Jiménez,Pass,Harry Wilson
+674453,37,MissedShots,0.8519999694824218,0.6669999694824219,0.04854976013302803,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29075,Nottingham Forest,Fulham,0,0,2026-03-15 14:00:00,Antonee Robinson,Pass,Harry Wilson
+674456,47,BlockedShot,0.7380000305175781,0.4979999923706055,0.056581705808639526,Harry Wilson,a,5596,DirectFreekick,2025,LeftFoot,29075,Nottingham Forest,Fulham,0,0,2026-03-15 14:00:00,,Standard,Harry Wilson
+675289,18,MissedShots,0.715999984741211,0.34200000762939453,0.011906862258911133,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Timothy Castagne,Pass,Harry Wilson
+675292,25,SavedShot,0.815,0.46799999237060547,0.04452577605843544,Harry Wilson,h,5596,FromCorner,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Alex Iwobi,Pass,Harry Wilson
+675294,26,MissedShots,0.8819999694824219,0.345,0.05698956176638603,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Timothy Castagne,Pass,Harry Wilson
+675295,28,BlockedShot,0.96,0.38,0.11193058639764786,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Joshua King,Pass,Harry Wilson
+675303,64,BlockedShot,0.840999984741211,0.644000015258789,0.03748520463705063,Harry Wilson,h,5596,FromCorner,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Alex Iwobi,Pass,Harry Wilson
+675305,72,Goal,0.855999984741211,0.41900001525878905,0.0847179964184761,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Joshua King,Pass,Harry Wilson
+677962,32,MissedShots,0.8519999694824218,0.3120000076293945,0.04073331877589226,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29097,Liverpool,Fulham,2,0,2026-04-11 16:30:00,Sander Berge,Pass,Harry Wilson
+677975,65,MissedShots,0.8059999847412109,0.710999984741211,0.02410208433866501,Harry Wilson,a,5596,FromCorner,2025,LeftFoot,29097,Liverpool,Fulham,2,0,2026-04-11 16:30:00,,Rebound,Harry Wilson
+678998,9,BlockedShot,0.8469999694824218,0.34799999237060547,0.05221228674054146,Harry Wilson,a,5596,OpenPlay,2025,LeftFoot,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Emile Smith-Rowe,Pass,Harry Wilson
+679013,77,MissedShots,0.9180000305175782,0.38299999237060545,0.29899606108665466,Harry Wilson,a,5596,OpenPlay,2025,RightFoot,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Sasa Lukic,Chipped,Harry Wilson
+680737,9,BlockedShot,0.6880000305175781,0.675,0.016047116369009018,Harry Wilson,h,5596,SetPiece,2025,LeftFoot,29112,Fulham,Aston Villa,1,0,2026-04-25 11:30:00,Sasa Lukic,Pass,Harry Wilson
+680745,36,BlockedShot,0.775,0.45799999237060546,0.08700482547283173,Harry Wilson,h,5596,DirectFreekick,2025,LeftFoot,29112,Fulham,Aston Villa,1,0,2026-04-25 11:30:00,,Standard,Harry Wilson
+680748,47,MissedShots,0.8159999847412109,0.4829999923706055,0.07139139622449875,Harry Wilson,h,5596,OpenPlay,2025,LeftFoot,29112,Fulham,Aston Villa,1,0,2026-04-25 11:30:00,,BallTouch,Harry Wilson
+683678,7,MissedShots,0.785,0.5920000076293945,0.021778389811515808,Harry Wilson,h,5596,FromCorner,2025,LeftFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,,None,Harry Wilson

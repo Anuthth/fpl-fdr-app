@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,14,1,5,986,0.1618144428357482,0,0.21842641942203045,7,2024,Las Palmas,4,0,1,0.1618144428357482,1.4333512708544731,1.2132029794156551,10723,Stefan Bajcetic
+season,Sub,1,0,0,23,0,0,0,0,2023,Liverpool,0,0,0,0,0,0,10723,Stefan Bajcetic
+season,Sub,11,1,6,534,0.9587988276034594,0,0.7506909966468811,4,2022,Liverpool,2,0,1,0.9587988276034594,3.478168949484825,2.3341952990740538,10723,Stefan Bajcetic

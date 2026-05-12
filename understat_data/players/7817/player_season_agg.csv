@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,1,0,0,90,0,0,0,0,2021,Manchester City,0,0,0,0,0.33525899052619934,0.33525899052619934,7817,Zack Steffen
+season,GK,1,0,0,90,0,0,0,0,2020,Manchester City,0,0,0,0,0.34973499178886414,0.34973499178886414,7817,Zack Steffen
+season,GK,17,0,0,1530,0,0,0.03741550073027611,1,2019,Fortuna Duesseldorf,0,0,0,0,0.4732602946460247,0.43584519997239113,7817,Zack Steffen

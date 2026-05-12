@@ -1,0 +1,35 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+84672,74,SavedShot,0.7909999847412109,0.67,0.019457999616861343,Luis Hernández,h,1680,OpenPlay,2015,RightFoot,1421,Sporting Gijon,Valencia,0,1,2015-09-12 20:15:00,,Rebound,Luis Hernández
+84674,84,BlockedShot,0.91,0.40900001525878904,0.04540010169148445,Luis Hernández,h,1680,FromCorner,2015,Head,1421,Sporting Gijon,Valencia,0,1,2015-09-12 20:15:00,Carlos Carmona,Cross,Luis Hernández
+84937,9,MissedShots,0.9169999694824219,0.47,0.09992489963769913,Luis Hernández,h,1680,FromCorner,2015,Head,1455,Sporting Gijon,Real Betis,1,2,2015-09-27 14:00:00,Álex Menéndez,Cross,Luis Hernández
+84952,56,SavedShot,0.895,0.61,0.023172400891780853,Luis Hernández,h,1680,FromCorner,2015,Head,1455,Sporting Gijon,Real Betis,1,2,2015-09-27 14:00:00,Álex Menéndez,Cross,Luis Hernández
+85543,46,MissedShots,0.7680000305175781,0.725999984741211,0.018171800300478935,Luis Hernández,a,1680,OpenPlay,2015,RightFoot,1462,Espanyol,Sporting Gijon,1,2,2015-10-03 22:30:00,,None,Luis Hernández
+85549,60,MissedShots,0.93,0.5109999847412109,0.535618007183075,Luis Hernández,a,1680,FromCorner,2015,RightFoot,1462,Espanyol,Sporting Gijon,1,2,2015-10-03 22:30:00,,None,Luis Hernández
+87036,29,SavedShot,0.9619999694824218,0.5929999923706055,0.06844429671764374,Luis Hernández,h,1680,FromCorner,2015,RightFoot,1536,Sporting Gijon,Las Palmas,3,1,2015-12-06 21:15:00,Jony,Cross,Luis Hernández
+90216,79,OwnGoal,0.05699999809265137,0.34200000762939453,0,Luis Hernández,h,1680,OpenPlay,2015,RightFoot,1652,Sporting Gijon,Espanyol,2,4,2016-02-27 21:15:00,,None,Luis Hernández
+90501,44,BlockedShot,0.9030000305175782,0.5690000152587891,0.07532700151205063,Luis Hernández,a,1680,SetPiece,2015,Head,1666,Granada,Sporting Gijon,2,0,2016-03-03 23:00:00,Omar Mascarell,Cross,Luis Hernández
+90877,6,MissedShots,0.8959999847412109,0.48,0.04552470147609711,Luis Hernández,a,1680,FromCorner,2015,Head,1721,Las Palmas,Sporting Gijon,1,1,2016-04-16 20:15:00,,None,Luis Hernández
+139060,28,SavedShot,0.9009999847412109,0.5879999923706055,0.05229270085692406,Luis Hernández,a,1680,FromCorner,2016,LeftFoot,3914,Osasuna,Malaga,1,1,2017-01-27 22:45:00,Gonzalo Castro,Cross,Luis Hernández
+140679,52,SavedShot,0.879000015258789,0.5690000152587891,0.011452900245785713,Luis Hernández,h,1680,SetPiece,2016,Head,3931,Malaga,Espanyol,0,1,2017-02-04 12:00:00,Javi Ontiveros,Aerial,Luis Hernández
+143320,44,Goal,0.9869999694824219,0.4470000076293945,0.4821639955043793,Luis Hernández,a,1680,FromCorner,2016,RightFoot,4094,Real Sociedad,Malaga,2,2,2017-05-14 19:00:00,,Foul,Luis Hernández
+143419,29,BlockedShot,0.909000015258789,0.5770000076293945,0.06722629815340042,Luis Hernández,h,1680,FromCorner,2016,Head,4099,Malaga,Real Madrid,0,2,2017-05-21 19:00:00,Jony,Cross,Luis Hernández
+170722,28,MissedShots,0.8530000305175781,0.504000015258789,0.03270639851689339,Luis Hernández,h,1680,SetPiece,2017,Head,7958,Malaga,Leganes,0,2,2017-10-15 17:30:00,Recio,Cross,Luis Hernández
+171191,74,MissedShots,0.8859999847412109,0.47299999237060547,0.019485600292682648,Luis Hernández,a,1680,SetPiece,2017,Head,7966,Barcelona,Malaga,2,0,2017-10-21 19:45:00,Juanpi,Aerial,Luis Hernández
+187120,89,MissedShots,0.88,0.545,0.014737799763679504,Luis Hernández,h,1680,FromCorner,2017,Head,8051,Malaga,Espanyol,0,1,2018-01-08 20:00:00,Roberto Rosales,Aerial,Luis Hernández
+198257,57,BlockedShot,0.935,0.5729999923706055,0.0928552970290184,Luis Hernández,h,1680,FromCorner,2017,Head,8137,Malaga,Sevilla,0,1,2018-02-28 18:30:00,Roberto Rosales,Cross,Luis Hernández
+198259,61,MissedShots,0.9119999694824219,0.6580000305175782,0.013079999946057796,Luis Hernández,h,1680,FromCorner,2017,Head,8137,Malaga,Sevilla,0,1,2018-02-28 18:30:00,Roberto Rosales,Aerial,Luis Hernández
+455832,92,MissedShots,0.915,0.5420000076293945,0.09052679687738419,Luis Hernández,a,1680,FromCorner,2021,Head,17360,Mallorca,Cadiz,2,1,2022-02-05 15:15:00,Oussama Idrissi,Cross,Luis Hernández
+458487,0,MissedShots,0.7719999694824219,0.28399999618530275,0.013347599655389786,Luis Hernández,h,1680,OpenPlay,2021,RightFoot,17379,Cadiz,Getafe,1,1,2022-02-19 17:30:00,,None,Luis Hernández
+462238,73,BlockedShot,0.924000015258789,0.4420000076293945,0.07964959740638733,Luis Hernández,a,1680,SetPiece,2021,RightFoot,17406,Atletico Madrid,Cadiz,2,1,2022-03-11 20:00:00,,None,Luis Hernández
+464637,86,SavedShot,0.9590000152587891,0.4209999847412109,0.10805699974298477,Luis Hernández,h,1680,FromCorner,2021,Head,17419,Cadiz,Villarreal,1,0,2022-03-20 15:15:00,Lucas Pérez,Cross,Luis Hernández
+469661,76,MissedShots,0.889000015258789,0.539000015258789,0.07176809757947922,Luis Hernández,h,1680,OpenPlay,2021,RightFoot,17460,Cadiz,Athletic Club,2,3,2022-04-21 18:00:00,Álvaro Negredo,HeadPass,Luis Hernández
+478098,46,MissedShots,0.8959999847412109,0.4490000152587891,0.01794479973614216,Luis Hernández,a,1680,FromCorner,2021,Head,17506,Alaves,Cadiz,0,1,2022-05-22 18:00:00,Lucas Pérez,Aerial,Luis Hernández
+485570,44,BlockedShot,0.875999984741211,0.5540000152587891,0.029918299987912178,Luis Hernández,a,1680,FromCorner,2022,Head,18999,Celta Vigo,Cadiz,3,0,2022-09-02 19:00:00,Tomás Alarcón,Cross,Luis Hernández
+492301,20,MissedShots,0.8819999694824219,0.6170000076293946,0.01227049995213747,Luis Hernández,h,1680,FromCorner,2022,Head,19036,Cadiz,Espanyol,2,2,2022-10-09 14:15:00,Rubén Alcaraz,Aerial,Luis Hernández
+492302,25,MissedShots,0.875999984741211,0.45799999237060546,0.04591109976172447,Luis Hernández,h,1680,SetPiece,2022,Head,19036,Cadiz,Espanyol,2,2,2022-10-09 14:15:00,Álvaro Negredo,HeadPass,Luis Hernández
+492877,13,MissedShots,0.9080000305175782,0.5270000076293946,0.10882499814033508,Luis Hernández,a,1680,SetPiece,2022,Head,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,Álex Fernández,Cross,Luis Hernández
+496638,84,OwnGoal,0.03900000095367431,0.48200000762939454,0,Luis Hernández,h,1680,FromCorner,2022,RightFoot,19076,Cadiz,Atletico Madrid,3,2,2022-10-29 14:15:00,,CornerAwarded,Luis Hernández
+506845,52,SavedShot,0.855999984741211,0.49700000762939456,0.06695540249347687,Luis Hernández,a,1680,SetPiece,2022,RightFoot,19152,Athletic Club,Cadiz,4,1,2023-02-03 20:00:00,Fali,None,Luis Hernández
+516574,4,MissedShots,0.9119999694824219,0.524000015258789,0.03923489898443222,Luis Hernández,h,1680,FromCorner,2022,Head,19225,Cadiz,Sevilla,0,2,2023-04-01 16:30:00,Iván Alejo,Aerial,Luis Hernández
+521901,10,MissedShots,0.8919999694824219,0.5479999923706055,0.03435586020350456,Luis Hernández,h,1680,FromCorner,2022,Head,19266,Cadiz,Osasuna,0,1,2023-04-25 17:30:00,Isaac Carcelén,Pass,Luis Hernández
+535017,58,Goal,0.980999984741211,0.52,0.9484918117523193,Luis Hernández,h,1680,SetPiece,2023,LeftFoot,22707,Cadiz,Almeria,1,1,2023-08-26 17:00:00,Gonzalo Escalante,Pass,Luis Hernández

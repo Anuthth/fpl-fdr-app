@@ -1,0 +1,12 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+587163,38,Goal,0.909000015258789,0.39099998474121095,0.10038220137357712,Nicolò Savona,a,12905,OpenPlay,2024,Head,27381,Verona,Juventus,0,3,2024-08-26 18:45:00,Samuel Mbangula,Cross,Nicolò Savona
+595920,8,SavedShot,0.874000015258789,0.4420000076293945,0.02088015154004097,Nicolò Savona,h,12905,FromCorner,2024,Head,27429,Juventus,Cagliari,1,1,2024-10-06 10:30:00,Teun Koopmeiners,Cross,Nicolò Savona
+595921,10,SavedShot,0.9259999847412109,0.27899999618530275,0.05360002815723419,Nicolò Savona,h,12905,OpenPlay,2024,RightFoot,27429,Juventus,Cagliari,1,1,2024-10-06 10:30:00,Manuel Locatelli,Pass,Nicolò Savona
+595936,54,MissedShots,0.9269999694824219,0.40099998474121096,0.3188434839248657,Nicolò Savona,h,12905,OpenPlay,2024,LeftFoot,27429,Juventus,Cagliari,1,1,2024-10-06 10:30:00,Dusan Vlahovic,Cross,Nicolò Savona
+600303,36,Goal,0.8809999847412109,0.385,0.08278702944517136,Nicolò Savona,a,12905,OpenPlay,2024,LeftFoot,27466,Udinese,Juventus,0,2,2024-11-02 17:00:00,,Rebound,Nicolò Savona
+615338,45,BlockedShot,0.8009999847412109,0.6140000152587891,0.04528125002980232,Nicolò Savona,h,12905,FromCorner,2024,RightFoot,27582,Juventus,Empoli,4,1,2025-02-02 11:30:00,Kenan Yildiz,TakeOn,Nicolò Savona
+650900,49,Goal,0.9590000152587891,0.5079999923706054,0.6933292150497437,Nicolò Savona,h,12905,OpenPlay,2025,LeftFoot,28874,Nottingham Forest,Manchester United,2,2,2025-11-01 15:00:00,,Rebound,Nicolò Savona
+653767,45,Goal,0.9,0.5259999847412109,0.4385665953159332,Nicolò Savona,a,12905,OpenPlay,2025,RightFoot,28894,Liverpool,Nottingham Forest,0,3,2025-11-22 15:00:00,Neco Williams,Pass,Nicolò Savona
+655720,69,BlockedShot,0.904000015258789,0.33299999237060546,0.012232949957251549,Nicolò Savona,h,12905,SetPiece,2025,Head,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Elliot Anderson,Cross,Nicolò Savona
+655723,79,SavedShot,0.9590000152587891,0.285,0.04792046546936035,Nicolò Savona,h,12905,OpenPlay,2025,RightFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Omari Hutchinson,Pass,Nicolò Savona
+660065,65,MissedShots,0.9430000305175781,0.305,0.04343169927597046,Nicolò Savona,h,12905,OpenPlay,2025,RightFoot,28955,Nottingham Forest,Manchester City,1,2,2025-12-27 12:30:00,,Rebound,Nicolò Savona

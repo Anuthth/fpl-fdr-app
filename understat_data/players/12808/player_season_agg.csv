@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,MC,12,0,3,407,0.1451113596558571,0,0.2477673664689064,5,2025,Strasbourg,1,0,0,0.1451113596558571,0.8676219303160906,0.5532037187367678,12808,Mathis Amougou
+season,MC,17,0,7,840,0.424521129578352,0,0.3597651943564415,7,2024,Saint-Etienne,2,0,0,0.424521129578352,1.942910548299551,1.3850372862070799,12808,Mathis Amougou
+season,Sub,1,0,0,5,0,0,0,0,2024,Chelsea,0,0,0,0,0,0,12808,Mathis Amougou

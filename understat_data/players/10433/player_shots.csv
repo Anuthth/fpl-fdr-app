@@ -1,0 +1,48 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+616631,90,MissedShots,0.9569999694824218,0.5409999847412109,0.10478436201810837,Cesare Casadei,h,10433,FromCorner,2024,OtherBodyPart,27599,Torino,Genoa,1,1,2025-02-08 17:00:00,Cristiano Biraghi,Aerial,Cesare Casadei
+616923,22,MissedShots,0.8240000152587891,0.519000015258789,0.006928902119398117,Cesare Casadei,a,10433,OpenPlay,2024,Head,27602,Bologna,Torino,3,2,2025-02-14 19:45:00,Vanja Milinkovic-Savic,Aerial,Cesare Casadei
+616940,72,SavedShot,0.9109999847412109,0.47200000762939454,0.11549360305070877,Cesare Casadei,a,10433,OpenPlay,2024,Head,27602,Bologna,Torino,3,2,2025-02-14 19:45:00,Eljif Elmas,Cross,Cesare Casadei
+620356,5,MissedShots,0.845999984741211,0.31,0.03773152083158493,Cesare Casadei,a,10433,OpenPlay,2024,RightFoot,27628,Monza,Torino,0,2,2025-03-02 11:30:00,,None,Cesare Casadei
+620357,11,SavedShot,0.8690000152587891,0.625999984741211,0.013908290304243565,Cesare Casadei,a,10433,OpenPlay,2024,Head,27628,Monza,Torino,0,2,2025-03-02 11:30:00,Cristiano Biraghi,Cross,Cesare Casadei
+620359,25,SavedShot,0.8830000305175781,0.5640000152587891,0.042970698326826096,Cesare Casadei,a,10433,OpenPlay,2024,Head,27628,Monza,Torino,0,2,2025-03-02 11:30:00,Sebastian Walukiewicz,Cross,Cesare Casadei
+620365,49,BlockedShot,0.8590000152587891,0.5579999923706055,0.027952343225479126,Cesare Casadei,a,10433,OpenPlay,2024,Head,27628,Monza,Torino,0,2,2025-03-02 11:30:00,Nikola Vlasic,Cross,Cesare Casadei
+620366,49,SavedShot,0.8909999847412109,0.4259999847412109,0.1119484156370163,Cesare Casadei,a,10433,OpenPlay,2024,RightFoot,27628,Monza,Torino,0,2,2025-03-02 11:30:00,,Rebound,Cesare Casadei
+620372,65,Goal,0.9540000152587891,0.41900001525878905,0.4855092465877533,Cesare Casadei,a,10433,OpenPlay,2024,RightFoot,27628,Monza,Torino,0,2,2025-03-02 11:30:00,,None,Cesare Casadei
+629732,11,BlockedShot,0.950999984741211,0.5459999847412109,0.07054214924573898,Cesare Casadei,h,10433,FromCorner,2024,Head,27691,Torino,Udinese,2,0,2025-04-23 16:30:00,Cristiano Biraghi,Aerial,Cesare Casadei
+631111,14,MissedShots,0.9130000305175782,0.500999984741211,0.11753640323877335,Cesare Casadei,h,10433,SetPiece,2024,Head,27711,Torino,Venezia,1,1,2025-05-02 18:45:00,Cristiano Biraghi,Cross,Cesare Casadei
+635547,30,SavedShot,0.914000015258789,0.47200000762939454,0.03434903919696808,Cesare Casadei,a,10433,FromCorner,2024,Head,27727,Lecce,Torino,1,0,2025-05-18 18:45:00,Cristiano Biraghi,Aerial,Cesare Casadei
+635550,41,SavedShot,0.6969999694824218,0.46700000762939453,0.024410929530858994,Cesare Casadei,a,10433,OpenPlay,2024,RightFoot,27727,Lecce,Torino,1,0,2025-05-18 18:45:00,Nikola Vlasic,Pass,Cesare Casadei
+635556,69,MissedShots,0.925,0.514000015258789,0.05599959194660187,Cesare Casadei,a,10433,OpenPlay,2024,Head,27727,Lecce,Torino,1,0,2025-05-18 18:45:00,Sergiu Perciun,Aerial,Cesare Casadei
+639816,30,SavedShot,0.945,0.505,0.07609302550554276,Cesare Casadei,a,10433,FromCorner,2025,Head,29853,Inter,Torino,5,0,2025-08-25 18:45:00,Cristiano Biraghi,Aerial,Cesare Casadei
+641005,7,SavedShot,0.9230000305175782,0.40599998474121096,0.3979472815990448,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,29861,Torino,Fiorentina,0,0,2025-08-31 16:30:00,Giovanni Simeone,Pass,Cesare Casadei
+641014,38,SavedShot,0.745999984741211,0.4929999923706055,0.025303712114691734,Cesare Casadei,h,10433,OpenPlay,2025,LeftFoot,29861,Torino,Fiorentina,0,0,2025-08-31 16:30:00,Cyril Ngonge,LayOff,Cesare Casadei
+642057,27,MissedShots,0.8880000305175781,0.46900001525878904,0.03602264076471329,Cesare Casadei,a,10433,OpenPlay,2025,Head,29867,Roma,Torino,0,1,2025-09-14 10:30:00,Cristiano Biraghi,Aerial,Cesare Casadei
+643691,72,SavedShot,0.915,0.5470000076293945,0.4871293306350708,Cesare Casadei,h,10433,SetPiece,2025,LeftFoot,29874,Torino,Atalanta,0,3,2025-09-21 13:00:00,,Rebound,Cesare Casadei
+645679,50,MissedShots,0.789000015258789,0.4259999847412109,0.03781906142830849,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,29890,Parma Calcio 1913,Torino,2,1,2025-09-29 16:30:00,Cyril Ngonge,Pass,Cesare Casadei
+645680,57,SavedShot,0.735,0.41900001525878905,0.018876241520047188,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,29890,Parma Calcio 1913,Torino,2,1,2025-09-29 16:30:00,Giovanni Simeone,Pass,Cesare Casadei
+647783,49,MissedShots,0.965999984741211,0.43599998474121093,0.06791950017213821,Cesare Casadei,h,10433,FromCorner,2025,Head,29906,Torino,Napoli,1,0,2025-10-18 16:00:00,Kristjan Asllani,Aerial,Cesare Casadei
+649330,83,SavedShot,0.855999984741211,0.4620000076293945,0.01797376573085785,Cesare Casadei,h,10433,OpenPlay,2025,Head,29923,Torino,Genoa,2,1,2025-10-26 10:30:00,Gvidas Gineitis,Cross,Cesare Casadei
+649331,83,MissedShots,0.9569999694824218,0.4829999923706055,0.13691624999046326,Cesare Casadei,h,10433,OpenPlay,2025,Head,29923,Torino,Genoa,2,1,2025-10-26 10:30:00,Cyril Ngonge,Aerial,Cesare Casadei
+650291,44,MissedShots,0.9059999847412109,0.46599998474121096,0.10862597823143005,Cesare Casadei,a,10433,OpenPlay,2025,Head,29925,Bologna,Torino,0,0,2025-10-29 18:45:00,Valentino Lazaro,Cross,Cesare Casadei
+650299,64,BlockedShot,0.9019999694824219,0.5029999923706054,0.13556057214736938,Cesare Casadei,a,10433,OpenPlay,2025,LeftFoot,29925,Bologna,Torino,0,0,2025-10-29 18:45:00,Ivan Ilic,Pass,Cesare Casadei
+650300,69,BlockedShot,0.81,0.4779999923706055,0.05479118973016739,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,29925,Bologna,Torino,0,0,2025-10-29 18:45:00,,BallTouch,Cesare Casadei
+651351,90,BlockedShot,0.8690000152587891,0.44599998474121094,0.07172518968582153,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,29941,Torino,Pisa,2,2,2025-11-02 14:00:00,Marcus Pedersen,Cross,Cesare Casadei
+654578,47,MissedShots,0.8780000305175781,0.41400001525878904,0.0860409140586853,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,29962,Torino,Como,1,5,2025-11-24 17:30:00,,Dispossessed,Cesare Casadei
+655438,39,BlockedShot,0.91,0.49900001525878906,0.08268753439188004,Cesare Casadei,a,10433,FromCorner,2025,Head,29969,Lecce,Torino,2,1,2025-11-30 11:30:00,Kristjan Asllani,Cross,Cesare Casadei
+655439,39,MissedShots,0.8619999694824219,0.5070000076293946,0.07619786262512207,Cesare Casadei,a,10433,FromCorner,2025,LeftFoot,29969,Lecce,Torino,2,1,2025-11-30 11:30:00,Saúl Coco,Rebound,Cesare Casadei
+655447,55,BlockedShot,0.75,0.49700000762939456,0.020356791093945503,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,29969,Lecce,Torino,2,1,2025-11-30 11:30:00,Nikola Vlasic,Pass,Cesare Casadei
+659709,93,SavedShot,0.7630000305175781,0.5420000076293945,0.06033690273761749,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,30002,Sassuolo,Torino,0,1,2025-12-21 14:00:00,Ivan Ilic,HeadPass,Cesare Casadei
+661584,86,Goal,0.8130000305175781,0.534000015258789,0.10338247567415237,Cesare Casadei,a,10433,OpenPlay,2025,RightFoot,30023,Verona,Torino,0,3,2026-01-04 17:00:00,Alieu Njie,Pass,Cesare Casadei
+662022,20,SavedShot,0.925,0.524000015258789,0.4851778447628021,Cesare Casadei,h,10433,OpenPlay,2025,Head,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Zakaria Aboukhlal,Aerial,Cesare Casadei
+662025,27,MissedShots,0.9080000305175782,0.5070000076293946,0.055072274059057236,Cesare Casadei,h,10433,OpenPlay,2025,Head,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Nikola Vlasic,Aerial,Cesare Casadei
+662037,86,Goal,0.9159999847412109,0.5379999923706055,0.3039962649345398,Cesare Casadei,h,10433,OpenPlay,2025,Head,30033,Torino,Udinese,1,2,2026-01-07 19:45:00,Valentino Lazaro,Cross,Cesare Casadei
+664254,49,SavedShot,0.909000015258789,0.5259999847412109,0.04139167070388794,Cesare Casadei,h,10433,OpenPlay,2025,Head,30050,Torino,Roma,0,2,2026-01-18 17:00:00,Marcus Pedersen,Aerial,Cesare Casadei
+664660,71,MissedShots,0.874000015258789,0.5209999847412109,0.03531021252274513,Cesare Casadei,a,10433,OpenPlay,2025,Head,30055,Como,Torino,6,0,2026-01-24 14:00:00,Valentino Lazaro,Cross,Cesare Casadei
+666378,39,SavedShot,0.78,0.5279999923706055,0.056010760366916656,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,30072,Torino,Lecce,1,0,2026-02-01 11:30:00,Duván Zapata,LayOff,Cesare Casadei
+667468,25,Goal,0.914000015258789,0.5609999847412109,0.23659023642539978,Cesare Casadei,a,10433,OpenPlay,2025,Head,30079,Fiorentina,Torino,2,2,2026-02-07 19:45:00,Emirhan Ilkhan,Chipped,Cesare Casadei
+667489,83,BlockedShot,0.9080000305175782,0.48700000762939455,0.12644270062446594,Cesare Casadei,a,10433,FromCorner,2025,LeftFoot,30079,Fiorentina,Torino,2,2,2026-02-07 19:45:00,Saúl Coco,Rebound,Cesare Casadei
+672427,86,Goal,0.9269999694824219,0.5129999923706055,0.07236595451831818,Cesare Casadei,a,10433,FromCorner,2025,Head,30114,Napoli,Torino,2,1,2026-03-06 19:45:00,Che Adams,Chipped,Cesare Casadei
+677148,63,MissedShots,0.9580000305175781,0.605999984741211,0.07970224320888519,Cesare Casadei,a,10433,OpenPlay,2025,LeftFoot,30150,Pisa,Torino,0,1,2026-04-05 16:00:00,Che Adams,Cross,Cesare Casadei
+677687,45,MissedShots,0.78,0.3970000076293945,0.04769068583846092,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,30163,Torino,Verona,2,1,2026-04-11 13:00:00,Nikola Vlasic,Pass,Cesare Casadei
+677692,49,Goal,0.9159999847412109,0.45099998474121095,0.4251815378665924,Cesare Casadei,h,10433,OpenPlay,2025,LeftFoot,30163,Torino,Verona,2,1,2026-04-11 13:00:00,Rafael Obrador,Rebound,Cesare Casadei
+681670,82,BlockedShot,0.894000015258789,0.43,0.09995725750923157,Cesare Casadei,h,10433,OpenPlay,2025,RightFoot,30182,Torino,Inter,2,2,2026-04-26 16:00:00,Emirhan Ilkhan,Rebound,Cesare Casadei

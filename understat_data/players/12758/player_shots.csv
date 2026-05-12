@@ -1,0 +1,28 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+597096,91,SavedShot,0.899000015258789,0.37599998474121094,0.3365251421928406,Mats Wieffer,a,12758,OpenPlay,2024,RightFoot,26676,Newcastle United,Brighton,0,1,2024-10-19 14:00:00,Joël Veltman,Throughball,Mats Wieffer
+600163,86,MissedShots,0.9159999847412109,0.4,0.022468512877821922,Mats Wieffer,a,12758,OpenPlay,2024,Head,26696,Liverpool,Brighton,2,1,2024-11-02 15:00:00,Ferdi Kadioglu,Aerial,Mats Wieffer
+603828,75,MissedShots,0.9490000152587891,0.4229999923706055,0.04019291698932648,Mats Wieffer,h,12758,FromCorner,2024,Head,26723,Brighton,Southampton,1,1,2024-11-29 20:00:00,Estupiñán,Aerial,Mats Wieffer
+605398,27,MissedShots,0.9119999694824219,0.539000015258789,0.10543100535869598,Mats Wieffer,a,12758,SetPiece,2024,Head,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Matt O&#039;Riley,Cross,Mats Wieffer
+608376,50,Goal,0.879000015258789,0.4570000076293945,0.18609453737735748,Mats Wieffer,a,12758,FromCorner,2024,RightFoot,26767,West Ham,Brighton,1,1,2024-12-21 15:00:00,,Aerial,Mats Wieffer
+625700,94,BlockedShot,0.8180000305175781,0.500999984741211,0.06085244193673134,Mats Wieffer,a,12758,OpenPlay,2024,LeftFoot,26904,Crystal Palace,Brighton,2,1,2025-04-05 14:00:00,Brajan Gruda,Pass,Mats Wieffer
+630363,17,SavedShot,0.7719999694824219,0.41900001525878905,0.03451547399163246,Mats Wieffer,h,12758,OpenPlay,2024,LeftFoot,26934,Brighton,West Ham,3,2,2025-04-26 14:00:00,Simon Adingra,Pass,Mats Wieffer
+630370,49,SavedShot,0.9640000152587891,0.5579999923706055,0.27020713686943054,Mats Wieffer,h,12758,FromCorner,2024,Head,26934,Brighton,West Ham,3,2,2025-04-26 14:00:00,Matt O&#039;Riley,Aerial,Mats Wieffer
+636362,9,MissedShots,0.9069999694824219,0.27899999618530275,0.04301707074046135,Mats Wieffer,a,12758,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,,None,Mats Wieffer
+638428,42,SavedShot,0.89,0.4229999923706055,0.013008378446102142,Mats Wieffer,h,12758,SetPiece,2025,Head,28780,Brighton,Fulham,1,1,2025-08-16 14:00:00,Maxim De Cuyper,Aerial,Mats Wieffer
+646717,9,BlockedShot,0.7580000305175781,0.3129999923706055,0.014362865127623081,Mats Wieffer,a,12758,OpenPlay,2025,LeftFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Brajan Gruda,Pass,Mats Wieffer
+646718,10,MissedShots,0.8830000305175781,0.49599998474121093,0.05650047957897186,Mats Wieffer,a,12758,FromCorner,2025,RightFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Yasin Ayari,Cross,Mats Wieffer
+647618,83,BlockedShot,0.8240000152587891,0.34400001525878904,0.03713472932577133,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,28848,Brighton,Newcastle United,2,1,2025-10-18 14:00:00,Yasin Ayari,Pass,Mats Wieffer
+653632,8,SavedShot,0.909000015258789,0.23600000381469727,0.03229377046227455,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,Yankuba Minteh,Pass,Mats Wieffer
+655699,13,BlockedShot,0.9290000152587891,0.37799999237060544,0.11169254779815674,Mats Wieffer,a,12758,OpenPlay,2025,LeftFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Yankuba Minteh,Pass,Mats Wieffer
+655700,16,MissedShots,0.894000015258789,0.3529999923706055,0.08752595633268356,Mats Wieffer,a,12758,OpenPlay,2025,RightFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Yankuba Minteh,Pass,Mats Wieffer
+657363,20,BlockedShot,0.7369999694824219,0.3370000076293945,0.01543887984007597,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,28920,Brighton,West Ham,1,1,2025-12-07 14:00:00,Diego Gómez,Pass,Mats Wieffer
+657366,32,MissedShots,0.955999984741211,0.4979999923706055,0.5931219458580017,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,28920,Brighton,West Ham,1,1,2025-12-07 14:00:00,Maxim De Cuyper,Cross,Mats Wieffer
+658216,76,MissedShots,0.97,0.35,0.06816092133522034,Mats Wieffer,a,12758,OpenPlay,2025,RightFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Georginio Rutter,Pass,Mats Wieffer
+660150,76,MissedShots,0.9640000152587891,0.47700000762939454,0.08914365619421005,Mats Wieffer,a,12758,FromCorner,2025,Head,28948,Arsenal,Brighton,2,1,2025-12-27 15:00:00,Ferdi Kadioglu,Aerial,Mats Wieffer
+671506,24,SavedShot,0.7959999847412109,0.4420000076293945,0.05253628268837929,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,29050,Brighton,Nottingham Forest,2,1,2026-03-01 14:00:00,Diego Gómez,Pass,Mats Wieffer
+672196,62,SavedShot,0.9230000305175782,0.5420000076293945,0.29829347133636475,Mats Wieffer,h,12758,OpenPlay,2025,Head,29060,Brighton,Arsenal,0,1,2026-03-04 19:30:00,,None,Mats Wieffer
+673882,67,BlockedShot,0.87,0.4929999923706055,0.14348942041397095,Mats Wieffer,a,12758,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Yankuba Minteh,BallTouch,Mats Wieffer
+675111,37,MissedShots,0.775,0.4620000076293945,0.03163441643118858,Mats Wieffer,h,12758,OpenPlay,2025,RightFoot,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,,None,Mats Wieffer
+675116,52,MissedShots,0.9390000152587891,0.4879999923706055,0.12352609634399414,Mats Wieffer,h,12758,FromCorner,2025,Head,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,Pascal Groß,Cross,Mats Wieffer
+677874,42,Goal,0.8880000305175781,0.46,0.09188542515039444,Mats Wieffer,a,12758,OpenPlay,2025,LeftFoot,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,Pascal Groß,Cross,Mats Wieffer
+677889,88,Goal,0.8190000152587891,0.47,0.0676829144358635,Mats Wieffer,a,12758,OpenPlay,2025,RightFoot,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,Yasin Ayari,None,Mats Wieffer

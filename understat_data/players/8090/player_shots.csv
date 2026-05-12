@@ -1,0 +1,35 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+372427,9,BlockedShot,0.8119999694824219,0.46099998474121096,0.035675499588251114,Lloyd Kelly,h,8090,FromCorner,2019,LeftFoot,12004,Bournemouth,Southampton,0,2,2020-07-19 13:00:00,Philip Billing,None,Lloyd Kelly
+501094,80,MissedShots,0.9319999694824219,0.45,0.04771380126476288,Lloyd Kelly,a,8090,FromCorner,2022,Head,18365,Chelsea,Bournemouth,2,0,2022-12-27 17:30:00,Jaidon Anthony,Aerial,Lloyd Kelly
+504696,56,BlockedShot,0.8959999847412109,0.575,0.0138392997905612,Lloyd Kelly,h,8090,FromCorner,2022,Head,18403,Bournemouth,Nottingham Forest,1,1,2023-01-21 15:00:00,Joe Rothwell,Aerial,Lloyd Kelly
+518104,54,BlockedShot,0.9330000305175781,0.639000015258789,0.06118600070476532,Lloyd Kelly,a,8090,FromCorner,2022,LeftFoot,18496,Leicester,Bournemouth,0,1,2023-04-08 14:00:00,Chris Mepham,Pass,Lloyd Kelly
+545476,8,MissedShots,0.9390000152587891,0.445,0.11604900658130646,Lloyd Kelly,h,8090,FromCorner,2023,LeftFoot,21985,Bournemouth,Burnley,2,1,2023-10-28 14:00:00,,None,Lloyd Kelly
+560802,62,SavedShot,0.9290000152587891,0.6769999694824219,0.07322506606578827,Lloyd Kelly,a,8090,OpenPlay,2023,LeftFoot,22110,West Ham,Bournemouth,1,1,2024-02-01 19:30:00,Antoine Semenyo,Pass,Lloyd Kelly
+571812,37,MissedShots,0.9540000152587891,0.5479999923706055,0.07130929082632065,Lloyd Kelly,h,8090,FromCorner,2023,Head,22195,Bournemouth,Crystal Palace,1,0,2024-04-02 18:45:00,Philip Billing,Aerial,Lloyd Kelly
+579975,64,MissedShots,0.9269999694824219,0.590999984741211,0.05264177918434143,Lloyd Kelly,h,8090,FromCorner,2023,Head,22255,Bournemouth,Brentford,1,2,2024-05-11 14:00:00,Lewis Cook,Cross,Lloyd Kelly
+589771,16,MissedShots,0.9490000152587891,0.5120000076293946,0.13068492710590363,Lloyd Kelly,h,8090,FromCorner,2024,Head,26629,Newcastle United,Tottenham,2,1,2024-09-01 12:30:00,Anthony Gordon,Cross,Lloyd Kelly
+603760,17,MissedShots,0.95,0.515,0.0783141553401947,Lloyd Kelly,h,8090,FromCorner,2024,Head,26713,Newcastle United,West Ham,0,2,2024-11-25 20:00:00,Lewis Hall,Aerial,Lloyd Kelly
+614966,91,MissedShots,0.9080000305175782,0.415,0.062142882496118546,Lloyd Kelly,h,8090,SetPiece,2024,Head,26839,Newcastle United,Fulham,1,2,2025-02-01 15:00:00,Anthony Gordon,Cross,Lloyd Kelly
+616534,81,BlockedShot,0.8519999694824218,0.6969999694824218,0.015720846131443977,Lloyd Kelly,a,8090,OpenPlay,2024,LeftFoot,27592,Como,Juventus,1,2,2025-02-07 17:00:00,,Aerial,Lloyd Kelly
+620837,21,MissedShots,0.9359999847412109,0.4929999923706055,0.4097522795200348,Lloyd Kelly,h,8090,FromCorner,2024,Head,27626,Juventus,Verona,2,0,2025-03-03 19:45:00,Kenan Yildiz,Cross,Lloyd Kelly
+622137,9,MissedShots,0.7130000305175781,0.605999984741211,0.01472046785056591,Lloyd Kelly,h,8090,OpenPlay,2024,LeftFoot,27637,Juventus,Atalanta,0,4,2025-03-09 19:45:00,Federico Gatti,Pass,Lloyd Kelly
+627438,36,SavedShot,0.9,0.735,0.0590984970331192,Lloyd Kelly,h,8090,OpenPlay,2024,LeftFoot,27673,Juventus,Lecce,2,1,2025-04-12 18:45:00,Weston McKennie,Pass,Lloyd Kelly
+629701,71,MissedShots,0.955,0.615,0.012922504916787148,Lloyd Kelly,a,8090,FromCorner,2024,Head,27689,Parma Calcio 1913,Juventus,1,0,2025-04-23 16:30:00,Francisco Conceição,Aerial,Lloyd Kelly
+630897,25,MissedShots,0.7190000152587891,0.6509999847412109,0.017753107473254204,Lloyd Kelly,h,8090,OpenPlay,2024,LeftFoot,27692,Juventus,Monza,2,0,2025-04-27 16:00:00,Kephren Thuram,Pass,Lloyd Kelly
+630898,29,BlockedShot,0.915,0.6669999694824219,0.08673505485057831,Lloyd Kelly,h,8090,OpenPlay,2024,LeftFoot,27692,Juventus,Monza,2,0,2025-04-27 16:00:00,Manuel Locatelli,Pass,Lloyd Kelly
+639709,12,MissedShots,0.8119999694824219,0.65,0.046482883393764496,Lloyd Kelly,h,8090,OpenPlay,2025,LeftFoot,29851,Juventus,Parma Calcio 1913,2,0,2025-08-24 18:45:00,,TakeOn,Lloyd Kelly
+639715,40,BlockedShot,0.7730000305175782,0.5590000152587891,0.023371292278170586,Lloyd Kelly,h,8090,OpenPlay,2025,LeftFoot,29851,Juventus,Parma Calcio 1913,2,0,2025-08-24 18:45:00,Jonathan Christian David,Pass,Lloyd Kelly
+640994,57,MissedShots,0.87,0.7140000152587891,0.04299086332321167,Lloyd Kelly,a,8090,OpenPlay,2025,LeftFoot,29860,Genoa,Juventus,0,1,2025-08-31 16:30:00,Kenan Yildiz,Pass,Lloyd Kelly
+641832,13,Goal,0.8719999694824219,0.5629999923706055,0.04537868872284889,Lloyd Kelly,h,8090,FromCorner,2025,LeftFoot,29865,Juventus,Inter,4,3,2025-09-13 16:00:00,Bremer,Chipped,Lloyd Kelly
+644860,19,MissedShots,0.9,0.4809999847412109,0.06259854882955551,Lloyd Kelly,h,8090,FromCorner,2025,Head,29887,Juventus,Atalanta,1,1,2025-09-27 16:00:00,Teun Koopmeiners,Cross,Lloyd Kelly
+644886,92,SavedShot,0.8640000152587891,0.41900001525878905,0.05576661601662636,Lloyd Kelly,h,8090,OpenPlay,2025,LeftFoot,29887,Juventus,Atalanta,1,1,2025-09-27 16:00:00,João Mário,Cross,Lloyd Kelly
+644887,95,BlockedShot,0.8109999847412109,0.37599998474121094,0.0260908305644989,Lloyd Kelly,h,8090,FromCorner,2025,LeftFoot,29887,Juventus,Atalanta,1,1,2025-09-27 16:00:00,Dusan Vlahovic,Pass,Lloyd Kelly
+660342,64,ShotOnPost,0.870999984741211,0.6790000152587891,0.06077392399311066,Lloyd Kelly,a,8090,OpenPlay,2025,LeftFoot,30009,Pisa,Juventus,0,2,2025-12-27 19:45:00,Kephren Thuram,Pass,Lloyd Kelly
+661060,3,MissedShots,0.9330000305175781,0.40900001525878904,0.06529765576124191,Lloyd Kelly,h,8090,FromCorner,2025,Head,30020,Juventus,Lecce,1,1,2026-01-03 17:00:00,Kenan Yildiz,Cross,Lloyd Kelly
+663916,59,MissedShots,0.6930000305175781,0.4540000152587891,0.012461495585739613,Lloyd Kelly,a,8090,OpenPlay,2025,LeftFoot,30053,Cagliari,Juventus,1,0,2026-01-17 19:45:00,Manuel Locatelli,Pass,Lloyd Kelly
+672884,48,BlockedShot,0.8930000305175781,0.5120000076293946,0.07184633612632751,Lloyd Kelly,h,8090,SetPiece,2025,Head,30119,Juventus,Pisa,4,0,2026-03-07 19:45:00,Andrea Cambiaso,Cross,Lloyd Kelly
+675575,24,MissedShots,0.914000015258789,0.435,0.07376053929328918,Lloyd Kelly,h,8090,FromCorner,2025,Head,30140,Juventus,Sassuolo,1,1,2026-03-21 19:45:00,Manuel Locatelli,Cross,Lloyd Kelly
+678093,31,BlockedShot,0.9209999847412109,0.46700000762939453,0.04466446861624718,Lloyd Kelly,a,8090,FromCorner,2025,Head,30154,Atalanta,Juventus,0,1,2026-04-11 18:45:00,Kenan Yildiz,Aerial,Lloyd Kelly
+683033,6,SavedShot,0.955,0.575999984741211,0.0952225998044014,Lloyd Kelly,h,8090,FromCorner,2025,Head,30189,Juventus,Verona,1,1,2026-05-03 16:00:00,Francisco Conceição,Cross,Lloyd Kelly
+683038,21,BlockedShot,0.9080000305175782,0.5479999923706055,0.07138292491436005,Lloyd Kelly,h,8090,FromCorner,2025,LeftFoot,30189,Juventus,Verona,1,1,2026-05-03 16:00:00,Kenan Yildiz,Cross,Lloyd Kelly
+683049,45,BlockedShot,0.7319999694824219,0.48700000762939455,0.05307094380259514,Lloyd Kelly,h,8090,DirectFreekick,2025,LeftFoot,30189,Juventus,Verona,1,1,2026-05-03 16:00:00,,Standard,Lloyd Kelly

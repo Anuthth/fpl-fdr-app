@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,38,0,0,0,0,2025,Nottingham Forest,0,0,0,0,0.01310538500547409,0.01310538500547409,5544,Angus Gunn
+season,GK,9,0,0,810,0,0,0,0,2021,Norwich,0,0,0,0,0.2774380147457123,0.2774380147457123,5544,Angus Gunn
+season,GK,10,0,0,900,0,0,0,0,2019,Southampton,0,0,0,0,0.4860540181398392,0.4860540181398392,5544,Angus Gunn
+season,GK,12,0,0,1080,0,0,0,0,2018,Southampton,0,0,0,0,0.3339809998869896,0.3339809998869896,5544,Angus Gunn

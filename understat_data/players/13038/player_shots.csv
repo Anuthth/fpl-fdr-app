@@ -1,0 +1,24 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+601448,48,MissedShots,0.8090000152587891,0.5320000076293945,0.04416843503713608,Justin Devenny,h,13038,OpenPlay,2024,LeftFoot,26706,Crystal Palace,Fulham,0,2,2024-11-09 15:00:00,Daniel Muñoz,Rebound,Justin Devenny
+602894,45,Goal,0.879000015258789,0.5829999923706055,0.45421501994132996,Justin Devenny,a,13038,OpenPlay,2024,RightFoot,26716,Aston Villa,Crystal Palace,2,2,2024-11-23 15:00:00,Ismaila Sarr,Pass,Justin Devenny
+602903,66,BlockedShot,0.7980000305175782,0.29100000381469726,0.06326115131378174,Justin Devenny,a,13038,DirectFreekick,2024,LeftFoot,26716,Aston Villa,Crystal Palace,2,2,2024-11-23 15:00:00,,Standard,Justin Devenny
+605870,91,BlockedShot,0.8640000152587891,0.5640000152587891,0.09306420385837555,Justin Devenny,h,13038,OpenPlay,2024,LeftFoot,26747,Crystal Palace,Manchester City,2,2,2024-12-07 15:00:00,Tyrick Mitchell,Pass,Justin Devenny
+612316,78,SavedShot,0.7290000152587891,0.3529999923706055,0.019895857200026512,Justin Devenny,a,13038,OpenPlay,2024,LeftFoot,26821,West Ham,Crystal Palace,0,2,2025-01-18 15:00:00,Chris Richards,BallRecovery,Justin Devenny
+617345,6,SavedShot,0.754000015258789,0.5890000152587891,0.02292310632765293,Justin Devenny,h,13038,OpenPlay,2024,LeftFoot,26844,Crystal Palace,Everton,1,2,2025-02-15 17:30:00,Jefferson Lerma,Pass,Justin Devenny
+625698,82,BlockedShot,0.7869999694824219,0.2670000076293945,0.01916135475039482,Justin Devenny,h,13038,OpenPlay,2024,LeftFoot,26904,Crystal Palace,Brighton,2,1,2025-04-05 14:00:00,Daniel Muñoz,Pass,Justin Devenny
+629816,64,SavedShot,0.9059999847412109,0.5259999847412109,0.3315882980823517,Justin Devenny,a,13038,OpenPlay,2024,Head,26933,Arsenal,Crystal Palace,2,2,2025-04-23 19:00:00,Ismaila Sarr,Cross,Justin Devenny
+635686,71,SavedShot,0.7680000305175781,0.4570000076293945,0.03928132355213165,Justin Devenny,h,13038,OpenPlay,2024,LeftFoot,26967,Crystal Palace,Wolverhampton Wanderers,4,2,2025-05-20 19:00:00,Daniel Muñoz,BallTouch,Justin Devenny
+636400,65,SavedShot,0.88,0.6659999847412109,0.05965951085090637,Justin Devenny,a,13038,OpenPlay,2024,LeftFoot,26975,Liverpool,Crystal Palace,1,1,2025-05-25 15:00:00,,Rebound,Justin Devenny
+639285,58,SavedShot,0.8819999694824219,0.515,0.04736410826444626,Justin Devenny,h,13038,OpenPlay,2025,Head,28794,Crystal Palace,Nottingham Forest,1,1,2025-08-24 13:00:00,Tyrick Mitchell,Cross,Justin Devenny
+643075,63,MissedShots,0.895,0.46599998474121096,0.04117116704583168,Justin Devenny,a,13038,OpenPlay,2025,Head,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,Tyrick Mitchell,Aerial,Justin Devenny
+643084,87,MissedShots,0.7559999847412109,0.40299999237060546,0.029941219836473465,Justin Devenny,a,13038,OpenPlay,2025,LeftFoot,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,Daichi Kamada,Pass,Justin Devenny
+646646,96,MissedShots,0.8469999694824218,0.3970000076293945,0.05343788489699364,Justin Devenny,a,13038,SetPiece,2025,RightFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,,None,Justin Devenny
+646647,101,SavedShot,0.96,0.5620000076293945,0.11750244349241257,Justin Devenny,a,13038,OpenPlay,2025,RightFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,Chris Richards,Pass,Justin Devenny
+656405,95,BlockedShot,0.7719999694824219,0.37099998474121093,0.0680367723107338,Justin Devenny,h,13038,DirectFreekick,2025,LeftFoot,28901,Crystal Palace,Manchester United,1,2,2025-11-30 12:00:00,,Standard,Justin Devenny
+659583,91,Goal,0.885,0.5,0.7611688375473022,Justin Devenny,a,13038,Penalty,2025,LeftFoot,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,,Standard,Justin Devenny
+659584,93,ShotOnPost,0.945,0.4520000076293945,0.3753929138183594,Justin Devenny,a,13038,OpenPlay,2025,Head,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,Jefferson Lerma,Cross,Justin Devenny
+660423,12,BlockedShot,0.815,0.39099998474121095,0.046074166893959045,Justin Devenny,h,13038,OpenPlay,2025,LeftFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Will Hughes,Pass,Justin Devenny
+660427,28,SavedShot,0.885,0.49,0.05958692729473114,Justin Devenny,h,13038,OpenPlay,2025,Head,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Tyrick Mitchell,Cross,Justin Devenny
+660436,55,MissedShots,0.945,0.46799999237060547,0.11524494737386703,Justin Devenny,h,13038,OpenPlay,2025,LeftFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Nathaniel Clyne,HeadPass,Justin Devenny
+660718,52,BlockedShot,0.875999984741211,0.519000015258789,0.14745424687862396,Justin Devenny,h,13038,OpenPlay,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Tyrick Mitchell,Pass,Justin Devenny
+662057,64,BlockedShot,0.9540000152587891,0.40700000762939453,0.38289982080459595,Justin Devenny,h,13038,OpenPlay,2025,RightFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,,Rebound,Justin Devenny

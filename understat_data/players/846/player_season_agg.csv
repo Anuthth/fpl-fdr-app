@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,19,0,0,1685,0,0,0,0,2016,Everton,2,0,0,0,1.205452973023057,1.205452973023057,846,Maarten Stekelenburg
+season,GK,17,0,0,1530,0,0,0.03636619821190834,1,2015,Southampton,0,0,0,0,2.4953489415347576,2.4589827433228493,846,Maarten Stekelenburg
+season,GK,1,0,0,90,0,0,0,0,2014,Monaco,0,0,0,0,0,0,846,Maarten Stekelenburg

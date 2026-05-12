@@ -1,0 +1,85 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+429881,80,ShotOnPost,0.7930000305175782,0.4179999923706055,0.08074279874563217,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16411,Southampton,West Ham,0,0,2021-09-11 14:00:00,Mohammed Salisu,BallRecovery,Armando Broja
+429884,91,BlockedShot,0.945,0.555,0.11733800172805786,Armando Broja,h,8384,FromCorner,2021,Head,16411,Southampton,West Ham,0,0,2021-09-11 14:00:00,James Ward-Prowse,Cross,Armando Broja
+431388,86,BlockedShot,0.815,0.56,0.05685750022530556,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16421,Manchester City,Southampton,0,0,2021-09-18 14:00:00,Nathan Redmond,Pass,Armando Broja
+436301,17,MissedShots,0.9419999694824219,0.5570000076293945,0.111906997859478,Armando Broja,h,8384,FromCorner,2021,Head,16454,Southampton,Leeds,1,0,2021-10-16 14:00:00,Nathan Redmond,Cross,Armando Broja
+436303,19,BlockedShot,0.9309999847412109,0.5890000152587891,0.05932309851050377,Armando Broja,h,8384,FromCorner,2021,Head,16454,Southampton,Leeds,1,0,2021-10-16 14:00:00,Nathan Redmond,Cross,Armando Broja
+436310,32,SavedShot,0.9230000305175782,0.6509999847412109,0.06648969650268555,Armando Broja,h,8384,OpenPlay,2021,LeftFoot,16454,Southampton,Leeds,1,0,2021-10-16 14:00:00,,None,Armando Broja
+436315,52,Goal,0.9,0.48200000762939454,0.5785390138626099,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16454,Southampton,Leeds,1,0,2021-10-16 14:00:00,Nathan Redmond,Pass,Armando Broja
+436319,72,MissedShots,0.87,0.5629999923706055,0.09379450231790543,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16454,Southampton,Leeds,1,0,2021-10-16 14:00:00,Mohammed Salisu,Chipped,Armando Broja
+437729,25,BlockedShot,0.9030000305175782,0.48700000762939455,0.09333710372447968,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16464,Southampton,Burnley,2,2,2021-10-23 14:00:00,Valentino Livramento,Cross,Armando Broja
+437738,49,Goal,0.92,0.34200000762939453,0.10886500030755997,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16464,Southampton,Burnley,2,2,2021-10-23 14:00:00,Ibrahima Diallo,Pass,Armando Broja
+444098,23,SavedShot,0.9059999847412109,0.6370000076293946,0.22548900544643402,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16503,Liverpool,Southampton,4,0,2021-11-27 15:00:00,,BallRecovery,Armando Broja
+446158,3,SavedShot,0.87,0.32599998474121095,0.26715001463890076,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16521,Southampton,Brighton,1,1,2021-12-04 15:00:00,Che Adams,Pass,Armando Broja
+446160,5,SavedShot,0.93,0.33799999237060546,0.08439549803733826,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16521,Southampton,Brighton,1,1,2021-12-04 15:00:00,Nathan Redmond,Pass,Armando Broja
+446173,28,Goal,0.895,0.4229999923706055,0.3269360065460205,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16521,Southampton,Brighton,1,1,2021-12-04 15:00:00,Nathan Redmond,HeadPass,Armando Broja
+446176,49,MissedShots,0.9119999694824219,0.4209999847412109,0.13797900080680847,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16521,Southampton,Brighton,1,1,2021-12-04 15:00:00,Valentino Livramento,Pass,Armando Broja
+449083,12,SavedShot,0.879000015258789,0.53,0.05095230042934418,Armando Broja,a,8384,SetPiece,2021,Head,16542,Crystal Palace,Southampton,2,2,2021-12-15 19:30:00,William Smallbone,Cross,Armando Broja
+449089,35,Goal,0.7340000152587891,0.51,0.01791759952902794,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16542,Crystal Palace,Southampton,2,2,2021-12-15 19:30:00,Kyle Walker-Peters,Tackle,Armando Broja
+450631,40,MissedShots,0.9690000152587891,0.6969999694824218,0.07065460085868835,Armando Broja,a,8384,OpenPlay,2021,LeftFoot,16564,West Ham,Southampton,2,3,2021-12-26 15:00:00,Kyle Walker-Peters,Pass,Armando Broja
+450746,91,BlockedShot,0.9340000152587891,0.32099998474121094,0.023729199543595314,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16575,Southampton,Tottenham,1,1,2021-12-28 15:00:00,,Aerial,Armando Broja
+452944,48,Goal,0.889000015258789,0.5770000076293945,0.41903600096702576,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16551,Southampton,Brentford,4,1,2022-01-11 21:45:00,Oriol Romeu,Pass,Armando Broja
+453283,69,SavedShot,0.875,0.48700000762939455,0.036979299038648605,Armando Broja,a,8384,OpenPlay,2021,Head,16595,Wolverhampton Wanderers,Southampton,3,1,2022-01-15 15:00:00,Oriol Romeu,Cross,Armando Broja
+454774,52,BlockedShot,0.899000015258789,0.3270000076293945,0.10261800140142441,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16604,Southampton,Manchester City,1,1,2022-01-22 17:30:00,Stuart Armstrong,Pass,Armando Broja
+454775,53,ShotOnPost,0.970999984741211,0.4590000152587891,0.5822589993476868,Armando Broja,h,8384,FromCorner,2021,Head,16604,Southampton,Manchester City,1,1,2022-01-22 17:30:00,,Aerial,Armando Broja
+456610,18,SavedShot,0.980999984741211,0.6090000152587891,0.06961610168218613,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16613,Tottenham,Southampton,2,3,2022-02-09 19:45:00,,BallRecovery,Armando Broja
+456613,22,Goal,0.9109999847412109,0.5470000076293945,0.12064400315284729,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16613,Tottenham,Southampton,2,3,2022-02-09 19:45:00,Romain Perraud,Pass,Armando Broja
+456615,35,MissedShots,0.9069999694824219,0.3820000076293945,0.2937290072441101,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16613,Tottenham,Southampton,2,3,2022-02-09 19:45:00,Kyle Walker-Peters,Chipped,Armando Broja
+456632,77,MissedShots,0.850999984741211,0.3579999923706055,0.04710889980196953,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16613,Tottenham,Southampton,2,3,2022-02-09 19:45:00,,BallRecovery,Armando Broja
+456816,53,SavedShot,0.7780000305175782,0.40900001525878904,0.03028150089085102,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16621,Manchester United,Southampton,1,1,2022-02-12 12:30:00,James Ward-Prowse,BallRecovery,Armando Broja
+456823,68,BlockedShot,0.785,0.49900001525878906,0.03963309898972511,Armando Broja,a,8384,OpenPlay,2021,LeftFoot,16621,Manchester United,Southampton,1,1,2022-02-12 12:30:00,Mohamed Elyounoussi,BallRecovery,Armando Broja
+458330,5,SavedShot,0.93,0.6730000305175782,0.07737129926681519,Armando Broja,h,8384,OpenPlay,2021,LeftFoot,16633,Southampton,Everton,2,0,2022-02-19 15:00:00,Che Adams,Pass,Armando Broja
+458336,32,SavedShot,0.88,0.34,0.11537999659776688,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16633,Southampton,Everton,2,0,2022-02-19 15:00:00,Oriol Romeu,Throughball,Armando Broja
+458337,35,BlockedShot,0.9409999847412109,0.31799999237060544,0.06619810312986374,Armando Broja,h,8384,OpenPlay,2021,LeftFoot,16633,Southampton,Everton,2,0,2022-02-19 15:00:00,Valentino Livramento,TakeOn,Armando Broja
+458353,81,MissedShots,0.9459999847412109,0.6840000152587891,0.07710999995470047,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16633,Southampton,Everton,2,0,2022-02-19 15:00:00,Kyle Walker-Peters,Pass,Armando Broja
+459381,14,SavedShot,0.845,0.3770000076293945,0.05946819856762886,Armando Broja,h,8384,OpenPlay,2021,LeftFoot,16644,Southampton,Norwich,2,0,2022-02-25 20:00:00,,BallRecovery,Armando Broja
+459389,32,MissedShots,0.909000015258789,0.53,0.18907399475574493,Armando Broja,h,8384,OpenPlay,2021,OtherBodyPart,16644,Southampton,Norwich,2,0,2022-02-25 20:00:00,James Ward-Prowse,Cross,Armando Broja
+459394,44,MissedShots,0.9630000305175781,0.6719999694824219,0.08365009725093842,Armando Broja,h,8384,OpenPlay,2021,LeftFoot,16644,Southampton,Norwich,2,0,2022-02-25 20:00:00,Kyle Walker-Peters,Pass,Armando Broja
+462162,22,SavedShot,0.9119999694824219,0.3370000076293945,0.3124150037765503,Armando Broja,h,8384,OpenPlay,2021,RightFoot,16584,Southampton,Newcastle United,1,2,2022-03-10 19:30:00,Che Adams,Pass,Armando Broja
+465287,50,MissedShots,0.960999984741211,0.4329999923706055,0.14566899836063385,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16681,Leeds,Southampton,1,1,2022-04-02 14:00:00,Valentino Livramento,Pass,Armando Broja
+468160,43,BlockedShot,0.9019999694824219,0.605999984741211,0.03476849943399429,Armando Broja,h,8384,SetPiece,2021,Head,16700,Southampton,Arsenal,1,0,2022-04-16 14:00:00,James Ward-Prowse,Cross,Armando Broja
+469687,30,BlockedShot,0.8569999694824219,0.6229999923706054,0.06835740059614182,Armando Broja,a,8384,OpenPlay,2021,LeftFoot,16667,Burnley,Southampton,2,0,2022-04-21 18:45:00,Mohamed Elyounoussi,Pass,Armando Broja
+474710,15,BlockedShot,0.9180000305175782,0.6329999923706054,0.060503698885440826,Armando Broja,a,8384,OpenPlay,2021,LeftFoot,16734,Brentford,Southampton,3,0,2022-05-07 14:00:00,,None,Armando Broja
+474714,23,MissedShots,0.9059999847412109,0.49900001525878906,0.04765849933028221,Armando Broja,a,8384,FromCorner,2021,Head,16734,Brentford,Southampton,3,0,2022-05-07 14:00:00,James Ward-Prowse,Chipped,Armando Broja
+474719,35,MissedShots,0.875999984741211,0.575,0.054986000061035156,Armando Broja,a,8384,OpenPlay,2021,RightFoot,16734,Brentford,Southampton,3,0,2022-05-07 14:00:00,Romain Perraud,Cross,Armando Broja
+474720,41,SavedShot,0.850999984741211,0.42400001525878905,0.08522409945726395,Armando Broja,a,8384,OpenPlay,2021,LeftFoot,16734,Brentford,Southampton,3,0,2022-05-07 14:00:00,Ibrahima Diallo,Pass,Armando Broja
+474725,58,MissedShots,0.9,0.5220000076293946,0.10159499943256378,Armando Broja,a,8384,OpenPlay,2021,Head,16734,Brentford,Southampton,3,0,2022-05-07 14:00:00,Stuart Armstrong,Cross,Armando Broja
+479455,96,SavedShot,0.914000015258789,0.605999984741211,0.046084899455308914,Armando Broja,a,8384,SetPiece,2022,Head,18208,Everton,Chelsea,0,1,2022-08-06 16:30:00,Reece James,Cross,Armando Broja
+484938,81,SavedShot,0.9419999694824219,0.46700000762939453,0.39603498578071594,Armando Broja,a,8384,OpenPlay,2022,Head,18244,Southampton,Chelsea,2,1,2022-08-30 18:45:00,Raheem Sterling,Aerial,Armando Broja
+485972,64,SavedShot,0.904000015258789,0.475,0.09613069891929626,Armando Broja,h,8384,OpenPlay,2022,RightFoot,18260,Chelsea,West Ham,2,1,2022-09-03 14:00:00,Mateo Kovacic,Chipped,Armando Broja
+491645,88,Goal,0.8530000305175781,0.5990000152587891,0.1387770026922226,Armando Broja,h,8384,OpenPlay,2022,RightFoot,18295,Chelsea,Wolverhampton Wanderers,3,0,2022-10-08 14:00:00,Mateo Kovacic,Throughball,Armando Broja
+494458,35,MissedShots,0.9080000305175782,0.6819999694824219,0.057499900460243225,Armando Broja,a,8384,OpenPlay,2022,LeftFoot,18314,Brentford,Chelsea,0,0,2022-10-19 18:30:00,Kalidou Koulibaly,Chipped,Armando Broja
+500317,28,SavedShot,0.9009999847412109,0.575,0.12271899729967117,Armando Broja,a,8384,OpenPlay,2022,LeftFoot,18357,Newcastle United,Chelsea,1,0,2022-11-12 17:30:00,Lewis Hall,Pass,Armando Broja
+539631,97,BlockedShot,0.875,0.750999984741211,0.028635097667574883,Armando Broja,h,8384,OpenPlay,2023,RightFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Thiago Silva,Pass,Armando Broja
+542134,18,Goal,0.8830000305175781,0.4620000076293945,0.4078344702720642,Armando Broja,a,8384,OpenPlay,2023,RightFoot,21964,Fulham,Chelsea,0,2,2023-10-02 19:00:00,,None,Armando Broja
+542138,47,MissedShots,0.9369999694824219,0.4490000152587891,0.4472373425960541,Armando Broja,a,8384,OpenPlay,2023,Head,21964,Fulham,Chelsea,0,2,2023-10-02 19:00:00,Cole Palmer,Cross,Armando Broja
+542624,43,BlockedShot,0.8880000305175781,0.63,0.0879228264093399,Armando Broja,a,8384,OpenPlay,2023,RightFoot,21967,Burnley,Chelsea,1,4,2023-10-07 14:00:00,Raheem Sterling,Pass,Armando Broja
+552371,90,ShotOnPost,0.965,0.6220000076293946,0.13756296038627625,Armando Broja,a,8384,OpenPlay,2023,Head,22044,Manchester United,Chelsea,2,1,2023-12-06 20:15:00,Reece James,Cross,Armando Broja
+553393,37,MissedShots,0.919000015258789,0.5779999923706055,0.10585711896419525,Armando Broja,a,8384,OpenPlay,2023,RightFoot,22048,Everton,Chelsea,2,0,2023-12-10 14:00:00,Mykhailo Mudryk,Cross,Armando Broja
+554273,83,MissedShots,0.9530000305175781,0.514000015258789,0.7036623954772949,Armando Broja,h,8384,OpenPlay,2023,RightFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,Cole Palmer,Pass,Armando Broja
+554276,89,BlockedShot,0.8809999847412109,0.5379999923706055,0.14765667915344238,Armando Broja,h,8384,OpenPlay,2023,RightFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,,BallRecovery,Armando Broja
+556426,10,MissedShots,0.9009999847412109,0.4420000076293945,0.12906385958194733,Armando Broja,a,8384,OpenPlay,2023,RightFoot,22073,Wolverhampton Wanderers,Chelsea,2,1,2023-12-24 13:00:00,Malo Gusto,Pass,Armando Broja
+556618,82,MissedShots,0.8959999847412109,0.63,0.07066238671541214,Armando Broja,h,8384,OpenPlay,2023,LeftFoot,22080,Chelsea,Crystal Palace,2,1,2023-12-27 19:30:00,Thiago Silva,Chipped,Armando Broja
+556888,18,SavedShot,0.9680000305175781,0.7140000152587891,0.06231974810361862,Armando Broja,a,8384,OpenPlay,2023,LeftFoot,22089,Luton,Chelsea,2,3,2023-12-30 12:30:00,,BallRecovery,Armando Broja
+557889,20,MissedShots,0.915,0.5640000152587891,0.04523822292685509,Armando Broja,h,8384,OpenPlay,2023,Head,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,Enzo Fernández,Aerial,Armando Broja
+557905,55,BlockedShot,0.9359999847412109,0.415,0.11569240689277649,Armando Broja,h,8384,OpenPlay,2023,RightFoot,22097,Chelsea,Fulham,1,0,2024-01-13 12:30:00,Malo Gusto,Cross,Armando Broja
+609484,26,MissedShots,0.8619999694824219,0.5070000076293946,0.015060334466397762,Armando Broja,h,8384,OpenPlay,2024,Head,26785,Everton,Nottingham Forest,0,2,2024-12-29 15:00:00,Vitalii Mykolenko,Aerial,Armando Broja
+609485,30,MissedShots,0.875,0.665,0.011301419697701931,Armando Broja,h,8384,OpenPlay,2024,Head,26785,Everton,Nottingham Forest,0,2,2024-12-29 15:00:00,Vitalii Mykolenko,Cross,Armando Broja
+609486,43,MissedShots,0.8219999694824218,0.2989999961853027,0.026267634704709053,Armando Broja,h,8384,OpenPlay,2024,LeftFoot,26785,Everton,Nottingham Forest,0,2,2024-12-29 15:00:00,Jack Harrison,Pass,Armando Broja
+609876,19,MissedShots,0.8669999694824219,0.6790000152587891,0.05183260142803192,Armando Broja,a,8384,OpenPlay,2024,RightFoot,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,Orel Mangala,Pass,Armando Broja
+653381,95,SavedShot,0.8830000305175781,0.3579999923706055,0.0770072415471077,Armando Broja,h,8384,OpenPlay,2025,RightFoot,28891,Burnley,Chelsea,0,2,2025-11-22 12:30:00,Hannibal Mejbri,Pass,Armando Broja
+656241,91,BlockedShot,0.9259999847412109,0.49,0.4012564718723297,Armando Broja,h,8384,OpenPlay,2025,Head,28911,Burnley,Crystal Palace,0,1,2025-12-03 19:30:00,Hannibal Mejbri,Aerial,Armando Broja
+656944,3,BlockedShot,0.8280000305175781,0.4229999923706055,0.10241669416427612,Armando Broja,a,8384,OpenPlay,2025,RightFoot,28925,Newcastle United,Burnley,2,1,2025-12-06 15:00:00,Chimuanya Ugochukwu,BallRecovery,Armando Broja
+656959,59,SavedShot,0.9209999847412109,0.555,0.3522545099258423,Armando Broja,a,8384,OpenPlay,2025,Head,28925,Newcastle United,Burnley,2,1,2025-12-06 15:00:00,Josh Cullen,Throughball,Armando Broja
+658307,25,BlockedShot,0.9259999847412109,0.35200000762939454,0.09004227072000504,Armando Broja,h,8384,OpenPlay,2025,RightFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Lyle Foster,Pass,Armando Broja
+658309,37,SavedShot,0.8780000305175781,0.5359999847412109,0.29579052329063416,Armando Broja,h,8384,SetPiece,2025,LeftFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Josh Cullen,Chipped,Armando Broja
+658323,84,SavedShot,0.91,0.4470000076293945,0.042184554040431976,Armando Broja,h,8384,FromCorner,2025,Head,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,,None,Armando Broja
+659288,89,Goal,0.9440000152587891,0.5259999847412109,0.41525697708129883,Armando Broja,a,8384,FromCorner,2025,Head,28938,Bournemouth,Burnley,1,1,2025-12-20 15:00:00,Marcus Edwards,Cross,Armando Broja
+660193,6,BlockedShot,0.9680000305175781,0.5070000076293946,0.17336219549179077,Armando Broja,h,8384,FromCorner,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,TakeOn,Armando Broja
+660200,24,MissedShots,0.9269999694824219,0.38299999237060545,0.03477645665407181,Armando Broja,h,8384,OpenPlay,2025,Head,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,Lucas Pires,Cross,Armando Broja
+660212,74,BlockedShot,0.8519999694824218,0.37,0.08181227743625641,Armando Broja,h,8384,OpenPlay,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,Marcus Edwards,TakeOn,Armando Broja
+660533,39,BlockedShot,0.845,0.4329999923706055,0.05624197795987129,Armando Broja,h,8384,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Josh Laurent,BallRecovery,Armando Broja
+662140,52,BlockedShot,0.9640000152587891,0.7190000152587891,0.056575216352939606,Armando Broja,h,8384,OpenPlay,2025,LeftFoot,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,Hannibal Mejbri,TakeOn,Armando Broja
+664791,8,MissedShots,0.889000015258789,0.4929999923706055,0.03932913765311241,Armando Broja,h,8384,OpenPlay,2025,Head,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,Marcus Edwards,Chipped,Armando Broja
+664803,47,BlockedShot,0.9419999694824219,0.665,0.234054833650589,Armando Broja,h,8384,OpenPlay,2025,LeftFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,Jaidon Anthony,Pass,Armando Broja
+667296,89,BlockedShot,0.895,0.3990000152587891,0.06415653973817825,Armando Broja,h,8384,OpenPlay,2025,RightFoot,29021,Burnley,West Ham,0,2,2026-02-07 15:00:00,,None,Armando Broja

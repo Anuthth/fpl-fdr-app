@@ -1,0 +1,40 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+594133,85,SavedShot,0.7580000305175781,0.35,0.02082475833594799,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26655,Arsenal,Leicester,4,2,2024-09-28 14:00:00,Jurriën Timber,Pass,Ethan Nwaneri
+599845,90,MissedShots,0.779000015258789,0.42700000762939455,0.03170012682676315,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26694,Newcastle United,Arsenal,1,0,2024-11-02 12:30:00,Ben White,Pass,Ethan Nwaneri
+602971,83,MissedShots,0.8369999694824218,0.28399999618530275,0.07367707788944244,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26714,Arsenal,Nottingham Forest,3,0,2024-11-23 15:00:00,Jurriën Timber,TakeOn,Ethan Nwaneri
+602972,85,Goal,0.8969999694824219,0.40700000762939453,0.13331513106822968,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26714,Arsenal,Nottingham Forest,3,0,2024-11-23 15:00:00,Raheem Sterling,Pass,Ethan Nwaneri
+609783,6,BlockedShot,0.870999984741211,0.5659999847412109,0.06497128307819366,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26783,Brentford,Arsenal,1,3,2025-01-01 17:30:00,Gabriel Martinelli,HeadPass,Ethan Nwaneri
+610079,15,Goal,0.9130000305175782,0.3160000038146973,0.28695282340049744,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26794,Brighton,Arsenal,1,1,2025-01-04 17:30:00,Mikel Merino,Chipped,Ethan Nwaneri
+613341,39,BlockedShot,0.8130000305175781,0.47,0.15520957112312317,Ethan Nwaneri,a,11132,DirectFreekick,2024,LeftFoot,26831,Wolverhampton Wanderers,Arsenal,0,1,2025-01-25 15:00:00,,Standard,Ethan Nwaneri
+613342,39,BlockedShot,0.8209999847412109,0.4909999847412109,0.04347389191389084,Ethan Nwaneri,a,11132,SetPiece,2024,LeftFoot,26831,Wolverhampton Wanderers,Arsenal,0,1,2025-01-25 15:00:00,Gabriel,Rebound,Ethan Nwaneri
+615619,92,Goal,0.815,0.29600000381469727,0.05261600762605667,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26833,Arsenal,Manchester City,5,1,2025-02-02 16:30:00,Declan Rice,Chipped,Ethan Nwaneri
+617002,60,ShotOnPost,0.799000015258789,0.4520000076293945,0.16542626917362213,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26846,Leicester,Arsenal,0,2,2025-02-15 12:30:00,Martin Odegaard,TakeOn,Ethan Nwaneri
+617003,65,BlockedShot,0.7680000305175781,0.45299999237060545,0.024038303643465042,Ethan Nwaneri,a,11132,SetPiece,2024,LeftFoot,26846,Leicester,Arsenal,0,2,2025-02-15 12:30:00,Raheem Sterling,Pass,Ethan Nwaneri
+617005,75,SavedShot,0.8640000152587891,0.3290000152587891,0.05103578418493271,Ethan Nwaneri,a,11132,OpenPlay,2024,RightFoot,26846,Leicester,Arsenal,0,2,2025-02-15 12:30:00,Declan Rice,Pass,Ethan Nwaneri
+617009,91,SavedShot,0.835,0.580999984741211,0.06515300273895264,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26846,Leicester,Arsenal,0,2,2025-02-15 12:30:00,,None,Ethan Nwaneri
+618402,23,BlockedShot,0.87,0.29399999618530276,0.02895027957856655,Ethan Nwaneri,h,11132,SetPiece,2024,LeftFoot,26853,Arsenal,West Ham,0,1,2025-02-22 15:00:00,Declan Rice,Pass,Ethan Nwaneri
+619550,10,BlockedShot,0.7919999694824219,0.29200000762939454,0.022301550954580307,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26864,Nottingham Forest,Arsenal,0,0,2025-02-26 19:30:00,Leandro Trossard,Pass,Ethan Nwaneri
+619555,40,BlockedShot,0.9680000305175781,0.6630000305175782,0.11036799848079681,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26864,Nottingham Forest,Arsenal,0,0,2025-02-26 19:30:00,Riccardo Calafiori,TakeOn,Ethan Nwaneri
+619560,57,BlockedShot,0.8059999847412109,0.34599998474121096,0.02649073675274849,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26864,Nottingham Forest,Arsenal,0,0,2025-02-26 19:30:00,Kieran Tierney,Chipped,Ethan Nwaneri
+625031,20,SavedShot,0.899000015258789,0.3609999847412109,0.053395822644233704,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Gabriel Martinelli,Cross,Ethan Nwaneri
+625032,26,BlockedShot,0.93,0.4109999847412109,0.04822501540184021,Ethan Nwaneri,h,11132,OpenPlay,2024,Head,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,,Aerial,Ethan Nwaneri
+627288,8,BlockedShot,0.8640000152587891,0.37200000762939456,0.05982734635472298,Ethan Nwaneri,h,11132,OpenPlay,2024,LeftFoot,26913,Arsenal,Brentford,1,1,2025-04-12 16:30:00,Declan Rice,Pass,Ethan Nwaneri
+629068,61,BlockedShot,0.915,0.34799999237060547,0.10863859951496124,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,Ben White,Pass,Ethan Nwaneri
+629078,87,Goal,0.874000015258789,0.4470000076293945,0.0665774792432785,Ethan Nwaneri,a,11132,FromCorner,2024,LeftFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,Oleksandr Zinchenko,Pass,Ethan Nwaneri
+636343,52,SavedShot,0.840999984741211,0.335,0.05716337263584137,Ethan Nwaneri,a,11132,OpenPlay,2024,LeftFoot,26977,Southampton,Arsenal,1,2,2025-05-25 15:00:00,Gabriel Martinelli,Pass,Ethan Nwaneri
+636349,58,BlockedShot,0.7880000305175782,0.38299999237060545,0.02544921636581421,Ethan Nwaneri,a,11132,FromCorner,2024,LeftFoot,26977,Southampton,Arsenal,1,2,2025-05-25 15:00:00,Declan Rice,TakeOn,Ethan Nwaneri
+638955,54,BlockedShot,0.835,0.3189999961853027,0.049042925238609314,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,Jurriën Timber,Pass,Ethan Nwaneri
+641376,22,BlockedShot,0.840999984741211,0.43599998474121093,0.0504547581076622,Ethan Nwaneri,h,11132,FromCorner,2025,LeftFoot,28808,Arsenal,Nottingham Forest,3,0,2025-09-13 11:30:00,,None,Ethan Nwaneri
+641386,51,MissedShots,0.865999984741211,0.29100000381469726,0.057088371366262436,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,28808,Arsenal,Nottingham Forest,3,0,2025-09-13 11:30:00,Noni Madueke,Pass,Ethan Nwaneri
+641387,56,MissedShots,0.865999984741211,0.48400001525878905,0.13176925480365753,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,28808,Arsenal,Nottingham Forest,3,0,2025-09-13 11:30:00,Mikel Merino,Pass,Ethan Nwaneri
+646147,95,BlockedShot,0.7769999694824219,0.34,0.013910985551774502,Ethan Nwaneri,h,11132,FromCorner,2025,LeftFoot,28839,Arsenal,West Ham,2,0,2025-10-04 14:00:00,,Aerial,Ethan Nwaneri
+650842,81,MissedShots,0.755,0.46599998474121096,0.026944873854517937,Ethan Nwaneri,a,11132,OpenPlay,2025,LeftFoot,28869,Burnley,Arsenal,0,2,2025-11-01 15:00:00,,BallRecovery,Ethan Nwaneri
+665082,12,Goal,0.8130000305175781,0.4470000076293945,0.09658291935920715,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,29704,Marseille,Lens,3,1,2026-01-24 20:05:00,Pierre-Emile Højbjerg,TakeOn,Ethan Nwaneri
+665088,53,SavedShot,0.8130000305175781,0.45,0.07839584350585938,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,29704,Marseille,Lens,3,1,2026-01-24 20:05:00,Hamed Junior Traore,Pass,Ethan Nwaneri
+666123,37,MissedShots,0.8769999694824219,0.6419999694824219,0.07687253504991531,Ethan Nwaneri,a,11132,OpenPlay,2025,LeftFoot,29715,Paris FC,Marseille,2,2,2026-01-31 16:00:00,,None,Ethan Nwaneri
+666124,39,BlockedShot,0.889000015258789,0.7080000305175781,0.0592411570250988,Ethan Nwaneri,a,11132,OpenPlay,2025,RightFoot,29715,Paris FC,Marseille,2,2,2026-01-31 16:00:00,Timothy Weah,Chipped,Ethan Nwaneri
+666128,48,BlockedShot,0.8530000305175781,0.47,0.11134801059961319,Ethan Nwaneri,a,11132,OpenPlay,2025,LeftFoot,29715,Paris FC,Marseille,2,2,2026-01-31 16:00:00,Igor Paixão,Pass,Ethan Nwaneri
+669505,70,BlockedShot,0.7369999694824219,0.58,0.019245615229010582,Ethan Nwaneri,a,11132,OpenPlay,2025,LeftFoot,29738,Brest,Marseille,2,0,2026-02-20 19:45:00,Timothy Weah,Pass,Ethan Nwaneri
+676057,37,BlockedShot,0.8469999694824218,0.38299999237060545,0.07410333305597305,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,29775,Marseille,Lille,1,2,2026-03-22 16:15:00,Geoffrey Kondogbia,Pass,Ethan Nwaneri
+676058,42,Goal,0.895,0.5170000076293946,0.32205942273139954,Ethan Nwaneri,h,11132,OpenPlay,2025,LeftFoot,29775,Marseille,Lille,1,2,2026-03-22 16:15:00,Igor Paixão,Chipped,Ethan Nwaneri
+679280,71,MissedShots,0.84,0.634000015258789,0.048334237188100815,Ethan Nwaneri,a,11132,OpenPlay,2025,LeftFoot,29802,Lorient,Marseille,2,0,2026-04-18 15:00:00,Bilal Nadir,Pass,Ethan Nwaneri

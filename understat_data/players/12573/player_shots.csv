@@ -1,0 +1,13 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+616963,70,BlockedShot,0.9259999847412109,0.35,0.10955051332712173,Tyrique George,a,12573,OpenPlay,2024,LeftFoot,26843,Brighton,Chelsea,3,0,2025-02-14 20:00:00,Reece James,TakeOn,Tyrique George
+619428,68,MissedShots,0.9269999694824219,0.32299999237060545,0.2174886167049408,Tyrique George,h,12573,OpenPlay,2024,RightFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Enzo Fernández,Pass,Tyrique George
+629048,82,Goal,0.815,0.51,0.04685423895716667,Tyrique George,a,12573,OpenPlay,2024,RightFoot,26926,Fulham,Chelsea,1,2,2025-04-20 13:00:00,,None,Tyrique George
+640086,53,SavedShot,0.9740000152587891,0.585,0.45670846104621887,Tyrique George,h,12573,FromCorner,2025,LeftFoot,28798,Chelsea,Fulham,2,0,2025-08-30 11:30:00,,None,Tyrique George
+641999,50,SavedShot,0.8880000305175781,0.2620000076293945,0.03347869962453842,Tyrique George,a,12573,OpenPlay,2025,RightFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Pedro Neto,Pass,Tyrique George
+648947,84,MissedShots,0.899000015258789,0.51,0.053248196840286255,Tyrique George,h,12573,OpenPlay,2025,Head,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Marc Cucurella,Chipped,Tyrique George
+667325,80,MissedShots,0.8630000305175781,0.624000015258789,0.05949726700782776,Tyrique George,a,12573,OpenPlay,2025,RightFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Idrissa Gueye,Pass,Tyrique George
+670600,92,SavedShot,0.7480000305175781,0.544000015258789,0.043459415435791016,Tyrique George,h,12573,OpenPlay,2025,RightFoot,29042,Everton,Manchester United,0,1,2026-02-23 20:00:00,,Dispossessed,Tyrique George
+677862,80,MissedShots,0.7630000305175781,0.5640000152587891,0.04087933152914047,Tyrique George,a,12573,OpenPlay,2025,RightFoot,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Thierno Barry,Pass,Tyrique George
+677863,87,SavedShot,0.8819999694824219,0.7140000152587891,0.04073796793818474,Tyrique George,a,12573,OpenPlay,2025,RightFoot,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Kiernan Dewsbury-Hall,Pass,Tyrique George
+681058,74,BlockedShot,0.7709999847412109,0.6809999847412109,0.01732187531888485,Tyrique George,a,12573,OpenPlay,2025,RightFoot,29116,West Ham,Everton,2,1,2026-04-25 14:00:00,Tim Iroegbunam,Pass,Tyrique George
+681064,95,MissedShots,0.8430000305175781,0.639000015258789,0.050472430884838104,Tyrique George,a,12573,OpenPlay,2025,RightFoot,29116,West Ham,Everton,2,1,2026-04-25 14:00:00,Kiernan Dewsbury-Hall,Pass,Tyrique George

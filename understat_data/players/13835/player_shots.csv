@@ -1,0 +1,12 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638377,4,SavedShot,0.9490000152587891,0.5970000076293945,0.4093262255191803,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,,None,Joël Piroe
+638378,9,BlockedShot,0.7819999694824219,0.34799999237060547,0.024318870157003403,Joël Piroe,h,13835,OpenPlay,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,Pascal Struijk,BallRecovery,Joël Piroe
+638381,20,BlockedShot,0.8880000305175781,0.534000015258789,0.09029436856508255,Joël Piroe,h,13835,OpenPlay,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,Daniel James,Cross,Joël Piroe
+645923,93,SavedShot,0.8469999694824218,0.5109999847412109,0.058323636651039124,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,28844,Leeds,Tottenham,1,2,2025-10-04 11:30:00,Dominic Calvert-Lewin,HeadPass,Joël Piroe
+647560,78,MissedShots,0.889000015258789,0.5559999847412109,0.04786023870110512,Joël Piroe,a,13835,OpenPlay,2025,Head,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Gabriel Gudmundsson,Cross,Joël Piroe
+647565,86,MissedShots,0.8859999847412109,0.5929999923706055,0.10025794059038162,Joël Piroe,a,13835,OpenPlay,2025,LeftFoot,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Gabriel Gudmundsson,Pass,Joël Piroe
+654146,93,BlockedShot,0.75,0.32099998474121094,0.01777118444442749,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,28893,Leeds,Aston Villa,1,2,2025-11-23 14:00:00,Ethan Ampadu,Pass,Joël Piroe
+661295,87,MissedShots,0.8490000152587891,0.33099998474121095,0.07385092973709106,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,28976,Leeds,Manchester United,1,1,2026-01-04 12:30:00,Anton Stach,Pass,Joël Piroe
+661296,91,BlockedShot,0.835999984741211,0.5820000076293945,0.051358092576265335,Joël Piroe,h,13835,FromCorner,2025,LeftFoot,28976,Leeds,Manchester United,1,1,2026-01-04 12:30:00,Lukas Nmecha,LayOff,Joël Piroe
+672128,88,BlockedShot,0.8669999694824219,0.43,0.08619695901870728,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,29063,Leeds,Sunderland,0,1,2026-03-03 19:30:00,Lukas Nmecha,Pass,Joël Piroe
+672130,98,MissedShots,0.7780000305175782,0.38599998474121094,0.011740269139409065,Joël Piroe,h,13835,OpenPlay,2025,LeftFoot,29063,Leeds,Sunderland,0,1,2026-03-03 19:30:00,,Aerial,Joël Piroe

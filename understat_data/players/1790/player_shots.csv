@@ -1,0 +1,23 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+19475,85,SavedShot,0.9209999847412109,0.5179999923706055,0.055542800575494766,Chuba Akpom,h,1790,OpenPlay,2014,Head,4513,Arsenal,Aston Villa,5,0,2015-02-01 13:30:00,Per Mertesacker,Aerial,Chuba Akpom
+19477,90,SavedShot,0.89,0.6,0.4584540128707886,Chuba Akpom,h,1790,OpenPlay,2014,RightFoot,4513,Arsenal,Aston Villa,5,0,2015-02-01 13:30:00,Santiago Cazorla,Throughball,Chuba Akpom
+616412,59,SavedShot,0.9230000305175782,0.4779999923706055,0.07078713178634644,Chuba Akpom,h,1790,OpenPlay,2024,Head,28231,Lille,Le Havre,1,2,2025-02-08 16:00:00,Gabriel Gudmundsson,Aerial,Chuba Akpom
+616420,96,Goal,0.8780000305175781,0.6270000076293946,0.2956606149673462,Chuba Akpom,h,1790,OpenPlay,2024,RightFoot,28231,Lille,Le Havre,1,2,2025-02-08 16:00:00,,BallRecovery,Chuba Akpom
+617980,7,BlockedShot,0.9209999847412109,0.5640000152587891,0.02799716405570507,Chuba Akpom,a,1790,FromCorner,2024,Head,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Hákon Haraldsson,Aerial,Chuba Akpom
+617982,11,BlockedShot,0.8640000152587891,0.37,0.07733754813671112,Chuba Akpom,a,1790,OpenPlay,2024,RightFoot,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Hákon Haraldsson,Pass,Chuba Akpom
+617986,43,SavedShot,0.885,0.5,0.7600951194763184,Chuba Akpom,a,1790,Penalty,2024,RightFoot,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,,Standard,Chuba Akpom
+617995,79,SavedShot,0.9459999847412109,0.5279999923706055,0.1293950229883194,Chuba Akpom,a,1790,FromCorner,2024,Head,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Mitchel Bakker,Cross,Chuba Akpom
+617997,82,ShotOnPost,0.9440000152587891,0.4779999923706055,0.11583653092384338,Chuba Akpom,a,1790,OpenPlay,2024,Head,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Mitchel Bakker,Aerial,Chuba Akpom
+617998,85,Goal,0.8859999847412109,0.605,0.35278549790382385,Chuba Akpom,a,1790,OpenPlay,2024,RightFoot,28242,Rennes,Lille,0,2,2025-02-16 19:45:00,Mitchel Bakker,Pass,Chuba Akpom
+618538,20,SavedShot,0.9390000152587891,0.2879999923706055,0.044741999357938766,Chuba Akpom,h,1790,OpenPlay,2024,RightFoot,28248,Lille,Monaco,2,1,2025-02-22 16:00:00,Thomas Meunier,Chipped,Chuba Akpom
+621574,71,SavedShot,0.8209999847412109,0.634000015258789,0.05731964856386185,Chuba Akpom,h,1790,OpenPlay,2024,LeftFoot,28270,Lille,Montpellier,1,0,2025-03-08 18:00:00,Ismaily,Pass,Chuba Akpom
+622733,70,SavedShot,0.88,0.31,0.24709951877593994,Chuba Akpom,a,1790,OpenPlay,2024,RightFoot,28280,Nantes,Lille,1,0,2025-03-15 16:00:00,Mitchel Bakker,Pass,Chuba Akpom
+622736,88,BlockedShot,0.9109999847412109,0.5529999923706055,0.09364526718854904,Chuba Akpom,a,1790,OpenPlay,2024,LeftFoot,28280,Nantes,Lille,1,0,2025-03-15 16:00:00,André Gomes,Chipped,Chuba Akpom
+629101,29,SavedShot,0.8880000305175781,0.575999984741211,0.37814176082611084,Chuba Akpom,h,1790,OpenPlay,2024,RightFoot,28312,Lille,Auxerre,3,1,2025-04-20 13:00:00,Hákon Haraldsson,Pass,Chuba Akpom
+629107,52,SavedShot,0.9569999694824218,0.28600000381469726,0.06290731579065323,Chuba Akpom,h,1790,OpenPlay,2024,RightFoot,28312,Lille,Auxerre,3,1,2025-04-20 13:00:00,Hákon Haraldsson,Pass,Chuba Akpom
+630705,22,MissedShots,0.9669999694824218,0.5229999923706055,0.648059070110321,Chuba Akpom,a,1790,OpenPlay,2024,OtherBodyPart,28323,Angers,Lille,0,2,2025-04-27 13:00:00,Matias Fernandez-Pardo,Chipped,Chuba Akpom
+633193,60,MissedShots,0.845,0.6559999847412109,0.04198995605111122,Chuba Akpom,a,1790,OpenPlay,2024,LeftFoot,28343,Brest,Lille,2,0,2025-05-10 19:00:00,,None,Chuba Akpom
+633203,86,MissedShots,0.8640000152587891,0.28700000762939454,0.0689881443977356,Chuba Akpom,a,1790,OpenPlay,2024,RightFoot,28343,Brest,Lille,2,0,2025-05-10 19:00:00,Jonathan Christian David,Pass,Chuba Akpom
+633207,92,BlockedShot,0.9059999847412109,0.46099998474121096,0.11438814550638199,Chuba Akpom,a,1790,OpenPlay,2024,LeftFoot,28343,Brest,Lille,2,0,2025-05-10 19:00:00,,Rebound,Chuba Akpom
+633208,92,ShotOnPost,0.8969999694824219,0.43,0.0907522588968277,Chuba Akpom,a,1790,OpenPlay,2024,RightFoot,28343,Brest,Lille,2,0,2025-05-10 19:00:00,,Rebound,Chuba Akpom
+634583,85,Goal,0.885,0.5,0.7600951194763184,Chuba Akpom,h,1790,Penalty,2024,RightFoot,28353,Lille,Reims,2,1,2025-05-17 19:00:00,,Standard,Chuba Akpom

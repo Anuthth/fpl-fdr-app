@@ -1,0 +1,35 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+512175,91,SavedShot,0.8640000152587891,0.4279999923706055,0.07369480282068253,Mateo Joseph,a,11208,SetPiece,2022,RightFoot,18456,Chelsea,Leeds,1,0,2023-03-04 15:00:00,,Dispossessed,Mateo Joseph
+638874,8,SavedShot,0.81,0.519000015258789,0.05774946138262749,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29169,Mallorca,Celta Vigo,1,1,2025-08-23 15:00:00,Pablo Torre,BallRecovery,Mateo Joseph
+638880,31,MissedShots,0.9080000305175782,0.36900001525878906,0.07230343669652939,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29169,Mallorca,Celta Vigo,1,1,2025-08-23 15:00:00,,None,Mateo Joseph
+638883,59,BlockedShot,0.9130000305175782,0.5220000076293946,0.11819720268249512,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29169,Mallorca,Celta Vigo,1,1,2025-08-23 15:00:00,Johan Mojica,Pass,Mateo Joseph
+640664,60,BlockedShot,0.960999984741211,0.48700000762939455,0.14637921750545502,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29184,Real Madrid,Mallorca,2,1,2025-08-30 19:30:00,Sergi Darder,Pass,Mateo Joseph
+640663,60,BlockedShot,0.9030000305175782,0.7019999694824218,0.04021289944648743,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29184,Real Madrid,Mallorca,2,1,2025-08-30 19:30:00,Toni Lato,Pass,Mateo Joseph
+642699,50,SavedShot,0.7519999694824219,0.529000015258789,0.023958837613463402,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29198,Espanyol,Mallorca,3,2,2025-09-15 19:00:00,Pablo Torre,Pass,Mateo Joseph
+644237,24,SavedShot,0.89,0.32099998474121094,0.05364891514182091,Mateo Joseph,a,11208,OpenPlay,2025,LeftFoot,29215,Real Sociedad,Mallorca,1,0,2025-09-24 19:30:00,Pablo Maffeo,Pass,Mateo Joseph
+644248,68,MissedShots,0.860999984741211,0.5820000076293945,0.3878379166126251,Mateo Joseph,a,11208,OpenPlay,2025,LeftFoot,29215,Real Sociedad,Mallorca,1,0,2025-09-24 19:30:00,Pablo Torre,Pass,Mateo Joseph
+644972,83,BlockedShot,0.89,0.6090000152587891,0.11350086331367493,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29224,Mallorca,Alaves,1,0,2025-09-27 16:30:00,Johan Mojica,TakeOn,Mateo Joseph
+646328,90,MissedShots,0.9109999847412109,0.46799999237060547,0.04367212951183319,Mateo Joseph,a,11208,OpenPlay,2025,Head,29229,Athletic Club,Mallorca,2,1,2025-10-04 16:30:00,Javi Llabrés,Aerial,Mateo Joseph
+647326,71,Goal,0.9330000305175781,0.49900001525878906,0.5919777154922485,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29247,Sevilla,Mallorca,1,3,2025-10-18 12:00:00,Johan Mojica,Cross,Mateo Joseph
+647328,76,Goal,0.889000015258789,0.5790000152587891,0.4056087136268616,Mateo Joseph,a,11208,OpenPlay,2025,LeftFoot,29247,Sevilla,Mallorca,1,3,2025-10-18 12:00:00,,None,Mateo Joseph
+649387,23,MissedShots,0.9580000305175781,0.44,0.5382297039031982,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29257,Mallorca,Levante,1,1,2025-10-26 13:00:00,Jan Virgili,Throughball,Mateo Joseph
+649395,43,SavedShot,0.895,0.34599998474121096,0.05711759626865387,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29257,Mallorca,Levante,1,1,2025-10-26 13:00:00,,None,Mateo Joseph
+649400,56,SavedShot,0.9059999847412109,0.47700000762939454,0.2622576653957367,Mateo Joseph,h,11208,OpenPlay,2025,Head,29257,Mallorca,Levante,1,1,2025-10-26 13:00:00,Jan Virgili,Cross,Mateo Joseph
+649401,60,MissedShots,0.8719999694824219,0.47400001525878904,0.01591305248439312,Mateo Joseph,h,11208,OpenPlay,2025,Head,29257,Mallorca,Levante,1,1,2025-10-26 13:00:00,Jan Virgili,Aerial,Mateo Joseph
+651789,22,MissedShots,0.8919999694824219,0.3679999923706055,0.04230883717536926,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29261,Real Betis,Mallorca,3,0,2025-11-02 20:00:00,Sergi Darder,Cross,Mateo Joseph
+651793,38,MissedShots,0.6780000305175782,0.36,0.007394010666757822,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29261,Real Betis,Mallorca,3,0,2025-11-02 20:00:00,,Dispossessed,Mateo Joseph
+653105,4,MissedShots,0.8240000152587891,0.544000015258789,0.017328690737485886,Mateo Joseph,h,11208,SetPiece,2025,Head,29276,Mallorca,Getafe,1,0,2025-11-09 17:30:00,Johan Mojica,Cross,Mateo Joseph
+653120,72,BlockedShot,0.8930000305175781,0.6419999694824219,0.36097612977027893,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29276,Mallorca,Getafe,1,0,2025-11-09 17:30:00,,Rebound,Mateo Joseph
+653971,22,SavedShot,0.9290000152587891,0.34,0.33053523302078247,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29287,Villarreal,Mallorca,2,1,2025-11-22 20:00:00,Antonio Sánchez,Pass,Mateo Joseph
+659120,74,MissedShots,0.8,0.6869999694824219,0.025755155831575394,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29327,Valencia,Mallorca,1,1,2025-12-19 20:00:00,Antonio Sánchez,Pass,Mateo Joseph
+663648,50,MissedShots,0.71,0.2979999923706055,0.00890773069113493,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29349,Mallorca,Athletic Club,3,2,2026-01-17 15:15:00,Jan Virgili,Chipped,Mateo Joseph
+663652,60,MissedShots,0.87,0.3029999923706055,0.06571841984987259,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29349,Mallorca,Athletic Club,3,2,2026-01-17 15:15:00,,TakeOn,Mateo Joseph
+667385,89,MissedShots,0.9519999694824218,0.28299999237060547,0.07554930448532104,Mateo Joseph,a,11208,OpenPlay,2025,RightFoot,29381,Barcelona,Mallorca,3,0,2026-02-07 15:15:00,Sergi Darder,Throughball,Mateo Joseph
+674294,11,BlockedShot,0.874000015258789,0.6430000305175781,0.07509294897317886,Mateo Joseph,h,11208,OpenPlay,2025,LeftFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,Johan Mojica,Pass,Mateo Joseph
+674297,25,SavedShot,0.9530000305175781,0.47700000762939454,0.11767115443944931,Mateo Joseph,h,11208,FromCorner,2025,LeftFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,,BallTouch,Mateo Joseph
+674299,25,SavedShot,0.9919999694824219,0.534000015258789,0.9655954837799072,Mateo Joseph,h,11208,FromCorner,2025,RightFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,,Rebound,Mateo Joseph
+674300,25,BlockedShot,0.8569999694824219,0.39099998474121095,0.06457457691431046,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,,Rebound,Mateo Joseph
+674309,62,SavedShot,0.960999984741211,0.5729999923706055,0.06594900786876678,Mateo Joseph,h,11208,OpenPlay,2025,Head,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,Raíllo,HeadPass,Mateo Joseph
+674322,94,ShotOnPost,0.8430000305175781,0.6659999847412109,0.07309421896934509,Mateo Joseph,h,11208,OpenPlay,2025,RightFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,Sergi Darder,Pass,Mateo Joseph
+674325,96,SavedShot,0.91,0.6869999694824219,0.08932611346244812,Mateo Joseph,h,11208,OpenPlay,2025,LeftFoot,29435,Mallorca,Espanyol,2,1,2026-03-15 13:00:00,Sergi Darder,Pass,Mateo Joseph
+675161,54,MissedShots,0.965,0.6320000076293946,0.08249181509017944,Mateo Joseph,a,11208,OpenPlay,2025,LeftFoot,29440,Elche,Mallorca,2,1,2026-03-21 13:00:00,,Rebound,Mateo Joseph

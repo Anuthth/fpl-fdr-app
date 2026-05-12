@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,MC,14,1,12,1104,0.41184460185468197,0,0.6195554044097662,8,2016,Burnley,4,0,1,0.41184460185468197,2.629542449489236,2.048955015838146,4430,Joey Barton
+season,MC,28,1,35,2347,2.055411926470697,3,5.228928584605455,58,2014,Queens Park Rangers,11,1,1,2.055411926470697,7.560516483150423,5.23019561637193,4430,Joey Barton

@@ -1,0 +1,56 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+502614,90,MissedShots,0.875,0.710999984741211,0.04128250107169151,Lewis Hall,h,10216,OpenPlay,2022,LeftFoot,18385,Chelsea,Manchester City,0,1,2023-01-05 20:00:00,Carney Chukwuemeka,Pass,Lewis Hall
+503343,1,SavedShot,0.9080000305175782,0.6170000076293946,0.35903099179267883,Lewis Hall,a,10216,OpenPlay,2022,LeftFoot,18262,Fulham,Chelsea,2,1,2023-01-12 19:00:00,Kai Havertz,Pass,Lewis Hall
+503357,33,SavedShot,0.8540000152587891,0.6359999847412109,0.018094800412654877,Lewis Hall,a,10216,OpenPlay,2022,LeftFoot,18262,Fulham,Chelsea,2,1,2023-01-12 19:00:00,,Aerial,Lewis Hall
+504052,40,MissedShots,0.97,0.6759999847412109,0.2408059984445572,Lewis Hall,h,10216,OpenPlay,2022,LeftFoot,18395,Chelsea,Crystal Palace,1,0,2023-01-15 14:00:00,Conor Gallagher,Cross,Lewis Hall
+504411,21,MissedShots,0.9390000152587891,0.7030000305175781,0.06060300022363663,Lewis Hall,a,10216,OpenPlay,2022,LeftFoot,18408,Liverpool,Chelsea,0,0,2023-01-21 12:30:00,Mason Mount,Pass,Lewis Hall
+525973,17,BlockedShot,0.8719999694824219,0.654000015258789,0.02831685170531273,Lewis Hall,h,10216,OpenPlay,2022,LeftFoot,18555,Chelsea,Nottingham Forest,2,2,2023-05-13 14:00:00,Trevoh Chalobah,Chipped,Lewis Hall
+528102,50,SavedShot,0.7919999694824219,0.6140000152587891,0.05420175567269325,Lewis Hall,a,10216,OpenPlay,2022,RightFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,Raheem Sterling,Pass,Lewis Hall
+528105,57,SavedShot,0.875999984741211,0.7559999847412109,0.030601128935813904,Lewis Hall,a,10216,OpenPlay,2022,LeftFoot,18566,Manchester City,Chelsea,1,0,2023-05-21 15:00:00,Raheem Sterling,Pass,Lewis Hall
+528727,41,BlockedShot,0.899000015258789,0.624000015258789,0.057630617171525955,Lewis Hall,a,10216,OpenPlay,2022,LeftFoot,18520,Manchester United,Chelsea,4,1,2023-05-25 19:00:00,Mykhailo Mudryk,Chipped,Lewis Hall
+528736,58,SavedShot,0.8969999694824219,0.32,0.049473896622657776,Lewis Hall,a,10216,FromCorner,2022,LeftFoot,18520,Manchester United,Chelsea,4,1,2023-05-25 19:00:00,Enzo Fernández,TakeOn,Lewis Hall
+529754,64,MissedShots,0.9209999847412109,0.7390000152587891,0.022095507010817528,Lewis Hall,h,10216,OpenPlay,2022,RightFoot,18575,Chelsea,Newcastle United,1,1,2023-05-28 15:30:00,Noni Madueke,Cross,Lewis Hall
+548550,17,SavedShot,0.87,0.7580000305175781,0.021564925089478493,Lewis Hall,a,10216,OpenPlay,2023,LeftFoot,22005,Bournemouth,Newcastle United,2,0,2023-11-11 17:30:00,Joe Willock,TakeOn,Lewis Hall
+576280,85,BlockedShot,0.794000015258789,0.6270000076293946,0.027161749079823494,Lewis Hall,a,10216,OpenPlay,2023,LeftFoot,22178,Crystal Palace,Newcastle United,2,0,2024-04-24 19:00:00,Dan Burn,BallTouch,Lewis Hall
+576832,33,BlockedShot,0.805,0.4879999923706055,0.04606161266565323,Lewis Hall,h,10216,OpenPlay,2023,RightFoot,22240,Newcastle United,Sheffield United,5,1,2024-04-27 14:00:00,Jacob Murphy,Pass,Lewis Hall
+576835,47,SavedShot,0.8330000305175781,0.605999984741211,0.05044909194111824,Lewis Hall,h,10216,OpenPlay,2023,LeftFoot,22240,Newcastle United,Sheffield United,5,1,2024-04-27 14:00:00,,None,Lewis Hall
+578426,10,BlockedShot,0.8869999694824219,0.32299999237060545,0.0428655706346035,Lewis Hall,a,10216,FromCorner,2023,LeftFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,Anthony Gordon,Pass,Lewis Hall
+578433,24,BlockedShot,0.8180000305175781,0.54,0.07756639271974564,Lewis Hall,a,10216,OpenPlay,2023,LeftFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,Jacob Murphy,Pass,Lewis Hall
+579936,37,MissedShots,0.9109999847412109,0.735999984741211,0.030593043193221092,Lewis Hall,h,10216,OpenPlay,2023,LeftFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Anthony Gordon,TakeOn,Lewis Hall
+579954,78,BlockedShot,0.8130000305175781,0.615,0.028083203360438347,Lewis Hall,h,10216,FromCorner,2023,LeftFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,,None,Lewis Hall
+579957,89,BlockedShot,0.8130000305175781,0.5420000076293945,0.049815695732831955,Lewis Hall,h,10216,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,,None,Lewis Hall
+581158,20,SavedShot,0.8069999694824219,0.720999984741211,0.02189227007329464,Lewis Hall,a,10216,OpenPlay,2023,LeftFoot,22231,Manchester United,Newcastle United,3,2,2024-05-15 19:00:00,Anthony Gordon,Pass,Lewis Hall
+581187,91,Goal,0.7709999847412109,0.5609999847412109,0.019977884367108345,Lewis Hall,a,10216,FromCorner,2023,LeftFoot,22231,Manchester United,Newcastle United,3,2,2024-05-15 19:00:00,,None,Lewis Hall
+603764,33,MissedShots,0.8490000152587891,0.6959999847412109,0.04035681486129761,Lewis Hall,h,10216,OpenPlay,2024,LeftFoot,26713,Newcastle United,West Ham,0,2,2024-11-25 20:00:00,Lloyd Kelly,Pass,Lewis Hall
+603771,48,BlockedShot,0.8909999847412109,0.68,0.05516914278268814,Lewis Hall,h,10216,OpenPlay,2024,LeftFoot,26713,Newcastle United,West Ham,0,2,2024-11-25 20:00:00,Bruno Guimarães,Pass,Lewis Hall
+603783,77,MissedShots,0.9369999694824219,0.27799999237060546,0.03760932758450508,Lewis Hall,h,10216,FromCorner,2024,LeftFoot,26713,Newcastle United,West Ham,0,2,2024-11-25 20:00:00,Alexander Isak,Pass,Lewis Hall
+605238,2,MissedShots,0.8530000305175781,0.6480000305175782,0.03746854513883591,Lewis Hall,h,10216,FromCorner,2024,LeftFoot,26740,Newcastle United,Liverpool,3,3,2024-12-04 19:30:00,,None,Lewis Hall
+607021,86,MissedShots,0.9290000152587891,0.5379999923706055,0.12787245213985443,Lewis Hall,h,10216,OpenPlay,2024,Head,26760,Newcastle United,Leicester,4,0,2024-12-14 15:00:00,Harvey Barnes,Cross,Lewis Hall
+609734,25,SavedShot,0.79,0.6459999847412109,0.04301467910408974,Lewis Hall,a,10216,OpenPlay,2024,RightFoot,26789,Manchester United,Newcastle United,0,2,2024-12-30 20:00:00,Alexander Isak,Pass,Lewis Hall
+609736,29,BlockedShot,0.79,0.2979999923706055,0.033216364681720734,Lewis Hall,a,10216,FromCorner,2024,LeftFoot,26789,Manchester United,Newcastle United,0,2,2024-12-30 20:00:00,Kieran Trippier,Pass,Lewis Hall
+609747,67,MissedShots,0.870999984741211,0.6719999694824219,0.06271368265151978,Lewis Hall,a,10216,OpenPlay,2024,LeftFoot,26789,Manchester United,Newcastle United,0,2,2024-12-30 20:00:00,Alexander Isak,Pass,Lewis Hall
+611786,22,BlockedShot,0.8959999847412109,0.7040000152587891,0.05182233452796936,Lewis Hall,h,10216,OpenPlay,2024,LeftFoot,26810,Newcastle United,Wolverhampton Wanderers,3,0,2025-01-15 19:30:00,,BallRecovery,Lewis Hall
+611809,88,MissedShots,0.754000015258789,0.66,0.02135624922811985,Lewis Hall,h,10216,OpenPlay,2024,LeftFoot,26810,Newcastle United,Wolverhampton Wanderers,3,0,2025-01-15 19:30:00,Miguel Almirón,Pass,Lewis Hall
+613378,89,BlockedShot,0.740999984741211,0.519000015258789,0.025785252451896667,Lewis Hall,a,10216,OpenPlay,2024,LeftFoot,26829,Southampton,Newcastle United,1,3,2025-01-25 15:00:00,Miguel Almirón,Pass,Lewis Hall
+640397,70,MissedShots,0.749000015258789,0.5940000152587891,0.02208450809121132,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28803,Leeds,Newcastle United,0,0,2025-08-30 16:30:00,Sandro Tonali,Pass,Lewis Hall
+655219,28,BlockedShot,0.8180000305175781,0.605,0.06761754304170609,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,Valentino Livramento,Pass,Lewis Hall
+656134,3,MissedShots,0.8090000152587891,0.5229999923706055,0.053812336176633835,Lewis Hall,h,10216,OpenPlay,2025,LeftFoot,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,,BallRecovery,Lewis Hall
+656149,53,BlockedShot,0.9580000305175781,0.715,0.02721305564045906,Lewis Hall,h,10216,OpenPlay,2025,LeftFoot,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,Jacob Murphy,Cross,Lewis Hall
+656157,80,BlockedShot,0.785,0.624000015258789,0.02385954186320305,Lewis Hall,h,10216,OpenPlay,2025,LeftFoot,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,Nick Woltemade,Pass,Lewis Hall
+656962,65,SavedShot,0.950999984741211,0.655,0.2696358263492584,Lewis Hall,h,10216,OpenPlay,2025,LeftFoot,28925,Newcastle United,Burnley,2,1,2025-12-06 15:00:00,Bruno Guimarães,Pass,Lewis Hall
+660000,61,ShotOnPost,0.775,0.6869999694824219,0.01601533219218254,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28954,Manchester United,Newcastle United,1,0,2025-12-26 20:00:00,Malick Thiaw,BallRecovery,Lewis Hall
+660001,61,BlockedShot,0.8530000305175781,0.5870000076293945,0.05608648434281349,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28954,Manchester United,Newcastle United,1,0,2025-12-26 20:00:00,,None,Lewis Hall
+660003,61,BlockedShot,0.8180000305175781,0.625999984741211,0.028370676562190056,Lewis Hall,a,10216,FromCorner,2025,LeftFoot,28954,Manchester United,Newcastle United,1,0,2025-12-26 20:00:00,,None,Lewis Hall
+660536,42,BlockedShot,0.774000015258789,0.5479999923706055,0.02097787708044052,Lewis Hall,a,10216,FromCorner,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,,None,Lewis Hall
+660544,64,BlockedShot,0.8680000305175781,0.6519999694824219,0.08211000263690948,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Joelinton,Pass,Lewis Hall
+661378,41,SavedShot,0.775,0.3340000152587891,0.018939435482025146,Lewis Hall,h,10216,FromCorner,2025,LeftFoot,28968,Newcastle United,Crystal Palace,2,0,2026-01-04 15:00:00,,TakeOn,Lewis Hall
+664031,30,BlockedShot,0.759000015258789,0.485,0.024964824318885803,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28997,Wolverhampton Wanderers,Newcastle United,0,0,2026-01-18 14:00:00,Anthony Gordon,Pass,Lewis Hall
+664032,35,MissedShots,0.889000015258789,0.5540000152587891,0.08983048051595688,Lewis Hall,a,10216,OpenPlay,2025,LeftFoot,28997,Wolverhampton Wanderers,Newcastle United,0,0,2026-01-18 14:00:00,Anthony Gordon,Cross,Lewis Hall
+667457,88,BlockedShot,0.775,0.3679999923706055,0.023989154025912285,Lewis Hall,h,10216,OpenPlay,2025,RightFoot,29026,Newcastle United,Brentford,2,3,2026-02-07 17:30:00,Anthony Elanga,Pass,Lewis Hall
+670018,21,Goal,0.81,0.6459999847412109,0.02394823543727398,Lewis Hall,a,10216,FromCorner,2025,LeftFoot,29043,Manchester City,Newcastle United,2,1,2026-02-21 20:00:00,Jacob Ramsey,Pass,Lewis Hall
+670027,51,MissedShots,0.759000015258789,0.7559999847412109,0.038035839796066284,Lewis Hall,a,10216,DirectFreekick,2025,LeftFoot,29043,Manchester City,Newcastle United,2,1,2026-02-21 20:00:00,,Standard,Lewis Hall
+671130,46,MissedShots,0.7519999694824219,0.7030000305175781,0.008920328691601753,Lewis Hall,h,10216,SetPiece,2025,LeftFoot,29056,Newcastle United,Everton,2,3,2026-02-28 15:00:00,,Aerial,Lewis Hall
+672303,2,MissedShots,0.9109999847412109,0.6459999847412109,0.06844808161258698,Lewis Hall,h,10216,OpenPlay,2025,RightFoot,29065,Newcastle United,Manchester United,2,1,2026-03-04 20:15:00,,None,Lewis Hall
+675719,46,SavedShot,0.7580000305175781,0.37400001525878906,0.05911312997341156,Lewis Hall,h,10216,DirectFreekick,2025,LeftFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,Standard,Lewis Hall
+675739,94,BlockedShot,0.7130000305175781,0.5420000076293945,0.042526088654994965,Lewis Hall,h,10216,DirectFreekick,2025,LeftFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,Standard,Lewis Hall
+678346,47,SavedShot,0.875,0.18399999618530274,0.056054599583148956,Lewis Hall,a,10216,DirectFreekick,2025,LeftFoot,29096,Crystal Palace,Newcastle United,2,1,2026-04-12 13:00:00,,Standard,Lewis Hall

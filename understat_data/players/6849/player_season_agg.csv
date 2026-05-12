@@ -1,0 +1,8 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,3,0,0,270,0,0,0,0,2024,Atalanta,0,0,0,0,0.5274441204965115,0.5274441204965115,6849,Rui Patrício
+season,GK,23,0,0,2070,0,0,0,0,2023,Roma,1,0,0,0,3.0713120894506574,3.0713120894506574,6849,Rui Patrício
+season,GK,35,0,0,3150,0,0,0,0,2022,Roma,1,0,0,0,3.0333296917378902,3.0333296917378902,6849,Rui Patrício
+season,GK,38,0,0,3420,0,0,0,0,2021,Roma,2,0,0,0,3.9625793946906924,3.9625793946906924,6849,Rui Patrício
+season,GK,37,0,0,3330,0,0,0,0,2020,Wolverhampton Wanderers,1,0,0,0,1.2272863080725074,1.2272863080725074,6849,Rui Patrício
+season,GK,38,0,0,3420,0,0,0,0,2019,Wolverhampton Wanderers,0,0,0,0,2.7981012044474483,2.7981012044474483,6849,Rui Patrício
+season,GK,37,0,0,3330,0,0,0,0,2018,Wolverhampton Wanderers,0,0,0,0,1.1828953111544251,1.1828953111544251,6849,Rui Patrício

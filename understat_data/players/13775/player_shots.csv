@@ -1,0 +1,29 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638055,65,MissedShots,0.9030000305175782,0.534000015258789,0.09882759302854538,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,,None,Estêvão
+638586,72,SavedShot,0.8919999694824219,0.47,0.47674334049224854,Estêvão,a,13775,OpenPlay,2025,LeftFoot,28788,West Ham,Chelsea,1,5,2025-08-22 19:00:00,Reece James,Throughball,Estêvão
+640090,57,SavedShot,0.89,0.405,0.2655908167362213,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28798,Chelsea,Fulham,2,0,2025-08-30 11:30:00,João Pedro,TakeOn,Estêvão
+644669,7,BlockedShot,0.8440000152587891,0.38299999237060545,0.06670285016298294,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,João Pedro,Pass,Estêvão
+644671,11,BlockedShot,0.9209999847412109,0.3120000076293945,0.13102763891220093,Estêvão,h,13775,OpenPlay,2025,RightFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,Robert Sánchez,TakeOn,Estêvão
+644672,14,BlockedShot,0.8919999694824219,0.3679999923706055,0.09045208990573883,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,João Pedro,Pass,Estêvão
+646298,83,SavedShot,0.885,0.24100000381469727,0.021545832976698875,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28842,Chelsea,Liverpool,2,1,2025-10-04 16:30:00,,Rebound,Estêvão
+646304,95,Goal,0.9619999694824218,0.45299999237060545,0.6285974383354187,Estêvão,h,13775,OpenPlay,2025,RightFoot,28842,Chelsea,Liverpool,2,1,2025-10-04 16:30:00,Marc Cucurella,Pass,Estêvão
+647307,81,BlockedShot,0.8730000305175781,0.7680000305175781,0.03155709430575371,Estêvão,a,13775,OpenPlay,2025,LeftFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,,TakeOn,Estêvão
+647309,82,BlockedShot,0.9019999694824219,0.35,0.082034170627594,Estêvão,a,13775,OpenPlay,2025,RightFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,Marc Cucurella,BallRecovery,Estêvão
+648941,59,BlockedShot,0.8619999694824219,0.46,0.0656525194644928,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Marc Cucurella,Cross,Estêvão
+655649,17,MissedShots,0.8930000305175781,0.4420000076293945,0.09361334145069122,Estêvão,h,13775,OpenPlay,2025,RightFoot,28900,Chelsea,Arsenal,1,1,2025-11-30 16:30:00,,None,Estêvão
+655650,18,MissedShots,0.78,0.3029999923706055,0.01959213614463806,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28900,Chelsea,Arsenal,1,1,2025-11-30 16:30:00,Malo Gusto,BallTouch,Estêvão
+656322,25,BlockedShot,0.8469999694824218,0.33599998474121096,0.04473928362131119,Estêvão,a,13775,OpenPlay,2025,LeftFoot,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,Enzo Fernández,Pass,Estêvão
+656325,26,MissedShots,0.825,0.6279999923706054,0.04249761998653412,Estêvão,a,13775,FromCorner,2025,LeftFoot,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,,Rebound,Estêvão
+660569,35,MissedShots,0.8969999694824219,0.4279999923706055,0.027037160471081734,Estêvão,h,13775,OpenPlay,2025,Head,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Alejandro Garnacho,Aerial,Estêvão
+660577,49,BlockedShot,0.8669999694824219,0.610999984741211,0.10988926142454147,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Cole Palmer,Pass,Estêvão
+660574,52,BlockedShot,0.865,0.3089999961853027,0.04791729524731636,Estêvão,h,13775,OpenPlay,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Cole Palmer,Pass,Estêvão
+660580,63,SavedShot,0.8109999847412109,0.545,0.053578782826662064,Estêvão,h,13775,OpenPlay,2025,RightFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Moisés Caicedo,BallRecovery,Estêvão
+661623,18,BlockedShot,0.9030000305175782,0.500999984741211,0.10105033218860626,Estêvão,a,13775,OpenPlay,2025,LeftFoot,28977,Manchester City,Chelsea,1,1,2026-01-04 17:30:00,,None,Estêvão
+665165,26,BlockedShot,0.9540000152587891,0.3290000152587891,0.2113448530435562,Estêvão,a,13775,OpenPlay,2025,RightFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,João Pedro,TakeOn,Estêvão
+665168,33,Goal,0.88,0.5570000076293945,0.37265464663505554,Estêvão,a,13775,OpenPlay,2025,LeftFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,,BallRecovery,Estêvão
+665169,42,MissedShots,0.9319999694824219,0.32799999237060545,0.5027785897254944,Estêvão,a,13775,OpenPlay,2025,RightFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,Enzo Fernández,BallRecovery,Estêvão
+665171,56,SavedShot,0.8,0.2879999923706055,0.021050628274679184,Estêvão,a,13775,OpenPlay,2025,LeftFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,Reece James,Pass,Estêvão
+668165,41,MissedShots,0.8919999694824219,0.3060000038146973,0.07370296120643616,Estêvão,h,13775,OpenPlay,2025,RightFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,João Pedro,Pass,Estêvão
+668166,50,MissedShots,0.8169999694824219,0.49400001525878906,0.08126424998044968,Estêvão,h,13775,OpenPlay,2025,LeftFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,Cole Palmer,Pass,Estêvão
+679451,10,ShotOnPost,0.8590000152587891,0.2989999961853027,0.04332946240901947,Estêvão,h,13775,OpenPlay,2025,LeftFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Cole Palmer,Pass,Estêvão
+679452,12,SavedShot,0.885,0.335,0.06926432996988297,Estêvão,h,13775,OpenPlay,2025,RightFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Liam Delap,Pass,Estêvão

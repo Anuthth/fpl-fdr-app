@@ -1,0 +1,17 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+597151,79,SavedShot,0.92,0.545,0.09085287153720856,Conor Chaplin,h,12750,FromCorner,2024,LeftFoot,26674,Ipswich,Everton,0,2,2024-10-19 14:00:00,Leif Davis,Cross,Conor Chaplin
+600106,10,MissedShots,0.8069999694824219,0.345,0.03317969664931297,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,Sam Morsy,Pass,Conor Chaplin
+600115,33,MissedShots,0.784000015258789,0.355,0.02612360194325447,Conor Chaplin,h,12750,OpenPlay,2024,RightFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,Omari Hutchinson,Pass,Conor Chaplin
+600116,38,MissedShots,0.7869999694824219,0.4129999923706055,0.03306372091174126,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26695,Ipswich,Leicester,1,1,2024-11-02 15:00:00,Liam Delap,Pass,Conor Chaplin
+603553,86,SavedShot,0.9080000305175782,0.4809999847412109,0.4690444767475128,Conor Chaplin,h,12750,OpenPlay,2024,RightFoot,26718,Ipswich,Manchester United,1,1,2024-11-24 16:30:00,Jack Clarke,Pass,Conor Chaplin
+606273,20,Goal,0.8640000152587891,0.545,0.10051273554563522,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Cameron Burgess,Pass,Conor Chaplin
+606276,27,BlockedShot,0.8119999694824219,0.4829999923706055,0.06816001236438751,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Sam Morsy,Pass,Conor Chaplin
+606294,73,BlockedShot,0.8490000152587891,0.4420000076293945,0.05476691573858261,Conor Chaplin,h,12750,SetPiece,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Liam Delap,HeadPass,Conor Chaplin
+606297,81,MissedShots,0.8569999694824219,0.455,0.08884670585393906,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Jack Taylor,Chipped,Conor Chaplin
+606299,85,MissedShots,0.8619999694824219,0.42400001525878905,0.07767382264137268,Conor Chaplin,h,12750,SetPiece,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Leif Davis,Pass,Conor Chaplin
+606964,11,BlockedShot,0.8059999847412109,0.47299999237060547,0.04645702615380287,Conor Chaplin,a,12750,OpenPlay,2024,LeftFoot,26758,Wolverhampton Wanderers,Ipswich,1,2,2024-12-14 15:00:00,,None,Conor Chaplin
+606966,14,BlockedShot,0.8369999694824218,0.485,0.057675570249557495,Conor Chaplin,a,12750,OpenPlay,2024,LeftFoot,26758,Wolverhampton Wanderers,Ipswich,1,2,2024-12-14 15:00:00,,Rebound,Conor Chaplin
+635091,72,BlockedShot,0.8430000305175781,0.46599998474121096,0.060877811163663864,Conor Chaplin,a,12750,SetPiece,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,,Rebound,Conor Chaplin
+635095,93,BlockedShot,0.8169999694824219,0.45099998474121095,0.05256184935569763,Conor Chaplin,a,12750,OpenPlay,2024,LeftFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Jacob Greaves,Tackle,Conor Chaplin
+636252,0,BlockedShot,0.8590000152587891,0.49700000762939456,0.08648418635129929,Conor Chaplin,h,12750,OpenPlay,2024,LeftFoot,26980,Ipswich,West Ham,1,3,2025-05-25 15:00:00,,Foul,Conor Chaplin
+636270,66,MissedShots,0.9180000305175782,0.5459999847412109,0.08870537579059601,Conor Chaplin,h,12750,FromCorner,2024,LeftFoot,26980,Ipswich,West Ham,1,3,2025-05-25 15:00:00,Leif Davis,Cross,Conor Chaplin

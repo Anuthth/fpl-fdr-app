@@ -1,0 +1,19 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+461289,89,MissedShots,0.95,0.4540000152587891,0.47798800468444824,Cristhian Mosquera,h,10024,SetPiece,2021,Head,17404,Valencia,Granada,3,1,2022-03-05 17:30:00,Gonçalo Guedes,Cross,Cristhian Mosquera
+481183,63,MissedShots,0.889000015258789,0.47299999237060547,0.04732900112867355,Cristhian Mosquera,h,10024,FromCorner,2022,Head,18967,Valencia,Girona,1,0,2022-08-14 17:30:00,Hugo Guillamón,Chipped,Cristhian Mosquera
+506091,8,MissedShots,0.9490000152587891,0.5459999847412109,0.0741501972079277,Cristhian Mosquera,a,10024,FromCorner,2022,Head,19150,Real Valladolid,Valencia,1,0,2023-01-29 13:00:00,Samu Castillejo,Aerial,Cristhian Mosquera
+537734,20,MissedShots,0.9430000305175781,0.4520000076293945,0.4567531645298004,Cristhian Mosquera,h,10024,SetPiece,2023,Head,22731,Valencia,Atletico Madrid,3,0,2023-09-16 14:15:00,André Almeida,Cross,Cristhian Mosquera
+539397,88,MissedShots,0.700999984741211,0.4859999847412109,0.010616336017847061,Cristhian Mosquera,a,10024,OpenPlay,2023,RightFoot,22735,Almeria,Valencia,2,2,2023-09-23 19:00:00,,None,Cristhian Mosquera
+548686,26,MissedShots,0.9159999847412109,0.534000015258789,0.10025454312562943,Cristhian Mosquera,a,10024,FromCorner,2023,Head,22808,Real Madrid,Valencia,5,1,2023-11-11 20:00:00,Pepelu,Cross,Cristhian Mosquera
+552559,37,MissedShots,0.92,0.46599998474121096,0.1167086511850357,Cristhian Mosquera,a,10024,SetPiece,2023,Head,22838,Getafe,Valencia,1,0,2023-12-08 20:00:00,Pepelu,Cross,Cristhian Mosquera
+554532,15,SavedShot,0.8830000305175781,0.5840000152587891,0.037642400711774826,Cristhian Mosquera,h,10024,FromCorner,2023,Head,22850,Valencia,Barcelona,1,1,2023-12-16 20:00:00,Pepelu,Cross,Cristhian Mosquera
+560464,73,SavedShot,0.98,0.4179999923706055,0.10511273145675659,Cristhian Mosquera,a,10024,FromCorner,2023,RightFoot,22895,Atletico Madrid,Valencia,2,0,2024-01-28 20:00:00,Gabriel,HeadPass,Cristhian Mosquera
+562779,42,MissedShots,0.875,0.5359999847412109,0.05509332939982414,Cristhian Mosquera,a,10024,SetPiece,2023,Head,22918,Las Palmas,Valencia,2,0,2024-02-10 20:00:00,Pepelu,Cross,Cristhian Mosquera
+564210,58,MissedShots,0.7469999694824219,0.34,0.018067684024572372,Cristhian Mosquera,h,10024,OpenPlay,2023,RightFoot,22933,Valencia,Sevilla,0,0,2024-02-17 20:00:00,Dimitri Foulquier,Pass,Cristhian Mosquera
+570970,71,MissedShots,0.9290000152587891,0.43599998474121093,0.09599880129098892,Cristhian Mosquera,h,10024,FromCorner,2023,Head,22984,Valencia,Mallorca,0,0,2024-03-30 17:30:00,Pepelu,Cross,Cristhian Mosquera
+592643,26,MissedShots,0.9209999847412109,0.47900001525878905,0.06726241856813431,Cristhian Mosquera,h,10024,SetPiece,2024,Head,27038,Valencia,Girona,2,0,2024-09-21 16:30:00,Pepelu,Aerial,Cristhian Mosquera
+593432,52,MissedShots,0.9030000305175782,0.5420000076293945,0.06561905145645142,Cristhian Mosquera,h,10024,FromCorner,2024,RightFoot,27050,Valencia,Osasuna,0,0,2024-09-24 17:00:00,Luis Rioja,Cross,Cristhian Mosquera
+594326,25,SavedShot,0.895,0.575999984741211,0.041566625237464905,Cristhian Mosquera,a,10024,FromCorner,2024,Head,27055,Real Sociedad,Valencia,3,0,2024-09-28 16:30:00,Pepelu,Cross,Cristhian Mosquera
+616372,29,Goal,0.9119999694824219,0.44299999237060544,0.12443049997091293,Cristhian Mosquera,h,10024,OpenPlay,2024,LeftFoot,27208,Valencia,Leganes,2,0,2025-02-09 15:15:00,André Almeida,Pass,Cristhian Mosquera
+628338,19,BlockedShot,0.9119999694824219,0.5359999847412109,0.05256965383887291,Cristhian Mosquera,a,10024,SetPiece,2024,Head,27293,Rayo Vallecano,Valencia,1,1,2025-04-19 12:00:00,André Almeida,Aerial,Cristhian Mosquera
+679778,5,MissedShots,0.9330000305175781,0.4329999923706055,0.08585410565137863,Cristhian Mosquera,a,10024,FromCorner,2025,Head,29104,Manchester City,Arsenal,2,1,2026-04-19 15:30:00,Declan Rice,Cross,Cristhian Mosquera

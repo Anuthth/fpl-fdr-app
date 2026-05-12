@@ -1,0 +1,79 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+486700,85,MissedShots,0.825999984741211,0.539000015258789,0.0732697993516922,Fábio Vieira,a,11007,OpenPlay,2022,LeftFoot,18261,Manchester United,Arsenal,3,1,2022-09-04 15:30:00,Gabriel Jesus,Pass,Fábio Vieira
+486703,93,SavedShot,0.735,0.63,0.01216300018131733,Fábio Vieira,a,11007,OpenPlay,2022,LeftFoot,18261,Manchester United,Arsenal,3,1,2022-09-04 15:30:00,Granit Xhaka,TakeOn,Fábio Vieira
+489076,48,Goal,0.7430000305175781,0.40700000762939453,0.020086200907826424,Fábio Vieira,a,11007,OpenPlay,2022,LeftFoot,18280,Brentford,Arsenal,0,3,2022-09-18 11:00:00,Bukayo Saka,Pass,Fábio Vieira
+489856,91,BlockedShot,0.84,0.41200000762939454,0.07950130105018616,Fábio Vieira,h,11007,OpenPlay,2022,LeftFoot,18282,Arsenal,Tottenham,3,1,2022-10-01 11:30:00,,BallRecovery,Fábio Vieira
+497156,87,BlockedShot,0.8580000305175781,0.47200000762939454,0.12777699530124664,Fábio Vieira,h,11007,OpenPlay,2022,LeftFoot,18332,Arsenal,Nottingham Forest,5,0,2022-10-30 14:00:00,Reiss Nelson,Pass,Fábio Vieira
+500355,42,BlockedShot,0.7480000305175781,0.5879999923706055,0.020213499665260315,Fábio Vieira,a,11007,OpenPlay,2022,LeftFoot,18361,Wolverhampton Wanderers,Arsenal,0,2,2022-11-12 19:45:00,Thomas Partey,Pass,Fábio Vieira
+500359,61,MissedShots,0.8909999847412109,0.5570000076293945,0.036160700023174286,Fábio Vieira,a,11007,OpenPlay,2022,Head,18361,Wolverhampton Wanderers,Arsenal,0,2,2022-11-12 19:45:00,Ben White,Aerial,Fábio Vieira
+511717,77,MissedShots,0.8280000305175781,0.5479999923706055,0.03762340173125267,Fábio Vieira,h,11007,OpenPlay,2022,RightFoot,18269,Arsenal,Everton,4,0,2023-03-01 20:00:00,,Rebound,Fábio Vieira
+511719,83,BlockedShot,0.89,0.605,0.1048009991645813,Fábio Vieira,h,11007,OpenPlay,2022,RightFoot,18269,Arsenal,Everton,4,0,2023-03-01 20:00:00,,BallTouch,Fábio Vieira
+511721,84,MissedShots,0.8880000305175781,0.6329999923706054,0.0651509016752243,Fábio Vieira,h,11007,OpenPlay,2022,LeftFoot,18269,Arsenal,Everton,4,0,2023-03-01 20:00:00,,Rebound,Fábio Vieira
+512220,58,BlockedShot,0.815,0.6220000076293946,0.04123590141534805,Fábio Vieira,h,11007,OpenPlay,2022,LeftFoot,18452,Arsenal,Bournemouth,3,2,2023-03-04 15:00:00,Oleksandr Zinchenko,Pass,Fábio Vieira
+512225,77,MissedShots,0.7819999694824219,0.43099998474121093,0.02745860069990158,Fábio Vieira,h,11007,FromCorner,2022,LeftFoot,18452,Arsenal,Bournemouth,3,2,2023-03-04 15:00:00,Martin Odegaard,Pass,Fábio Vieira
+514120,89,BlockedShot,0.85,0.40299999237060546,0.022908199578523636,Fábio Vieira,a,11007,FromCorner,2022,LeftFoot,18465,Fulham,Arsenal,0,3,2023-03-12 14:00:00,,Aerial,Fábio Vieira
+520564,32,MissedShots,0.7959999847412109,0.5770000076293945,0.014285474084317684,Fábio Vieira,h,11007,SetPiece,2022,RightFoot,18512,Arsenal,Southampton,3,3,2023-04-21 19:00:00,,Aerial,Fábio Vieira
+520565,32,MissedShots,0.8190000152587891,0.485,0.05524277314543724,Fábio Vieira,h,11007,SetPiece,2022,LeftFoot,18512,Arsenal,Southampton,3,3,2023-04-21 19:00:00,Gabriel Martinelli,BallTouch,Fábio Vieira
+534723,99,SavedShot,0.840999984741211,0.3290000152587891,0.042633067816495895,Fábio Vieira,h,11007,OpenPlay,2023,LeftFoot,22297,Arsenal,Fulham,2,2,2023-08-26 14:00:00,William Saliba,Pass,Fábio Vieira
+538367,9,MissedShots,0.8530000305175781,0.705999984741211,0.04058689996600151,Fábio Vieira,a,11007,FromCorner,2023,RightFoot,21941,Everton,Arsenal,0,1,2023-09-17 15:30:00,Oleksandr Zinchenko,Pass,Fábio Vieira
+538375,46,MissedShots,0.9119999694824219,0.7069999694824218,0.03874581307172775,Fábio Vieira,a,11007,OpenPlay,2023,LeftFoot,21941,Everton,Arsenal,0,1,2023-09-17 15:30:00,,Rebound,Fábio Vieira
+538383,73,MissedShots,0.9209999847412109,0.639000015258789,0.06452509760856628,Fábio Vieira,a,11007,OpenPlay,2023,LeftFoot,21941,Everton,Arsenal,0,1,2023-09-17 15:30:00,Ben White,Cross,Fábio Vieira
+538386,76,BlockedShot,0.8590000152587891,0.5840000152587891,0.13854756951332092,Fábio Vieira,a,11007,OpenPlay,2023,LeftFoot,21941,Everton,Arsenal,0,1,2023-09-17 15:30:00,,Rebound,Fábio Vieira
+545504,87,Goal,0.885,0.5,0.7611688375473022,Fábio Vieira,h,11007,Penalty,2023,LeftFoot,21986,Arsenal,Sheffield United,5,0,2023-10-28 14:00:00,,Standard,Fábio Vieira
+575982,87,MissedShots,0.86,0.35200000762939454,0.07784232497215271,Fábio Vieira,h,11007,OpenPlay,2023,RightFoot,22175,Arsenal,Chelsea,5,0,2024-04-23 19:00:00,Martin Odegaard,Pass,Fábio Vieira
+641953,71,BlockedShot,0.914000015258789,0.664000015258789,0.047944117337465286,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30248,Bayern Munich,Hamburger SV,5,0,2025-09-13 16:30:00,Rayan Philippe,HeadPass,Fábio Vieira
+642919,19,BlockedShot,0.899000015258789,0.3579999923706055,0.08482193946838379,Fábio Vieira,h,11007,OpenPlay,2025,RightFoot,30254,Hamburger SV,FC Heidenheim,2,1,2025-09-20 13:30:00,Warmed Omari,Pass,Fábio Vieira
+642926,33,SavedShot,0.8719999694824219,0.6809999847412109,0.04833171144127846,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30254,Hamburger SV,FC Heidenheim,2,1,2025-09-20 13:30:00,,None,Fábio Vieira
+642941,66,MissedShots,0.8580000305175781,0.4490000152587891,0.0898621454834938,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30254,Hamburger SV,FC Heidenheim,2,1,2025-09-20 13:30:00,,None,Fábio Vieira
+642945,76,MissedShots,0.6880000305175781,0.575999984741211,0.016131147742271423,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30254,Hamburger SV,FC Heidenheim,2,1,2025-09-20 13:30:00,Albert Sambi Lokonga,Pass,Fábio Vieira
+645571,44,BlockedShot,0.8140000152587891,0.3529999923706055,0.03248949721455574,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30268,Union Berlin,Hamburger SV,0,0,2025-09-28 17:30:00,Giorgi Gocholeishvili,Pass,Fábio Vieira
+645577,62,MissedShots,0.8119999694824219,0.6229999923706054,0.024391015991568565,Fábio Vieira,a,11007,OpenPlay,2025,RightFoot,30268,Union Berlin,Hamburger SV,0,0,2025-09-28 17:30:00,Giorgi Gocholeishvili,Cross,Fábio Vieira
+645587,94,MissedShots,0.74,0.3890000152587891,0.014370075426995754,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30268,Union Berlin,Hamburger SV,0,0,2025-09-28 17:30:00,,None,Fábio Vieira
+648838,65,MissedShots,0.7909999847412109,0.36,0.01869879476726055,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30292,Hamburger SV,Wolfsburg,0,1,2025-10-25 13:30:00,William Mikelbrencis,TakeOn,Fábio Vieira
+648841,80,BlockedShot,0.8130000305175781,0.37799999237060544,0.03736921027302742,Fábio Vieira,h,11007,OpenPlay,2025,RightFoot,30292,Hamburger SV,Wolfsburg,0,1,2025-10-25 13:30:00,,None,Fábio Vieira
+651460,71,BlockedShot,0.8669999694824219,0.375,0.09099087864160538,Fábio Vieira,a,11007,SetPiece,2025,LeftFoot,30298,FC Cologne,Hamburger SV,4,1,2025-11-02 14:30:00,,TakeOn,Fábio Vieira
+653581,42,SavedShot,0.865999984741211,0.69,0.04440191015601158,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30314,Augsburg,Hamburger SV,1,0,2025-11-22 14:30:00,Jean-Luc Dompe,Pass,Fábio Vieira
+655749,93,Goal,0.88,0.445,0.5518348813056946,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30328,Hamburger SV,VfB Stuttgart,2,1,2025-11-30 14:30:00,Fabio Baldé,BallTouch,Fábio Vieira
+657444,12,SavedShot,0.79,0.7180000305175781,0.020567389205098152,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30337,Hamburger SV,Werder Bremen,3,2,2025-12-07 14:30:00,Aboubaka Soumahoro,Pass,Fábio Vieira
+657449,40,MissedShots,0.9019999694824219,0.3820000076293945,0.07692071050405502,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30337,Hamburger SV,Werder Bremen,3,2,2025-12-07 14:30:00,Jean-Luc Dompe,Chipped,Fábio Vieira
+658100,51,MissedShots,0.7180000305175781,0.4979999923706055,0.011422147043049335,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30346,Hoffenheim,Hamburger SV,4,1,2025-12-13 14:30:00,Luka Vuskovic,Pass,Fábio Vieira
+662410,44,SavedShot,0.8180000305175781,0.19299999237060547,0.047699425369501114,Fábio Vieira,a,11007,DirectFreekick,2025,LeftFoot,30363,Freiburg,Hamburger SV,2,1,2026-01-10 14:30:00,,Standard,Fábio Vieira
+663453,12,MissedShots,0.95,0.6869999694824219,0.06917020678520203,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30380,Hamburger SV,Borussia M.Gladbach,0,0,2026-01-17 14:30:00,Jordan Torunarigha,Pass,Fábio Vieira
+663458,20,BlockedShot,0.769000015258789,0.42200000762939455,0.01994452066719532,Fábio Vieira,h,11007,OpenPlay,2025,RightFoot,30380,Hamburger SV,Borussia M.Gladbach,0,0,2026-01-17 14:30:00,,Rebound,Fábio Vieira
+663469,53,MissedShots,0.7519999694824219,0.41,0.022960584610700607,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30380,Hamburger SV,Borussia M.Gladbach,0,0,2026-01-17 14:30:00,Ransford Königsdörffer,Pass,Fábio Vieira
+663471,56,MissedShots,0.7580000305175781,0.3,0.015329853631556034,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30380,Hamburger SV,Borussia M.Gladbach,0,0,2026-01-17 14:30:00,Nicolás Capaldo,Pass,Fábio Vieira
+663478,90,MissedShots,0.75,0.41200000762939454,0.013624495826661587,Fábio Vieira,h,11007,FromCorner,2025,LeftFoot,30380,Hamburger SV,Borussia M.Gladbach,0,0,2026-01-17 14:30:00,,Aerial,Fábio Vieira
+664511,52,BlockedShot,0.775,0.5379999923706055,0.015784647315740585,Fábio Vieira,a,11007,FromCorner,2025,LeftFoot,30393,St. Pauli,Hamburger SV,0,0,2026-01-23 19:30:00,,Aerial,Fábio Vieira
+666219,4,BlockedShot,0.915,0.4259999847412109,0.15022918581962585,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,Ransford Königsdörffer,Pass,Fábio Vieira
+666229,23,BlockedShot,0.7880000305175782,0.5979999923706054,0.023961832746863365,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,,Rebound,Fábio Vieira
+666232,33,Goal,0.885,0.5,0.75777667760849,Fábio Vieira,h,11007,Penalty,2025,LeftFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,,Standard,Fábio Vieira
+666235,49,BlockedShot,0.8930000305175781,0.5990000152587891,0.10420375317335129,Fábio Vieira,h,11007,SetPiece,2025,RightFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,Albert Sambi Lokonga,TakeOn,Fábio Vieira
+666237,49,MissedShots,0.8109999847412109,0.5270000076293946,0.045652106404304504,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,,None,Fábio Vieira
+666242,74,BlockedShot,0.8680000305175781,0.6519999694824219,0.2891986072063446,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30399,Hamburger SV,Bayern Munich,2,2,2026-01-31 17:30:00,Rayan Philippe,Chipped,Fábio Vieira
+667150,35,MissedShots,0.9259999847412109,0.40900001525878904,0.09302004426717758,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30408,FC Heidenheim,Hamburger SV,0,2,2026-02-07 14:30:00,,None,Fábio Vieira
+667157,55,BlockedShot,0.9119999694824219,0.634000015258789,0.12017654627561569,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30408,FC Heidenheim,Hamburger SV,0,2,2026-02-07 14:30:00,,TakeOn,Fábio Vieira
+668664,12,MissedShots,0.799000015258789,0.6990000152587891,0.02434779517352581,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30417,Hamburger SV,Union Berlin,3,2,2026-02-14 14:30:00,Nicolai Remberg,Pass,Fábio Vieira
+669511,3,SavedShot,0.749000015258789,0.41900001525878905,0.03252558782696724,Fábio Vieira,a,11007,OpenPlay,2025,RightFoot,30426,Mainz 05,Hamburger SV,1,1,2026-02-20 19:30:00,Ransford Königsdörffer,Pass,Fábio Vieira
+669522,47,MissedShots,0.745999984741211,0.48700000762939455,0.014105451293289661,Fábio Vieira,a,11007,SetPiece,2025,LeftFoot,30426,Mainz 05,Hamburger SV,1,1,2026-02-20 19:30:00,,None,Fábio Vieira
+669528,63,Goal,0.7369999694824219,0.5679999923706055,0.05697115883231163,Fábio Vieira,a,11007,DirectFreekick,2025,LeftFoot,30426,Mainz 05,Hamburger SV,1,1,2026-02-20 19:30:00,,Standard,Fábio Vieira
+669529,71,SavedShot,0.7909999847412109,0.405,0.033528078347444534,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30426,Mainz 05,Hamburger SV,1,1,2026-02-20 19:30:00,Ransford Königsdörffer,Pass,Fábio Vieira
+669532,84,BlockedShot,0.845999984741211,0.3110000038146973,0.03861222788691521,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30426,Mainz 05,Hamburger SV,1,1,2026-02-20 19:30:00,,None,Fábio Vieira
+671899,21,Goal,0.8969999694824219,0.4759999847412109,0.5804635286331177,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30436,Hamburger SV,RasenBallsport Leipzig,1,2,2026-03-01 18:30:00,William Mikelbrencis,Pass,Fábio Vieira
+672283,19,MissedShots,0.9230000305175782,0.30700000762939456,0.041951440274715424,Fábio Vieira,h,11007,FromCorner,2025,LeftFoot,30371,Hamburger SV,Bayer Leverkusen,0,1,2026-03-04 19:30:00,,None,Fábio Vieira
+672285,29,BlockedShot,0.735,0.44400001525878907,0.02093496359884739,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30371,Hamburger SV,Bayer Leverkusen,0,1,2026-03-04 19:30:00,Warmed Omari,Pass,Fábio Vieira
+672666,88,SavedShot,0.7180000305175781,0.4829999923706055,0.04481324553489685,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30448,Wolfsburg,Hamburger SV,1,2,2026-03-07 14:30:00,Warmed Omari,BallRecovery,Fábio Vieira
+674105,38,Goal,0.9,0.27700000762939453,0.03812472149729729,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30454,Hamburger SV,FC Cologne,1,1,2026-03-14 17:30:00,William Mikelbrencis,Chipped,Fábio Vieira
+675528,36,SavedShot,0.759000015258789,0.3890000152587891,0.03428675979375839,Fábio Vieira,a,11007,OpenPlay,2025,RightFoot,30460,Borussia Dortmund,Hamburger SV,3,2,2026-03-21 17:30:00,Philip Otele,BallRecovery,Fábio Vieira
+676609,18,BlockedShot,0.7090000152587891,0.40099998474121096,0.012018970213830471,Fábio Vieira,h,11007,FromCorner,2025,LeftFoot,30471,Hamburger SV,Augsburg,1,1,2026-04-04 13:30:00,,Aerial,Fábio Vieira
+676635,84,BlockedShot,0.9,0.28299999237060547,0.04225097596645355,Fábio Vieira,h,11007,FromCorner,2025,LeftFoot,30471,Hamburger SV,Augsburg,1,1,2026-04-04 13:30:00,Albert Sambi Lokonga,Pass,Fábio Vieira
+678576,90,SavedShot,0.784000015258789,0.435,0.02897213213145733,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30483,VfB Stuttgart,Hamburger SV,4,0,2026-04-12 15:30:00,William Mikelbrencis,Chipped,Fábio Vieira
+679169,26,SavedShot,0.76,0.35400001525878905,0.020102040842175484,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30493,Werder Bremen,Hamburger SV,3,1,2026-04-18 13:30:00,Robert Glatzel,Pass,Fábio Vieira
+681202,5,BlockedShot,0.85,0.505,0.09334147721529007,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30497,Hamburger SV,Hoffenheim,1,2,2026-04-25 16:30:00,Ransford Königsdörffer,Pass,Fábio Vieira
+682206,4,BlockedShot,0.914000015258789,0.43,0.09129317849874496,Fábio Vieira,a,11007,OpenPlay,2025,RightFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,,None,Fábio Vieira
+682209,26,ShotOnPost,0.7369999694824219,0.585,0.019664518535137177,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,Albert Sambi Lokonga,Pass,Fábio Vieira
+682211,33,BlockedShot,0.7319999694824219,0.4,0.05124031752347946,Fábio Vieira,a,11007,DirectFreekick,2025,LeftFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,,Standard,Fábio Vieira
+682219,58,Goal,0.9169999694824219,0.6359999847412109,0.2977387607097626,Fábio Vieira,a,11007,OpenPlay,2025,LeftFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,Albert Grønbæk,Chipped,Fábio Vieira
+684089,18,ShotOnPost,0.740999984741211,0.5479999923706055,0.019504830241203308,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30515,Hamburger SV,Freiburg,3,2,2026-05-10 13:30:00,Nicolai Remberg,BallTouch,Fábio Vieira
+684091,20,BlockedShot,0.785,0.615,0.024485962465405464,Fábio Vieira,h,11007,SetPiece,2025,LeftFoot,30515,Hamburger SV,Freiburg,3,2,2026-05-10 13:30:00,Albert Grønbæk,Pass,Fábio Vieira
+684092,28,BlockedShot,0.825,0.5229999923706055,0.07282634824514389,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30515,Hamburger SV,Freiburg,3,2,2026-05-10 13:30:00,Albert Grønbæk,Pass,Fábio Vieira
+684105,94,BlockedShot,0.7959999847412109,0.355,0.05815192312002182,Fábio Vieira,h,11007,OpenPlay,2025,LeftFoot,30515,Hamburger SV,Freiburg,3,2,2026-05-10 13:30:00,Nicolai Remberg,Pass,Fábio Vieira

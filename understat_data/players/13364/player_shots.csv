@@ -1,0 +1,46 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+619482,60,BlockedShot,0.74,0.2979999923706055,0.039593134075403214,Diego Gómez,h,13364,DirectFreekick,2024,RightFoot,26863,Brighton,Bournemouth,2,1,2025-02-25 19:30:00,,Standard,Diego Gómez
+622663,40,MissedShots,0.9209999847412109,0.5170000076293946,0.24314062297344208,Diego Gómez,a,13364,OpenPlay,2024,Head,26889,Manchester City,Brighton,2,2,2025-03-15 15:00:00,Jack Hinshelwood,Chipped,Diego Gómez
+622669,58,MissedShots,0.8130000305175781,0.45799999237060546,0.05839432403445244,Diego Gómez,a,13364,OpenPlay,2024,RightFoot,26889,Manchester City,Brighton,2,2,2025-03-15 15:00:00,Georginio Rutter,Pass,Diego Gómez
+628656,84,BlockedShot,0.7619999694824219,0.3129999923706055,0.014658675529062748,Diego Gómez,a,13364,FromCorner,2024,RightFoot,26923,Brentford,Brighton,4,2,2025-04-19 14:00:00,,None,Diego Gómez
+628659,98,MissedShots,0.745999984741211,0.5609999847412109,0.059448279440402985,Diego Gómez,a,13364,DirectFreekick,2024,RightFoot,26923,Brentford,Brighton,4,2,2025-04-19 14:00:00,,Standard,Diego Gómez
+631920,94,MissedShots,0.925,0.47900001525878905,0.3650991916656494,Diego Gómez,h,13364,SetPiece,2024,Head,26944,Brighton,Newcastle United,1,1,2025-05-04 13:00:00,Brajan Gruda,Cross,Diego Gómez
+636374,52,SavedShot,0.8590000152587891,0.36700000762939455,0.07048842310905457,Diego Gómez,a,13364,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Brajan Gruda,Pass,Diego Gómez
+636384,81,SavedShot,0.855999984741211,0.4329999923706055,0.013049203902482986,Diego Gómez,a,13364,FromCorner,2024,Head,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Matt O&#039;Riley,Cross,Diego Gómez
+636386,92,Goal,0.7369999694824219,0.7319999694824219,0.013453835621476173,Diego Gómez,a,13364,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Kaoru Mitoma,Pass,Diego Gómez
+638435,75,SavedShot,0.749000015258789,0.46,0.02465054765343666,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28780,Brighton,Fulham,1,1,2025-08-16 14:00:00,Matt O&#039;Riley,Pass,Diego Gómez
+643123,75,MissedShots,0.639000015258789,0.3679999923706055,0.027654215693473816,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28821,Brighton,Tottenham,2,2,2025-09-20 14:00:00,Yasin Ayari,Pass,Diego Gómez
+644677,54,MissedShots,0.77,0.519000015258789,0.08320274949073792,Diego Gómez,a,13364,DirectFreekick,2025,RightFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,,Standard,Diego Gómez
+646727,32,SavedShot,0.7559999847412109,0.5829999923706055,0.022681372240185738,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Danny Welbeck,Pass,Diego Gómez
+646733,61,MissedShots,0.899000015258789,0.5170000076293946,0.07507354766130447,Diego Gómez,a,13364,OpenPlay,2025,Head,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Mats Wieffer,Cross,Diego Gómez
+649104,75,BlockedShot,0.8269999694824218,0.3290000152587891,0.03356751799583435,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,,BallRecovery,Diego Gómez
+650818,38,BlockedShot,0.7240000152587891,0.44599998474121094,0.01725221984088421,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,Danny Welbeck,TakeOn,Diego Gómez
+650823,56,SavedShot,0.8530000305175781,0.5329999923706055,0.09100312739610672,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,,None,Diego Gómez
+650825,63,Goal,0.9569999694824218,0.49,0.6436755061149597,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,,None,Diego Gómez
+650826,69,Goal,0.91,0.47200000762939454,0.559005618095398,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,Yankuba Minteh,None,Diego Gómez
+652810,7,SavedShot,0.8930000305175781,0.5720000076293945,0.39874008297920227,Diego Gómez,a,13364,FromCorner,2025,RightFoot,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,,None,Diego Gómez
+652818,45,SavedShot,0.9669999694824218,0.6070000076293945,0.0557817704975605,Diego Gómez,a,13364,OpenPlay,2025,Head,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,Yankuba Minteh,Cross,Diego Gómez
+653636,22,MissedShots,0.7469999694824219,0.5970000076293945,0.02124582603573799,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,Georginio Rutter,Pass,Diego Gómez
+655705,25,BlockedShot,0.9619999694824218,0.65,0.010670945979654789,Diego Gómez,a,13364,FromCorner,2025,Head,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Maxim De Cuyper,Aerial,Diego Gómez
+655717,66,SavedShot,0.9230000305175782,0.4759999847412109,0.3109813928604126,Diego Gómez,a,13364,OpenPlay,2025,OtherBodyPart,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,Maxim De Cuyper,Cross,Diego Gómez
+657362,8,BlockedShot,0.7709999847412109,0.669000015258789,0.017316438257694244,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28920,Brighton,West Ham,1,1,2025-12-07 14:00:00,,None,Diego Gómez
+657368,39,MissedShots,0.774000015258789,0.505,0.02996830828487873,Diego Gómez,h,13364,OpenPlay,2025,LeftFoot,28920,Brighton,West Ham,1,1,2025-12-07 14:00:00,,None,Diego Gómez
+657381,74,BlockedShot,0.95,0.47099998474121096,0.10635960847139359,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28920,Brighton,West Ham,1,1,2025-12-07 14:00:00,,None,Diego Gómez
+658194,13,SavedShot,0.914000015258789,0.425,0.4210790693759918,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Yankuba Minteh,Throughball,Diego Gómez
+658205,46,BlockedShot,0.830999984741211,0.55,0.053178030997514725,Diego Gómez,a,13364,OpenPlay,2025,LeftFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Georginio Rutter,BallTouch,Diego Gómez
+658207,50,ShotOnPost,0.9669999694824218,0.575,0.4028453826904297,Diego Gómez,a,13364,OpenPlay,2025,LeftFoot,28933,Liverpool,Brighton,2,0,2025-12-13 15:00:00,Mats Wieffer,Cross,Diego Gómez
+660146,63,Goal,0.8869999694824219,0.52,0.31577229499816895,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28948,Arsenal,Brighton,2,1,2025-12-27 15:00:00,,Rebound,Diego Gómez
+660621,6,MissedShots,0.85,0.6370000076293946,0.05829775705933571,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28967,West Ham,Brighton,2,2,2025-12-30 19:30:00,,BallRecovery,Diego Gómez
+660995,16,BlockedShot,0.825,0.6129999923706054,0.04727694019675255,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,,None,Diego Gómez
+660997,20,MissedShots,0.749000015258789,0.6020000076293945,0.01901065930724144,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,Kaoru Mitoma,Pass,Diego Gómez
+661004,48,BlockedShot,0.7680000305175781,0.46099998474121096,0.02513084001839161,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,,None,Diego Gómez
+661978,69,MissedShots,0.9640000152587891,0.5170000076293946,0.7569111585617065,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,28985,Manchester City,Brighton,1,1,2026-01-07 19:30:00,Kaoru Mitoma,Pass,Diego Gómez
+664438,56,BlockedShot,0.82,0.4859999847412109,0.06316126137971878,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Danny Welbeck,LayOff,Diego Gómez
+669731,29,Goal,0.9059999847412109,0.3820000076293945,0.0789780244231224,Diego Gómez,a,13364,OpenPlay,2025,LeftFoot,29039,Brentford,Brighton,0,2,2026-02-21 15:00:00,,Rebound,Diego Gómez
+671502,5,Goal,0.8730000305175781,0.23700000762939452,0.028797157108783722,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,29050,Brighton,Nottingham Forest,2,1,2026-03-01 14:00:00,Pascal Groß,Chipped,Diego Gómez
+671518,64,BlockedShot,0.7619999694824219,0.3820000076293945,0.024707596749067307,Diego Gómez,h,13364,OpenPlay,2025,RightFoot,29050,Brighton,Nottingham Forest,2,1,2026-03-01 14:00:00,Mats Wieffer,Pass,Diego Gómez
+673883,67,MissedShots,0.8640000152587891,0.47400001525878904,0.14358893036842346,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Mats Wieffer,Pass,Diego Gómez
+675106,20,MissedShots,0.9330000305175781,0.4929999923706055,0.47744473814964294,Diego Gómez,h,13364,OpenPlay,2025,Head,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,Yankuba Minteh,Cross,Diego Gómez
+675118,61,SavedShot,0.8,0.7269999694824218,0.05895879864692688,Diego Gómez,h,13364,DirectFreekick,2025,RightFoot,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,,Standard,Diego Gómez
+675124,70,MissedShots,0.9109999847412109,0.27299999237060546,0.03951891139149666,Diego Gómez,h,13364,FromCorner,2025,RightFoot,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,,Rebound,Diego Gómez
+677885,62,MissedShots,0.8519999694824218,0.3039999961853027,0.04992726817727089,Diego Gómez,a,13364,OpenPlay,2025,RightFoot,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,Ferdi Kadioglu,Pass,Diego Gómez

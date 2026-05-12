@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,0,4,0,0,0,0,2022,Newcastle United,0,0,0,0,0,0,7691,Jamal Lewis
+season,Sub,5,0,0,261,0,0,0.02689019963145256,1,2021,Newcastle United,1,0,0,0,0.2706953976303339,0.24380519799888134,7691,Jamal Lewis
+season,DL,24,0,3,1824,0.11957670003175735,1,0.9897830151021481,14,2020,Newcastle United,4,0,0,0.11957670003175735,4.688645210117102,3.7277639638632536,7691,Jamal Lewis
+season,DL,28,1,9,2311,0.348726699128747,0,1.0117014981806278,15,2019,Norwich,4,0,1,0.348726699128747,4.066843907348812,2.890743196941912,7691,Jamal Lewis

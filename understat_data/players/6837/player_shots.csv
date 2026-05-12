@@ -1,0 +1,89 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+232765,89,SavedShot,0.9159999847412109,0.605,0.03998570144176483,Ryan Sessegnon,h,6837,SetPiece,2018,Head,9201,Fulham,Crystal Palace,0,2,2018-08-11 17:00:00,Cyrus Christie,Cross,Ryan Sessegnon
+233145,20,BlockedShot,0.9540000152587891,0.3770000076293945,0.10314299911260605,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9209,Tottenham,Fulham,3,1,2018-08-18 17:00:00,Tom Cairney,TakeOn,Ryan Sessegnon
+233152,38,SavedShot,0.8969999694824219,0.365,0.2921220064163208,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9209,Tottenham,Fulham,3,1,2018-08-18 17:00:00,Jean Michael Seri,Chipped,Ryan Sessegnon
+233489,86,SavedShot,0.899000015258789,0.585,0.3489759862422943,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9233,Brighton,Fulham,2,2,2018-09-01 14:00:00,,TakeOn,Ryan Sessegnon
+234342,41,ShotOnPost,0.9419999694824219,0.6229999923706054,0.31928199529647827,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9262,Everton,Fulham,3,0,2018-09-29 14:00:00,Jean Michael Seri,Pass,Ryan Sessegnon
+249156,49,MissedShots,0.915,0.40599998474121096,0.08598720282316208,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9274,Fulham,Arsenal,1,5,2018-10-07 11:00:00,Cyrus Christie,Cross,Ryan Sessegnon
+249362,33,Goal,0.879000015258789,0.5420000076293945,0.370947003364563,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9282,Cardiff,Fulham,4,2,2018-10-20 14:00:00,Aleksandar Mitrovic,Pass,Ryan Sessegnon
+249369,55,SavedShot,0.740999984741211,0.3270000076293945,0.019440000876784325,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9282,Cardiff,Fulham,4,2,2018-10-20 14:00:00,Denis Odoi,Pass,Ryan Sessegnon
+250162,23,MissedShots,0.8390000152587891,0.5709999847412109,0.3062559962272644,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9313,Liverpool,Fulham,2,0,2018-11-11 12:00:00,,TakeOn,Ryan Sessegnon
+250169,33,MissedShots,0.905,0.7190000152587891,0.04624370113015175,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9313,Liverpool,Fulham,2,0,2018-11-11 12:00:00,Calum Chambers,Pass,Ryan Sessegnon
+250174,44,SavedShot,0.725,0.5109999847412109,0.01519980002194643,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9313,Liverpool,Fulham,2,0,2018-11-11 12:00:00,,Dispossessed,Ryan Sessegnon
+250317,30,MissedShots,0.735999984741211,0.575,0.01844649948179722,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9320,Fulham,Southampton,3,2,2018-11-24 15:00:00,Aleksandar Mitrovic,Pass,Ryan Sessegnon
+250880,47,BlockedShot,0.8590000152587891,0.32799999237060545,0.058236099779605865,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9342,Fulham,Leicester,1,1,2018-12-05 19:45:00,Calum Chambers,TakeOn,Ryan Sessegnon
+251061,57,BlockedShot,0.8830000305175781,0.4209999847412109,0.09933359920978546,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9349,Manchester United,Fulham,4,1,2018-12-08 15:00:00,Luciano Vietto,Pass,Ryan Sessegnon
+251073,86,MissedShots,0.9390000152587891,0.654000015258789,0.18359899520874023,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9349,Manchester United,Fulham,4,1,2018-12-08 15:00:00,Tim Ream,TakeOn,Ryan Sessegnon
+251738,73,Goal,0.9180000305175782,0.45799999237060546,0.46801498532295227,Ryan Sessegnon,h,6837,SetPiece,2018,RightFoot,9383,Fulham,Wolverhampton Wanderers,1,1,2018-12-26 12:30:00,,Aerial,Ryan Sessegnon
+263621,77,MissedShots,0.9269999694824219,0.3920000076293945,0.0897539034485817,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9393,Fulham,Huddersfield,1,0,2018-12-29 15:00:00,Cyrus Christie,Cross,Ryan Sessegnon
+263623,84,MissedShots,0.879000015258789,0.33099998474121095,0.055132098495960236,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9393,Fulham,Huddersfield,1,0,2018-12-29 15:00:00,Aboubakar Kamara,None,Ryan Sessegnon
+274143,14,MissedShots,0.8719999694824219,0.35900001525878905,0.31144899129867554,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9406,Arsenal,Fulham,4,1,2019-01-01 15:00:00,Tom Cairney,Throughball,Ryan Sessegnon
+274445,28,MissedShots,0.9280000305175782,0.49400001525878906,0.05415629968047142,Ryan Sessegnon,a,6837,OpenPlay,2018,Head,9415,Burnley,Fulham,2,1,2019-01-12 15:00:00,André Schürrle,Aerial,Ryan Sessegnon
+276016,90,BlockedShot,0.7530000305175781,0.4909999847412109,0.01118869986385107,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9472,Southampton,Fulham,2,0,2019-02-27 19:45:00,,Aerial,Ryan Sessegnon
+291039,38,SavedShot,0.9169999694824219,0.3139999961853027,0.06689900159835815,Ryan Sessegnon,a,6837,OpenPlay,2018,RightFoot,9518,Watford,Fulham,4,1,2019-04-02 19:45:00,Tom Cairney,Pass,Ryan Sessegnon
+291042,60,SavedShot,0.9119999694824219,0.3509999847412109,0.1229889988899231,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9518,Watford,Fulham,4,1,2019-04-02 19:45:00,Aleksandar Mitrovic,Throughball,Ryan Sessegnon
+295320,47,BlockedShot,0.7780000305175782,0.30700000762939456,0.02099050022661686,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9545,Bournemouth,Fulham,0,1,2019-04-20 15:00:00,Calum Chambers,Pass,Ryan Sessegnon
+295324,61,SavedShot,0.9030000305175782,0.54,0.4468249976634979,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9545,Bournemouth,Fulham,0,1,2019-04-20 15:00:00,Joe Bryan,Pass,Ryan Sessegnon
+295325,63,SavedShot,0.97,0.36,0.1334650069475174,Ryan Sessegnon,a,6837,OpenPlay,2018,LeftFoot,9545,Bournemouth,Fulham,0,1,2019-04-20 15:00:00,Jean Michael Seri,TakeOn,Ryan Sessegnon
+297424,51,MissedShots,0.9169999694824219,0.5690000152587891,0.1346849948167801,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9553,Fulham,Cardiff,1,0,2019-04-27 15:00:00,Ryan Babel,Pass,Ryan Sessegnon
+301317,46,MissedShots,0.8569999694824219,0.6809999847412109,0.043230701237916946,Ryan Sessegnon,h,6837,OpenPlay,2018,LeftFoot,9573,Fulham,Newcastle United,0,4,2019-05-12 14:00:00,Tom Cairney,BallTouch,Ryan Sessegnon
+339841,16,BlockedShot,0.850999984741211,0.555,0.09263189882040024,Ryan Sessegnon,a,6837,OpenPlay,2019,RightFoot,11839,Norwich,Tottenham,2,2,2019-12-28 17:30:00,Christian Eriksen,Pass,Ryan Sessegnon
+387279,47,Goal,0.9419999694824219,0.66,0.06956479698419571,Ryan Sessegnon,h,6837,OpenPlay,2020,LeftFoot,15205,Hoffenheim,VfB Stuttgart,3,3,2020-11-21 14:30:00,Andrej Kramaric,Pass,Ryan Sessegnon
+393900,85,Goal,0.9519999694824218,0.580999984741211,0.5012000203132629,Ryan Sessegnon,a,6837,OpenPlay,2020,LeftFoot,15249,Borussia M.Gladbach,Hoffenheim,1,2,2020-12-19 14:30:00,Sargis Adamyan,None,Ryan Sessegnon
+407138,81,BlockedShot,0.8269999694824218,0.549000015258789,0.045597899705171585,Ryan Sessegnon,a,6837,FromCorner,2020,LeftFoot,15343,Union Berlin,Hoffenheim,1,1,2021-02-28 12:30:00,,None,Ryan Sessegnon
+408510,55,BlockedShot,0.855,0.49900001525878906,0.09655480086803436,Ryan Sessegnon,h,6837,OpenPlay,2020,RightFoot,15353,Hoffenheim,Wolfsburg,2,1,2021-03-06 14:30:00,Ihlas Bebou,Rebound,Ryan Sessegnon
+410618,41,MissedShots,0.9730000305175781,0.6090000152587891,0.07050950080156326,Ryan Sessegnon,a,6837,OpenPlay,2020,LeftFoot,15364,VfB Stuttgart,Hoffenheim,2,0,2021-03-14 17:00:00,,None,Ryan Sessegnon
+455298,37,MissedShots,0.904000015258789,0.6869999694824219,0.05715480074286461,Ryan Sessegnon,a,6837,OpenPlay,2021,LeftFoot,16598,Chelsea,Tottenham,2,0,2022-01-23 16:30:00,Pierre-Emile Højbjerg,Pass,Ryan Sessegnon
+459536,31,SavedShot,0.965,0.69,0.050592198967933655,Ryan Sessegnon,a,6837,SetPiece,2021,LeftFoot,16642,Leeds,Tottenham,0,4,2022-02-26 12:30:00,Harry Kane,Chipped,Ryan Sessegnon
+459547,63,MissedShots,0.9130000305175782,0.740999984741211,0.06514669954776764,Ryan Sessegnon,a,6837,OpenPlay,2021,LeftFoot,16642,Leeds,Tottenham,0,4,2022-02-26 12:30:00,Harry Kane,Chipped,Ryan Sessegnon
+475393,80,BlockedShot,0.9069999694824219,0.4929999923706055,0.10621900111436844,Ryan Sessegnon,h,6837,OpenPlay,2021,Head,16593,Tottenham,Arsenal,3,0,2022-05-12 18:45:00,Emerson,Cross,Ryan Sessegnon
+476246,6,BlockedShot,0.865999984741211,0.505,0.029980499297380447,Ryan Sessegnon,h,6837,OpenPlay,2021,Head,16739,Tottenham,Burnley,1,0,2022-05-15 11:00:00,Lucas Moura,Cross,Ryan Sessegnon
+476262,55,MissedShots,0.8730000305175781,0.6179999923706054,0.07534209638834,Ryan Sessegnon,h,6837,OpenPlay,2021,RightFoot,16739,Tottenham,Burnley,1,0,2022-05-15 11:00:00,,Rebound,Ryan Sessegnon
+479324,20,Goal,0.950999984741211,0.54,0.39604800939559937,Ryan Sessegnon,h,6837,OpenPlay,2022,Head,18207,Tottenham,Southampton,4,1,2022-08-06 14:00:00,Dejan Kulusevski,Cross,Ryan Sessegnon
+479334,51,BlockedShot,0.9080000305175782,0.654000015258789,0.0809376984834671,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18207,Tottenham,Southampton,4,1,2022-08-06 14:00:00,,None,Ryan Sessegnon
+481006,21,SavedShot,0.9069999694824219,0.6680000305175782,0.2670159935951233,Ryan Sessegnon,a,6837,SetPiece,2022,LeftFoot,18220,Chelsea,Tottenham,2,2,2022-08-14 15:30:00,Harry Kane,Chipped,Ryan Sessegnon
+485893,48,MissedShots,0.8880000305175781,0.67,0.08370020240545273,Ryan Sessegnon,h,6837,OpenPlay,2022,RightFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,Son Heung-Min,Pass,Ryan Sessegnon
+485898,57,SavedShot,0.89,0.620999984741211,0.09499490261077881,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,Richarlison,BallTouch,Ryan Sessegnon
+485899,57,MissedShots,0.799000015258789,0.5509999847412109,0.02869120053946972,Ryan Sessegnon,h,6837,FromCorner,2022,LeftFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,,None,Ryan Sessegnon
+485902,63,BlockedShot,0.7519999694824219,0.524000015258789,0.024941900745034218,Ryan Sessegnon,h,6837,FromCorner,2022,LeftFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,Rodrigo Bentancur,Pass,Ryan Sessegnon
+485906,74,SavedShot,0.95,0.5879999923706055,0.42302900552749634,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,,Rebound,Ryan Sessegnon
+485905,74,BlockedShot,0.8690000152587891,0.6919999694824219,0.05939109995961189,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18255,Tottenham,Fulham,2,1,2022-09-03 14:00:00,,None,Ryan Sessegnon
+494534,94,MissedShots,0.950999984741211,0.3659999847412109,0.01825530081987381,Ryan Sessegnon,a,6837,FromCorner,2022,Head,18321,Manchester United,Tottenham,2,0,2022-10-19 19:15:00,Son Heung-Min,Cross,Ryan Sessegnon
+495772,22,BlockedShot,0.825999984741211,0.674000015258789,0.033727001398801804,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18329,Tottenham,Newcastle United,1,2,2022-10-23 15:30:00,Oliver Skipp,Pass,Ryan Sessegnon
+495778,29,BlockedShot,0.9619999694824218,0.575,0.06718680262565613,Ryan Sessegnon,h,6837,OpenPlay,2022,Head,18329,Tottenham,Newcastle United,1,2,2022-10-23 15:30:00,Davinson Sánchez,Aerial,Ryan Sessegnon
+496604,56,Goal,0.9259999847412109,0.644000015258789,0.08986960351467133,Ryan Sessegnon,a,6837,OpenPlay,2022,LeftFoot,18333,Bournemouth,Tottenham,2,3,2022-10-29 14:00:00,Pierre-Emile Højbjerg,Throughball,Ryan Sessegnon
+498840,34,BlockedShot,0.7290000152587891,0.5070000076293946,0.011623499915003777,Ryan Sessegnon,h,6837,SetPiece,2022,LeftFoot,18349,Tottenham,Liverpool,1,2,2022-11-06 16:30:00,,None,Ryan Sessegnon
+498846,45,BlockedShot,0.8780000305175781,0.6530000305175782,0.045492399483919144,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18349,Tottenham,Liverpool,1,2,2022-11-06 16:30:00,,None,Ryan Sessegnon
+498849,50,MissedShots,0.815,0.605999984741211,0.03693469986319542,Ryan Sessegnon,h,6837,OpenPlay,2022,RightFoot,18349,Tottenham,Liverpool,1,2,2022-11-06 16:30:00,Harry Kane,Pass,Ryan Sessegnon
+504171,51,SavedShot,0.94,0.664000015258789,0.293491005897522,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18400,Tottenham,Arsenal,0,2,2023-01-15 16:30:00,Harry Kane,Throughball,Ryan Sessegnon
+504175,60,MissedShots,0.8909999847412109,0.6,0.06218419969081879,Ryan Sessegnon,h,6837,OpenPlay,2022,LeftFoot,18400,Tottenham,Arsenal,0,2,2023-01-15 16:30:00,,None,Ryan Sessegnon
+619438,0,Goal,0.8930000305175781,0.6320000076293946,0.2908309996128082,Ryan Sessegnon,a,6837,OpenPlay,2024,LeftFoot,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,Andreas Pereira,Pass,Ryan Sessegnon
+619452,40,SavedShot,0.9080000305175782,0.5679999923706055,0.03797335922718048,Ryan Sessegnon,a,6837,OpenPlay,2024,Head,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,Timothy Castagne,Aerial,Ryan Sessegnon
+623249,87,Goal,0.8690000152587891,0.5970000076293945,0.11756441742181778,Ryan Sessegnon,h,6837,OpenPlay,2024,RightFoot,26886,Fulham,Tottenham,2,0,2025-03-16 13:30:00,,TakeOn,Ryan Sessegnon
+625050,87,SavedShot,0.905,0.505,0.5486643314361572,Ryan Sessegnon,a,6837,OpenPlay,2024,Head,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Antonee Robinson,Aerial,Ryan Sessegnon
+626243,4,MissedShots,0.9290000152587891,0.30700000762939456,0.044216763228178024,Ryan Sessegnon,h,6837,OpenPlay,2024,LeftFoot,26906,Fulham,Liverpool,3,2,2025-04-06 13:00:00,,Rebound,Ryan Sessegnon
+626245,22,Goal,0.8930000305175781,0.38299999237060545,0.3596072793006897,Ryan Sessegnon,h,6837,OpenPlay,2024,LeftFoot,26906,Fulham,Liverpool,3,2,2025-04-06 13:00:00,,None,Ryan Sessegnon
+626256,55,MissedShots,0.9009999847412109,0.34900001525878904,0.09808609634637833,Ryan Sessegnon,h,6837,OpenPlay,2024,LeftFoot,26906,Fulham,Liverpool,3,2,2025-04-06 13:00:00,Sander Berge,Pass,Ryan Sessegnon
+628157,31,BlockedShot,0.855999984741211,0.41700000762939454,0.10058293491601944,Ryan Sessegnon,a,6837,OpenPlay,2024,LeftFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,,Rebound,Ryan Sessegnon
+628156,31,BlockedShot,0.850999984741211,0.4209999847412109,0.11598461866378784,Ryan Sessegnon,a,6837,OpenPlay,2024,LeftFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Andreas Pereira,Pass,Ryan Sessegnon
+628161,36,SavedShot,0.955,0.4620000076293945,0.46209463477134705,Ryan Sessegnon,a,6837,OpenPlay,2024,Head,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Alex Iwobi,Cross,Ryan Sessegnon
+630309,46,BlockedShot,0.7980000305175782,0.5529999923706055,0.04240630939602852,Ryan Sessegnon,a,6837,OpenPlay,2024,RightFoot,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,Harry Wilson,Pass,Ryan Sessegnon
+630308,47,MissedShots,0.960999984741211,0.5790000152587891,0.09257384389638901,Ryan Sessegnon,a,6837,OpenPlay,2024,LeftFoot,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,,None,Ryan Sessegnon
+630328,91,Goal,0.9230000305175782,0.47,0.12650223076343536,Ryan Sessegnon,a,6837,OpenPlay,2024,Head,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,Adama Traoré,Cross,Ryan Sessegnon
+632747,50,SavedShot,0.8980000305175782,0.6909999847412109,0.04475274309515953,Ryan Sessegnon,h,6837,OpenPlay,2024,LeftFoot,26953,Fulham,Everton,1,3,2025-05-10 14:00:00,Alex Iwobi,Pass,Ryan Sessegnon
+643416,30,SavedShot,0.855999984741211,0.7030000305175781,0.0368385910987854,Ryan Sessegnon,h,6837,OpenPlay,2025,LeftFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,Alex Iwobi,Pass,Ryan Sessegnon
+645856,69,Goal,0.9130000305175782,0.6090000152587891,0.3523477613925934,Ryan Sessegnon,a,6837,OpenPlay,2025,LeftFoot,28838,Bournemouth,Fulham,3,1,2025-10-03 19:00:00,Samuel Chukwueze,Throughball,Ryan Sessegnon
+647851,30,MissedShots,0.6969999694824218,0.4420000076293945,0.012611450627446175,Ryan Sessegnon,h,6837,FromCorner,2025,LeftFoot,28851,Fulham,Arsenal,0,1,2025-10-18 16:30:00,,None,Ryan Sessegnon
+650862,8,Goal,0.8569999694824219,0.64,0.32474061846733093,Ryan Sessegnon,h,6837,OpenPlay,2025,LeftFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Raúl Jiménez,Throughball,Ryan Sessegnon
+653677,78,MissedShots,0.9540000152587891,0.6609999847412109,0.27628669142723083,Ryan Sessegnon,h,6837,OpenPlay,2025,LeftFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Samuel Chukwueze,Pass,Ryan Sessegnon
+653676,78,BlockedShot,0.865999984741211,0.6809999847412109,0.054125476628541946,Ryan Sessegnon,h,6837,OpenPlay,2025,RightFoot,28892,Fulham,Sunderland,1,0,2025-11-22 15:00:00,Samuel Chukwueze,Pass,Ryan Sessegnon
+656115,98,BlockedShot,0.945,0.6580000305175782,0.05686068907380104,Ryan Sessegnon,h,6837,OpenPlay,2025,LeftFoot,28912,Fulham,Manchester City,4,5,2025-12-02 19:30:00,,None,Ryan Sessegnon
+663613,44,BlockedShot,0.8419999694824218,0.47299999237060547,0.024755962193012238,Ryan Sessegnon,a,6837,FromCorner,2025,RightFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,,Aerial,Ryan Sessegnon
+663614,44,MissedShots,0.8469999694824218,0.445,0.05393199995160103,Ryan Sessegnon,a,6837,FromCorner,2025,LeftFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,Sasa Lukic,Pass,Ryan Sessegnon
+670168,24,MissedShots,0.855,0.5940000152587891,0.08186204731464386,Ryan Sessegnon,a,6837,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Emile Smith-Rowe,Pass,Ryan Sessegnon
+671543,49,MissedShots,0.7519999694824219,0.46599998474121096,0.020411787554621696,Ryan Sessegnon,h,6837,SetPiece,2025,RightFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,Alex Iwobi,Pass,Ryan Sessegnon
+671555,85,BlockedShot,0.8680000305175781,0.6309999847412109,0.09377693384885788,Ryan Sessegnon,h,6837,OpenPlay,2025,RightFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,Alex Iwobi,Pass,Ryan Sessegnon
+672248,88,BlockedShot,0.9490000152587891,0.3820000076293945,0.04053724929690361,Ryan Sessegnon,h,6837,OpenPlay,2025,Head,29062,Fulham,West Ham,0,1,2026-03-04 19:30:00,Antonee Robinson,Cross,Ryan Sessegnon
+679002,31,MissedShots,0.8919999694824219,0.6090000152587891,0.1020948514342308,Ryan Sessegnon,a,6837,OpenPlay,2025,LeftFoot,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Tom Cairney,Pass,Ryan Sessegnon
+679009,63,BlockedShot,0.8669999694824219,0.66,0.118595652282238,Ryan Sessegnon,a,6837,OpenPlay,2025,RightFoot,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Tom Cairney,Throughball,Ryan Sessegnon
+680747,42,Goal,0.91,0.565,0.39851635694503784,Ryan Sessegnon,h,6837,OpenPlay,2025,LeftFoot,29112,Fulham,Aston Villa,1,0,2026-04-25 11:30:00,,Rebound,Ryan Sessegnon

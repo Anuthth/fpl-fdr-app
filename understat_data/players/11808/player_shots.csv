@@ -1,0 +1,70 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+546099,83,BlockedShot,0.8230000305175781,0.47,0.05014088377356529,Andrey Santos,a,11808,SetPiece,2023,RightFoot,21991,Liverpool,Nottingham Forest,3,0,2023-10-29 14:00:00,,None,Andrey Santos
+546101,86,MissedShots,0.7830000305175782,0.4209999847412109,0.021972279995679855,Andrey Santos,a,11808,FromCorner,2023,RightFoot,21991,Liverpool,Nottingham Forest,3,0,2023-10-29 14:00:00,,None,Andrey Santos
+565476,86,MissedShots,0.7980000305175782,0.6630000305175782,0.024185655638575554,Andrey Santos,h,11808,OpenPlay,2023,RightFoot,23577,Strasbourg,Brest,0,3,2024-02-24 20:00:00,,BallTouch,Andrey Santos
+569510,11,SavedShot,0.76,0.5509999847412109,0.03200029581785202,Andrey Santos,a,11808,OpenPlay,2023,RightFoot,23602,Nantes,Strasbourg,1,3,2024-03-16 16:00:00,Kevin Gameiro,Pass,Andrey Santos
+569523,63,MissedShots,0.8080000305175781,0.30100000381469727,0.04600653424859047,Andrey Santos,a,11808,OpenPlay,2023,RightFoot,23602,Nantes,Strasbourg,1,3,2024-03-16 16:00:00,,TakeOn,Andrey Santos
+571393,24,SavedShot,0.8440000152587891,0.47900001525878905,0.062193483114242554,Andrey Santos,h,11808,SetPiece,2023,RightFoot,23605,Strasbourg,Rennes,2,0,2024-03-31 16:05:00,,None,Andrey Santos
+571399,53,SavedShot,0.8440000152587891,0.4520000076293945,0.07930949330329895,Andrey Santos,h,11808,OpenPlay,2023,RightFoot,23605,Strasbourg,Rennes,2,0,2024-03-31 16:05:00,Dilane Bakwa,Pass,Andrey Santos
+571400,55,MissedShots,0.855,0.3089999961853027,0.033022258430719376,Andrey Santos,h,11808,FromCorner,2023,RightFoot,23605,Strasbourg,Rennes,2,0,2024-03-31 16:05:00,Dilane Bakwa,HeadPass,Andrey Santos
+572824,8,BlockedShot,0.8130000305175781,0.44400001525878907,0.052741602063179016,Andrey Santos,a,11808,OpenPlay,2023,LeftFoot,23615,Toulouse,Strasbourg,0,0,2024-04-07 13:00:00,Marvin Senaya,TakeOn,Andrey Santos
+577258,89,MissedShots,0.8,0.2979999923706055,0.023135503754019737,Andrey Santos,h,11808,OpenPlay,2023,RightFoot,23642,Strasbourg,Nice,1,3,2024-04-28 13:00:00,Marvin Senaya,Pass,Andrey Santos
+578211,9,MissedShots,0.740999984741211,0.62,0.016674751415848732,Andrey Santos,a,11808,OpenPlay,2023,LeftFoot,23656,Le Havre,Strasbourg,3,1,2024-05-04 13:00:00,Emanuel Emegha,LayOff,Andrey Santos
+580680,23,MissedShots,0.6909999847412109,0.44,0.015694549307227135,Andrey Santos,h,11808,OpenPlay,2023,RightFoot,23660,Strasbourg,Metz,2,1,2024-05-12 19:00:00,Abakar Sylla,Pass,Andrey Santos
+580698,90,Goal,0.9630000305175781,0.53,0.6159980893135071,Andrey Santos,h,11808,OpenPlay,2023,Head,23660,Strasbourg,Metz,2,1,2024-05-12 19:00:00,,Rebound,Andrey Santos
+582772,82,MissedShots,0.74,0.534000015258789,0.012919016182422638,Andrey Santos,a,11808,SetPiece,2023,RightFoot,23671,Lyon,Strasbourg,2,1,2024-05-19 19:00:00,,None,Andrey Santos
+586805,22,Goal,0.9519999694824218,0.4370000076293945,0.3566936254501343,Andrey Santos,h,11808,FromCorner,2024,LeftFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,Saidou Sow,BallTouch,Andrey Santos
+586809,47,MissedShots,0.795,0.33,0.038638629019260406,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,,None,Andrey Santos
+588907,47,Goal,0.9380000305175781,0.5429999923706055,0.35537266731262207,Andrey Santos,a,11808,FromCorner,2024,Head,28066,Lyon,Strasbourg,4,3,2024-08-30 18:45:00,Dilane Bakwa,Cross,Andrey Santos
+591548,32,SavedShot,0.93,0.45,0.36930564045906067,Andrey Santos,h,11808,OpenPlay,2024,Head,28083,Strasbourg,Angers,1,1,2024-09-15 15:00:00,Sebastian Nanasi,Cross,Andrey Santos
+591549,32,MissedShots,0.9669999694824218,0.40700000762939453,0.390324205160141,Andrey Santos,h,11808,OpenPlay,2024,LeftFoot,28083,Strasbourg,Angers,1,1,2024-09-15 15:00:00,,Rebound,Andrey Santos
+591561,78,MissedShots,0.7809999847412109,0.7080000305175781,0.011727974750101566,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28083,Strasbourg,Angers,1,1,2024-09-15 15:00:00,Emanuel Emegha,HeadPass,Andrey Santos
+592550,29,Goal,0.9819999694824219,0.49400001525878906,0.8943621516227722,Andrey Santos,a,11808,OpenPlay,2024,LeftFoot,28090,Lille,Strasbourg,3,3,2024-09-21 15:00:00,,Rebound,Andrey Santos
+592561,55,BlockedShot,0.9469999694824218,0.5520000076293945,0.11916384845972061,Andrey Santos,a,11808,FromCorner,2024,Head,28090,Lille,Strasbourg,3,3,2024-09-21 15:00:00,Sebastian Nanasi,Cross,Andrey Santos
+596292,74,MissedShots,0.815,0.4640000152587891,0.05157242342829704,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28110,Strasbourg,Lens,2,2,2024-10-06 15:00:00,,None,Andrey Santos
+597367,37,BlockedShot,0.8380000305175781,0.5209999847412109,0.06540793925523758,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28119,Paris Saint Germain,Strasbourg,4,2,2024-10-19 19:00:00,Sebastian Nanasi,TakeOn,Andrey Santos
+597370,45,SavedShot,0.7759999847412109,0.44,0.030704297125339508,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28119,Paris Saint Germain,Strasbourg,4,2,2024-10-19 19:00:00,Emanuel Emegha,BallRecovery,Andrey Santos
+597377,51,BlockedShot,0.9640000152587891,0.605,0.03832663223147392,Andrey Santos,a,11808,FromCorner,2024,Head,28119,Paris Saint Germain,Strasbourg,4,2,2024-10-19 19:00:00,,None,Andrey Santos
+599224,16,Goal,0.92,0.5529999923706055,0.32341817021369934,Andrey Santos,h,11808,SetPiece,2024,Head,28125,Strasbourg,Nantes,3,1,2024-10-27 16:00:00,Habib Diarra,Chipped,Andrey Santos
+599232,56,Goal,0.9769999694824218,0.6070000076293945,0.47535422444343567,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28125,Strasbourg,Nantes,3,1,2024-10-27 16:00:00,Dilane Bakwa,Pass,Andrey Santos
+600397,6,BlockedShot,0.9540000152587891,0.43200000762939456,0.07027923315763474,Andrey Santos,a,11808,SetPiece,2024,Head,28137,Saint-Etienne,Strasbourg,2,0,2024-11-02 20:00:00,Sebastian Nanasi,Aerial,Andrey Santos
+600417,93,MissedShots,0.7869999694824219,0.654000015258789,0.017999274656176567,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28137,Saint-Etienne,Strasbourg,2,0,2024-11-02 20:00:00,,None,Andrey Santos
+604346,56,MissedShots,0.8,0.6609999847412109,0.02137490175664425,Andrey Santos,a,11808,OpenPlay,2024,LeftFoot,28159,Brest,Strasbourg,3,1,2024-11-30 18:00:00,,None,Andrey Santos
+604350,76,SavedShot,0.725999984741211,0.5820000076293945,0.01720743626356125,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28159,Brest,Strasbourg,3,1,2024-11-30 18:00:00,,TakeOn,Andrey Santos
+607585,89,Goal,0.9780000305175781,0.585,0.4087676405906677,Andrey Santos,a,11808,FromCorner,2024,RightFoot,28175,Le Havre,Strasbourg,0,3,2024-12-15 16:00:00,Mamadou Sarr,Rebound,Andrey Santos
+610255,24,MissedShots,0.740999984741211,0.40700000762939453,0.025330083444714546,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28190,Strasbourg,Auxerre,3,1,2025-01-05 14:00:00,,TakeOn,Andrey Santos
+610259,49,BlockedShot,0.9109999847412109,0.46099998474121096,0.0774725005030632,Andrey Santos,h,11808,FromCorner,2024,Head,28190,Strasbourg,Auxerre,3,1,2025-01-05 14:00:00,Dilane Bakwa,Cross,Andrey Santos
+611144,21,MissedShots,0.7269999694824218,0.6079999923706054,0.017747893929481506,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28192,Toulouse,Strasbourg,1,2,2025-01-12 16:15:00,Emanuel Emegha,Pass,Andrey Santos
+613619,69,Goal,0.765,0.46599998474121096,0.025267653167247772,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28210,Strasbourg,Lille,2,1,2025-01-25 18:00:00,,None,Andrey Santos
+613624,83,SavedShot,0.7680000305175781,0.6580000305175782,0.04031386971473694,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28210,Strasbourg,Lille,2,1,2025-01-25 18:00:00,Diego Moreira,Pass,Andrey Santos
+616484,54,BlockedShot,0.899000015258789,0.580999984741211,0.014179559424519539,Andrey Santos,h,11808,FromCorner,2024,Head,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Sebastian Nanasi,Aerial,Andrey Santos
+616488,66,MissedShots,0.8219999694824218,0.5779999923706055,0.05846363306045532,Andrey Santos,h,11808,OpenPlay,2024,LeftFoot,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Sebastian Nanasi,Pass,Andrey Santos
+616492,81,BlockedShot,0.8930000305175781,0.5370000076293945,0.016865162178874016,Andrey Santos,h,11808,FromCorner,2024,Head,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Sebastian Nanasi,Aerial,Andrey Santos
+617737,44,MissedShots,0.7090000152587891,0.5279999923706055,0.014878097921609879,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28240,Lens,Strasbourg,0,2,2025-02-16 16:15:00,Felix Lemarechal,Pass,Andrey Santos
+620574,7,BlockedShot,0.7269999694824218,0.6179999923706054,0.014787670224905014,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28261,Auxerre,Strasbourg,0,1,2025-03-02 16:15:00,Felix Lemarechal,Pass,Andrey Santos
+621939,58,BlockedShot,0.7559999847412109,0.47,0.017756259068846703,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28266,Nantes,Strasbourg,0,1,2025-03-09 16:15:00,,Rebound,Andrey Santos
+623528,53,Goal,0.8059999847412109,0.48900001525878906,0.08716897666454315,Andrey Santos,h,11808,OpenPlay,2024,RightFoot,28279,Strasbourg,Toulouse,2,1,2025-03-16 16:15:00,Felix Lemarechal,Pass,Andrey Santos
+623887,54,Goal,0.9230000305175782,0.4879999923706055,0.342404842376709,Andrey Santos,h,11808,FromCorner,2024,Head,28285,Strasbourg,Lyon,4,2,2025-03-28 19:45:00,Dilane Bakwa,Cross,Andrey Santos
+626390,22,MissedShots,0.98,0.45,0.6917861700057983,Andrey Santos,a,11808,FromCorner,2024,RightFoot,28298,Reims,Strasbourg,0,1,2025-04-06 15:15:00,Sebastian Nanasi,Rebound,Andrey Santos
+626407,80,BlockedShot,0.845,0.62,0.070536307990551,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28298,Reims,Strasbourg,0,1,2025-04-06 15:15:00,,None,Andrey Santos
+630395,36,MissedShots,0.905,0.5520000076293945,0.020006386563181877,Andrey Santos,h,11808,FromCorner,2024,Head,28319,Strasbourg,Saint-Etienne,3,1,2025-04-26 15:00:00,Sebastian Nanasi,Aerial,Andrey Santos
+630408,59,SavedShot,0.784000015258789,0.5329999923706055,0.034716032445430756,Andrey Santos,h,11808,OpenPlay,2024,LeftFoot,28319,Strasbourg,Saint-Etienne,3,1,2025-04-26 15:00:00,,None,Andrey Santos
+630411,69,MissedShots,0.8680000305175781,0.44299999237060544,0.0291484035551548,Andrey Santos,h,11808,OpenPlay,2024,Head,28319,Strasbourg,Saint-Etienne,3,1,2025-04-26 15:00:00,,Aerial,Andrey Santos
+631508,9,BlockedShot,0.9619999694824218,0.37400001525878906,0.01174838561564684,Andrey Santos,h,11808,FromCorner,2024,Head,28328,Strasbourg,Paris Saint Germain,2,1,2025-05-03 15:00:00,Felix Lemarechal,Aerial,Andrey Santos
+631526,77,MissedShots,0.9580000305175781,0.41,0.12933078408241272,Andrey Santos,h,11808,FromCorner,2024,Head,28328,Strasbourg,Paris Saint Germain,2,1,2025-05-03 15:00:00,Felix Lemarechal,Aerial,Andrey Santos
+633119,36,BlockedShot,0.8080000305175781,0.5329999923706055,0.043671634048223495,Andrey Santos,a,11808,OpenPlay,2024,LeftFoot,28338,Angers,Strasbourg,2,1,2025-05-10 19:00:00,,None,Andrey Santos
+633120,41,MissedShots,0.7669999694824219,0.5879999923706055,0.02355821244418621,Andrey Santos,a,11808,OpenPlay,2024,LeftFoot,28338,Angers,Strasbourg,2,1,2025-05-10 19:00:00,Felix Lemarechal,Pass,Andrey Santos
+633127,56,MissedShots,0.8669999694824219,0.5790000152587891,0.056136827915906906,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28338,Angers,Strasbourg,2,1,2025-05-10 19:00:00,Samuel Amo-Ameyaw,Cross,Andrey Santos
+633130,76,MissedShots,0.7390000152587891,0.48700000762939455,0.02090616151690483,Andrey Santos,a,11808,OpenPlay,2024,RightFoot,28338,Angers,Strasbourg,2,1,2025-05-10 19:00:00,Ismaël Doukouré,Pass,Andrey Santos
+633133,91,MissedShots,0.9330000305175781,0.534000015258789,0.056595221161842346,Andrey Santos,a,11808,OpenPlay,2024,Head,28338,Angers,Strasbourg,2,1,2025-05-10 19:00:00,Habib Diarra,Aerial,Andrey Santos
+634787,19,Goal,0.915,0.5459999847412109,0.4775588810443878,Andrey Santos,h,11808,FromCorner,2024,LeftFoot,28345,Strasbourg,Le Havre,2,3,2025-05-17 19:00:00,Guela Doué,None,Andrey Santos
+638061,92,MissedShots,0.8590000152587891,0.49900001525878906,0.3392919898033142,Andrey Santos,h,11808,OpenPlay,2025,LeftFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,Marc Cucurella,Pass,Andrey Santos
+638062,93,SavedShot,0.8959999847412109,0.46299999237060546,0.08640170097351074,Andrey Santos,h,11808,OpenPlay,2025,Head,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,Pedro Neto,Cross,Andrey Santos
+643303,93,BlockedShot,0.894000015258789,0.514000015258789,0.08383796364068985,Andrey Santos,a,11808,OpenPlay,2025,RightFoot,28824,Manchester United,Chelsea,2,1,2025-09-20 16:30:00,João Pedro,BallTouch,Andrey Santos
+647289,38,MissedShots,0.8640000152587891,0.4620000076293945,0.06689022481441498,Andrey Santos,a,11808,OpenPlay,2025,RightFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,João Pedro,HeadPass,Andrey Santos
+647290,41,MissedShots,0.8430000305175781,0.5870000076293945,0.32162848114967346,Andrey Santos,a,11808,OpenPlay,2025,LeftFoot,28854,Nottingham Forest,Chelsea,0,3,2025-10-18 11:30:00,João Pedro,Throughball,Andrey Santos
+653378,74,MissedShots,0.774000015258789,0.4229999923706055,0.03866453096270561,Andrey Santos,a,11808,OpenPlay,2025,RightFoot,28891,Burnley,Chelsea,0,2,2025-11-22 12:30:00,João Pedro,Pass,Andrey Santos
+658179,68,MissedShots,0.8109999847412109,0.5029999923706054,0.0682702362537384,Andrey Santos,h,11808,OpenPlay,2025,LeftFoot,28931,Chelsea,Everton,2,0,2025-12-13 15:00:00,,BallRecovery,Andrey Santos
+662070,18,ShotOnPost,0.9890000152587891,0.46599998474121096,0.7104439735412598,Andrey Santos,a,11808,FromCorner,2025,OtherBodyPart,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Enzo Fernández,OffsidePass,Andrey Santos
+678524,46,MissedShots,0.924000015258789,0.42,0.17404860258102417,Andrey Santos,h,11808,SetPiece,2025,Head,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Pedro Neto,Cross,Andrey Santos
+683251,70,BlockedShot,0.8490000152587891,0.6630000305175782,0.05589830502867699,Andrey Santos,h,11808,OpenPlay,2025,RightFoot,29122,Chelsea,Nottingham Forest,1,3,2026-05-04 14:00:00,Marc Cucurella,Pass,Andrey Santos

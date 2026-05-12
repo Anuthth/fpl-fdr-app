@@ -1,0 +1,28 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+504687,33,BlockedShot,0.9269999694824219,0.674000015258789,0.10271900147199631,Jordan Zemura,h,10740,OpenPlay,2022,LeftFoot,18403,Bournemouth,Nottingham Forest,1,1,2023-01-21 15:00:00,,TakeOn,Jordan Zemura
+504688,33,MissedShots,0.975999984741211,0.649000015258789,0.07029809802770615,Jordan Zemura,h,10740,OpenPlay,2022,LeftFoot,18403,Bournemouth,Nottingham Forest,1,1,2023-01-21 15:00:00,,Rebound,Jordan Zemura
+507164,45,BlockedShot,0.8159999847412109,0.4779999923706055,0.07667200267314911,Jordan Zemura,a,10740,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,,TakeOn,Jordan Zemura
+507175,78,MissedShots,0.9109999847412109,0.5740000152587891,0.09660220146179199,Jordan Zemura,a,10740,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,,None,Jordan Zemura
+546057,5,BlockedShot,0.924000015258789,0.7290000152587891,0.04067858308553696,Jordan Zemura,a,10740,OpenPlay,2023,LeftFoot,22399,Monza,Udinese,1,1,2023-10-29 14:00:00,Roberto Pereyra,Pass,Jordan Zemura
+546067,50,SavedShot,0.9130000305175782,0.6,0.39628052711486816,Jordan Zemura,a,10740,OpenPlay,2023,LeftFoot,22399,Monza,Udinese,1,1,2023-10-29 14:00:00,,None,Jordan Zemura
+548775,47,SavedShot,0.8919999694824219,0.6719999694824219,0.059971340000629425,Jordan Zemura,h,10740,OpenPlay,2023,LeftFoot,22419,Udinese,Atalanta,1,1,2023-11-12 14:00:00,Festy Ebosele,Chipped,Jordan Zemura
+564289,13,Goal,0.8480000305175781,0.5870000076293945,0.04490284249186516,Jordan Zemura,h,10740,OpenPlay,2023,RightFoot,22545,Udinese,Cagliari,1,1,2024-02-18 14:00:00,Kingsley Ehizibue,Cross,Jordan Zemura
+564291,24,BlockedShot,0.8859999847412109,0.639000015258789,0.07338318228721619,Jordan Zemura,h,10740,OpenPlay,2023,RightFoot,22545,Udinese,Cagliari,1,1,2024-02-18 14:00:00,,Rebound,Jordan Zemura
+593910,33,BlockedShot,0.88,0.3060000038146973,0.014583393931388855,Jordan Zemura,h,10740,FromCorner,2024,RightFoot,27413,Udinese,Inter,2,3,2024-09-28 13:00:00,Jesper Karlström,HeadPass,Jordan Zemura
+595271,32,MissedShots,0.9730000305175781,0.549000015258789,0.4961782395839691,Jordan Zemura,h,10740,FromCorner,2024,Head,27431,Udinese,Lecce,1,0,2024-10-05 13:00:00,,Rebound,Jordan Zemura
+595278,74,Goal,0.79,0.455,0.10723327100276947,Jordan Zemura,h,10740,DirectFreekick,2024,LeftFoot,27431,Udinese,Lecce,1,0,2024-10-05 13:00:00,,Standard,Jordan Zemura
+597228,31,MissedShots,0.77,0.3609999847412109,0.06477920711040497,Jordan Zemura,a,10740,DirectFreekick,2024,LeftFoot,27440,AC Milan,Udinese,1,0,2024-10-19 16:00:00,,Standard,Jordan Zemura
+604554,30,SavedShot,0.8,0.644000015258789,0.03108220547437668,Jordan Zemura,h,10740,OpenPlay,2024,RightFoot,27501,Udinese,Genoa,0,2,2024-12-01 11:30:00,Lautaro Giannetti,Pass,Jordan Zemura
+608977,31,MissedShots,0.9430000305175781,0.585,0.09904831647872925,Jordan Zemura,a,10740,OpenPlay,2024,LeftFoot,27523,Fiorentina,Udinese,1,2,2024-12-23 17:30:00,Florian Thauvin,Cross,Jordan Zemura
+609393,58,MissedShots,0.85,0.59,0.05109918862581253,Jordan Zemura,h,10740,FromCorner,2024,LeftFoot,27541,Udinese,Torino,2,2,2024-12-29 11:30:00,,None,Jordan Zemura
+622223,75,SavedShot,0.735,0.4759999847412109,0.05464260280132294,Jordan Zemura,a,10740,DirectFreekick,2024,LeftFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,,Standard,Jordan Zemura
+622227,84,MissedShots,0.7569999694824219,0.509000015258789,0.018246512860059738,Jordan Zemura,a,10740,FromCorner,2024,RightFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,,None,Jordan Zemura
+622458,62,MissedShots,0.78,0.6370000076293946,0.02641497738659382,Jordan Zemura,h,10740,OpenPlay,2024,LeftFoot,27650,Udinese,Verona,0,1,2025-03-15 14:00:00,Lorenzo Lucca,Pass,Jordan Zemura
+622461,82,MissedShots,0.8009999847412109,0.48700000762939455,0.01607769913971424,Jordan Zemura,h,10740,FromCorner,2024,LeftFoot,27650,Udinese,Verona,0,1,2025-03-15 14:00:00,Jurgen Ekkelenkamp,HeadPass,Jordan Zemura
+635460,40,BlockedShot,0.9680000305175781,0.6559999847412109,0.07297344505786896,Jordan Zemura,a,10740,OpenPlay,2024,LeftFoot,27731,Juventus,Udinese,2,0,2025-05-18 18:45:00,Jesper Karlström,Pass,Jordan Zemura
+636532,25,BlockedShot,0.8219999694824218,0.46900001525878904,0.03252055495977402,Jordan Zemura,h,10740,OpenPlay,2024,RightFoot,27741,Udinese,Fiorentina,2,3,2025-05-25 18:45:00,Arthur Atta,Cross,Jordan Zemura
+639773,21,MissedShots,0.8969999694824219,0.6129999923706054,0.1028277724981308,Jordan Zemura,h,10740,OpenPlay,2025,RightFoot,29852,Udinese,Verona,1,1,2025-08-25 16:30:00,Keinan Davis,Pass,Jordan Zemura
+641170,32,MissedShots,0.6869999694824219,0.4490000152587891,0.033508721739053726,Jordan Zemura,a,10740,DirectFreekick,2025,LeftFoot,29862,Inter,Udinese,1,2,2025-08-31 18:45:00,,Standard,Jordan Zemura
+665625,42,MissedShots,0.845999984741211,0.6120000076293945,0.020284006372094154,Jordan Zemura,a,10740,OpenPlay,2025,RightFoot,30063,Verona,Udinese,1,3,2026-01-26 19:45:00,Keinan Davis,Aerial,Jordan Zemura
+665626,46,SavedShot,0.9269999694824219,0.6580000305175782,0.10787025094032288,Jordan Zemura,a,10740,OpenPlay,2025,LeftFoot,30063,Verona,Udinese,1,3,2026-01-26 19:45:00,Arthur Atta,Pass,Jordan Zemura
+665631,57,BlockedShot,0.769000015258789,0.37400001525878906,0.06682392209768295,Jordan Zemura,a,10740,DirectFreekick,2025,LeftFoot,30063,Verona,Udinese,1,3,2026-01-26 19:45:00,,Standard,Jordan Zemura

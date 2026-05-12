@@ -1,0 +1,142 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+586634,18,SavedShot,0.9630000305175781,0.6890000152587891,0.05572059005498886,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26620,Bournemouth,Newcastle United,1,1,2024-08-25 13:00:00,Ryan Christie,Pass,Evanilson
+586643,51,SavedShot,0.815,0.625999984741211,0.11459403485059738,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26620,Bournemouth,Newcastle United,1,1,2024-08-25 13:00:00,Ryan Christie,Chipped,Evanilson
+586647,63,MissedShots,0.9790000152587891,0.5459999847412109,0.8241491913795471,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26620,Bournemouth,Newcastle United,1,1,2024-08-25 13:00:00,Antoine Semenyo,Pass,Evanilson
+589181,13,BlockedShot,0.894000015258789,0.40099998474121096,0.13994339108467102,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26624,Everton,Bournemouth,2,3,2024-08-31 14:00:00,Justin Kluivert,Pass,Evanilson
+591165,7,MissedShots,0.919000015258789,0.5220000076293946,0.057606667280197144,Evanilson,h,12963,OpenPlay,2024,Head,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,Marcus Tavernier,Aerial,Evanilson
+591174,37,SavedShot,0.885,0.5,0.7611688375473022,Evanilson,h,12963,Penalty,2024,RightFoot,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,,Standard,Evanilson
+591178,46,MissedShots,0.9130000305175782,0.28100000381469725,0.04501665383577347,Evanilson,h,12963,OpenPlay,2024,RightFoot,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,Ryan Christie,Pass,Evanilson
+592408,30,MissedShots,0.7319999694824219,0.6320000076293946,0.017251109704375267,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26645,Liverpool,Bournemouth,3,0,2024-09-21 14:00:00,Dean Huijsen,Pass,Evanilson
+592410,33,MissedShots,0.865,0.40900001525878904,0.012816542759537697,Evanilson,a,12963,SetPiece,2024,Head,26645,Liverpool,Bournemouth,3,0,2024-09-21 14:00:00,Lewis Cook,Foul,Evanilson
+595023,16,Goal,0.905,0.4540000152587891,0.4707146883010864,Evanilson,h,12963,SetPiece,2024,RightFoot,26661,Bournemouth,Southampton,3,1,2024-09-30 19:00:00,Marcus Tavernier,Throughball,Evanilson
+595037,67,SavedShot,0.8219999694824218,0.4109999847412109,0.1513921469449997,Evanilson,h,12963,OpenPlay,2024,RightFoot,26661,Bournemouth,Southampton,3,1,2024-09-30 19:00:00,Lewis Cook,Throughball,Evanilson
+595432,16,BlockedShot,0.8980000305175782,0.730999984741211,0.03879030793905258,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26663,Leicester,Bournemouth,1,0,2024-10-05 14:00:00,Ryan Christie,Chipped,Evanilson
+595444,59,BlockedShot,0.93,0.29700000762939455,0.050195690244436264,Evanilson,a,12963,OpenPlay,2024,RightFoot,26663,Leicester,Bournemouth,1,0,2024-10-05 14:00:00,Marcus Tavernier,Pass,Evanilson
+595448,78,MissedShots,0.860999984741211,0.4859999847412109,0.02830951102077961,Evanilson,a,12963,OpenPlay,2024,Head,26663,Leicester,Bournemouth,1,0,2024-10-05 14:00:00,Lewis Cook,Cross,Evanilson
+597247,35,BlockedShot,0.7709999847412109,0.45799999237060546,0.028100507333874702,Evanilson,h,12963,OpenPlay,2024,RightFoot,26680,Bournemouth,Arsenal,2,0,2024-10-19 16:30:00,Marcus Tavernier,Pass,Evanilson
+598454,95,Goal,0.8819999694824219,0.5929999923706055,0.029381662607192993,Evanilson,a,12963,SetPiece,2024,Head,26684,Aston Villa,Bournemouth,1,1,2024-10-26 14:00:00,Marcus Tavernier,Cross,Evanilson
+600082,45,SavedShot,0.8830000305175781,0.4909999847412109,0.4163733720779419,Evanilson,h,12963,OpenPlay,2024,RightFoot,26692,Bournemouth,Manchester City,2,1,2024-11-02 15:00:00,Antoine Semenyo,BallTouch,Evanilson
+600087,63,Goal,0.8780000305175781,0.48400001525878905,0.3018330931663513,Evanilson,h,12963,OpenPlay,2024,RightFoot,26692,Bournemouth,Manchester City,2,1,2024-11-02 15:00:00,Milos Kerkez,Cross,Evanilson
+601408,16,Goal,0.93,0.534000015258789,0.8381772041320801,Evanilson,a,12963,OpenPlay,2024,RightFoot,26702,Brentford,Bournemouth,3,2,2024-11-09 15:00:00,,TakeOn,Evanilson
+602845,19,SavedShot,0.9069999694824219,0.34200000762939453,0.11031122505664825,Evanilson,h,12963,OpenPlay,2024,RightFoot,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,Justin Kluivert,Pass,Evanilson
+602851,50,MissedShots,0.9259999847412109,0.580999984741211,0.35641202330589294,Evanilson,h,12963,OpenPlay,2024,RightFoot,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,Antoine Semenyo,Pass,Evanilson
+602854,77,SavedShot,0.9069999694824219,0.5479999923706055,0.2989712059497833,Evanilson,h,12963,OpenPlay,2024,Head,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,Milos Kerkez,Cross,Evanilson
+602858,84,MissedShots,0.9619999694824218,0.605999984741211,0.015429741702973843,Evanilson,h,12963,FromCorner,2024,Head,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,Lewis Cook,Aerial,Evanilson
+602859,87,BlockedShot,0.899000015258789,0.4520000076293945,0.07461310178041458,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26712,Bournemouth,Brighton,1,2,2024-11-23 15:00:00,Lewis Cook,HeadPass,Evanilson
+604099,4,SavedShot,0.8530000305175781,0.6840000152587891,0.05544978752732277,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26731,Wolverhampton Wanderers,Bournemouth,2,4,2024-11-30 15:00:00,Marcus Tavernier,Pass,Evanilson
+604103,10,SavedShot,0.909000015258789,0.45799999237060546,0.3488217890262604,Evanilson,a,12963,OpenPlay,2024,RightFoot,26731,Wolverhampton Wanderers,Bournemouth,2,4,2024-11-30 15:00:00,Justin Kluivert,Cross,Evanilson
+605413,15,SavedShot,0.9669999694824218,0.4490000152587891,0.6199016571044922,Evanilson,h,12963,OpenPlay,2024,RightFoot,26732,Bournemouth,Tottenham,1,0,2024-12-05 20:15:00,,None,Evanilson
+605424,59,SavedShot,0.860999984741211,0.33,0.08763101696968079,Evanilson,h,12963,OpenPlay,2024,RightFoot,26732,Bournemouth,Tottenham,1,0,2024-12-05 20:15:00,Tyler Adams,Pass,Evanilson
+605428,66,BlockedShot,0.95,0.37599998474121094,0.11917074769735336,Evanilson,h,12963,OpenPlay,2024,RightFoot,26732,Bournemouth,Tottenham,1,0,2024-12-05 20:15:00,Ryan Christie,Pass,Evanilson
+606269,11,BlockedShot,0.8109999847412109,0.4620000076293945,0.052939560264348984,Evanilson,a,12963,OpenPlay,2024,RightFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Dean Huijsen,BallRecovery,Evanilson
+606281,39,MissedShots,0.9590000152587891,0.6129999923706054,0.014224833808839321,Evanilson,a,12963,FromCorner,2024,Head,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Lewis Cook,Aerial,Evanilson
+606286,55,BlockedShot,0.9269999694824219,0.6730000305175782,0.09771301597356796,Evanilson,a,12963,OpenPlay,2024,RightFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Ryan Christie,Throughball,Evanilson
+607958,70,BlockedShot,0.9009999847412109,0.35700000762939454,0.08681225031614304,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26754,Bournemouth,West Ham,1,1,2024-12-16 20:00:00,Ryan Christie,Pass,Evanilson
+607960,72,SavedShot,0.97,0.405,0.05815189704298973,Evanilson,h,12963,FromCorner,2024,Head,26754,Bournemouth,West Ham,1,1,2024-12-16 20:00:00,Ryan Christie,Cross,Evanilson
+608699,30,SavedShot,0.8,0.48900001525878906,0.060367610305547714,Evanilson,a,12963,OpenPlay,2024,RightFoot,26769,Manchester United,Bournemouth,0,3,2024-12-22 14:00:00,Illia Zabarnyi,Chipped,Evanilson
+609072,63,SavedShot,0.8869999694824219,0.32,0.05712190642952919,Evanilson,h,12963,OpenPlay,2024,RightFoot,26772,Bournemouth,Crystal Palace,0,0,2024-12-26 15:00:00,Illia Zabarnyi,Chipped,Evanilson
+609077,73,MissedShots,0.8969999694824219,0.3390000152587891,0.0806880071759224,Evanilson,h,12963,OpenPlay,2024,RightFoot,26772,Bournemouth,Crystal Palace,0,0,2024-12-26 15:00:00,Lewis Cook,Pass,Evanilson
+609510,18,SavedShot,0.8980000305175782,0.3120000076293945,0.053277719765901566,Evanilson,a,12963,OpenPlay,2024,RightFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,James Hill,Pass,Evanilson
+609513,37,MissedShots,0.9409999847412109,0.71,0.052133116871118546,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,,BallRecovery,Evanilson
+609518,50,Goal,0.9590000152587891,0.3820000076293945,0.2746831476688385,Evanilson,a,12963,OpenPlay,2024,RightFoot,26786,Fulham,Bournemouth,2,2,2024-12-29 15:00:00,James Hill,Chipped,Evanilson
+609877,23,MissedShots,0.8769999694824219,0.39099998474121095,0.057484403252601624,Evanilson,h,12963,FromCorner,2024,RightFoot,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,Lewis Cook,Pass,Evanilson
+609879,27,BlockedShot,0.9080000305175782,0.654000015258789,0.07262882590293884,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,,BallRecovery,Evanilson
+609891,48,SavedShot,0.899000015258789,0.44299999237060544,0.04566524550318718,Evanilson,h,12963,FromCorner,2024,Head,26792,Bournemouth,Everton,1,0,2025-01-04 15:00:00,Ryan Christie,Cross,Evanilson
+621797,0,SavedShot,0.84,0.500999984741211,0.07332805544137955,Evanilson,a,12963,OpenPlay,2024,RightFoot,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,,BallRecovery,Evanilson
+621805,18,SavedShot,0.8640000152587891,0.515,0.0476032979786396,Evanilson,a,12963,SetPiece,2024,RightFoot,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Marcus Tavernier,Cross,Evanilson
+621816,64,Goal,0.8819999694824219,0.5470000076293945,0.41193878650665283,Evanilson,a,12963,OpenPlay,2024,LeftFoot,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Justin Kluivert,Throughball,Evanilson
+622891,5,BlockedShot,0.855,0.40099998474121096,0.05672737956047058,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Antoine Semenyo,Rebound,Evanilson
+622900,35,SavedShot,0.955,0.44599998474121094,0.5003528594970703,Evanilson,h,12963,OpenPlay,2024,RightFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Dean Huijsen,Cross,Evanilson
+622903,42,MissedShots,0.919000015258789,0.325,0.06791878491640091,Evanilson,h,12963,OpenPlay,2024,RightFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Marcus Tavernier,Pass,Evanilson
+622913,86,MissedShots,0.87,0.504000015258789,0.03801892325282097,Evanilson,h,12963,FromCorner,2024,Head,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Lewis Cook,Cross,Evanilson
+625108,14,BlockedShot,0.8619999694824219,0.47900001525878905,0.03035985305905342,Evanilson,h,12963,FromCorner,2024,Head,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,Ryan Christie,Cross,Evanilson
+625112,25,BlockedShot,0.874000015258789,0.32,0.048362649977207184,Evanilson,h,12963,OpenPlay,2024,RightFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,Dango Ouattara,Pass,Evanilson
+625130,66,Goal,0.965,0.5459999847412109,0.6145708560943604,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,,Rebound,Evanilson
+625704,1,MissedShots,0.9290000152587891,0.47700000762939454,0.06968828290700912,Evanilson,a,12963,OpenPlay,2024,Head,26911,West Ham,Bournemouth,2,2,2025-04-05 14:00:00,Dango Ouattara,Aerial,Evanilson
+625708,37,Goal,0.9680000305175781,0.46599998474121096,0.7204594016075134,Evanilson,a,12963,OpenPlay,2024,RightFoot,26911,West Ham,Bournemouth,2,2,2025-04-05 14:00:00,,Rebound,Evanilson
+625717,78,Goal,0.9740000152587891,0.524000015258789,0.7250015735626221,Evanilson,a,12963,SetPiece,2024,RightFoot,26911,West Ham,Bournemouth,2,2,2025-04-05 14:00:00,Dean Huijsen,HeadPass,Evanilson
+628146,6,BlockedShot,0.9480000305175781,0.6990000152587891,0.07208196073770523,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Dango Ouattara,Pass,Evanilson
+628147,16,ShotOnPost,0.970999984741211,0.47400001525878904,0.657689094543457,Evanilson,h,12963,OpenPlay,2024,RightFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Alex Scott,HeadPass,Evanilson
+628151,25,BlockedShot,0.825,0.5459999847412109,0.0439569391310215,Evanilson,h,12963,SetPiece,2024,RightFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Alex Scott,Rebound,Evanilson
+628165,61,MissedShots,0.8469999694824218,0.40299999237060546,0.00803313683718443,Evanilson,h,12963,SetPiece,2024,Head,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Lewis Cook,Aerial,Evanilson
+628573,33,MissedShots,0.8859999847412109,0.5770000076293945,0.07940375804901123,Evanilson,a,12963,OpenPlay,2024,RightFoot,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,Milos Kerkez,Cross,Evanilson
+628578,58,MissedShots,0.9030000305175782,0.42200000762939455,0.06796568632125854,Evanilson,a,12963,OpenPlay,2024,Head,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,Adam Smith,Cross,Evanilson
+628581,63,SavedShot,0.915,0.47900001525878905,0.06116151064634323,Evanilson,a,12963,OpenPlay,2024,Head,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,,Aerial,Evanilson
+631552,25,MissedShots,0.9219999694824219,0.4879999923706055,0.36960485577583313,Evanilson,a,12963,OpenPlay,2024,Head,26945,Arsenal,Bournemouth,1,2,2025-05-03 16:30:00,Milos Kerkez,Cross,Evanilson
+631557,42,MissedShots,0.865,0.475,0.03522259369492531,Evanilson,a,12963,FromCorner,2024,Head,26945,Arsenal,Bournemouth,1,2,2025-05-03 16:30:00,Lewis Cook,Cross,Evanilson
+631559,44,MissedShots,0.7580000305175781,0.5429999923706055,0.02512412890791893,Evanilson,a,12963,OpenPlay,2024,RightFoot,26945,Arsenal,Bournemouth,1,2,2025-05-03 16:30:00,Dango Ouattara,Pass,Evanilson
+631569,74,Goal,0.9680000305175781,0.45099998474121095,0.5120646953582764,Evanilson,a,12963,FromCorner,2024,OtherBodyPart,26945,Arsenal,Bournemouth,1,2,2025-05-03 16:30:00,,Rebound,Evanilson
+632959,19,SavedShot,0.8880000305175781,0.44299999237060544,0.05205478519201279,Evanilson,h,12963,OpenPlay,2024,Head,26955,Bournemouth,Aston Villa,0,1,2025-05-10 16:30:00,Alex Scott,Cross,Evanilson
+632968,81,SavedShot,0.8969999694824219,0.4229999923706055,0.05448555201292038,Evanilson,h,12963,OpenPlay,2024,Head,26955,Bournemouth,Aston Villa,0,1,2025-05-10 16:30:00,David Brooks,Cross,Evanilson
+635703,32,ShotOnPost,0.88,0.49900001525878906,0.31467100977897644,Evanilson,a,12963,OpenPlay,2024,RightFoot,26970,Manchester City,Bournemouth,3,1,2025-05-20 19:00:00,Marcus Tavernier,Cross,Evanilson
+635709,46,MissedShots,0.924000015258789,0.575,0.0546078234910965,Evanilson,a,12963,OpenPlay,2024,Head,26970,Manchester City,Bournemouth,3,1,2025-05-20 19:00:00,Milos Kerkez,Aerial,Evanilson
+636278,7,MissedShots,0.9159999847412109,0.6480000305175782,0.3115268349647522,Evanilson,h,12963,OpenPlay,2024,LeftFoot,26979,Bournemouth,Leicester,2,0,2025-05-25 15:00:00,Marcus Tavernier,Throughball,Evanilson
+636288,54,BlockedShot,0.955999984741211,0.585999984741211,0.0581459105014801,Evanilson,h,12963,OpenPlay,2024,Head,26979,Bournemouth,Leicester,2,0,2025-05-25 15:00:00,Adam Smith,Aerial,Evanilson
+637504,9,MissedShots,0.9490000152587891,0.4109999847412109,0.071727454662323,Evanilson,a,12963,FromCorner,2025,Head,28778,Liverpool,Bournemouth,4,2,2025-08-15 19:00:00,David Brooks,Cross,Evanilson
+637512,48,MissedShots,0.8769999694824219,0.6559999847412109,0.09731415659189224,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28778,Liverpool,Bournemouth,4,2,2025-08-15 19:00:00,David Brooks,Pass,Evanilson
+637522,70,MissedShots,0.9119999694824219,0.595,0.05321967601776123,Evanilson,a,12963,OpenPlay,2025,Head,28778,Liverpool,Bournemouth,4,2,2025-08-15 19:00:00,Marcos Senesi,Cross,Evanilson
+640220,4,Goal,0.9159999847412109,0.674000015258789,0.06930409371852875,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,Marcos Senesi,Pass,Evanilson
+640221,6,MissedShots,0.815,0.5109999847412109,0.0680580884218216,Evanilson,a,12963,OpenPlay,2025,RightFoot,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,,None,Evanilson
+640223,16,MissedShots,0.9030000305175782,0.5420000076293945,0.053629983216524124,Evanilson,a,12963,OpenPlay,2025,Head,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,Alex Scott,Aerial,Evanilson
+640227,42,MissedShots,0.9330000305175781,0.534000015258789,0.08631952106952667,Evanilson,a,12963,OpenPlay,2025,Head,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,Adrien Truffert,Aerial,Evanilson
+640231,48,SavedShot,0.9530000305175781,0.40200000762939453,0.3890567719936371,Evanilson,a,12963,OpenPlay,2025,RightFoot,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,David Brooks,HeadPass,Evanilson
+641676,25,MissedShots,0.874000015258789,0.47400001525878904,0.04853740707039833,Evanilson,h,12963,OpenPlay,2025,Head,28810,Bournemouth,Brighton,2,1,2025-09-13 14:00:00,Adrien Truffert,Cross,Evanilson
+641679,47,SavedShot,0.865999984741211,0.4590000152587891,0.033230289816856384,Evanilson,h,12963,OpenPlay,2025,Head,28810,Bournemouth,Brighton,2,1,2025-09-13 14:00:00,Adrien Truffert,Cross,Evanilson
+641680,47,BlockedShot,0.860999984741211,0.44,0.09722869843244553,Evanilson,h,12963,OpenPlay,2025,RightFoot,28810,Bournemouth,Brighton,2,1,2025-09-13 14:00:00,,BallRecovery,Evanilson
+643598,14,BlockedShot,0.899000015258789,0.435,0.08964236825704575,Evanilson,h,12963,OpenPlay,2025,RightFoot,28823,Bournemouth,Newcastle United,0,0,2025-09-21 13:00:00,Marcus Tavernier,OffsidePass,Evanilson
+644744,58,MissedShots,0.8480000305175781,0.3990000152587891,0.05434005334973335,Evanilson,a,12963,SetPiece,2025,LeftFoot,28832,Leeds,Bournemouth,2,2,2025-09-27 14:00:00,,None,Evanilson
+645850,51,MissedShots,0.975,0.4329999923706055,0.5538159608840942,Evanilson,h,12963,FromCorner,2025,RightFoot,28838,Bournemouth,Fulham,3,1,2025-10-03 19:00:00,,None,Evanilson
+645851,52,SavedShot,0.84,0.46799999237060547,0.04415521025657654,Evanilson,h,12963,OpenPlay,2025,LeftFoot,28838,Bournemouth,Fulham,3,1,2025-10-03 19:00:00,Marcus Tavernier,HeadPass,Evanilson
+652688,2,SavedShot,0.899000015258789,0.529000015258789,0.4246697425842285,Evanilson,a,12963,OpenPlay,2025,RightFoot,28878,Aston Villa,Bournemouth,4,0,2025-11-09 14:00:00,Justin Kluivert,None,Evanilson
+652699,43,MissedShots,0.9359999847412109,0.45799999237060546,0.09221723675727844,Evanilson,a,12963,SetPiece,2025,RightFoot,28878,Aston Villa,Bournemouth,4,0,2025-11-09 14:00:00,,None,Evanilson
+652706,57,ShotOnPost,0.965,0.585,0.23382064700126648,Evanilson,a,12963,FromCorner,2025,Head,28878,Aston Villa,Bournemouth,4,0,2025-11-09 14:00:00,Marcus Tavernier,Cross,Evanilson
+653611,60,MissedShots,0.845999984741211,0.4809999847412109,0.040002841502428055,Evanilson,h,12963,OpenPlay,2025,LeftFoot,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,Ryan Christie,Cross,Evanilson
+653616,70,MissedShots,0.860999984741211,0.4879999923706055,0.016119524836540222,Evanilson,h,12963,OpenPlay,2025,Head,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,Lewis Cook,Aerial,Evanilson
+653617,75,MissedShots,0.899000015258789,0.51,0.0764085203409195,Evanilson,h,12963,OpenPlay,2025,Head,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,Marcos Senesi,Cross,Evanilson
+653619,79,MissedShots,0.9069999694824219,0.504000015258789,0.038833826780319214,Evanilson,h,12963,OpenPlay,2025,Head,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,Adrien Truffert,Aerial,Evanilson
+653621,83,SavedShot,0.9290000152587891,0.5929999923706055,0.4548155963420868,Evanilson,h,12963,SetPiece,2025,LeftFoot,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,,None,Evanilson
+653629,90,SavedShot,0.8809999847412109,0.4779999923706055,0.055151622742414474,Evanilson,h,12963,OpenPlay,2025,Head,28888,Bournemouth,West Ham,2,2,2025-11-22 15:00:00,Adrien Truffert,Cross,Evanilson
+655083,6,SavedShot,0.9519999694824218,0.48900001525878906,0.5994246006011963,Evanilson,a,12963,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Antoine Semenyo,Cross,Evanilson
+655088,18,BlockedShot,0.9180000305175782,0.41900001525878905,0.12579752504825592,Evanilson,a,12963,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,,Rebound,Evanilson
+655091,23,SavedShot,0.9030000305175782,0.585,0.12181820720434189,Evanilson,a,12963,OpenPlay,2025,RightFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,Marcos Senesi,Chipped,Evanilson
+656881,34,MissedShots,0.98,0.46099998474121096,0.8805568814277649,Evanilson,h,12963,OpenPlay,2025,RightFoot,28918,Bournemouth,Chelsea,0,0,2025-12-06 15:00:00,,Rebound,Evanilson
+658998,30,MissedShots,0.7569999694824219,0.45299999237060545,0.022050121799111366,Evanilson,a,12963,OpenPlay,2025,RightFoot,28934,Manchester United,Bournemouth,4,4,2025-12-15 20:00:00,Antoine Semenyo,Pass,Evanilson
+659008,45,Goal,0.8590000152587891,0.5790000152587891,0.4290873408317566,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28934,Manchester United,Bournemouth,4,4,2025-12-15 20:00:00,Marcus Tavernier,Pass,Evanilson
+660176,66,BlockedShot,0.9319999694824219,0.4570000076293945,0.08711300790309906,Evanilson,a,12963,OpenPlay,2025,RightFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,None,Evanilson
+660180,68,BlockedShot,0.8730000305175781,0.5890000152587891,0.056213442236185074,Evanilson,a,12963,OpenPlay,2025,RightFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,Rebound,Evanilson
+660554,5,BlockedShot,0.9209999847412109,0.28299999237060547,0.047438643872737885,Evanilson,a,12963,OpenPlay,2025,RightFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,David Brooks,Chipped,Evanilson
+660559,16,SavedShot,0.925,0.39099998474121095,0.01500654686242342,Evanilson,a,12963,SetPiece,2025,Head,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,Alex Scott,Rebound,Evanilson
+661093,9,Goal,0.860999984741211,0.47,0.3641006350517273,Evanilson,h,12963,OpenPlay,2025,RightFoot,28971,Bournemouth,Arsenal,2,3,2026-01-03 17:30:00,,BallRecovery,Evanilson
+661100,29,BlockedShot,0.7530000305175781,0.40299999237060546,0.022449897602200508,Evanilson,h,12963,OpenPlay,2025,LeftFoot,28971,Bournemouth,Arsenal,2,3,2026-01-03 17:30:00,Antoine Semenyo,Pass,Evanilson
+661913,20,BlockedShot,0.9640000152587891,0.27899999618530275,0.040087684988975525,Evanilson,h,12963,OpenPlay,2025,RightFoot,28979,Bournemouth,Tottenham,3,2,2026-01-07 19:30:00,Eli Junior Kroupi,Pass,Evanilson
+661914,21,Goal,0.905,0.4879999923706055,0.07423572242259979,Evanilson,h,12963,OpenPlay,2025,Head,28979,Bournemouth,Tottenham,3,2,2026-01-07 19:30:00,Marcus Tavernier,Cross,Evanilson
+664423,11,BlockedShot,0.769000015258789,0.5520000076293945,0.03185142204165459,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Eli Junior Kroupi,BallRecovery,Evanilson
+664426,13,SavedShot,0.8880000305175781,0.6609999847412109,0.0635014995932579,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Marcos Senesi,Chipped,Evanilson
+664429,36,MissedShots,0.8980000305175782,0.6170000076293946,0.1182752475142479,Evanilson,a,12963,OpenPlay,2025,LeftFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Alex Scott,Pass,Evanilson
+664430,37,ShotOnPost,0.9290000152587891,0.34200000762939453,0.3308623731136322,Evanilson,a,12963,OpenPlay,2025,RightFoot,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Alejandro Jiménez,Throughball,Evanilson
+664431,44,MissedShots,0.9080000305175782,0.44799999237060545,0.10916011780500412,Evanilson,a,12963,OpenPlay,2025,Head,28989,Brighton,Bournemouth,1,1,2026-01-19 20:00:00,Adrien Truffert,Cross,Evanilson
+664946,25,Goal,0.9490000152587891,0.44400001525878907,0.5794200897216797,Evanilson,h,12963,OpenPlay,2025,RightFoot,28998,Bournemouth,Liverpool,3,2,2026-01-24 17:30:00,Alex Scott,Pass,Evanilson
+664959,71,MissedShots,0.950999984741211,0.47900001525878905,0.1625378131866455,Evanilson,h,12963,OpenPlay,2025,RightFoot,28998,Bournemouth,Liverpool,3,2,2026-01-24 17:30:00,Ryan Christie,Rebound,Evanilson
+664963,83,MissedShots,0.894000015258789,0.5509999847412109,0.48544394969940186,Evanilson,h,12963,OpenPlay,2025,RightFoot,28998,Bournemouth,Liverpool,3,2,2026-01-24 17:30:00,Ryan Christie,Pass,Evanilson
+667229,11,SavedShot,0.9059999847412109,0.5129999923706055,0.45266109704971313,Evanilson,h,12963,OpenPlay,2025,Head,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,,Rebound,Evanilson
+667233,24,MissedShots,0.91,0.519000015258789,0.05472017452120781,Evanilson,h,12963,OpenPlay,2025,Head,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,Amine Adli,Chipped,Evanilson
+667236,33,SavedShot,0.9519999694824218,0.4420000076293945,0.13533362746238708,Evanilson,h,12963,OpenPlay,2025,RightFoot,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,,Rebound,Evanilson
+667240,47,MissedShots,0.874000015258789,0.44799999237060545,0.03656666353344917,Evanilson,h,12963,OpenPlay,2025,Head,29018,Bournemouth,Aston Villa,1,1,2026-02-07 15:00:00,Lewis Cook,Cross,Evanilson
+668180,1,SavedShot,0.6940000152587891,0.6179999923706054,0.011424172669649124,Evanilson,a,12963,OpenPlay,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Alex Tóth,Pass,Evanilson
+668187,37,SavedShot,0.860999984741211,0.5620000076293945,0.10041550546884537,Evanilson,a,12963,OpenPlay,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Alex Tóth,Pass,Evanilson
+670878,63,Goal,0.950999984741211,0.44099998474121094,0.40360206365585327,Evanilson,h,12963,SetPiece,2025,Head,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,Marcus Tavernier,Aerial,Evanilson
+673825,1,BlockedShot,0.9619999694824218,0.35200000762939454,0.29655739665031433,Evanilson,a,12963,OpenPlay,2025,RightFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Eli Junior Kroupi,TakeOn,Evanilson
+673840,43,MissedShots,0.9130000305175782,0.5640000152587891,0.0397617481648922,Evanilson,a,12963,OpenPlay,2025,Head,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Adam Smith,Aerial,Evanilson
+673849,62,MissedShots,0.8619999694824219,0.5790000152587891,0.01865995302796364,Evanilson,a,12963,OpenPlay,2025,Head,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Adrien Truffert,Cross,Evanilson
+673850,62,BlockedShot,0.8619999694824219,0.5790000152587891,0.06672859191894531,Evanilson,a,12963,OpenPlay,2025,LeftFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,,Rebound,Evanilson
+673853,66,MissedShots,0.870999984741211,0.4520000076293945,0.07368491590023041,Evanilson,a,12963,OpenPlay,2025,RightFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Alejandro Jiménez,Cross,Evanilson
+673854,70,SavedShot,0.855999984741211,0.67,0.051797568798065186,Evanilson,a,12963,OpenPlay,2025,LeftFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Amine Adli,Pass,Evanilson
+675081,93,MissedShots,0.9059999847412109,0.43900001525878907,0.08853104710578918,Evanilson,h,12963,OpenPlay,2025,Head,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,Adrien Truffert,Cross,Evanilson
+677610,39,SavedShot,0.89,0.68,0.060494497418403625,Evanilson,a,12963,OpenPlay,2025,LeftFoot,29092,Arsenal,Bournemouth,1,2,2026-04-11 11:30:00,James Hill,Pass,Evanilson
+679247,39,MissedShots,0.9669999694824218,0.5,0.6623708605766296,Evanilson,a,12963,OpenPlay,2025,LeftFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,Alex Scott,Cross,Evanilson
+679257,84,MissedShots,0.9690000152587891,0.44400001525878907,0.1495467871427536,Evanilson,a,12963,OpenPlay,2025,Head,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,Marcus Tavernier,Cross,Evanilson
+680357,9,MissedShots,0.9430000305175781,0.3579999923706055,0.07678568363189697,Evanilson,h,12963,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Ryan Christie,HeadPass,Evanilson
+680358,15,BlockedShot,0.9519999694824218,0.39099998474121095,0.04067375883460045,Evanilson,h,12963,FromCorner,2025,Head,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,David Brooks,Cross,Evanilson
+682669,9,MissedShots,0.9169999694824219,0.5520000076293945,0.07559305429458618,Evanilson,h,12963,FromCorner,2025,Head,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,Alex Scott,Cross,Evanilson
+682672,13,MissedShots,0.875,0.5970000076293945,0.13807472586631775,Evanilson,h,12963,OpenPlay,2025,LeftFoot,29118,Bournemouth,Crystal Palace,3,0,2026-05-03 13:00:00,Alex Scott,Throughball,Evanilson
+683679,8,BlockedShot,0.9130000305175782,0.6120000076293945,0.07956326752901077,Evanilson,a,12963,OpenPlay,2025,LeftFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Adrien Truffert,Cross,Evanilson

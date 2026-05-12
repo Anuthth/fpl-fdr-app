@@ -1,0 +1,68 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+227889,76,MissedShots,0.9159999847412109,0.27,0.021172000095248222,Borna Sosa,h,7075,FromCorner,2018,RightFoot,10383,VfB Stuttgart,Werder Bremen,2,1,2018-09-29 13:30:00,Daniel Didavi,Aerial,Borna Sosa
+255262,83,BlockedShot,0.8059999847412109,0.6170000076293946,0.027132300660014153,Borna Sosa,a,7075,FromCorner,2018,LeftFoot,10396,Hannover 96,VfB Stuttgart,3,1,2018-10-06 13:30:00,,None,Borna Sosa
+256909,89,SavedShot,0.8859999847412109,0.62,0.10949499905109406,Borna Sosa,h,7075,OpenPlay,2018,RightFoot,10466,VfB Stuttgart,Hertha Berlin,2,1,2018-12-15 14:30:00,Mario Gomez,Pass,Borna Sosa
+278289,40,SavedShot,0.799000015258789,0.215,0.047309499233961105,Borna Sosa,h,7075,DirectFreekick,2018,LeftFoot,10491,VfB Stuttgart,Mainz 05,2,3,2019-01-19 14:30:00,,Standard,Borna Sosa
+302450,6,MissedShots,0.9059999847412109,0.6840000152587891,0.06017810106277466,Borna Sosa,a,7075,OpenPlay,2018,LeftFoot,10634,Schalke 04,VfB Stuttgart,0,0,2019-05-18 13:30:00,Daniel Didavi,Pass,Borna Sosa
+302475,87,SavedShot,0.759000015258789,0.6090000152587891,0.019296400249004364,Borna Sosa,a,7075,OpenPlay,2018,LeftFoot,10634,Schalke 04,VfB Stuttgart,0,0,2019-05-18 13:30:00,Chadrac Akolo,Pass,Borna Sosa
+378819,13,MissedShots,0.76,0.7680000305175781,0.015431500039994717,Borna Sosa,a,7075,OpenPlay,2020,LeftFoot,14183,Mainz 05,VfB Stuttgart,1,4,2020-09-26 13:30:00,Daniel Didavi,Pass,Borna Sosa
+380512,14,MissedShots,0.6909999847412109,0.6359999847412109,0.03308599814772606,Borna Sosa,h,7075,DirectFreekick,2020,LeftFoot,15161,VfB Stuttgart,Bayer Leverkusen,1,1,2020-10-03 13:30:00,,Standard,Borna Sosa
+380519,48,BlockedShot,0.884000015258789,0.7080000305175781,0.02925870008766651,Borna Sosa,h,7075,OpenPlay,2020,LeftFoot,15161,VfB Stuttgart,Bayer Leverkusen,1,1,2020-10-03 13:30:00,Silas Wamangituka,Cross,Borna Sosa
+384326,66,SavedShot,0.850999984741211,0.7190000152587891,0.03022729977965355,Borna Sosa,a,7075,OpenPlay,2020,RightFoot,15185,Schalke 04,VfB Stuttgart,1,1,2020-10-30 19:30:00,Tanguy Coulibaly,Chipped,Borna Sosa
+384328,71,MissedShots,0.8430000305175781,0.7469999694824219,0.020237499848008156,Borna Sosa,a,7075,OpenPlay,2020,LeftFoot,15185,Schalke 04,VfB Stuttgart,1,1,2020-10-30 19:30:00,Mateo Klimowicz,Chipped,Borna Sosa
+387285,66,BlockedShot,0.86,0.565,0.0718458965420723,Borna Sosa,a,7075,OpenPlay,2020,RightFoot,15205,Hoffenheim,VfB Stuttgart,3,3,2020-11-21 14:30:00,,None,Borna Sosa
+388732,75,MissedShots,0.785,0.6769999694824219,0.024541499093174934,Borna Sosa,h,7075,OpenPlay,2020,RightFoot,15220,VfB Stuttgart,Bayern Munich,1,3,2020-11-28 14:30:00,Silas Wamangituka,Pass,Borna Sosa
+390817,13,SavedShot,0.845,0.7180000305175781,0.03179049864411354,Borna Sosa,a,7075,OpenPlay,2020,LeftFoot,15228,Werder Bremen,VfB Stuttgart,1,2,2020-12-06 14:30:00,Tanguy Coulibaly,Pass,Borna Sosa
+390824,47,MissedShots,0.7669999694824219,0.655,0.02689960040152073,Borna Sosa,a,7075,OpenPlay,2020,LeftFoot,15228,Werder Bremen,VfB Stuttgart,1,2,2020-12-06 14:30:00,,None,Borna Sosa
+391591,6,SavedShot,0.7519999694824219,0.5540000152587891,0.06864260137081146,Borna Sosa,a,7075,DirectFreekick,2020,LeftFoot,15230,Borussia Dortmund,VfB Stuttgart,1,5,2020-12-12 14:30:00,,Standard,Borna Sosa
+399082,53,MissedShots,0.8009999847412109,0.654000015258789,0.033042099326848984,Borna Sosa,h,7075,FromCorner,2020,LeftFoot,15283,VfB Stuttgart,Borussia M.Gladbach,2,2,2021-01-16 17:30:00,,Rebound,Borna Sosa
+413117,53,MissedShots,0.830999984741211,0.39599998474121095,0.03962169960141182,Borna Sosa,h,7075,FromCorner,2020,LeftFoot,15381,VfB Stuttgart,Werder Bremen,1,0,2021-04-04 13:30:00,,None,Borna Sosa
+413122,67,BlockedShot,0.889000015258789,0.6419999694824219,0.08386469632387161,Borna Sosa,h,7075,OpenPlay,2020,LeftFoot,15381,VfB Stuttgart,Werder Bremen,1,0,2021-04-04 13:30:00,Wataru Endo,Pass,Borna Sosa
+423435,38,BlockedShot,0.9080000305175782,0.700999984741211,0.056892599910497665,Borna Sosa,h,7075,OpenPlay,2020,LeftFoot,15445,VfB Stuttgart,Arminia Bielefeld,0,2,2021-05-22 13:30:00,Gonzalo Castro,Pass,Borna Sosa
+425728,58,SavedShot,0.91,0.7219999694824218,0.028537200763821602,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17519,VfB Stuttgart,Greuther Fuerth,5,1,2021-08-14 13:30:00,,Rebound,Borna Sosa
+426692,16,MissedShots,0.9380000305175781,0.720999984741211,0.044325001537799835,Borna Sosa,a,7075,OpenPlay,2021,LeftFoot,17525,RasenBallsport Leipzig,VfB Stuttgart,4,0,2021-08-20 18:30:00,Philipp Klement,Chipped,Borna Sosa
+431901,46,BlockedShot,0.8869999694824219,0.7040000152587891,0.04253679886460304,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17558,VfB Stuttgart,Bayer Leverkusen,1,3,2021-09-19 13:30:00,Atakan Karazor,BallTouch,Borna Sosa
+434114,38,MissedShots,0.7430000305175781,0.455,0.06259310245513916,Borna Sosa,a,7075,DirectFreekick,2021,LeftFoot,17568,Bochum,VfB Stuttgart,0,0,2021-09-26 13:30:00,,Standard,Borna Sosa
+434121,61,MissedShots,0.7859999847412109,0.6129999923706054,0.013536199927330017,Borna Sosa,a,7075,OpenPlay,2021,LeftFoot,17568,Bochum,VfB Stuttgart,0,0,2021-09-26 13:30:00,,Aerial,Borna Sosa
+440310,9,BlockedShot,0.8030000305175782,0.68,0.03451300039887428,Borna Sosa,a,7075,OpenPlay,2021,RightFoot,17598,Augsburg,VfB Stuttgart,4,1,2021-10-31 14:30:00,Orel Mangala,Pass,Borna Sosa
+441003,12,MissedShots,0.749000015258789,0.3509999847412109,0.01976650021970272,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17611,VfB Stuttgart,Arminia Bielefeld,0,1,2021-11-06 14:30:00,Daniel Didavi,Pass,Borna Sosa
+441014,51,MissedShots,0.7969999694824219,0.35200000762939454,0.03080430068075657,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17611,VfB Stuttgart,Arminia Bielefeld,0,1,2021-11-06 14:30:00,Roberto Massimo,Pass,Borna Sosa
+443653,50,Goal,0.919000015258789,0.705,0.050969198346138,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17628,VfB Stuttgart,Mainz 05,2,1,2021-11-26 19:30:00,Orel Mangala,Pass,Borna Sosa
+446892,46,BlockedShot,0.8690000152587891,0.7269999694824218,0.04330049827694893,Borna Sosa,h,7075,OpenPlay,2021,RightFoot,17637,VfB Stuttgart,Hertha Berlin,2,2,2021-12-05 14:30:00,Omar Marmoush,Pass,Borna Sosa
+458156,60,SavedShot,0.7930000305175782,0.6559999847412109,0.04090860113501549,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17719,VfB Stuttgart,Bochum,1,1,2022-02-19 14:30:00,,BallRecovery,Borna Sosa
+458159,67,MissedShots,0.73,0.5879999923706055,0.022769000381231308,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17719,VfB Stuttgart,Bochum,1,1,2022-02-19 14:30:00,Atakan Karazor,Pass,Borna Sosa
+458158,67,SavedShot,0.7469999694824219,0.5720000076293945,0.013602799735963345,Borna Sosa,h,7075,FromCorner,2021,RightFoot,17719,VfB Stuttgart,Bochum,1,1,2022-02-19 14:30:00,,Aerial,Borna Sosa
+461292,10,MissedShots,0.9390000152587891,0.6780000305175782,0.281917005777359,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17737,VfB Stuttgart,Borussia M.Gladbach,3,2,2022-03-05 17:30:00,Hiroki Ito,Chipped,Borna Sosa
+462423,63,BlockedShot,0.749000015258789,0.5940000152587891,0.02088399976491928,Borna Sosa,a,7075,OpenPlay,2021,LeftFoot,17746,Union Berlin,VfB Stuttgart,1,1,2022-03-12 14:30:00,Orel Mangala,Pass,Borna Sosa
+463934,40,BlockedShot,0.7440000152587891,0.6580000305175782,0.014371099881827831,Borna Sosa,h,7075,OpenPlay,2021,RightFoot,17755,VfB Stuttgart,Augsburg,3,2,2022-03-19 14:30:00,,TakeOn,Borna Sosa
+463941,58,MissedShots,0.8919999694824219,0.7519999694824219,0.03051690012216568,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17755,VfB Stuttgart,Augsburg,3,2,2022-03-19 14:30:00,Chris Führich,Pass,Borna Sosa
+466387,19,BlockedShot,0.74,0.7530000305175781,0.013608099892735481,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17772,VfB Stuttgart,Borussia Dortmund,0,2,2022-04-08 18:30:00,Atakan Karazor,Pass,Borna Sosa
+466402,79,SavedShot,0.795,0.625,0.041144099086523056,Borna Sosa,h,7075,OpenPlay,2021,RightFoot,17772,VfB Stuttgart,Borussia Dortmund,0,2,2022-04-08 18:30:00,Atakan Karazor,TakeOn,Borna Sosa
+466406,89,ShotOnPost,0.9130000305175782,0.74,0.03261350095272064,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17772,VfB Stuttgart,Borussia Dortmund,0,2,2022-04-08 18:30:00,Hiroki Ito,Pass,Borna Sosa
+468085,72,SavedShot,0.7440000152587891,0.5420000076293945,0.06348899751901627,Borna Sosa,a,7075,DirectFreekick,2021,LeftFoot,17779,Mainz 05,VfB Stuttgart,0,0,2022-04-16 13:30:00,,Standard,Borna Sosa
+470737,34,BlockedShot,0.769000015258789,0.56,0.024932699277997017,Borna Sosa,a,7075,OpenPlay,2021,LeftFoot,17789,Hertha Berlin,VfB Stuttgart,2,0,2022-04-24 15:30:00,Tiago Tomás,Pass,Borna Sosa
+471510,39,MissedShots,0.905,0.6759999847412109,0.03773469850420952,Borna Sosa,h,7075,OpenPlay,2021,LeftFoot,17799,VfB Stuttgart,Wolfsburg,1,1,2022-04-30 13:30:00,Tiago Tomás,Cross,Borna Sosa
+471513,43,MissedShots,0.8119999694824219,0.6759999847412109,0.02208380028605461,Borna Sosa,h,7075,FromCorner,2021,LeftFoot,17799,VfB Stuttgart,Wolfsburg,1,1,2022-04-30 13:30:00,,None,Borna Sosa
+474312,15,MissedShots,0.8059999847412109,0.674000015258789,0.0287471991032362,Borna Sosa,a,7075,FromCorner,2021,LeftFoot,17812,Bayern Munich,VfB Stuttgart,2,2,2022-05-08 15:30:00,Omar Marmoush,Cross,Borna Sosa
+475690,6,MissedShots,0.7980000305175782,0.6759999847412109,0.01963379979133606,Borna Sosa,h,7075,FromCorner,2021,LeftFoot,17816,VfB Stuttgart,FC Cologne,2,1,2022-05-14 13:30:00,,None,Borna Sosa
+481730,48,SavedShot,0.9069999694824219,0.71,0.19963900744915009,Borna Sosa,h,7075,OpenPlay,2022,LeftFoot,19363,VfB Stuttgart,Freiburg,0,1,2022-08-20 13:30:00,Waldemar Anton,Chipped,Borna Sosa
+487388,13,BlockedShot,0.870999984741211,0.7030000305175781,0.04453819990158081,Borna Sosa,a,7075,OpenPlay,2022,LeftFoot,19388,Bayern Munich,VfB Stuttgart,2,2,2022-09-10 13:30:00,Serhou Guirassy,Pass,Borna Sosa
+488691,89,MissedShots,0.7559999847412109,0.6569999694824219,0.011465099640190601,Borna Sosa,h,7075,OpenPlay,2022,RightFoot,19400,VfB Stuttgart,Eintracht Frankfurt,1,3,2022-09-17 13:30:00,,None,Borna Sosa
+488694,94,MissedShots,0.725999984741211,0.62,0.046351898461580276,Borna Sosa,h,7075,DirectFreekick,2022,LeftFoot,19400,VfB Stuttgart,Eintracht Frankfurt,1,3,2022-09-17 13:30:00,,Standard,Borna Sosa
+492980,44,SavedShot,0.7930000305175782,0.65,0.0364936999976635,Borna Sosa,h,7075,OpenPlay,2022,LeftFoot,19429,VfB Stuttgart,Bochum,4,1,2022-10-15 13:30:00,Dan-Axel Zagadou,Pass,Borna Sosa
+492982,46,MissedShots,0.8730000305175781,0.17299999237060548,0.05583310127258301,Borna Sosa,h,7075,DirectFreekick,2022,LeftFoot,19429,VfB Stuttgart,Bochum,4,1,2022-10-15 13:30:00,,Standard,Borna Sosa
+495003,49,MissedShots,0.8330000305175781,0.68,0.031683698296546936,Borna Sosa,a,7075,OpenPlay,2022,LeftFoot,19432,Borussia Dortmund,VfB Stuttgart,5,0,2022-10-22 13:30:00,Naouirou Ahamada,Pass,Borna Sosa
+499208,55,SavedShot,0.9719999694824218,0.6880000305175781,0.04783070087432861,Borna Sosa,h,7075,OpenPlay,2022,LeftFoot,19466,VfB Stuttgart,Hertha Berlin,2,1,2022-11-08 19:30:00,Tiago Tomás,Pass,Borna Sosa
+508360,92,ShotOnPost,0.8069999694824219,0.4540000152587891,0.140748992562294,Borna Sosa,a,7075,DirectFreekick,2022,LeftFoot,19515,Freiburg,VfB Stuttgart,2,1,2023-02-11 14:30:00,,Standard,Borna Sosa
+509516,58,Goal,0.784000015258789,0.335,0.0721006989479065,Borna Sosa,h,7075,DirectFreekick,2022,LeftFoot,19530,VfB Stuttgart,FC Cologne,3,0,2023-02-18 14:30:00,,Standard,Borna Sosa
+510973,49,SavedShot,0.8580000305175781,0.720999984741211,0.02466450072824955,Borna Sosa,a,7075,OpenPlay,2022,RightFoot,19538,Schalke 04,VfB Stuttgart,2,1,2023-02-25 17:30:00,Genki Haraguchi,Chipped,Borna Sosa
+510975,62,Goal,0.7519999694824219,0.715999984741211,0.014126500114798546,Borna Sosa,a,7075,OpenPlay,2022,LeftFoot,19538,Schalke 04,VfB Stuttgart,2,1,2023-02-25 17:30:00,Atakan Karazor,Pass,Borna Sosa
+518787,23,MissedShots,0.8959999847412109,0.710999984741211,0.06032479926943779,Borna Sosa,a,7075,OpenPlay,2022,LeftFoot,19582,Bochum,VfB Stuttgart,2,3,2023-04-09 15:30:00,,None,Borna Sosa
+520471,30,BlockedShot,0.7930000305175782,0.5420000076293945,0.11695211380720139,Borna Sosa,a,7075,DirectFreekick,2022,LeftFoot,19601,Augsburg,VfB Stuttgart,1,1,2023-04-21 18:30:00,,Standard,Borna Sosa
+529000,83,BlockedShot,0.8080000305175781,0.4490000152587891,0.1412665843963623,Borna Sosa,h,7075,DirectFreekick,2022,LeftFoot,19647,VfB Stuttgart,Hoffenheim,1,1,2023-05-27 13:30:00,,Standard,Borna Sosa
+534351,94,BlockedShot,0.784000015258789,0.6780000305175782,0.020359061658382416,Borna Sosa,a,7075,FromCorner,2023,LeftFoot,23074,RasenBallsport Leipzig,VfB Stuttgart,5,1,2023-08-25 18:30:00,,BallTouch,Borna Sosa
+594505,38,SavedShot,0.715999984741211,0.71,0.012168308719992638,Borna Sosa,h,7075,OpenPlay,2024,LeftFoot,27421,Torino,Lazio,2,3,2024-09-29 10:30:00,,BallRecovery,Borna Sosa
+601732,88,MissedShots,0.86,0.7919999694824219,0.013012346811592579,Borna Sosa,a,7075,OpenPlay,2024,LeftFoot,27480,Juventus,Torino,2,0,2024-11-09 19:45:00,,None,Borna Sosa
+608190,25,MissedShots,0.8669999694824219,0.5629999923706055,0.0682143121957779,Borna Sosa,h,7075,OpenPlay,2024,LeftFoot,27527,Torino,Bologna,0,2,2024-12-21 14:00:00,Marcus Pedersen,Cross,Borna Sosa
+616618,7,MissedShots,0.9,0.575,0.1203479915857315,Borna Sosa,h,7075,OpenPlay,2024,RightFoot,27599,Torino,Genoa,1,1,2025-02-08 17:00:00,Yann Karamoh,Pass,Borna Sosa
+681036,50,MissedShots,0.8769999694824219,0.6709999847412109,0.039044611155986786,Borna Sosa,a,7075,OpenPlay,2025,LeftFoot,29113,Liverpool,Crystal Palace,3,1,2026-04-25 14:00:00,Adam Wharton,Chipped,Borna Sosa

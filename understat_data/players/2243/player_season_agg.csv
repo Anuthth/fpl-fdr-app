@@ -1,0 +1,11 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,4,0,0,360,0,0,0,0,2023,Paris Saint Germain,0,0,0,0,0.3154168166220188,0.3154168166220188,2243,Keylor Navas
+season,GK,17,0,0,1530,0,0,0,0,2022,Nottingham Forest,2,0,0,0,1.1775650382041931,1.1775650382041931,2243,Keylor Navas
+season,GK,21,0,0,1860,0,0,0,0,2021,Paris Saint Germain,0,1,0,0,5.8388880137354136,5.8388880137354136,2243,Keylor Navas
+season,GK,29,0,0,2527,0,0,0,0,2020,Paris Saint Germain,0,0,0,0,7.291405141353607,7.291405141353607,2243,Keylor Navas
+season,GK,21,0,0,1890,0,0,0,0,2019,Paris Saint Germain,0,0,0,0,6.878718443214893,6.878718443214893,2243,Keylor Navas
+season,GK,10,0,0,900,0,0,0,0,2018,Real Madrid,1,0,0,0,0.8796366043388844,0.8796366043388844,2243,Keylor Navas
+season,GK,27,0,0,2430,0,0,0,0,2017,Real Madrid,1,0,0,0,6.859305117279291,6.859305117279291,2243,Keylor Navas
+season,GK,27,0,0,2430,0,0,0.030555900186300278,1,2016,Real Madrid,2,0,0,0,5.5301552806049585,5.499599380418658,2243,Keylor Navas
+season,GK,34,0,0,3060,0,0,0,0,2015,Real Madrid,0,0,0,0,5.330800290219486,5.330800290219486,2243,Keylor Navas
+season,GK,6,0,0,540,0,0,0,0,2014,Real Madrid,1,0,0,0,1.6877145078033209,1.6877145078033209,2243,Keylor Navas

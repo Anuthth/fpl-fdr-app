@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,1,0,0,90,0,0,0,0,2023,Newcastle United,0,0,0,0,0,0,37,Loris Karius
+season,Sub,4,0,0,290,0,0,0,0,2020,Union Berlin,0,0,0,0,0.6107323132455349,0.6107323132455349,37,Loris Karius
+season,GK,19,0,0,1710,0,0,0,0,2017,Liverpool,1,0,0,0,4.033254375681281,4.033254375681281,37,Loris Karius
+season,GK,10,0,0,900,0,0,0,0,2016,Liverpool,0,0,0,0,1.9014004841446877,1.9014004841446877,37,Loris Karius
+season,GK,34,0,0,3060,0,0,0,0,2015,Mainz 05,1,0,0,0,2.9748267848044634,2.9748267848044634,37,Loris Karius
+season,GK,33,0,0,2911,0,0,0.01856759935617447,1,2014,Mainz 05,1,1,0,0,2.943929286673665,2.943929286673665,37,Loris Karius

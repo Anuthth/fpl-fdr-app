@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,5,0,0,450,0,0,0,0,2016,Stoke,1,0,0,0,0.33202291280031204,0.33202291280031204,889,Shay Given
+season,GK,3,0,0,228,0,0,0,0,2015,Stoke,1,0,0,0,0.3371117915958166,0.3371117915958166,889,Shay Given
+season,GK,3,0,0,270,0,0,0,0,2014,Aston Villa,1,0,0,0,0.02513590082526207,0.02513590082526207,889,Shay Given

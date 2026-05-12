@@ -1,0 +1,7 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638961,74,MissedShots,0.794000015258789,0.38,0.06878400593996048,Max Dowman,h,13872,OpenPlay,2025,LeftFoot,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,Leandro Trossard,Chipped,Max Dowman
+638962,80,MissedShots,0.8369999694824218,0.4640000152587891,0.024374008178710938,Max Dowman,h,13872,SetPiece,2025,LeftFoot,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,,Aerial,Max Dowman
+640956,94,BlockedShot,0.9380000305175781,0.35400001525878905,0.061159078031778336,Max Dowman,a,13872,OpenPlay,2025,LeftFoot,28806,Liverpool,Arsenal,1,0,2025-08-31 15:30:00,,None,Max Dowman
+674041,82,MissedShots,0.8640000152587891,0.36400001525878906,0.0770333856344223,Max Dowman,h,13872,OpenPlay,2025,LeftFoot,29068,Arsenal,Everton,2,0,2026-03-14 17:30:00,Eberechi Eze,Pass,Max Dowman
+674045,96,Goal,0.8530000305175781,0.5829999923706055,0.3113616406917572,Max Dowman,h,13872,OpenPlay,2025,LeftFoot,29068,Arsenal,Everton,2,0,2026-03-14 17:30:00,Gabriel Martinelli,TakeOn,Max Dowman
+682473,84,MissedShots,0.855999984741211,0.5120000076293946,0.12633246183395386,Max Dowman,h,13872,OpenPlay,2025,RightFoot,29119,Arsenal,Fulham,3,0,2026-05-02 16:30:00,Martín Zubimendi,BallRecovery,Max Dowman

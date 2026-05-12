@@ -1,0 +1,150 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+36813,85,BlockedShot,0.6909999847412109,0.4129999923706055,0.013107799924910069,Aleix García,a,1055,OpenPlay,2014,RightFoot,5498,Athletic Club,Villarreal,4,0,2015-05-23 17:30:00,Manu Trigueros,Pass,Aleix García
+36814,86,MissedShots,0.789000015258789,0.35900001525878905,0.024905700236558914,Aleix García,a,1055,OpenPlay,2014,RightFoot,5498,Athletic Club,Villarreal,4,0,2015-05-23 17:30:00,Moi Gómez,Pass,Aleix García
+169979,71,MissedShots,0.7769999694824219,0.72,0.057656798511743546,Aleix García,h,1055,DirectFreekick,2017,RightFoot,7916,Girona,Sevilla,0,1,2017-09-17 15:15:00,,Standard,Aleix García
+169983,75,MissedShots,0.6780000305175782,0.6969999694824218,0.008417010307312012,Aleix García,h,1055,OpenPlay,2017,RightFoot,7916,Girona,Sevilla,0,1,2017-09-17 15:15:00,,None,Aleix García
+170535,9,BlockedShot,0.7419999694824219,0.6329999923706054,0.013276499696075916,Aleix García,h,1055,OpenPlay,2017,LeftFoot,7935,Girona,Barcelona,0,3,2017-09-23 19:45:00,,None,Aleix García
+171020,46,SavedShot,0.6909999847412109,0.5779999923706055,0.01706329919397831,Aleix García,a,1055,OpenPlay,2017,RightFoot,7960,Deportivo La Coruna,Girona,1,2,2017-10-23 20:00:00,Borja,Pass,Aleix García
+184281,0,BlockedShot,0.7330000305175781,0.2589999961853027,0.008914019912481308,Aleix García,h,1055,OpenPlay,2017,RightFoot,8032,Girona,Getafe,1,0,2017-12-17 11:00:00,,None,Aleix García
+184355,59,MissedShots,0.6769999694824219,0.40900001525878904,0.03340259939432144,Aleix García,a,1055,DirectFreekick,2017,RightFoot,8039,Eibar,Girona,4,1,2017-12-21 18:30:00,,Standard,Aleix García
+196186,24,MissedShots,0.8419999694824218,0.8680000305175781,0.017305800691246986,Aleix García,h,1055,FromCorner,2017,RightFoot,8117,Girona,Leganes,3,0,2018-02-16 20:00:00,Álex Granell,Pass,Aleix García
+196194,61,MissedShots,0.759000015258789,0.7519999694824219,0.01547400001436472,Aleix García,h,1055,OpenPlay,2017,RightFoot,8117,Girona,Leganes,3,0,2018-02-16 20:00:00,Johan Mojica,Pass,Aleix García
+197684,90,SavedShot,0.7809999847412109,0.47,0.040810298174619675,Aleix García,a,1055,OpenPlay,2017,LeftFoot,8122,Barcelona,Girona,6,1,2018-02-24 19:45:00,Douglas Luiz,BallRecovery,Aleix García
+209996,6,BlockedShot,0.7440000152587891,0.3770000076293945,0.017145799472928047,Aleix García,a,1055,OpenPlay,2017,RightFoot,8204,Alaves,Girona,1,2,2018-04-19 17:30:00,David Timor,Pass,Aleix García
+210010,58,Goal,0.745999984741211,0.9130000305175782,0.02460229955613613,Aleix García,a,1055,DirectFreekick,2017,RightFoot,8204,Alaves,Girona,1,2,2018-04-19 17:30:00,,Standard,Aleix García
+217850,24,SavedShot,0.8159999847412109,0.769000015258789,0.018678899854421616,Aleix García,h,1055,OpenPlay,2018,RightFoot,9957,Girona,Real Valladolid,0,0,2018-08-17 21:15:00,Borja,Pass,Aleix García
+228444,7,BlockedShot,0.6940000152587891,0.5640000152587891,0.03968910127878189,Aleix García,a,1055,DirectFreekick,2018,RightFoot,10018,SD Huesca,Girona,1,1,2018-09-30 10:00:00,,Standard,Aleix García
+258768,9,MissedShots,0.7680000305175781,0.6780000305175782,0.06277099996805191,Aleix García,a,1055,DirectFreekick,2018,RightFoot,10058,Valencia,Girona,0,1,2018-11-03 17:30:00,,Standard,Aleix García
+258771,19,BlockedShot,0.7730000305175782,0.6419999694824219,0.07448899745941162,Aleix García,a,1055,DirectFreekick,2018,RightFoot,10058,Valencia,Girona,0,1,2018-11-03 17:30:00,,Standard,Aleix García
+259627,15,BlockedShot,0.7319999694824219,0.6079999923706054,0.012282099574804306,Aleix García,h,1055,OpenPlay,2018,RightFoot,10090,Girona,Atletico Madrid,1,1,2018-12-02 15:15:00,,None,Aleix García
+259628,17,MissedShots,0.76,0.6370000076293946,0.06649360060691833,Aleix García,h,1055,DirectFreekick,2018,RightFoot,10090,Girona,Atletico Madrid,1,1,2018-12-02 15:15:00,,Standard,Aleix García
+260271,50,BlockedShot,0.8540000152587891,0.3129999923706055,0.043978601694107056,Aleix García,h,1055,OpenPlay,2018,LeftFoot,10122,Girona,Getafe,1,1,2018-12-21 18:30:00,,None,Aleix García
+279815,28,MissedShots,0.710999984741211,0.3820000076293945,0.04318210110068321,Aleix García,a,1055,DirectFreekick,2018,RightFoot,10128,Levante,Girona,2,2,2019-01-04 18:00:00,,Standard,Aleix García
+279827,71,Goal,0.825,0.575,0.16414499282836914,Aleix García,a,1055,DirectFreekick,2018,RightFoot,10128,Levante,Girona,2,2,2019-01-04 18:00:00,,Standard,Aleix García
+280163,90,MissedShots,0.7480000305175781,0.645,0.021019799634814262,Aleix García,h,1055,OpenPlay,2018,RightFoot,10140,Girona,Alaves,1,1,2019-01-12 17:30:00,Anthony Lozano,Pass,Aleix García
+280420,35,Goal,0.8009999847412109,0.5159999847412109,0.3252060115337372,Aleix García,a,1055,OpenPlay,2018,RightFoot,10153,Real Betis,Girona,3,2,2019-01-20 11:00:00,Portu,Pass,Aleix García
+280423,41,SavedShot,0.7090000152587891,0.38799999237060545,0.0174391008913517,Aleix García,a,1055,OpenPlay,2018,RightFoot,10153,Real Betis,Girona,3,2,2019-01-20 11:00:00,Borja,Pass,Aleix García
+280428,59,SavedShot,0.7780000305175782,0.375,0.02298079989850521,Aleix García,a,1055,OpenPlay,2018,LeftFoot,10153,Real Betis,Girona,3,2,2019-01-20 11:00:00,,None,Aleix García
+280676,0,BlockedShot,0.7390000152587891,0.46,0.01567230001091957,Aleix García,h,1055,OpenPlay,2018,RightFoot,10161,Girona,Barcelona,0,2,2019-01-27 15:15:00,,None,Aleix García
+281429,58,MissedShots,0.9330000305175781,0.4909999847412109,0.5561990141868591,Aleix García,a,1055,OpenPlay,2018,LeftFoot,10189,Real Madrid,Girona,1,2,2019-02-17 11:00:00,,Rebound,Aleix García
+281773,48,BlockedShot,0.815,0.45799999237060546,0.06020769849419594,Aleix García,h,1055,OpenPlay,2018,LeftFoot,10201,Girona,Real Sociedad,0,0,2019-02-25 20:00:00,Portu,Pass,Aleix García
+285169,24,MissedShots,0.685,0.445,0.03687160089612007,Aleix García,h,1055,DirectFreekick,2018,RightFoot,10221,Girona,Valencia,2,3,2019-03-10 15:15:00,,Standard,Aleix García
+290967,73,MissedShots,0.7240000152587891,0.5670000076293945,0.017757799476385117,Aleix García,a,1055,OpenPlay,2018,RightFoot,10255,Atletico Madrid,Girona,2,0,2019-04-02 18:30:00,Borja,Pass,Aleix García
+294885,13,MissedShots,0.769000015258789,0.53,0.020709799602627754,Aleix García,a,1055,OpenPlay,2018,LeftFoot,10283,Celta Vigo,Girona,2,1,2019-04-20 12:00:00,Patrick Roberts,HeadPass,Aleix García
+401510,84,MissedShots,0.775,0.49700000762939456,0.034085799008607864,Aleix García,h,1055,OpenPlay,2020,RightFoot,14980,Eibar,Sevilla,0,2,2021-01-30 13:00:00,Kike García,Pass,Aleix García
+422729,78,BlockedShot,0.799000015258789,0.5659999847412109,0.0413471981883049,Aleix García,a,1055,OpenPlay,2020,RightFoot,15146,Valencia,Eibar,4,1,2021-05-16 16:30:00,Bryan Gil Salvatierra,Pass,Aleix García
+422731,83,SavedShot,0.7469999694824219,0.45799999237060546,0.019863499328494072,Aleix García,a,1055,OpenPlay,2020,RightFoot,15146,Valencia,Eibar,4,1,2021-05-16 16:30:00,Alejandro Pozo,Pass,Aleix García
+481185,70,SavedShot,0.73,0.43900001525878907,0.014328200370073318,Aleix García,a,1055,OpenPlay,2022,RightFoot,18967,Valencia,Girona,1,0,2022-08-14 17:30:00,,None,Aleix García
+483181,31,SavedShot,0.769000015258789,0.659000015258789,0.02105090022087097,Aleix García,h,1055,SetPiece,2022,RightFoot,18981,Girona,Getafe,3,1,2022-08-22 20:00:00,Rodrigo Riquelme,Pass,Aleix García
+483248,19,BlockedShot,0.745999984741211,0.3240000152587891,0.017011800780892372,Aleix García,h,1055,OpenPlay,2022,RightFoot,18982,Girona,Celta Vigo,0,1,2022-08-26 18:00:00,Yan Couto,Pass,Aleix García
+485664,1,MissedShots,0.805,0.47400001525878904,0.031422801315784454,Aleix García,a,1055,OpenPlay,2022,RightFoot,19001,Mallorca,Girona,1,1,2022-09-03 12:00:00,Reinier,HeadPass,Aleix García
+485675,68,MissedShots,0.7980000305175782,0.639000015258789,0.03095719963312149,Aleix García,a,1055,OpenPlay,2022,LeftFoot,19001,Mallorca,Girona,1,1,2022-09-03 12:00:00,,None,Aleix García
+487260,54,SavedShot,0.7090000152587891,0.38599998474121094,0.016369899734854698,Aleix García,h,1055,OpenPlay,2022,RightFoot,19008,Girona,Real Valladolid,2,1,2022-09-09 19:00:00,Reinier,Pass,Aleix García
+489588,65,BlockedShot,0.6909999847412109,0.4759999847412109,0.03958659991621971,Aleix García,a,1055,DirectFreekick,2022,RightFoot,19014,Real Betis,Girona,2,1,2022-09-18 16:30:00,,Standard,Aleix García
+491022,33,MissedShots,0.8819999694824219,0.465,0.12885600328445435,Aleix García,h,1055,OpenPlay,2022,LeftFoot,19025,Girona,Real Sociedad,3,5,2022-10-02 16:30:00,Manu Vallejo,Pass,Aleix García
+491662,61,BlockedShot,0.7859999847412109,0.649000015258789,0.021174399182200432,Aleix García,a,1055,OpenPlay,2022,RightFoot,19032,Atletico Madrid,Girona,2,1,2022-10-08 14:15:00,Valentín Castellanos,Pass,Aleix García
+491666,75,SavedShot,0.7759999847412109,0.764000015258789,0.015782300382852554,Aleix García,a,1055,OpenPlay,2022,RightFoot,19032,Atletico Madrid,Girona,2,1,2022-10-08 14:15:00,Valery Fernández,Pass,Aleix García
+491669,85,SavedShot,0.8,0.7230000305175781,0.01822800002992153,Aleix García,a,1055,OpenPlay,2022,RightFoot,19032,Atletico Madrid,Girona,2,1,2022-10-08 14:15:00,,None,Aleix García
+492879,17,MissedShots,0.799000015258789,0.3340000152587891,0.02519349940121174,Aleix García,h,1055,OpenPlay,2022,RightFoot,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,,None,Aleix García
+492881,23,MissedShots,0.7519999694824219,0.6890000152587891,0.05236069858074188,Aleix García,h,1055,DirectFreekick,2022,RightFoot,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,,Standard,Aleix García
+492885,37,MissedShots,0.7630000305175781,0.595999984741211,0.025533100590109825,Aleix García,h,1055,OpenPlay,2022,RightFoot,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,Santiago Bueno,Pass,Aleix García
+492887,47,SavedShot,0.775,0.29600000381469727,0.015086200088262558,Aleix García,h,1055,OpenPlay,2022,LeftFoot,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,Arnau Martinez,TakeOn,Aleix García
+492898,79,MissedShots,0.88,0.49,0.25664499402046204,Aleix García,h,1055,OpenPlay,2022,LeftFoot,19049,Girona,Cadiz,1,1,2022-10-15 12:00:00,Miguel Gutiérrez,Cross,Aleix García
+495873,62,BlockedShot,0.7569999694824219,0.36700000762939455,0.016178999096155167,Aleix García,h,1055,OpenPlay,2022,RightFoot,19064,Girona,Osasuna,1,1,2022-10-23 16:30:00,,None,Aleix García
+497699,14,SavedShot,0.7430000305175781,0.46299999237060546,0.06709440052509308,Aleix García,h,1055,DirectFreekick,2022,RightFoot,19087,Girona,Athletic Club,2,1,2022-11-04 20:00:00,,Standard,Aleix García
+497710,42,SavedShot,0.94,0.3729999923706055,0.062068600207567215,Aleix García,h,1055,OpenPlay,2022,RightFoot,19087,Girona,Athletic Club,2,1,2022-11-04 20:00:00,Toni Villa,Cross,Aleix García
+497716,50,SavedShot,0.9719999694824218,0.33099998474121095,0.05594300106167793,Aleix García,h,1055,OpenPlay,2022,RightFoot,19087,Girona,Athletic Club,2,1,2022-11-04 20:00:00,Valentín Castellanos,Pass,Aleix García
+499089,20,ShotOnPost,0.9,0.315,0.027941299602389336,Aleix García,a,1055,OpenPlay,2022,RightFoot,19093,Elche,Girona,1,2,2022-11-08 18:00:00,Valery Fernández,Cross,Aleix García
+502797,29,MissedShots,0.8009999847412109,0.7019999694824218,0.02006950043141842,Aleix García,a,1055,OpenPlay,2022,RightFoot,19115,Espanyol,Girona,2,2,2023-01-07 20:00:00,,None,Aleix García
+503627,1,SavedShot,0.8209999847412109,0.7080000305175781,0.026828499510884285,Aleix García,h,1055,OpenPlay,2022,RightFoot,19126,Girona,Sevilla,2,1,2023-01-14 15:15:00,Cristhian Stuani,Pass,Aleix García
+504889,5,MissedShots,0.7240000152587891,0.620999984741211,0.01462629996240139,Aleix García,a,1055,OpenPlay,2022,RightFoot,19141,Villarreal,Girona,1,0,2023-01-22 13:00:00,Cristhian Stuani,Pass,Aleix García
+507682,16,SavedShot,0.8959999847412109,0.3729999923706055,0.04706370085477829,Aleix García,h,1055,OpenPlay,2022,RightFoot,19160,Girona,Valencia,1,0,2023-02-05 15:15:00,Miguel Gutiérrez,Cross,Aleix García
+508142,9,BlockedShot,0.7809999847412109,0.26,0.0189846009016037,Aleix García,a,1055,OpenPlay,2022,RightFoot,19163,Cadiz,Girona,2,0,2023-02-10 20:00:00,Oriol Romeu,Pass,Aleix García
+509396,37,MissedShots,0.8519999694824218,0.46,0.1137859970331192,Aleix García,h,1055,OpenPlay,2022,LeftFoot,19181,Girona,Almeria,6,2,2023-02-17 17:00:00,Borja,Pass,Aleix García
+509403,57,SavedShot,0.9159999847412109,0.7630000305175781,0.05240429937839508,Aleix García,h,1055,OpenPlay,2022,RightFoot,19181,Girona,Almeria,6,2,2023-02-17 17:00:00,Rodrigo Riquelme,Pass,Aleix García
+511188,3,Goal,0.865,0.3840000152587891,0.08310230076313019,Aleix García,a,1055,OpenPlay,2022,LeftFoot,19184,Athletic Club,Girona,2,3,2023-02-26 13:00:00,Viktor Tsygankov,Pass,Aleix García
+511891,5,SavedShot,0.6840000152587891,0.48400001525878905,0.013965699821710587,Aleix García,a,1055,OpenPlay,2022,RightFoot,19195,Getafe,Girona,3,2,2023-03-04 13:00:00,Oriol Romeu,Pass,Aleix García
+519922,25,MissedShots,0.7090000152587891,0.2989999961853027,0.03535579890012741,Aleix García,h,1055,DirectFreekick,2022,RightFoot,19248,Girona,Elche,2,0,2023-04-16 12:00:00,,Standard,Aleix García
+519940,87,MissedShots,0.865,0.38599998474121094,0.11182300001382828,Aleix García,h,1055,OpenPlay,2022,RightFoot,19248,Girona,Elche,2,0,2023-04-16 12:00:00,Viktor Tsygankov,Pass,Aleix García
+533988,50,BlockedShot,0.6780000305175782,0.4809999847412109,0.03530249372124672,Aleix García,h,1055,DirectFreekick,2023,RightFoot,22700,Girona,Getafe,3,0,2023-08-20 15:30:00,,Standard,Aleix García
+535143,55,Goal,0.860999984741211,0.4490000152587891,0.09739977866411209,Aleix García,a,1055,OpenPlay,2023,RightFoot,22709,Sevilla,Girona,1,2,2023-08-26 19:30:00,Arnau Martinez,Pass,Aleix García
+538873,18,BlockedShot,0.7430000305175781,0.6120000076293945,0.01856202445924282,Aleix García,h,1055,OpenPlay,2023,RightFoot,22739,Girona,Mallorca,5,3,2023-09-23 12:00:00,Iván Martín,Pass,Aleix García
+538884,52,MissedShots,0.7180000305175781,0.5309999847412109,0.01600486971437931,Aleix García,h,1055,OpenPlay,2023,RightFoot,22739,Girona,Mallorca,5,3,2023-09-23 12:00:00,,None,Aleix García
+538890,68,SavedShot,0.7169999694824218,0.5570000076293945,0.01899603009223938,Aleix García,h,1055,OpenPlay,2023,RightFoot,22739,Girona,Mallorca,5,3,2023-09-23 12:00:00,Daley Blind,Pass,Aleix García
+541435,39,MissedShots,0.7240000152587891,0.46099998474121096,0.015083014033734798,Aleix García,h,1055,OpenPlay,2023,RightFoot,22760,Girona,Real Madrid,0,3,2023-09-30 16:30:00,Artem Dovbyk,Pass,Aleix García
+542438,47,MissedShots,0.7430000305175781,0.5690000152587891,0.015222600661218166,Aleix García,a,1055,OpenPlay,2023,LeftFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,,Rebound,Aleix García
+542439,49,BlockedShot,0.7480000305175781,0.509000015258789,0.022469155490398407,Aleix García,a,1055,OpenPlay,2023,RightFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,Iván Martín,Pass,Aleix García
+542440,50,BlockedShot,0.76,0.43599998474121093,0.024895673617720604,Aleix García,a,1055,OpenPlay,2023,RightFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,Eric Garcia,Pass,Aleix García
+542443,53,BlockedShot,0.8490000152587891,0.39799999237060546,0.07211853563785553,Aleix García,a,1055,OpenPlay,2023,RightFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,Iván Martín,Pass,Aleix García
+542444,58,Goal,0.8159999847412109,0.42900001525878906,0.053258080035448074,Aleix García,a,1055,OpenPlay,2023,RightFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,Yan Couto,Pass,Aleix García
+542447,64,BlockedShot,0.789000015258789,0.40599998474121096,0.03970043361186981,Aleix García,a,1055,OpenPlay,2023,RightFoot,22766,Cadiz,Girona,0,1,2023-10-07 12:00:00,Artem Dovbyk,Pass,Aleix García
+544702,31,SavedShot,0.7519999694824219,0.6430000305175781,0.06042472645640373,Aleix García,h,1055,DirectFreekick,2023,RightFoot,22776,Girona,Almeria,5,2,2023-10-22 14:15:00,,Standard,Aleix García
+544719,94,MissedShots,0.539000015258789,0.335,0.009621787816286087,Aleix García,h,1055,OpenPlay,2023,RightFoot,22776,Girona,Almeria,5,2,2023-10-22 14:15:00,Pablo Torre,Pass,Aleix García
+545183,62,BlockedShot,0.799000015258789,0.37400001525878906,0.03245299682021141,Aleix García,h,1055,OpenPlay,2023,RightFoot,22792,Girona,Celta Vigo,1,0,2023-10-27 19:00:00,Yan Couto,Pass,Aleix García
+546606,41,BlockedShot,0.759000015258789,0.6580000305175782,0.061778049916028976,Aleix García,a,1055,DirectFreekick,2023,RightFoot,22802,Osasuna,Girona,2,4,2023-11-04 13:00:00,,Standard,Aleix García
+546619,89,Goal,0.85,0.45099998474121095,0.09511718153953552,Aleix García,a,1055,OpenPlay,2023,RightFoot,22802,Osasuna,Girona,2,4,2023-11-04 13:00:00,Portu,Pass,Aleix García
+550717,33,MissedShots,0.9030000305175782,0.4909999847412109,0.13474904000759125,Aleix García,h,1055,OpenPlay,2023,RightFoot,22821,Girona,Athletic Club,1,1,2023-11-27 20:00:00,Viktor Tsygankov,Pass,Aleix García
+550725,61,MissedShots,0.7269999694824218,0.455,0.02234817110002041,Aleix García,h,1055,OpenPlay,2023,RightFoot,22821,Girona,Athletic Club,1,1,2023-11-27 20:00:00,Arnau Martinez,Pass,Aleix García
+550936,50,SavedShot,0.779000015258789,0.30100000381469727,0.018348902463912964,Aleix García,h,1055,OpenPlay,2023,RightFoot,22827,Girona,Valencia,2,1,2023-12-02 13:00:00,Iván Martín,Pass,Aleix García
+550940,54,SavedShot,0.865,0.5270000076293946,0.0912560373544693,Aleix García,h,1055,OpenPlay,2023,RightFoot,22827,Girona,Valencia,2,1,2023-12-02 13:00:00,,Rebound,Aleix García
+557453,77,SavedShot,0.92,0.205,0.028101254254579544,Aleix García,h,1055,FromCorner,2023,RightFoot,22869,Girona,Atletico Madrid,4,3,2024-01-03 20:30:00,Yan Couto,Pass,Aleix García
+557456,82,MissedShots,0.76,0.3679999923706055,0.01939500868320465,Aleix García,h,1055,OpenPlay,2023,RightFoot,22869,Girona,Atletico Madrid,4,3,2024-01-03 20:30:00,Yan Couto,Pass,Aleix García
+558413,79,BlockedShot,0.795,0.7219999694824218,0.06600271910429001,Aleix García,a,1055,DirectFreekick,2023,RightFoot,22875,Almeria,Girona,0,0,2024-01-14 13:00:00,,Standard,Aleix García
+560142,71,BlockedShot,0.6819999694824219,0.6919999694824219,0.029874728992581367,Aleix García,a,1055,DirectFreekick,2023,RightFoot,22897,Celta Vigo,Girona,0,1,2024-01-28 13:00:00,,Standard,Aleix García
+560144,83,SavedShot,0.764000015258789,0.5029999923706054,0.042673300951719284,Aleix García,a,1055,OpenPlay,2023,LeftFoot,22897,Celta Vigo,Girona,0,1,2024-01-28 13:00:00,Yangel Herrera,BallTouch,Aleix García
+561467,22,SavedShot,0.8619999694824219,0.40099998474121096,0.05156486853957176,Aleix García,h,1055,FromCorner,2023,RightFoot,22907,Girona,Real Sociedad,0,0,2024-02-03 20:00:00,Sávio,Pass,Aleix García
+561475,64,BlockedShot,0.785,0.5870000076293945,0.09956591576337814,Aleix García,h,1055,DirectFreekick,2023,RightFoot,22907,Girona,Real Sociedad,0,0,2024-02-03 20:00:00,,Standard,Aleix García
+562695,52,MissedShots,0.6990000152587891,0.5870000076293945,0.010091549716889858,Aleix García,a,1055,OpenPlay,2023,RightFoot,22923,Real Madrid,Girona,4,0,2024-02-10 17:30:00,Miguel Gutiérrez,Pass,Aleix García
+566055,81,MissedShots,0.79,0.624000015258789,0.0941585823893547,Aleix García,h,1055,DirectFreekick,2023,RightFoot,22938,Girona,Rayo Vallecano,3,0,2024-02-26 20:00:00,,Standard,Aleix García
+569632,45,MissedShots,0.77,0.6279999923706054,0.02283993735909462,Aleix García,a,1055,OpenPlay,2023,RightFoot,22966,Getafe,Girona,1,0,2024-03-16 17:30:00,Daley Blind,Pass,Aleix García
+573441,28,MissedShots,0.715,0.36200000762939455,0.01746729388833046,Aleix García,a,1055,OpenPlay,2023,RightFoot,22986,Atletico Madrid,Girona,3,1,2024-04-13 12:00:00,Yangel Herrera,BlockedPass,Aleix García
+573453,66,SavedShot,0.7030000305175781,0.36700000762939455,0.010198003612458706,Aleix García,a,1055,OpenPlay,2023,LeftFoot,22986,Atletico Madrid,Girona,3,1,2024-04-13 12:00:00,Arnau Martinez,Pass,Aleix García
+573461,94,MissedShots,0.6669999694824219,0.6709999847412109,0.0074867806397378445,Aleix García,a,1055,OpenPlay,2023,RightFoot,22986,Atletico Madrid,Girona,3,1,2024-04-13 12:00:00,Cristhian Stuani,Pass,Aleix García
+576596,19,MissedShots,0.7930000305175782,0.63,0.030569126829504967,Aleix García,a,1055,OpenPlay,2023,RightFoot,23012,Las Palmas,Girona,0,2,2024-04-27 12:00:00,Sávio,Pass,Aleix García
+581017,27,MissedShots,0.8130000305175781,0.3220000076293945,0.028563693165779114,Aleix García,h,1055,OpenPlay,2023,RightFoot,23036,Girona,Villarreal,0,1,2024-05-14 20:00:00,Iván Martín,Pass,Aleix García
+582431,25,BlockedShot,0.7780000305175782,0.4159999847412109,0.029983634129166603,Aleix García,a,1055,OpenPlay,2023,RightFoot,23053,Valencia,Girona,1,3,2024-05-19 17:00:00,Viktor Tsygankov,Pass,Aleix García
+582459,92,SavedShot,0.77,0.5320000076293945,0.09169559180736542,Aleix García,a,1055,DirectFreekick,2023,RightFoot,23053,Valencia,Girona,1,3,2024-05-19 17:00:00,,Standard,Aleix García
+583025,21,MissedShots,0.7630000305175781,0.385,0.019202854484319687,Aleix García,h,1055,OpenPlay,2023,RightFoot,23058,Girona,Granada,7,0,2024-05-24 19:00:00,,None,Aleix García
+592988,47,MissedShots,0.7419999694824219,0.6969999694824218,0.015503652393817902,Aleix García,h,1055,OpenPlay,2024,LeftFoot,27775,Bayer Leverkusen,Wolfsburg,4,3,2024-09-22 13:30:00,Amine Adli,Pass,Aleix García
+597007,74,MissedShots,0.7880000305175782,0.2879999923706055,0.016240490600466728,Aleix García,h,1055,FromCorner,2024,LeftFoot,27796,Bayer Leverkusen,Eintracht Frankfurt,2,1,2024-10-19 13:30:00,,None,Aleix García
+605784,19,BlockedShot,0.7219999694824218,0.6569999694824219,0.04104121774435043,Aleix García,h,1055,DirectFreekick,2024,RightFoot,27850,Bayer Leverkusen,St. Pauli,2,1,2024-12-07 14:30:00,,Standard,Aleix García
+605799,94,BlockedShot,0.88,0.44299999237060544,0.11881567537784576,Aleix García,h,1055,OpenPlay,2024,RightFoot,27850,Bayer Leverkusen,St. Pauli,2,1,2024-12-07 14:30:00,Jeremie Frimpong,Pass,Aleix García
+611455,17,BlockedShot,0.865999984741211,0.39,0.08397547900676727,Aleix García,h,1055,OpenPlay,2024,LeftFoot,27886,Bayer Leverkusen,Mainz 05,1,0,2025-01-14 19:30:00,Jeremie Frimpong,Pass,Aleix García
+611456,17,BlockedShot,0.8869999694824219,0.37200000762939456,0.06883689016103745,Aleix García,h,1055,OpenPlay,2024,RightFoot,27886,Bayer Leverkusen,Mainz 05,1,0,2025-01-14 19:30:00,,Rebound,Aleix García
+613283,35,Goal,0.8690000152587891,0.48400001525878905,0.12111211568117142,Aleix García,a,1055,OpenPlay,2024,RightFoot,27904,RasenBallsport Leipzig,Bayer Leverkusen,2,2,2025-01-25 14:30:00,Florian Wirtz,Pass,Aleix García
+620193,4,BlockedShot,0.8490000152587891,0.3270000076293945,0.05008665844798088,Aleix García,a,1055,OpenPlay,2024,RightFoot,27951,Eintracht Frankfurt,Bayer Leverkusen,1,4,2025-03-01 17:30:00,,Dispossessed,Aleix García
+620213,61,Goal,0.7869999694824219,0.4640000152587891,0.016804609447717667,Aleix García,a,1055,OpenPlay,2024,RightFoot,27951,Eintracht Frankfurt,Bayer Leverkusen,1,4,2025-03-01 17:30:00,,Aerial,Aleix García
+621174,45,ShotOnPost,0.8069999694824219,0.5179999923706055,0.14612075686454773,Aleix García,h,1055,DirectFreekick,2024,RightFoot,27958,Bayer Leverkusen,Werder Bremen,0,2,2025-03-08 14:30:00,,Standard,Aleix García
+621179,67,BlockedShot,0.7759999847412109,0.38799999237060545,0.02639094926416874,Aleix García,h,1055,OpenPlay,2024,RightFoot,27958,Bayer Leverkusen,Werder Bremen,0,2,2025-03-08 14:30:00,Exequiel Palacios,Pass,Aleix García
+623853,19,Goal,0.8,0.43900001525878907,0.04606127738952637,Aleix García,h,1055,OpenPlay,2024,RightFoot,27976,Bayer Leverkusen,Bochum,3,1,2025-03-28 19:30:00,Exequiel Palacios,Pass,Aleix García
+623865,62,BlockedShot,0.7680000305175781,0.639000015258789,0.02926069311797619,Aleix García,h,1055,OpenPlay,2024,RightFoot,27976,Bayer Leverkusen,Bochum,3,1,2025-03-28 19:30:00,Granit Xhaka,Pass,Aleix García
+627120,52,SavedShot,0.715999984741211,0.5929999923706055,0.014270908199250698,Aleix García,h,1055,OpenPlay,2024,LeftFoot,27994,Bayer Leverkusen,Union Berlin,0,0,2025-04-12 13:30:00,,BallRecovery,Aleix García
+633565,87,SavedShot,0.805,0.500999984741211,0.055375680327415466,Aleix García,h,1055,OpenPlay,2024,LeftFoot,28030,Bayer Leverkusen,Borussia Dortmund,2,4,2025-05-11 13:30:00,Florian Wirtz,Pass,Aleix García
+638699,62,MissedShots,0.7709999847412109,0.6459999847412109,0.067913718521595,Aleix García,h,1055,DirectFreekick,2025,RightFoot,30226,Bayer Leverkusen,Hoffenheim,1,2,2025-08-23 13:30:00,,Standard,Aleix García
+640201,23,MissedShots,0.8730000305175781,0.6919999694824219,0.06764637678861618,Aleix García,a,1055,OpenPlay,2025,RightFoot,30236,Werder Bremen,Bayer Leverkusen,3,3,2025-08-30 13:30:00,Christian Kofane,Pass,Aleix García
+641293,30,SavedShot,0.8080000305175781,0.529000015258789,0.06537147611379623,Aleix García,h,1055,OpenPlay,2025,RightFoot,30242,Bayer Leverkusen,Eintracht Frankfurt,3,1,2025-09-12 18:30:00,Nathan Tella,Pass,Aleix García
+646103,39,MissedShots,0.740999984741211,0.27399999618530274,0.013145679607987404,Aleix García,h,1055,OpenPlay,2025,RightFoot,30269,Bayer Leverkusen,Union Berlin,2,0,2025-10-04 13:30:00,Malik Tillman,LayOff,Aleix García
+646113,58,BlockedShot,0.789000015258789,0.605999984741211,0.04295122250914574,Aleix García,h,1055,OpenPlay,2025,RightFoot,30269,Bayer Leverkusen,Union Berlin,2,0,2025-10-04 13:30:00,Christian Kofane,Pass,Aleix García
+646115,63,MissedShots,0.749000015258789,0.44799999237060545,0.027263034135103226,Aleix García,h,1055,OpenPlay,2025,RightFoot,30269,Bayer Leverkusen,Union Berlin,2,0,2025-10-04 13:30:00,Ibrahim Maza,Pass,Aleix García
+647544,92,BlockedShot,0.9080000305175782,0.549000015258789,0.598331093788147,Aleix García,a,1055,OpenPlay,2025,RightFoot,30282,Mainz 05,Bayer Leverkusen,3,4,2025-10-18 13:30:00,Ben Seghir,Pass,Aleix García
+649619,47,MissedShots,0.765,0.5640000152587891,0.02992779016494751,Aleix García,h,1055,OpenPlay,2025,RightFoot,30288,Bayer Leverkusen,Freiburg,2,0,2025-10-26 13:30:00,Ezequiél Fernández,Pass,Aleix García
+649628,74,BlockedShot,0.8219999694824218,0.4,0.04209185019135475,Aleix García,h,1055,SetPiece,2025,RightFoot,30288,Bayer Leverkusen,Freiburg,2,0,2025-10-26 13:30:00,Álex Grimaldo,Pass,Aleix García
+652233,4,MissedShots,0.8919999694824219,0.8230000305175781,0.0324881449341774,Aleix García,h,1055,FromCorner,2025,RightFoot,30305,Bayer Leverkusen,FC Heidenheim,6,0,2025-11-08 14:30:00,Álex Grimaldo,Pass,Aleix García
+652241,36,BlockedShot,0.7090000152587891,0.4979999923706055,0.044280145317316055,Aleix García,h,1055,DirectFreekick,2025,RightFoot,30305,Bayer Leverkusen,FC Heidenheim,6,0,2025-11-08 14:30:00,,Standard,Aleix García
+652248,56,BlockedShot,0.7119999694824218,0.7280000305175781,0.013727808371186256,Aleix García,h,1055,FromCorner,2025,RightFoot,30305,Bayer Leverkusen,FC Heidenheim,6,0,2025-11-08 14:30:00,Malik Tillman,Pass,Aleix García
+656787,10,BlockedShot,0.7319999694824219,0.6969999694824218,0.040140993893146515,Aleix García,a,1055,DirectFreekick,2025,RightFoot,30334,Augsburg,Bayer Leverkusen,2,0,2025-12-06 14:30:00,,Standard,Aleix García
+658360,42,BlockedShot,0.8030000305175782,0.3920000076293945,0.038217294961214066,Aleix García,h,1055,OpenPlay,2025,RightFoot,30341,Bayer Leverkusen,FC Cologne,2,0,2025-12-13 17:30:00,Arthur,Pass,Aleix García
+662488,87,MissedShots,0.7530000305175781,0.44400001525878907,0.019347021356225014,Aleix García,h,1055,OpenPlay,2025,RightFoot,30359,Bayer Leverkusen,VfB Stuttgart,1,4,2026-01-10 17:30:00,Arthur,Pass,Aleix García
+665999,92,Goal,0.945,0.6170000076293946,0.45265910029411316,Aleix García,a,1055,OpenPlay,2025,LeftFoot,30397,Eintracht Frankfurt,Bayer Leverkusen,1,3,2026-01-31 14:30:00,Ernest Poku,Pass,Aleix García
+667420,43,MissedShots,0.7680000305175781,0.3890000152587891,0.023032333701848984,Aleix García,a,1055,OpenPlay,2025,LeftFoot,30405,Borussia M.Gladbach,Bayer Leverkusen,1,1,2026-02-07 17:30:00,Malik Tillman,Pass,Aleix García
+667424,53,MissedShots,0.789000015258789,0.61,0.03016984649002552,Aleix García,a,1055,OpenPlay,2025,RightFoot,30405,Borussia M.Gladbach,Bayer Leverkusen,1,1,2026-02-07 17:30:00,Ernest Poku,Pass,Aleix García
+669625,60,BlockedShot,0.7180000305175781,0.57,0.046517930924892426,Aleix García,a,1055,DirectFreekick,2025,RightFoot,30429,Union Berlin,Bayer Leverkusen,1,0,2026-02-21 14:30:00,,Standard,Aleix García
+669626,64,MissedShots,0.7719999694824219,0.335,0.018491750583052635,Aleix García,a,1055,OpenPlay,2025,LeftFoot,30429,Union Berlin,Bayer Leverkusen,1,0,2026-02-21 14:30:00,,None,Aleix García
+672284,25,BlockedShot,0.8580000305175781,0.47200000762939454,0.08517558872699738,Aleix García,a,1055,OpenPlay,2025,RightFoot,30371,Hamburger SV,Bayer Leverkusen,0,1,2026-03-04 19:30:00,Christian Kofane,BallTouch,Aleix García
+672526,13,BlockedShot,0.774000015258789,0.3579999923706055,0.02167758345603943,Aleix García,a,1055,OpenPlay,2025,RightFoot,30442,Freiburg,Bayer Leverkusen,3,3,2026-03-07 14:30:00,Ernest Poku,Pass,Aleix García
+673793,5,Goal,0.9069999694824219,0.34400001525878904,0.10118848085403442,Aleix García,h,1055,OpenPlay,2025,RightFoot,30449,Bayer Leverkusen,Bayern Munich,1,1,2026-03-14 14:30:00,Patrik Schick,Pass,Aleix García
+675207,7,MissedShots,0.715999984741211,0.534000015258789,0.01832670345902443,Aleix García,a,1055,OpenPlay,2025,RightFoot,30462,FC Heidenheim,Bayer Leverkusen,3,3,2026-03-21 14:30:00,Robert Andrich,Pass,Aleix García
+675221,76,BlockedShot,0.735,0.534000015258789,0.015248836949467659,Aleix García,a,1055,OpenPlay,2025,RightFoot,30462,FC Heidenheim,Bayer Leverkusen,3,3,2026-03-21 14:30:00,,None,Aleix García
+677761,29,MissedShots,0.789000015258789,0.27600000381469725,0.02068956568837166,Aleix García,a,1055,OpenPlay,2025,RightFoot,30477,Borussia Dortmund,Bayer Leverkusen,0,1,2026-04-11 13:30:00,Exequiel Palacios,Pass,Aleix García
+679121,53,BlockedShot,0.745999984741211,0.5470000076293945,0.06462016701698303,Aleix García,h,1055,DirectFreekick,2025,RightFoot,30485,Bayer Leverkusen,Augsburg,1,2,2026-04-18 13:30:00,,Standard,Aleix García
+683633,0,Goal,0.9119999694824219,0.6190000152587891,0.3664877414703369,Aleix García,a,1055,OpenPlay,2025,LeftFoot,30519,VfB Stuttgart,Bayer Leverkusen,3,1,2026-05-09 13:30:00,Christian Kofane,Pass,Aleix García

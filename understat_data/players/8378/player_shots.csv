@@ -1,0 +1,65 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+367087,87,SavedShot,0.6909999847412109,0.35700000762939454,0.008482090197503567,Malick Thiaw,a,8378,OpenPlay,2019,RightFoot,12706,Freiburg,Schalke 04,4,0,2020-06-27 13:30:00,Weston McKennie,Pass,Malick Thiaw
+384312,29,Goal,0.9540000152587891,0.5540000152587891,0.45302900671958923,Malick Thiaw,h,8378,SetPiece,2020,Head,15185,Schalke 04,VfB Stuttgart,1,1,2020-10-30 19:30:00,Amine Harit,Cross,Malick Thiaw
+384329,81,SavedShot,0.955,0.34,0.008005639538168907,Malick Thiaw,h,8378,SetPiece,2020,Head,15185,Schalke 04,VfB Stuttgart,1,1,2020-10-30 19:30:00,Mark Uth,Aerial,Malick Thiaw
+384334,90,BlockedShot,0.9269999694824219,0.46700000762939453,0.05591399967670441,Malick Thiaw,h,8378,SetPiece,2020,Head,15185,Schalke 04,VfB Stuttgart,1,1,2020-10-30 19:30:00,,Rebound,Malick Thiaw
+387303,21,SavedShot,0.9119999694824219,0.415,0.04775340110063553,Malick Thiaw,h,8378,FromCorner,2020,Head,15206,Schalke 04,Wolfsburg,0,2,2020-11-21 14:30:00,Bastian Oczipka,Cross,Malick Thiaw
+390963,9,OwnGoal,0.07699999809265137,0.53,0,Malick Thiaw,h,8378,FromCorner,2020,OtherBodyPart,15226,Schalke 04,Bayer Leverkusen,0,3,2020-12-06 17:00:00,,CornerAwarded,Malick Thiaw
+390982,56,MissedShots,0.8959999847412109,0.37099998474121093,0.00852345023304224,Malick Thiaw,h,8378,SetPiece,2020,Head,15226,Schalke 04,Bayer Leverkusen,0,3,2020-12-06 17:00:00,Benjamin Stambouli,Aerial,Malick Thiaw
+404403,65,BlockedShot,0.9130000305175782,0.5529999923706055,0.04837990179657936,Malick Thiaw,a,8378,OpenPlay,2020,Head,15326,Union Berlin,Schalke 04,0,0,2021-02-13 17:30:00,Amine Harit,Aerial,Malick Thiaw
+409874,48,MissedShots,0.9169999694824219,0.500999984741211,0.10207799822092056,Malick Thiaw,a,8378,FromCorner,2020,Head,15359,Wolfsburg,Schalke 04,5,0,2021-03-13 14:30:00,Alessandro Schöpf,Cross,Malick Thiaw
+415305,86,SavedShot,0.9259999847412109,0.48700000762939455,0.11569199711084366,Malick Thiaw,a,8378,FromCorner,2020,Head,15397,Freiburg,Schalke 04,4,0,2021-04-17 13:30:00,Mark Uth,Cross,Malick Thiaw
+480573,33,BlockedShot,0.8919999694824219,0.44599998474121094,0.1220019981265068,Malick Thiaw,h,8378,SetPiece,2022,LeftFoot,19357,Schalke 04,Borussia M.Gladbach,2,2,2022-08-13 16:30:00,Rodrigo Zalazar,TakeOn,Malick Thiaw
+483442,9,SavedShot,0.9269999694824219,0.5220000076293946,0.05666099861264229,Malick Thiaw,h,8378,FromCorner,2022,Head,19374,Schalke 04,Union Berlin,1,6,2022-08-27 13:30:00,Thomas Ouwejan,Aerial,Malick Thiaw
+499228,35,SavedShot,0.8919999694824219,0.47200000762939454,0.04814919829368591,Malick Thiaw,a,8378,FromCorner,2022,Head,18712,Cremonese,AC Milan,0,0,2022-11-08 19:45:00,Sandro Tonali,Cross,Malick Thiaw
+509817,24,MissedShots,0.9540000152587891,0.53,0.4702009856700897,Malick Thiaw,a,8378,FromCorner,2022,Head,18805,Monza,AC Milan,0,1,2023-02-18 17:00:00,Theo Hernández,Cross,Malick Thiaw
+515270,51,SavedShot,0.9230000305175782,0.49700000762939456,0.051095299422740936,Malick Thiaw,a,8378,FromCorner,2022,Head,18851,Udinese,AC Milan,3,1,2023-03-18 19:45:00,Sandro Tonali,Aerial,Malick Thiaw
+517684,96,MissedShots,0.8930000305175781,0.48900001525878906,0.08595740050077438,Malick Thiaw,h,8378,OpenPlay,2022,Head,18867,AC Milan,Empoli,0,0,2023-04-07 19:00:00,Sandro Tonali,Cross,Malick Thiaw
+521663,51,BlockedShot,0.8180000305175781,0.3579999923706055,0.04301314800977707,Malick Thiaw,h,8378,OpenPlay,2022,RightFoot,18891,AC Milan,Lecce,2,0,2023-04-23 16:00:00,Junior Messias,Pass,Malick Thiaw
+524099,80,BlockedShot,0.8980000305175782,0.5170000076293946,0.060524940490722656,Malick Thiaw,h,8378,FromCorner,2022,Head,18907,AC Milan,Cremonese,1,1,2023-05-03 19:00:00,Sandro Tonali,Cross,Malick Thiaw
+524457,64,MissedShots,0.9269999694824219,0.4520000076293945,0.31491708755493164,Malick Thiaw,h,8378,FromCorner,2022,Head,18916,AC Milan,Lazio,2,0,2023-05-06 13:00:00,Sandro Tonali,Cross,Malick Thiaw
+527697,22,SavedShot,0.919000015258789,0.4829999923706055,0.04424532502889633,Malick Thiaw,h,8378,FromCorner,2022,Head,18936,AC Milan,Sampdoria,5,1,2023-05-20 18:45:00,Sandro Tonali,Aerial,Malick Thiaw
+537776,35,MissedShots,0.7430000305175781,0.51,0.02113274112343788,Malick Thiaw,a,8378,OpenPlay,2023,LeftFoot,22336,Inter,AC Milan,5,1,2023-09-16 16:00:00,Davide Calabria,Pass,Malick Thiaw
+547107,57,BlockedShot,0.924000015258789,0.5479999923706055,0.05630175769329071,Malick Thiaw,h,8378,SetPiece,2023,Head,22410,AC Milan,Udinese,0,1,2023-11-04 19:45:00,,Aerial,Malick Thiaw
+565900,48,MissedShots,0.925,0.47099998474121096,0.06689848005771637,Malick Thiaw,h,8378,SetPiece,2023,Head,22560,AC Milan,Atalanta,1,1,2024-02-25 19:45:00,Rafael Leão,HeadPass,Malick Thiaw
+574224,12,SavedShot,0.960999984741211,0.5129999923706055,0.5242837071418762,Malick Thiaw,a,8378,FromCorner,2023,Head,22620,Sassuolo,AC Milan,3,3,2024-04-14 13:00:00,Simon Kjaer,Rebound,Malick Thiaw
+579119,86,OwnGoal,0.024000000953674317,0.5079999923706054,0,Malick Thiaw,h,8378,OpenPlay,2023,LeftFoot,22650,AC Milan,Genoa,3,3,2024-05-05 16:00:00,,Clearance,Malick Thiaw
+580184,15,MissedShots,0.885,0.5609999847412109,0.013487390242516994,Malick Thiaw,h,8378,FromCorner,2023,Head,22663,AC Milan,Cagliari,5,1,2024-05-11 18:45:00,Alessandro Florenzi,Aerial,Malick Thiaw
+585048,6,BlockedShot,0.9369999694824219,0.5509999847412109,0.05281731113791466,Malick Thiaw,h,8378,FromCorner,2024,Head,27365,AC Milan,Torino,2,2,2024-08-17 18:45:00,Ismael Bennacer,Aerial,Malick Thiaw
+585055,29,OwnGoal,0.006000000238418579,0.500999984741211,0,Malick Thiaw,h,8378,OpenPlay,2024,LeftFoot,27365,AC Milan,Torino,2,2,2024-08-17 18:45:00,,None,Malick Thiaw
+609631,55,BlockedShot,0.92,0.6,0.08623703569173813,Malick Thiaw,h,8378,FromCorner,2024,LeftFoot,27538,AC Milan,Roma,1,1,2024-12-29 19:45:00,,None,Malick Thiaw
+617440,24,MissedShots,0.950999984741211,0.4929999923706055,0.08156684786081314,Malick Thiaw,h,8378,FromCorner,2024,Head,27608,AC Milan,Verona,1,0,2025-02-15 19:45:00,Theo Hernández,Aerial,Malick Thiaw
+617449,60,BlockedShot,0.9030000305175782,0.475,0.03204098343849182,Malick Thiaw,h,8378,FromCorner,2024,Head,27608,AC Milan,Verona,1,0,2025-02-15 19:45:00,Theo Hernández,Aerial,Malick Thiaw
+618558,4,OwnGoal,0.19,0.6419999694824219,0,Malick Thiaw,a,8378,OpenPlay,2024,OtherBodyPart,27618,Torino,AC Milan,2,1,2025-02-22 17:00:00,,Clearance,Malick Thiaw
+619642,68,MissedShots,0.8869999694824219,0.4620000076293945,0.01524115726351738,Malick Thiaw,a,8378,FromCorner,2024,Head,27442,Bologna,AC Milan,2,1,2025-02-27 19:45:00,Tijjani Reijnders,Aerial,Malick Thiaw
+621459,52,MissedShots,0.9340000152587891,0.49,0.06396737694740295,Malick Thiaw,a,8378,FromCorner,2024,Head,27639,Lecce,AC Milan,2,3,2025-03-08 17:00:00,Theo Hernández,Aerial,Malick Thiaw
+625966,6,OwnGoal,0.02,0.504000015258789,0,Malick Thiaw,h,8378,OpenPlay,2024,OtherBodyPart,27669,AC Milan,Fiorentina,2,2,2025-04-05 18:45:00,,Challenge,Malick Thiaw
+625994,74,BlockedShot,0.899000015258789,0.5259999847412109,0.11491408199071884,Malick Thiaw,h,8378,FromCorner,2024,RightFoot,27669,AC Milan,Fiorentina,2,2,2025-04-05 18:45:00,Rafael Leão,Rebound,Malick Thiaw
+645459,10,SavedShot,0.8909999847412109,0.5170000076293946,0.01677485555410385,Malick Thiaw,h,8378,FromCorner,2025,Head,28836,Newcastle United,Arsenal,1,2,2025-09-28 15:30:00,Sandro Tonali,Aerial,Malick Thiaw
+645460,12,BlockedShot,0.905,0.5170000076293946,0.02546302229166031,Malick Thiaw,h,8378,FromCorner,2025,Head,28836,Newcastle United,Arsenal,1,2,2025-09-28 15:30:00,Sandro Tonali,Aerial,Malick Thiaw
+646707,73,MissedShots,0.9059999847412109,0.595,0.03081364370882511,Malick Thiaw,h,8378,FromCorner,2025,Head,28846,Newcastle United,Nottingham Forest,2,0,2025-10-05 13:00:00,Sandro Tonali,Cross,Malick Thiaw
+646713,79,SavedShot,0.9309999847412109,0.529000015258789,0.4394936263561249,Malick Thiaw,h,8378,OpenPlay,2025,LeftFoot,28846,Newcastle United,Nottingham Forest,2,0,2025-10-05 13:00:00,Jacob Murphy,Cross,Malick Thiaw
+647623,89,MissedShots,0.9109999847412109,0.4879999923706055,0.03331971541047096,Malick Thiaw,a,8378,FromCorner,2025,Head,28848,Brighton,Newcastle United,2,1,2025-10-18 14:00:00,Kieran Trippier,Aerial,Malick Thiaw
+648977,87,MissedShots,0.745999984741211,0.40099998474121096,0.019114045426249504,Malick Thiaw,h,8378,OpenPlay,2025,RightFoot,28866,Newcastle United,Fulham,2,1,2025-10-25 14:00:00,Bruno Guimarães,Pass,Malick Thiaw
+652804,87,MissedShots,0.9009999847412109,0.5170000076293946,0.07485067844390869,Malick Thiaw,a,8378,FromCorner,2025,Head,28879,Brentford,Newcastle United,3,1,2025-11-09 14:00:00,Jacob Ramsey,Cross,Malick Thiaw
+655211,0,Goal,0.960999984741211,0.5220000076293946,0.5072774291038513,Malick Thiaw,a,8378,FromCorner,2025,Head,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,Lewis Miley,Cross,Malick Thiaw
+655226,57,Goal,0.9640000152587891,0.44799999237060545,0.4382293224334717,Malick Thiaw,a,8378,FromCorner,2025,Head,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,Lewis Hall,Aerial,Malick Thiaw
+656139,30,BlockedShot,0.9569999694824218,0.605,0.028843555599451065,Malick Thiaw,h,8378,OpenPlay,2025,Head,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,Sandro Tonali,Aerial,Malick Thiaw
+659993,16,BlockedShot,0.8690000152587891,0.3729999923706055,0.057336993515491486,Malick Thiaw,a,8378,SetPiece,2025,LeftFoot,28954,Manchester United,Newcastle United,1,0,2025-12-26 20:00:00,Lewis Miley,None,Malick Thiaw
+660528,32,BlockedShot,0.8869999694824219,0.6070000076293945,0.07667068392038345,Malick Thiaw,a,8378,SetPiece,2025,RightFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,,Rebound,Malick Thiaw
+660547,77,BlockedShot,0.960999984741211,0.5409999847412109,0.0884174108505249,Malick Thiaw,a,8378,FromCorner,2025,Head,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Joelinton,HeadPass,Malick Thiaw
+661390,77,Goal,0.9719999694824218,0.49900001525878906,0.7401946187019348,Malick Thiaw,h,8378,FromCorner,2025,RightFoot,28968,Newcastle United,Crystal Palace,2,0,2026-01-04 15:00:00,,None,Malick Thiaw
+666285,26,BlockedShot,0.9080000305175782,0.4829999923706055,0.02883205935359001,Malick Thiaw,a,8378,FromCorner,2025,Head,29014,Liverpool,Newcastle United,4,1,2026-01-31 20:00:00,Kieran Trippier,Aerial,Malick Thiaw
+666286,27,BlockedShot,0.8859999847412109,0.5359999847412109,0.014697503298521042,Malick Thiaw,a,8378,FromCorner,2025,Head,29014,Liverpool,Newcastle United,4,1,2026-01-31 20:00:00,Kieran Trippier,Aerial,Malick Thiaw
+667451,66,SavedShot,0.8030000305175782,0.33099998474121095,0.0287327840924263,Malick Thiaw,h,8378,OpenPlay,2025,RightFoot,29026,Newcastle United,Brentford,2,3,2026-02-07 17:30:00,Bruno Guimarães,Pass,Malick Thiaw
+667459,91,MissedShots,0.925,0.49,0.566277801990509,Malick Thiaw,h,8378,SetPiece,2025,RightFoot,29026,Newcastle United,Brentford,2,3,2026-02-07 17:30:00,Anthony Elanga,Pass,Malick Thiaw
+668215,29,BlockedShot,0.955,0.43200000762939456,0.10911308228969574,Malick Thiaw,a,8378,FromCorner,2025,Head,29036,Tottenham,Newcastle United,1,2,2026-02-10 19:30:00,Bruno Guimarães,Cross,Malick Thiaw
+668219,49,SavedShot,0.914000015258789,0.5579999923706055,0.09956315904855728,Malick Thiaw,a,8378,SetPiece,2025,Head,29036,Tottenham,Newcastle United,1,2,2026-02-10 19:30:00,Joe Willock,Cross,Malick Thiaw
+668220,49,Goal,0.970999984741211,0.5379999923706055,0.7422443628311157,Malick Thiaw,a,8378,SetPiece,2025,LeftFoot,29036,Tottenham,Newcastle United,1,2,2026-02-10 19:30:00,,Rebound,Malick Thiaw
+670017,20,SavedShot,0.915,0.634000015258789,0.023386556655168533,Malick Thiaw,a,8378,FromCorner,2025,Head,29043,Manchester City,Newcastle United,2,1,2026-02-21 20:00:00,Kieran Trippier,Cross,Malick Thiaw
+671136,60,BlockedShot,0.9540000152587891,0.5029999923706054,0.5969318747520447,Malick Thiaw,h,8378,FromCorner,2025,LeftFoot,29056,Newcastle United,Everton,2,3,2026-02-28 15:00:00,,None,Malick Thiaw
+672323,78,SavedShot,0.98,0.5309999847412109,0.16769829392433167,Malick Thiaw,h,8378,SetPiece,2025,Head,29065,Newcastle United,Manchester United,2,1,2026-03-04 20:15:00,Sandro Tonali,Cross,Malick Thiaw
+674053,23,MissedShots,0.9219999694824219,0.42700000762939455,0.09580446779727936,Malick Thiaw,a,8378,SetPiece,2025,Head,29071,Chelsea,Newcastle United,0,1,2026-03-14 17:30:00,Lewis Hall,Cross,Malick Thiaw
+679249,42,BlockedShot,0.9490000152587891,0.45599998474121095,0.09598471224308014,Malick Thiaw,h,8378,SetPiece,2025,RightFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,,None,Malick Thiaw
+679254,77,BlockedShot,0.904000015258789,0.5279999923706055,0.06652678549289703,Malick Thiaw,h,8378,SetPiece,2025,LeftFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,Sven Botman,Aerial,Malick Thiaw
+682314,30,SavedShot,0.9680000305175781,0.49599998474121093,0.685438334941864,Malick Thiaw,h,8378,SetPiece,2025,RightFoot,29126,Newcastle United,Brighton,3,1,2026-05-02 14:00:00,Sven Botman,HeadPass,Malick Thiaw

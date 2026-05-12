@@ -1,0 +1,32 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+585477,10,BlockedShot,0.8690000152587891,0.6509999847412109,0.060314830392599106,Albert Grønbæk,h,12880,OpenPlay,2024,LeftFoot,28056,Rennes,Lyon,3,0,2024-08-18 18:45:00,Glen Kamara,Pass,Albert Grønbæk
+585498,69,SavedShot,0.8280000305175781,0.49,0.1002768948674202,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28056,Rennes,Lyon,3,0,2024-08-18 18:45:00,Amine Gouiri,Pass,Albert Grønbæk
+586812,55,BlockedShot,0.7,0.649000015258789,0.034036919474601746,Albert Grønbæk,a,12880,DirectFreekick,2024,RightFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,,Standard,Albert Grønbæk
+589967,69,SavedShot,0.8859999847412109,0.6580000305175782,0.06242174655199051,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,28072,Reims,Rennes,2,1,2024-09-01 15:00:00,Azor Matusiwa,Pass,Albert Grønbæk
+591360,29,SavedShot,0.7959999847412109,0.504000015258789,0.08176781982183456,Albert Grønbæk,h,12880,OpenPlay,2024,LeftFoot,28080,Rennes,Montpellier,3,0,2024-09-15 13:00:00,,TakeOn,Albert Grønbæk
+591368,59,Goal,0.865999984741211,0.46,0.1078474298119545,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28080,Rennes,Montpellier,3,0,2024-09-15 13:00:00,Baptiste Santamaria,Pass,Albert Grønbæk
+592704,20,SavedShot,0.965,0.3390000152587891,0.055099938064813614,Albert Grønbæk,h,12880,FromCorner,2024,RightFoot,28091,Rennes,Lens,1,1,2024-09-21 17:00:00,,TakeOn,Albert Grønbæk
+592713,66,SavedShot,0.7980000305175782,0.3039999961853027,0.028777163475751877,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28091,Rennes,Lens,1,1,2024-09-21 17:00:00,Ludovic Blas,Pass,Albert Grønbæk
+593771,83,SavedShot,0.7809999847412109,0.6220000076293946,0.026152893900871277,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,28094,Paris Saint Germain,Rennes,3,1,2024-09-27 19:00:00,Mikayil Faye,Pass,Albert Grønbæk
+595903,23,BlockedShot,0.8569999694824219,0.40400001525878904,0.07174050062894821,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Glen Kamara,Pass,Albert Grønbæk
+598116,28,BlockedShot,0.78,0.38099998474121094,0.02556956373155117,Albert Grønbæk,h,12880,FromCorner,2024,RightFoot,28123,Rennes,Le Havre,1,0,2024-10-25 18:45:00,Andrés Gómez,Pass,Albert Grønbæk
+598117,29,BlockedShot,0.8069999694824219,0.504000015258789,0.04935897886753082,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28123,Rennes,Le Havre,1,0,2024-10-25 18:45:00,,None,Albert Grønbæk
+598124,44,MissedShots,0.845,0.5479999923706055,0.06636887788772583,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28123,Rennes,Le Havre,1,0,2024-10-25 18:45:00,,None,Albert Grønbæk
+598129,56,MissedShots,0.925,0.715,0.061724815517663956,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28123,Rennes,Le Havre,1,0,2024-10-25 18:45:00,Jota,Pass,Albert Grønbæk
+603411,6,SavedShot,0.73,0.30700000762939456,0.03910750895738602,Albert Grønbæk,a,12880,DirectFreekick,2024,RightFoot,28151,Lille,Rennes,1,0,2024-11-24 14:00:00,,Standard,Albert Grønbæk
+604300,76,ShotOnPost,0.9330000305175781,0.44599998474121094,0.48910167813301086,Albert Grønbæk,h,12880,OpenPlay,2024,LeftFoot,28157,Rennes,Saint-Etienne,5,0,2024-11-30 16:00:00,,Dispossessed,Albert Grønbæk
+604298,76,BlockedShot,0.8959999847412109,0.3870000076293945,0.12242341041564941,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28157,Rennes,Saint-Etienne,5,0,2024-11-30 16:00:00,Jota,Pass,Albert Grønbæk
+607588,32,Goal,0.915,0.4520000076293945,0.29406535625457764,Albert Grønbæk,h,12880,OpenPlay,2024,Head,28174,Rennes,Angers,2,0,2024-12-15 16:00:00,Ludovic Blas,Cross,Albert Grønbæk
+607590,46,BlockedShot,0.8390000152587891,0.4420000076293945,0.10438834875822067,Albert Grønbæk,h,12880,OpenPlay,2024,RightFoot,28174,Rennes,Angers,2,0,2024-12-15 16:00:00,Ludovic Blas,TakeOn,Albert Grønbæk
+607591,57,MissedShots,0.8680000305175781,0.5279999923706055,0.08517350256443024,Albert Grønbæk,h,12880,OpenPlay,2024,LeftFoot,28174,Rennes,Angers,2,0,2024-12-15 16:00:00,Mahamadou Nagida,Cross,Albert Grønbæk
+609828,4,BlockedShot,0.8480000305175781,0.549000015258789,0.06574932485818863,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,28191,Nice,Rennes,3,2,2025-01-03 20:00:00,,Rebound,Albert Grønbæk
+609830,20,MissedShots,0.7430000305175781,0.505,0.02174229733645916,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,28191,Nice,Rennes,3,2,2025-01-03 20:00:00,Azor Matusiwa,Pass,Albert Grønbæk
+614923,32,BlockedShot,0.7619999694824219,0.635,0.017885666340589523,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,Welington,Pass,Albert Grønbæk
+614924,32,BlockedShot,0.8180000305175781,0.5420000076293945,0.04233359545469284,Albert Grønbæk,a,12880,OpenPlay,2024,RightFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,Rebound,Albert Grønbæk
+658866,80,SavedShot,0.7019999694824218,0.515,0.03885722905397415,Albert Grønbæk,h,12880,DirectFreekick,2025,RightFoot,29987,Genoa,Inter,1,2,2025-12-14 17:00:00,,Standard,Albert Grønbæk
+676634,82,SavedShot,0.7469999694824219,0.5120000076293946,0.037682414054870605,Albert Grønbæk,h,12880,OpenPlay,2025,RightFoot,30471,Hamburger SV,Augsburg,1,1,2026-04-04 13:30:00,,None,Albert Grønbæk
+679174,47,BlockedShot,0.8669999694824219,0.7290000152587891,0.033459942787885666,Albert Grønbæk,a,12880,OpenPlay,2025,RightFoot,30493,Werder Bremen,Hamburger SV,3,1,2026-04-18 13:30:00,Nicolás Capaldo,Pass,Albert Grønbæk
+681207,22,SavedShot,0.875,0.6609999847412109,0.06354927271604538,Albert Grønbæk,h,12880,OpenPlay,2025,RightFoot,30497,Hamburger SV,Hoffenheim,1,2,2026-04-25 16:30:00,Fábio Vieira,Pass,Albert Grønbæk
+682216,50,Goal,0.875999984741211,0.35,0.03754589706659317,Albert Grønbæk,a,12880,FromCorner,2025,RightFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,Warmed Omari,Cross,Albert Grønbæk
+682217,52,SavedShot,0.715999984741211,0.73,0.03251337260007858,Albert Grønbæk,a,12880,DirectFreekick,2025,RightFoot,30506,Eintracht Frankfurt,Hamburger SV,1,2,2026-05-02 13:30:00,,Standard,Albert Grønbæk
+684095,35,BlockedShot,0.8159999847412109,0.795,0.011850371025502682,Albert Grønbæk,h,12880,OpenPlay,2025,RightFoot,30515,Hamburger SV,Freiburg,3,2,2026-05-10 13:30:00,,None,Albert Grønbæk

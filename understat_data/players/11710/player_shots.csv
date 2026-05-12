@@ -1,0 +1,113 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+532073,84,Goal,0.955999984741211,0.41900001525878905,0.49286147952079773,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22278,Brighton,Luton,4,1,2023-08-12 14:00:00,,BallRecovery,Simon Adingra
+536421,89,BlockedShot,0.9059999847412109,0.519000015258789,0.14653277397155762,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,21931,Brighton,Newcastle United,3,1,2023-09-02 16:30:00,Kaoru Mitoma,Pass,Simon Adingra
+540869,82,SavedShot,0.8109999847412109,0.34200000762939453,0.03775472566485405,Simon Adingra,a,11710,OpenPlay,2023,LeftFoot,21955,Aston Villa,Brighton,6,1,2023-09-30 11:30:00,Jack Hinshelwood,Pass,Simon Adingra
+543043,19,Goal,0.715999984741211,0.34200000762939453,0.0128962816670537,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,21966,Brighton,Liverpool,2,2,2023-10-08 13:00:00,,BallRecovery,Simon Adingra
+543054,48,SavedShot,0.9069999694824219,0.40400001525878904,0.31144002079963684,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,21966,Brighton,Liverpool,2,2,2023-10-08 13:00:00,Evan Ferguson,TakeOn,Simon Adingra
+546108,7,SavedShot,0.9680000305175781,0.41200000762939454,0.3061826825141907,Simon Adingra,h,11710,OpenPlay,2023,Head,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,Adam Lallana,Cross,Simon Adingra
+546112,14,MissedShots,0.7959999847412109,0.3659999847412109,0.025025414302945137,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,Adam Lallana,Pass,Simon Adingra
+546906,5,MissedShots,0.9319999694824219,0.385,0.02448437362909317,Simon Adingra,a,11710,OpenPlay,2023,Head,21997,Everton,Brighton,1,1,2023-11-04 15:00:00,James Milner,Aerial,Simon Adingra
+546909,8,MissedShots,0.7469999694824219,0.37900001525878907,0.015845339745283127,Simon Adingra,a,11710,OpenPlay,2023,LeftFoot,21997,Everton,Brighton,1,1,2023-11-04 15:00:00,,BallRecovery,Simon Adingra
+548859,5,Goal,0.894000015258789,0.545,0.427514910697937,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22008,Brighton,Sheffield United,1,1,2023-11-12 14:00:00,Facundo Buonanotte,Pass,Simon Adingra
+551649,37,MissedShots,0.775,0.725999984741211,0.015925204381346703,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,Billy Gilmour,Pass,Simon Adingra
+551661,79,MissedShots,0.8919999694824219,0.41200000762939454,0.06470542401075363,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,James Milner,Cross,Simon Adingra
+552256,21,MissedShots,0.7880000305175782,0.40900001525878904,0.022574087604880333,Simon Adingra,h,11710,FromCorner,2023,LeftFoot,22036,Brighton,Brentford,2,1,2023-12-06 19:30:00,,None,Simon Adingra
+552272,62,SavedShot,0.7819999694824219,0.27399999618530274,0.02413122169673443,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22036,Brighton,Brentford,2,1,2023-12-06 19:30:00,Carlos Baleba,Pass,Simon Adingra
+552276,80,SavedShot,0.8080000305175781,0.495,0.018978523090481758,Simon Adingra,h,11710,FromCorner,2023,LeftFoot,22036,Brighton,Brentford,2,1,2023-12-06 19:30:00,,Aerial,Simon Adingra
+552278,82,MissedShots,0.835999984741211,0.47200000762939454,0.08076681196689606,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22036,Brighton,Brentford,2,1,2023-12-06 19:30:00,,None,Simon Adingra
+552871,29,BlockedShot,0.8680000305175781,0.37099998474121093,0.10729683190584183,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22046,Brighton,Burnley,1,1,2023-12-09 15:00:00,Adam Lallana,Pass,Simon Adingra
+552884,73,SavedShot,0.965,0.40599998474121096,0.3768959939479828,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22046,Brighton,Burnley,1,1,2023-12-09 15:00:00,João Pedro,HeadPass,Simon Adingra
+552887,76,Goal,0.9459999847412109,0.45299999237060545,0.4017646014690399,Simon Adingra,h,11710,OpenPlay,2023,Head,22046,Brighton,Burnley,1,1,2023-12-09 15:00:00,Pascal Groß,Cross,Simon Adingra
+555882,18,SavedShot,0.8919999694824219,0.32799999237060545,0.05478352680802345,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22066,Crystal Palace,Brighton,1,1,2023-12-21 20:00:00,Igor Julio,Chipped,Simon Adingra
+564331,26,MissedShots,0.8680000305175781,0.3659999847412109,0.07125391811132431,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,,None,Simon Adingra
+564335,39,MissedShots,0.9169999694824219,0.3110000038146973,0.08326884359121323,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,Adam Webster,Pass,Simon Adingra
+564340,53,SavedShot,0.8959999847412109,0.425,0.12896525859832764,Simon Adingra,a,11710,OpenPlay,2023,LeftFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,Jan Paul van Hecke,Pass,Simon Adingra
+564347,77,Goal,0.9080000305175782,0.40099998474121096,0.12165331095457077,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,Pascal Groß,Cross,Simon Adingra
+564351,84,Goal,0.9030000305175782,0.35,0.06091666221618652,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,,Rebound,Simon Adingra
+564352,88,BlockedShot,0.774000015258789,0.3870000076293945,0.038552336394786835,Simon Adingra,a,11710,OpenPlay,2023,LeftFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,Lewis Dunk,Pass,Simon Adingra
+565185,23,MissedShots,0.87,0.7169999694824218,0.04478076472878456,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Evan Ferguson,TakeOn,Simon Adingra
+565186,25,BlockedShot,0.8380000305175781,0.75,0.025588829070329666,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Danny Welbeck,Pass,Simon Adingra
+565190,56,MissedShots,0.89,0.6459999847412109,0.0439070425927639,Simon Adingra,h,11710,FromCorner,2023,LeftFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Lewis Dunk,BallTouch,Simon Adingra
+565192,58,BlockedShot,0.899000015258789,0.6580000305175782,0.09256025403738022,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Facundo Buonanotte,TakeOn,Simon Adingra
+565200,77,MissedShots,0.9030000305175782,0.42700000762939455,0.052641648799180984,Simon Adingra,h,11710,OpenPlay,2023,Head,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Estupiñán,Cross,Simon Adingra
+568505,8,SavedShot,0.865,0.26399999618530273,0.03993842378258705,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22168,Brighton,Nottingham Forest,1,0,2024-03-10 14:00:00,Pascal Groß,TakeOn,Simon Adingra
+568511,20,MissedShots,0.794000015258789,0.48700000762939455,0.01726127788424492,Simon Adingra,h,11710,FromCorner,2023,LeftFoot,22168,Brighton,Nottingham Forest,1,0,2024-03-10 14:00:00,,Aerial,Simon Adingra
+571899,62,MissedShots,0.8719999694824219,0.77,0.019391147419810295,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22200,Brentford,Brighton,0,0,2024-04-03 18:30:00,Jan Paul van Hecke,Chipped,Simon Adingra
+572551,15,MissedShots,0.865,0.32099998474121094,0.046493418514728546,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,Lewis Dunk,Chipped,Simon Adingra
+572555,34,BlockedShot,0.8419999694824218,0.33099998474121095,0.033972807228565216,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22206,Brighton,Arsenal,0,3,2024-04-06 16:30:00,Estupiñán,Chipped,Simon Adingra
+573681,20,SavedShot,0.9590000152587891,0.3920000076293945,0.10446643829345703,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,,Rebound,Simon Adingra
+573680,20,SavedShot,0.9680000305175781,0.34400001525878904,0.09285895526409149,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,,TakeOn,Simon Adingra
+573682,23,SavedShot,0.8219999694824218,0.5640000152587891,0.06462789326906204,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,Igor Julio,TakeOn,Simon Adingra
+573683,27,MissedShots,0.799000015258789,0.37099998474121093,0.032720327377319336,Simon Adingra,a,11710,OpenPlay,2023,LeftFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,,None,Simon Adingra
+576439,63,MissedShots,0.889000015258789,0.34900001525878904,0.0466967411339283,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22176,Brighton,Manchester City,0,4,2024-04-25 19:00:00,,None,Simon Adingra
+577197,39,MissedShots,0.9159999847412109,0.6079999923706054,0.04343918338418007,Simon Adingra,a,11710,OpenPlay,2023,Head,22235,Bournemouth,Brighton,3,0,2024-04-28 13:00:00,Pascal Groß,Cross,Simon Adingra
+578864,2,SavedShot,0.88,0.7319999694824219,0.0378914438188076,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,Adam Webster,Pass,Simon Adingra
+578866,7,SavedShot,0.750999984741211,0.4540000152587891,0.02309149131178856,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,João Pedro,TakeOn,Simon Adingra
+578869,47,SavedShot,0.9530000305175781,0.59,0.32169464230537415,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,João Pedro,Cross,Simon Adingra
+578875,79,SavedShot,0.914000015258789,0.700999984741211,0.051444750279188156,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22247,Brighton,Aston Villa,1,0,2024-05-05 13:00:00,Julio Enciso,Pass,Simon Adingra
+579933,26,MissedShots,0.8469999694824218,0.6730000305175782,0.08048923313617706,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Julio Enciso,Pass,Simon Adingra
+579952,76,BlockedShot,0.85,0.48900001525878906,0.09631666541099548,Simon Adingra,a,11710,OpenPlay,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,Benicio Baker-Boaitey,Pass,Simon Adingra
+581190,9,MissedShots,0.86,0.5529999923706055,0.058390215039253235,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Tariq Lamptey,Cross,Simon Adingra
+581196,30,MissedShots,0.7809999847412109,0.6370000076293946,0.02727733738720417,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Facundo Buonanotte,Pass,Simon Adingra
+581207,75,MissedShots,0.86,0.37,0.09992212057113647,Simon Adingra,h,11710,OpenPlay,2023,LeftFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Valentín Barco,TakeOn,Simon Adingra
+581210,93,ShotOnPost,0.9180000305175782,0.3270000076293945,0.025868047028779984,Simon Adingra,h,11710,OpenPlay,2023,RightFoot,22226,Brighton,Chelsea,1,2,2024-05-15 18:45:00,Pascal Groß,Cross,Simon Adingra
+584781,71,BlockedShot,0.9209999847412109,0.3270000076293945,0.11487384885549545,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26605,Everton,Brighton,0,3,2024-08-17 14:00:00,James Milner,BallRecovery,Simon Adingra
+584782,86,Goal,0.8490000152587891,0.5420000076293945,0.09746789187192917,Simon Adingra,a,11710,OpenPlay,2024,LeftFoot,26605,Everton,Brighton,0,3,2024-08-17 14:00:00,Danny Welbeck,Pass,Simon Adingra
+585865,91,MissedShots,0.9469999694824218,0.580999984741211,0.051277097314596176,Simon Adingra,h,11710,OpenPlay,2024,Head,26612,Brighton,Manchester United,2,1,2024-08-24 11:30:00,Joël Veltman,Aerial,Simon Adingra
+590763,87,BlockedShot,0.8030000305175782,0.3110000038146973,0.08156181126832962,Simon Adingra,h,11710,OpenPlay,2024,LeftFoot,26633,Brighton,Ipswich,0,0,2024-09-14 14:00:00,Ferdi Kadioglu,Chipped,Simon Adingra
+592934,8,MissedShots,0.9530000305175781,0.3270000076293945,0.07342173904180527,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26650,Brighton,Nottingham Forest,2,2,2024-09-22 13:00:00,Georginio Rutter,Pass,Simon Adingra
+603832,91,SavedShot,0.894000015258789,0.37099998474121093,0.01580437831580639,Simon Adingra,h,11710,OpenPlay,2024,Head,26723,Brighton,Southampton,1,1,2024-11-29 20:00:00,Yankuba Minteh,Pass,Simon Adingra
+605397,23,MissedShots,0.865999984741211,0.29200000762939454,0.0403389036655426,Simon Adingra,a,11710,OpenPlay,2024,LeftFoot,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Matt O&#039;Riley,Pass,Simon Adingra
+605399,33,SavedShot,0.9069999694824219,0.4809999847412109,0.3715069591999054,Simon Adingra,a,11710,OpenPlay,2024,LeftFoot,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Kaoru Mitoma,Cross,Simon Adingra
+609751,11,Goal,0.8680000305175781,0.549000015258789,0.3527684807777405,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26782,Aston Villa,Brighton,2,2,2024-12-30 19:45:00,João Pedro,None,Simon Adingra
+610080,18,BlockedShot,0.78,0.49900001525878906,0.03233881667256355,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26794,Brighton,Arsenal,1,1,2025-01-04 17:30:00,,None,Simon Adingra
+610081,18,BlockedShot,0.8719999694824219,0.590999984741211,0.0634753555059433,Simon Adingra,h,11710,FromCorner,2024,RightFoot,26794,Brighton,Arsenal,1,1,2025-01-04 17:30:00,,None,Simon Adingra
+610084,33,MissedShots,0.895,0.53,0.4456722140312195,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26794,Brighton,Arsenal,1,1,2025-01-04 17:30:00,Matt O&#039;Riley,Pass,Simon Adingra
+611867,50,BlockedShot,0.8690000152587891,0.5120000076293946,0.07571519166231155,Simon Adingra,a,11710,OpenPlay,2024,LeftFoot,26805,Ipswich,Brighton,0,2,2025-01-16 19:30:00,Estupiñán,Cross,Simon Adingra
+614442,48,MissedShots,0.7909999847412109,0.629000015258789,0.03543100878596306,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26840,Nottingham Forest,Brighton,7,0,2025-02-01 12:30:00,Yankuba Minteh,TakeOn,Simon Adingra
+618491,86,SavedShot,0.7280000305175781,0.4520000076293945,0.025999877601861954,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,Mats Wieffer,Pass,Simon Adingra
+618493,91,MissedShots,0.85,0.759000015258789,0.02353093773126602,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26861,Southampton,Brighton,0,4,2025-02-22 15:00:00,,None,Simon Adingra
+625196,24,MissedShots,0.830999984741211,0.34200000762939453,0.043203648179769516,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26893,Brighton,Aston Villa,0,3,2025-04-02 19:45:00,Kaoru Mitoma,Pass,Simon Adingra
+625206,93,BlockedShot,0.945,0.33099998474121095,0.04496423155069351,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26893,Brighton,Aston Villa,0,3,2025-04-02 19:45:00,,None,Simon Adingra
+627211,10,MissedShots,0.894000015258789,0.649000015258789,0.061863359063863754,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,,None,Simon Adingra
+627212,15,SavedShot,0.9519999694824218,0.6070000076293945,0.3725946247577667,Simon Adingra,h,11710,OpenPlay,2024,LeftFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,João Pedro,Throughball,Simon Adingra
+627216,26,BlockedShot,0.8959999847412109,0.635,0.08231491595506668,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,Estupiñán,Pass,Simon Adingra
+627221,36,ShotOnPost,0.9219999694824219,0.6140000152587891,0.11306324601173401,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,João Pedro,BallTouch,Simon Adingra
+627228,45,BlockedShot,0.8180000305175781,0.6609999847412109,0.035652801394462585,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,João Pedro,Pass,Simon Adingra
+627226,48,BlockedShot,0.8469999694824218,0.38599998474121094,0.06347399950027466,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,João Pedro,Pass,Simon Adingra
+627231,49,SavedShot,0.7909999847412109,0.6830000305175781,0.019531525671482086,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26914,Brighton,Leicester,2,2,2025-04-12 14:00:00,Carlos Baleba,TakeOn,Simon Adingra
+630373,52,BlockedShot,0.8419999694824218,0.6370000076293946,0.05426568537950516,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26934,Brighton,West Ham,3,2,2025-04-26 14:00:00,Jack Hinshelwood,TakeOn,Simon Adingra
+632826,64,BlockedShot,0.8069999694824219,0.49700000762939456,0.039989884942770004,Simon Adingra,a,11710,OpenPlay,2024,LeftFoot,26961,Wolverhampton Wanderers,Brighton,0,2,2025-05-10 14:00:00,Yankuba Minteh,Cross,Simon Adingra
+635631,10,BlockedShot,0.88,0.7569999694824219,0.022146068513393402,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26965,Brighton,Liverpool,3,2,2025-05-19 19:00:00,Jan Paul van Hecke,Chipped,Simon Adingra
+635638,30,SavedShot,0.830999984741211,0.7219999694824218,0.026416203007102013,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26965,Brighton,Liverpool,3,2,2025-05-19 19:00:00,Estupiñán,Pass,Simon Adingra
+635641,34,BlockedShot,0.874000015258789,0.665,0.06803728640079498,Simon Adingra,h,11710,OpenPlay,2024,RightFoot,26965,Brighton,Liverpool,3,2,2025-05-19 19:00:00,Brajan Gruda,Pass,Simon Adingra
+635649,50,BlockedShot,0.830999984741211,0.4329999923706055,0.05339966341853142,Simon Adingra,h,11710,FromCorner,2024,RightFoot,26965,Brighton,Liverpool,3,2,2025-05-19 19:00:00,,Rebound,Simon Adingra
+636360,2,MissedShots,0.8469999694824218,0.37099998474121093,0.0574864000082016,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Yankuba Minteh,HeadPass,Simon Adingra
+636363,11,BlockedShot,0.735999984741211,0.565,0.017883218824863434,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,Jack Hinshelwood,BallRecovery,Simon Adingra
+636369,36,MissedShots,0.8969999694824219,0.3679999923706055,0.06059633195400238,Simon Adingra,a,11710,OpenPlay,2024,RightFoot,26976,Tottenham,Brighton,1,4,2025-05-25 15:00:00,,None,Simon Adingra
+637694,47,MissedShots,0.875,0.5790000152587891,0.07569392770528793,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,,None,Simon Adingra
+660370,0,BlockedShot,0.8569999694824219,0.7090000152587891,0.027819838374853134,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Granit Xhaka,HeadPass,Simon Adingra
+660374,27,Goal,0.919000015258789,0.6859999847412109,0.11955715715885162,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,28956,Sunderland,Leeds,1,1,2025-12-28 14:00:00,Granit Xhaka,Throughball,Simon Adingra
+660777,39,BlockedShot,0.8,0.669000015258789,0.027973365038633347,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,Brian Brobbey,Pass,Simon Adingra
+660782,51,SavedShot,0.9440000152587891,0.7419999694824219,0.041244231164455414,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,,Dispossessed,Simon Adingra
+661410,63,MissedShots,0.850999984741211,0.33,0.043315887451171875,Simon Adingra,a,11710,FromCorner,2025,LeftFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Trai Hume,Pass,Simon Adingra
+667738,54,MissedShots,0.8030000305175782,0.500999984741211,0.033510398119688034,Simon Adingra,a,11710,FromCorner,2025,RightFoot,29725,Nice,Monaco,0,0,2026-02-08 14:00:00,,None,Simon Adingra
+668513,17,MissedShots,0.8140000152587891,0.629000015258789,0.04256219416856766,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Maghnes Akliouche,Pass,Simon Adingra
+668517,24,Goal,0.9480000305175781,0.534000015258789,0.6002370119094849,Simon Adingra,h,11710,OpenPlay,2025,LeftFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,,None,Simon Adingra
+668518,27,Goal,0.8690000152587891,0.57,0.3521631062030792,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Aleksandr Golovin,Pass,Simon Adingra
+668521,39,BlockedShot,0.8730000305175781,0.57,0.1044008880853653,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29733,Monaco,Nantes,3,1,2026-02-13 20:05:00,Caio Henrique,Pass,Simon Adingra
+669811,41,MissedShots,0.8440000152587891,0.634000015258789,0.0573151558637619,Simon Adingra,a,11710,OpenPlay,2025,LeftFoot,29739,Lens,Monaco,2,3,2026-02-21 16:00:00,Mamadou Coulibaly,Pass,Simon Adingra
+671305,61,Goal,0.8180000305175781,0.6719999694824219,0.04136284440755844,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29750,Monaco,Angers,2,0,2026-02-28 18:00:00,Aleksandr Golovin,Pass,Simon Adingra
+672405,87,BlockedShot,0.85,0.37900001525878907,0.11592954397201538,Simon Adingra,a,11710,OpenPlay,2025,RightFoot,29761,Paris Saint Germain,Monaco,1,3,2026-03-06 19:45:00,Mika Biereth,Pass,Simon Adingra
+675819,66,BlockedShot,0.8930000305175781,0.6940000152587891,0.049347277730703354,Simon Adingra,a,11710,OpenPlay,2025,RightFoot,29774,Lyon,Monaco,1,2,2026-03-22 14:00:00,Lamine Camara,Pass,Simon Adingra
+677224,92,MissedShots,0.9119999694824219,0.2979999923706055,0.5274825096130371,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29787,Monaco,Marseille,2,1,2026-04-05 18:45:00,Anssumane Fati,TakeOn,Simon Adingra
+677427,19,SavedShot,0.91,0.6840000152587891,0.07060973346233368,Simon Adingra,a,11710,OpenPlay,2025,LeftFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Aladji Bamba,TakeOn,Simon Adingra
+677443,62,BlockedShot,0.8590000152587891,0.4129999923706055,0.0872843936085701,Simon Adingra,a,11710,OpenPlay,2025,RightFoot,29796,Paris FC,Monaco,4,1,2026-04-10 17:00:00,Aladji Bamba,Pass,Simon Adingra
+679610,50,BlockedShot,0.909000015258789,0.6709999847412109,0.06696977466344833,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Denis Zakaria,Pass,Simon Adingra
+679617,65,BlockedShot,0.855,0.7169999694824218,0.03320338949561119,Simon Adingra,h,11710,OpenPlay,2025,RightFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Maghnes Akliouche,Pass,Simon Adingra
+679620,81,BlockedShot,0.9180000305175782,0.6270000076293946,0.07538100332021713,Simon Adingra,h,11710,OpenPlay,2025,LeftFoot,29804,Monaco,Auxerre,2,2,2026-04-19 13:00:00,Aleksandr Golovin,HeadPass,Simon Adingra
+681290,9,MissedShots,0.8969999694824219,0.6370000076293946,0.07981312274932861,Simon Adingra,a,11710,OpenPlay,2025,RightFoot,29816,Toulouse,Monaco,2,2,2026-04-25 19:05:00,Folarin Balogun,Chipped,Simon Adingra
+681291,13,SavedShot,0.9259999847412109,0.649000015258789,0.3513258099555969,Simon Adingra,a,11710,OpenPlay,2025,LeftFoot,29816,Toulouse,Monaco,2,2,2026-04-25 19:05:00,Folarin Balogun,None,Simon Adingra
+682720,5,BlockedShot,0.850999984741211,0.6580000305175782,0.049423541873693466,Simon Adingra,a,11710,OpenPlay,2025,LeftFoot,29820,Metz,Monaco,1,2,2026-05-03 13:00:00,Aleksandr Golovin,Pass,Simon Adingra
+684504,38,MissedShots,0.840999984741211,0.515,0.056470293551683426,Simon Adingra,h,11710,FromCorner,2025,LeftFoot,29831,Monaco,Lille,0,1,2026-05-10 19:00:00,,None,Simon Adingra
+684506,43,MissedShots,0.7959999847412109,0.72,0.017893409356474876,Simon Adingra,h,11710,OpenPlay,2025,LeftFoot,29831,Monaco,Lille,0,1,2026-05-10 19:00:00,Folarin Balogun,Pass,Simon Adingra

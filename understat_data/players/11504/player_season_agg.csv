@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,31,12,44,1553,8.48036734201014,0,1.7774117784574628,21,2025,Bournemouth,5,0,10,6.958029655739665,10.210385166108608,4.017285294830799,11504,Eli Junior Kroupi
+season,Sub,30,5,22,1065,4.23556845728308,3,2.0847119065001607,11,2023,Lorient,1,0,5,4.23556845728308,7.326598536223173,2.477607460692525,11504,Eli Junior Kroupi
+season,Sub,1,0,0,7,0,0,0,0,2022,Lorient,0,0,0,0,0,0,11504,Eli Junior Kroupi

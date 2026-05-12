@@ -1,0 +1,39 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+642421,86,MissedShots,0.850999984741211,0.6790000152587891,0.04029260575771332,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29573,Strasbourg,Le Havre,1,0,2025-09-14 15:15:00,Mamadou Sarr,Pass,Martial Godo
+646906,43,SavedShot,0.8769999694824219,0.40400001525878904,0.09403305500745773,Martial Godo,h,11164,OpenPlay,2025,LeftFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,,None,Martial Godo
+646913,65,Goal,0.945,0.49400001525878906,0.6472394466400146,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,Felix Lemarechal,Rebound,Martial Godo
+646915,69,Goal,0.905,0.5509999847412109,0.48407799005508423,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29600,Strasbourg,Angers,5,0,2025-10-05 15:15:00,,Rebound,Martial Godo
+650486,71,SavedShot,0.9109999847412109,0.45,0.5573582649230957,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29627,Strasbourg,Auxerre,3,0,2025-10-29 19:05:00,Sebastian Nanasi,Throughball,Martial Godo
+650490,88,MissedShots,0.8719999694824219,0.4909999847412109,0.11463117599487305,Martial Godo,h,11164,OpenPlay,2025,LeftFoot,29627,Strasbourg,Auxerre,3,0,2025-10-29 19:05:00,Kendry Páez,BallRecovery,Martial Godo
+651434,92,BlockedShot,0.8219999694824218,0.6179999923706054,0.03393321856856346,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29635,Rennes,Strasbourg,4,1,2025-11-02 14:00:00,,None,Martial Godo
+655872,77,MissedShots,0.855999984741211,0.6220000076293946,0.05330006405711174,Martial Godo,h,11164,SetPiece,2025,LeftFoot,29663,Strasbourg,Brest,1,2,2025-11-30 14:00:00,,None,Martial Godo
+661155,40,SavedShot,0.9030000305175782,0.3029999923706055,0.06871549785137177,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29688,Nice,Strasbourg,1,1,2026-01-03 18:00:00,Joaquín Panichelli,TakeOn,Martial Godo
+664055,36,MissedShots,0.874000015258789,0.659000015258789,0.054485201835632324,Martial Godo,h,11164,FromCorner,2025,RightFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,,Rebound,Martial Godo
+664057,41,SavedShot,0.825999984741211,0.6940000152587891,0.03151673078536987,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Valentín Barco,Pass,Martial Godo
+664058,42,Goal,0.9259999847412109,0.5729999923706055,0.04572441428899765,Martial Godo,h,11164,OpenPlay,2025,Head,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Guela Doué,Aerial,Martial Godo
+664059,46,SavedShot,0.870999984741211,0.644000015258789,0.10400691628456116,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29698,Strasbourg,Metz,2,1,2026-01-18 14:00:00,Samir El Mourabet,Pass,Martial Godo
+665552,57,Goal,0.9930000305175781,0.5170000076293946,0.979040801525116,Martial Godo,a,11164,OpenPlay,2025,OtherBodyPart,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Diego Moreira,Rebound,Martial Godo
+665554,71,Goal,0.9580000305175781,0.5029999923706054,0.6117808222770691,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29703,Lille,Strasbourg,1,4,2026-01-25 19:45:00,Julio Enciso,Cross,Martial Godo
+666800,89,BlockedShot,0.855,0.6029999923706054,0.044896893203258514,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29716,Strasbourg,Paris Saint Germain,1,2,2026-02-01 19:45:00,Diego Moreira,HeadPass,Martial Godo
+666801,92,MissedShots,0.8980000305175782,0.5259999847412109,0.4473905861377716,Martial Godo,h,11164,OpenPlay,2025,LeftFoot,29716,Strasbourg,Paris Saint Germain,1,2,2026-02-01 19:45:00,,None,Martial Godo
+667828,35,Goal,0.8180000305175781,0.580999984741211,0.04430462047457695,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,,None,Martial Godo
+667839,70,BlockedShot,0.9690000152587891,0.6430000305175781,0.056849636137485504,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29721,Le Havre,Strasbourg,2,1,2026-02-08 16:15:00,Valentín Barco,Chipped,Martial Godo
+668761,4,ShotOnPost,0.96,0.5370000076293945,0.5488108992576599,Martial Godo,a,11164,OpenPlay,2025,Head,29731,Marseille,Strasbourg,2,2,2026-02-14 16:00:00,Diego Moreira,Cross,Martial Godo
+668772,48,BlockedShot,0.870999984741211,0.6840000152587891,0.05772173032164574,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29731,Marseille,Strasbourg,2,2,2026-02-14 16:00:00,Julio Enciso,Pass,Martial Godo
+670473,5,MissedShots,0.9269999694824219,0.6190000152587891,0.33355849981307983,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29743,Strasbourg,Lyon,3,1,2026-02-22 19:45:00,,Rebound,Martial Godo
+670477,31,SavedShot,0.9030000305175782,0.575,0.4015364944934845,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29743,Strasbourg,Lyon,3,1,2026-02-22 19:45:00,,Dispossessed,Martial Godo
+670479,36,Goal,0.914000015258789,0.5529999923706055,0.3243267834186554,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29743,Strasbourg,Lyon,3,1,2026-02-22 19:45:00,Diego Moreira,Chipped,Martial Godo
+670722,44,BlockedShot,0.8630000305175781,0.6120000076293945,0.1296200305223465,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29753,Strasbourg,Lens,1,1,2026-02-27 19:45:00,Samir El Mourabet,BallRecovery,Martial Godo
+672854,47,BlockedShot,0.845,0.675,0.05092423036694527,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29754,Auxerre,Strasbourg,0,0,2026-03-07 18:00:00,Guemissongui Ouattara,BallRecovery,Martial Godo
+674467,7,BlockedShot,0.9369999694824219,0.52,0.12962289154529572,Martial Godo,h,11164,FromCorner,2025,RightFoot,29771,Strasbourg,Paris FC,0,0,2026-03-15 14:00:00,Valentín Barco,Cross,Martial Godo
+674479,55,MissedShots,0.93,0.6809999847412109,0.06647946685552597,Martial Godo,h,11164,OpenPlay,2025,LeftFoot,29771,Strasbourg,Paris FC,0,0,2026-03-15 14:00:00,Julio Enciso,Pass,Martial Godo
+676229,93,BlockedShot,0.76,0.6669999694824219,0.026309002190828323,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29776,Nantes,Strasbourg,2,3,2026-03-22 19:45:00,Sebastian Nanasi,Pass,Martial Godo
+676689,7,MissedShots,0.8380000305175781,0.67,0.045662738382816315,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,,BallRecovery,Martial Godo
+676692,23,ShotOnPost,0.955,0.500999984741211,0.6447652578353882,Martial Godo,h,11164,OpenPlay,2025,Head,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Gessime Yassine,Aerial,Martial Godo
+676694,27,Goal,0.9290000152587891,0.5609999847412109,0.30534249544143677,Martial Godo,h,11164,OpenPlay,2025,Head,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,Guela Doué,Cross,Martial Godo
+676695,30,BlockedShot,0.9630000305175781,0.67,0.08164874464273453,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,,Tackle,Martial Godo
+676708,69,BlockedShot,0.8730000305175781,0.6359999847412109,0.07338830083608627,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29789,Strasbourg,Nice,3,1,2026-04-04 15:00:00,,None,Martial Godo
+679764,60,ShotOnPost,0.889000015258789,0.565,0.06277115643024445,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29807,Strasbourg,Rennes,0,3,2026-04-19 15:15:00,Samuel Amo-Ameyaw,Cross,Martial Godo
+679775,94,MissedShots,0.8119999694824219,0.7,0.02546478994190693,Martial Godo,h,11164,OpenPlay,2025,RightFoot,29807,Strasbourg,Rennes,0,3,2026-04-19 15:15:00,Samir El Mourabet,Pass,Martial Godo
+684425,47,SavedShot,0.9280000305175782,0.5279999923706055,0.08716361969709396,Martial Godo,a,11164,OpenPlay,2025,Head,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Guela Doué,Aerial,Martial Godo
+684422,49,MissedShots,0.874000015258789,0.6990000152587891,0.0767211839556694,Martial Godo,a,11164,OpenPlay,2025,RightFoot,29826,Angers,Strasbourg,1,1,2026-05-10 19:00:00,Julio Enciso,Pass,Martial Godo

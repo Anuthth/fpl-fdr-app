@@ -1,0 +1,22 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+585365,53,MissedShots,0.875,0.25,0.038392651826143265,Jackson Tchatchoua,h,12113,OpenPlay,2024,RightFoot,27366,Verona,Napoli,3,0,2024-08-18 16:30:00,Grigoris Kastanos,Pass,Jackson Tchatchoua
+590060,54,Goal,0.925,0.37900001525878907,0.35801008343696594,Jackson Tchatchoua,a,12113,OpenPlay,2024,RightFoot,27389,Genoa,Verona,0,2,2024-09-01 16:30:00,,None,Jackson Tchatchoua
+591820,79,BlockedShot,0.915,0.6619999694824219,0.055229902267456055,Jackson Tchatchoua,a,12113,OpenPlay,2024,RightFoot,27396,Lazio,Verona,2,1,2024-09-16 18:45:00,,None,Jackson Tchatchoua
+592007,72,BlockedShot,0.6919999694824219,0.5029999923706054,0.012100733816623688,Jackson Tchatchoua,h,12113,FromCorner,2024,RightFoot,27405,Verona,Torino,2,3,2024-09-20 18:45:00,,Aerial,Jackson Tchatchoua
+606339,38,MissedShots,0.705999984741211,0.580999984741211,0.012275890447199345,Jackson Tchatchoua,h,12113,FromCorner,2024,LeftFoot,27506,Verona,Empoli,1,4,2024-12-08 14:00:00,,Aerial,Jackson Tchatchoua
+606348,57,MissedShots,0.8959999847412109,0.395,0.023275701329112053,Jackson Tchatchoua,h,12113,OpenPlay,2024,Head,27506,Verona,Empoli,1,4,2024-12-08 14:00:00,Darko Lazovic,Aerial,Jackson Tchatchoua
+608088,4,MissedShots,0.855,0.35400001525878905,0.035363078117370605,Jackson Tchatchoua,h,12113,OpenPlay,2024,RightFoot,27522,Verona,AC Milan,0,1,2024-12-20 19:45:00,Darko Lazovic,Cross,Jackson Tchatchoua
+610133,66,MissedShots,0.8580000305175781,0.35,0.06321161240339279,Jackson Tchatchoua,h,12113,OpenPlay,2024,RightFoot,27545,Verona,Udinese,0,0,2025-01-04 19:45:00,Daniel Mosquera,Pass,Jackson Tchatchoua
+610135,66,MissedShots,0.815,0.3990000152587891,0.04678214713931084,Jackson Tchatchoua,h,12113,OpenPlay,2024,LeftFoot,27545,Verona,Udinese,0,0,2025-01-04 19:45:00,Ondrej Duda,Pass,Jackson Tchatchoua
+614226,75,Goal,0.9840000152587891,0.4329999923706055,0.6820663809776306,Jackson Tchatchoua,a,12113,OpenPlay,2024,LeftFoot,27580,Venezia,Verona,1,1,2025-01-27 17:30:00,Amin Sarr,Rebound,Jackson Tchatchoua
+616670,65,MissedShots,0.8619999694824219,0.6029999923706054,0.05221443995833397,Jackson Tchatchoua,h,12113,OpenPlay,2024,LeftFoot,27595,Verona,Atalanta,0,5,2025-02-08 17:00:00,,None,Jackson Tchatchoua
+616673,74,SavedShot,0.9080000305175782,0.634000015258789,0.4179040491580963,Jackson Tchatchoua,h,12113,OpenPlay,2024,LeftFoot,27595,Verona,Atalanta,0,5,2025-02-08 17:00:00,Grigoris Kastanos,Throughball,Jackson Tchatchoua
+620856,75,BlockedShot,0.8590000152587891,0.765,0.02691027708351612,Jackson Tchatchoua,a,12113,OpenPlay,2024,RightFoot,27626,Juventus,Verona,2,0,2025-03-03 19:45:00,Amin Sarr,Pass,Jackson Tchatchoua
+627721,17,MissedShots,0.750999984741211,0.27600000381469725,0.01684335246682167,Jackson Tchatchoua,h,12113,OpenPlay,2024,LeftFoot,27677,Verona,Genoa,0,0,2025-04-13 13:00:00,Daniele Ghilardi,Pass,Jackson Tchatchoua
+631682,74,BlockedShot,0.8240000152587891,0.44,0.0551200695335865,Jackson Tchatchoua,a,12113,OpenPlay,2024,LeftFoot,27706,Inter,Verona,1,0,2025-05-03 18:45:00,Domagoj Bradaric,Pass,Jackson Tchatchoua
+633422,49,BlockedShot,0.7480000305175781,0.3170000076293945,0.014934146776795387,Jackson Tchatchoua,h,12113,OpenPlay,2024,RightFoot,27715,Verona,Lecce,1,1,2025-05-11 13:00:00,Casper Tengstedt,BallTouch,Jackson Tchatchoua
+635582,8,MissedShots,0.7040000152587891,0.46099998474121096,0.013057014904916286,Jackson Tchatchoua,h,12113,FromCorner,2024,RightFoot,27725,Verona,Como,1,1,2025-05-18 18:45:00,,None,Jackson Tchatchoua
+635587,33,MissedShots,0.74,0.6179999923706054,0.031218430027365685,Jackson Tchatchoua,h,12113,OpenPlay,2024,RightFoot,27725,Verona,Como,1,1,2025-05-18 18:45:00,Amin Sarr,Pass,Jackson Tchatchoua
+647664,77,MissedShots,0.874000015258789,0.43,0.015242712572216988,Jackson Tchatchoua,a,12113,OpenPlay,2025,Head,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,Ladislav Krejcí,Aerial,Jackson Tchatchoua
+647666,85,MissedShots,0.8180000305175781,0.5559999847412109,0.04586073383688927,Jackson Tchatchoua,a,12113,OpenPlay,2025,RightFoot,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,Jørgen Strand Larsen,BallRecovery,Jackson Tchatchoua
+674860,52,SavedShot,0.91,0.3370000076293945,0.04440165311098099,Jackson Tchatchoua,a,12113,OpenPlay,2025,RightFoot,29069,Brentford,Wolverhampton Wanderers,2,2,2026-03-16 20:00:00,Hugo Bueno,Cross,Jackson Tchatchoua

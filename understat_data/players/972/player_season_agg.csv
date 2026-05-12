@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,4,0,0,26,0,0,0.07847130298614502,1,2017,Watford,0,0,0,0,0.3549393117427826,0.2764680087566376,972,Jerome Sinclair
+season,Sub,5,0,1,110,0.057534199208021164,0,0.024063199758529663,1,2016,Watford,0,0,0,0.057534199208021164,0.024063199758529663,0,972,Jerome Sinclair
+season,Sub,2,0,0,22,0,0,0.05215829983353615,1,2014,Liverpool,0,0,0,0,0.05215829983353615,0,972,Jerome Sinclair

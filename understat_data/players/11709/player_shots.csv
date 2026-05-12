@@ -1,0 +1,45 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+539592,46,OwnGoal,0.07099999904632569,0.46799999237060547,0,Milos Kerkez,a,11709,FromCorner,2023,Head,21951,Brighton,Bournemouth,3,1,2023-09-24 13:00:00,,Clearance,Milos Kerkez
+541241,72,MissedShots,0.9,0.6730000305175782,0.07475359737873077,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,21959,Bournemouth,Arsenal,0,4,2023-09-30 14:00:00,Ryan Christie,Pass,Milos Kerkez
+542644,29,BlockedShot,0.740999984741211,0.6619999694824219,0.017765799537301064,Milos Kerkez,a,11709,OpenPlay,2023,LeftFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,Lewis Cook,Pass,Milos Kerkez
+545490,86,BlockedShot,0.7319999694824219,0.6859999847412109,0.01543535478413105,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,21985,Bournemouth,Burnley,2,1,2023-10-28 14:00:00,,None,Milos Kerkez
+549818,92,MissedShots,0.889000015258789,0.71,0.10214732587337494,Milos Kerkez,a,11709,OpenPlay,2023,LeftFoot,22023,Sheffield United,Bournemouth,1,3,2023-11-25 15:00:00,Philip Billing,Pass,Milos Kerkez
+565332,8,SavedShot,0.8019999694824219,0.6569999694824219,0.029934478923678398,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,22145,Bournemouth,Manchester City,0,1,2024-02-24 17:30:00,Antoine Semenyo,Pass,Milos Kerkez
+565341,46,BlockedShot,0.8640000152587891,0.7080000305175781,0.03817184269428253,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,22145,Bournemouth,Manchester City,0,1,2024-02-24 17:30:00,Ryan Christie,Pass,Milos Kerkez
+565350,66,BlockedShot,0.8669999694824219,0.6220000076293946,0.05880621448159218,Milos Kerkez,h,11709,FromCorner,2023,LeftFoot,22145,Bournemouth,Manchester City,0,1,2024-02-24 17:30:00,,Rebound,Milos Kerkez
+568039,49,SavedShot,0.8590000152587891,0.68,0.08350323140621185,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,22165,Bournemouth,Sheffield United,2,2,2024-03-09 15:00:00,Marcus Tavernier,Pass,Milos Kerkez
+571814,65,SavedShot,0.72,0.4909999847412109,0.01701636053621769,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,22195,Bournemouth,Crystal Palace,1,0,2024-04-02 18:45:00,Antoine Semenyo,Pass,Milos Kerkez
+573913,2,MissedShots,0.7830000305175782,0.6090000152587891,0.02040748856961727,Milos Kerkez,h,11709,FromCorner,2023,LeftFoot,22215,Bournemouth,Manchester United,2,2,2024-04-13 16:30:00,,None,Milos Kerkez
+573916,18,SavedShot,0.9459999847412109,0.67,0.0686139240860939,Milos Kerkez,h,11709,OpenPlay,2023,LeftFoot,22215,Bournemouth,Manchester United,2,2,2024-04-13 16:30:00,Ryan Christie,Chipped,Milos Kerkez
+573924,42,ShotOnPost,0.9180000305175782,0.515,0.3503715693950653,Milos Kerkez,h,11709,OpenPlay,2023,Head,22215,Bournemouth,Manchester United,2,2,2024-04-13 16:30:00,Adam Smith,Cross,Milos Kerkez
+573925,42,MissedShots,0.9590000152587891,0.5070000076293946,0.6775991320610046,Milos Kerkez,h,11709,OpenPlay,2023,Head,22215,Bournemouth,Manchester United,2,2,2024-04-13 16:30:00,,Rebound,Milos Kerkez
+575515,48,MissedShots,0.8069999694824219,0.735,0.014715473167598248,Milos Kerkez,a,11709,OpenPlay,2023,RightFoot,22225,Aston Villa,Bournemouth,3,1,2024-04-21 14:00:00,Ryan Christie,Chipped,Milos Kerkez
+576292,9,BlockedShot,0.7280000305175781,0.605999984741211,0.01604389026761055,Milos Kerkez,a,11709,OpenPlay,2023,LeftFoot,22184,Wolverhampton Wanderers,Bournemouth,0,1,2024-04-24 18:45:00,Alex Scott,Pass,Milos Kerkez
+576296,17,SavedShot,0.8780000305175781,0.5729999923706055,0.11183331906795502,Milos Kerkez,a,11709,OpenPlay,2023,RightFoot,22184,Wolverhampton Wanderers,Bournemouth,0,1,2024-04-24 18:45:00,Justin Kluivert,Pass,Milos Kerkez
+589186,28,BlockedShot,0.7569999694824219,0.725999984741211,0.013357219286262989,Milos Kerkez,a,11709,FromCorner,2024,LeftFoot,26624,Everton,Bournemouth,2,3,2024-08-31 14:00:00,,None,Milos Kerkez
+591175,38,BlockedShot,0.8069999694824219,0.63,0.024462366476655006,Milos Kerkez,h,11709,FromCorner,2024,LeftFoot,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,,None,Milos Kerkez
+591179,49,MissedShots,0.7619999694824219,0.3029999923706055,0.016496622934937477,Milos Kerkez,h,11709,OpenPlay,2024,LeftFoot,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,,BallRecovery,Milos Kerkez
+592404,23,MissedShots,0.735,0.6320000076293946,0.014047934673726559,Milos Kerkez,a,11709,FromCorner,2024,LeftFoot,26645,Liverpool,Bournemouth,3,0,2024-09-21 14:00:00,,None,Milos Kerkez
+595033,60,MissedShots,0.8540000152587891,0.705999984741211,0.024776894599199295,Milos Kerkez,h,11709,FromCorner,2024,LeftFoot,26661,Bournemouth,Southampton,3,1,2024-09-30 19:00:00,,None,Milos Kerkez
+597251,41,BlockedShot,0.865999984741211,0.580999984741211,0.09122037142515182,Milos Kerkez,h,11709,OpenPlay,2024,RightFoot,26680,Bournemouth,Arsenal,2,0,2024-10-19 16:30:00,Alex Scott,Pass,Milos Kerkez
+598451,77,BlockedShot,0.7530000305175781,0.5559999847412109,0.022591928020119667,Milos Kerkez,a,11709,OpenPlay,2024,RightFoot,26684,Aston Villa,Bournemouth,1,1,2024-10-26 14:00:00,Marcus Tavernier,Pass,Milos Kerkez
+604101,7,Goal,0.915,0.6359999847412109,0.09753163158893585,Milos Kerkez,a,11709,OpenPlay,2024,LeftFoot,26731,Wolverhampton Wanderers,Bournemouth,2,4,2024-11-30 15:00:00,Marcus Tavernier,Pass,Milos Kerkez
+607970,95,BlockedShot,0.894000015258789,0.665,0.0221099890768528,Milos Kerkez,h,11709,FromCorner,2024,LeftFoot,26754,Bournemouth,West Ham,1,1,2024-12-16 20:00:00,,Aerial,Milos Kerkez
+608719,80,MissedShots,0.850999984741211,0.69,0.06309156864881516,Milos Kerkez,a,11709,OpenPlay,2024,LeftFoot,26769,Manchester United,Bournemouth,0,3,2024-12-22 14:00:00,Philip Billing,Pass,Milos Kerkez
+609058,14,MissedShots,0.8619999694824219,0.6179999923706054,0.025329072028398514,Milos Kerkez,h,11709,FromCorner,2024,LeftFoot,26772,Bournemouth,Crystal Palace,0,0,2024-12-26 15:00:00,Ryan Christie,Chipped,Milos Kerkez
+609059,15,SavedShot,0.76,0.6719999694824219,0.0187841709703207,Milos Kerkez,h,11709,OpenPlay,2024,LeftFoot,26772,Bournemouth,Crystal Palace,0,0,2024-12-26 15:00:00,Lewis Cook,Pass,Milos Kerkez
+612075,95,Goal,0.8980000305175782,0.695,0.07730173319578171,Milos Kerkez,a,11709,OpenPlay,2024,LeftFoot,26819,Newcastle United,Bournemouth,1,4,2025-01-18 12:30:00,Justin Kluivert,Pass,Milos Kerkez
+617216,30,BlockedShot,0.8769999694824219,0.7069999694824218,0.06524430960416794,Milos Kerkez,a,11709,OpenPlay,2024,LeftFoot,26849,Southampton,Bournemouth,1,3,2025-02-15 15:00:00,Ryan Christie,Pass,Milos Kerkez
+621814,61,SavedShot,0.93,0.7730000305175782,0.04213298484683037,Milos Kerkez,a,11709,OpenPlay,2024,LeftFoot,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Antoine Semenyo,Pass,Milos Kerkez
+622890,1,SavedShot,0.8530000305175781,0.6769999694824219,0.05001477152109146,Milos Kerkez,h,11709,OpenPlay,2024,RightFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Justin Kluivert,Pass,Milos Kerkez
+625105,12,MissedShots,0.794000015258789,0.710999984741211,0.015195123851299286,Milos Kerkez,h,11709,OpenPlay,2024,LeftFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,,Rebound,Milos Kerkez
+632969,82,BlockedShot,0.9030000305175782,0.669000015258789,0.0222915131598711,Milos Kerkez,h,11709,FromCorner,2024,LeftFoot,26955,Bournemouth,Aston Villa,0,1,2025-05-10 16:30:00,,Aerial,Milos Kerkez
+636285,44,BlockedShot,0.8030000305175782,0.6120000076293945,0.037401456385850906,Milos Kerkez,h,11709,OpenPlay,2024,LeftFoot,26979,Bournemouth,Leicester,2,0,2025-05-25 15:00:00,,None,Milos Kerkez
+642139,8,MissedShots,0.924000015258789,0.544000015258789,0.0987921804189682,Milos Kerkez,a,11709,FromCorner,2025,RightFoot,28816,Burnley,Liverpool,0,1,2025-09-14 13:00:00,Ibrahima Konaté,BallTouch,Milos Kerkez
+644694,18,MissedShots,0.9269999694824219,0.69,0.04265880957245827,Milos Kerkez,a,11709,SetPiece,2025,LeftFoot,28830,Crystal Palace,Liverpool,2,1,2025-09-27 14:00:00,,Rebound,Milos Kerkez
+649256,49,Goal,0.960999984741211,0.54,0.590264618396759,Milos Kerkez,a,11709,OpenPlay,2025,RightFoot,28861,Brentford,Liverpool,3,2,2025-10-25 19:00:00,,None,Milos Kerkez
+653758,15,MissedShots,0.92,0.54,0.14180292189121246,Milos Kerkez,h,11709,OpenPlay,2025,RightFoot,28894,Liverpool,Nottingham Forest,0,3,2025-11-22 15:00:00,Mohamed Salah,Pass,Milos Kerkez
+657096,7,MissedShots,0.7519999694824219,0.6969999694824218,0.01696426048874855,Milos Kerkez,a,11709,OpenPlay,2025,LeftFoot,28923,Leeds,Liverpool,3,3,2025-12-06 17:30:00,Curtis Jones,Pass,Milos Kerkez
+660231,36,MissedShots,0.909000015258789,0.705,0.04803776741027832,Milos Kerkez,h,11709,OpenPlay,2025,LeftFoot,28953,Liverpool,Wolverhampton Wanderers,2,1,2025-12-27 15:00:00,,None,Milos Kerkez
+664950,42,BlockedShot,0.7469999694824219,0.7280000305175781,0.009464018978178501,Milos Kerkez,a,11709,OpenPlay,2025,LeftFoot,28998,Bournemouth,Liverpool,3,2,2026-01-24 17:30:00,Dominik Szoboszlai,Pass,Milos Kerkez
+675109,29,Goal,0.8640000152587891,0.5320000076293945,0.37824997305870056,Milos Kerkez,a,11709,OpenPlay,2025,LeftFoot,29080,Brighton,Liverpool,2,1,2026-03-21 12:30:00,,None,Milos Kerkez

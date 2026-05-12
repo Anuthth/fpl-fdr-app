@@ -1,0 +1,94 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+427032,20,BlockedShot,0.7769999694824219,0.38,0.018597299233078957,Vitaly Janelt,a,9680,OpenPlay,2021,RightFoot,16389,Crystal Palace,Brentford,0,0,2021-08-21 14:00:00,,Rebound,Vitaly Janelt
+427038,46,BlockedShot,0.7709999847412109,0.6140000152587891,0.03353450074791908,Vitaly Janelt,a,9680,FromCorner,2021,LeftFoot,16389,Crystal Palace,Brentford,0,0,2021-08-21 14:00:00,Frank Onyeka,Pass,Vitaly Janelt
+429957,50,SavedShot,0.88,0.655,0.26599299907684326,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16408,Brentford,Brighton,0,1,2021-09-11 14:00:00,Ivan Toney,Pass,Vitaly Janelt
+431112,28,SavedShot,0.9080000305175782,0.5890000152587891,0.41065800189971924,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16417,Wolverhampton Wanderers,Brentford,0,2,2021-09-18 11:30:00,,None,Vitaly Janelt
+431125,90,MissedShots,0.8290000152587891,0.47,0.046903301030397415,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16417,Wolverhampton Wanderers,Brentford,0,2,2021-09-18 11:30:00,,Rebound,Vitaly Janelt
+433702,62,Goal,0.955999984741211,0.455,0.5030900239944458,Vitaly Janelt,h,9680,OpenPlay,2021,Head,16432,Brentford,Liverpool,3,3,2021-09-25 16:30:00,,Aerial,Vitaly Janelt
+439727,85,SavedShot,0.7859999847412109,0.43099998474121093,0.021751999855041504,Vitaly Janelt,a,9680,SetPiece,2021,LeftFoot,16467,Burnley,Brentford,3,1,2021-10-30 14:00:00,,Rebound,Vitaly Janelt
+447392,73,SavedShot,0.865,0.31,0.04428280144929886,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16527,Brentford,Watford,2,1,2021-12-10 20:00:00,Christian Nørgaard,Pass,Vitaly Janelt
+447397,88,BlockedShot,0.8640000152587891,0.37900001525878907,0.061973899602890015,Vitaly Janelt,h,9680,OpenPlay,2021,RightFoot,16527,Brentford,Watford,2,1,2021-12-10 20:00:00,,None,Vitaly Janelt
+452936,22,Goal,0.8959999847412109,0.5259999847412109,0.09795910120010376,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16551,Southampton,Brentford,4,1,2022-01-11 21:45:00,Bryan Mbeumo,Cross,Vitaly Janelt
+452937,24,SavedShot,0.7619999694824219,0.4929999923706055,0.02726230025291443,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16551,Southampton,Brentford,4,1,2022-01-11 21:45:00,Shandon Baptiste,BallTouch,Vitaly Janelt
+453602,32,MissedShots,0.7030000305175781,0.5879999923706055,0.013872000388801098,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16589,Liverpool,Brentford,3,0,2022-01-16 14:00:00,Mads Roerslev,Pass,Vitaly Janelt
+454206,12,BlockedShot,0.855999984741211,0.4909999847412109,0.08643040060997009,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16537,Brentford,Manchester United,1,3,2022-01-19 20:00:00,Ivan Toney,Pass,Vitaly Janelt
+454213,34,BlockedShot,0.8240000152587891,0.32799999237060545,0.02930540032684803,Vitaly Janelt,h,9680,SetPiece,2021,LeftFoot,16537,Brentford,Manchester United,1,3,2022-01-19 20:00:00,Ivan Toney,Pass,Vitaly Janelt
+454222,58,SavedShot,0.8630000305175781,0.580999984741211,0.06047559902071953,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16537,Brentford,Manchester United,1,3,2022-01-19 20:00:00,,None,Vitaly Janelt
+457038,36,BlockedShot,0.875999984741211,0.6029999923706054,0.05501890182495117,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16616,Brentford,Crystal Palace,0,0,2022-02-12 15:00:00,Rico Henry,HeadPass,Vitaly Janelt
+458255,92,BlockedShot,0.815,0.4759999847412109,0.04552749916911125,Vitaly Janelt,a,9680,SetPiece,2021,LeftFoot,16626,Arsenal,Brentford,2,1,2022-02-19 15:00:00,,None,Vitaly Janelt
+459809,92,SavedShot,0.924000015258789,0.6370000076293946,0.2759220004081726,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16637,Brentford,Newcastle United,0,2,2022-02-26 15:00:00,Ivan Toney,Pass,Vitaly Janelt
+461115,43,MissedShots,0.745,0.595999984741211,0.02492710016667843,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16652,Norwich,Brentford,1,3,2022-03-05 15:00:00,,None,Vitaly Janelt
+462497,52,MissedShots,0.9119999694824219,0.5070000076293946,0.12013699859380722,Vitaly Janelt,h,9680,OpenPlay,2021,Head,16657,Brentford,Burnley,2,0,2022-03-12 15:00:00,Sergi Canos,Cross,Vitaly Janelt
+462499,63,BlockedShot,0.7480000305175781,0.4420000076293945,0.022819699719548225,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16657,Brentford,Burnley,2,0,2022-03-12 15:00:00,Christian Nørgaard,Pass,Vitaly Janelt
+464413,53,BlockedShot,0.8730000305175781,0.56,0.02881070040166378,Vitaly Janelt,a,9680,OpenPlay,2021,Head,16668,Leicester,Brentford,2,1,2022-03-20 14:00:00,Pontus Jansson,HeadPass,Vitaly Janelt
+465249,49,Goal,0.8440000152587891,0.5690000152587891,0.0718235969543457,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16683,Chelsea,Brentford,1,4,2022-04-02 14:00:00,Bryan Mbeumo,Pass,Vitaly Janelt
+465253,59,Goal,0.9619999694824218,0.654000015258789,0.319707989692688,Vitaly Janelt,a,9680,OpenPlay,2021,LeftFoot,16683,Chelsea,Brentford,1,4,2022-04-02 14:00:00,Ivan Toney,Throughball,Vitaly Janelt
+465261,75,BlockedShot,0.8490000152587891,0.6079999923706054,0.05496929958462715,Vitaly Janelt,a,9680,FromCorner,2021,LeftFoot,16683,Chelsea,Brentford,1,4,2022-04-02 14:00:00,,Rebound,Vitaly Janelt
+465263,77,MissedShots,0.855999984741211,0.580999984741211,0.06281449645757675,Vitaly Janelt,a,9680,FromCorner,2021,LeftFoot,16683,Chelsea,Brentford,1,4,2022-04-02 14:00:00,,Rebound,Vitaly Janelt
+467161,50,BlockedShot,0.774000015258789,0.5279999923706055,0.041714899241924286,Vitaly Janelt,h,9680,OpenPlay,2021,LeftFoot,16693,Brentford,West Ham,2,0,2022-04-10 13:00:00,Ivan Toney,Pass,Vitaly Janelt
+468191,31,MissedShots,0.8830000305175781,0.6020000076293945,0.03754179924726486,Vitaly Janelt,a,9680,FromCorner,2021,LeftFoot,16698,Watford,Brentford,1,2,2022-04-16 14:00:00,Pontus Jansson,HeadPass,Vitaly Janelt
+468198,39,MissedShots,0.8580000305175781,0.5570000076293945,0.06256090104579926,Vitaly Janelt,a,9680,FromCorner,2021,LeftFoot,16698,Watford,Brentford,1,2,2022-04-16 14:00:00,,None,Vitaly Janelt
+477741,46,MissedShots,0.8109999847412109,0.51,0.04344790056347847,Vitaly Janelt,h,9680,SetPiece,2021,RightFoot,16747,Brentford,Leeds,1,2,2022-05-22 15:00:00,,None,Vitaly Janelt
+480518,84,BlockedShot,0.955999984741211,0.3820000076293945,0.04760809987783432,Vitaly Janelt,h,9680,FromCorner,2022,LeftFoot,18218,Brentford,Manchester United,4,0,2022-08-13 16:30:00,,TakeOn,Vitaly Janelt
+483718,70,SavedShot,0.9080000305175782,0.455,0.10694199800491333,Vitaly Janelt,h,9680,FromCorner,2022,RightFoot,18233,Brentford,Everton,1,1,2022-08-27 14:00:00,Keane Lewis-Potter,HeadPass,Vitaly Janelt
+483723,81,MissedShots,0.879000015258789,0.46099998474121096,0.050297800451517105,Vitaly Janelt,h,9680,OpenPlay,2022,Head,18233,Brentford,Everton,1,1,2022-08-27 14:00:00,Ivan Toney,Cross,Vitaly Janelt
+483725,83,Goal,0.9730000305175781,0.5259999847412109,0.8006420135498047,Vitaly Janelt,h,9680,FromCorner,2022,LeftFoot,18233,Brentford,Everton,1,1,2022-08-27 14:00:00,Keane Lewis-Potter,Rebound,Vitaly Janelt
+494463,57,BlockedShot,0.87,0.33,0.059747498482465744,Vitaly Janelt,h,9680,OpenPlay,2022,LeftFoot,18314,Brentford,Chelsea,0,0,2022-10-19 18:30:00,Mads Roerslev,Pass,Vitaly Janelt
+500912,14,Goal,0.960999984741211,0.5359999847412109,0.7576850056648254,Vitaly Janelt,h,9680,OpenPlay,2022,LeftFoot,18364,Brentford,Tottenham,2,2,2022-12-26 12:30:00,,Rebound,Vitaly Janelt
+502063,12,SavedShot,0.8019999694824219,0.3079999923706055,0.02382740005850792,Vitaly Janelt,h,9680,OpenPlay,2022,LeftFoot,18384,Brentford,Liverpool,3,1,2023-01-02 17:30:00,,None,Vitaly Janelt
+503722,2,MissedShots,0.8140000152587891,0.41,0.03165080025792122,Vitaly Janelt,h,9680,FromCorner,2022,LeftFoot,18393,Brentford,Bournemouth,2,0,2023-01-14 17:30:00,,None,Vitaly Janelt
+509717,77,MissedShots,0.745999984741211,0.47099998474121096,0.013728500343859196,Vitaly Janelt,h,9680,FromCorner,2022,LeftFoot,18433,Brentford,Crystal Palace,1,1,2023-02-18 15:00:00,,Aerial,Vitaly Janelt
+509723,95,Goal,0.92,0.5220000076293946,0.09758110344409943,Vitaly Janelt,h,9680,OpenPlay,2022,Head,18433,Brentford,Crystal Palace,1,1,2023-02-18 15:00:00,Bryan Mbeumo,Cross,Vitaly Janelt
+514517,9,MissedShots,0.6669999694824219,0.975999984741211,0.005979210138320923,Vitaly Janelt,a,9680,OpenPlay,2022,LeftFoot,18265,Southampton,Brentford,0,2,2023-03-15 19:30:00,,None,Vitaly Janelt
+529710,40,MissedShots,0.855999984741211,0.47,0.0720033049583435,Vitaly Janelt,h,9680,OpenPlay,2022,LeftFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,,Rebound,Vitaly Janelt
+529709,40,BlockedShot,0.8590000152587891,0.46,0.08336353302001953,Vitaly Janelt,h,9680,OpenPlay,2022,RightFoot,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,,BallTouch,Vitaly Janelt
+529722,73,MissedShots,0.9490000152587891,0.61,0.04020753502845764,Vitaly Janelt,h,9680,FromCorner,2022,Head,18574,Brentford,Manchester City,1,0,2023-05-28 15:30:00,Bryan Mbeumo,Cross,Vitaly Janelt
+532425,57,SavedShot,0.87,0.7680000305175781,0.026843829080462456,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22282,Brentford,Tottenham,2,2,2023-08-13 13:00:00,Yoane Wissa,Pass,Vitaly Janelt
+534695,84,BlockedShot,0.9259999847412109,0.6759999847412109,0.0396294891834259,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22298,Brentford,Crystal Palace,1,1,2023-08-26 14:00:00,Frank Onyeka,Cross,Vitaly Janelt
+536220,10,BlockedShot,0.805,0.4809999847412109,0.06323494017124176,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,21928,Brentford,Bournemouth,2,2,2023-09-02 14:00:00,,BallRecovery,Vitaly Janelt
+536233,47,SavedShot,0.9230000305175782,0.46900001525878904,0.1277308315038681,Vitaly Janelt,h,9680,OpenPlay,2023,Head,21928,Brentford,Bournemouth,2,2,2023-09-02 14:00:00,Kevin Schade,Cross,Vitaly Janelt
+539272,37,BlockedShot,0.8109999847412109,0.3629999923706055,0.03613394871354103,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,21949,Brentford,Everton,1,3,2023-09-23 16:30:00,,None,Vitaly Janelt
+541719,51,BlockedShot,0.845,0.3820000076293945,0.06903930008411407,Vitaly Janelt,a,9680,OpenPlay,2023,LeftFoot,21963,Nottingham Forest,Brentford,1,1,2023-10-01 13:00:00,Bryan Mbeumo,Pass,Vitaly Janelt
+545222,49,SavedShot,0.875999984741211,0.4470000076293945,0.36326292157173157,Vitaly Janelt,a,9680,OpenPlay,2023,RightFoot,21989,Chelsea,Brentford,0,2,2023-10-28 11:30:00,Kristoffer Ajer,Pass,Vitaly Janelt
+546875,66,BlockedShot,0.7440000152587891,0.659000015258789,0.01261985208839178,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,21995,Brentford,West Ham,3,2,2023-11-04 15:00:00,,Rebound,Vitaly Janelt
+556653,6,BlockedShot,0.960999984741211,0.37400001525878906,0.0459340363740921,Vitaly Janelt,h,9680,FromCorner,2023,RightFoot,22077,Brentford,Wolverhampton Wanderers,1,4,2023-12-27 19:30:00,Saman Ghoddos,Cross,Vitaly Janelt
+556658,17,SavedShot,0.955999984741211,0.4759999847412109,0.4696289598941803,Vitaly Janelt,h,9680,OpenPlay,2023,Head,22077,Brentford,Wolverhampton Wanderers,1,4,2023-12-27 19:30:00,Keane Lewis-Potter,Cross,Vitaly Janelt
+559069,4,MissedShots,0.8340000152587891,0.47099998474121096,0.053973495960235596,Vitaly Janelt,h,9680,OpenPlay,2023,RightFoot,22104,Brentford,Nottingham Forest,3,2,2024-01-20 17:30:00,,None,Vitaly Janelt
+563609,3,MissedShots,0.8919999694824219,0.73,0.03698817268013954,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22135,Brentford,Liverpool,1,4,2024-02-17 12:30:00,Christian Nørgaard,Pass,Vitaly Janelt
+566543,47,SavedShot,0.7959999847412109,0.3609999847412109,0.029445288702845573,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,,None,Vitaly Janelt
+566546,51,ShotOnPost,0.8219999694824218,0.5429999923706055,0.07015083730220795,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22155,Brentford,Chelsea,2,2,2024-03-02 15:00:00,Yoane Wissa,Pass,Vitaly Janelt
+568262,50,MissedShots,0.870999984741211,0.38299999237060545,0.054949045181274414,Vitaly Janelt,a,9680,FromCorner,2023,LeftFoot,22166,Arsenal,Brentford,2,1,2024-03-09 17:30:00,,None,Vitaly Janelt
+571102,35,MissedShots,0.7580000305175781,0.639000015258789,0.012836736626923084,Vitaly Janelt,h,9680,SetPiece,2023,LeftFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,,None,Vitaly Janelt
+571124,78,MissedShots,0.8930000305175781,0.41200000762939454,0.09196902811527252,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,Kristoffer Ajer,BallTouch,Vitaly Janelt
+571129,92,BlockedShot,0.7680000305175781,0.47900001525878905,0.02989051677286625,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,,BallTouch,Vitaly Janelt
+573661,21,SavedShot,0.7780000305175782,0.46599998474121096,0.02571232244372368,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22217,Brentford,Sheffield United,2,0,2024-04-13 14:00:00,Neal Maupay,Pass,Vitaly Janelt
+574987,22,BlockedShot,0.765,0.534000015258789,0.025164389982819557,Vitaly Janelt,a,9680,OpenPlay,2023,LeftFoot,22230,Luton,Brentford,1,5,2024-04-20 14:00:00,,None,Vitaly Janelt
+582168,47,Goal,0.8769999694824219,0.47200000762939454,0.33114174008369446,Vitaly Janelt,h,9680,OpenPlay,2023,LeftFoot,22266,Brentford,Newcastle United,2,4,2024-05-19 15:00:00,Yoane Wissa,Pass,Vitaly Janelt
+585162,51,MissedShots,0.914000015258789,0.6519999694824219,0.039136432111263275,Vitaly Janelt,h,9680,FromCorner,2024,LeftFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Bryan Mbeumo,Cross,Vitaly Janelt
+585167,68,MissedShots,0.755,0.539000015258789,0.022373134270310402,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Mathias Jensen,Pass,Vitaly Janelt
+595572,53,SavedShot,0.960999984741211,0.6769999694824219,0.04334116354584694,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26667,Brentford,Wolverhampton Wanderers,5,3,2024-10-05 14:00:00,,Rebound,Vitaly Janelt
+595577,66,MissedShots,0.740999984741211,0.5359999847412109,0.021890057250857353,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26667,Brentford,Wolverhampton Wanderers,5,3,2024-10-05 14:00:00,,None,Vitaly Janelt
+601012,23,Goal,0.75,0.6609999847412109,0.01951346918940544,Vitaly Janelt,a,9680,OpenPlay,2024,LeftFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Christian Nørgaard,Pass,Vitaly Janelt
+601016,44,BlockedShot,0.8130000305175781,0.5359999847412109,0.06659241020679474,Vitaly Janelt,a,9680,OpenPlay,2024,LeftFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Keane Lewis-Potter,Pass,Vitaly Janelt
+601409,21,SavedShot,0.8590000152587891,0.610999984741211,0.059898532927036285,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26702,Brentford,Bournemouth,3,2,2024-11-09 15:00:00,Mikkel Damsgaard,Pass,Vitaly Janelt
+601415,39,BlockedShot,0.850999984741211,0.3920000076293945,0.04719233885407448,Vitaly Janelt,h,9680,FromCorner,2024,LeftFoot,26702,Brentford,Bournemouth,3,2,2024-11-09 15:00:00,,None,Vitaly Janelt
+605368,93,MissedShots,0.845,0.4879999923706055,0.05572209507226944,Vitaly Janelt,a,9680,OpenPlay,2024,LeftFoot,26734,Aston Villa,Brentford,3,1,2024-12-04 20:15:00,,None,Vitaly Janelt
+607757,62,BlockedShot,0.9109999847412109,0.5329999923706055,0.035672951489686966,Vitaly Janelt,a,9680,OpenPlay,2024,Head,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,Mads Roerslev,Aerial,Vitaly Janelt
+611377,53,SavedShot,0.7669999694824219,0.2879999923706055,0.014670153148472309,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26803,Brentford,Manchester City,2,2,2025-01-14 19:30:00,Bryan Mbeumo,Pass,Vitaly Janelt
+611382,61,MissedShots,0.8880000305175781,0.6320000076293946,0.06317958980798721,Vitaly Janelt,h,9680,OpenPlay,2024,RightFoot,26803,Brentford,Manchester City,2,2,2025-01-14 19:30:00,Mads Roerslev,Rebound,Vitaly Janelt
+615385,28,OwnGoal,0.02700000047683716,0.49,0,Vitaly Janelt,h,9680,FromCorner,2024,OtherBodyPart,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,,CornerAwarded,Vitaly Janelt
+619547,94,MissedShots,0.9680000305175781,0.6129999923706054,0.08173667639493942,Vitaly Janelt,h,9680,OpenPlay,2024,LeftFoot,26862,Brentford,Everton,1,1,2025-02-26 19:30:00,,None,Vitaly Janelt
+622894,16,OwnGoal,0.07099999904632569,0.48400001525878905,0,Vitaly Janelt,a,9680,OpenPlay,2024,OtherBodyPart,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,,None,Vitaly Janelt
+622902,36,MissedShots,0.9109999847412109,0.5790000152587891,0.37490805983543396,Vitaly Janelt,a,9680,OpenPlay,2024,LeftFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Kristoffer Ajer,Pass,Vitaly Janelt
+646933,90,MissedShots,0.85,0.5379999923706055,0.07653624564409256,Vitaly Janelt,h,9680,OpenPlay,2025,LeftFoot,28841,Brentford,Manchester City,0,1,2025-10-05 15:30:00,Sepp van den Berg,Pass,Vitaly Janelt
+650857,73,MissedShots,0.845999984741211,0.5559999847412109,0.0506218746304512,Vitaly Janelt,a,9680,OpenPlay,2025,LeftFoot,28870,Crystal Palace,Brentford,2,0,2025-11-01 15:00:00,,None,Vitaly Janelt
+656213,19,BlockedShot,0.8769999694824219,0.4809999847412109,0.016620012000203133,Vitaly Janelt,a,9680,FromCorner,2025,Head,28909,Arsenal,Brentford,2,0,2025-12-03 19:30:00,,Aerial,Vitaly Janelt
+656220,49,MissedShots,0.9580000305175781,0.32,0.008908962830901146,Vitaly Janelt,a,9680,FromCorner,2025,Head,28909,Arsenal,Brentford,2,0,2025-12-03 19:30:00,Mathias Jensen,Cross,Vitaly Janelt
+660187,85,SavedShot,0.745999984741211,0.3390000152587891,0.019410112872719765,Vitaly Janelt,h,9680,OpenPlay,2025,LeftFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,Mikkel Damsgaard,Pass,Vitaly Janelt
+660767,62,SavedShot,0.9180000305175782,0.47700000762939454,0.12112992256879807,Vitaly Janelt,h,9680,OpenPlay,2025,Head,28959,Brentford,Tottenham,0,0,2026-01-01 20:00:00,Jordan Henderson,Cross,Vitaly Janelt
+661435,65,MissedShots,0.764000015258789,0.32799999237060545,0.011734365485608578,Vitaly Janelt,a,9680,OpenPlay,2025,LeftFoot,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,,Aerial,Vitaly Janelt
+663678,60,BlockedShot,0.8059999847412109,0.47900001525878905,0.04262067750096321,Vitaly Janelt,a,9680,OpenPlay,2025,LeftFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,,None,Vitaly Janelt
+665152,39,BlockedShot,0.8069999694824219,0.5940000152587891,0.07334396243095398,Vitaly Janelt,h,9680,OpenPlay,2025,LeftFoot,29000,Brentford,Nottingham Forest,0,2,2026-01-25 14:00:00,Dango Ouattara,Pass,Vitaly Janelt
+667444,36,Goal,0.9280000305175782,0.43900001525878907,0.25658294558525085,Vitaly Janelt,a,9680,OpenPlay,2025,Head,29026,Newcastle United,Brentford,2,3,2026-02-07 17:30:00,Dango Ouattara,Cross,Vitaly Janelt
+669729,26,MissedShots,0.8230000305175781,0.4209999847412109,0.044839076697826385,Vitaly Janelt,h,9680,SetPiece,2025,LeftFoot,29039,Brentford,Brighton,0,2,2026-02-21 15:00:00,,None,Vitaly Janelt
+669734,38,MissedShots,0.745999984741211,0.49200000762939455,0.027510395273566246,Vitaly Janelt,h,9680,OpenPlay,2025,LeftFoot,29039,Brentford,Brighton,0,2,2026-02-21 15:00:00,Jordan Henderson,LayOff,Vitaly Janelt

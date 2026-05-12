@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,7,0,0,587,0,0,0,0,2018,Arsenal,0,0,0,0,0.5335072968155146,0.5335072968155146,491,Petr Cech
+season,GK,34,0,0,3042,0,0,0,0,2017,Arsenal,1,0,0,0,3.3781968764960766,3.3781968764960766,491,Petr Cech
+season,GK,35,0,0,3097,0,0,0,0,2016,Arsenal,2,0,0,0,5.055632218718529,5.055632218718529,491,Petr Cech
+season,GK,34,0,0,3060,0,0,0.04670749977231026,1,2015,Arsenal,0,0,0,0,4.273002568632364,4.226295571774244,491,Petr Cech
+season,Sub,7,0,0,607,0,0,0,0,2014,Chelsea,0,0,0,0,0.7863960172981024,0.7863960172981024,491,Petr Cech

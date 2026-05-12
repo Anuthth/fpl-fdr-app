@@ -1,0 +1,172 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+392248,66,BlockedShot,0.884000015258789,0.5970000076293945,0.057240501046180725,Yeremi Pino,a,9024,OpenPlay,2020,LeftFoot,14899,Real Betis,Villarreal,1,1,2020-12-13 15:15:00,Alfonso,Cross,Yeremi Pino
+395083,73,ShotOnPost,0.8690000152587891,0.639000015258789,0.048370301723480225,Yeremi Pino,h,9024,FromCorner,2020,RightFoot,14923,Villarreal,Athletic Club,1,1,2020-12-22 21:00:00,Manu Trigueros,Pass,Yeremi Pino
+395084,73,Goal,0.9280000305175782,0.66,0.06397339701652527,Yeremi Pino,h,9024,OpenPlay,2020,LeftFoot,14923,Villarreal,Athletic Club,1,1,2020-12-22 21:00:00,Manu Trigueros,HeadPass,Yeremi Pino
+396312,30,SavedShot,0.9059999847412109,0.6619999694824219,0.08935940265655518,Yeremi Pino,h,9024,OpenPlay,2020,RightFoot,14946,Villarreal,Levante,2,1,2021-01-02 13:00:00,Fernando Niño,Pass,Yeremi Pino
+400331,66,MissedShots,0.8469999694824218,0.7019999694824218,0.032158199697732925,Yeremi Pino,a,9024,OpenPlay,2020,RightFoot,14975,SD Huesca,Villarreal,0,0,2021-01-23 13:00:00,Moi Gómez,Pass,Yeremi Pino
+403398,76,MissedShots,0.93,0.475,0.08074019849300385,Yeremi Pino,a,9024,OpenPlay,2020,Head,14997,Elche,Villarreal,2,2,2021-02-06 17:30:00,Estupiñán,Aerial,Yeremi Pino
+419199,78,Goal,0.89,0.3240000152587891,0.0839696004986763,Yeremi Pino,h,9024,OpenPlay,2020,RightFoot,15111,Villarreal,Getafe,1,0,2021-05-02 14:15:00,,TakeOn,Yeremi Pino
+420821,28,SavedShot,0.8909999847412109,0.7,0.03132389858365059,Yeremi Pino,h,9024,OpenPlay,2020,RightFoot,15127,Villarreal,Celta Vigo,2,4,2021-05-09 16:30:00,Raúl Albiol,TakeOn,Yeremi Pino
+420832,66,MissedShots,0.8690000152587891,0.605999984741211,0.04437499865889549,Yeremi Pino,h,9024,OpenPlay,2020,LeftFoot,15127,Villarreal,Celta Vigo,2,4,2021-05-09 16:30:00,Gerard Moreno,HeadPass,Yeremi Pino
+421566,76,BlockedShot,0.8480000305175781,0.4370000076293945,0.06003740057349205,Yeremi Pino,a,9024,SetPiece,2020,RightFoot,15136,Real Valladolid,Villarreal,0,2,2021-05-13 17:00:00,,None,Yeremi Pino
+422757,50,BlockedShot,0.8190000152587891,0.29100000381469726,0.0452319011092186,Yeremi Pino,h,9024,OpenPlay,2020,RightFoot,15147,Villarreal,Sevilla,4,0,2021-05-16 16:30:00,Gerard Moreno,Pass,Yeremi Pino
+423784,19,Goal,0.8980000305175782,0.4640000152587891,0.32380399107933044,Yeremi Pino,a,9024,OpenPlay,2020,RightFoot,15154,Real Madrid,Villarreal,2,1,2021-05-22 16:00:00,Gerard Moreno,Chipped,Yeremi Pino
+423797,69,BlockedShot,0.785,0.5670000076293945,0.03584729880094528,Yeremi Pino,a,9024,OpenPlay,2020,RightFoot,15154,Real Madrid,Villarreal,2,1,2021-05-22 16:00:00,Manu Trigueros,Pass,Yeremi Pino
+426648,12,SavedShot,0.8730000305175781,0.41,0.09055779874324799,Yeremi Pino,h,9024,OpenPlay,2021,LeftFoot,17144,Villarreal,Granada,0,0,2021-08-16 18:00:00,Boulaye Dia,Pass,Yeremi Pino
+426651,23,MissedShots,0.785,0.40900001525878904,0.0137296998873353,Yeremi Pino,h,9024,SetPiece,2021,RightFoot,17144,Villarreal,Granada,0,0,2021-08-16 18:00:00,,Aerial,Yeremi Pino
+431718,94,SavedShot,0.8580000305175781,0.6329999923706054,0.0652237981557846,Yeremi Pino,a,9024,OpenPlay,2021,LeftFoot,17181,Mallorca,Villarreal,0,0,2021-09-19 12:00:00,,BallTouch,Yeremi Pino
+432908,4,Goal,0.975999984741211,0.4570000076293945,0.7724170088768005,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17188,Villarreal,Elche,4,1,2021-09-22 20:00:00,Paco Alcácer,Pass,Yeremi Pino
+435782,12,SavedShot,0.93,0.6430000305175781,0.3590959906578064,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17209,Villarreal,Real Betis,2,0,2021-10-03 16:30:00,,Dispossessed,Yeremi Pino
+435789,61,BlockedShot,0.9219999694824219,0.4159999847412109,0.106004998087883,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17209,Villarreal,Real Betis,2,0,2021-10-03 16:30:00,,None,Yeremi Pino
+438919,59,BlockedShot,0.8619999694824219,0.3509999847412109,0.05296419933438301,Yeremi Pino,h,9024,SetPiece,2021,RightFoot,17238,Villarreal,Cadiz,3,3,2021-10-26 19:30:00,Daniel Parejo,Pass,Yeremi Pino
+444343,26,MissedShots,0.9219999694824219,0.43599998474121093,0.037077900022268295,Yeremi Pino,h,9024,FromCorner,2021,Head,17285,Villarreal,Barcelona,1,3,2021-11-27 20:00:00,Pau Torres,Aerial,Yeremi Pino
+449481,17,MissedShots,0.8930000305175781,0.35700000762939454,0.06928510218858719,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17312,Real Sociedad,Villarreal,1,3,2021-12-18 15:15:00,Gerard Moreno,Pass,Yeremi Pino
+449482,20,MissedShots,0.92,0.515,0.39490601420402527,Yeremi Pino,a,9024,OpenPlay,2021,Head,17312,Real Sociedad,Villarreal,1,3,2021-12-18 15:15:00,Alberto Moreno,Cross,Yeremi Pino
+450033,72,MissedShots,0.950999984741211,0.29700000762939455,0.10231400281190872,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17175,Villarreal,Alaves,5,2,2021-12-21 20:00:00,Gerard Moreno,Throughball,Yeremi Pino
+450037,78,Goal,0.975,0.475,0.8522469997406006,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17175,Villarreal,Alaves,5,2,2021-12-21 20:00:00,Boulaye Dia,Rebound,Yeremi Pino
+454013,56,SavedShot,0.7780000305175782,0.33,0.017976900562644005,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17345,Elche,Villarreal,1,0,2022-01-16 18:00:00,,None,Yeremi Pino
+454014,57,SavedShot,0.955,0.57,0.46303901076316833,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17345,Elche,Villarreal,1,0,2022-01-16 18:00:00,Estupiñán,Pass,Yeremi Pino
+454017,79,SavedShot,0.9019999694824219,0.3820000076293945,0.019870100542902946,Yeremi Pino,a,9024,OpenPlay,2021,Head,17345,Elche,Villarreal,1,0,2022-01-16 18:00:00,Mario,TakeOn,Yeremi Pino
+458068,10,MissedShots,0.7730000305175782,0.335,0.023986199870705605,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17380,Granada,Villarreal,1,4,2022-02-19 13:00:00,Daniel Parejo,Pass,Yeremi Pino
+458071,27,BlockedShot,0.9280000305175782,0.53,0.10744299739599228,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17380,Granada,Villarreal,1,4,2022-02-19 13:00:00,Arnaut Danjuma Groeneveld,Foul,Yeremi Pino
+460199,13,Goal,0.955,0.49,0.6008769869804382,Yeremi Pino,h,9024,OpenPlay,2021,Head,17395,Villarreal,Espanyol,5,1,2022-02-27 13:00:00,Estupiñán,Aerial,Yeremi Pino
+460202,20,Goal,0.9569999694824218,0.48400001525878905,0.5690699815750122,Yeremi Pino,h,9024,FromCorner,2021,RightFoot,17395,Villarreal,Espanyol,5,1,2022-02-27 13:00:00,Etienne Capoue,Pass,Yeremi Pino
+460206,41,MissedShots,0.9280000305175782,0.5220000076293946,0.06582680344581604,Yeremi Pino,h,9024,FromCorner,2021,Head,17395,Villarreal,Espanyol,5,1,2022-02-27 13:00:00,,None,Yeremi Pino
+460208,44,Goal,0.9790000152587891,0.5270000076293946,0.8806769847869873,Yeremi Pino,h,9024,FromCorner,2021,LeftFoot,17395,Villarreal,Espanyol,5,1,2022-02-27 13:00:00,,Rebound,Yeremi Pino
+460211,52,Goal,0.9130000305175782,0.46799999237060547,0.7934200167655945,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17395,Villarreal,Espanyol,5,1,2022-02-27 13:00:00,Arnaut Danjuma Groeneveld,TakeOn,Yeremi Pino
+460868,26,SavedShot,0.9159999847412109,0.30100000381469727,0.05038649961352348,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17402,Osasuna,Villarreal,1,0,2022-03-05 13:00:00,Daniel Parejo,Chipped,Yeremi Pino
+460870,40,MissedShots,0.8930000305175781,0.4470000076293945,0.08605650067329407,Yeremi Pino,a,9024,OpenPlay,2021,Head,17402,Osasuna,Villarreal,1,0,2022-03-05 13:00:00,Estupiñán,Cross,Yeremi Pino
+465333,33,MissedShots,0.9380000305175781,0.43400001525878906,0.5205749869346619,Yeremi Pino,a,9024,OpenPlay,2021,RightFoot,17433,Levante,Villarreal,2,0,2022-04-02 14:15:00,,None,Yeremi Pino
+465338,53,SavedShot,0.8619999694824219,0.4490000152587891,0.05300309881567955,Yeremi Pino,a,9024,FromCorner,2021,RightFoot,17433,Levante,Villarreal,2,0,2022-04-02 14:15:00,Arnaut Danjuma Groeneveld,CornerAwarded,Yeremi Pino
+466891,9,SavedShot,0.889000015258789,0.7290000152587891,0.04253380000591278,Yeremi Pino,h,9024,OpenPlay,2021,RightFoot,17444,Villarreal,Athletic Club,1,1,2022-04-09 16:30:00,Manu Trigueros,Chipped,Yeremi Pino
+480592,39,SavedShot,0.835999984741211,0.32599998474121095,0.03395500034093857,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,18964,Real Valladolid,Villarreal,0,3,2022-08-13 17:00:00,Gerard Moreno,Pass,Yeremi Pino
+480597,45,MissedShots,0.8909999847412109,0.3320000076293945,0.06291279941797256,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,18964,Real Valladolid,Villarreal,0,3,2022-08-13 17:00:00,Nicolas Jackson,Pass,Yeremi Pino
+482733,8,MissedShots,0.8530000305175781,0.34200000762939453,0.05029639974236488,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,18978,Atletico Madrid,Villarreal,0,2,2022-08-21 17:30:00,Giovani Lo Celso,Pass,Yeremi Pino
+482737,17,BlockedShot,0.845,0.5329999923706055,0.059021901339292526,Yeremi Pino,a,9024,FromCorner,2022,LeftFoot,18978,Atletico Madrid,Villarreal,0,2,2022-08-21 17:30:00,,None,Yeremi Pino
+482738,17,BlockedShot,0.8730000305175781,0.539000015258789,0.06484740227460861,Yeremi Pino,a,9024,FromCorner,2022,LeftFoot,18978,Atletico Madrid,Villarreal,0,2,2022-08-21 17:30:00,,Tackle,Yeremi Pino
+482755,72,Goal,0.9390000152587891,0.36,0.0734826996922493,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,18978,Atletico Madrid,Villarreal,0,2,2022-08-21 17:30:00,,None,Yeremi Pino
+486761,13,MissedShots,0.9130000305175782,0.3940000152587891,0.3432390093803406,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,18997,Villarreal,Elche,4,0,2022-09-04 16:30:00,,Rebound,Yeremi Pino
+494624,35,SavedShot,0.9,0.46599998474121096,0.05036250129342079,Yeremi Pino,a,9024,OpenPlay,2022,Head,19053,Barcelona,Villarreal,3,0,2022-10-20 19:00:00,Johan Mojica,Aerial,Yeremi Pino
+498887,76,BlockedShot,0.895,0.5070000076293946,0.07483100146055222,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19089,Villarreal,Mallorca,0,2,2022-11-06 17:30:00,Kiko Femenía,Cross,Yeremi Pino
+499396,14,SavedShot,0.9069999694824219,0.605999984741211,0.3296630084514618,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19094,Espanyol,Villarreal,0,1,2022-11-09 19:00:00,Jorge Cuenca,Throughball,Yeremi Pino
+499406,63,ShotOnPost,0.874000015258789,0.7030000305175781,0.03849079832434654,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19094,Espanyol,Villarreal,0,1,2022-11-09 19:00:00,Samuel Chukwueze,Pass,Yeremi Pino
+499408,71,SavedShot,0.9119999694824219,0.6990000152587891,0.060050301253795624,Yeremi Pino,a,9024,OpenPlay,2022,LeftFoot,19094,Espanyol,Villarreal,0,1,2022-11-09 19:00:00,Álex Baena,Pass,Yeremi Pino
+499414,93,BlockedShot,0.8630000305175781,0.6509999847412109,0.07120969891548157,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19094,Espanyol,Villarreal,0,1,2022-11-09 19:00:00,Álex Baena,Pass,Yeremi Pino
+501790,24,SavedShot,0.9230000305175782,0.6329999923706054,0.3105660080909729,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19110,Villarreal,Valencia,2,1,2022-12-31 15:15:00,Etienne Capoue,Pass,Yeremi Pino
+501792,28,MissedShots,0.9459999847412109,0.48,0.14092199504375458,Yeremi Pino,h,9024,SetPiece,2022,Head,19110,Villarreal,Valencia,2,1,2022-12-31 15:15:00,Daniel Parejo,Cross,Yeremi Pino
+501793,28,SavedShot,0.779000015258789,0.745999984741211,0.014681399799883366,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19110,Villarreal,Valencia,2,1,2022-12-31 15:15:00,,BallRecovery,Yeremi Pino
+502702,46,Goal,0.874000015258789,0.585,0.3396340012550354,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19121,Villarreal,Real Madrid,2,1,2023-01-07 15:15:00,Gerard Moreno,Pass,Yeremi Pino
+504890,11,ShotOnPost,0.860999984741211,0.5659999847412109,0.07045120000839233,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19141,Villarreal,Girona,1,0,2023-01-22 13:00:00,,None,Yeremi Pino
+506475,3,MissedShots,0.8780000305175781,0.669000015258789,0.052149899303913116,Yeremi Pino,h,9024,OpenPlay,2022,LeftFoot,19151,Villarreal,Rayo Vallecano,0,1,2023-01-30 20:00:00,Álex Baena,Pass,Yeremi Pino
+507221,27,SavedShot,0.8619999694824219,0.54,0.3428969979286194,Yeremi Pino,a,9024,OpenPlay,2022,LeftFoot,19156,Elche,Villarreal,3,1,2023-02-04 15:15:00,Gerard Moreno,Throughball,Yeremi Pino
+507226,44,BlockedShot,0.8769999694824219,0.624000015258789,0.10531599819660187,Yeremi Pino,a,9024,OpenPlay,2022,LeftFoot,19156,Elche,Villarreal,3,1,2023-02-04 15:15:00,Álex Baena,Pass,Yeremi Pino
+509166,51,BlockedShot,0.9269999694824219,0.5659999847412109,0.08968310058116913,Yeremi Pino,h,9024,OpenPlay,2022,LeftFoot,19168,Villarreal,Barcelona,0,1,2023-02-12 20:00:00,Alberto Moreno,Cross,Yeremi Pino
+509167,52,MissedShots,0.93,0.3729999923706055,0.012826899997889996,Yeremi Pino,h,9024,FromCorner,2022,Head,19168,Villarreal,Barcelona,0,1,2023-02-12 20:00:00,Daniel Parejo,Aerial,Yeremi Pino
+512243,51,SavedShot,0.9069999694824219,0.40400001525878904,0.38274499773979187,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19196,Almeria,Villarreal,0,2,2023-03-04 15:15:00,Álex Baena,Throughball,Yeremi Pino
+514337,47,SavedShot,0.9519999694824218,0.5929999923706055,0.0912306010723114,Yeremi Pino,h,9024,OpenPlay,2022,Head,19208,Villarreal,Real Betis,1,1,2023-03-12 17:30:00,Samuel Chukwueze,Cross,Yeremi Pino
+514339,54,Goal,0.9280000305175782,0.55,0.4260439872741699,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19208,Villarreal,Real Betis,1,1,2023-03-12 17:30:00,Ramón Terrats,Cross,Yeremi Pino
+515676,3,MissedShots,0.7319999694824219,0.6179999923706054,0.021672600880265236,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19216,Osasuna,Villarreal,0,3,2023-03-19 15:15:00,Manu Trigueros,Pass,Yeremi Pino
+515689,63,SavedShot,0.8569999694824219,0.7290000152587891,0.034727100282907486,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19216,Osasuna,Villarreal,0,3,2023-03-19 15:15:00,Samuel Chukwueze,Pass,Yeremi Pino
+517208,18,ShotOnPost,0.879000015258789,0.5270000076293946,0.412898987531662,Yeremi Pino,h,9024,OpenPlay,2022,LeftFoot,19229,Villarreal,Real Sociedad,2,0,2023-04-02 16:30:00,Álex Baena,Pass,Yeremi Pino
+517213,29,BlockedShot,0.7859999847412109,0.710999984741211,0.02345770038664341,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19229,Villarreal,Real Sociedad,2,0,2023-04-02 16:30:00,Alfonso,Pass,Yeremi Pino
+517226,78,MissedShots,0.9280000305175782,0.565,0.5431889891624451,Yeremi Pino,h,9024,OpenPlay,2022,Head,19229,Villarreal,Real Sociedad,2,0,2023-04-02 16:30:00,Samuel Chukwueze,Chipped,Yeremi Pino
+518435,64,MissedShots,0.73,0.74,0.01572440005838871,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19234,Real Madrid,Villarreal,2,3,2023-04-08 19:00:00,,None,Yeremi Pino
+521800,43,MissedShots,0.9630000305175781,0.5670000076293945,0.12847386300563812,Yeremi Pino,a,9024,OpenPlay,2022,LeftFoot,19253,Sevilla,Villarreal,2,1,2023-04-23 19:00:00,Nicolas Jackson,Rebound,Yeremi Pino
+521806,54,BlockedShot,0.919000015258789,0.590999984741211,0.054844051599502563,Yeremi Pino,a,9024,FromCorner,2022,Head,19253,Sevilla,Villarreal,2,1,2023-04-23 19:00:00,Giovani Lo Celso,Cross,Yeremi Pino
+522262,8,MissedShots,0.8530000305175781,0.6580000305175782,0.05047634243965149,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,Etienne Capoue,Pass,Yeremi Pino
+522266,13,BlockedShot,0.855,0.500999984741211,0.10154455155134201,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,Samuel Chukwueze,Pass,Yeremi Pino
+522274,33,SavedShot,0.8,0.5309999847412109,0.04051638022065163,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,Etienne Capoue,Pass,Yeremi Pino
+522275,34,BlockedShot,0.965999984741211,0.6120000076293945,0.08130138367414474,Yeremi Pino,h,9024,FromCorner,2022,LeftFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,,TakeOn,Yeremi Pino
+522278,41,SavedShot,0.9119999694824219,0.6930000305175781,0.3227229118347168,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,Samuel Chukwueze,Throughball,Yeremi Pino
+522299,83,MissedShots,0.8630000305175781,0.5609999847412109,0.40356436371803284,Yeremi Pino,h,9024,OpenPlay,2022,LeftFoot,19270,Villarreal,Espanyol,4,2,2023-04-27 17:30:00,,BallRecovery,Yeremi Pino
+526165,11,SavedShot,0.9309999847412109,0.5479999923706055,0.3704545795917511,Yeremi Pino,h,9024,OpenPlay,2022,Head,19297,Villarreal,Athletic Club,5,1,2023-05-13 16:30:00,Etienne Capoue,Cross,Yeremi Pino
+526176,49,SavedShot,0.9430000305175781,0.6040000152587891,0.42359551787376404,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19297,Villarreal,Athletic Club,5,1,2023-05-13 16:30:00,Álex Baena,Pass,Yeremi Pino
+526182,74,MissedShots,0.9130000305175782,0.3820000076293945,0.13070155680179596,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19297,Villarreal,Athletic Club,5,1,2023-05-13 16:30:00,Giovani Lo Celso,Pass,Yeremi Pino
+527206,8,Goal,0.9819999694824219,0.5509999847412109,0.74100261926651,Yeremi Pino,a,9024,OpenPlay,2022,LeftFoot,19304,Girona,Villarreal,1,2,2023-05-20 12:00:00,Nicolas Jackson,Pass,Yeremi Pino
+527210,39,BlockedShot,0.9159999847412109,0.5670000076293945,0.09568527340888977,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19304,Girona,Villarreal,1,2,2023-05-20 12:00:00,Alfonso,Cross,Yeremi Pino
+527211,39,BlockedShot,0.904000015258789,0.6020000076293945,0.0907730683684349,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19304,Girona,Villarreal,1,2,2023-05-20 12:00:00,Nicolas Jackson,BallTouch,Yeremi Pino
+530165,80,MissedShots,0.8430000305175781,0.5990000152587891,0.08061181008815765,Yeremi Pino,a,9024,OpenPlay,2022,RightFoot,19327,Rayo Vallecano,Villarreal,2,1,2023-05-28 17:00:00,,TakeOn,Yeremi Pino
+530901,36,MissedShots,0.8590000152587891,0.5979999923706054,0.09131406247615814,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19333,Villarreal,Atletico Madrid,2,2,2023-06-04 18:00:00,Samuel Chukwueze,TakeOn,Yeremi Pino
+530908,53,MissedShots,0.86,0.6680000305175782,0.049155887216329575,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19333,Villarreal,Atletico Madrid,2,2,2023-06-04 18:00:00,Nicolas Jackson,Pass,Yeremi Pino
+530912,66,SavedShot,0.9440000152587891,0.5709999847412109,0.07404299825429916,Yeremi Pino,h,9024,OpenPlay,2022,RightFoot,19333,Villarreal,Atletico Madrid,2,2,2023-06-04 18:00:00,Álex Baena,TakeOn,Yeremi Pino
+539844,70,MissedShots,0.805,0.36400001525878906,0.026111731305718422,Yeremi Pino,a,9024,FromCorner,2023,RightFoot,22741,Rayo Vallecano,Villarreal,1,1,2023-09-24 14:15:00,,None,Yeremi Pino
+539847,82,SavedShot,0.8830000305175781,0.46799999237060547,0.3605380654335022,Yeremi Pino,a,9024,OpenPlay,2023,RightFoot,22741,Rayo Vallecano,Villarreal,1,1,2023-09-24 14:15:00,Aissa Mandi,Throughball,Yeremi Pino
+540301,20,BlockedShot,0.8619999694824219,0.5840000152587891,0.06807751953601837,Yeremi Pino,h,9024,OpenPlay,2023,RightFoot,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,,None,Yeremi Pino
+540306,33,MissedShots,0.9069999694824219,0.49900001525878906,0.11484197527170181,Yeremi Pino,h,9024,OpenPlay,2023,Head,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,Álex Baena,Cross,Yeremi Pino
+540307,37,SavedShot,0.8869999694824219,0.6140000152587891,0.06876295059919357,Yeremi Pino,h,9024,OpenPlay,2023,RightFoot,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,Aissa Mandi,Pass,Yeremi Pino
+540309,46,MissedShots,0.879000015258789,0.5540000152587891,0.024127690121531487,Yeremi Pino,h,9024,OpenPlay,2023,Head,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,Álex Baena,Aerial,Yeremi Pino
+543022,3,SavedShot,0.970999984741211,0.5879999923706055,0.05721059441566467,Yeremi Pino,h,9024,OpenPlay,2023,Head,22774,Villarreal,Las Palmas,1,2,2023-10-08 12:00:00,,None,Yeremi Pino
+543026,34,BlockedShot,0.9030000305175782,0.5209999847412109,0.10140237212181091,Yeremi Pino,h,9024,OpenPlay,2023,LeftFoot,22774,Villarreal,Las Palmas,1,2,2023-10-08 12:00:00,Alfonso,Cross,Yeremi Pino
+549234,16,SavedShot,0.8809999847412109,0.35700000762939454,0.07950921356678009,Yeremi Pino,a,9024,OpenPlay,2023,RightFoot,22807,Atletico Madrid,Villarreal,3,1,2023-11-12 20:00:00,Gerard Moreno,Pass,Yeremi Pino
+585670,24,BlockedShot,0.9080000305175782,0.36400001525878906,0.10983634740114212,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,26991,Villarreal,Atletico Madrid,2,2,2024-08-19 19:30:00,,TakeOn,Yeremi Pino
+587180,16,BlockedShot,0.9359999847412109,0.4779999923706055,0.10753912478685379,Yeremi Pino,h,9024,FromCorner,2024,RightFoot,27002,Villarreal,Celta Vigo,4,3,2024-08-26 19:30:00,Sergi Cardona,None,Yeremi Pino
+587195,46,ShotOnPost,0.9159999847412109,0.4370000076293945,0.038833677768707275,Yeremi Pino,h,9024,OpenPlay,2024,Head,27002,Villarreal,Celta Vigo,4,3,2024-08-26 19:30:00,Álex Baena,Aerial,Yeremi Pino
+589668,55,BlockedShot,0.914000015258789,0.524000015258789,0.05317569896578789,Yeremi Pino,a,9024,OpenPlay,2024,Head,27015,Valencia,Villarreal,1,1,2024-08-31 19:30:00,Thierno Barry,Rebound,Yeremi Pino
+590523,89,BlockedShot,0.9259999847412109,0.5890000152587891,0.086460642516613,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Ayoze Pérez,Cross,Yeremi Pino
+593226,49,BlockedShot,0.86,0.4129999923706055,0.07729259878396988,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27037,Villarreal,Barcelona,1,5,2024-09-22 16:30:00,Nicolas Pepe,Pass,Yeremi Pino
+593228,51,ShotOnPost,0.9019999694824219,0.43,0.05625269189476967,Yeremi Pino,h,9024,FromCorner,2024,Head,27037,Villarreal,Barcelona,1,5,2024-09-22 16:30:00,Nicolas Pepe,Cross,Yeremi Pino
+598241,82,BlockedShot,0.9580000305175781,0.445,0.09979046136140823,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27089,Real Valladolid,Villarreal,1,2,2024-10-26 12:00:00,,None,Yeremi Pino
+603328,66,MissedShots,0.875999984741211,0.31,0.04380883276462555,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27114,Osasuna,Villarreal,2,2,2024-11-24 13:00:00,Gerard Moreno,Pass,Yeremi Pino
+604568,5,BlockedShot,0.8959999847412109,0.2879999923706055,0.045331381261348724,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27128,Villarreal,Girona,2,2,2024-12-01 13:00:00,,None,Yeremi Pino
+604572,22,ShotOnPost,0.9259999847412109,0.4879999923706055,0.07761207222938538,Yeremi Pino,h,9024,OpenPlay,2024,Head,27128,Villarreal,Girona,2,2,2024-12-01 13:00:00,Álex Baena,Aerial,Yeremi Pino
+606415,40,SavedShot,0.9330000305175781,0.4779999923706055,0.39847713708877563,Yeremi Pino,a,9024,OpenPlay,2024,Head,27134,Athletic Club,Villarreal,2,0,2024-12-08 15:15:00,Álex Baena,Cross,Yeremi Pino
+607700,57,BlockedShot,0.950999984741211,0.46,0.4032842218875885,Yeremi Pino,h,9024,FromCorner,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Thierno Barry,Rebound,Yeremi Pino
+608006,9,SavedShot,0.8640000152587891,0.34,0.29159972071647644,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27098,Villarreal,Rayo Vallecano,1,1,2024-12-18 20:30:00,,None,Yeremi Pino
+608009,30,BlockedShot,0.8,0.3990000152587891,0.017824772745370865,Yeremi Pino,h,9024,FromCorner,2024,RightFoot,27098,Villarreal,Rayo Vallecano,1,1,2024-12-18 20:30:00,,Aerial,Yeremi Pino
+613054,27,Goal,0.924000015258789,0.43900001525878907,0.44682610034942627,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27178,Villarreal,Mallorca,4,0,2025-01-20 20:00:00,Sergi Cardona,Cross,Yeremi Pino
+614985,57,MissedShots,0.904000015258789,0.3220000076293945,0.07277555018663406,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27196,Villarreal,Real Valladolid,5,1,2025-02-01 15:15:00,Gerard Moreno,TakeOn,Yeremi Pino
+616178,12,BlockedShot,0.8680000305175781,0.32299999237060545,0.07048126310110092,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27203,Las Palmas,Villarreal,1,2,2025-02-08 17:30:00,Ayoze Pérez,Pass,Yeremi Pino
+616189,55,MissedShots,0.8859999847412109,0.3120000076293945,0.07297433167695999,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27203,Las Palmas,Villarreal,1,2,2025-02-08 17:30:00,,Dispossessed,Yeremi Pino
+617475,53,BlockedShot,0.850999984741211,0.7269999694824218,0.0324106439948082,Yeremi Pino,h,9024,FromCorner,2024,RightFoot,27216,Villarreal,Valencia,1,1,2025-02-15 20:00:00,Álex Baena,Pass,Yeremi Pino
+618517,3,BlockedShot,0.91,0.3340000152587891,0.03277341276407242,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27224,Rayo Vallecano,Villarreal,0,1,2025-02-22 15:15:00,Sergi Cardona,Cross,Yeremi Pino
+621360,36,MissedShots,0.9230000305175782,0.44799999237060545,0.3633270263671875,Yeremi Pino,a,9024,OpenPlay,2024,RightFoot,27249,Alaves,Villarreal,1,0,2025-03-08 15:15:00,Álex Baena,Chipped,Yeremi Pino
+629189,6,Goal,0.9069999694824219,0.40099998474121096,0.2781185209751129,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Sergi Cardona,Cross,Yeremi Pino
+630723,36,BlockedShot,0.89,0.3890000152587891,0.042864128947257996,Yeremi Pino,h,9024,FromCorner,2024,RightFoot,27241,Villarreal,Espanyol,1,0,2025-04-27 14:15:00,Daniel Parejo,Cross,Yeremi Pino
+630729,51,Goal,0.8469999694824218,0.5420000076293945,0.08387096971273422,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27241,Villarreal,Espanyol,1,0,2025-04-27 14:15:00,Nicolas Pepe,Pass,Yeremi Pino
+634026,0,SavedShot,0.8730000305175781,0.46599998474121096,0.10077406466007233,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27341,Villarreal,Leganes,3,0,2025-05-14 17:00:00,Álex Baena,Cross,Yeremi Pino
+634051,61,SavedShot,0.8769999694824219,0.600999984741211,0.3017923831939697,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27341,Villarreal,Leganes,3,0,2025-05-14 17:00:00,Ayoze Pérez,Pass,Yeremi Pino
+635148,6,MissedShots,0.9169999694824219,0.5370000076293945,0.13882146775722504,Yeremi Pino,a,9024,OpenPlay,2024,Head,27343,Barcelona,Villarreal,2,3,2025-05-18 17:00:00,Álex Baena,Cross,Yeremi Pino
+636207,3,Goal,0.8159999847412109,0.65,0.036082565784454346,Yeremi Pino,h,9024,OpenPlay,2024,RightFoot,27361,Villarreal,Sevilla,4,2,2025-05-25 14:15:00,,None,Yeremi Pino
+637563,27,MissedShots,0.8669999694824219,0.5790000152587891,0.07771889120340347,Yeremi Pino,h,9024,SetPiece,2025,RightFoot,29159,Villarreal,Real Oviedo,2,0,2025-08-15 19:30:00,Nicolas Pepe,Pass,Yeremi Pino
+637576,54,SavedShot,0.88,0.6980000305175781,0.0473523810505867,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,29159,Villarreal,Real Oviedo,2,0,2025-08-15 19:30:00,,None,Yeremi Pino
+641137,92,BlockedShot,0.7469999694824219,0.5729999923706055,0.02161698043346405,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,28807,Aston Villa,Crystal Palace,0,3,2025-08-31 18:00:00,Tyrick Mitchell,Pass,Yeremi Pino
+641696,19,MissedShots,0.7680000305175781,0.3170000076293945,0.022644711658358574,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,Will Hughes,Pass,Yeremi Pino
+641697,35,MissedShots,0.8530000305175781,0.4620000076293945,0.3241446316242218,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,Daichi Kamada,Throughball,Yeremi Pino
+641700,49,BlockedShot,0.91,0.5570000076293945,0.3980400860309601,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,,Rebound,Yeremi Pino
+643061,8,BlockedShot,0.7530000305175781,0.5990000152587891,0.01626068539917469,Yeremi Pino,a,9024,FromCorner,2025,RightFoot,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,,None,Yeremi Pino
+643064,35,BlockedShot,0.8830000305175781,0.565,0.084990955889225,Yeremi Pino,a,9024,OpenPlay,2025,LeftFoot,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,,None,Yeremi Pino
+644691,10,SavedShot,0.884000015258789,0.5770000076293945,0.5153206586837769,Yeremi Pino,h,9024,OpenPlay,2025,LeftFoot,28830,Crystal Palace,Liverpool,2,1,2025-09-27 14:00:00,Ismaila Sarr,Pass,Yeremi Pino
+646620,1,SavedShot,0.8090000152587891,0.5320000076293945,0.03446919843554497,Yeremi Pino,a,9024,FromCorner,2025,RightFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,,None,Yeremi Pino
+647582,62,MissedShots,0.7519999694824219,0.634000015258789,0.011174270883202553,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28850,Crystal Palace,Bournemouth,3,3,2025-10-18 14:00:00,,None,Yeremi Pino
+650845,6,BlockedShot,0.7659999847412109,0.5209999847412109,0.07886485755443573,Yeremi Pino,h,9024,DirectFreekick,2025,RightFoot,28870,Crystal Palace,Brentford,2,0,2025-11-01 15:00:00,,Standard,Yeremi Pino
+652823,81,BlockedShot,0.905,0.5359999847412109,0.13531440496444702,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,Tyrick Mitchell,Pass,Yeremi Pino
+652824,95,SavedShot,0.8919999694824219,0.6930000305175781,0.04798769950866699,Yeremi Pino,h,9024,SetPiece,2025,RightFoot,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,Jefferson Lerma,HeadPass,Yeremi Pino
+653688,30,BlockedShot,0.845999984741211,0.485,0.08917002379894257,Yeremi Pino,a,9024,OpenPlay,2025,LeftFoot,28897,Wolverhampton Wanderers,Crystal Palace,0,2,2025-11-22 15:00:00,Ismaila Sarr,Pass,Yeremi Pino
+653695,68,Goal,0.8059999847412109,0.6320000076293946,0.059134937822818756,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,28897,Wolverhampton Wanderers,Crystal Palace,0,2,2025-11-22 15:00:00,Adam Wharton,BallRecovery,Yeremi Pino
+656388,25,BlockedShot,0.91,0.6,0.3745656907558441,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28901,Crystal Palace,Manchester United,1,2,2025-11-30 12:00:00,,None,Yeremi Pino
+657588,63,BlockedShot,0.9319999694824219,0.6090000152587891,0.08789097517728806,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,,None,Yeremi Pino
+657594,86,BlockedShot,0.9059999847412109,0.5940000152587891,0.06496773660182953,Yeremi Pino,a,9024,FromCorner,2025,RightFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Adam Wharton,Pass,Yeremi Pino
+658515,16,ShotOnPost,0.8469999694824218,0.534000015258789,0.29443690180778503,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,Adam Wharton,Chipped,Yeremi Pino
+658517,19,BlockedShot,0.91,0.6320000076293946,0.08284522593021393,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,,BallRecovery,Yeremi Pino
+658518,24,SavedShot,0.8219999694824218,0.55,0.10234685242176056,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,Ismaila Sarr,Pass,Yeremi Pino
+658524,51,SavedShot,0.914000015258789,0.43900001525878907,0.03949236869812012,Yeremi Pino,h,9024,OpenPlay,2025,Head,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,,None,Yeremi Pino
+659577,71,BlockedShot,0.6790000152587891,0.4620000076293945,0.02442508190870285,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,Tyrick Mitchell,Pass,Yeremi Pino
+659582,84,BlockedShot,0.8130000305175781,0.47200000762939454,0.05682658404111862,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,Borna Sosa,Pass,Yeremi Pino
+660425,23,MissedShots,0.700999984741211,0.5159999847412109,0.014329781755805016,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Justin Devenny,Pass,Yeremi Pino
+660435,47,BlockedShot,0.865999984741211,0.61,0.05823683366179466,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Justin Devenny,BallTouch,Yeremi Pino
+660708,30,MissedShots,0.855999984741211,0.6129999923706054,0.0832008346915245,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Will Hughes,Pass,Yeremi Pino
+660713,45,MissedShots,0.8390000152587891,0.784000015258789,0.01979018934071064,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Tyrick Mitchell,Pass,Yeremi Pino
+660717,48,BlockedShot,0.8140000152587891,0.664000015258789,0.06362196058034897,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Justin Devenny,Pass,Yeremi Pino
+662053,52,SavedShot,0.8919999694824219,0.515,0.11673367023468018,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,,Rebound,Yeremi Pino
+662051,52,BlockedShot,0.8669999694824219,0.5279999923706055,0.11288425326347351,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,Will Hughes,Pass,Yeremi Pino
+662056,64,SavedShot,0.850999984741211,0.7080000305175781,0.02932976745069027,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,Will Hughes,Pass,Yeremi Pino
+663591,29,Goal,0.9259999847412109,0.585,0.09796634316444397,Yeremi Pino,a,9024,FromCorner,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,None,Yeremi Pino
+663596,48,MissedShots,0.96,0.8619999694824219,0.051872286945581436,Yeremi Pino,a,9024,DirectFreekick,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,Standard,Yeremi Pino
+665178,84,MissedShots,0.6070000076293945,0.32,0.021219627931714058,Yeremi Pino,h,9024,DirectFreekick,2025,RightFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,,Standard,Yeremi Pino
+670189,4,MissedShots,0.71,0.46900001525878904,0.21321608126163483,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,,None,Yeremi Pino
+670197,34,BlockedShot,0.855,0.519000015258789,0.05349539592862129,Yeremi Pino,h,9024,FromCorner,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,Adam Wharton,Pass,Yeremi Pino
+670206,76,SavedShot,0.779000015258789,0.585,0.08412831276655197,Yeremi Pino,h,9024,DirectFreekick,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,,Standard,Yeremi Pino
+674371,83,BlockedShot,0.7769999694824219,0.46700000762939453,0.02293626219034195,Yeremi Pino,h,9024,SetPiece,2025,RightFoot,29072,Crystal Palace,Leeds,0,0,2026-03-15 14:00:00,,None,Yeremi Pino
+678340,33,SavedShot,0.7759999847412109,0.6020000076293945,0.05020027607679367,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,29096,Crystal Palace,Newcastle United,2,1,2026-04-12 13:00:00,Brennan Johnson,Pass,Yeremi Pino
+678349,61,MissedShots,0.914000015258789,0.6580000305175782,0.05059732869267464,Yeremi Pino,h,9024,OpenPlay,2025,RightFoot,29096,Crystal Palace,Newcastle United,2,1,2026-04-12 13:00:00,Tyrick Mitchell,Cross,Yeremi Pino
+681041,76,MissedShots,0.7380000305175781,0.539000015258789,0.01943914033472538,Yeremi Pino,a,9024,OpenPlay,2025,RightFoot,29113,Liverpool,Crystal Palace,3,1,2026-04-25 14:00:00,Borna Sosa,Pass,Yeremi Pino

@@ -1,0 +1,156 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+377926,77,SavedShot,0.9619999694824218,0.649000015258789,0.03578360006213188,Evann Guessand,h,8006,OpenPlay,2020,RightFoot,14207,Nice,Paris Saint Germain,0,3,2020-09-20 11:00:00,Pierre Lees-Melou,Cross,Evann Guessand
+432869,69,MissedShots,0.9130000305175782,0.519000015258789,0.05465739965438843,Evann Guessand,a,8006,SetPiece,2021,Head,17890,Lorient,Nice,1,0,2021-09-22 19:00:00,,None,Evann Guessand
+438157,91,Goal,0.9369999694824219,0.41900001525878905,0.45461100339889526,Evann Guessand,h,8006,OpenPlay,2021,RightFoot,17928,Nice,Lyon,3,2,2021-10-24 11:00:00,Alexis Claude Maurice,Pass,Evann Guessand
+439142,13,MissedShots,0.905,0.3120000076293945,0.3246679902076721,Evann Guessand,h,8006,OpenPlay,2021,RightFoot,17851,Nice,Marseille,1,1,2021-10-27 21:00:00,,None,Evann Guessand
+456163,78,MissedShots,0.9130000305175782,0.5209999847412109,0.03732600063085556,Evann Guessand,h,8006,FromCorner,2021,Head,18048,Nice,Clermont Foot,0,1,2022-02-06 14:00:00,Alexis Claude Maurice,Aerial,Evann Guessand
+456166,92,BlockedShot,0.91,0.5270000076293946,0.03162189945578575,Evann Guessand,h,8006,FromCorner,2021,Head,18048,Nice,Clermont Foot,0,1,2022-02-06 14:00:00,Alexis Claude Maurice,Aerial,Evann Guessand
+457281,75,SavedShot,0.95,0.6029999923706054,0.0804561972618103,Evann Guessand,a,8006,OpenPlay,2021,Head,18060,Lyon,Nice,2,0,2022-02-12 20:00:00,Jordan Lotomba,Cross,Evann Guessand
+467461,11,BlockedShot,0.9259999847412109,0.3729999923706055,0.07431810349225998,Evann Guessand,a,8006,OpenPlay,2021,RightFoot,18126,Lens,Nice,3,0,2022-04-10 15:05:00,Andy Delort,Cross,Evann Guessand
+467463,21,SavedShot,0.965,0.37,0.10925500094890594,Evann Guessand,a,8006,OpenPlay,2021,RightFoot,18126,Lens,Nice,3,0,2022-04-10 15:05:00,,TakeOn,Evann Guessand
+467465,24,MissedShots,0.8119999694824219,0.4620000076293945,0.05889289826154709,Evann Guessand,a,8006,OpenPlay,2021,RightFoot,18126,Lens,Nice,3,0,2022-04-10 15:05:00,Mario Lemina,BallRecovery,Evann Guessand
+467478,70,MissedShots,0.9459999847412109,0.590999984741211,0.07925470173358917,Evann Guessand,a,8006,OpenPlay,2021,RightFoot,18126,Lens,Nice,3,0,2022-04-10 15:05:00,Billal Brahimi,Cross,Evann Guessand
+470649,78,SavedShot,0.9569999694824218,0.4979999923706055,0.5436149835586548,Evann Guessand,h,8006,SetPiece,2021,Head,18157,Nice,Troyes,1,0,2022-04-24 13:00:00,Dante,HeadPass,Evann Guessand
+477630,69,SavedShot,0.874000015258789,0.5509999847412109,0.025557899847626686,Evann Guessand,a,8006,OpenPlay,2021,OtherBodyPart,18198,Reims,Nice,2,3,2022-05-21 19:00:00,Kephren Thuram,Cross,Evann Guessand
+479700,27,MissedShots,0.9069999694824219,0.5459999847412109,0.04674899950623512,Evann Guessand,a,8006,FromCorner,2022,RightFoot,19654,Angers,Nantes,0,0,2022-08-07 13:00:00,,Aerial,Evann Guessand
+479711,59,SavedShot,0.9209999847412109,0.529000015258789,0.13514399528503418,Evann Guessand,a,8006,FromCorner,2022,RightFoot,19654,Angers,Nantes,0,0,2022-08-07 13:00:00,Pedro Chirivella,Rebound,Evann Guessand
+479714,68,BlockedShot,0.9690000152587891,0.36900001525878906,0.10627800226211548,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19654,Angers,Nantes,0,0,2022-08-07 13:00:00,,TakeOn,Evann Guessand
+480113,81,MissedShots,0.9430000305175781,0.58,0.6366429924964905,Evann Guessand,h,8006,OpenPlay,2022,RightFoot,19658,Nantes,Lille,1,1,2022-08-12 19:00:00,Moses Simon,Throughball,Evann Guessand
+482179,31,MissedShots,0.92,0.5540000152587891,0.1057870015501976,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19674,Marseille,Nantes,2,1,2022-08-20 19:00:00,Moses Simon,Cross,Evann Guessand
+484113,24,SavedShot,0.9519999694824218,0.544000015258789,0.09851749986410141,Evann Guessand,h,8006,OpenPlay,2022,LeftFoot,19681,Nantes,Toulouse,3,1,2022-08-28 11:00:00,,None,Evann Guessand
+484122,49,Goal,0.9669999694824218,0.5829999923706055,0.04380340129137039,Evann Guessand,h,8006,OpenPlay,2022,Head,19681,Nantes,Toulouse,3,1,2022-08-28 11:00:00,Moses Simon,Aerial,Evann Guessand
+487076,60,BlockedShot,0.93,0.3079999923706055,0.0802299976348877,Evann Guessand,h,8006,OpenPlay,2022,RightFoot,19701,Nantes,Paris Saint Germain,0,3,2022-09-03 19:00:00,Pedro Chirivella,Throughball,Evann Guessand
+487925,43,SavedShot,0.8680000305175781,0.3139999961853027,0.045598000288009644,Evann Guessand,a,8006,OpenPlay,2022,LeftFoot,19711,Lorient,Nantes,3,2,2022-09-11 13:00:00,Andrei Girotto,Pass,Evann Guessand
+497207,83,MissedShots,0.9119999694824219,0.43099998474121093,0.0880495011806488,Evann Guessand,h,8006,OpenPlay,2022,Head,19771,Nantes,Clermont Foot,1,1,2022-10-30 14:00:00,Moussa Sissoko,Cross,Evann Guessand
+501851,42,MissedShots,0.93,0.4829999923706055,0.11934400349855423,Evann Guessand,h,8006,FromCorner,2022,Head,19810,Nantes,Auxerre,1,0,2023-01-01 14:00:00,Ludovic Blas,Cross,Evann Guessand
+503145,45,SavedShot,0.9380000305175781,0.5209999847412109,0.23165500164031982,Evann Guessand,h,8006,FromCorner,2022,Head,19822,Nantes,Lyon,0,0,2023-01-11 18:00:00,Ludovic Blas,Aerial,Evann Guessand
+506623,89,SavedShot,0.9530000305175781,0.49700000762939456,0.4198960065841675,Evann Guessand,h,8006,FromCorner,2022,Head,19850,Nantes,Marseille,0,2,2023-02-01 18:00:00,Andrei Girotto,HeadPass,Evann Guessand
+507607,63,Goal,0.8809999847412109,0.49700000762939456,0.09341400116682053,Evann Guessand,a,8006,OpenPlay,2022,LeftFoot,19858,Ajaccio,Nantes,0,2,2023-02-05 14:00:00,Samuel Moutoussamy,Chipped,Evann Guessand
+507608,69,SavedShot,0.874000015258789,0.36900001525878906,0.08746390044689178,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19858,Ajaccio,Nantes,0,2,2023-02-05 14:00:00,Florent Mollet,HeadPass,Evann Guessand
+509022,89,BlockedShot,0.8469999694824218,0.34,0.06316590309143066,Evann Guessand,h,8006,OpenPlay,2022,LeftFoot,19871,Nantes,Lorient,1,0,2023-02-12 16:05:00,Moussa Sissoko,Pass,Evann Guessand
+510321,80,BlockedShot,0.85,0.285,0.03099980019032955,Evann Guessand,a,8006,OpenPlay,2022,LeftFoot,19882,Lens,Nantes,3,1,2023-02-19 16:05:00,Andy Delort,Pass,Evann Guessand
+511285,93,SavedShot,0.8930000305175781,0.43900001525878907,0.024981200695037842,Evann Guessand,h,8006,OpenPlay,2022,Head,19893,Nantes,Rennes,0,1,2023-02-26 14:00:00,Ludovic Blas,Aerial,Evann Guessand
+514654,50,SavedShot,0.8109999847412109,0.6730000305175782,0.024132100865244865,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19921,Lyon,Nantes,1,1,2023-03-17 20:00:00,,TakeOn,Evann Guessand
+514659,69,SavedShot,0.91,0.5879999923706055,0.08620759844779968,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19921,Lyon,Nantes,1,1,2023-03-17 20:00:00,Jaouen Hadjam,Cross,Evann Guessand
+521365,96,Goal,0.8959999847412109,0.54,0.11747331917285919,Evann Guessand,h,8006,OpenPlay,2022,RightFoot,19962,Nantes,Troyes,2,2,2023-04-23 13:00:00,Florent Mollet,Pass,Evann Guessand
+526677,70,BlockedShot,0.735999984741211,0.4490000152587891,0.020180217921733856,Evann Guessand,a,8006,OpenPlay,2022,RightFoot,19997,Toulouse,Nantes,0,0,2023-05-14 13:00:00,Moses Simon,Pass,Evann Guessand
+533756,35,MissedShots,0.899000015258789,0.48,0.07105351239442825,Evann Guessand,a,8006,FromCorner,2023,Head,23381,Lorient,Nice,1,1,2023-08-20 13:00:00,Gaetan Laborde,Cross,Evann Guessand
+533763,53,SavedShot,0.8619999694824219,0.41,0.3382294774055481,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23381,Lorient,Nice,1,1,2023-08-20 13:00:00,Kephren Thuram,TakeOn,Evann Guessand
+533764,62,BlockedShot,0.815,0.53,0.05221016705036163,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23381,Lorient,Nice,1,1,2023-08-20 13:00:00,,None,Evann Guessand
+533765,63,Goal,0.919000015258789,0.5129999923706055,0.5122837424278259,Evann Guessand,a,8006,FromCorner,2023,RightFoot,23381,Lorient,Nice,1,1,2023-08-20 13:00:00,,None,Evann Guessand
+533767,68,BlockedShot,0.9159999847412109,0.5609999847412109,0.11957870423793793,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23381,Lorient,Nice,1,1,2023-08-20 13:00:00,Kephren Thuram,Chipped,Evann Guessand
+537284,95,SavedShot,0.9159999847412109,0.6530000305175782,0.2942586839199066,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23407,Paris Saint Germain,Nice,2,3,2023-09-15 19:00:00,Pablo Rosario,Pass,Evann Guessand
+538822,92,MissedShots,0.9459999847412109,0.67,0.08147203177213669,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23417,Monaco,Nice,0,1,2023-09-22 19:00:00,Melvin Bard,Pass,Evann Guessand
+541797,82,MissedShots,0.8919999694824219,0.4379999923706055,0.1041581854224205,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23430,Nice,Brest,0,0,2023-10-01 13:00:00,Kephren Thuram,Rebound,Evann Guessand
+542772,81,SavedShot,0.8109999847412109,0.3189999961853027,0.034656133502721786,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23440,Metz,Nice,0,1,2023-10-07 15:00:00,Gaetan Laborde,HeadPass,Evann Guessand
+544330,78,Goal,0.9540000152587891,0.5279999923706055,0.5721547603607178,Evann Guessand,h,8006,SetPiece,2023,Head,23449,Nice,Marseille,1,0,2023-10-21 19:00:00,Jeremie Boga,Cross,Evann Guessand
+544331,81,MissedShots,0.9080000305175782,0.24700000762939453,0.046835314482450485,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23449,Nice,Marseille,1,0,2023-10-21 19:00:00,Pablo Rosario,Chipped,Evann Guessand
+545117,7,SavedShot,0.9030000305175782,0.3320000076293945,0.11499898880720139,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23455,Clermont Foot,Nice,0,1,2023-10-27 19:00:00,Pablo Rosario,Throughball,Evann Guessand
+548030,78,SavedShot,0.879000015258789,0.5,0.05279316380620003,Evann Guessand,a,8006,OpenPlay,2023,Head,23477,Montpellier,Nice,0,0,2023-11-10 20:00:00,Gaetan Laborde,Cross,Evann Guessand
+548036,91,MissedShots,0.904000015258789,0.5529999923706055,0.019267670810222626,Evann Guessand,a,8006,FromCorner,2023,Head,23477,Montpellier,Nice,0,0,2023-11-10 20:00:00,Morgan Sanson,Aerial,Evann Guessand
+550187,85,BlockedShot,0.9219999694824219,0.32799999237060545,0.1336524784564972,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23484,Nice,Toulouse,1,0,2023-11-26 12:00:00,Dante,Throughball,Evann Guessand
+551362,42,SavedShot,0.915,0.3029999923706055,0.31191372871398926,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23494,Nantes,Nice,1,0,2023-12-02 20:00:00,Terem Igobor Moffi,Throughball,Evann Guessand
+553329,88,MissedShots,0.9359999847412109,0.3559999847412109,0.0878269150853157,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23502,Nice,Reims,2,1,2023-12-10 12:00:00,Jordan Lotomba,Chipped,Evann Guessand
+554370,36,MissedShots,0.9669999694824218,0.33599998474121096,0.042559146881103516,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23513,Le Havre,Nice,3,1,2023-12-16 16:00:00,Gaetan Laborde,Chipped,Evann Guessand
+555560,30,SavedShot,0.894000015258789,0.3160000038146973,0.05571959167718887,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23519,Nice,Lens,2,0,2023-12-20 20:00:00,Hichem Boudaoui,Pass,Evann Guessand
+555572,58,ShotOnPost,0.9159999847412109,0.5879999923706055,0.0909019410610199,Evann Guessand,h,8006,FromCorner,2023,LeftFoot,23519,Nice,Lens,2,0,2023-12-20 20:00:00,Morgan Sanson,HeadPass,Evann Guessand
+555577,95,MissedShots,0.894000015258789,0.4570000076293945,0.4334414303302765,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23519,Nice,Lens,2,0,2023-12-20 20:00:00,Terem Igobor Moffi,Pass,Evann Guessand
+558318,80,MissedShots,0.9180000305175782,0.47900001525878905,0.3231513202190399,Evann Guessand,a,8006,OpenPlay,2023,Head,23524,Rennes,Nice,2,0,2024-01-13 20:00:00,Tom Louchet,Cross,Evann Guessand
+559883,50,MissedShots,0.8769999694824219,0.45599998474121095,0.2988055944442749,Evann Guessand,h,8006,OpenPlay,2023,LeftFoot,23538,Nice,Metz,1,0,2024-01-27 16:00:00,Dante,Chipped,Evann Guessand
+559888,76,Goal,0.885,0.5,0.7600951194763184,Evann Guessand,h,8006,Penalty,2023,RightFoot,23538,Nice,Metz,1,0,2024-01-27 16:00:00,,Standard,Evann Guessand
+561826,8,BlockedShot,0.9030000305175782,0.6830000305175781,0.05365585908293724,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23550,Brest,Nice,0,0,2024-02-04 16:05:00,Gaetan Laborde,Pass,Evann Guessand
+561838,54,SavedShot,0.9109999847412109,0.495,0.044640541076660156,Evann Guessand,a,8006,FromCorner,2023,Head,23550,Brest,Nice,0,0,2024-02-04 16:05:00,Kephren Thuram,Aerial,Evann Guessand
+563272,21,SavedShot,0.895,0.35200000762939454,0.10043574869632721,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23555,Nice,Monaco,2,3,2024-02-11 19:45:00,Hichem Boudaoui,Throughball,Evann Guessand
+563278,47,SavedShot,0.909000015258789,0.5970000076293945,0.3633350133895874,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23555,Nice,Monaco,2,3,2024-02-11 19:45:00,,TakeOn,Evann Guessand
+563281,73,Goal,0.9430000305175781,0.5279999923706055,0.07219723612070084,Evann Guessand,h,8006,FromCorner,2023,Head,23555,Nice,Monaco,2,3,2024-02-11 19:45:00,Morgan Sanson,Aerial,Evann Guessand
+565676,26,MissedShots,0.9259999847412109,0.5670000076293945,0.03822774067521095,Evann Guessand,h,8006,FromCorner,2023,Head,23573,Nice,Clermont Foot,0,0,2024-02-25 14:00:00,Alexis Claude Maurice,Aerial,Evann Guessand
+565677,36,BlockedShot,0.9540000152587891,0.5479999923706055,0.12519386410713196,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23573,Nice,Clermont Foot,0,0,2024-02-25 14:00:00,Melvin Bard,CornerAwarded,Evann Guessand
+565688,52,SavedShot,0.9740000152587891,0.4520000076293945,0.6211143732070923,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23573,Nice,Clermont Foot,0,0,2024-02-25 14:00:00,Hichem Boudaoui,Cross,Evann Guessand
+565692,65,BlockedShot,0.9480000305175781,0.40099998474121096,0.12247306853532791,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23573,Nice,Clermont Foot,0,0,2024-02-25 14:00:00,Pablo Rosario,Throughball,Evann Guessand
+566989,36,SavedShot,0.914000015258789,0.5790000152587891,0.41043394804000854,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23579,Toulouse,Nice,2,1,2024-03-03 12:00:00,Kephren Thuram,Pass,Evann Guessand
+567691,67,MissedShots,0.9059999847412109,0.6220000076293946,0.07672133296728134,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23592,Nice,Montpellier,1,2,2024-03-08 20:00:00,Jeremie Boga,Pass,Evann Guessand
+567694,74,BlockedShot,0.865,0.6029999923706054,0.04801727831363678,Evann Guessand,h,8006,FromCorner,2023,RightFoot,23592,Nice,Montpellier,1,2,2024-03-08 20:00:00,Morgan Sanson,BallTouch,Evann Guessand
+567698,84,BlockedShot,0.874000015258789,0.5329999923706055,0.03320598602294922,Evann Guessand,h,8006,FromCorner,2023,RightFoot,23592,Nice,Montpellier,1,2,2024-03-08 20:00:00,,Aerial,Evann Guessand
+567700,92,SavedShot,0.96,0.36400001525878906,0.1017671748995781,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23592,Nice,Montpellier,1,2,2024-03-08 20:00:00,Jean-Clair Todibo,Throughball,Evann Guessand
+572864,84,BlockedShot,0.875,0.51,0.07766195386648178,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23618,Reims,Nice,0,0,2024-04-07 13:00:00,Jordan Lotomba,Cross,Evann Guessand
+572865,84,BlockedShot,0.885,0.5820000076293945,0.08109329640865326,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23618,Reims,Nice,0,0,2024-04-07 13:00:00,,None,Evann Guessand
+574752,84,MissedShots,0.9180000305175782,0.33599998474121096,0.09580806642770767,Evann Guessand,h,8006,OpenPlay,2023,LeftFoot,23635,Nice,Lorient,3,0,2024-04-19 19:00:00,Antoine Mendy,Chipped,Evann Guessand
+574755,88,Goal,0.914000015258789,0.509000015258789,0.5497093200683594,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23635,Nice,Lorient,3,0,2024-04-19 19:00:00,Jean-Clair Todibo,Pass,Evann Guessand
+574756,92,SavedShot,0.9059999847412109,0.40200000762939453,0.3821171522140503,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23635,Nice,Lorient,3,0,2024-04-19 19:00:00,Hichem Boudaoui,Pass,Evann Guessand
+577242,8,BlockedShot,0.855,0.4540000152587891,0.0813865214586258,Evann Guessand,a,8006,OpenPlay,2023,LeftFoot,23642,Strasbourg,Nice,1,3,2024-04-28 13:00:00,,BallRecovery,Evann Guessand
+577248,34,MissedShots,0.879000015258789,0.46099998474121096,0.4688357412815094,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23642,Strasbourg,Nice,1,3,2024-04-28 13:00:00,Kephren Thuram,TakeOn,Evann Guessand
+577249,43,Goal,0.885,0.5,0.7600951194763184,Evann Guessand,a,8006,Penalty,2023,RightFoot,23642,Strasbourg,Nice,1,3,2024-04-28 13:00:00,,Standard,Evann Guessand
+581148,85,SavedShot,0.8219999694824218,0.5659999847412109,0.04764004796743393,Evann Guessand,h,8006,OpenPlay,2023,RightFoot,23653,Nice,Paris Saint Germain,1,2,2024-05-15 19:00:00,,None,Evann Guessand
+582807,51,SavedShot,0.9219999694824219,0.3220000076293945,0.08064164966344833,Evann Guessand,a,8006,OpenPlay,2023,RightFoot,23673,Lille,Nice,2,2,2024-05-19 19:00:00,Gaetan Laborde,BallTouch,Evann Guessand
+585178,7,BlockedShot,0.95,0.44,0.1446932852268219,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28052,Auxerre,Nice,2,1,2024-08-18 13:00:00,Hichem Boudaoui,Pass,Evann Guessand
+585196,62,MissedShots,0.9419999694824219,0.6930000305175781,0.05719335377216339,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28052,Auxerre,Nice,2,1,2024-08-18 13:00:00,Tanguy NDombele Alvaro,Pass,Evann Guessand
+586786,61,BlockedShot,0.9080000305175782,0.33299999237060546,0.07239329814910889,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28062,Nice,Toulouse,1,1,2024-08-25 15:00:00,Tanguy NDombele Alvaro,Pass,Evann Guessand
+589921,5,BlockedShot,0.94,0.33799999237060546,0.06446298211812973,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28073,Angers,Nice,1,4,2024-09-01 15:00:00,,None,Evann Guessand
+589928,32,BlockedShot,0.8959999847412109,0.6129999923706054,0.10179454833269119,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28073,Angers,Nice,1,4,2024-09-01 15:00:00,,BallTouch,Evann Guessand
+589941,71,Goal,0.9780000305175781,0.5259999847412109,0.9614668488502502,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28073,Angers,Nice,1,4,2024-09-01 15:00:00,,Rebound,Evann Guessand
+589945,84,Goal,0.8240000152587891,0.47900001525878905,0.06491885334253311,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28073,Angers,Nice,1,4,2024-09-01 15:00:00,,None,Evann Guessand
+590902,11,BlockedShot,0.865,0.6020000076293945,0.06745517253875732,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28076,Marseille,Nice,2,0,2024-09-14 15:00:00,,None,Evann Guessand
+590905,24,BlockedShot,0.8619999694824219,0.720999984741211,0.030276663601398468,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28076,Marseille,Nice,2,0,2024-09-14 15:00:00,Jeremie Boga,Pass,Evann Guessand
+590918,88,SavedShot,0.9480000305175781,0.34400001525878904,0.24383141100406647,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28076,Marseille,Nice,2,0,2024-09-14 15:00:00,,None,Evann Guessand
+592019,25,SavedShot,0.919000015258789,0.3820000076293945,0.46914809942245483,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28085,Nice,Saint-Etienne,8,0,2024-09-20 18:45:00,Jonathan Clauss,Throughball,Evann Guessand
+592022,35,Goal,0.9159999847412109,0.6029999923706054,0.2964915633201599,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28085,Nice,Saint-Etienne,8,0,2024-09-20 18:45:00,Youssoufa Moukoko,TakeOn,Evann Guessand
+594228,8,BlockedShot,0.8909999847412109,0.47299999237060547,0.0833742618560791,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28096,Lens,Nice,0,0,2024-09-28 15:00:00,Jeremie Boga,Cross,Evann Guessand
+597693,41,SavedShot,0.9290000152587891,0.519000015258789,0.05838644132018089,Evann Guessand,a,8006,FromCorner,2024,Head,28116,Nantes,Nice,1,1,2024-10-20 15:00:00,Jonathan Clauss,Aerial,Evann Guessand
+597695,44,SavedShot,0.8069999694824219,0.3729999923706055,0.058176856487989426,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28116,Nantes,Nice,1,1,2024-10-20 15:00:00,Youssoufa Moukoko,Pass,Evann Guessand
+597699,58,MissedShots,0.855999984741211,0.519000015258789,0.02336929738521576,Evann Guessand,a,8006,OpenPlay,2024,Head,28116,Nantes,Nice,1,1,2024-10-20 15:00:00,Ali Abdi,Cross,Evann Guessand
+597703,71,Goal,0.860999984741211,0.6229999923706054,0.05548686906695366,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28116,Nantes,Nice,1,1,2024-10-20 15:00:00,Sofiane Diop,Pass,Evann Guessand
+599110,45,Goal,0.9269999694824219,0.4809999847412109,0.0716465637087822,Evann Guessand,h,8006,SetPiece,2024,Head,28128,Nice,Monaco,2,1,2024-10-27 16:00:00,Ali Abdi,Aerial,Evann Guessand
+599117,55,SavedShot,0.875999984741211,0.5309999847412109,0.3455520570278168,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28128,Nice,Monaco,2,1,2024-10-27 16:00:00,Melvin Bard,Throughball,Evann Guessand
+599120,57,SavedShot,0.9690000152587891,0.33599998474121096,0.06534330546855927,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28128,Nice,Monaco,2,1,2024-10-27 16:00:00,Tom Louchet,TakeOn,Evann Guessand
+599121,60,MissedShots,0.8090000152587891,0.534000015258789,0.05385637283325195,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28128,Nice,Monaco,2,1,2024-10-27 16:00:00,Jeremie Boga,Pass,Evann Guessand
+600382,41,Goal,0.9680000305175781,0.4370000076293945,0.5157097578048706,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28134,Brest,Nice,0,1,2024-11-02 18:00:00,Ali Abdi,Cross,Evann Guessand
+600393,84,MissedShots,0.7630000305175781,0.49700000762939456,0.0511518269777298,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28134,Brest,Nice,0,1,2024-11-02 18:00:00,Ali Abdi,Pass,Evann Guessand
+601960,61,MissedShots,0.9730000305175781,0.6619999694824219,0.03442225977778435,Evann Guessand,h,8006,FromCorner,2024,RightFoot,28141,Nice,Lille,2,2,2024-11-10 14:00:00,Jeremie Boga,Cross,Evann Guessand
+601961,63,BlockedShot,0.8490000152587891,0.674000015258789,0.06950704753398895,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28141,Nice,Lille,2,2,2024-11-10 14:00:00,Sofiane Diop,Pass,Evann Guessand
+601971,87,BlockedShot,0.8930000305175781,0.6270000076293946,0.029140081256628036,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28141,Nice,Lille,2,2,2024-11-10 14:00:00,,Aerial,Evann Guessand
+603670,14,MissedShots,0.9259999847412109,0.5640000152587891,0.05450378730893135,Evann Guessand,h,8006,OpenPlay,2024,Head,28149,Nice,Strasbourg,2,1,2024-11-24 19:45:00,Mohamed Ali-Cho,Aerial,Evann Guessand
+603674,28,BlockedShot,0.895,0.425,0.10384783148765564,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28149,Nice,Strasbourg,2,1,2024-11-24 19:45:00,Tom Louchet,Pass,Evann Guessand
+603678,46,MissedShots,0.9280000305175782,0.49,0.407448947429657,Evann Guessand,h,8006,OpenPlay,2024,Head,28149,Nice,Strasbourg,2,1,2024-11-24 19:45:00,Tom Louchet,Cross,Evann Guessand
+604884,56,BlockedShot,0.840999984741211,0.43900001525878907,0.06287315487861633,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28163,Lyon,Nice,4,1,2024-12-01 16:00:00,Badredine Bouanani,BallTouch,Evann Guessand
+604887,59,BlockedShot,0.8669999694824219,0.5540000152587891,0.0697965919971466,Evann Guessand,a,8006,FromCorner,2024,RightFoot,28163,Lyon,Nice,4,1,2024-12-01 16:00:00,,None,Evann Guessand
+604897,84,SavedShot,0.875999984741211,0.6569999694824219,0.02467152662575245,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28163,Lyon,Nice,4,1,2024-12-01 16:00:00,Tom Louchet,Cross,Evann Guessand
+604902,91,BlockedShot,0.885,0.6530000305175782,0.10592358559370041,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28163,Lyon,Nice,4,1,2024-12-01 16:00:00,Rares Ilie,Pass,Evann Guessand
+606076,62,MissedShots,0.9109999847412109,0.585999984741211,0.078302301466465,Evann Guessand,h,8006,SetPiece,2024,RightFoot,28165,Nice,Le Havre,2,1,2024-12-07 18:00:00,,None,Evann Guessand
+606077,65,SavedShot,0.8959999847412109,0.624000015258789,0.13831333816051483,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28165,Nice,Le Havre,2,1,2024-12-07 18:00:00,Tanguy NDombele Alvaro,BallRecovery,Evann Guessand
+607469,34,BlockedShot,0.8490000152587891,0.43400001525878906,0.09811229258775711,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28179,Montpellier,Nice,2,2,2024-12-15 14:00:00,Tom Louchet,Pass,Evann Guessand
+607473,38,BlockedShot,0.8730000305175781,0.6,0.17946094274520874,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28179,Montpellier,Nice,2,2,2024-12-15 14:00:00,Tanguy NDombele Alvaro,TakeOn,Evann Guessand
+609829,11,Goal,0.885,0.47200000762939454,0.3524021804332733,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28191,Nice,Rennes,3,2,2025-01-03 20:00:00,Tanguy NDombele Alvaro,Throughball,Evann Guessand
+609840,59,BlockedShot,0.8930000305175781,0.5170000076293946,0.08056245744228363,Evann Guessand,h,8006,SetPiece,2024,RightFoot,28191,Nice,Rennes,3,2,2025-01-03 20:00:00,,None,Evann Guessand
+610878,27,Goal,0.899000015258789,0.5359999847412109,0.05978991463780403,Evann Guessand,a,8006,FromCorner,2024,Head,28195,Reims,Nice,2,4,2025-01-11 18:00:00,Jonathan Clauss,Cross,Evann Guessand
+614141,6,Goal,0.8569999694824219,0.4209999847412109,0.3486507534980774,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28217,Nice,Marseille,2,0,2025-01-26 19:45:00,,None,Evann Guessand
+614165,73,SavedShot,0.9169999694824219,0.40599998474121096,0.48954954743385315,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28217,Nice,Marseille,2,0,2025-01-26 19:45:00,Jonathan Clauss,Pass,Evann Guessand
+616166,54,SavedShot,0.865,0.4159999847412109,0.10725274682044983,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28236,Nice,Lens,2,0,2025-02-08 16:00:00,Mohamed Ali-Cho,Pass,Evann Guessand
+616175,78,SavedShot,0.955,0.639000015258789,0.41970133781433105,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28236,Nice,Lens,2,0,2025-02-08 16:00:00,Sofiane Diop,Throughball,Evann Guessand
+617787,46,MissedShots,0.9059999847412109,0.44,0.45710864663124084,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28244,Le Havre,Nice,1,3,2025-02-16 16:15:00,Gaetan Laborde,None,Evann Guessand
+619059,3,MissedShots,0.9430000305175781,0.485,0.1291041523218155,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28253,Nice,Montpellier,2,0,2025-02-23 16:15:00,Mohamed Ali-Cho,Cross,Evann Guessand
+619063,9,SavedShot,0.8680000305175781,0.3770000076293945,0.11395758390426636,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28253,Nice,Montpellier,2,0,2025-02-23 16:15:00,Hichem Boudaoui,Throughball,Evann Guessand
+619067,25,MissedShots,0.9359999847412109,0.5720000076293945,0.054011352360248566,Evann Guessand,h,8006,SetPiece,2024,Head,28253,Nice,Montpellier,2,0,2025-02-23 16:15:00,Jonathan Clauss,Aerial,Evann Guessand
+619072,39,MissedShots,0.875999984741211,0.37900001525878907,0.053569380193948746,Evann Guessand,h,8006,FromCorner,2024,LeftFoot,28253,Nice,Montpellier,2,0,2025-02-23 16:15:00,Gaetan Laborde,Pass,Evann Guessand
+620078,68,Goal,0.8680000305175781,0.5590000152587891,0.11552514135837555,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28259,Saint-Etienne,Nice,1,3,2025-03-01 16:00:00,Mohamed Ali-Cho,Pass,Evann Guessand
+620080,81,MissedShots,0.960999984741211,0.6930000305175781,0.1189456582069397,Evann Guessand,a,8006,OpenPlay,2024,LeftFoot,28259,Saint-Etienne,Nice,1,3,2025-03-01 16:00:00,Dante,Throughball,Evann Guessand
+622195,59,MissedShots,0.8219999694824218,0.46,0.06748552620410919,Evann Guessand,h,8006,OpenPlay,2024,LeftFoot,28268,Nice,Lyon,0,2,2025-03-09 19:45:00,Gaetan Laborde,TakeOn,Evann Guessand
+622199,79,SavedShot,0.9180000305175782,0.34799999237060547,0.10047093778848648,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28268,Nice,Lyon,0,2,2025-03-09 19:45:00,Pablo Rosario,Throughball,Evann Guessand
+622302,37,Goal,0.9319999694824219,0.5059999847412109,0.06963842362165451,Evann Guessand,h,8006,FromCorner,2024,Head,28274,Nice,Auxerre,1,1,2025-03-14 19:45:00,Gaetan Laborde,HeadPass,Evann Guessand
+624455,67,SavedShot,0.9409999847412109,0.415,0.05054209381341934,Evann Guessand,a,8006,OpenPlay,2024,Head,28290,Monaco,Nice,2,1,2025-03-29 20:05:00,Ali Abdi,Aerial,Evann Guessand
+627459,6,BlockedShot,0.9330000305175781,0.36200000762939455,0.07467328757047653,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28304,Strasbourg,Nice,2,2,2025-04-12 19:05:00,,None,Evann Guessand
+633145,22,SavedShot,0.8669999694824219,0.3970000076293945,0.3465358316898346,Evann Guessand,a,8006,OpenPlay,2024,RightFoot,28340,Rennes,Nice,2,0,2025-05-10 19:00:00,Hichem Boudaoui,Throughball,Evann Guessand
+634715,15,Goal,0.8490000152587891,0.4620000076293945,0.24665182828903198,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28350,Nice,Brest,6,0,2025-05-17 19:00:00,Hichem Boudaoui,TakeOn,Evann Guessand
+634717,21,BlockedShot,0.8569999694824219,0.47400001525878904,0.12205725908279419,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28350,Nice,Brest,6,0,2025-05-17 19:00:00,Gaetan Laborde,TakeOn,Evann Guessand
+634720,40,MissedShots,0.774000015258789,0.61,0.027291232720017433,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28350,Nice,Brest,6,0,2025-05-17 19:00:00,Gaetan Laborde,Pass,Evann Guessand
+634731,76,MissedShots,0.8930000305175781,0.534000015258789,0.36732253432273865,Evann Guessand,h,8006,OpenPlay,2024,RightFoot,28350,Nice,Brest,6,0,2025-05-17 19:00:00,Gaetan Laborde,Chipped,Evann Guessand
+641121,23,SavedShot,0.8630000305175781,0.6430000305175781,0.06263919174671173,Evann Guessand,h,8006,OpenPlay,2025,RightFoot,28807,Aston Villa,Crystal Palace,0,3,2025-08-31 18:00:00,Ollie Watkins,Pass,Evann Guessand
+643610,25,SavedShot,0.9059999847412109,0.5279999923706055,0.5027073621749878,Evann Guessand,a,8006,SetPiece,2025,RightFoot,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Morgan Rogers,Pass,Evann Guessand
+651162,25,BlockedShot,0.8490000152587891,0.48900001525878906,0.09193339943885803,Evann Guessand,a,8006,OpenPlay,2025,RightFoot,28872,Liverpool,Aston Villa,2,0,2025-11-01 20:00:00,Morgan Rogers,Pass,Evann Guessand
+656266,36,BlockedShot,0.955,0.46900001525878904,0.11941603571176529,Evann Guessand,a,8006,OpenPlay,2025,RightFoot,28910,Brighton,Aston Villa,3,4,2025-12-03 19:30:00,Ian Maatsen,CornerAwarded,Evann Guessand
+656278,77,SavedShot,0.96,0.5129999923706055,0.45346587896347046,Evann Guessand,a,8006,OpenPlay,2025,Head,28910,Brighton,Aston Villa,3,4,2025-12-03 19:30:00,Ollie Watkins,Goal,Evann Guessand
+664169,30,SavedShot,0.8980000305175782,0.54,0.13009698688983917,Evann Guessand,h,8006,OpenPlay,2025,LeftFoot,28988,Aston Villa,Everton,0,1,2026-01-18 16:30:00,Youri Tielemans,Throughball,Evann Guessand
+664173,40,ShotOnPost,0.9180000305175782,0.34200000762939453,0.009875215590000153,Evann Guessand,h,8006,OpenPlay,2025,Head,28988,Aston Villa,Everton,0,1,2026-01-18 16:30:00,Youri Tielemans,Aerial,Evann Guessand
+664188,86,MissedShots,0.875,0.32799999237060545,0.006894074846059084,Evann Guessand,h,8006,OpenPlay,2025,Head,28988,Aston Villa,Everton,0,1,2026-01-18 16:30:00,Pau Torres,Aerial,Evann Guessand
+668360,41,MissedShots,0.909000015258789,0.5270000076293946,0.054893672466278076,Evann Guessand,h,8006,OpenPlay,2025,Head,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,Daniel Muñoz,Aerial,Evann Guessand
+670209,89,Goal,0.9209999847412109,0.5609999847412109,0.3514210283756256,Evann Guessand,h,8006,OpenPlay,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,Tyrick Mitchell,Cross,Evann Guessand
+674364,48,MissedShots,0.855999984741211,0.44,0.0709252655506134,Evann Guessand,h,8006,OpenPlay,2025,RightFoot,29072,Crystal Palace,Leeds,0,0,2026-03-15 14:00:00,,None,Evann Guessand

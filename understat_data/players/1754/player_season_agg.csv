@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,8,0,4,220,0.7841950580477715,0,0.09516875445842743,1,2025,Metz,0,0,0,0.7841950580477715,0.890510804951191,0.1063157469034195,1754,Joel Asoro
+season,FWR,20,2,6,849,0.8502524234354496,1,0.45499365124851465,8,2023,Metz,2,0,2,0.8502524234354496,1.7266812156885862,0.5823678821325302,1754,Joel Asoro
+season,Sub,1,0,0,7,0,0,0,0,2016,Sunderland,0,0,0,0,0,0,1754,Joel Asoro

@@ -1,0 +1,11 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+661827,70,MissedShots,0.874000015258789,0.34400001525878904,0.06192529946565628,Pablo,h,14290,OpenPlay,2025,RightFoot,28987,West Ham,Nottingham Forest,1,2,2026-01-06 20:00:00,,BallRecovery,Pablo
+663704,48,BlockedShot,0.8819999694824219,0.49700000762939456,0.12067439407110214,Pablo,a,14290,OpenPlay,2025,RightFoot,28996,Tottenham,West Ham,1,2,2026-01-17 15:00:00,,Rebound,Pablo
+663709,58,MissedShots,0.8690000152587891,0.4109999847412109,0.09002874046564102,Pablo,a,14290,OpenPlay,2025,RightFoot,28996,Tottenham,West Ham,1,2,2026-01-17 15:00:00,,None,Pablo
+664598,16,MissedShots,0.9480000305175781,0.654000015258789,0.30207619071006775,Pablo,h,14290,OpenPlay,2025,LeftFoot,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,,Rebound,Pablo
+675908,65,MissedShots,0.884000015258789,0.58,0.06912226229906082,Pablo,a,14290,OpenPlay,2025,RightFoot,29079,Aston Villa,West Ham,2,0,2026-03-22 14:15:00,,None,Pablo
+675912,81,BlockedShot,0.9169999694824219,0.5279999923706055,0.06404117494821548,Pablo,a,14290,OpenPlay,2025,Head,29079,Aston Villa,West Ham,2,0,2026-03-22 14:15:00,El Hadji Malick Diouf,Aerial,Pablo
+677509,44,SavedShot,0.9080000305175782,0.3029999923706055,0.08502291142940521,Pablo,h,14290,OpenPlay,2025,RightFoot,29091,West Ham,Wolverhampton Wanderers,4,0,2026-04-10 19:00:00,Valentín Castellanos,Pass,Pablo
+679998,56,BlockedShot,0.865999984741211,0.3,0.040409740060567856,Pablo,a,14290,OpenPlay,2025,RightFoot,29101,Crystal Palace,West Ham,0,0,2026-04-20 19:00:00,,None,Pablo
+682281,6,SavedShot,0.8859999847412109,0.624000015258789,0.0927460566163063,Pablo,a,14290,OpenPlay,2025,RightFoot,29121,Brentford,West Ham,3,0,2026-05-02 14:00:00,Crysencio Summerville,Pass,Pablo
+682297,49,MissedShots,0.909000015258789,0.47,0.03597260266542435,Pablo,a,14290,OpenPlay,2025,Head,29121,Brentford,West Ham,3,0,2026-05-02 14:00:00,Valentín Castellanos,Aerial,Pablo

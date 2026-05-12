@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,16,0,0,1440,0,0,0,0,2017,Newcastle United,0,0,0,0,0.7621870897710323,0.7621870897710323,763,Robert Elliot
+season,GK,21,0,0,1890,0,0,0.02298929914832115,1,2015,Newcastle United,1,0,0,0,1.7296239947900176,1.70663498993963,763,Robert Elliot
+season,GK,3,0,0,227,0,0,0.04892899841070175,1,2014,Newcastle United,0,0,0,0,0.21767349541187286,0.1687444970011711,763,Robert Elliot

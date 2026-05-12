@@ -1,0 +1,24 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+585662,83,BlockedShot,0.85,0.49900001525878906,0.08465122431516647,Lucas Bergvall,a,12912,OpenPlay,2024,RightFoot,26611,Leicester,Tottenham,1,1,2024-08-19 19:00:00,Dominic Solanke,Pass,Lucas Bergvall
+594818,85,MissedShots,0.720999984741211,0.63,0.05327362194657326,Lucas Bergvall,a,12912,OpenPlay,2024,RightFoot,26660,Manchester United,Tottenham,0,3,2024-09-29 15:30:00,Dejan Kulusevski,Pass,Lucas Bergvall
+612614,32,MissedShots,0.759000015258789,0.5379999923706055,0.020202483981847763,Lucas Bergvall,a,12912,OpenPlay,2024,RightFoot,26815,Everton,Tottenham,3,2,2025-01-19 14:00:00,Dejan Kulusevski,Pass,Lucas Bergvall
+615396,59,MissedShots,0.8169999694824219,0.44,0.06101955100893974,Lucas Bergvall,a,12912,OpenPlay,2024,LeftFoot,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,Dejan Kulusevski,Pass,Lucas Bergvall
+617803,12,SavedShot,0.865999984741211,0.5990000152587891,0.06337539851665497,Lucas Bergvall,h,12912,OpenPlay,2024,LeftFoot,26850,Tottenham,Manchester United,1,0,2025-02-16 16:30:00,,Rebound,Lucas Bergvall
+617812,48,MissedShots,0.8440000152587891,0.5870000076293945,0.04597165435552597,Lucas Bergvall,h,12912,FromCorner,2024,LeftFoot,26850,Tottenham,Manchester United,1,0,2025-02-16 16:30:00,Ben Davies,Pass,Lucas Bergvall
+618429,12,BlockedShot,0.8469999694824218,0.67,0.03686922416090965,Lucas Bergvall,a,12912,OpenPlay,2024,RightFoot,26857,Ipswich,Tottenham,1,4,2025-02-22 15:00:00,Son Heung-Min,Pass,Lucas Bergvall
+621817,65,ShotOnPost,0.74,0.5670000076293945,0.014400861226022243,Lucas Bergvall,h,12912,OpenPlay,2024,RightFoot,26879,Tottenham,Bournemouth,2,2,2025-03-09 14:00:00,Son Heung-Min,Pass,Lucas Bergvall
+623242,60,BlockedShot,0.8280000305175781,0.35,0.03369496390223503,Lucas Bergvall,a,12912,OpenPlay,2024,RightFoot,26886,Fulham,Tottenham,2,0,2025-03-16 13:30:00,Mathys Tel,Pass,Lucas Bergvall
+625255,32,BlockedShot,0.8569999694824219,0.43900001525878907,0.09720390290021896,Lucas Bergvall,a,12912,OpenPlay,2024,LeftFoot,26897,Chelsea,Tottenham,1,0,2025-04-03 19:00:00,Wilson Odobert,Pass,Lucas Bergvall
+626200,10,SavedShot,0.8909999847412109,0.43099998474121093,0.0985649824142456,Lucas Bergvall,h,12912,OpenPlay,2024,LeftFoot,26910,Tottenham,Southampton,3,1,2025-04-06 13:00:00,Brennan Johnson,BallTouch,Lucas Bergvall
+637706,0,SavedShot,0.9769999694824218,0.41200000762939454,0.09277527779340744,Lucas Bergvall,h,12912,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,,None,Lucas Bergvall
+640239,67,SavedShot,0.8430000305175781,0.47200000762939454,0.06134890392422676,Lucas Bergvall,h,12912,OpenPlay,2025,LeftFoot,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,Richarlison,BallTouch,Lucas Bergvall
+641902,56,Goal,0.9080000305175782,0.5709999847412109,0.21987707912921906,Lucas Bergvall,a,12912,OpenPlay,2025,Head,28814,West Ham,Tottenham,0,3,2025-09-13 16:30:00,Cristian Romero,Chipped,Lucas Bergvall
+645066,22,MissedShots,0.8640000152587891,0.5029999923706054,0.13262152671813965,Lucas Bergvall,h,12912,OpenPlay,2025,RightFoot,28835,Tottenham,Wolverhampton Wanderers,1,1,2025-09-27 19:00:00,,End,Lucas Bergvall
+645070,40,MissedShots,0.889000015258789,0.47900001525878905,0.061938971281051636,Lucas Bergvall,h,12912,FromCorner,2025,RightFoot,28835,Tottenham,Wolverhampton Wanderers,1,1,2025-09-27 19:00:00,Mohammed Kudus,Cross,Lucas Bergvall
+655314,65,BlockedShot,0.9630000305175781,0.38799999237060545,0.01403483934700489,Lucas Bergvall,h,12912,FromCorner,2025,Head,28906,Tottenham,Fulham,1,2,2025-11-29 20:00:00,Mohammed Kudus,Aerial,Lucas Bergvall
+656142,36,MissedShots,0.9230000305175782,0.4779999923706055,0.3968951404094696,Lucas Bergvall,a,12912,OpenPlay,2025,RightFoot,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,Mohammed Kudus,Cross,Lucas Bergvall
+656144,41,BlockedShot,0.8640000152587891,0.43200000762939456,0.06199289858341217,Lucas Bergvall,a,12912,OpenPlay,2025,RightFoot,28916,Newcastle United,Tottenham,2,2,2025-12-02 20:15:00,Pape Sarr,Cross,Lucas Bergvall
+661908,4,SavedShot,0.72,0.385,0.01392255537211895,Lucas Bergvall,a,12912,OpenPlay,2025,RightFoot,28979,Bournemouth,Tottenham,3,2,2026-01-07 19:30:00,,Dispossessed,Lucas Bergvall
+661916,30,MissedShots,0.7609999847412109,0.6869999694824219,0.015819231048226357,Lucas Bergvall,a,12912,OpenPlay,2025,RightFoot,28979,Bournemouth,Tottenham,3,2,2026-01-07 19:30:00,Djed Spence,Pass,Lucas Bergvall
+675931,74,MissedShots,0.919000015258789,0.48900001525878906,0.3056284487247467,Lucas Bergvall,h,12912,OpenPlay,2025,RightFoot,29086,Tottenham,Nottingham Forest,0,3,2026-03-22 14:15:00,Iyenoma Destiny Udogie,Cross,Lucas Bergvall
+684823,92,MissedShots,0.8419999694824218,0.6,0.057444583624601364,Lucas Bergvall,h,12912,OpenPlay,2025,RightFoot,29136,Tottenham,Leeds,1,1,2026-05-11 19:00:00,,None,Lucas Bergvall

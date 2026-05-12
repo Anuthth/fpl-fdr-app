@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,6,0,0,493,0,0,0,0,2025,Aston Villa,1,0,0,0,1.0298098511993885,1.0298098511993885,9614,Marco Bizot
+season,GK,32,0,0,2880,0,0,0,0,2024,Brest,4,0,0,0,2.935953399166465,2.935953399166465,9614,Marco Bizot
+season,GK,32,0,0,2877,0,0,0.1316264159977436,3,2023,Brest,3,1,0,0,4.476430103182793,4.391507426276803,9614,Marco Bizot
+season,GK,37,0,0,3330,0,0,0,0,2022,Brest,4,0,0,0,2.565970741212368,2.565970741212368,9614,Marco Bizot
+season,GK,38,0,0,3420,0,1,0.0714986976236105,2,2021,Brest,1,0,0,0,1.4915637113153934,1.4384284131228924,9614,Marco Bizot

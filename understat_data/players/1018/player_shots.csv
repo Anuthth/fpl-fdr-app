@@ -1,0 +1,29 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+536279,76,BlockedShot,0.764000015258789,0.40700000762939453,0.02098984085023403,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,21929,Burnley,Tottenham,2,5,2023-09-02 14:00:00,Lyle Foster,Pass,Josh Cullen
+541214,69,BlockedShot,0.7619999694824219,0.5570000076293945,0.025221608579158783,Josh Cullen,a,1018,OpenPlay,2023,RightFoot,21958,Newcastle United,Burnley,2,0,2023-09-30 14:00:00,,Rebound,Josh Cullen
+542183,21,MissedShots,0.85,0.5829999923706055,0.052474651485681534,Josh Cullen,a,1018,FromCorner,2023,RightFoot,22289,Luton,Burnley,1,2,2023-10-03 18:30:00,,None,Josh Cullen
+565225,85,BlockedShot,0.9019999694824219,0.6819999694824219,0.037952981889247894,Josh Cullen,a,1018,OpenPlay,2023,LeftFoot,22150,Crystal Palace,Burnley,3,0,2024-02-24 15:00:00,,None,Josh Cullen
+567052,49,BlockedShot,0.76,0.5209999847412109,0.02089807391166687,Josh Cullen,h,1018,OpenPlay,2023,LeftFoot,22156,Burnley,Bournemouth,0,2,2024-03-03 13:00:00,Wilson Odobert,Pass,Josh Cullen
+567056,61,SavedShot,0.7069999694824218,0.5670000076293945,0.014515205286443233,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22156,Burnley,Bournemouth,0,2,2024-03-03 13:00:00,Wilson Odobert,Pass,Josh Cullen
+569461,45,BlockedShot,0.7730000305175782,0.5120000076293946,0.03738338127732277,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22177,Burnley,Brentford,2,1,2024-03-16 15:00:00,Wilson Odobert,Pass,Josh Cullen
+570715,25,SavedShot,0.774000015258789,0.43900001525878907,0.017508026212453842,Josh Cullen,a,1018,OpenPlay,2023,LeftFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Dara O&#039;Shea,HeadPass,Josh Cullen
+570725,46,Goal,0.7869999694824219,0.43900001525878907,0.034791767597198486,Josh Cullen,a,1018,OpenPlay,2023,RightFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Josh Brownhill,Pass,Josh Cullen
+571828,45,MissedShots,0.7440000152587891,0.33299999237060546,0.016520608216524124,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22197,Burnley,Wolverhampton Wanderers,1,1,2024-04-02 18:45:00,Wilson Odobert,Pass,Josh Cullen
+573676,3,BlockedShot,0.9569999694824218,0.610999984741211,0.054194945842027664,Josh Cullen,h,1018,FromCorner,2023,RightFoot,22218,Burnley,Brighton,1,1,2024-04-13 14:00:00,Jacob Bruun Larsen,Cross,Josh Cullen
+576788,33,MissedShots,0.77,0.3890000152587891,0.016329564154148102,Josh Cullen,a,1018,SetPiece,2023,RightFoot,22239,Manchester United,Burnley,1,1,2024-04-27 14:00:00,,None,Josh Cullen
+578450,59,BlockedShot,0.889000015258789,0.3940000152587891,0.06081913784146309,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,,None,Josh Cullen
+582099,5,MissedShots,0.750999984741211,0.445,0.021544525399804115,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22268,Burnley,Nottingham Forest,1,2,2024-05-19 15:00:00,Jacob Bruun Larsen,Pass,Josh Cullen
+582112,46,SavedShot,0.855,0.395,0.0746726542711258,Josh Cullen,h,1018,OpenPlay,2023,RightFoot,22268,Burnley,Nottingham Forest,1,2,2024-05-19 15:00:00,Johann Berg Gudmundsson,Pass,Josh Cullen
+582121,71,Goal,0.7609999847412109,0.5329999923706055,0.026804635301232338,Josh Cullen,h,1018,OpenPlay,2023,LeftFoot,22268,Burnley,Nottingham Forest,1,2,2024-05-19 15:00:00,Vitinho,Pass,Josh Cullen
+638864,46,Goal,0.85,0.6480000305175782,0.05117474123835564,Josh Cullen,h,1018,OpenPlay,2025,RightFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Jaidon Anthony,Pass,Josh Cullen
+640291,26,OwnGoal,0.02700000047683716,0.47400001525878904,0,Josh Cullen,a,1018,SetPiece,2025,OtherBodyPart,28802,Manchester United,Burnley,3,2,2025-08-30 14:00:00,,None,Josh Cullen
+646655,34,SavedShot,0.8269999694824218,0.4859999847412109,0.019664721563458443,Josh Cullen,a,1018,OpenPlay,2025,RightFoot,28840,Aston Villa,Burnley,2,1,2025-10-05 13:00:00,,Aerial,Josh Cullen
+649521,4,SavedShot,0.7780000305175782,0.28600000381469726,0.01636342518031597,Josh Cullen,a,1018,OpenPlay,2025,RightFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,,None,Josh Cullen
+649534,58,SavedShot,0.8190000152587891,0.43200000762939456,0.036821506917476654,Josh Cullen,a,1018,FromCorner,2025,RightFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,,None,Josh Cullen
+652284,27,BlockedShot,0.7830000305175782,0.4379999923706055,0.02662341482937336,Josh Cullen,a,1018,OpenPlay,2025,RightFoot,28887,West Ham,Burnley,3,2,2025-11-08 15:00:00,Maxime Estève,Pass,Josh Cullen
+652309,96,Goal,0.9669999694824218,0.5179999923706055,0.6783044338226318,Josh Cullen,a,1018,OpenPlay,2025,RightFoot,28887,West Ham,Burnley,3,2,2025-11-08 15:00:00,,Rebound,Josh Cullen
+656236,59,BlockedShot,0.795,0.4859999847412109,0.03854925557971001,Josh Cullen,h,1018,OpenPlay,2025,RightFoot,28911,Burnley,Crystal Palace,0,1,2025-12-03 19:30:00,,Rebound,Josh Cullen
+656958,50,SavedShot,0.7809999847412109,0.40299999237060546,0.026209654286503792,Josh Cullen,a,1018,OpenPlay,2025,RightFoot,28925,Newcastle United,Burnley,2,1,2025-12-06 15:00:00,Chimuanya Ugochukwu,Pass,Josh Cullen
+658320,68,MissedShots,0.799000015258789,0.4809999847412109,0.03772400692105293,Josh Cullen,h,1018,SetPiece,2025,RightFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Jacob Bruun Larsen,Pass,Josh Cullen
+659286,86,BlockedShot,0.8140000152587891,0.49900001525878906,0.019838586449623108,Josh Cullen,a,1018,FromCorner,2025,LeftFoot,28938,Bournemouth,Burnley,1,1,2025-12-20 15:00:00,,Aerial,Josh Cullen
+660194,6,BlockedShot,0.9009999847412109,0.37,0.06295288354158401,Josh Cullen,h,1018,FromCorner,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,None,Josh Cullen

@@ -1,0 +1,5 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+644685,86,MissedShots,0.9219999694824219,0.445,0.11290231347084045,Stefanos Tzimas,a,14028,OpenPlay,2025,Head,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,Ferdi Kadioglu,Cross,Stefanos Tzimas
+646739,85,BlockedShot,0.9009999847412109,0.504000015258789,0.1297849416732788,Stefanos Tzimas,a,14028,FromCorner,2025,Head,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Maxim De Cuyper,Goal,Stefanos Tzimas
+649108,88,MissedShots,0.879000015258789,0.44400001525878907,0.028005775064229965,Stefanos Tzimas,a,14028,FromCorner,2025,Head,28865,Manchester United,Brighton,4,2,2025-10-25 16:30:00,James Milner,Cross,Stefanos Tzimas
+655726,87,Goal,0.8480000305175781,0.46799999237060547,0.35431376099586487,Stefanos Tzimas,a,14028,OpenPlay,2025,RightFoot,28904,Nottingham Forest,Brighton,0,2,2025-11-30 14:05:00,,BallTouch,Stefanos Tzimas

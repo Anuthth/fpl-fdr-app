@@ -1,0 +1,150 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+428523,94,SavedShot,0.9219999694824219,0.7180000305175781,0.03975370153784752,Kevin Schade,a,9156,OpenPlay,2021,RightFoot,17539,VfB Stuttgart,Freiburg,2,3,2021-08-28 13:30:00,,TakeOn,Kevin Schade
+429707,77,MissedShots,0.7809999847412109,0.545,0.030891800299286842,Kevin Schade,h,9156,OpenPlay,2021,RightFoot,17545,Freiburg,FC Cologne,1,1,2021-09-11 13:30:00,Christian Günter,Pass,Kevin Schade
+431264,14,BlockedShot,0.8519999694824218,0.6020000076293945,0.06159909814596176,Kevin Schade,a,9156,OpenPlay,2021,RightFoot,17554,Mainz 05,Freiburg,0,0,2021-09-18 13:30:00,Lucas Höler,CornerAwarded,Kevin Schade
+437690,72,BlockedShot,0.8919999694824219,0.5640000152587891,0.03966889902949333,Kevin Schade,a,9156,FromCorner,2021,Head,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Vincenzo Grifo,Cross,Kevin Schade
+443302,64,MissedShots,0.895,0.4620000076293945,0.03717070072889328,Kevin Schade,h,9156,OpenPlay,2021,Head,17619,Freiburg,Eintracht Frankfurt,0,2,2021-11-21 14:30:00,Woo-Yeong Jeong,Chipped,Kevin Schade
+443301,64,BlockedShot,0.88,0.4329999923706055,0.026309700682759285,Kevin Schade,h,9156,OpenPlay,2021,Head,17619,Freiburg,Eintracht Frankfurt,0,2,2021-11-21 14:30:00,Christian Günter,Aerial,Kevin Schade
+443310,81,BlockedShot,0.8380000305175781,0.4909999847412109,0.08834200352430344,Kevin Schade,h,9156,OpenPlay,2021,RightFoot,17619,Freiburg,Eintracht Frankfurt,0,2,2021-11-21 14:30:00,Lukas Kübler,Pass,Kevin Schade
+443914,9,SavedShot,0.899000015258789,0.5720000076293945,0.03427869826555252,Kevin Schade,a,9156,OpenPlay,2021,Head,17625,Bochum,Freiburg,2,1,2021-11-27 14:30:00,Christian Günter,Aerial,Kevin Schade
+443915,16,SavedShot,0.8980000305175782,0.37,0.01814570091664791,Kevin Schade,a,9156,OpenPlay,2021,Head,17625,Bochum,Freiburg,2,1,2021-11-27 14:30:00,Lucas Höler,Aerial,Kevin Schade
+447018,4,Goal,0.9309999847412109,0.48200000762939454,0.10354000329971313,Kevin Schade,a,9156,OpenPlay,2021,Head,17638,Borussia M.Gladbach,Freiburg,0,6,2021-12-05 16:30:00,Christian Günter,Aerial,Kevin Schade
+447036,59,MissedShots,0.845,0.38599998474121094,0.05625399947166443,Kevin Schade,a,9156,FromCorner,2021,RightFoot,17638,Borussia M.Gladbach,Freiburg,0,6,2021-12-05 16:30:00,,Rebound,Kevin Schade
+447627,24,SavedShot,0.9690000152587891,0.38599998474121094,0.3023209869861603,Kevin Schade,h,9156,OpenPlay,2021,RightFoot,17646,Freiburg,Hoffenheim,1,2,2021-12-11 14:30:00,Lucas Höler,Pass,Kevin Schade
+447633,38,MissedShots,0.955999984741211,0.41900001525878905,0.04278210178017616,Kevin Schade,h,9156,FromCorner,2021,Head,17646,Freiburg,Hoffenheim,1,2,2021-12-11 14:30:00,Vincenzo Grifo,Aerial,Kevin Schade
+447637,61,MissedShots,0.9,0.345,0.2743239998817444,Kevin Schade,h,9156,SetPiece,2021,RightFoot,17646,Freiburg,Hoffenheim,1,2,2021-12-11 14:30:00,,Rebound,Kevin Schade
+449778,83,Goal,0.975,0.43900001525878907,0.5310670137405396,Kevin Schade,h,9156,OpenPlay,2021,RightFoot,17665,Freiburg,Bayer Leverkusen,2,1,2021-12-19 14:30:00,Ermedin Demirovic,Cross,Kevin Schade
+452991,73,SavedShot,0.8090000152587891,0.6359999847412109,0.015128999948501587,Kevin Schade,a,9156,OpenPlay,2021,RightFoot,17686,Borussia Dortmund,Freiburg,5,1,2022-01-14 19:30:00,Lucas Höler,Cross,Kevin Schade
+454543,70,Goal,0.8580000305175781,0.43599998474121093,0.3246389925479889,Kevin Schade,h,9156,OpenPlay,2021,RightFoot,17691,Freiburg,VfB Stuttgart,2,0,2022-01-22 14:30:00,Ermedin Demirovic,HeadPass,Kevin Schade
+458198,79,BlockedShot,0.8090000152587891,0.44599998474121094,0.027504000812768936,Kevin Schade,a,9156,OpenPlay,2021,LeftFoot,17717,Augsburg,Freiburg,1,2,2022-02-19 14:30:00,Maximilian Eggestein,TakeOn,Kevin Schade
+459745,82,Goal,0.9330000305175781,0.44099998474121094,0.5497509837150574,Kevin Schade,h,9156,OpenPlay,2021,LeftFoot,17727,Freiburg,Hertha Berlin,3,0,2022-02-26 14:30:00,Ermedin Demirovic,None,Kevin Schade
+492606,77,Goal,0.9119999694824219,0.6819999694824219,0.05612890049815178,Kevin Schade,a,9156,SetPiece,2022,RightFoot,19422,Hertha Berlin,Freiburg,2,2,2022-10-09 15:30:00,Yannik Keitel,Pass,Kevin Schade
+493952,3,BlockedShot,0.8769999694824219,0.40299999237060546,0.07390119880437851,Kevin Schade,a,9156,OpenPlay,2022,RightFoot,19423,Bayern Munich,Freiburg,5,0,2022-10-16 17:30:00,Michael Gregoritsch,None,Kevin Schade
+493965,45,BlockedShot,0.8690000152587891,0.37099998474121093,0.0383898988366127,Kevin Schade,a,9156,FromCorner,2022,RightFoot,19423,Bayern Munich,Freiburg,5,0,2022-10-16 17:30:00,Christian Günter,Cross,Kevin Schade
+499509,72,MissedShots,0.885,0.445,0.019414400681853294,Kevin Schade,a,9156,OpenPlay,2022,Head,19460,RasenBallsport Leipzig,Freiburg,3,1,2022-11-09 19:30:00,Maximilian Eggestein,Aerial,Kevin Schade
+509719,82,MissedShots,0.9109999847412109,0.5020000076293946,0.08027669787406921,Kevin Schade,h,9156,OpenPlay,2022,Head,18433,Brentford,Crystal Palace,1,1,2023-02-18 15:00:00,Mathias Jensen,Cross,Kevin Schade
+509720,84,BlockedShot,0.8669999694824219,0.37599998474121094,0.05451609939336777,Kevin Schade,h,9156,OpenPlay,2022,RightFoot,18433,Brentford,Crystal Palace,1,1,2023-02-18 15:00:00,Mikkel Damsgaard,None,Kevin Schade
+513483,66,MissedShots,0.9269999694824219,0.5220000076293946,0.11761400103569031,Kevin Schade,a,9156,OpenPlay,2022,Head,18464,Everton,Brentford,1,0,2023-03-11 15:00:00,Aaron Hickey,Cross,Kevin Schade
+513486,76,MissedShots,0.95,0.45599998474121095,0.07001689821481705,Kevin Schade,a,9156,OpenPlay,2022,Head,18464,Everton,Brentford,1,0,2023-03-11 15:00:00,Rico Henry,Aerial,Kevin Schade
+514516,6,MissedShots,0.8819999694824219,0.6179999923706054,0.02307789959013462,Kevin Schade,a,9156,OpenPlay,2022,Head,18265,Southampton,Brentford,0,2,2023-03-15 19:30:00,Mathias Jensen,Chipped,Kevin Schade
+517556,66,SavedShot,0.885,0.3370000076293945,0.4894829988479614,Kevin Schade,a,9156,OpenPlay,2022,RightFoot,18448,Manchester United,Brentford,1,0,2023-04-05 19:00:00,Ivan Toney,TakeOn,Kevin Schade
+520926,9,BlockedShot,0.909000015258789,0.620999984741211,0.10212849080562592,Kevin Schade,h,9156,OpenPlay,2022,LeftFoot,18514,Brentford,Aston Villa,1,1,2023-04-22 14:00:00,Ethan Pinnock,Pass,Kevin Schade
+520935,52,SavedShot,0.7769999694824219,0.49900001525878906,0.012894868850708008,Kevin Schade,h,9156,OpenPlay,2022,Head,18514,Brentford,Aston Villa,1,1,2023-04-22 14:00:00,Bryan Mbeumo,Chipped,Kevin Schade
+520936,52,MissedShots,0.9209999847412109,0.605999984741211,0.3442397713661194,Kevin Schade,h,9156,OpenPlay,2022,LeftFoot,18514,Brentford,Aston Villa,1,1,2023-04-22 14:00:00,,Rebound,Kevin Schade
+522763,38,SavedShot,0.9309999847412109,0.6140000152587891,0.026627251878380775,Kevin Schade,h,9156,OpenPlay,2022,Head,18534,Brentford,Nottingham Forest,2,1,2023-04-29 14:00:00,Vitaly Janelt,Aerial,Kevin Schade
+526413,36,MissedShots,0.850999984741211,0.634000015258789,0.04036760330200195,Kevin Schade,h,9156,FromCorner,2022,RightFoot,18554,Brentford,West Ham,2,0,2023-05-14 13:00:00,,None,Kevin Schade
+526416,39,SavedShot,0.9740000152587891,0.6220000076293946,0.022249123081564903,Kevin Schade,h,9156,OpenPlay,2022,Head,18554,Brentford,West Ham,2,0,2023-05-14 13:00:00,Mathias Jensen,Aerial,Kevin Schade
+532434,86,MissedShots,0.8680000305175781,0.28899999618530275,0.2823283076286316,Kevin Schade,h,9156,OpenPlay,2023,RightFoot,22282,Brentford,Tottenham,2,2,2023-08-13 13:00:00,Zanka,Chipped,Kevin Schade
+534675,17,Goal,0.909000015258789,0.66,0.06058063730597496,Kevin Schade,h,9156,OpenPlay,2023,RightFoot,22298,Brentford,Crystal Palace,1,1,2023-08-26 14:00:00,Christian Nørgaard,Chipped,Kevin Schade
+534682,45,BlockedShot,0.8109999847412109,0.655,0.04320008307695389,Kevin Schade,h,9156,OpenPlay,2023,RightFoot,22298,Brentford,Crystal Palace,1,1,2023-08-26 14:00:00,Christian Nørgaard,Pass,Kevin Schade
+536224,21,SavedShot,0.84,0.47700000762939454,0.3208167552947998,Kevin Schade,h,9156,OpenPlay,2023,RightFoot,21928,Brentford,Bournemouth,2,2,2023-09-02 14:00:00,Christian Nørgaard,Throughball,Kevin Schade
+536235,54,MissedShots,0.9230000305175782,0.4909999847412109,0.06615801155567169,Kevin Schade,h,9156,SetPiece,2023,Head,21928,Brentford,Bournemouth,2,2,2023-09-02 14:00:00,Ben Mee,Aerial,Kevin Schade
+575004,85,Goal,0.92,0.534000015258789,0.5746036171913147,Kevin Schade,a,9156,OpenPlay,2023,RightFoot,22230,Luton,Brentford,1,5,2024-04-20 14:00:00,Vitaly Janelt,Pass,Kevin Schade
+576953,93,SavedShot,0.7859999847412109,0.3629999923706055,0.027319379150867462,Kevin Schade,a,9156,OpenPlay,2023,RightFoot,22237,Everton,Brentford,1,0,2024-04-27 16:30:00,Mathias Jensen,Pass,Kevin Schade
+578421,95,MissedShots,0.8630000305175781,0.5359999847412109,0.026707608252763748,Kevin Schade,h,9156,FromCorner,2023,Head,22246,Brentford,Fulham,0,0,2024-05-04 14:00:00,Frank Onyeka,Cross,Kevin Schade
+585159,41,MissedShots,0.92,0.669000015258789,0.07865475118160248,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Christian Nørgaard,Chipped,Kevin Schade
+589155,42,ShotOnPost,0.9169999694824219,0.6220000076293946,0.08967508375644684,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26623,Brentford,Southampton,3,1,2024-08-31 14:00:00,Mikkel Damsgaard,BallRecovery,Kevin Schade
+589160,52,SavedShot,0.915,0.545,0.2899138331413269,Kevin Schade,h,9156,OpenPlay,2024,Head,26623,Brentford,Southampton,3,1,2024-08-31 14:00:00,Bryan Mbeumo,Cross,Kevin Schade
+592517,67,SavedShot,0.904000015258789,0.49700000762939456,0.04682979732751846,Kevin Schade,a,9156,FromCorner,2024,Head,26648,Tottenham,Brentford,3,1,2024-09-21 14:00:00,Sepp van den Berg,Chipped,Kevin Schade
+595564,29,SavedShot,0.9540000152587891,0.46599998474121096,0.15381136536598206,Kevin Schade,h,9156,OpenPlay,2024,Head,26667,Brentford,Wolverhampton Wanderers,5,3,2024-10-05 14:00:00,Keane Lewis-Potter,Cross,Kevin Schade
+595579,73,SavedShot,0.8219999694824218,0.5790000152587891,0.4335457682609558,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26667,Brentford,Wolverhampton Wanderers,5,3,2024-10-05 14:00:00,Mikkel Damsgaard,Throughball,Kevin Schade
+597027,44,MissedShots,0.9159999847412109,0.47900001525878905,0.12281136214733124,Kevin Schade,a,9156,OpenPlay,2024,Head,26675,Manchester United,Brentford,2,1,2024-10-19 14:00:00,Ethan Pinnock,Cross,Kevin Schade
+598480,83,BlockedShot,0.865999984741211,0.5670000076293945,0.10115186125040054,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26685,Brentford,Ipswich,4,3,2024-10-26 14:00:00,Mads Roerslev,Pass,Kevin Schade
+601425,84,BlockedShot,0.955,0.5170000076293946,0.15192539989948273,Kevin Schade,h,9156,OpenPlay,2024,Head,26702,Brentford,Bournemouth,3,2,2024-11-09 15:00:00,Nathan Collins,HeadPass,Kevin Schade
+604164,4,SavedShot,0.8880000305175781,0.47900001525878905,0.045339226722717285,Kevin Schade,h,9156,OpenPlay,2024,Head,26722,Brentford,Leicester,4,1,2024-11-30 15:00:00,Keane Lewis-Potter,Chipped,Kevin Schade
+604170,28,Goal,0.8919999694824219,0.590999984741211,0.3608318567276001,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26722,Brentford,Leicester,4,1,2024-11-30 15:00:00,,None,Kevin Schade
+604172,46,BlockedShot,0.8469999694824218,0.5620000076293945,0.09205140918493271,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26722,Brentford,Leicester,4,1,2024-11-30 15:00:00,Yoane Wissa,HeadPass,Kevin Schade
+604173,52,Goal,0.9569999694824218,0.610999984741211,0.37465301156044006,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26722,Brentford,Leicester,4,1,2024-11-30 15:00:00,Mikkel Damsgaard,Throughball,Kevin Schade
+604175,58,Goal,0.8690000152587891,0.5379999923706055,0.4426751136779785,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26722,Brentford,Leicester,4,1,2024-11-30 15:00:00,Nathan Collins,Throughball,Kevin Schade
+605340,5,BlockedShot,0.784000015258789,0.505,0.036989886313676834,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26734,Aston Villa,Brentford,3,1,2024-12-04 20:15:00,Yehor Yarmolyuk,Pass,Kevin Schade
+605348,37,MissedShots,0.950999984741211,0.590999984741211,0.0695127546787262,Kevin Schade,a,9156,FromCorner,2024,Head,26734,Aston Villa,Brentford,3,1,2024-12-04 20:15:00,Mikkel Damsgaard,Cross,Kevin Schade
+605356,53,BlockedShot,0.9580000305175781,0.539000015258789,0.2454630583524704,Kevin Schade,a,9156,OpenPlay,2024,Head,26734,Aston Villa,Brentford,3,1,2024-12-04 20:15:00,Yoane Wissa,None,Kevin Schade
+605896,89,Goal,0.9030000305175782,0.46700000762939453,0.4584527313709259,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26743,Brentford,Newcastle United,4,2,2024-12-07 15:00:00,Bryan Mbeumo,Throughball,Kevin Schade
+607764,75,MissedShots,0.9790000152587891,0.605,0.07716888189315796,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,,Rebound,Kevin Schade
+608369,72,BlockedShot,0.9230000305175782,0.5170000076293946,0.05267965421080589,Kevin Schade,h,9156,FromCorner,2024,Head,26766,Brentford,Nottingham Forest,0,2,2024-12-21 15:00:00,,Aerial,Kevin Schade
+609929,5,Goal,0.9169999694824219,0.6279999923706054,0.31721875071525574,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26799,Southampton,Brentford,0,5,2025-01-04 15:00:00,Mikkel Damsgaard,Pass,Kevin Schade
+609949,71,MissedShots,0.8669999694824219,0.44,0.12912634015083313,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26799,Southampton,Brentford,0,5,2025-01-04 15:00:00,Bryan Mbeumo,Pass,Kevin Schade
+611390,81,BlockedShot,0.8190000152587891,0.6609999847412109,0.040236696600914,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26803,Brentford,Manchester City,2,2,2025-01-14 19:30:00,Sepp van den Berg,Pass,Kevin Schade
+612265,72,SavedShot,0.9230000305175782,0.6890000152587891,0.049775395542383194,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26813,Brentford,Liverpool,0,2,2025-01-18 15:00:00,Yoane Wissa,Chipped,Kevin Schade
+613751,22,SavedShot,0.8930000305175781,0.624000015258789,0.015513531863689423,Kevin Schade,a,9156,FromCorner,2024,Head,26825,Crystal Palace,Brentford,1,2,2025-01-26 14:00:00,Mads Roerslev,Chipped,Kevin Schade
+613767,69,MissedShots,0.905,0.40099998474121096,0.035436924546957016,Kevin Schade,a,9156,FromCorner,2024,Head,26825,Crystal Palace,Brentford,1,2,2025-01-26 14:00:00,Nathan Collins,Cross,Kevin Schade
+613772,79,Goal,0.9059999847412109,0.504000015258789,0.058127839118242264,Kevin Schade,a,9156,OpenPlay,2024,Head,26825,Crystal Palace,Brentford,1,2,2025-01-26 14:00:00,Mikkel Damsgaard,Aerial,Kevin Schade
+615376,18,BlockedShot,0.9119999694824219,0.64,0.10552652180194855,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,Mikkel Damsgaard,TakeOn,Kevin Schade
+615388,36,MissedShots,0.905,0.5170000076293946,0.09109702706336975,Kevin Schade,h,9156,OpenPlay,2024,Head,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,Mikkel Damsgaard,Cross,Kevin Schade
+615393,51,MissedShots,0.9180000305175782,0.7140000152587891,0.04173324257135391,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,,None,Kevin Schade
+615406,94,MissedShots,0.9059999847412109,0.5259999847412109,0.08856824785470963,Kevin Schade,h,9156,OpenPlay,2024,Head,26834,Brentford,Tottenham,0,2,2025-02-02 14:00:00,Michael Kayode,Cross,Kevin Schade
+617236,3,SavedShot,0.8580000305175781,0.519000015258789,0.3039243519306183,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26851,West Ham,Brentford,0,1,2025-02-15 15:00:00,Bryan Mbeumo,HeadPass,Kevin Schade
+617237,3,Goal,0.9740000152587891,0.5609999847412109,0.6020505428314209,Kevin Schade,a,9156,OpenPlay,2024,LeftFoot,26851,West Ham,Brentford,0,1,2025-02-15 15:00:00,,None,Kevin Schade
+617246,28,ShotOnPost,0.8619999694824219,0.595999984741211,0.1328790783882141,Kevin Schade,a,9156,OpenPlay,2024,LeftFoot,26851,West Ham,Brentford,0,1,2025-02-15 15:00:00,Mikkel Damsgaard,Throughball,Kevin Schade
+618205,12,BlockedShot,0.9290000152587891,0.5970000076293945,0.08420571684837341,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26858,Leicester,Brentford,0,4,2025-02-21 20:00:00,Kristoffer Ajer,Cross,Kevin Schade
+618213,45,ShotOnPost,0.905,0.54,0.09313605725765228,Kevin Schade,a,9156,SetPiece,2024,Head,26858,Leicester,Brentford,0,4,2025-02-21 20:00:00,Keane Lewis-Potter,Cross,Kevin Schade
+621484,69,BlockedShot,0.9619999694824218,0.620999984741211,0.08356477320194244,Kevin Schade,h,9156,OpenPlay,2024,LeftFoot,26872,Brentford,Aston Villa,0,1,2025-03-08 17:30:00,Yoane Wissa,Pass,Kevin Schade
+621489,81,SavedShot,0.8230000305175781,0.6480000305175782,0.03803035616874695,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26872,Brentford,Aston Villa,0,1,2025-03-08 17:30:00,Yoane Wissa,Pass,Kevin Schade
+622895,19,SavedShot,0.8930000305175781,0.6270000076293946,0.01866273768246174,Kevin Schade,a,9156,OpenPlay,2024,Head,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Christian Nørgaard,Cross,Kevin Schade
+622898,31,MissedShots,0.9519999694824218,0.44799999237060545,0.1101057305932045,Kevin Schade,a,9156,FromCorner,2024,RightFoot,26882,Bournemouth,Brentford,1,2,2025-03-15 17:30:00,Kristoffer Ajer,BallTouch,Kevin Schade
+625164,28,BlockedShot,0.87,0.7019999694824218,0.09796048700809479,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26899,Newcastle United,Brentford,2,1,2025-04-02 19:45:00,Yoane Wissa,Chipped,Kevin Schade
+625189,94,SavedShot,0.9059999847412109,0.3089999961853027,0.04919826239347458,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26899,Newcastle United,Brentford,2,1,2025-04-02 19:45:00,Mikkel Damsgaard,Chipped,Kevin Schade
+628641,23,SavedShot,0.865,0.5420000076293945,0.024278445169329643,Kevin Schade,h,9156,OpenPlay,2024,Head,26923,Brentford,Brighton,4,2,2025-04-19 14:00:00,Bryan Mbeumo,Aerial,Kevin Schade
+628645,45,MissedShots,0.8919999694824219,0.5220000076293946,0.03814306482672691,Kevin Schade,h,9156,OpenPlay,2024,Head,26923,Brentford,Brighton,4,2,2025-04-19 14:00:00,Bryan Mbeumo,Aerial,Kevin Schade
+628652,64,MissedShots,0.935,0.27899999618530275,0.5276056528091431,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26923,Brentford,Brighton,4,2,2025-04-19 14:00:00,,TakeOn,Kevin Schade
+631045,43,Goal,0.9069999694824219,0.504000015258789,0.41621339321136475,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26939,Nottingham Forest,Brentford,0,2,2025-05-01 18:30:00,Nathan Collins,TakeOn,Kevin Schade
+631859,3,MissedShots,0.9359999847412109,0.5279999923706055,0.44281771779060364,Kevin Schade,h,9156,FromCorner,2024,RightFoot,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,Yehor Yarmolyuk,Cross,Kevin Schade
+631863,32,Goal,0.9519999694824218,0.534000015258789,0.5042842030525208,Kevin Schade,h,9156,OpenPlay,2024,Head,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,Christian Nørgaard,Aerial,Kevin Schade
+631864,40,SavedShot,0.860999984741211,0.625999984741211,0.07609014213085175,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,Keane Lewis-Potter,Chipped,Kevin Schade
+631878,69,Goal,0.9490000152587891,0.5420000076293945,0.5198057293891907,Kevin Schade,h,9156,OpenPlay,2024,Head,26947,Brentford,Manchester United,4,3,2025-05-04 13:00:00,,Rebound,Kevin Schade
+632759,17,Goal,0.9780000305175781,0.425,0.32451900839805603,Kevin Schade,a,9156,FromCorner,2024,Head,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Bryan Mbeumo,Cross,Kevin Schade
+632772,61,SavedShot,0.855999984741211,0.585,0.0754125565290451,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,,Rebound,Kevin Schade
+635062,73,BlockedShot,0.9530000305175781,0.620999984741211,0.06860645115375519,Kevin Schade,h,9156,OpenPlay,2024,RightFoot,26964,Brentford,Fulham,2,3,2025-05-18 14:00:00,Bryan Mbeumo,Cross,Kevin Schade
+636306,18,SavedShot,0.8809999847412109,0.6580000305175782,0.0692528486251831,Kevin Schade,a,9156,OpenPlay,2024,RightFoot,26978,Wolverhampton Wanderers,Brentford,1,1,2025-05-25 15:00:00,Yoane Wissa,Pass,Kevin Schade
+636310,33,SavedShot,0.89,0.5420000076293945,0.07075303792953491,Kevin Schade,a,9156,OpenPlay,2024,Head,26978,Wolverhampton Wanderers,Brentford,1,1,2025-05-25 15:00:00,Keane Lewis-Potter,Cross,Kevin Schade
+638839,26,BlockedShot,0.935,0.5770000076293945,0.07772877812385559,Kevin Schade,h,9156,FromCorner,2025,RightFoot,28790,Brentford,Aston Villa,1,0,2025-08-23 14:00:00,Mikkel Damsgaard,CornerAwarded,Kevin Schade
+640269,16,MissedShots,0.9009999847412109,0.47700000762939454,0.08092895895242691,Kevin Schade,a,9156,OpenPlay,2025,Head,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,Mikkel Damsgaard,Cross,Kevin Schade
+640270,41,MissedShots,0.9219999694824219,0.43599998474121093,0.07343056052923203,Kevin Schade,a,9156,FromCorner,2025,Head,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,Mikkel Damsgaard,Cross,Kevin Schade
+640275,58,SavedShot,0.885,0.5,0.7611688375473022,Kevin Schade,a,9156,Penalty,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,Standard,Kevin Schade
+641993,5,MissedShots,0.8830000305175781,0.534000015258789,0.03294559568166733,Kevin Schade,h,9156,FromCorner,2025,Head,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Yehor Yarmolyuk,Chipped,Kevin Schade
+641992,5,BlockedShot,0.8919999694824219,0.5520000076293945,0.14841710031032562,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Thiago,Pass,Kevin Schade
+641995,34,Goal,0.889000015258789,0.595,0.12247287482023239,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Jordan Henderson,Chipped,Kevin Schade
+642003,61,SavedShot,0.8440000152587891,0.4859999847412109,0.0486978180706501,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,Mathias Jensen,HeadPass,Kevin Schade
+643415,28,BlockedShot,0.9490000152587891,0.33,0.08209934085607529,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,,BallRecovery,Kevin Schade
+644504,97,SavedShot,0.93,0.34200000762939453,0.026606498286128044,Kevin Schade,h,9156,SetPiece,2025,RightFoot,28828,Brentford,Manchester United,3,1,2025-09-27 11:30:00,Vitaly Janelt,Cross,Kevin Schade
+648515,3,MissedShots,0.924000015258789,0.7369999694824219,0.06772693246603012,Kevin Schade,a,9156,OpenPlay,2025,LeftFoot,28857,West Ham,Brentford,0,2,2025-10-20 19:00:00,Dango Ouattara,Pass,Kevin Schade
+648516,8,SavedShot,0.9830000305175781,0.6170000076293946,0.021479874849319458,Kevin Schade,a,9156,OpenPlay,2025,Head,28857,West Ham,Brentford,0,2,2025-10-20 19:00:00,Michael Kayode,Chipped,Kevin Schade
+648517,8,MissedShots,0.915,0.5420000076293945,0.06525003165006638,Kevin Schade,a,9156,OpenPlay,2025,OtherBodyPart,28857,West Ham,Brentford,0,2,2025-10-20 19:00:00,Michael Kayode,Aerial,Kevin Schade
+648538,61,ShotOnPost,0.935,0.505,0.500971257686615,Kevin Schade,a,9156,OpenPlay,2025,Head,28857,West Ham,Brentford,0,2,2025-10-20 19:00:00,Michael Kayode,Cross,Kevin Schade
+649255,44,Goal,0.895,0.47900001525878905,0.6057746410369873,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28861,Brentford,Liverpool,3,2,2025-10-25 19:00:00,Mikkel Damsgaard,Throughball,Kevin Schade
+652790,6,MissedShots,0.9009999847412109,0.6329999923706054,0.012477906420826912,Kevin Schade,h,9156,OpenPlay,2025,Head,28879,Brentford,Newcastle United,3,1,2025-11-09 14:00:00,Jordan Henderson,Aerial,Kevin Schade
+652798,55,Goal,0.955,0.48,0.45844361186027527,Kevin Schade,h,9156,OpenPlay,2025,Head,28879,Brentford,Newcastle United,3,1,2025-11-09 14:00:00,,None,Kevin Schade
+652808,97,BlockedShot,0.889000015258789,0.5159999847412109,0.029020199552178383,Kevin Schade,h,9156,OpenPlay,2025,Head,28879,Brentford,Newcastle United,3,1,2025-11-09 14:00:00,Michael Kayode,Aerial,Kevin Schade
+653652,85,MissedShots,0.8680000305175781,0.5170000076293946,0.03364015743136406,Kevin Schade,a,9156,OpenPlay,2025,Head,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,Michael Kayode,Cross,Kevin Schade
+656215,20,SavedShot,0.9440000152587891,0.47099998474121096,0.43203848600387573,Kevin Schade,a,9156,FromCorner,2025,Head,28909,Arsenal,Brentford,2,0,2025-12-03 19:30:00,Vitaly Janelt,Cross,Kevin Schade
+659349,50,SavedShot,0.8980000305175782,0.5070000076293946,0.09970080107450485,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,28947,Wolverhampton Wanderers,Brentford,0,2,2025-12-20 15:00:00,,None,Kevin Schade
+659348,50,SavedShot,0.9180000305175782,0.5270000076293946,0.3152073323726654,Kevin Schade,a,9156,OpenPlay,2025,Head,28947,Wolverhampton Wanderers,Brentford,0,2,2025-12-20 15:00:00,Keane Lewis-Potter,Chipped,Kevin Schade
+659350,51,SavedShot,0.9230000305175782,0.4829999923706055,0.0617523118853569,Kevin Schade,a,9156,OpenPlay,2025,Head,28947,Wolverhampton Wanderers,Brentford,0,2,2025-12-20 15:00:00,Yehor Yarmolyuk,Aerial,Kevin Schade
+660159,6,Goal,0.9080000305175782,0.664000015258789,0.29374417662620544,Kevin Schade,h,9156,OpenPlay,2025,LeftFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,Thiago,Throughball,Kevin Schade
+660163,16,BlockedShot,0.8630000305175781,0.519000015258789,0.13943839073181152,Kevin Schade,h,9156,OpenPlay,2025,LeftFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,None,Kevin Schade
+660164,16,SavedShot,0.8959999847412109,0.5590000152587891,0.21112602949142456,Kevin Schade,h,9156,OpenPlay,2025,LeftFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,TakeOn,Kevin Schade
+660170,50,Goal,0.91,0.47200000762939454,0.5403599143028259,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,Yehor Yarmolyuk,Pass,Kevin Schade
+660185,78,BlockedShot,0.8159999847412109,0.5970000076293945,0.4355408847332001,Kevin Schade,h,9156,OpenPlay,2025,LeftFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,Thiago,TakeOn,Kevin Schade
+660192,95,Goal,0.9540000152587891,0.524000015258789,0.5257291793823242,Kevin Schade,h,9156,OpenPlay,2025,Head,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,Mikkel Damsgaard,Chipped,Kevin Schade
+661426,36,BlockedShot,0.92,0.6719999694824219,0.11995872855186462,Kevin Schade,a,9156,OpenPlay,2025,LeftFoot,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,Mikkel Damsgaard,Pass,Kevin Schade
+661427,42,SavedShot,0.8780000305175781,0.48700000762939455,0.3033722937107086,Kevin Schade,a,9156,OpenPlay,2025,LeftFoot,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,Mikkel Damsgaard,Cross,Kevin Schade
+661935,0,SavedShot,0.95,0.7,0.0506332702934742,Kevin Schade,h,9156,OpenPlay,2025,LeftFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,,None,Kevin Schade
+661951,64,ShotOnPost,0.924000015258789,0.5459999847412109,0.5065545439720154,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Thiago,Pass,Kevin Schade
+661957,72,BlockedShot,0.9619999694824218,0.6029999923706054,0.016505397856235504,Kevin Schade,h,9156,FromCorner,2025,Head,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Mathias Jensen,Aerial,Kevin Schade
+663666,0,SavedShot,0.8919999694824219,0.3110000038146973,0.08418231457471848,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Mikkel Damsgaard,Pass,Kevin Schade
+663667,13,MissedShots,0.9640000152587891,0.55,0.07959609478712082,Kevin Schade,a,9156,FromCorner,2025,Head,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Mathias Jensen,Aerial,Kevin Schade
+663672,35,MissedShots,0.9290000152587891,0.4640000152587891,0.07569057494401932,Kevin Schade,a,9156,FromCorner,2025,OtherBodyPart,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Vitaly Janelt,Cross,Kevin Schade
+663677,49,SavedShot,0.88,0.55,0.3414685130119324,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Mathias Jensen,Throughball,Kevin Schade
+665156,55,BlockedShot,0.9009999847412109,0.595999984741211,0.02050093561410904,Kevin Schade,h,9156,OpenPlay,2025,Head,29000,Brentford,Nottingham Forest,0,2,2026-01-25 14:00:00,Vitaly Janelt,Aerial,Kevin Schade
+665160,92,MissedShots,0.96,0.42900001525878906,0.1132834181189537,Kevin Schade,h,9156,FromCorner,2025,Head,29000,Brentford,Nottingham Forest,0,2,2026-01-25 14:00:00,Dango Ouattara,Cross,Kevin Schade
+666512,15,MissedShots,0.8669999694824219,0.5,0.04540160670876503,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,29008,Aston Villa,Brentford,0,1,2026-02-01 14:00:00,Sepp van den Berg,Aerial,Kevin Schade
+671068,23,MissedShots,0.895,0.5429999923706055,0.41275426745414734,Kevin Schade,a,9156,OpenPlay,2025,LeftFoot,29051,Burnley,Brentford,3,4,2026-02-28 15:00:00,Dango Ouattara,Pass,Kevin Schade
+671071,33,Goal,0.9819999694824219,0.48400001525878905,0.9506040811538696,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,29051,Burnley,Brentford,3,4,2026-02-28 15:00:00,,None,Kevin Schade
+672093,88,MissedShots,0.9669999694824218,0.5659999847412109,0.2644074857234955,Kevin Schade,a,9156,FromCorner,2025,Head,29058,Bournemouth,Brentford,0,0,2026-03-03 19:30:00,Mathias Jensen,Aerial,Kevin Schade
+675601,48,MissedShots,0.915,0.6129999923706054,0.07529928535223007,Kevin Schade,a,9156,OpenPlay,2025,RightFoot,29083,Leeds,Brentford,0,0,2026-03-21 20:00:00,Thiago,Cross,Kevin Schade
+677842,37,ShotOnPost,0.960999984741211,0.580999984741211,0.09394948929548264,Kevin Schade,h,9156,FromCorner,2025,Head,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Mathias Jensen,Cross,Kevin Schade
+677849,49,MissedShots,0.8730000305175781,0.5270000076293946,0.042951226234436035,Kevin Schade,h,9156,OpenPlay,2025,Head,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Keane Lewis-Potter,Cross,Kevin Schade
+677851,54,BlockedShot,0.9030000305175782,0.46099998474121096,0.3634931147098541,Kevin Schade,h,9156,OpenPlay,2025,RightFoot,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Dango Ouattara,HeadPass,Kevin Schade
+677866,92,MissedShots,0.96,0.47,0.1529311239719391,Kevin Schade,h,9156,OpenPlay,2025,Head,29093,Brentford,Everton,2,2,2026-04-11 14:00:00,Keane Lewis-Potter,Cross,Kevin Schade
+679004,39,BlockedShot,0.9480000305175781,0.5729999923706055,0.0992174968123436,Kevin Schade,h,9156,FromCorner,2025,Head,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Mathias Jensen,Cross,Kevin Schade
+679010,65,SavedShot,0.9059999847412109,0.49900001525878906,0.09145844727754593,Kevin Schade,h,9156,OpenPlay,2025,Head,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Dango Ouattara,Cross,Kevin Schade

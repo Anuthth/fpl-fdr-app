@@ -1,0 +1,40 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+584758,70,BlockedShot,0.8040000152587891,0.31,0.02358955144882202,Jurriën Timber,h,11707,FromCorner,2024,RightFoot,26604,Arsenal,Wolverhampton Wanderers,2,0,2024-08-17 14:00:00,Bukayo Saka,Pass,Jurriën Timber
+591310,16,BlockedShot,0.8819999694824219,0.669000015258789,0.06864682585000992,Jurriën Timber,a,11707,OpenPlay,2024,RightFoot,26640,Tottenham,Arsenal,0,1,2024-09-15 13:00:00,Leandro Trossard,Pass,Jurriën Timber
+594100,12,BlockedShot,0.8930000305175781,0.29100000381469726,0.04785904660820961,Jurriën Timber,h,11707,OpenPlay,2024,RightFoot,26655,Arsenal,Leicester,4,2,2024-09-28 14:00:00,Thomas Partey,Pass,Jurriën Timber
+594116,52,MissedShots,0.9080000305175782,0.4570000076293945,0.11985865980386734,Jurriën Timber,h,11707,FromCorner,2024,LeftFoot,26655,Arsenal,Leicester,4,2,2024-09-28 14:00:00,,Rebound,Jurriën Timber
+599837,26,BlockedShot,0.8480000305175781,0.5309999847412109,0.05807323381304741,Jurriën Timber,a,11707,FromCorner,2024,RightFoot,26694,Newcastle United,Arsenal,1,0,2024-11-02 12:30:00,Gabriel,Rebound,Jurriën Timber
+602229,65,MissedShots,0.7659999847412109,0.524000015258789,0.03742020204663277,Jurriën Timber,a,11707,OpenPlay,2024,RightFoot,26705,Chelsea,Arsenal,1,1,2024-11-10 16:30:00,Gabriel,Pass,Jurriën Timber
+602962,45,MissedShots,0.8590000152587891,0.3060000038146973,0.042157161980867386,Jurriën Timber,h,11707,OpenPlay,2024,RightFoot,26714,Arsenal,Nottingham Forest,3,0,2024-11-23 15:00:00,Martin Odegaard,Pass,Jurriën Timber
+604404,24,SavedShot,0.97,0.40200000762939453,0.050776369869709015,Jurriën Timber,a,11707,FromCorner,2024,Head,26730,West Ham,Arsenal,2,5,2024-11-30 17:30:00,Bukayo Saka,Cross,Jurriën Timber
+604406,28,BlockedShot,0.8519999694824218,0.4909999847412109,0.10681600123643875,Jurriën Timber,a,11707,OpenPlay,2024,RightFoot,26730,West Ham,Arsenal,2,5,2024-11-30 17:30:00,Leandro Trossard,Cross,Jurriën Timber
+605328,53,Goal,0.98,0.575,0.3158782720565796,Jurriën Timber,h,11707,FromCorner,2024,Head,26733,Arsenal,Manchester United,2,0,2024-12-04 20:15:00,Declan Rice,Cross,Jurriën Timber
+609267,18,SavedShot,0.7430000305175781,0.45599998474121095,0.021497616544365883,Jurriën Timber,h,11707,OpenPlay,2024,RightFoot,26773,Arsenal,Ipswich,1,0,2024-12-27 20:15:00,William Saliba,Pass,Jurriën Timber
+615618,88,MissedShots,0.99,0.40200000762939453,0.017937317490577698,Jurriën Timber,h,11707,FromCorner,2024,Head,26833,Arsenal,Manchester City,5,1,2025-02-02 16:30:00,Ethan Nwaneri,Cross,Jurriën Timber
+625039,53,SavedShot,0.9490000152587891,0.35400001525878905,0.3180530071258545,Jurriën Timber,h,11707,OpenPlay,2024,RightFoot,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Martin Odegaard,Pass,Jurriën Timber
+625437,84,BlockedShot,0.9569999694824218,0.4779999923706055,0.08468803018331528,Jurriën Timber,a,11707,FromCorner,2024,Head,26905,Everton,Arsenal,1,1,2025-04-05 11:30:00,Bukayo Saka,Aerial,Jurriën Timber
+638950,33,Goal,0.9540000152587891,0.5020000076293946,0.13262973725795746,Jurriën Timber,h,11707,FromCorner,2025,Head,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,Declan Rice,Cross,Jurriën Timber
+638958,55,Goal,0.9690000152587891,0.5079999923706054,0.16958780586719513,Jurriën Timber,h,11707,FromCorner,2025,RightFoot,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,Riccardo Calafiori,Rebound,Jurriën Timber
+638956,55,MissedShots,0.950999984741211,0.49700000762939456,0.16368675231933594,Jurriën Timber,h,11707,FromCorner,2025,OtherBodyPart,28793,Arsenal,Leeds,5,0,2025-08-23 16:30:00,Declan Rice,Cross,Jurriën Timber
+640944,38,BlockedShot,0.855,0.445,0.08937656879425049,Jurriën Timber,a,11707,OpenPlay,2025,RightFoot,28806,Liverpool,Arsenal,1,0,2025-08-31 15:30:00,Viktor Gyokeres,Pass,Jurriën Timber
+641378,28,SavedShot,0.960999984741211,0.4640000152587891,0.0841638445854187,Jurriën Timber,h,11707,FromCorner,2025,Head,28808,Arsenal,Nottingham Forest,3,0,2025-09-13 11:30:00,Noni Madueke,Aerial,Jurriën Timber
+645472,58,SavedShot,0.9230000305175782,0.519000015258789,0.25163203477859497,Jurriën Timber,a,11707,OpenPlay,2025,Head,28836,Newcastle United,Arsenal,1,2,2025-09-28 15:30:00,Martín Zubimendi,Chipped,Jurriën Timber
+645473,59,MissedShots,0.9169999694824219,0.5829999923706055,0.09533271938562393,Jurriën Timber,a,11707,FromCorner,2025,RightFoot,28836,Newcastle United,Arsenal,1,2,2025-09-28 15:30:00,William Saliba,HeadPass,Jurriën Timber
+646124,4,SavedShot,0.8869999694824219,0.335,0.12182920426130295,Jurriën Timber,h,11707,OpenPlay,2025,RightFoot,28839,Arsenal,West Ham,2,0,2025-10-04 14:00:00,Martin Odegaard,Throughball,Jurriën Timber
+646125,4,MissedShots,0.9230000305175782,0.3029999923706055,0.042594149708747864,Jurriën Timber,h,11707,OpenPlay,2025,RightFoot,28839,Arsenal,West Ham,2,0,2025-10-04 14:00:00,,Rebound,Jurriën Timber
+650831,18,MissedShots,0.955,0.45,0.08213049918413162,Jurriën Timber,a,11707,FromCorner,2025,Head,28869,Burnley,Arsenal,0,2,2025-11-01 15:00:00,,Aerial,Jurriën Timber
+650839,65,MissedShots,0.8780000305175781,0.27899999618530275,0.04470247030258179,Jurriën Timber,a,11707,OpenPlay,2025,RightFoot,28869,Burnley,Arsenal,0,2,2025-11-01 15:00:00,Bukayo Saka,Pass,Jurriën Timber
+654357,3,MissedShots,0.9819999694824219,0.3970000076293945,0.024843715131282806,Jurriën Timber,h,11707,FromCorner,2025,Head,28889,Arsenal,Tottenham,4,1,2025-11-23 16:30:00,Bukayo Saka,Cross,Jurriën Timber
+654360,29,MissedShots,0.85,0.32299999237060545,0.0426466129720211,Jurriën Timber,h,11707,OpenPlay,2025,RightFoot,28889,Arsenal,Tottenham,4,1,2025-11-23 16:30:00,,None,Jurriën Timber
+654372,73,MissedShots,0.975,0.4590000152587891,0.5229226350784302,Jurriën Timber,h,11707,FromCorner,2025,Head,28889,Arsenal,Tottenham,4,1,2025-11-23 16:30:00,Declan Rice,Cross,Jurriën Timber
+655664,93,MissedShots,0.9630000305175781,0.49,0.15381821990013123,Jurriën Timber,a,11707,OpenPlay,2025,Head,28900,Chelsea,Arsenal,1,1,2025-11-30 16:30:00,Piero Hincapié,Aerial,Jurriën Timber
+656670,69,MissedShots,0.9009999847412109,0.46799999237060547,0.14140568673610687,Jurriën Timber,a,11707,FromCorner,2025,RightFoot,28919,Aston Villa,Arsenal,2,1,2025-12-06 12:30:00,Declan Rice,Card,Jurriën Timber
+658422,6,MissedShots,0.915,0.5320000076293945,0.1234700158238411,Jurriën Timber,h,11707,OpenPlay,2025,Head,28928,Arsenal,Wolverhampton Wanderers,2,1,2025-12-13 20:00:00,Bukayo Saka,Cross,Jurriën Timber
+659551,63,MissedShots,0.9630000305175781,0.355,0.07910459488630295,Jurriën Timber,a,11707,OpenPlay,2025,RightFoot,28941,Everton,Arsenal,0,1,2025-12-20 20:00:00,,Rebound,Jurriën Timber
+660650,19,BlockedShot,0.7280000305175781,0.46299999237060546,0.018452981486916542,Jurriën Timber,h,11707,OpenPlay,2025,LeftFoot,28958,Arsenal,Aston Villa,4,1,2025-12-30 20:15:00,Martín Zubimendi,Pass,Jurriën Timber
+660658,60,MissedShots,0.97,0.5579999923706055,0.573971688747406,Jurriën Timber,h,11707,FromCorner,2025,RightFoot,28958,Arsenal,Aston Villa,4,1,2025-12-30 20:15:00,,None,Jurriën Timber
+660667,80,BlockedShot,0.9580000305175781,0.3270000076293945,0.04364805296063423,Jurriën Timber,h,11707,OpenPlay,2025,RightFoot,28958,Arsenal,Aston Villa,4,1,2025-12-30 20:15:00,Bukayo Saka,Rebound,Jurriën Timber
+663801,91,MissedShots,0.9230000305175782,0.5279999923706055,0.0638229176402092,Jurriën Timber,a,11707,OpenPlay,2025,Head,28994,Nottingham Forest,Arsenal,0,0,2026-01-17 17:30:00,Bukayo Saka,Aerial,Jurriën Timber
+666055,51,MissedShots,0.9730000305175781,0.42,0.2919113337993622,Jurriën Timber,a,11707,FromCorner,2025,Head,29015,Leeds,Arsenal,0,4,2026-01-31 15:00:00,Noni Madueke,Cross,Jurriën Timber
+671815,36,SavedShot,0.915,0.3659999847412109,0.12528365850448608,Jurriën Timber,h,11707,OpenPlay,2025,RightFoot,29049,Arsenal,Chelsea,2,1,2026-03-01 16:30:00,Bukayo Saka,TakeOn,Jurriën Timber
+671825,65,Goal,0.9690000152587891,0.48400001525878905,0.5478729605674744,Jurriën Timber,h,11707,FromCorner,2025,Head,29049,Arsenal,Chelsea,2,1,2026-03-01 16:30:00,Declan Rice,Cross,Jurriën Timber

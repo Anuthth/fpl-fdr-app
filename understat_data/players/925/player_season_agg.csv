@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,1,23,0.06801629066467285,0,0,0,2025,Sunderland,0,0,0,0.06801629066467285,0.10939916223287582,0.04138287156820297,925,Patrick Roberts
+season,Sub,1,0,1,11,0.0951543003320694,0,0,0,2021,Troyes,0,0,0,0.0951543003320694,0.0951543003320694,0,925,Patrick Roberts
+season,Sub,3,0,0,19,0,0,0,0,2019,Norwich,0,0,0,0,0,0,925,Patrick Roberts
+season,Sub,19,0,7,589,0.8708990085870028,0,0.37731388956308365,8,2018,Girona,0,0,0,0.8708990085870028,2.572411723434925,1.324197694659233,925,Patrick Roberts
+season,Sub,1,0,0,3,0,0,0,0,2015,Manchester City,0,0,0,0,0,0,925,Patrick Roberts

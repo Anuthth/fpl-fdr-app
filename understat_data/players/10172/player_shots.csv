@@ -1,0 +1,89 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+463041,63,SavedShot,0.8030000305175782,0.37799999237060544,0.019603699445724487,Jonathan Rowe,a,10172,OpenPlay,2021,LeftFoot,16662,Leeds,Norwich,2,1,2022-03-13 14:00:00,,TakeOn,Jonathan Rowe
+463044,71,ShotOnPost,0.874000015258789,0.4859999847412109,0.09803129732608795,Jonathan Rowe,a,10172,OpenPlay,2021,LeftFoot,16662,Leeds,Norwich,2,1,2022-03-13 14:00:00,,TakeOn,Jonathan Rowe
+470047,93,SavedShot,0.9080000305175782,0.34700000762939454,0.080902598798275,Jonathan Rowe,h,10172,OpenPlay,2021,LeftFoot,16706,Norwich,Newcastle United,0,3,2022-04-23 14:00:00,Max Aarons,Pass,Jonathan Rowe
+587099,70,ShotOnPost,0.8830000305175781,0.5879999923706055,0.3481527864933014,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28065,Marseille,Reims,2,2,2024-08-25 18:45:00,Amine Harit,TakeOn,Jonathan Rowe
+587103,86,BlockedShot,0.9059999847412109,0.4879999923706055,0.0917680636048317,Jonathan Rowe,h,10172,FromCorner,2024,LeftFoot,28065,Marseille,Reims,2,2,2024-08-25 18:45:00,,BallTouch,Jonathan Rowe
+589655,88,BlockedShot,0.9,0.5509999847412109,0.13801369071006775,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28069,Toulouse,Marseille,1,3,2024-08-31 19:00:00,Amir Murillo,Pass,Jonathan Rowe
+590920,94,SavedShot,0.8619999694824219,0.7330000305175781,0.04405584558844566,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28076,Marseille,Nice,2,0,2024-09-14 15:00:00,,TakeOn,Jonathan Rowe
+590921,95,MissedShots,0.8130000305175781,0.634000015258789,0.30268847942352295,Jonathan Rowe,h,10172,OpenPlay,2024,LeftFoot,28076,Marseille,Nice,2,0,2024-09-14 15:00:00,Ismaël Koné,Chipped,Jonathan Rowe
+593324,94,Goal,0.8169999694824219,0.725,0.01767907291650772,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28084,Lyon,Marseille,2,3,2024-09-22 18:45:00,,TakeOn,Jonathan Rowe
+594961,83,MissedShots,0.735,0.48900001525878906,0.028566641733050346,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28093,Strasbourg,Marseille,1,0,2024-09-29 18:45:00,Neal Maupay,LayOff,Jonathan Rowe
+595166,50,Goal,0.899000015258789,0.41700000762939454,0.09797786176204681,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28109,Marseille,Angers,1,1,2024-10-04 18:45:00,,BallTouch,Jonathan Rowe
+595171,75,SavedShot,0.86,0.5429999923706055,0.10451672971248627,Jonathan Rowe,h,10172,OpenPlay,2024,LeftFoot,28109,Marseille,Angers,1,1,2024-10-04 18:45:00,Pierre-Emile Højbjerg,Pass,Jonathan Rowe
+597883,0,MissedShots,0.965999984741211,0.6090000152587891,0.18433864414691925,Jonathan Rowe,a,10172,OpenPlay,2024,Head,28112,Montpellier,Marseille,0,5,2024-10-20 18:45:00,Mason Greenwood,Cross,Jonathan Rowe
+597886,16,SavedShot,0.9219999694824219,0.59,0.10087893158197403,Jonathan Rowe,a,10172,OpenPlay,2024,Head,28112,Montpellier,Marseille,0,5,2024-10-20 18:45:00,Mason Greenwood,Cross,Jonathan Rowe
+597890,28,MissedShots,0.7909999847412109,0.6819999694824219,0.030956143513321877,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28112,Montpellier,Marseille,0,5,2024-10-20 18:45:00,Sepe Elye Wahi,Pass,Jonathan Rowe
+597897,48,SavedShot,0.7980000305175782,0.3509999847412109,0.023980408906936646,Jonathan Rowe,a,10172,OpenPlay,2024,LeftFoot,28112,Montpellier,Marseille,0,5,2024-10-20 18:45:00,Amine Harit,TakeOn,Jonathan Rowe
+597902,51,MissedShots,0.889000015258789,0.67,0.09090634435415268,Jonathan Rowe,a,10172,OpenPlay,2024,LeftFoot,28112,Montpellier,Marseille,0,5,2024-10-20 18:45:00,Amine Harit,Pass,Jonathan Rowe
+600872,21,MissedShots,0.7630000305175781,0.65,0.023399651050567627,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28135,Nantes,Marseille,1,2,2024-11-03 19:45:00,Ismaël Koné,Pass,Jonathan Rowe
+600877,43,BlockedShot,0.7430000305175781,0.26799999237060546,0.009481643326580524,Jonathan Rowe,a,10172,OpenPlay,2024,LeftFoot,28135,Nantes,Marseille,1,2,2024-11-03 19:45:00,Leonardo Balerdi,Chipped,Jonathan Rowe
+600878,47,MissedShots,0.884000015258789,0.6320000076293946,0.06494100391864777,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28135,Nantes,Marseille,1,2,2024-11-03 19:45:00,Mason Greenwood,Chipped,Jonathan Rowe
+600881,57,SavedShot,0.7530000305175781,0.6969999694824218,0.012824645265936852,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28135,Nantes,Marseille,1,2,2024-11-03 19:45:00,Leonardo Balerdi,TakeOn,Jonathan Rowe
+601094,23,MissedShots,0.909000015258789,0.534000015258789,0.039025671780109406,Jonathan Rowe,h,10172,OpenPlay,2024,Head,28146,Marseille,Auxerre,1,3,2024-11-08 19:45:00,Mason Greenwood,Aerial,Jonathan Rowe
+601104,48,SavedShot,0.9030000305175782,0.44799999237060545,0.07359915226697922,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28146,Marseille,Auxerre,1,3,2024-11-08 19:45:00,Mason Greenwood,Cross,Jonathan Rowe
+603044,83,BlockedShot,0.9059999847412109,0.3509999847412109,0.09075294435024261,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28148,Lens,Marseille,1,3,2024-11-23 16:00:00,Pierre-Emile Højbjerg,BallTouch,Jonathan Rowe
+603046,84,BlockedShot,0.85,0.504000015258789,0.10674680024385452,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28148,Lens,Marseille,1,3,2024-11-23 16:00:00,Adrien Rabiot,Pass,Jonathan Rowe
+607168,89,SavedShot,0.904000015258789,0.44599998474121094,0.08777584880590439,Jonathan Rowe,h,10172,SetPiece,2024,RightFoot,28181,Marseille,Lille,1,1,2024-12-14 16:00:00,Pierre-Emile Højbjerg,HeadPass,Jonathan Rowe
+610962,93,SavedShot,0.794000015258789,0.41700000762939454,0.10944043844938278,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28200,Rennes,Marseille,1,2,2025-01-11 20:00:00,Luis Henrique,Chipped,Jonathan Rowe
+612973,63,SavedShot,0.9309999847412109,0.5020000076293946,0.5414498448371887,Jonathan Rowe,h,10172,OpenPlay,2024,LeftFoot,28201,Marseille,Strasbourg,1,1,2025-01-19 19:45:00,,Rebound,Jonathan Rowe
+614171,93,BlockedShot,0.840999984741211,0.4129999923706055,0.07596370577812195,Jonathan Rowe,a,10172,OpenPlay,2024,LeftFoot,28217,Nice,Marseille,2,0,2025-01-26 19:45:00,Amir Murillo,Pass,Jonathan Rowe
+617321,89,SavedShot,0.9290000152587891,0.4929999923706055,0.5060432553291321,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28238,Marseille,Saint-Etienne,5,1,2025-02-15 16:00:00,Luis Henrique,Cross,Jonathan Rowe
+618810,85,BlockedShot,0.879000015258789,0.47099998474121096,0.07016681134700775,Jonathan Rowe,a,10172,FromCorner,2024,RightFoot,28252,Auxerre,Marseille,3,0,2025-02-22 20:05:00,Adrien Rabiot,Pass,Jonathan Rowe
+626615,92,SavedShot,0.89,0.325,0.07521989196538925,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28291,Marseille,Toulouse,3,2,2025-04-06 18:45:00,Amar Dedic,BallTouch,Jonathan Rowe
+628941,73,Goal,0.93,0.565,0.1357116401195526,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28314,Marseille,Montpellier,5,1,2025-04-19 19:05:00,Ulisses García,Cross,Jonathan Rowe
+630943,75,MissedShots,0.8019999694824219,0.5359999847412109,0.13640815019607544,Jonathan Rowe,h,10172,OpenPlay,2024,LeftFoot,28325,Marseille,Brest,4,1,2025-04-27 18:45:00,Pierre-Emile Højbjerg,Throughball,Jonathan Rowe
+632290,92,BlockedShot,0.865999984741211,0.610999984741211,0.055404238402843475,Jonathan Rowe,a,10172,FromCorner,2024,LeftFoot,28331,Lille,Marseille,1,1,2025-05-04 18:45:00,,None,Jonathan Rowe
+633269,34,BlockedShot,0.8680000305175781,0.7290000152587891,0.04218720272183418,Jonathan Rowe,a,10172,OpenPlay,2024,RightFoot,28339,Le Havre,Marseille,1,3,2025-05-10 19:00:00,Ulisses García,TakeOn,Jonathan Rowe
+633281,61,MissedShots,0.8030000305175782,0.27799999237060546,0.028373731300234795,Jonathan Rowe,a,10172,OpenPlay,2024,LeftFoot,28339,Le Havre,Marseille,1,3,2025-05-10 19:00:00,Pierre-Emile Højbjerg,Pass,Jonathan Rowe
+634761,10,MissedShots,0.8019999694824219,0.525,0.05111631378531456,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28346,Marseille,Rennes,4,2,2025-05-17 19:00:00,Pierre-Emile Højbjerg,BallRecovery,Jonathan Rowe
+634772,47,SavedShot,0.835999984741211,0.5320000076293945,0.10047286748886108,Jonathan Rowe,h,10172,OpenPlay,2024,RightFoot,28346,Marseille,Rennes,4,2,2025-05-17 19:00:00,Mason Greenwood,Chipped,Jonathan Rowe
+637588,38,BlockedShot,0.8630000305175781,0.37599998474121094,0.09195589274168015,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,29538,Rennes,Marseille,1,0,2025-08-15 18:45:00,Mason Greenwood,TakeOn,Jonathan Rowe
+637594,45,MissedShots,0.9169999694824219,0.685,0.21259084343910217,Jonathan Rowe,a,10172,OpenPlay,2025,Head,29538,Rennes,Marseille,1,0,2025-08-15 18:45:00,Mason Greenwood,Chipped,Jonathan Rowe
+637597,51,MissedShots,0.740999984741211,0.7380000305175781,0.018095102161169052,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,29538,Rennes,Marseille,1,0,2025-08-15 18:45:00,Adrien Rabiot,Pass,Jonathan Rowe
+637598,53,MissedShots,0.8680000305175781,0.590999984741211,0.07002494484186172,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,29538,Rennes,Marseille,1,0,2025-08-15 18:45:00,,None,Jonathan Rowe
+637601,59,MissedShots,0.98,0.5940000152587891,0.02794024907052517,Jonathan Rowe,a,10172,SetPiece,2025,Head,29538,Rennes,Marseille,1,0,2025-08-15 18:45:00,,Aerial,Jonathan Rowe
+645484,2,SavedShot,0.8909999847412109,0.72,0.28548720479011536,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,29888,Lecce,Bologna,2,2,2025-09-28 16:00:00,,BallRecovery,Jonathan Rowe
+645497,40,BlockedShot,0.685,0.59,0.007954608649015427,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,29888,Lecce,Bologna,2,2,2025-09-28 16:00:00,Nikola Moro,Chipped,Jonathan Rowe
+646683,64,MissedShots,0.9019999694824219,0.5370000076293945,0.13321615755558014,Jonathan Rowe,h,10172,OpenPlay,2025,LeftFoot,29895,Bologna,Pisa,4,0,2025-10-05 13:00:00,Federico Bernardeschi,Cross,Jonathan Rowe
+646684,65,MissedShots,0.8519999694824218,0.539000015258789,0.1047983169555664,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,29895,Bologna,Pisa,4,0,2025-10-05 13:00:00,Federico Bernardeschi,Pass,Jonathan Rowe
+646686,76,MissedShots,0.9490000152587891,0.500999984741211,0.5772377252578735,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,29895,Bologna,Pisa,4,0,2025-10-05 13:00:00,Federico Bernardeschi,Cross,Jonathan Rowe
+646691,82,MissedShots,0.919000015258789,0.5029999923706054,0.5701515078544617,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,29895,Bologna,Pisa,4,0,2025-10-05 13:00:00,Juan Miranda,Rebound,Jonathan Rowe
+651691,44,MissedShots,0.7219999694824218,0.5129999923706055,0.02861432172358036,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,29939,Parma Calcio 1913,Bologna,1,3,2025-11-02 17:00:00,,BallRecovery,Jonathan Rowe
+652735,19,BlockedShot,0.6940000152587891,0.6709999847412109,0.008279251866042614,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,29945,Bologna,Napoli,2,0,2025-11-09 14:00:00,Thijs Dallinga,HeadPass,Jonathan Rowe
+652737,31,SavedShot,0.725999984741211,0.620999984741211,0.01670181378722191,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,29945,Bologna,Napoli,2,0,2025-11-09 14:00:00,Tommaso Pobega,Pass,Jonathan Rowe
+660446,10,SavedShot,0.7,0.73,0.013503637164831161,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30004,Bologna,Sassuolo,1,1,2025-12-28 17:00:00,Jhon Lucumí,Pass,Jonathan Rowe
+660449,25,BlockedShot,0.745,0.675,0.01046492625027895,Jonathan Rowe,h,10172,SetPiece,2025,RightFoot,30004,Bologna,Sassuolo,1,1,2025-12-28 17:00:00,,None,Jonathan Rowe
+661694,25,SavedShot,0.9109999847412109,0.295,0.04778619110584259,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30019,Inter,Bologna,3,1,2026-01-04 19:45:00,Santiago Castro,Pass,Jonathan Rowe
+661706,54,BlockedShot,0.8180000305175781,0.33299999237060546,0.033905014395713806,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30019,Inter,Bologna,3,1,2026-01-04 19:45:00,Emil Holm,Pass,Jonathan Rowe
+661846,46,SavedShot,0.845999984741211,0.675,0.042539793998003006,Jonathan Rowe,h,10172,OpenPlay,2025,LeftFoot,30024,Bologna,Atalanta,0,2,2026-01-07 17:30:00,Thijs Dallinga,Pass,Jonathan Rowe
+661854,69,SavedShot,0.919000015258789,0.40299999237060546,0.11853541433811188,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30024,Bologna,Atalanta,0,2,2026-01-07 17:30:00,,BallTouch,Jonathan Rowe
+662361,28,BlockedShot,0.87,0.295,0.04094498232007027,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30035,Como,Bologna,1,1,2026-01-10 14:00:00,Nadir Zortea,Pass,Jonathan Rowe
+664089,83,SavedShot,0.8909999847412109,0.5120000076293946,0.0488058403134346,Jonathan Rowe,h,10172,OpenPlay,2025,Head,30052,Bologna,Fiorentina,1,2,2026-01-18 14:00:00,Juan Miranda,Aerial,Jonathan Rowe
+664090,84,ShotOnPost,0.8859999847412109,0.31,0.05131882056593895,Jonathan Rowe,h,10172,OpenPlay,2025,LeftFoot,30052,Bologna,Fiorentina,1,2,2026-01-18 14:00:00,Nadir Zortea,TakeOn,Jonathan Rowe
+664095,93,MissedShots,0.9309999847412109,0.47400001525878904,0.060485195368528366,Jonathan Rowe,h,10172,OpenPlay,2025,Head,30052,Bologna,Fiorentina,1,2,2026-01-18 14:00:00,Lewis Ferguson,HeadPass,Jonathan Rowe
+665281,33,SavedShot,0.845,0.3129999923706055,0.03690248727798462,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30057,Genoa,Bologna,3,2,2026-01-25 14:00:00,Nadir Zortea,Pass,Jonathan Rowe
+665283,35,BlockedShot,0.8190000152587891,0.485,0.0734592005610466,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30057,Genoa,Bologna,3,2,2026-01-25 14:00:00,Lewis Ferguson,Pass,Jonathan Rowe
+665291,70,BlockedShot,0.955,0.24399999618530274,0.06338533759117126,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30057,Genoa,Bologna,3,2,2026-01-25 14:00:00,Ciro Immobile,Pass,Jonathan Rowe
+666920,5,MissedShots,0.785,0.7140000152587891,0.02263978309929371,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30064,Bologna,AC Milan,0,3,2026-02-03 19:45:00,Juan Miranda,Pass,Jonathan Rowe
+667620,74,MissedShots,0.9109999847412109,0.45799999237060546,0.09218904376029968,Jonathan Rowe,h,10172,OpenPlay,2025,Head,30078,Bologna,Parma Calcio 1913,0,1,2026-02-08 11:30:00,Nadir Zortea,Cross,Jonathan Rowe
+667621,75,BlockedShot,0.8209999847412109,0.5320000076293945,0.041534073650836945,Jonathan Rowe,h,10172,FromCorner,2025,LeftFoot,30078,Bologna,Parma Calcio 1913,0,1,2026-02-08 11:30:00,,None,Jonathan Rowe
+667622,76,MissedShots,0.750999984741211,0.5640000152587891,0.020993666723370552,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30078,Bologna,Parma Calcio 1913,0,1,2026-02-08 11:30:00,Santiago Castro,Pass,Jonathan Rowe
+669234,26,MissedShots,0.855,0.509000015258789,0.054577503353357315,Jonathan Rowe,a,10172,FromCorner,2025,RightFoot,30092,Torino,Bologna,1,2,2026-02-15 17:00:00,Santiago Castro,BallTouch,Jonathan Rowe
+669237,40,MissedShots,0.9030000305175782,0.615,0.35527732968330383,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30092,Torino,Bologna,1,2,2026-02-15 17:00:00,Santiago Castro,Pass,Jonathan Rowe
+669239,44,MissedShots,0.8219999694824218,0.6990000152587891,0.026981808245182037,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30092,Torino,Bologna,1,2,2026-02-15 17:00:00,Simon Sohm,Pass,Jonathan Rowe
+669240,46,SavedShot,0.8130000305175781,0.5129999923706055,0.06144250929355621,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30092,Torino,Bologna,1,2,2026-02-15 17:00:00,Simon Sohm,Pass,Jonathan Rowe
+670565,53,BlockedShot,0.785,0.6270000076293946,0.11425156146287918,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30095,Bologna,Udinese,1,0,2026-02-23 19:45:00,Juan Miranda,Throughball,Jonathan Rowe
+670567,53,BlockedShot,0.8580000305175781,0.5829999923706055,0.0622577965259552,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30095,Bologna,Udinese,1,0,2026-02-23 19:45:00,,Rebound,Jonathan Rowe
+673110,38,BlockedShot,0.7930000305175782,0.700999984741211,0.016729118302464485,Jonathan Rowe,h,10172,FromCorner,2025,RightFoot,30123,Bologna,Verona,1,2,2026-03-08 14:00:00,,None,Jonathan Rowe
+673115,48,Goal,0.8540000152587891,0.4470000076293945,0.09211414307355881,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30123,Bologna,Verona,1,2,2026-03-08 14:00:00,Nadir Zortea,Pass,Jonathan Rowe
+676946,15,Goal,0.8930000305175781,0.575,0.3825814127922058,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30144,Cremonese,Bologna,1,2,2026-04-05 13:00:00,Juan Miranda,Pass,Jonathan Rowe
+676949,27,MissedShots,0.850999984741211,0.625999984741211,0.08789964020252228,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30144,Cremonese,Bologna,1,2,2026-04-05 13:00:00,Juan Miranda,Pass,Jonathan Rowe
+676963,75,SavedShot,0.71,0.6320000076293946,0.013813289813697338,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30144,Cremonese,Bologna,1,2,2026-04-05 13:00:00,,None,Jonathan Rowe
+679963,62,ShotOnPost,0.9669999694824218,0.5740000152587891,0.6138360500335693,Jonathan Rowe,a,10172,OpenPlay,2025,LeftFoot,30165,Juventus,Bologna,2,0,2026-04-19 18:45:00,Nadir Zortea,Pass,Jonathan Rowe
+681115,53,BlockedShot,0.8809999847412109,0.7180000305175781,0.03196512907743454,Jonathan Rowe,h,10172,OpenPlay,2025,LeftFoot,30174,Bologna,Roma,0,2,2026-04-25 16:00:00,Jens Odgaard,HeadPass,Jonathan Rowe
+681118,58,BlockedShot,0.9180000305175782,0.649000015258789,0.09575272351503372,Jonathan Rowe,h,10172,OpenPlay,2025,RightFoot,30174,Bologna,Roma,0,2,2026-04-25 16:00:00,Riccardo Orsolini,Throughball,Jonathan Rowe
+681120,70,SavedShot,0.8090000152587891,0.27799999237060546,0.019458459690213203,Jonathan Rowe,h,10172,FromCorner,2025,LeftFoot,30174,Bologna,Roma,0,2,2026-04-25 16:00:00,Remo Freuler,Pass,Jonathan Rowe
+682592,75,BlockedShot,0.874000015258789,0.56,0.023355159908533096,Jonathan Rowe,h,10172,OpenPlay,2025,Head,30185,Bologna,Cagliari,0,0,2026-05-03 10:30:00,Lorenzo De Silvestri,Aerial,Jonathan Rowe
+684768,78,MissedShots,0.7380000305175781,0.6990000152587891,0.03304954990744591,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30201,Napoli,Bologna,2,3,2026-05-11 18:45:00,Santiago Castro,Pass,Jonathan Rowe
+684772,90,Goal,0.9059999847412109,0.46799999237060547,0.13076932728290558,Jonathan Rowe,a,10172,OpenPlay,2025,RightFoot,30201,Napoli,Bologna,2,3,2026-05-11 18:45:00,,Rebound,Jonathan Rowe

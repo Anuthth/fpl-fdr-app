@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,0,91,0,0,0,0,2023,Lille,0,0,0,0,0,0,726,Vito Mannone
+season,Sub,18,0,0,1608,0,0,0,0,2022,Lorient,1,0,0,0,1.5014852955937386,1.5014852955937386,726,Vito Mannone
+season,GK,9,0,0,810,0,0,0,0,2020,Monaco,0,0,0,0,2.014021784067154,2.014021784067154,726,Vito Mannone
+season,GK,9,0,0,810,0,0,0,0,2016,Sunderland,0,0,0,0,0,0,726,Vito Mannone
+season,GK,19,0,0,1710,0,0,0,0,2015,Sunderland,2,0,0,0,0.20777370408177376,0.20777370408177376,726,Vito Mannone
+season,GK,10,0,0,900,0,0,0.04317609965801239,1,2014,Sunderland,0,0,0,0,0.6401898041367531,0.597013708204031,726,Vito Mannone

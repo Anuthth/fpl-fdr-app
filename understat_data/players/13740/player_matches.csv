@@ -1,0 +1,21 @@
+﻿goals,shots,xG,time,position,h_team,a_team,h_goals,a_goals,date,id,season,roster_id,xA,assists,key_passes,npg,npxG,xGChain,xGBuildup,player_id,player_name
+0,0,0,43,Sub,Brighton,Wolverhampton Wanderers,3,0,2026-05-09,29128,2025,788802,0.07339484989643097,0,1,0,0,0.07339484989643097,0.07339484989643097,13740,David Møller Wolfe
+0,0,0,1,Sub,Wolverhampton Wanderers,Tottenham,0,1,2026-04-25,29117,2025,785576,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,81,DML,Wolverhampton Wanderers,Liverpool,2,1,2026-03-03,29067,2025,774605,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,24,Sub,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22,29041,2025,772210,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,29,Sub,Nottingham Forest,Wolverhampton Wanderers,0,0,2026-02-11,29034,2025,769908,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,1,Sub,Wolverhampton Wanderers,Bournemouth,0,2,2026-01-31,29017,2025,767178,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,1,Sub,Wolverhampton Wanderers,West Ham,3,0,2026-01-03,28970,2025,761056,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,1,Sub,Manchester United,Wolverhampton Wanderers,1,1,2025-12-30,28964,2025,760675,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,25,Sub,Liverpool,Wolverhampton Wanderers,2,1,2025-12-27,28953,2025,760160,0,0,0,0,0,0.07527091354131699,0.07527091354131699,13740,David Møller Wolfe
+0,2,0.042333364486694336,90,DML,Wolverhampton Wanderers,Brentford,0,2,2025-12-20,28947,2025,759123,0,0,0,0,0.042333364486694336,0.13378717005252838,0.09145381301641464,13740,David Møller Wolfe
+0,0,0,90,DML,Arsenal,Wolverhampton Wanderers,2,1,2025-12-13,28928,2025,757947,0.0700058713555336,0,1,0,0,0.0700058713555336,0,13740,David Møller Wolfe
+0,0,0,90,DML,Wolverhampton Wanderers,Manchester United,1,4,2025-12-08,28927,2025,757182,0.11102958768606186,1,1,0,0,0.13913382589817047,0.13913382589817047,13740,David Møller Wolfe
+0,0,0,90,DML,Wolverhampton Wanderers,Nottingham Forest,0,1,2025-12-03,28917,2025,755145,0.019244112074375153,0,1,0,0,0.18810346722602844,0.1688593626022339,13740,David Møller Wolfe
+0,0,0,79,DML,Aston Villa,Wolverhampton Wanderers,1,0,2025-11-30,28898,2025,754295,0.060373663902282715,0,1,0,0,0.060373663902282715,0.060373663902282715,13740,David Møller Wolfe
+0,1,0.040224816650152206,89,DL,Wolverhampton Wanderers,Crystal Palace,0,2,2025-11-22,28897,2025,752055,0.6647345423698425,0,2,0,0.040224816650152206,0.7049593925476074,0.6494839787483215,13740,David Møller Wolfe
+0,0,0,1,Sub,Wolverhampton Wanderers,Burnley,2,3,2025-10-26,28867,2025,746665,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,11,Sub,Wolverhampton Wanderers,Brighton,1,1,2025-10-05,28847,2025,743124,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,12,Sub,Wolverhampton Wanderers,Everton,2,3,2025-08-30,28800,2025,735052,0.3058866262435913,1,1,0,0,0.3241066038608551,0.01821996085345745,13740,David Møller Wolfe
+0,0,0,51,DML,Bournemouth,Wolverhampton Wanderers,1,0,2025-08-23,28792,2025,733216,0,0,0,0,0,0,0,13740,David Møller Wolfe
+0,0,0,77,DML,Wolverhampton Wanderers,Manchester City,0,4,2025-08-16,28783,2025,732739,0,0,0,0,0,0,0,13740,David Møller Wolfe

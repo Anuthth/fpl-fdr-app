@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,4,0,1,237,0.011818800121545792,0,0.034685298800468445,1,2019,Bournemouth,0,0,0,0.011818800121545792,0.046504098922014236,0,6410,Jack Simpson
+season,DC,6,0,2,407,0.3693768884986639,0,0,0,2018,Bournemouth,0,0,0,0.3693768884986639,0.34872959926724434,0.34872959926724434,6410,Jack Simpson
+season,DC,1,0,0,74,0,0,0,0,2017,Bournemouth,0,0,0,0,0,0,6410,Jack Simpson

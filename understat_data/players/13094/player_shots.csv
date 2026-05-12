@@ -1,0 +1,24 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+592531,59,SavedShot,0.759000015258789,0.48400001525878905,0.020186811685562134,Dário Essugo,a,13094,FromCorner,2024,RightFoot,27040,Osasuna,Las Palmas,2,1,2024-09-21 14:15:00,,None,Dário Essugo
+592534,67,MissedShots,0.7130000305175781,0.6759999847412109,0.01425859797745943,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27040,Osasuna,Las Palmas,2,1,2024-09-21 14:15:00,Daley Sinkgraven,Pass,Dário Essugo
+593559,65,MissedShots,0.7190000152587891,0.5679999923706055,0.01765367202460766,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27049,Las Palmas,Real Betis,1,1,2024-09-26 17:00:00,Alberto Moleiro,Pass,Dário Essugo
+595734,5,SavedShot,0.845,0.6819999694824219,0.04685970023274422,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27069,Las Palmas,Celta Vigo,0,1,2024-10-05 16:30:00,,BallRecovery,Dário Essugo
+595749,67,BlockedShot,0.7019999694824218,0.6020000076293945,0.018809832632541656,Dário Essugo,h,13094,FromCorner,2024,RightFoot,27069,Las Palmas,Celta Vigo,0,1,2024-10-05 16:30:00,Manu Fuster,Pass,Dário Essugo
+595761,89,BlockedShot,0.9080000305175782,0.5929999923706055,0.04183689504861832,Dário Essugo,h,13094,FromCorner,2024,Head,27069,Las Palmas,Celta Vigo,0,1,2024-10-05 16:30:00,Manu Fuster,Cross,Dário Essugo
+598018,25,MissedShots,0.7219999694824218,0.5870000076293945,0.018444932997226715,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27081,Valencia,Las Palmas,2,3,2024-10-21 19:00:00,José Campaña,Pass,Dário Essugo
+601178,13,BlockedShot,0.799000015258789,0.35,0.046830665320158005,Dário Essugo,a,13094,OpenPlay,2024,LeftFoot,27110,Rayo Vallecano,Las Palmas,1,3,2024-11-08 20:00:00,,BlockedPass,Dário Essugo
+603080,38,MissedShots,0.6940000152587891,0.5259999847412109,0.00891716219484806,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27115,Las Palmas,Mallorca,2,3,2024-11-23 17:30:00,,Aerial,Dário Essugo
+603086,76,Goal,0.7430000305175781,0.6669999694824219,0.011615901254117489,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27115,Las Palmas,Mallorca,2,3,2024-11-23 17:30:00,,Dispossessed,Dário Essugo
+605614,45,MissedShots,0.735999984741211,0.43900001525878907,0.03031972236931324,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27138,Las Palmas,Real Valladolid,2,1,2024-12-07 13:00:00,Alberto Moleiro,Pass,Dário Essugo
+607717,10,BlockedShot,0.725,0.5990000152587891,0.015081184916198254,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27151,Real Sociedad,Las Palmas,0,0,2024-12-15 17:30:00,Alberto Moleiro,BallRecovery,Dário Essugo
+608881,28,MissedShots,0.81,0.525,0.05677955225110054,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27152,Las Palmas,Espanyol,1,0,2024-12-22 17:30:00,Sandro Ramírez,Pass,Dário Essugo
+618784,49,BlockedShot,0.8490000152587891,0.325,0.04195510968565941,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27226,Las Palmas,Barcelona,0,2,2025-02-22 20:00:00,Sandro Ramírez,Pass,Dário Essugo
+619783,48,MissedShots,0.9590000152587891,0.425,0.11503443866968155,Dário Essugo,a,13094,FromCorner,2024,Head,27239,Real Valladolid,Las Palmas,1,1,2025-02-28 20:00:00,Sandro Ramírez,Cross,Dário Essugo
+625026,88,MissedShots,0.899000015258789,0.5420000076293945,0.020438887178897858,Dário Essugo,a,13094,FromCorner,2024,Head,27263,Celta Vigo,Las Palmas,1,1,2025-03-31 20:00:00,Sandro Ramírez,Aerial,Dário Essugo
+626114,42,SavedShot,0.7390000152587891,0.2670000076293945,0.012448026798665524,Dário Essugo,h,13094,OpenPlay,2024,LeftFoot,27274,Las Palmas,Real Sociedad,1,3,2025-04-06 12:00:00,Fabio Silva,BallRecovery,Dário Essugo
+627251,40,MissedShots,0.750999984741211,0.5370000076293945,0.011482230387628078,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27286,Getafe,Las Palmas,1,3,2025-04-12 14:15:00,,Aerial,Dário Essugo
+628908,15,BlockedShot,0.865,0.534000015258789,0.018686769530177116,Dário Essugo,h,13094,OpenPlay,2024,Head,27295,Las Palmas,Atletico Madrid,1,0,2025-04-19 19:00:00,Javi Muñoz,Aerial,Dário Essugo
+628911,27,MissedShots,0.7280000305175781,0.34799999237060547,0.014494791626930237,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27295,Las Palmas,Atletico Madrid,1,0,2025-04-19 19:00:00,,BallRecovery,Dário Essugo
+629779,12,MissedShots,0.7780000305175782,0.5120000076293946,0.031862933188676834,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27303,Athletic Club,Las Palmas,1,0,2025-04-23 17:00:00,,None,Dário Essugo
+632477,22,MissedShots,0.749000015258789,0.49599998474121093,0.021603049710392952,Dário Essugo,h,13094,OpenPlay,2024,RightFoot,27329,Las Palmas,Rayo Vallecano,0,1,2025-05-09 19:00:00,Adnan Januzaj,Pass,Dário Essugo
+634002,94,BlockedShot,0.6909999847412109,0.7559999847412109,0.0115298330783844,Dário Essugo,a,13094,OpenPlay,2024,RightFoot,27340,Sevilla,Las Palmas,1,0,2025-05-13 19:30:00,Sandro Ramírez,Pass,Dário Essugo

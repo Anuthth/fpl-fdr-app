@@ -1,0 +1,10 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,7,0,0,630,0,0,0,0,2024,Tottenham,0,0,0,0,1.9027439206838608,1.9027439206838608,831,Fraser Forster
+season,GK,14,0,0,1212,0,0,0,0,2022,Tottenham,1,0,0,0,1.6163463462144136,1.6163463462144136,831,Fraser Forster
+season,GK,19,0,0,1710,0,0,0,0,2021,Southampton,1,0,0,0,0.8640092052519321,0.8640092052519321,831,Fraser Forster
+season,GK,8,0,0,720,0,0,0,0,2020,Southampton,0,0,0,0,1.113945309072733,1.113945309072733,831,Fraser Forster
+season,GK,1,0,0,90,0,0,0,0,2018,Southampton,0,0,0,0,0,0,831,Fraser Forster
+season,GK,20,0,0,1800,0,0,0,0,2017,Southampton,0,0,0,0,1.1555680893361568,1.1555680893361568,831,Fraser Forster
+season,GK,38,0,0,3420,0,0,0.34467700123786926,1,2016,Southampton,3,0,0,0,3.6629295581951737,3.6629295581951737,831,Fraser Forster
+season,GK,18,0,0,1620,0,0,0,0,2015,Southampton,0,0,0,0,0.5442584920674562,0.5442584920674562,831,Fraser Forster
+season,GK,30,0,0,2623,0,0,0.01863750070333481,1,2014,Southampton,1,0,0,0,2.2933644084259868,2.274727108888328,831,Fraser Forster

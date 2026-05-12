@@ -1,0 +1,37 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+544071,96,MissedShots,0.9080000305175782,0.575,0.11497067660093307,Yehor Yarmolyuk,h,11772,OpenPlay,2023,RightFoot,21977,Brentford,Burnley,3,0,2023-10-21 14:00:00,,None,Yehor Yarmolyuk
+545230,89,SavedShot,0.8959999847412109,0.43099998474121093,0.5723902583122253,Yehor Yarmolyuk,a,11772,OpenPlay,2023,RightFoot,21989,Chelsea,Brentford,0,2,2023-10-28 11:30:00,,None,Yehor Yarmolyuk
+548853,86,MissedShots,0.8290000152587891,0.69,0.03095371089875698,Yehor Yarmolyuk,a,11772,OpenPlay,2023,RightFoot,22011,Liverpool,Brentford,3,0,2023-11-12 14:00:00,Saman Ghoddos,Pass,Yehor Yarmolyuk
+549939,70,SavedShot,0.7390000152587891,0.47900001525878905,0.020654432475566864,Yehor Yarmolyuk,h,11772,OpenPlay,2023,RightFoot,22015,Brentford,Arsenal,0,1,2023-11-25 17:30:00,Saman Ghoddos,Pass,Yehor Yarmolyuk
+551049,26,BlockedShot,0.8580000305175781,0.6509999847412109,0.03789491206407547,Yehor Yarmolyuk,h,11772,FromCorner,2023,RightFoot,22027,Brentford,Luton,3,1,2023-12-02 15:00:00,Vitaly Janelt,Pass,Yehor Yarmolyuk
+552936,50,SavedShot,0.8719999694824219,0.28899999618530275,0.04331616684794426,Yehor Yarmolyuk,a,11772,OpenPlay,2023,RightFoot,22052,Sheffield United,Brentford,1,0,2023-12-09 15:00:00,Shandon Baptiste,Pass,Yehor Yarmolyuk
+571106,42,BlockedShot,0.7669999694824219,0.5870000076293945,0.018460607156157494,Yehor Yarmolyuk,h,11772,FromCorner,2023,RightFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,,None,Yehor Yarmolyuk
+571112,54,SavedShot,0.8430000305175781,0.55,0.06343495845794678,Yehor Yarmolyuk,h,11772,OpenPlay,2023,RightFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,,None,Yehor Yarmolyuk
+571114,56,BlockedShot,0.8669999694824219,0.6359999847412109,0.0652390867471695,Yehor Yarmolyuk,h,11772,OpenPlay,2023,RightFoot,22187,Brentford,Manchester United,1,1,2024-03-30 20:00:00,,BallTouch,Yehor Yarmolyuk
+573675,97,MissedShots,0.749000015258789,0.5509999847412109,0.032494574785232544,Yehor Yarmolyuk,h,11772,OpenPlay,2023,RightFoot,22217,Brentford,Sheffield United,2,0,2024-04-13 14:00:00,Sergio Reguilón,Pass,Yehor Yarmolyuk
+582176,89,SavedShot,0.89,0.5329999923706055,0.03299634903669357,Yehor Yarmolyuk,h,11772,OpenPlay,2023,Head,22266,Brentford,Newcastle United,2,4,2024-05-19 15:00:00,Zanka,Chipped,Yehor Yarmolyuk
+590793,90,MissedShots,0.8130000305175781,0.3940000152587891,0.04202556237578392,Yehor Yarmolyuk,a,11772,OpenPlay,2024,RightFoot,26637,Manchester City,Brentford,2,1,2024-09-14 14:00:00,Bryan Mbeumo,Pass,Yehor Yarmolyuk
+594162,61,SavedShot,0.81,0.48400001525878905,0.04886065050959587,Yehor Yarmolyuk,h,11772,OpenPlay,2024,RightFoot,26656,Brentford,West Ham,1,1,2024-09-28 14:00:00,,None,Yehor Yarmolyuk
+601035,95,BlockedShot,0.8930000305175781,0.47400001525878904,0.0955706313252449,Yehor Yarmolyuk,a,11772,OpenPlay,2024,RightFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,,None,Yehor Yarmolyuk
+605359,62,BlockedShot,0.899000015258789,0.615,0.059095390141010284,Yehor Yarmolyuk,a,11772,FromCorner,2024,LeftFoot,26734,Aston Villa,Brentford,3,1,2024-12-04 20:15:00,Ethan Pinnock,HeadPass,Yehor Yarmolyuk
+605892,71,BlockedShot,0.889000015258789,0.5840000152587891,0.26776066422462463,Yehor Yarmolyuk,h,11772,OpenPlay,2024,LeftFoot,26743,Brentford,Newcastle United,4,2,2024-12-07 15:00:00,Christian Nørgaard,TakeOn,Yehor Yarmolyuk
+609954,90,MissedShots,0.9259999847412109,0.36200000762939455,0.11127328872680664,Yehor Yarmolyuk,a,11772,OpenPlay,2024,RightFoot,26799,Southampton,Brentford,0,5,2025-01-04 15:00:00,Mikkel Damsgaard,Pass,Yehor Yarmolyuk
+612239,20,BlockedShot,0.785,0.7090000152587891,0.02107146754860878,Yehor Yarmolyuk,h,11772,OpenPlay,2024,RightFoot,26813,Brentford,Liverpool,0,2,2025-01-18 15:00:00,Yoane Wissa,Pass,Yehor Yarmolyuk
+612273,86,MissedShots,0.8119999694824219,0.41200000762939454,0.03101547434926033,Yehor Yarmolyuk,h,11772,FromCorner,2024,RightFoot,26813,Brentford,Liverpool,0,2,2025-01-18 15:00:00,,None,Yehor Yarmolyuk
+618216,68,SavedShot,0.9369999694824219,0.4490000152587891,0.11118628084659576,Yehor Yarmolyuk,a,11772,FromCorner,2024,Head,26858,Leicester,Brentford,0,4,2025-02-21 20:00:00,Bryan Mbeumo,Cross,Yehor Yarmolyuk
+638068,23,SavedShot,0.815,0.5320000076293945,0.043761223554611206,Yehor Yarmolyuk,a,11772,OpenPlay,2025,RightFoot,28785,Nottingham Forest,Brentford,3,1,2025-08-17 13:00:00,Thiago,Pass,Yehor Yarmolyuk
+638840,26,MissedShots,0.7809999847412109,0.4829999923706055,0.02342926897108555,Yehor Yarmolyuk,h,11772,FromCorner,2025,RightFoot,28790,Brentford,Aston Villa,1,0,2025-08-23 14:00:00,,None,Yehor Yarmolyuk
+640272,45,SavedShot,0.815,0.49700000762939456,0.01719302125275135,Yehor Yarmolyuk,a,11772,OpenPlay,2025,Head,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,None,Yehor Yarmolyuk
+644500,79,BlockedShot,0.8219999694824218,0.4759999847412109,0.0747782289981842,Yehor Yarmolyuk,h,11772,OpenPlay,2025,LeftFoot,28828,Brentford,Manchester United,3,1,2025-09-27 11:30:00,,Interception,Yehor Yarmolyuk
+646932,60,BlockedShot,0.835999984741211,0.3129999923706055,0.013301693834364414,Yehor Yarmolyuk,h,11772,OpenPlay,2025,RightFoot,28841,Brentford,Manchester City,0,1,2025-10-05 15:30:00,,Aerial,Yehor Yarmolyuk
+652796,46,SavedShot,0.9159999847412109,0.3220000076293945,0.0636940523982048,Yehor Yarmolyuk,h,11772,OpenPlay,2025,RightFoot,28879,Brentford,Newcastle United,3,1,2025-11-09 14:00:00,Mikkel Damsgaard,Pass,Yehor Yarmolyuk
+653631,2,MissedShots,0.799000015258789,0.6029999923706054,0.02751859463751316,Yehor Yarmolyuk,a,11772,SetPiece,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,,None,Yehor Yarmolyuk
+653640,31,MissedShots,0.775,0.5270000076293946,0.015469887293875217,Yehor Yarmolyuk,a,11772,FromCorner,2025,RightFoot,28890,Brighton,Brentford,2,1,2025-11-22 15:00:00,,Aerial,Yehor Yarmolyuk
+660158,4,MissedShots,0.8030000305175782,0.4929999923706055,0.04660436883568764,Yehor Yarmolyuk,h,11772,OpenPlay,2025,RightFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,None,Yehor Yarmolyuk
+660169,47,BlockedShot,0.9119999694824219,0.54,0.10633048415184021,Yehor Yarmolyuk,h,11772,FromCorner,2025,RightFoot,28949,Brentford,Bournemouth,4,1,2025-12-27 15:00:00,,None,Yehor Yarmolyuk
+660760,34,MissedShots,0.8230000305175781,0.514000015258789,0.022401053458452225,Yehor Yarmolyuk,h,11772,OpenPlay,2025,LeftFoot,28959,Brentford,Tottenham,0,0,2026-01-01 20:00:00,,Aerial,Yehor Yarmolyuk
+661941,32,MissedShots,0.9330000305175781,0.54,0.05439281836152077,Yehor Yarmolyuk,h,11772,FromCorner,2025,Head,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Keane Lewis-Potter,Aerial,Yehor Yarmolyuk
+661958,72,Goal,0.95,0.48,0.580595076084137,Yehor Yarmolyuk,h,11772,FromCorner,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,Nathan Collins,None,Yehor Yarmolyuk
+663676,47,BlockedShot,0.8809999847412109,0.5679999923706055,0.1354738026857376,Yehor Yarmolyuk,a,11772,OpenPlay,2025,RightFoot,28990,Chelsea,Brentford,2,0,2026-01-17 15:00:00,Thiago,Pass,Yehor Yarmolyuk
+665155,49,MissedShots,0.919000015258789,0.47900001525878905,0.12521764636039734,Yehor Yarmolyuk,h,11772,FromCorner,2025,RightFoot,29000,Brentford,Nottingham Forest,0,2,2026-01-25 14:00:00,Dango Ouattara,Chipped,Yehor Yarmolyuk
+682306,89,MissedShots,0.7569999694824219,0.545,0.025132186710834503,Yehor Yarmolyuk,h,11772,FromCorner,2025,RightFoot,29121,Brentford,West Ham,3,0,2026-05-02 14:00:00,,Rebound,Yehor Yarmolyuk

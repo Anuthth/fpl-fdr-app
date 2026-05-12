@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,24,0,9,431,0.3624565312638879,1,0.3475889293476939,7,2024,Wolverhampton Wanderers,1,0,0,0.3624565312638879,2.1030837008729577,1.6141937281936407,8496,Tommy Doyle
+season,Sub,26,0,14,1175,0.4136425852775574,0,0.6756884949281812,8,2023,Wolverhampton Wanderers,2,0,0,0.4136425852775574,4.574842236936092,4.24587644636631,8496,Tommy Doyle
+season,Sub,1,0,1,13,0.07760050147771835,0,0,0,2019,Manchester City,0,0,0,0.07760050147771835,0.07760050147771835,0,8496,Tommy Doyle

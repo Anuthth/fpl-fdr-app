@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,3,0,0,270,0,0,0,0,2025,Wolverhampton Wanderers,0,0,0,0,0.22310110926628113,0.22310110926628113,11361,Daniel Bentley
+season,GK,2,0,0,180,0,0,0,0,2024,Wolverhampton Wanderers,0,0,0,0,0.03242262825369835,0.03242262825369835,11361,Daniel Bentley
+season,Sub,5,0,0,379,0,0,0,0,2023,Wolverhampton Wanderers,0,0,0,0,0.46794790774583817,0.46794790774583817,11361,Daniel Bentley
+season,GK,2,0,0,180,0,0,0,0,2022,Wolverhampton Wanderers,0,0,0,0,0.05848224461078644,0.05848224461078644,11361,Daniel Bentley

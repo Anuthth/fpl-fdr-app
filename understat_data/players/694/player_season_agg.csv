@@ -1,0 +1,9 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,1,0,0,90,0,0,0,0,2022,Everton,0,0,0,0,0,0,694,Asmir Begovic
+season,GK,3,0,0,270,0,0,0,0,2021,Everton,0,0,0,0,0,0,694,Asmir Begovic
+season,Sub,2,0,0,126,0,0,0,0,2019,AC Milan,0,0,0,0,0.6044809818267822,0.6044809818267822,694,Asmir Begovic
+season,GK,24,0,0,2160,0,0,0,0,2018,Bournemouth,0,0,0,0,2.4910210128873587,2.4910210128873587,694,Asmir Begovic
+season,GK,38,0,0,3420,0,0,0.04091240093111992,1,2017,Bournemouth,2,0,0,0,1.3056802172213793,1.3056802172213793,694,Asmir Begovic
+season,GK,2,0,0,180,0,0,0,0,2016,Chelsea,0,0,0,0,0.025731299072504044,0.025731299072504044,694,Asmir Begovic
+season,Sub,17,0,0,1393,0,0,0,0,2015,Chelsea,0,0,0,0,1.3994961008429527,1.3994961008429527,694,Asmir Begovic
+season,GK,35,0,1,3150,0.06700760126113892,0,0.029391199350357056,1,2014,Stoke,3,0,0,0.06700760126113892,1.8559519713744521,1.8265609657391906,694,Asmir Begovic

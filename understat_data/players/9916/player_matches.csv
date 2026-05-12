@@ -1,0 +1,4 @@
+﻿goals,shots,xG,time,position,h_team,a_team,h_goals,a_goals,date,id,season,roster_id,xA,assists,key_passes,npg,npxG,xGChain,xGBuildup,player_id,player_name
+0,0,0,25,Sub,RasenBallsport Leipzig,St. Pauli,2,1,2026-05-09,30518,2025,788739,0,0,0,0,0,0.041828397661447525,0.041828397661447525,9916,Finley Stevens
+0,0,0,1,Sub,St. Pauli,Union Berlin,3,0,2025-01-26,27907,2024,702248,0,0,0,0,0,0.08271217346191406,0.08271217346191406,9916,Finley Stevens
+0,0,0,11,Sub,Southampton,Brentford,4,1,2022-01-11,16551,2021,507757,0.028888199478387833,0,1,0,0,0,0,9916,Finley Stevens

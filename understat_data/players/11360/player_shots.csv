@@ -1,0 +1,46 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+507088,88,SavedShot,0.9009999847412109,0.5840000152587891,0.0371037982404232,Paul Onuachu,a,11360,OpenPlay,2022,Head,18413,Brentford,Southampton,3,0,2023-02-04 15:00:00,James Bree,Aerial,Paul Onuachu
+509656,4,SavedShot,0.8540000152587891,0.4370000076293945,0.008191860280930996,Paul Onuachu,a,11360,SetPiece,2022,Head,18435,Chelsea,Southampton,0,1,2023-02-18 15:00:00,James Ward-Prowse,Aerial,Paul Onuachu
+509657,9,MissedShots,0.925,0.47200000762939454,0.067398302257061,Paul Onuachu,a,11360,OpenPlay,2022,Head,18435,Chelsea,Southampton,0,1,2023-02-18 15:00:00,James Ward-Prowse,Aerial,Paul Onuachu
+510846,38,SavedShot,0.745,0.629000015258789,0.061733800917863846,Paul Onuachu,a,11360,OpenPlay,2022,RightFoot,18446,Leeds,Southampton,1,0,2023-02-25 15:00:00,Kamaldeen Sulemana,Chipped,Paul Onuachu
+510849,55,BlockedShot,0.92,0.3320000076293945,0.0630125030875206,Paul Onuachu,a,11360,OpenPlay,2022,RightFoot,18446,Leeds,Southampton,1,0,2023-02-25 15:00:00,Kamaldeen Sulemana,Chipped,Paul Onuachu
+516844,85,ShotOnPost,0.8909999847412109,0.455,0.0239058006554842,Paul Onuachu,a,11360,OpenPlay,2022,Head,18491,West Ham,Southampton,1,0,2023-04-02 13:00:00,James Ward-Prowse,Aerial,Paul Onuachu
+519442,75,SavedShot,0.9219999694824219,0.48400001525878905,0.06588009744882584,Paul Onuachu,h,11360,OpenPlay,2022,Head,18508,Southampton,Crystal Palace,0,2,2023-04-15 14:00:00,,Aerial,Paul Onuachu
+525536,85,MissedShots,0.950999984741211,0.56,0.470894455909729,Paul Onuachu,a,11360,OpenPlay,2022,RightFoot,18548,Nottingham Forest,Southampton,4,3,2023-05-08 19:00:00,Adam Armstrong,Rebound,Paul Onuachu
+525539,100,BlockedShot,0.874000015258789,0.5820000076293945,0.07430444657802582,Paul Onuachu,a,11360,OpenPlay,2022,LeftFoot,18548,Nottingham Forest,Southampton,4,3,2023-05-08 19:00:00,Lyanco,Chipped,Paul Onuachu
+526051,20,SavedShot,0.78,0.19600000381469726,0.01339330431073904,Paul Onuachu,h,11360,OpenPlay,2022,RightFoot,18561,Southampton,Fulham,0,2,2023-05-13 14:00:00,,BlockedPass,Paul Onuachu
+526057,53,MissedShots,0.9369999694824219,0.5590000152587891,0.0492943711578846,Paul Onuachu,h,11360,OpenPlay,2022,Head,18561,Southampton,Fulham,0,2,2023-05-13 14:00:00,Kyle Walker-Peters,Aerial,Paul Onuachu
+597122,68,MissedShots,0.9030000305175782,0.620999984741211,0.017685679718852043,Paul Onuachu,h,11360,OpenPlay,2024,Head,26678,Southampton,Leicester,2,3,2024-10-19 14:00:00,Ryan Manning,Aerial,Paul Onuachu
+598423,89,SavedShot,0.9019999694824219,0.35700000762939454,0.027616329491138458,Paul Onuachu,a,11360,SetPiece,2024,Head,26683,Manchester City,Southampton,1,0,2024-10-26 14:00:00,James Bree,Chipped,Paul Onuachu
+598424,92,BlockedShot,0.924000015258789,0.6569999694824219,0.020174087956547737,Paul Onuachu,a,11360,OpenPlay,2024,Head,26683,Manchester City,Southampton,1,0,2024-10-26 14:00:00,Adam Armstrong,Chipped,Paul Onuachu
+609163,9,MissedShots,0.9480000305175781,0.515,0.5658470988273621,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Kyle Walker-Peters,Aerial,Paul Onuachu
+609169,24,SavedShot,0.92,0.4370000076293945,0.051236171275377274,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Kyle Walker-Peters,Chipped,Paul Onuachu
+609175,48,BlockedShot,0.9380000305175781,0.5509999847412109,0.06705979257822037,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Mateus Fernandes,Aerial,Paul Onuachu
+609177,53,SavedShot,0.9080000305175782,0.524000015258789,0.30730053782463074,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Yukinari Sugawara,Cross,Paul Onuachu
+609188,88,MissedShots,0.980999984741211,0.5770000076293945,0.43850359320640564,Paul Onuachu,h,11360,OpenPlay,2024,RightFoot,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Taylor Harwood-Bellis,HeadPass,Paul Onuachu
+609189,89,MissedShots,0.8880000305175781,0.4570000076293945,0.023284049704670906,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Adam Lallana,Aerial,Paul Onuachu
+609192,95,MissedShots,0.905,0.5309999847412109,0.03583059832453728,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Ryan Manning,Aerial,Paul Onuachu
+609191,95,BlockedShot,0.86,0.46099998474121096,0.01809166744351387,Paul Onuachu,h,11360,OpenPlay,2024,Head,26780,Southampton,West Ham,0,1,2024-12-26 15:00:00,Ryan Manning,Pass,Paul Onuachu
+609475,64,MissedShots,0.884000015258789,0.5629999923706055,0.013371781446039677,Paul Onuachu,a,11360,FromCorner,2024,Head,26784,Crystal Palace,Southampton,2,1,2024-12-29 15:00:00,James Bree,Aerial,Paul Onuachu
+609937,37,SavedShot,0.9259999847412109,0.48700000762939455,0.05365817993879318,Paul Onuachu,h,11360,OpenPlay,2024,Head,26799,Southampton,Brentford,0,5,2025-01-04 15:00:00,James Bree,Aerial,Paul Onuachu
+612665,87,SavedShot,0.8630000305175781,0.5740000152587891,0.021435974165797234,Paul Onuachu,a,11360,SetPiece,2024,Head,26820,Nottingham Forest,Southampton,3,2,2025-01-19 14:00:00,Kyle Walker-Peters,Cross,Paul Onuachu
+612666,90,Goal,0.945,0.544000015258789,0.4062615633010864,Paul Onuachu,a,11360,FromCorner,2024,Head,26820,Nottingham Forest,Southampton,3,2,2025-01-19 14:00:00,Mateus Fernandes,Cross,Paul Onuachu
+612668,98,BlockedShot,0.899000015258789,0.5540000152587891,0.02661707065999508,Paul Onuachu,a,11360,OpenPlay,2024,Head,26820,Nottingham Forest,Southampton,3,2,2025-01-19 14:00:00,Ryan Manning,Aerial,Paul Onuachu
+614926,35,SavedShot,0.8640000152587891,0.5540000152587891,0.021670440211892128,Paul Onuachu,a,11360,OpenPlay,2024,Head,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,Welington,Aerial,Paul Onuachu
+614940,86,Goal,0.965999984741211,0.5179999923706055,0.7486563324928284,Paul Onuachu,a,11360,OpenPlay,2024,LeftFoot,26837,Ipswich,Southampton,1,2,2025-02-01 15:00:00,,Rebound,Paul Onuachu
+617221,47,MissedShots,0.8819999694824219,0.545,0.015154076740145683,Paul Onuachu,h,11360,SetPiece,2024,Head,26849,Southampton,Bournemouth,1,3,2025-02-15 15:00:00,William Smallbone,Aerial,Paul Onuachu
+617222,50,BlockedShot,0.894000015258789,0.31799999237060544,0.06792742013931274,Paul Onuachu,h,11360,OpenPlay,2024,RightFoot,26849,Southampton,Bournemouth,1,3,2025-02-15 15:00:00,Kamaldeen Sulemana,Pass,Paul Onuachu
+619412,13,MissedShots,0.9230000305175782,0.3079999923706055,0.05733982473611832,Paul Onuachu,a,11360,OpenPlay,2024,RightFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,William Smallbone,Pass,Paul Onuachu
+619413,15,SavedShot,0.8469999694824218,0.4779999923706055,0.015150140970945358,Paul Onuachu,a,11360,OpenPlay,2024,Head,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,William Smallbone,Cross,Paul Onuachu
+619418,31,SavedShot,0.9319999694824219,0.4620000076293945,0.3824968934059143,Paul Onuachu,a,11360,OpenPlay,2024,Head,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Kamaldeen Sulemana,Cross,Paul Onuachu
+622687,59,SavedShot,0.9680000305175781,0.5879999923706055,0.07411704957485199,Paul Onuachu,h,11360,FromCorner,2024,Head,26891,Southampton,Wolverhampton Wanderers,1,2,2025-03-15 15:00:00,Ryan Manning,Cross,Paul Onuachu
+622692,74,Goal,0.9540000152587891,0.5429999923706055,0.5663762092590332,Paul Onuachu,h,11360,OpenPlay,2024,LeftFoot,26891,Southampton,Wolverhampton Wanderers,1,2,2025-03-15 15:00:00,,Rebound,Paul Onuachu
+625213,17,SavedShot,0.915,0.5,0.056662511080503464,Paul Onuachu,h,11360,SetPiece,2024,Head,26900,Southampton,Crystal Palace,1,1,2025-04-02 19:45:00,,None,Paul Onuachu
+625214,19,Goal,0.8880000305175781,0.5529999923706055,0.15816400945186615,Paul Onuachu,h,11360,OpenPlay,2024,Head,26900,Southampton,Crystal Palace,1,1,2025-04-02 19:45:00,Mateus Fernandes,Cross,Paul Onuachu
+625218,40,MissedShots,0.860999984741211,0.3189999961853027,0.05965251848101616,Paul Onuachu,h,11360,OpenPlay,2024,RightFoot,26900,Southampton,Crystal Palace,1,1,2025-04-02 19:45:00,,None,Paul Onuachu
+625220,57,BlockedShot,0.9340000152587891,0.4570000076293945,0.11149320006370544,Paul Onuachu,h,11360,FromCorner,2024,Head,26900,Southampton,Crystal Palace,1,1,2025-04-02 19:45:00,Ryan Manning,Cross,Paul Onuachu
+627166,40,MissedShots,0.975999984741211,0.6279999923706054,0.015967553481459618,Paul Onuachu,h,11360,OpenPlay,2024,Head,26921,Southampton,Aston Villa,0,3,2025-04-12 14:00:00,Kyle Walker-Peters,Cross,Paul Onuachu
+628618,38,MissedShots,0.9340000152587891,0.5929999923706055,0.05644427239894867,Paul Onuachu,a,11360,FromCorner,2024,Head,26931,West Ham,Southampton,1,1,2025-04-19 14:00:00,Ryan Manning,Cross,Paul Onuachu
+628620,51,BlockedShot,0.850999984741211,0.524000015258789,0.021342730149626732,Paul Onuachu,a,11360,SetPiece,2024,Head,26931,West Ham,Southampton,1,1,2025-04-19 14:00:00,Mateus Fernandes,Cross,Paul Onuachu
+631468,54,SavedShot,0.92,0.485,0.31391265988349915,Paul Onuachu,a,11360,OpenPlay,2024,Head,26951,Leicester,Southampton,2,0,2025-05-03 14:00:00,Kamaldeen Sulemana,Cross,Paul Onuachu
+631476,92,BlockedShot,0.9119999694824219,0.575,0.050234194844961166,Paul Onuachu,a,11360,FromCorner,2024,Head,26951,Leicester,Southampton,2,0,2025-05-03 14:00:00,Ryan Manning,Cross,Paul Onuachu

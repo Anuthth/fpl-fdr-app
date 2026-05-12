@@ -1,0 +1,114 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+480997,91,MissedShots,0.7269999694824218,0.509000015258789,0.016567999497056007,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19666,Nice,Strasbourg,1,1,2022-08-14 15:05:00,Habib Diallo,Pass,Habib Diarra
+482252,88,BlockedShot,0.855999984741211,0.585,0.06683489680290222,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19675,Strasbourg,Reims,1,1,2022-08-21 11:00:00,,None,Habib Diarra
+483777,66,MissedShots,0.9009999847412109,0.40099998474121096,0.07709140330553055,Habib Diarra,a,9767,FromCorner,2022,RightFoot,19679,Auxerre,Strasbourg,1,0,2022-08-27 15:00:00,,None,Habib Diarra
+486480,9,BlockedShot,0.84,0.4640000152587891,0.07304859906435013,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19705,Brest,Strasbourg,1,1,2022-09-04 13:00:00,Jean Eudes Aholou,Pass,Habib Diarra
+487803,13,SavedShot,0.8280000305175781,0.76,0.01820630021393299,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19715,Strasbourg,Clermont Foot,0,0,2022-09-11 11:00:00,,None,Habib Diarra
+488819,81,MissedShots,0.740999984741211,0.47400001525878904,0.020220700651407242,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19722,Montpellier,Strasbourg,2,1,2022-09-17 15:00:00,Ibrahima Sissoko,TakeOn,Habib Diarra
+502013,5,SavedShot,0.855,0.6930000305175781,0.03985700011253357,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19815,Strasbourg,Troyes,2,3,2023-01-02 14:00:00,Adrien Thomasson,Pass,Habib Diarra
+503274,66,SavedShot,0.7780000305175782,0.26799999237060546,0.01551320031285286,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19825,Strasbourg,Lens,2,2,2023-01-11 20:00:00,Ludovic Ajorque,Pass,Habib Diarra
+503810,70,SavedShot,0.895,0.24,0.043514400720596313,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19832,Lyon,Strasbourg,1,2,2023-01-14 20:00:00,Habib Diallo,Chipped,Habib Diarra
+512650,61,BlockedShot,0.8490000152587891,0.625,0.040949899703264236,Habib Diarra,h,9767,SetPiece,2022,RightFoot,19903,Strasbourg,Brest,0,1,2023-03-05 14:00:00,Gerzino Nyamsi,HeadPass,Habib Diarra
+512656,79,MissedShots,0.8069999694824219,0.43599998474121093,0.03255689889192581,Habib Diarra,h,9767,FromCorner,2022,LeftFoot,19903,Strasbourg,Brest,0,1,2023-03-05 14:00:00,,None,Habib Diarra
+515615,75,MissedShots,0.8059999847412109,0.3340000152587891,0.03820430114865303,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19924,Strasbourg,Auxerre,2,0,2023-03-19 14:00:00,Jean-Ricner Bellegarde,Pass,Habib Diarra
+520014,70,Goal,0.945,0.38299999237060545,0.07499030232429504,Habib Diarra,h,9767,SetPiece,2022,RightFoot,19954,Strasbourg,Ajaccio,3,1,2023-04-16 13:00:00,,None,Habib Diarra
+520017,86,MissedShots,0.8190000152587891,0.355,0.07185190171003342,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19954,Strasbourg,Ajaccio,3,1,2023-04-16 13:00:00,Sanjin Prcic,Pass,Habib Diarra
+521251,19,MissedShots,0.8909999847412109,0.3129999923706055,0.06797994673252106,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19967,Reims,Strasbourg,0,2,2023-04-23 11:00:00,,None,Habib Diarra
+523655,13,SavedShot,0.9359999847412109,0.29399999618530276,0.0513266883790493,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19973,Strasbourg,Lyon,1,2,2023-04-30 19:00:00,Frederic Guilbert,Pass,Habib Diarra
+525052,20,MissedShots,0.8209999847412109,0.3370000076293945,0.08849706500768661,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,19982,Nantes,Strasbourg,0,2,2023-05-07 13:00:00,Habib Diallo,HeadPass,Habib Diarra
+525062,46,Goal,0.8909999847412109,0.53,0.42227113246917725,Habib Diarra,a,9767,OpenPlay,2022,LeftFoot,19982,Nantes,Strasbourg,0,2,2023-05-07 13:00:00,Habib Diallo,Throughball,Habib Diarra
+526092,13,BlockedShot,0.8680000305175781,0.735999984741211,0.044415317475795746,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,19994,Strasbourg,Nice,2,0,2023-05-13 15:00:00,Jean-Ricner Bellegarde,Chipped,Habib Diarra
+527884,17,SavedShot,0.865,0.345,0.05573553219437599,Habib Diarra,a,9767,OpenPlay,2022,LeftFoot,20007,Troyes,Strasbourg,1,1,2023-05-21 13:00:00,Morgan Sanson,Pass,Habib Diarra
+527888,26,Goal,0.75,0.4209999847412109,0.024470003321766853,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,20007,Troyes,Strasbourg,1,1,2023-05-21 13:00:00,Lucas Perrin,Pass,Habib Diarra
+527894,53,ShotOnPost,0.8830000305175781,0.29200000762939454,0.08217219263315201,Habib Diarra,a,9767,OpenPlay,2022,RightFoot,20007,Troyes,Strasbourg,1,1,2023-05-21 13:00:00,Morgan Sanson,Pass,Habib Diarra
+529418,72,BlockedShot,0.7019999694824218,0.31799999237060544,0.013427890837192535,Habib Diarra,h,9767,OpenPlay,2022,RightFoot,20015,Strasbourg,Paris Saint Germain,1,1,2023-05-27 19:00:00,Jean-Ricner Bellegarde,Pass,Habib Diarra
+533978,76,BlockedShot,0.96,0.5129999923706055,0.1176166981458664,Habib Diarra,a,9767,SetPiece,2023,RightFoot,23382,Monaco,Strasbourg,3,0,2023-08-20 15:05:00,Abakar Sylla,BallTouch,Habib Diarra
+535305,25,BlockedShot,0.8569999694824219,0.5370000076293945,0.07373598217964172,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23390,Strasbourg,Toulouse,2,0,2023-08-27 13:00:00,Lucas Perrin,None,Habib Diarra
+539525,82,Goal,0.9169999694824219,0.3320000076293945,0.07275808602571487,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23422,Metz,Strasbourg,0,1,2023-09-24 11:00:00,Ângelo,Pass,Habib Diarra
+540763,11,MissedShots,0.8680000305175781,0.35200000762939454,0.08833947777748108,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23425,Strasbourg,Lens,0,1,2023-09-29 19:00:00,Dilane Bakwa,Pass,Habib Diarra
+540767,70,BlockedShot,0.7580000305175781,0.705,0.01618865877389908,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23425,Strasbourg,Lens,0,1,2023-09-29 19:00:00,Thomas Delaine,Pass,Habib Diarra
+542327,77,MissedShots,0.8059999847412109,0.3220000076293945,0.028848422691226006,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23434,Strasbourg,Nantes,1,2,2023-10-06 19:00:00,Lebo Mothiba,LayOff,Habib Diarra
+550061,79,SavedShot,0.7709999847412109,0.5840000152587891,0.02815600112080574,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23480,Strasbourg,Marseille,1,1,2023-11-25 20:00:00,Ismaël Doukouré,Pass,Habib Diarra
+550878,33,SavedShot,0.8590000152587891,0.4759999847412109,0.08959989249706268,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23492,Reims,Strasbourg,2,1,2023-12-01 19:00:00,Kevin Gameiro,Pass,Habib Diarra
+550888,70,MissedShots,0.8109999847412109,0.57,0.031986359506845474,Habib Diarra,a,9767,FromCorner,2023,RightFoot,23492,Reims,Strasbourg,2,1,2023-12-01 19:00:00,Frederic Guilbert,BallTouch,Habib Diarra
+552394,19,SavedShot,0.855,0.6129999923706054,0.07607879489660263,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23478,Brest,Strasbourg,1,1,2023-12-07 19:30:00,Lebo Mothiba,Pass,Habib Diarra
+554744,5,SavedShot,0.8440000152587891,0.585999984741211,0.03360937163233757,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23508,Lorient,Strasbourg,1,2,2023-12-17 14:00:00,Ibrahima Sissoko,Cross,Habib Diarra
+554747,19,BlockedShot,0.7980000305175782,0.5370000076293945,0.05477004498243332,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23508,Lorient,Strasbourg,1,2,2023-12-17 14:00:00,Kevin Gameiro,Pass,Habib Diarra
+554758,80,BlockedShot,0.754000015258789,0.5659999847412109,0.06761759519577026,Habib Diarra,a,9767,DirectFreekick,2023,RightFoot,23508,Lorient,Strasbourg,1,2,2023-12-17 14:00:00,,Standard,Habib Diarra
+555586,35,SavedShot,0.8219999694824218,0.45,0.06979303061962128,Habib Diarra,h,9767,OpenPlay,2023,LeftFoot,23516,Strasbourg,Lille,2,1,2023-12-20 20:00:00,Dilane Bakwa,TakeOn,Habib Diarra
+555596,75,BlockedShot,0.8209999847412109,0.27399999618530274,0.02543310821056366,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23516,Strasbourg,Lille,2,1,2023-12-20 20:00:00,Emanuel Emegha,BallTouch,Habib Diarra
+557796,5,BlockedShot,0.7330000305175781,0.6830000305175781,0.015162697061896324,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23525,Marseille,Strasbourg,1,1,2024-01-12 20:00:00,Ângelo,Pass,Habib Diarra
+557800,20,BlockedShot,0.8180000305175781,0.529000015258789,0.06078684702515602,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23525,Marseille,Strasbourg,1,1,2024-01-12 20:00:00,Kevin Gameiro,Pass,Habib Diarra
+557807,51,BlockedShot,0.845,0.38599998474121094,0.05124761909246445,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23525,Marseille,Strasbourg,1,1,2024-01-12 20:00:00,Dilane Bakwa,BallTouch,Habib Diarra
+557808,52,MissedShots,0.830999984741211,0.37400001525878906,0.04030482470989227,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23525,Marseille,Strasbourg,1,1,2024-01-12 20:00:00,Ângelo,Pass,Habib Diarra
+557812,67,MissedShots,0.8869999694824219,0.675,0.0530049130320549,Habib Diarra,a,9767,OpenPlay,2023,LeftFoot,23525,Marseille,Strasbourg,1,1,2024-01-12 20:00:00,Dion Moise Sahi,Pass,Habib Diarra
+560225,13,MissedShots,0.909000015258789,0.49,0.4626288115978241,Habib Diarra,a,9767,OpenPlay,2023,LeftFoot,23539,Clermont Foot,Strasbourg,1,1,2024-01-28 14:00:00,Dion Moise Sahi,Pass,Habib Diarra
+560238,69,SavedShot,0.8480000305175781,0.58,0.053093284368515015,Habib Diarra,a,9767,FromCorner,2023,RightFoot,23539,Clermont Foot,Strasbourg,1,1,2024-01-28 14:00:00,,None,Habib Diarra
+560928,19,ShotOnPost,0.8519999694824218,0.610999984741211,0.0764632523059845,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23542,Strasbourg,Paris Saint Germain,1,2,2024-02-02 20:00:00,Ângelo,Pass,Habib Diarra
+560932,25,BlockedShot,0.8209999847412109,0.515,0.07046530395746231,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23542,Strasbourg,Paris Saint Germain,1,2,2024-02-02 20:00:00,Frederic Guilbert,TakeOn,Habib Diarra
+560937,41,SavedShot,0.8269999694824218,0.525,0.0625866949558258,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23542,Strasbourg,Paris Saint Germain,1,2,2024-02-02 20:00:00,Dion Moise Sahi,Pass,Habib Diarra
+560945,68,SavedShot,0.759000015258789,0.4620000076293945,0.022691627964377403,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23542,Strasbourg,Paris Saint Germain,1,2,2024-02-02 20:00:00,Emanuel Emegha,Pass,Habib Diarra
+562641,10,BlockedShot,0.77,0.455,0.030857328325510025,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23558,Lens,Strasbourg,3,1,2024-02-10 16:00:00,Frederic Guilbert,BallTouch,Habib Diarra
+564239,11,MissedShots,0.73,0.46900001525878904,0.016066592186689377,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23560,Strasbourg,Lorient,1,3,2024-02-18 12:00:00,,BallRecovery,Habib Diarra
+567182,13,MissedShots,0.755,0.49,0.009286918677389622,Habib Diarra,a,9767,FromCorner,2023,Head,23585,Montpellier,Strasbourg,2,2,2024-03-03 14:00:00,Emanuel Emegha,BallTouch,Habib Diarra
+567193,46,Goal,0.885,0.5,0.7600951194763184,Habib Diarra,a,9767,Penalty,2023,RightFoot,23585,Montpellier,Strasbourg,2,2,2024-03-03 14:00:00,,Standard,Habib Diarra
+568603,34,MissedShots,0.75,0.4759999847412109,0.01986079290509224,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23588,Strasbourg,Monaco,0,1,2024-03-10 14:00:00,,None,Habib Diarra
+571396,45,BlockedShot,0.8680000305175781,0.49,0.12527483701705933,Habib Diarra,h,9767,OpenPlay,2023,LeftFoot,23605,Strasbourg,Rennes,2,0,2024-03-31 16:05:00,Dilane Bakwa,TakeOn,Habib Diarra
+572823,6,BlockedShot,0.9069999694824219,0.45,0.10293016582727432,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23615,Toulouse,Strasbourg,0,0,2024-04-07 13:00:00,Dilane Bakwa,Cross,Habib Diarra
+572837,67,SavedShot,0.6990000152587891,0.534000015258789,0.01042342558503151,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23615,Toulouse,Strasbourg,0,0,2024-04-07 13:00:00,,None,Habib Diarra
+573824,20,SavedShot,0.7180000305175781,0.4470000076293945,0.02558031864464283,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23625,Strasbourg,Reims,3,1,2024-04-13 15:00:00,,BallRecovery,Habib Diarra
+575367,38,SavedShot,0.7369999694824219,0.6840000152587891,0.014985877089202404,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23634,Lille,Strasbourg,1,0,2024-04-21 13:00:00,Kevin Gameiro,Pass,Habib Diarra
+580686,56,BlockedShot,0.8080000305175781,0.4179999923706055,0.04535798355937004,Habib Diarra,h,9767,OpenPlay,2023,RightFoot,23660,Strasbourg,Metz,2,1,2024-05-12 19:00:00,Abakar Sylla,TakeOn,Habib Diarra
+582758,31,SavedShot,0.8090000152587891,0.6070000076293945,0.07079717516899109,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23671,Lyon,Strasbourg,2,1,2024-05-19 19:00:00,Rabby Nzingoula,Pass,Habib Diarra
+582766,62,Goal,0.9369999694824219,0.3,0.0801251083612442,Habib Diarra,a,9767,OpenPlay,2023,RightFoot,23671,Lyon,Strasbourg,2,1,2024-05-19 19:00:00,Rabby Nzingoula,Pass,Habib Diarra
+585235,57,Goal,0.850999984741211,0.6509999847412109,0.04884682223200798,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28053,Montpellier,Strasbourg,1,1,2024-08-18 15:00:00,Ismaël Doukouré,Pass,Habib Diarra
+586815,61,SavedShot,0.8480000305175781,0.62,0.08196952939033508,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,Andrey Santos,Pass,Habib Diarra
+588906,46,BlockedShot,0.8909999847412109,0.3079999923706055,0.05144082382321358,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28066,Lyon,Strasbourg,4,3,2024-08-30 18:45:00,Saidou Sow,Pass,Habib Diarra
+591551,38,SavedShot,0.8859999847412109,0.43200000762939456,0.41377460956573486,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28083,Strasbourg,Angers,1,1,2024-09-15 15:00:00,Emanuel Emegha,Pass,Habib Diarra
+592551,32,BlockedShot,0.765,0.4829999923706055,0.024696413427591324,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28090,Lille,Strasbourg,3,3,2024-09-21 15:00:00,,BallRecovery,Habib Diarra
+594954,57,MissedShots,0.715999984741211,0.36,0.019509978592395782,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28093,Strasbourg,Marseille,1,0,2024-09-29 18:45:00,Mamadou Sarr,Pass,Habib Diarra
+594959,70,MissedShots,0.7869999694824219,0.47900001525878905,0.038993097841739655,Habib Diarra,h,9767,FromCorner,2024,RightFoot,28093,Strasbourg,Marseille,1,0,2024-09-29 18:45:00,,Rebound,Habib Diarra
+594963,85,SavedShot,0.894000015258789,0.4490000152587891,0.046343863010406494,Habib Diarra,h,9767,FromCorner,2024,Head,28093,Strasbourg,Marseille,1,0,2024-09-29 18:45:00,Diego Moreira,Cross,Habib Diarra
+596289,59,Goal,0.885,0.5,0.7600951194763184,Habib Diarra,h,9767,Penalty,2024,RightFoot,28110,Strasbourg,Lens,2,2,2024-10-06 15:00:00,,Standard,Habib Diarra
+599222,6,SavedShot,0.9269999694824219,0.28200000762939453,0.045635104179382324,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28125,Strasbourg,Nantes,3,1,2024-10-27 16:00:00,Dilane Bakwa,Pass,Habib Diarra
+599231,55,BlockedShot,0.8980000305175782,0.24600000381469728,0.041874855756759644,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28125,Strasbourg,Nantes,3,1,2024-10-27 16:00:00,Dilane Bakwa,Chipped,Habib Diarra
+600401,16,SavedShot,0.9230000305175782,0.3220000076293945,0.06140023097395897,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28137,Saint-Etienne,Strasbourg,2,0,2024-11-02 20:00:00,Dilane Bakwa,Chipped,Habib Diarra
+600408,53,SavedShot,0.9640000152587891,0.2929999923706055,0.04734797403216362,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28137,Saint-Etienne,Strasbourg,2,0,2024-11-02 20:00:00,Dilane Bakwa,Pass,Habib Diarra
+606477,74,SavedShot,0.8009999847412109,0.3970000076293945,0.029764976352453232,Habib Diarra,h,9767,FromCorner,2024,RightFoot,28171,Strasbourg,Reims,0,0,2024-12-08 16:00:00,Ismaël Doukouré,Pass,Habib Diarra
+607571,27,Goal,0.8919999694824219,0.4129999923706055,0.04908434674143791,Habib Diarra,a,9767,FromCorner,2024,RightFoot,28175,Le Havre,Strasbourg,0,3,2024-12-15 16:00:00,Dilane Bakwa,Cross,Habib Diarra
+610258,48,Goal,0.885,0.5,0.7600951194763184,Habib Diarra,h,9767,Penalty,2024,RightFoot,28190,Strasbourg,Auxerre,3,1,2025-01-05 14:00:00,,Standard,Habib Diarra
+611155,64,MissedShots,0.774000015258789,0.40299999237060546,0.014863934367895126,Habib Diarra,a,9767,FromCorner,2024,RightFoot,28192,Toulouse,Strasbourg,1,2,2025-01-12 16:15:00,,Aerial,Habib Diarra
+612983,88,BlockedShot,0.7730000305175782,0.6029999923706054,0.019463689997792244,Habib Diarra,a,9767,FromCorner,2024,RightFoot,28201,Marseille,Strasbourg,1,1,2025-01-19 19:45:00,,None,Habib Diarra
+613618,58,SavedShot,0.8669999694824219,0.25799999237060545,0.047508060932159424,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28210,Strasbourg,Lille,2,1,2025-01-25 18:00:00,Mamadou Sarr,Pass,Habib Diarra
+616463,8,MissedShots,0.7709999847412109,0.395,0.02568046934902668,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Emanuel Emegha,Pass,Habib Diarra
+616466,11,BlockedShot,0.8530000305175781,0.44,0.09390892088413239,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Felix Lemarechal,Pass,Habib Diarra
+616470,18,MissedShots,0.91,0.3129999923706055,0.05646532401442528,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28230,Strasbourg,Montpellier,2,0,2025-02-09 16:15:00,Andrey Santos,Pass,Habib Diarra
+617732,11,BlockedShot,0.845999984741211,0.37099998474121093,0.04722975194454193,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28240,Lens,Strasbourg,0,2,2025-02-16 16:15:00,,Rebound,Habib Diarra
+620578,32,MissedShots,0.874000015258789,0.3170000076293945,0.2152302861213684,Habib Diarra,a,9767,OpenPlay,2024,RightFoot,28261,Auxerre,Strasbourg,0,1,2025-03-02 16:15:00,Dilane Bakwa,Pass,Habib Diarra
+627481,74,MissedShots,0.794000015258789,0.6959999847412109,0.06789010763168335,Habib Diarra,h,9767,DirectFreekick,2024,RightFoot,28304,Strasbourg,Nice,2,2,2025-04-12 19:05:00,,Standard,Habib Diarra
+631511,18,BlockedShot,0.7830000305175782,0.48200000762939454,0.03946651518344879,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28328,Strasbourg,Paris Saint Germain,2,1,2025-05-03 15:00:00,Felix Lemarechal,Pass,Habib Diarra
+634798,84,MissedShots,0.9,0.46700000762939453,0.4385567605495453,Habib Diarra,h,9767,OpenPlay,2024,RightFoot,28345,Strasbourg,Le Havre,2,3,2025-05-17 19:00:00,Sebastian Nanasi,Pass,Habib Diarra
+637686,5,SavedShot,0.895,0.3340000152587891,0.30460771918296814,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Eliezer Mayenda,BallTouch,Habib Diarra
+637696,59,MissedShots,0.7240000152587891,0.5209999847412109,0.016927426680922508,Habib Diarra,h,9767,OpenPlay,2025,LeftFoot,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Simon Adingra,Pass,Habib Diarra
+640274,45,MissedShots,0.8430000305175781,0.514000015258789,0.06268350780010223,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,Rebound,Habib Diarra
+640276,67,MissedShots,0.8619999694824219,0.519000015258789,0.11225918680429459,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,Enzo Le Fée,Cross,Habib Diarra
+640282,84,MissedShots,0.8719999694824219,0.2589999961853027,0.035103410482406616,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,Simon Adingra,TakeOn,Habib Diarra
+641703,70,MissedShots,0.7869999694824219,0.36,0.026251330971717834,Habib Diarra,a,9767,OpenPlay,2025,LeftFoot,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,Chemsdine Talbi,Pass,Habib Diarra
+664605,57,BlockedShot,0.7969999694824219,0.31,0.025430340319871902,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,Omar Alderete,BallRecovery,Habib Diarra
+666872,8,MissedShots,0.8590000152587891,0.4379999923706055,0.08965042978525162,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Brian Brobbey,Pass,Habib Diarra
+666877,31,Goal,0.8930000305175781,0.47,0.42967489361763,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,,None,Habib Diarra
+667263,46,SavedShot,0.8719999694824219,0.23100000381469726,0.024202333763241768,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29019,Arsenal,Sunderland,3,0,2026-02-07 15:00:00,Brian Brobbey,Pass,Habib Diarra
+670172,50,MissedShots,0.7669999694824219,0.30100000381469727,0.016864579170942307,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,,BallRecovery,Habib Diarra
+670865,17,SavedShot,0.865,0.24600000381469728,0.028281068429350853,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,Dan Ballard,Pass,Habib Diarra
+670876,46,SavedShot,0.8580000305175781,0.595,0.1306462436914444,Habib Diarra,a,9767,OpenPlay,2025,LeftFoot,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,,None,Habib Diarra
+670877,46,MissedShots,0.9259999847412109,0.5920000076293945,0.030033845454454422,Habib Diarra,a,9767,OpenPlay,2025,Head,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,,Rebound,Habib Diarra
+672122,69,Goal,0.885,0.5,0.7611688375473022,Habib Diarra,a,9767,Penalty,2025,RightFoot,29063,Leeds,Sunderland,0,1,2026-03-03 19:30:00,,Standard,Habib Diarra
+673880,62,MissedShots,0.7730000305175782,0.3340000152587891,0.021144483238458633,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,Chris Rigg,Pass,Habib Diarra
+675722,56,BlockedShot,0.9680000305175781,0.455,0.20162568986415863,Habib Diarra,a,9767,FromCorner,2025,OtherBodyPart,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,Goal,Habib Diarra
+675734,83,BlockedShot,0.7959999847412109,0.4420000076293945,0.03922062739729881,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Brian Brobbey,Pass,Habib Diarra
+678305,53,MissedShots,0.845,0.72,0.031667742878198624,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29090,Sunderland,Tottenham,1,0,2026-04-12 13:00:00,Noah Sadiki,Pass,Habib Diarra
+678309,79,MissedShots,0.8019999694824219,0.4570000076293945,0.059221528470516205,Habib Diarra,h,9767,OpenPlay,2025,RightFoot,29090,Sunderland,Tottenham,1,0,2026-04-12 13:00:00,,None,Habib Diarra
+679552,92,SavedShot,0.85,0.485,0.5019317269325256,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,Enzo Le Fée,Throughball,Habib Diarra
+682357,75,MissedShots,0.850999984741211,0.6809999847412109,0.03849970921874046,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Granit Xhaka,Pass,Habib Diarra
+682358,78,BlockedShot,0.8419999694824218,0.5940000152587891,0.0715525671839714,Habib Diarra,a,9767,OpenPlay,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Granit Xhaka,Pass,Habib Diarra
+682362,86,MissedShots,0.8669999694824219,0.669000015258789,0.050533588975667953,Habib Diarra,a,9767,SetPiece,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,,BallTouch,Habib Diarra

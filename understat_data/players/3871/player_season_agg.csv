@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,AML,17,1,27,823,1.9732804894447327,1,2.04253095574677,15,2014,Inter,2,0,1,1.9732804894447327,6.045707117766142,3.3783727437257767,3871,Lukas Podolski
+season,Sub,7,0,9,83,0.9136223215609789,0,0.35460198670625687,2,2014,Arsenal,0,0,0,0.9136223215609789,0.5932813864201307,0.11954280361533165,3871,Lukas Podolski

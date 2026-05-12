@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,FW,21,1,16,1140,1.6942400857806206,0,0.14918609336018562,2,2020,West Bromwich Albion,1,0,1,1.6942400857806206,1.8100058129057288,0.5052713081240654,7390,Karlan Grant
+season,Sub,13,4,21,868,3.276358377188444,0,0.2673430982977152,8,2018,Huddersfield,0,0,4,3.276358377188444,3.671060811728239,0.2814021948724985,7390,Karlan Grant

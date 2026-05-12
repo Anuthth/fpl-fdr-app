@@ -1,0 +1,31 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+546585,62,BlockedShot,0.895,0.46,0.062184613198041916,Calvin Bassey,h,11728,FromCorner,2023,RightFoot,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,Andreas Pereira,Cross,Calvin Bassey
+565245,64,BlockedShot,0.8859999847412109,0.4179999923706055,0.049044109880924225,Calvin Bassey,a,11728,FromCorner,2023,RightFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Andreas Pereira,Cross,Calvin Bassey
+565246,64,Goal,0.905,0.43099998474121093,0.10451941937208176,Calvin Bassey,a,11728,FromCorner,2023,RightFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Timothy Castagne,Rebound,Calvin Bassey
+569579,60,ShotOnPost,0.965999984741211,0.585,0.12779000401496887,Calvin Bassey,h,11728,FromCorner,2023,LeftFoot,22180,Fulham,Tottenham,3,0,2024-03-16 17:30:00,,Rebound,Calvin Bassey
+570798,92,MissedShots,0.914000015258789,0.3890000152587891,0.02493368647992611,Calvin Bassey,a,11728,FromCorner,2023,Head,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Willian,Cross,Calvin Bassey
+584646,75,BlockedShot,0.8230000305175781,0.5720000076293945,0.03420756012201309,Calvin Bassey,a,11728,FromCorner,2024,LeftFoot,26602,Manchester United,Fulham,1,0,2024-08-16 19:00:00,Rodrigo Muniz,BallTouch,Calvin Bassey
+584649,90,MissedShots,0.915,0.4279999923706055,0.0817909836769104,Calvin Bassey,a,11728,SetPiece,2024,Head,26602,Manchester United,Fulham,1,0,2024-08-16 19:00:00,Andreas Pereira,Cross,Calvin Bassey
+590854,95,MissedShots,0.8909999847412109,0.504000015258789,0.07896795868873596,Calvin Bassey,h,11728,SetPiece,2024,Head,26634,Fulham,West Ham,1,1,2024-09-14 14:00:00,Harrison Reed,Cross,Calvin Bassey
+594072,91,MissedShots,0.69,0.4370000076293945,0.015046975575387478,Calvin Bassey,a,11728,OpenPlay,2024,LeftFoot,26653,Nottingham Forest,Fulham,0,1,2024-09-28 14:00:00,,BallRecovery,Calvin Bassey
+601023,69,SavedShot,0.82,0.5429999923706055,0.04711812362074852,Calvin Bassey,h,11728,FromCorner,2024,RightFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Adama Traoré,Pass,Calvin Bassey
+601031,88,SavedShot,0.77,0.6780000305175782,0.019991571083664894,Calvin Bassey,h,11728,OpenPlay,2024,LeftFoot,26693,Fulham,Brentford,2,1,2024-11-04 20:00:00,Sander Berge,Pass,Calvin Bassey
+604629,20,BlockedShot,0.8530000305175781,0.5879999923706055,0.06019973009824753,Calvin Bassey,a,11728,FromCorner,2024,LeftFoot,26729,Tottenham,Fulham,1,1,2024-12-01 13:30:00,,Rebound,Calvin Bassey
+609090,25,SavedShot,0.914000015258789,0.675,0.05356782302260399,Calvin Bassey,a,11728,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Alex Iwobi,TakeOn,Calvin Bassey
+612284,35,MissedShots,0.8530000305175781,0.6909999847412109,0.042953360825777054,Calvin Bassey,a,11728,OpenPlay,2024,LeftFoot,26817,Leicester,Fulham,0,2,2025-01-18 15:00:00,Harry Wilson,Pass,Calvin Bassey
+612289,42,BlockedShot,0.96,0.47700000762939454,0.15136565268039703,Calvin Bassey,a,11728,FromCorner,2024,LeftFoot,26817,Leicester,Fulham,0,2,2025-01-18 15:00:00,,Rebound,Calvin Bassey
+614955,49,MissedShots,0.9330000305175781,0.5570000076293945,0.08734043687582016,Calvin Bassey,a,11728,OpenPlay,2024,Head,26839,Newcastle United,Fulham,1,2,2025-02-01 15:00:00,Adama Traoré,Aerial,Calvin Bassey
+617187,61,Goal,0.9540000152587891,0.5479999923706055,0.3841089904308319,Calvin Bassey,h,11728,FromCorner,2024,Head,26845,Fulham,Nottingham Forest,2,1,2025-02-15 15:00:00,Raúl Jiménez,Rebound,Calvin Bassey
+617192,78,BlockedShot,0.9580000305175781,0.625999984741211,0.014463946223258972,Calvin Bassey,h,11728,FromCorner,2024,Head,26845,Fulham,Nottingham Forest,2,1,2025-02-15 15:00:00,,Aerial,Calvin Bassey
+630301,30,BlockedShot,0.8209999847412109,0.5890000152587891,0.046453215181827545,Calvin Bassey,a,11728,FromCorner,2024,RightFoot,26940,Southampton,Fulham,1,2,2025-04-26 14:00:00,Ryan Sessegnon,Pass,Calvin Bassey
+639496,16,MissedShots,0.9569999694824218,0.43,0.057050276547670364,Calvin Bassey,h,11728,FromCorner,2025,Head,28796,Fulham,Manchester United,1,1,2025-08-24 15:30:00,,Aerial,Calvin Bassey
+643421,41,BlockedShot,0.7290000152587891,0.644000015258789,0.017050273716449738,Calvin Bassey,h,11728,OpenPlay,2025,LeftFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,,None,Calvin Bassey
+657586,58,BlockedShot,0.6959999847412109,0.5670000076293945,0.012230569496750832,Calvin Bassey,h,11728,OpenPlay,2025,LeftFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Joachim Andersen,BallTouch,Calvin Bassey
+658308,30,Goal,0.97,0.4879999923706055,0.6113591194152832,Calvin Bassey,a,11728,FromCorner,2025,Head,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Harry Wilson,Cross,Calvin Bassey
+658317,55,MissedShots,0.87,0.32799999237060545,0.09137819707393646,Calvin Bassey,a,11728,OpenPlay,2025,LeftFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Raúl Jiménez,Pass,Calvin Bassey
+668303,47,BlockedShot,0.8490000152587891,0.6669999694824219,0.02962566167116165,Calvin Bassey,a,11728,FromCorner,2025,RightFoot,29033,Manchester City,Fulham,3,0,2026-02-11 19:30:00,Samuel Chukwueze,Pass,Calvin Bassey
+670181,81,BlockedShot,0.8919999694824219,0.49900001525878906,0.09584738314151764,Calvin Bassey,a,11728,FromCorner,2025,LeftFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,,None,Calvin Bassey
+671529,9,MissedShots,0.9540000152587891,0.44799999237060545,0.07754938304424286,Calvin Bassey,h,11728,FromCorner,2025,Head,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,,Aerial,Calvin Bassey
+671542,45,MissedShots,0.9359999847412109,0.4420000076293945,0.13555949926376343,Calvin Bassey,h,11728,FromCorner,2025,RightFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,Oscar Bobb,Rebound,Calvin Bassey
+679005,42,BlockedShot,0.8159999847412109,0.44299999237060544,0.048962049186229706,Calvin Bassey,a,11728,OpenPlay,2025,LeftFoot,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,,None,Calvin Bassey
+679018,91,MissedShots,0.965,0.7219999694824218,0.014323286712169647,Calvin Bassey,a,11728,OpenPlay,2025,Head,29099,Brentford,Fulham,0,0,2026-04-18 11:30:00,Antonee Robinson,Chipped,Calvin Bassey

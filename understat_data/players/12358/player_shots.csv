@@ -1,0 +1,7 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+617254,51,BlockedShot,0.884000015258789,0.5640000152587891,0.07929040491580963,Oliver Scarles,h,12358,FromCorner,2024,LeftFoot,26851,West Ham,Brentford,0,1,2025-02-15 15:00:00,,None,Oliver Scarles
+617262,85,MissedShots,0.81,0.6029999923706054,0.027682559564709663,Oliver Scarles,h,12358,FromCorner,2024,LeftFoot,26851,West Ham,Brentford,0,1,2025-02-15 15:00:00,Max Kilman,BallTouch,Oliver Scarles
+619658,54,BlockedShot,0.7959999847412109,0.6990000152587891,0.030363930389285088,Oliver Scarles,h,12358,OpenPlay,2024,LeftFoot,26866,West Ham,Leicester,2,0,2025-02-27 20:00:00,Edson Álvarez,Pass,Oliver Scarles
+660251,24,MissedShots,0.874000015258789,0.575999984741211,0.02299439162015915,Oliver Scarles,h,12358,OpenPlay,2025,Head,28957,West Ham,Fulham,0,1,2025-12-27 15:00:00,Crysencio Summerville,Chipped,Oliver Scarles
+660624,15,MissedShots,0.9019999694824219,0.6419999694824219,0.15982235968112946,Oliver Scarles,h,12358,OpenPlay,2025,LeftFoot,28967,West Ham,Brighton,2,2,2025-12-30 19:30:00,,TakeOn,Oliver Scarles
+660629,43,MissedShots,0.8469999694824218,0.6580000305175782,0.05593345686793327,Oliver Scarles,h,12358,OpenPlay,2025,LeftFoot,28967,West Ham,Brighton,2,2,2025-12-30 19:30:00,Lucas Paquetá,Pass,Oliver Scarles

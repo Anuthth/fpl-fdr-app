@@ -1,0 +1,25 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+592476,31,BlockedShot,0.894000015258789,0.5279999923706055,0.04242364689707756,André,a,13022,FromCorner,2024,RightFoot,26647,Aston Villa,Wolverhampton Wanderers,3,1,2024-09-21 14:00:00,,Aerial,André
+595560,21,SavedShot,0.6909999847412109,0.4329999923706055,0.011277611367404461,André,a,13022,OpenPlay,2024,RightFoot,26667,Brentford,Wolverhampton Wanderers,5,3,2024-10-05 14:00:00,,BallRecovery,André
+617591,49,BlockedShot,0.79,0.5479999923706055,0.02785073034465313,André,a,13022,OpenPlay,2024,RightFoot,26847,Liverpool,Wolverhampton Wanderers,2,1,2025-02-16 14:00:00,,None,André
+619442,13,MissedShots,0.7430000305175781,0.4620000076293945,0.019724510610103607,André,h,13022,SetPiece,2024,RightFoot,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,,TakeOn,André
+621626,16,MissedShots,0.7469999694824219,0.634000015258789,0.01625990681350231,André,h,13022,OpenPlay,2024,RightFoot,26881,Wolverhampton Wanderers,Everton,1,1,2025-03-08 20:00:00,Jean-Ricner Bellegarde,Pass,André
+621630,37,MissedShots,0.9790000152587891,0.6090000152587891,0.07180134207010269,André,h,13022,FromCorner,2024,RightFoot,26881,Wolverhampton Wanderers,Everton,1,1,2025-03-08 20:00:00,,None,André
+625062,38,MissedShots,0.774000015258789,0.66,0.029543062672019005,André,h,13022,OpenPlay,2024,RightFoot,26895,Wolverhampton Wanderers,West Ham,1,0,2025-04-01 19:45:00,,BallRecovery,André
+630330,8,MissedShots,0.575999984741211,0.3920000076293945,0.00816997792571783,André,h,13022,OpenPlay,2024,RightFoot,26941,Wolverhampton Wanderers,Leicester,3,0,2025-04-26 14:00:00,,BallRecovery,André
+631161,18,MissedShots,0.8130000305175781,0.5370000076293945,0.05002206563949585,André,a,13022,OpenPlay,2024,RightFoot,26942,Manchester City,Wolverhampton Wanderers,1,0,2025-05-02 19:00:00,,None,André
+636313,42,MissedShots,0.7530000305175781,0.63,0.018614159896969795,André,h,13022,OpenPlay,2024,RightFoot,26978,Wolverhampton Wanderers,Brentford,1,1,2025-05-25 15:00:00,Gonçalo Guedes,Pass,André
+643107,91,BlockedShot,0.6969999694824218,0.7269999694824218,0.008202716708183289,André,h,13022,OpenPlay,2025,RightFoot,28820,Wolverhampton Wanderers,Leeds,1,3,2025-09-20 14:00:00,Ladislav Krejcí,Pass,André
+647654,28,MissedShots,0.7119999694824218,0.48900001525878906,0.01654295064508915,André,a,13022,OpenPlay,2025,RightFoot,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,João Gomes,Pass,André
+657808,2,BlockedShot,0.695,0.40599998474121096,0.013006038032472134,André,h,13022,OpenPlay,2025,RightFoot,28927,Wolverhampton Wanderers,Manchester United,1,4,2025-12-08 20:00:00,Ki-Jana Hoever,Pass,André
+657831,56,BlockedShot,0.7469999694824219,0.40900001525878904,0.018484923988580704,André,h,13022,OpenPlay,2025,LeftFoot,28927,Wolverhampton Wanderers,Manchester United,1,4,2025-12-08 20:00:00,,None,André
+659345,31,BlockedShot,0.8080000305175781,0.6040000152587891,0.1155807375907898,André,h,13022,DirectFreekick,2025,RightFoot,28947,Wolverhampton Wanderers,Brentford,0,2,2025-12-20 15:00:00,,Standard,André
+666081,66,MissedShots,0.785,0.529000015258789,0.026947472244501114,André,h,13022,SetPiece,2025,LeftFoot,29017,Wolverhampton Wanderers,Bournemouth,0,2,2026-01-31 15:00:00,,None,André
+669437,46,MissedShots,0.7680000305175781,0.3990000152587891,0.02582128904759884,André,h,13022,OpenPlay,2025,RightFoot,29087,Wolverhampton Wanderers,Arsenal,2,2,2026-02-18 20:00:00,Santiago Bueno,Pass,André
+670213,96,BlockedShot,0.8069999694824219,0.5120000076293946,0.04325713589787483,André,a,13022,OpenPlay,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,,None,André
+672156,93,Goal,0.8040000152587891,0.54,0.055158551782369614,André,h,13022,OpenPlay,2025,LeftFoot,29067,Wolverhampton Wanderers,Liverpool,2,1,2026-03-03 20:15:00,Jackson Tchatchoua,BallRecovery,André
+674853,35,BlockedShot,0.8209999847412109,0.524000015258789,0.042849231511354446,André,a,13022,SetPiece,2025,LeftFoot,29069,Brentford,Wolverhampton Wanderers,2,2,2026-03-16 20:00:00,,Rebound,André
+674870,96,BlockedShot,0.915,0.37200000762939456,0.06843733042478561,André,a,13022,FromCorner,2025,RightFoot,29069,Brentford,Wolverhampton Wanderers,2,2,2026-03-16 20:00:00,,None,André
+677496,3,MissedShots,0.7240000152587891,0.32099998474121094,0.011206547729671001,André,a,13022,OpenPlay,2025,RightFoot,29091,West Ham,Wolverhampton Wanderers,4,0,2026-04-10 19:00:00,,None,André
+682339,31,BlockedShot,0.8159999847412109,0.3820000076293945,0.033775076270103455,André,h,13022,SetPiece,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,,None,André
+682360,82,BlockedShot,0.7959999847412109,0.35900001525878905,0.015259175561368465,André,h,13022,FromCorner,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,,Aerial,André

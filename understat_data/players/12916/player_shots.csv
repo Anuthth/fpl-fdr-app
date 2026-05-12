@@ -1,0 +1,111 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+587197,59,Goal,0.9480000305175781,0.53,0.5109474658966064,Thierno Barry,h,12916,OpenPlay,2024,Head,27002,Villarreal,Celta Vigo,4,3,2024-08-26 19:30:00,Sergi Cardona,Cross,Thierno Barry
+587202,70,MissedShots,0.960999984741211,0.5320000076293945,0.4046975374221802,Thierno Barry,h,12916,FromCorner,2024,Head,27002,Villarreal,Celta Vigo,4,3,2024-08-26 19:30:00,Álex Baena,Aerial,Thierno Barry
+589667,55,SavedShot,0.9619999694824218,0.4570000076293945,0.6213237047195435,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27015,Valencia,Villarreal,1,1,2024-08-31 19:30:00,Ilias Akhomach,Pass,Thierno Barry
+590501,22,MissedShots,0.8,0.7090000152587891,0.024764923378825188,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Álex Baena,Pass,Thierno Barry
+590505,31,BlockedShot,0.9069999694824219,0.3990000152587891,0.11709832400083542,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Ayoze Pérez,Pass,Thierno Barry
+590515,62,MissedShots,0.755,0.6359999847412109,0.022679362446069717,Thierno Barry,a,12916,OpenPlay,2024,LeftFoot,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Daniel Parejo,Chipped,Thierno Barry
+590519,75,MissedShots,0.8909999847412109,0.5279999923706055,0.09026212245225906,Thierno Barry,a,12916,OpenPlay,2024,Head,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Sergi Cardona,Cross,Thierno Barry
+590520,75,SavedShot,0.955,0.590999984741211,0.30655619502067566,Thierno Barry,a,12916,OpenPlay,2024,Head,27026,Mallorca,Villarreal,1,2,2024-09-14 12:00:00,Santiago Comesaña,Chipped,Thierno Barry
+593237,92,MissedShots,0.8540000152587891,0.2879999923706055,0.11118663847446442,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27037,Villarreal,Barcelona,1,5,2024-09-22 16:30:00,Ilias Akhomach,Throughball,Thierno Barry
+593524,11,MissedShots,0.850999984741211,0.4379999923706055,0.07645861804485321,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Santiago Comesaña,Pass,Thierno Barry
+593526,37,MissedShots,0.9269999694824219,0.44,0.1363402158021927,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Ilias Akhomach,Pass,Thierno Barry
+593529,46,MissedShots,0.8130000305175781,0.66,0.027133269235491753,Thierno Barry,a,12916,SetPiece,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Pape Alassane Gueye,Pass,Thierno Barry
+593534,58,MissedShots,0.92,0.5120000076293946,0.5558616518974304,Thierno Barry,a,12916,SetPiece,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Sergi Cardona,Rebound,Thierno Barry
+593539,68,BlockedShot,0.71,0.6170000076293946,0.02353803813457489,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Pape Alassane Gueye,Pass,Thierno Barry
+593545,94,SavedShot,0.9519999694824218,0.5979999923706054,0.3623296916484833,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27042,Espanyol,Villarreal,1,2,2024-09-26 17:00:00,Diego Conde,TakeOn,Thierno Barry
+595065,70,MissedShots,0.925,0.5209999847412109,0.13817813992500305,Thierno Barry,h,12916,OpenPlay,2024,Head,27058,Villarreal,Las Palmas,3,1,2024-09-30 19:00:00,Sergi Cardona,Cross,Thierno Barry
+595068,83,Goal,0.9459999847412109,0.4879999923706055,0.5526648759841919,Thierno Barry,h,12916,OpenPlay,2024,Head,27058,Villarreal,Las Palmas,3,1,2024-09-30 19:00:00,Álex Baena,Cross,Thierno Barry
+595883,16,MissedShots,0.9309999847412109,0.5359999847412109,0.2762181758880615,Thierno Barry,a,12916,OpenPlay,2024,Head,27063,Real Madrid,Villarreal,2,0,2024-10-05 19:00:00,Pape Alassane Gueye,Aerial,Thierno Barry
+595896,80,MissedShots,0.9569999694824218,0.5070000076293946,0.5891947150230408,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27063,Real Madrid,Villarreal,2,0,2024-10-05 19:00:00,Yeremi Pino,SubstitutionOn,Thierno Barry
+595898,82,MissedShots,0.9319999694824219,0.4520000076293945,0.1213514655828476,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27063,Real Madrid,Villarreal,2,0,2024-10-05 19:00:00,Ilias Akhomach,Pass,Thierno Barry
+597849,66,MissedShots,0.87,0.3890000152587891,0.08351306617259979,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27080,Villarreal,Getafe,1,1,2024-10-20 16:30:00,Álex Baena,Chipped,Thierno Barry
+598218,10,MissedShots,0.7669999694824219,0.5690000152587891,0.027252931147813797,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27089,Real Valladolid,Villarreal,1,2,2024-10-26 12:00:00,Sergi Cardona,Pass,Thierno Barry
+598221,28,Goal,0.9569999694824218,0.47400001525878904,0.5678834915161133,Thierno Barry,a,12916,OpenPlay,2024,Head,27089,Real Valladolid,Villarreal,1,2,2024-10-26 12:00:00,Kiko Femenía,Aerial,Thierno Barry
+598223,44,SavedShot,0.8669999694824219,0.665,0.08203034847974777,Thierno Barry,a,12916,OpenPlay,2024,LeftFoot,27089,Real Valladolid,Villarreal,1,2,2024-10-26 12:00:00,Álex Baena,Pass,Thierno Barry
+598225,52,MissedShots,0.8540000152587891,0.5940000152587891,0.10873696208000183,Thierno Barry,a,12916,OpenPlay,2024,LeftFoot,27089,Real Valladolid,Villarreal,1,2,2024-10-26 12:00:00,Álex Baena,Pass,Thierno Barry
+601524,83,MissedShots,0.8030000305175782,0.5359999847412109,0.0494147427380085,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27111,Villarreal,Alaves,3,0,2024-11-09 15:15:00,,None,Thierno Barry
+603315,2,MissedShots,0.8819999694824219,0.56,0.0285244882106781,Thierno Barry,a,12916,OpenPlay,2024,Head,27114,Osasuna,Villarreal,2,2,2024-11-24 13:00:00,Álex Baena,Aerial,Thierno Barry
+603321,40,MissedShots,0.9340000152587891,0.49700000762939456,0.4404296576976776,Thierno Barry,a,12916,OpenPlay,2024,Head,27114,Osasuna,Villarreal,2,2,2024-11-24 13:00:00,Ramón Terrats,Cross,Thierno Barry
+603323,47,SavedShot,0.8380000305175781,0.6780000305175782,0.04274790361523628,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27114,Osasuna,Villarreal,2,2,2024-11-24 13:00:00,Gerard Moreno,Pass,Thierno Barry
+603327,63,BlockedShot,0.9169999694824219,0.4979999923706055,0.0811229720711708,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27114,Osasuna,Villarreal,2,2,2024-11-24 13:00:00,Sergi Cardona,Cross,Thierno Barry
+604573,22,Goal,0.9669999694824218,0.48200000762939454,0.7025511860847473,Thierno Barry,h,12916,OpenPlay,2024,LeftFoot,27128,Villarreal,Girona,2,2,2024-12-01 13:00:00,,Rebound,Thierno Barry
+604577,41,MissedShots,0.8490000152587891,0.40599998474121096,0.14973795413970947,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27128,Villarreal,Girona,2,2,2024-12-01 13:00:00,Santiago Comesaña,Throughball,Thierno Barry
+604583,59,SavedShot,0.9169999694824219,0.3370000076293945,0.11413329839706421,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27128,Villarreal,Girona,2,2,2024-12-01 13:00:00,Pape Alassane Gueye,Pass,Thierno Barry
+607699,57,MissedShots,0.9159999847412109,0.509000015258789,0.04924868419766426,Thierno Barry,h,12916,FromCorner,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Álex Baena,Aerial,Thierno Barry
+607701,57,MissedShots,0.955,0.5659999847412109,0.06821829825639725,Thierno Barry,h,12916,FromCorner,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,,Aerial,Thierno Barry
+607706,69,MissedShots,0.9290000152587891,0.5129999923706055,0.06617818772792816,Thierno Barry,h,12916,OpenPlay,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Ayoze Pérez,Aerial,Thierno Barry
+607707,78,MissedShots,0.915,0.47700000762939454,0.049674563109874725,Thierno Barry,h,12916,OpenPlay,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Juan Bernat,Aerial,Thierno Barry
+607711,84,SavedShot,0.924000015258789,0.45799999237060546,0.12174185365438461,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Álex Baena,Rebound,Thierno Barry
+607712,90,BlockedShot,0.9680000305175781,0.5540000152587891,0.46639183163642883,Thierno Barry,h,12916,OpenPlay,2024,Head,27148,Villarreal,Real Betis,1,2,2024-12-15 17:30:00,Kiko Femenía,Aerial,Thierno Barry
+608008,23,MissedShots,0.924000015258789,0.51,0.3758833706378937,Thierno Barry,h,12916,OpenPlay,2024,Head,27098,Villarreal,Rayo Vallecano,1,1,2024-12-18 20:30:00,Yeremi Pino,Cross,Thierno Barry
+608895,15,Goal,0.92,0.5570000076293945,0.48810523748397827,Thierno Barry,a,12916,SetPiece,2024,RightFoot,27158,Leganes,Villarreal,2,5,2024-12-22 17:30:00,,None,Thierno Barry
+608898,27,MissedShots,0.9269999694824219,0.500999984741211,0.0950334295630455,Thierno Barry,a,12916,OpenPlay,2024,OtherBodyPart,27158,Leganes,Villarreal,2,5,2024-12-22 17:30:00,Sergi Cardona,Aerial,Thierno Barry
+608900,46,Goal,0.885,0.5,0.7432776093482971,Thierno Barry,a,12916,Penalty,2024,RightFoot,27158,Leganes,Villarreal,2,5,2024-12-22 17:30:00,,Standard,Thierno Barry
+608903,48,SavedShot,0.9030000305175782,0.644000015258789,0.10430487990379333,Thierno Barry,a,12916,OpenPlay,2024,LeftFoot,27158,Leganes,Villarreal,2,5,2024-12-22 17:30:00,Santiago Comesaña,LayOff,Thierno Barry
+608904,64,Goal,0.905,0.4570000076293945,0.46760934591293335,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27158,Leganes,Villarreal,2,5,2024-12-22 17:30:00,,None,Thierno Barry
+611290,20,MissedShots,0.870999984741211,0.42400001525878905,0.5411234498023987,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27164,Real Sociedad,Villarreal,1,0,2025-01-13 20:00:00,Pape Alassane Gueye,Throughball,Thierno Barry
+611302,86,BlockedShot,0.8919999694824219,0.49200000762939455,0.0326276496052742,Thierno Barry,a,12916,OpenPlay,2024,Head,27164,Real Sociedad,Villarreal,1,0,2025-01-13 20:00:00,Kiko Femenía,Aerial,Thierno Barry
+611303,86,SavedShot,0.8919999694824219,0.43900001525878907,0.05729224160313606,Thierno Barry,a,12916,OpenPlay,2024,Head,27164,Real Sociedad,Villarreal,1,0,2025-01-13 20:00:00,Kiko Femenía,Cross,Thierno Barry
+613438,7,MissedShots,0.87,0.49400001525878906,0.06786482781171799,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27183,Atletico Madrid,Villarreal,1,1,2025-01-25 15:15:00,Yeremi Pino,Cross,Thierno Barry
+613456,62,MissedShots,0.9640000152587891,0.44799999237060545,0.08971399068832397,Thierno Barry,a,12916,SetPiece,2024,Head,27183,Atletico Madrid,Villarreal,1,1,2025-01-25 15:15:00,Gerard Moreno,Pass,Thierno Barry
+614992,85,Goal,0.899000015258789,0.5529999923706055,0.5121880769729614,Thierno Barry,h,12916,OpenPlay,2024,LeftFoot,27196,Villarreal,Real Valladolid,5,1,2025-02-01 15:15:00,,None,Thierno Barry
+618518,5,MissedShots,0.8969999694824219,0.5659999847412109,0.07560069113969803,Thierno Barry,a,12916,OpenPlay,2024,Head,27224,Rayo Vallecano,Villarreal,0,1,2025-02-22 15:15:00,Santiago Comesaña,Cross,Thierno Barry
+622833,48,MissedShots,0.914000015258789,0.5129999923706055,0.31096795201301575,Thierno Barry,h,12916,OpenPlay,2024,Head,27259,Villarreal,Real Madrid,1,2,2025-03-15 17:30:00,Álex Baena,Cross,Thierno Barry
+624544,32,Goal,0.8669999694824219,0.4570000076293945,0.2873196601867676,Thierno Barry,a,12916,OpenPlay,2024,RightFoot,27264,Getafe,Villarreal,1,2,2025-03-30 13:00:00,Ayoze Pérez,Chipped,Thierno Barry
+626623,30,BlockedShot,0.914000015258789,0.49599998474121093,0.061964403837919235,Thierno Barry,h,12916,OpenPlay,2024,Head,27276,Villarreal,Athletic Club,0,0,2025-04-06 19:00:00,Sergi Cardona,Aerial,Thierno Barry
+626631,60,SavedShot,0.919000015258789,0.534000015258789,0.06626968830823898,Thierno Barry,h,12916,OpenPlay,2024,Head,27276,Villarreal,Athletic Club,0,0,2025-04-06 19:00:00,Yeremi Pino,Aerial,Thierno Barry
+626632,68,MissedShots,0.8680000305175781,0.555,0.4854980409145355,Thierno Barry,h,12916,OpenPlay,2024,LeftFoot,27276,Villarreal,Athletic Club,0,0,2025-04-06 19:00:00,,None,Thierno Barry
+628020,25,Goal,0.905,0.4640000152587891,0.12474990636110306,Thierno Barry,a,12916,FromCorner,2024,RightFoot,27285,Real Betis,Villarreal,1,2,2025-04-13 16:30:00,Ayoze Pérez,Rebound,Thierno Barry
+628018,25,BlockedShot,0.960999984741211,0.44,0.10874172300100327,Thierno Barry,a,12916,FromCorner,2024,RightFoot,27285,Real Betis,Villarreal,1,2,2025-04-13 16:30:00,,None,Thierno Barry
+629190,9,MissedShots,0.8,0.6659999847412109,0.049093276262283325,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Ayoze Pérez,Pass,Thierno Barry
+629192,22,MissedShots,0.8859999847412109,0.34900001525878904,0.11471197009086609,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Sergi Cardona,Throughball,Thierno Barry
+629194,32,MissedShots,0.9619999694824218,0.46700000762939453,0.14890365302562714,Thierno Barry,h,12916,OpenPlay,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Denis Suárez,Cross,Thierno Barry
+629198,46,BlockedShot,0.8490000152587891,0.6459999847412109,0.04577520489692688,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Sergi Cardona,Pass,Thierno Barry
+629200,50,MissedShots,0.909000015258789,0.46099998474121096,0.03927813097834587,Thierno Barry,h,12916,OpenPlay,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Denis Suárez,Aerial,Thierno Barry
+629201,52,BlockedShot,0.8130000305175781,0.5479999923706055,0.04682718217372894,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,,None,Thierno Barry
+629205,65,SavedShot,0.955,0.5929999923706055,0.24854105710983276,Thierno Barry,h,12916,OpenPlay,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Nicolas Pepe,Cross,Thierno Barry
+629209,93,MissedShots,0.914000015258789,0.48400001525878905,0.058630019426345825,Thierno Barry,h,12916,SetPiece,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Nicolas Pepe,Aerial,Thierno Barry
+629210,96,SavedShot,0.899000015258789,0.46599998474121096,0.04432161524891853,Thierno Barry,h,12916,OpenPlay,2024,Head,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,Alfonso,Aerial,Thierno Barry
+629211,96,SavedShot,0.975,0.41900001525878905,0.134055495262146,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27298,Villarreal,Real Sociedad,2,2,2025-04-20 14:15:00,,Rebound,Thierno Barry
+631485,32,Goal,0.9080000305175782,0.43900001525878907,0.32320645451545715,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27319,Villarreal,Osasuna,4,2,2025-05-03 14:15:00,Nicolas Pepe,Chipped,Thierno Barry
+631494,69,MissedShots,0.8519999694824218,0.509000015258789,0.08892449736595154,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27319,Villarreal,Osasuna,4,2,2025-05-03 14:15:00,,None,Thierno Barry
+636223,63,MissedShots,0.85,0.47900001525878905,0.12119422107934952,Thierno Barry,h,12916,OpenPlay,2024,LeftFoot,27361,Villarreal,Sevilla,4,2,2025-05-25 14:15:00,Alfonso,Pass,Thierno Barry
+636229,74,SavedShot,0.91,0.509000015258789,0.13165713846683502,Thierno Barry,h,12916,OpenPlay,2024,RightFoot,27361,Villarreal,Sevilla,4,2,2025-05-25 14:15:00,Nicolas Pepe,Cross,Thierno Barry
+639293,20,MissedShots,0.9790000152587891,0.5840000152587891,0.027446050196886063,Thierno Barry,h,12916,FromCorner,2025,Head,28795,Everton,Brighton,2,0,2025-08-24 13:00:00,James Garner,Aerial,Thierno Barry
+639303,57,MissedShots,0.9669999694824218,0.4779999923706055,0.5270939469337463,Thierno Barry,h,12916,FromCorner,2025,Head,28795,Everton,Brighton,2,0,2025-08-24 13:00:00,Kiernan Dewsbury-Hall,Aerial,Thierno Barry
+641734,88,BlockedShot,0.8909999847412109,0.6759999847412109,0.08966526389122009,Thierno Barry,h,12916,OpenPlay,2025,LeftFoot,28812,Everton,Aston Villa,0,0,2025-09-13 14:00:00,Merlin Röhl,Pass,Thierno Barry
+641739,93,MissedShots,0.8859999847412109,0.4759999847412109,0.03559846803545952,Thierno Barry,h,12916,OpenPlay,2025,Head,28812,Everton,Aston Villa,0,0,2025-09-13 14:00:00,Jake O&#039;Brien,Aerial,Thierno Barry
+649820,76,BlockedShot,0.765,0.5420000076293945,0.023833973333239555,Thierno Barry,h,12916,OpenPlay,2025,LeftFoot,28863,Everton,Tottenham,0,3,2025-10-26 15:30:00,James Tarkowski,Chipped,Thierno Barry
+651840,6,BlockedShot,0.889000015258789,0.3559999847412109,0.08729657530784607,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Idrissa Gueye,Pass,Thierno Barry
+651845,27,MissedShots,0.97,0.445,0.5852937698364258,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Jack Grealish,Cross,Thierno Barry
+652257,1,BlockedShot,0.9169999694824219,0.53,0.1423896849155426,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,Kiernan Dewsbury-Hall,Pass,Thierno Barry
+652258,6,MissedShots,0.925,0.5509999847412109,0.30877310037612915,Thierno Barry,h,12916,OpenPlay,2025,Head,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,Iliman Ndiaye,Cross,Thierno Barry
+655214,10,MissedShots,0.960999984741211,0.519000015258789,0.08699978142976761,Thierno Barry,h,12916,FromCorner,2025,Head,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,Kiernan Dewsbury-Hall,Aerial,Thierno Barry
+655228,70,MissedShots,0.9540000152587891,0.595,0.052862975746393204,Thierno Barry,h,12916,OpenPlay,2025,Head,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,Iliman Ndiaye,Aerial,Thierno Barry
+656117,6,MissedShots,0.914000015258789,0.3320000076293945,0.0793503075838089,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,28908,Bournemouth,Everton,0,1,2025-12-02 19:30:00,Jake O&#039;Brien,Pass,Thierno Barry
+656121,42,ShotOnPost,0.9819999694824219,0.5320000076293945,0.0719214454293251,Thierno Barry,a,12916,FromCorner,2025,Head,28908,Bournemouth,Everton,0,1,2025-12-02 19:30:00,,Foul,Thierno Barry
+656124,55,SavedShot,0.904000015258789,0.53,0.43650785088539124,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,28908,Bournemouth,Everton,0,1,2025-12-02 19:30:00,Carlos Alcaraz,Pass,Thierno Barry
+656128,65,MissedShots,0.925,0.4159999847412109,0.09718848764896393,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,28908,Bournemouth,Everton,0,1,2025-12-02 19:30:00,James Garner,Cross,Thierno Barry
+656904,47,Goal,0.9,0.5470000076293945,0.5731766223907471,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,28921,Everton,Nottingham Forest,3,0,2025-12-06 15:00:00,Iliman Ndiaye,Pass,Thierno Barry
+660216,76,SavedShot,0.9130000305175782,0.695,0.05660230293869972,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,James Garner,Pass,Thierno Barry
+660612,78,Goal,0.89,0.5320000076293945,0.6024571657180786,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,28965,Nottingham Forest,Everton,0,2,2025-12-30 19:30:00,James Garner,Throughball,Thierno Barry
+661424,29,SavedShot,0.8580000305175781,0.5229999923706055,0.01741771586239338,Thierno Barry,h,12916,OpenPlay,2025,Head,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,Vitalii Mykolenko,Aerial,Thierno Barry
+661443,90,Goal,0.980999984741211,0.595,0.2495822161436081,Thierno Barry,h,12916,OpenPlay,2025,Head,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,Jack Grealish,Cross,Thierno Barry
+661891,34,MissedShots,0.9230000305175782,0.4470000076293945,0.08271537721157074,Thierno Barry,h,12916,OpenPlay,2025,OtherBodyPart,28978,Everton,Wolverhampton Wanderers,1,1,2026-01-07 19:30:00,Jake O&#039;Brien,Aerial,Thierno Barry
+664179,58,Goal,0.9519999694824218,0.5770000076293945,0.46305471658706665,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,28988,Aston Villa,Everton,0,1,2026-01-18 16:30:00,,Rebound,Thierno Barry
+665644,3,BlockedShot,0.8959999847412109,0.5940000152587891,0.07426974177360535,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,Vitalii Mykolenko,Cross,Thierno Barry
+665659,62,SavedShot,0.8419999694824218,0.32299999237060545,0.037277717143297195,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,,None,Thierno Barry
+665662,75,Goal,0.9380000305175781,0.435,0.4191277325153351,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,Idrissa Gueye,Cross,Thierno Barry
+667307,28,BlockedShot,0.955999984741211,0.6969999694824218,0.07510830461978912,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Kiernan Dewsbury-Hall,Pass,Thierno Barry
+667313,41,MissedShots,0.9219999694824219,0.5,0.46576887369155884,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Kiernan Dewsbury-Hall,Pass,Thierno Barry
+667318,50,MissedShots,0.9330000305175781,0.4809999847412109,0.06086054816842079,Thierno Barry,a,12916,FromCorner,2025,Head,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,James Garner,Aerial,Thierno Barry
+667321,66,MissedShots,0.9209999847412109,0.47,0.05943121761083603,Thierno Barry,a,12916,SetPiece,2025,Head,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,James Garner,Aerial,Thierno Barry
+668183,29,MissedShots,0.9390000152587891,0.529000015258789,0.6005315184593201,Thierno Barry,h,12916,SetPiece,2025,LeftFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,Rebound,Thierno Barry
+668191,53,BlockedShot,0.9280000305175782,0.49900001525878906,0.15062731504440308,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Iliman Ndiaye,Pass,Thierno Barry
+671145,82,Goal,0.9680000305175781,0.49,0.9595155119895935,Thierno Barry,a,12916,OpenPlay,2025,OtherBodyPart,29056,Newcastle United,Everton,2,3,2026-02-28 15:00:00,Kiernan Dewsbury-Hall,Pass,Thierno Barry
+681047,12,MissedShots,0.950999984741211,0.46799999237060547,0.14805473387241364,Thierno Barry,a,12916,OpenPlay,2025,RightFoot,29116,West Ham,Everton,2,1,2026-04-25 14:00:00,Dwight McNeil,Chipped,Thierno Barry
+681053,34,SavedShot,0.7659999847412109,0.27700000762939453,0.016233915463089943,Thierno Barry,a,12916,OpenPlay,2025,LeftFoot,29116,West Ham,Everton,2,1,2026-04-25 14:00:00,James Garner,BallRecovery,Thierno Barry
+681059,76,BlockedShot,0.9569999694824218,0.5179999923706055,0.49058330059051514,Thierno Barry,a,12916,FromCorner,2025,Head,29116,West Ham,Everton,2,1,2026-04-25 14:00:00,Tyrique George,Chipped,Thierno Barry
+683323,67,Goal,0.9019999694824219,0.43900001525878907,0.4265178143978119,Thierno Barry,h,12916,OpenPlay,2025,LeftFoot,29123,Everton,Manchester City,3,3,2026-05-04 19:00:00,,None,Thierno Barry
+683329,80,Goal,0.9209999847412109,0.5509999847412109,0.4490457773208618,Thierno Barry,h,12916,OpenPlay,2025,RightFoot,29123,Everton,Manchester City,3,3,2026-05-04 19:00:00,,Rebound,Thierno Barry

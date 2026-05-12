@@ -1,0 +1,97 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+466697,20,MissedShots,0.845,0.6270000076293946,0.05285799875855446,Moisés Caicedo,a,9453,OpenPlay,2021,LeftFoot,16695,Arsenal,Brighton,1,2,2022-04-09 14:00:00,,None,Moisés Caicedo
+466711,63,BlockedShot,0.764000015258789,0.500999984741211,0.03848389908671379,Moisés Caicedo,a,9453,OpenPlay,2021,RightFoot,16695,Arsenal,Brighton,1,2,2022-04-09 14:00:00,,None,Moisés Caicedo
+470489,91,BlockedShot,0.88,0.3940000152587891,0.01538890041410923,Moisés Caicedo,h,9453,OpenPlay,2021,Head,16713,Brighton,Southampton,2,2,2022-04-24 13:00:00,Marc Cucurella,Cross,Moisés Caicedo
+471570,45,SavedShot,0.7780000305175782,0.5459999847412109,0.041537798941135406,Moisés Caicedo,a,9453,OpenPlay,2021,RightFoot,16716,Wolverhampton Wanderers,Brighton,0,3,2022-04-30 14:00:00,Enock Mwepu,Pass,Moisés Caicedo
+474673,14,Goal,0.730999984741211,0.5879999923706055,0.012833500280976295,Moisés Caicedo,h,9453,OpenPlay,2021,RightFoot,16733,Brighton,Manchester United,4,0,2022-05-07 16:30:00,,Rebound,Moisés Caicedo
+474692,66,MissedShots,0.85,0.40299999237060546,0.028937699273228645,Moisés Caicedo,h,9453,FromCorner,2021,Head,16733,Brighton,Manchester United,4,0,2022-05-07 16:30:00,,None,Moisés Caicedo
+476331,9,BlockedShot,0.9209999847412109,0.46599998474121096,0.14450499415397644,Moisés Caicedo,a,9453,OpenPlay,2021,RightFoot,16743,Leeds,Brighton,1,1,2022-05-15 13:00:00,Alexis Mac Allister,Pass,Moisés Caicedo
+476332,9,SavedShot,0.9290000152587891,0.47200000762939454,0.15321099758148193,Moisés Caicedo,a,9453,OpenPlay,2021,RightFoot,16743,Leeds,Brighton,1,1,2022-05-15 13:00:00,,Rebound,Moisés Caicedo
+477758,7,SavedShot,0.8590000152587891,0.5209999847412109,0.07481150329113007,Moisés Caicedo,h,9453,OpenPlay,2021,LeftFoot,16748,Brighton,West Ham,3,1,2022-05-22 15:00:00,,None,Moisés Caicedo
+477765,46,BlockedShot,0.850999984741211,0.5609999847412109,0.0767856016755104,Moisés Caicedo,h,9453,OpenPlay,2021,RightFoot,16748,Brighton,West Ham,3,1,2022-05-22 15:00:00,Danny Welbeck,Pass,Moisés Caicedo
+480402,36,SavedShot,0.7180000305175781,0.5629999923706055,0.014623000286519527,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18213,Brighton,Newcastle United,0,0,2022-08-13 14:00:00,,BallTouch,Moisés Caicedo
+482290,25,BlockedShot,0.735999984741211,0.47,0.015425199642777443,Moisés Caicedo,a,9453,FromCorner,2022,RightFoot,18229,West Ham,Brighton,0,2,2022-08-21 13:00:00,,None,Moisés Caicedo
+486505,14,Goal,0.95,0.34400001525878904,0.321833997964859,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18259,Brighton,Leicester,5,2,2022-09-04 13:00:00,Enock Mwepu,Pass,Moisés Caicedo
+486515,46,MissedShots,0.8019999694824219,0.4879999923706055,0.02919049933552742,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18259,Brighton,Leicester,5,2,2022-09-04 13:00:00,Pascal Groß,HeadPass,Moisés Caicedo
+486528,90,BlockedShot,0.8130000305175781,0.7030000305175781,0.02582640014588833,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18259,Brighton,Leicester,5,2,2022-09-04 13:00:00,,None,Moisés Caicedo
+491804,27,SavedShot,0.7430000305175781,0.41400001525878904,0.02073349989950657,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18294,Brighton,Tottenham,0,1,2022-10-08 16:30:00,Alexis Mac Allister,Pass,Moisés Caicedo
+492732,20,SavedShot,0.7390000152587891,0.61,0.013268999755382538,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18303,Brentford,Brighton,2,0,2022-10-14 19:00:00,Leandro Trossard,Rebound,Moisés Caicedo
+492752,92,BlockedShot,0.7759999847412109,0.38299999237060545,0.021528199315071106,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18303,Brentford,Brighton,2,0,2022-10-14 19:00:00,Solly March,Pass,Moisés Caicedo
+496517,30,ShotOnPost,0.9409999847412109,0.38599998474121094,0.11605600267648697,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18335,Brighton,Chelsea,4,1,2022-10-29 14:00:00,,BallTouch,Moisés Caicedo
+498115,71,BlockedShot,0.7319999694824219,0.67,0.013095700182020664,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18351,Wolverhampton Wanderers,Brighton,2,3,2022-11-05 15:00:00,Estupiñán,Pass,Moisés Caicedo
+500951,64,BlockedShot,0.85,0.41200000762939454,0.10560300201177597,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18371,Southampton,Brighton,1,3,2022-12-26 15:00:00,Solly March,Pass,Moisés Caicedo
+502195,8,BlockedShot,0.8130000305175781,0.29700000762939455,0.023492200300097466,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18387,Everton,Brighton,1,4,2023-01-03 19:45:00,,None,Moisés Caicedo
+507173,75,SavedShot,0.7469999694824219,0.35,0.017929300665855408,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,Pascal Groß,Pass,Moisés Caicedo
+509622,58,MissedShots,0.7909999847412109,0.6469999694824219,0.019931700080633163,Moisés Caicedo,h,9453,OpenPlay,2022,LeftFoot,18434,Brighton,Fulham,0,1,2023-02-18 15:00:00,,Rebound,Moisés Caicedo
+512194,82,MissedShots,0.7380000305175781,0.34700000762939454,0.015613500028848648,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18455,Brighton,West Ham,4,0,2023-03-04 15:00:00,Facundo Buonanotte,Pass,Moisés Caicedo
+514541,18,BlockedShot,0.8159999847412109,0.45799999237060546,0.05850210040807724,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18276,Brighton,Crystal Palace,1,0,2023-03-15 19:30:00,Estupiñán,Pass,Moisés Caicedo
+516395,54,SavedShot,0.7719999694824219,0.38799999237060545,0.025766799226403236,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18484,Brighton,Brentford,3,3,2023-04-01 14:00:00,Solly March,Pass,Moisés Caicedo
+516411,90,BlockedShot,0.8530000305175781,0.40700000762939453,0.07475969940423965,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18484,Brighton,Brentford,3,3,2023-04-01 14:00:00,Pascal Groß,Pass,Moisés Caicedo
+518027,25,SavedShot,0.74,0.4859999847412109,0.017489999532699585,Moisés Caicedo,a,9453,OpenPlay,2022,RightFoot,18500,Tottenham,Brighton,2,1,2023-04-08 14:00:00,Alexis Mac Allister,BallRecovery,Moisés Caicedo
+522752,77,BlockedShot,0.8019999694824219,0.49700000762939456,0.04664694517850876,Moisés Caicedo,h,9453,OpenPlay,2022,LeftFoot,18535,Brighton,Wolverhampton Wanderers,6,0,2023-04-29 14:00:00,,None,Moisés Caicedo
+522758,89,BlockedShot,0.7330000305175781,0.45099998474121095,0.01908564753830433,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18535,Brighton,Wolverhampton Wanderers,6,0,2023-04-29 14:00:00,Estupiñán,Pass,Moisés Caicedo
+524309,55,BlockedShot,0.8569999694824219,0.3320000076293945,0.04380271956324577,Moisés Caicedo,h,9453,OpenPlay,2022,LeftFoot,18475,Brighton,Manchester United,1,0,2023-05-04 19:00:00,Alexis Mac Allister,Chipped,Moisés Caicedo
+525485,81,BlockedShot,0.779000015258789,0.445,0.034303922206163406,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18543,Brighton,Everton,1,5,2023-05-08 16:30:00,Evan Ferguson,Pass,Moisés Caicedo
+525491,90,MissedShots,0.8109999847412109,0.4640000152587891,0.056771084666252136,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18543,Brighton,Everton,1,5,2023-05-08 16:30:00,Evan Ferguson,Pass,Moisés Caicedo
+527035,86,BlockedShot,0.7830000305175782,0.685,0.021080665290355682,Moisés Caicedo,a,9453,FromCorner,2022,RightFoot,18449,Newcastle United,Brighton,4,1,2023-05-18 18:30:00,Alexis Mac Allister,Pass,Moisés Caicedo
+527943,11,SavedShot,0.7480000305175781,0.4470000076293945,0.020087359473109245,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18563,Brighton,Southampton,3,1,2023-05-21 13:00:00,Alexis Mac Allister,Pass,Moisés Caicedo
+528632,60,BlockedShot,0.8209999847412109,0.43099998474121093,0.04319467768073082,Moisés Caicedo,h,9453,OpenPlay,2022,RightFoot,18515,Brighton,Manchester City,1,1,2023-05-24 19:00:00,,Rebound,Moisés Caicedo
+533860,61,MissedShots,0.7730000305175782,0.35200000762939454,0.023565009236335754,Moisés Caicedo,a,9453,OpenPlay,2023,RightFoot,22293,West Ham,Chelsea,3,1,2023-08-20 15:30:00,,TakeOn,Moisés Caicedo
+536317,52,BlockedShot,0.8109999847412109,0.5229999923706055,0.04470110312104225,Moisés Caicedo,h,9453,OpenPlay,2023,LeftFoot,21930,Chelsea,Nottingham Forest,0,1,2023-09-02 14:00:00,,None,Moisés Caicedo
+539608,4,SavedShot,0.759000015258789,0.3120000076293945,0.016207566484808922,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,21947,Chelsea,Aston Villa,0,1,2023-09-24 13:00:00,Nicolas Jackson,BallRecovery,Moisés Caicedo
+549085,26,BlockedShot,0.7780000305175782,0.5329999923706055,0.031317587941884995,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22009,Chelsea,Manchester City,4,4,2023-11-12 16:30:00,Conor Gallagher,Pass,Moisés Caicedo
+551660,77,MissedShots,0.7390000152587891,0.3820000076293945,0.016858849674463272,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,Cole Palmer,Pass,Moisés Caicedo
+554257,1,BlockedShot,0.7390000152587891,0.45099998474121095,0.015577591024339199,Moisés Caicedo,h,9453,FromCorner,2023,RightFoot,22059,Chelsea,Sheffield United,2,0,2023-12-16 15:00:00,,None,Moisés Caicedo
+569014,25,MissedShots,0.764000015258789,0.4640000152587891,0.046937454491853714,Moisés Caicedo,h,9453,OpenPlay,2023,LeftFoot,22169,Chelsea,Newcastle United,3,2,2024-03-11 20:00:00,,TakeOn,Moisés Caicedo
+572030,53,BlockedShot,0.764000015258789,0.42400001525878905,0.02337130345404148,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22201,Chelsea,Manchester United,4,3,2024-04-04 19:15:00,Conor Gallagher,Pass,Moisés Caicedo
+574588,37,MissedShots,0.754000015258789,0.35,0.02011084370315075,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,,BlockedPass,Moisés Caicedo
+577010,23,SavedShot,0.7219999694824218,0.43400001525878906,0.017126811668276787,Moisés Caicedo,a,9453,OpenPlay,2023,RightFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Noni Madueke,Pass,Moisés Caicedo
+577021,54,SavedShot,0.7430000305175781,0.375,0.013436634093523026,Moisés Caicedo,a,9453,OpenPlay,2023,RightFoot,22236,Aston Villa,Chelsea,2,2,2024-04-27 19:00:00,Conor Gallagher,Pass,Moisés Caicedo
+578837,90,BlockedShot,0.7330000305175781,0.37900001525878907,0.021399138495326042,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22249,Chelsea,West Ham,5,0,2024-05-05 13:00:00,Cesare Casadei,Pass,Moisés Caicedo
+582213,16,Goal,0.519000015258789,0.45299999237060545,0.006719267461448908,Moisés Caicedo,h,9453,OpenPlay,2023,RightFoot,22269,Chelsea,Bournemouth,2,1,2024-05-19 15:00:00,,None,Moisés Caicedo
+585322,58,BlockedShot,0.759000015258789,0.42400001525878905,0.023129956796765327,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26610,Chelsea,Manchester City,0,2,2024-08-18 15:30:00,Cole Palmer,Pass,Moisés Caicedo
+591184,63,BlockedShot,0.765,0.42200000762939455,0.024851256981492043,Moisés Caicedo,a,9453,OpenPlay,2024,RightFoot,26639,Bournemouth,Chelsea,0,1,2024-09-14 19:00:00,Cole Palmer,Pass,Moisés Caicedo
+592113,66,BlockedShot,0.885,0.5990000152587891,0.10897189378738403,Moisés Caicedo,a,9453,OpenPlay,2024,RightFoot,26642,West Ham,Chelsea,0,3,2024-09-21 11:30:00,Enzo Fernández,Pass,Moisés Caicedo
+596064,46,MissedShots,0.7290000152587891,0.524000015258789,0.01671060174703598,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26668,Chelsea,Nottingham Forest,1,1,2024-10-06 13:00:00,Enzo Fernández,BallRecovery,Moisés Caicedo
+598905,35,MissedShots,0.8040000152587891,0.5120000076293946,0.05347762256860733,Moisés Caicedo,h,9453,OpenPlay,2024,LeftFoot,26688,Chelsea,Newcastle United,2,1,2024-10-27 14:00:00,Nicolas Jackson,Pass,Moisés Caicedo
+600847,73,Goal,0.835999984741211,0.63,0.034695982933044434,Moisés Caicedo,a,9453,FromCorner,2024,RightFoot,26697,Manchester United,Chelsea,1,1,2024-11-03 16:30:00,,None,Moisés Caicedo
+602632,23,MissedShots,0.8180000305175781,0.5679999923706055,0.06552888453006744,Moisés Caicedo,a,9453,OpenPlay,2024,RightFoot,26719,Leicester,Chelsea,1,2,2024-11-23 12:30:00,,None,Moisés Caicedo
+605286,46,BlockedShot,0.745,0.49,0.020053697749972343,Moisés Caicedo,a,9453,OpenPlay,2024,RightFoot,26741,Southampton,Chelsea,1,5,2024-12-04 19:30:00,,None,Moisés Caicedo
+607769,86,SavedShot,0.7380000305175781,0.8280000305175781,0.011494938284158707,Moisés Caicedo,h,9453,OpenPlay,2024,LeftFoot,26757,Chelsea,Brentford,2,1,2024-12-15 19:00:00,,BallRecovery,Moisés Caicedo
+609676,34,MissedShots,0.8369999694824218,0.5520000076293945,0.05356181040406227,Moisés Caicedo,a,9453,OpenPlay,2024,LeftFoot,26787,Ipswich,Chelsea,2,0,2024-12-30 19:45:00,,BallRecovery,Moisés Caicedo
+609912,41,MissedShots,0.769000015258789,0.46299999237060546,0.04065440222620964,Moisés Caicedo,a,9453,OpenPlay,2024,RightFoot,26795,Crystal Palace,Chelsea,1,1,2025-01-04 15:00:00,,None,Moisés Caicedo
+613032,32,BlockedShot,0.7569999694824219,0.644000015258789,0.012520463205873966,Moisés Caicedo,h,9453,SetPiece,2024,RightFoot,26814,Chelsea,Wolverhampton Wanderers,3,1,2025-01-20 20:00:00,,None,Moisés Caicedo
+619430,72,BlockedShot,0.7430000305175781,0.5229999923706055,0.016602985560894012,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,,Rebound,Moisés Caicedo
+621833,27,SavedShot,0.815,0.4620000076293945,0.05592154711484909,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26874,Chelsea,Leicester,1,0,2025-03-09 14:00:00,Jadon Sancho,BallTouch,Moisés Caicedo
+627637,44,BlockedShot,0.785,0.4879999923706055,0.04366569221019745,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Levi Colwill,Pass,Moisés Caicedo
+627638,44,MissedShots,0.754000015258789,0.4109999847412109,0.014650150202214718,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,,None,Moisés Caicedo
+627658,80,BlockedShot,0.7580000305175781,0.5520000076293945,0.02193981222808361,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Jadon Sancho,Pass,Moisés Caicedo
+630102,67,MissedShots,0.765,0.3990000152587891,0.032463133335113525,Moisés Caicedo,h,9453,OpenPlay,2024,RightFoot,26935,Chelsea,Everton,1,0,2025-04-26 11:30:00,,None,Moisés Caicedo
+633326,23,MissedShots,0.754000015258789,0.4470000076293945,0.01730167120695114,Moisés Caicedo,a,9453,FromCorner,2024,RightFoot,26957,Newcastle United,Chelsea,2,0,2025-05-11 11:00:00,,None,Moisés Caicedo
+634246,33,BlockedShot,0.779000015258789,0.4879999923706055,0.02290548011660576,Moisés Caicedo,h,9453,FromCorner,2024,RightFoot,26966,Chelsea,Manchester United,1,0,2025-05-16 19:15:00,,None,Moisés Caicedo
+638043,29,BlockedShot,0.8109999847412109,0.4779999923706055,0.03899286314845085,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,28784,Chelsea,Crystal Palace,0,0,2025-08-17 13:00:00,,Rebound,Moisés Caicedo
+638579,53,Goal,0.9309999847412109,0.44299999237060544,0.5002027153968811,Moisés Caicedo,a,9453,FromCorner,2025,RightFoot,28788,West Ham,Chelsea,1,5,2025-08-22 19:00:00,,None,Moisés Caicedo
+640085,53,BlockedShot,0.8959999847412109,0.54,0.09488017112016678,Moisés Caicedo,h,9453,FromCorner,2025,RightFoot,28798,Chelsea,Fulham,2,0,2025-08-30 11:30:00,Enzo Fernández,None,Moisés Caicedo
+642010,84,Goal,0.805,0.514000015258789,0.04658273607492447,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,28815,Brentford,Chelsea,2,2,2025-09-13 19:00:00,,None,Moisés Caicedo
+643295,22,BlockedShot,0.779000015258789,0.529000015258789,0.022669004276394844,Moisés Caicedo,a,9453,FromCorner,2025,RightFoot,28824,Manchester United,Chelsea,2,1,2025-09-20 16:30:00,,None,Moisés Caicedo
+644678,57,BlockedShot,0.805,0.48,0.03930129110813141,Moisés Caicedo,h,9453,SetPiece,2025,RightFoot,28829,Chelsea,Brighton,1,3,2025-09-27 14:00:00,,None,Moisés Caicedo
+646281,13,Goal,0.78,0.415,0.03168066218495369,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,28842,Chelsea,Liverpool,2,1,2025-10-04 16:30:00,Malo Gusto,Pass,Moisés Caicedo
+646299,88,SavedShot,0.7069999694824218,0.5020000076293946,0.011946183629333973,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,28842,Chelsea,Liverpool,2,1,2025-10-04 16:30:00,,None,Moisés Caicedo
+648931,12,BlockedShot,0.754000015258789,0.36700000762939455,0.020144464448094368,Moisés Caicedo,h,9453,FromCorner,2025,RightFoot,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,,Rebound,Moisés Caicedo
+648948,89,BlockedShot,0.7680000305175781,0.525,0.026674967259168625,Moisés Caicedo,h,9453,FromCorner,2025,RightFoot,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Jamie Bynoe-Gittens,Pass,Moisés Caicedo
+659140,80,MissedShots,0.7290000152587891,0.425,0.018646562471985817,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,28945,Newcastle United,Chelsea,2,2,2025-12-20 12:30:00,Enzo Fernández,Pass,Moisés Caicedo
+660304,20,BlockedShot,0.7869999694824219,0.38799999237060545,0.02873843163251877,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,28951,Chelsea,Aston Villa,1,2,2025-12-27 17:30:00,,None,Moisés Caicedo
+662071,18,BlockedShot,0.915,0.46599998474121096,0.10924110561609268,Moisés Caicedo,a,9453,FromCorner,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,,None,Moisés Caicedo
+662087,68,SavedShot,0.845,0.43599998474121093,0.07487046718597412,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Malo Gusto,Pass,Moisés Caicedo
+665163,16,MissedShots,0.8090000152587891,0.529000015258789,0.048095688223838806,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,29002,Crystal Palace,Chelsea,1,3,2026-01-25 14:00:00,,None,Moisés Caicedo
+666200,31,MissedShots,0.87,0.6379999923706055,0.06709256768226624,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,29009,Chelsea,West Ham,3,2,2026-01-31 17:30:00,Jorrel Hato,Pass,Moisés Caicedo
+666210,63,SavedShot,0.769000015258789,0.34200000762939453,0.029502147808670998,Moisés Caicedo,h,9453,FromCorner,2025,RightFoot,29009,Chelsea,West Ham,3,2,2026-01-31 17:30:00,Malo Gusto,Pass,Moisés Caicedo
+667334,23,MissedShots,0.7819999694824219,0.46,0.03528435155749321,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,29027,Wolverhampton Wanderers,Chelsea,1,3,2026-02-07 15:00:00,,Rebound,Moisés Caicedo
+669759,69,BlockedShot,0.8059999847412109,0.28299999237060547,0.03061560168862343,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,Wesley Fofana,Pass,Moisés Caicedo
+671827,86,MissedShots,0.7559999847412109,0.46599998474121096,0.023386936634778976,Moisés Caicedo,a,9453,OpenPlay,2025,LeftFoot,29049,Arsenal,Chelsea,2,1,2026-03-01 16:30:00,Malo Gusto,Pass,Moisés Caicedo
+675422,5,MissedShots,0.750999984741211,0.605,0.01941007934510708,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,29081,Everton,Chelsea,3,0,2026-03-21 17:30:00,Marc Cucurella,Pass,Moisés Caicedo
+675427,28,BlockedShot,0.8640000152587891,0.37,0.04749976843595505,Moisés Caicedo,a,9453,FromCorner,2025,RightFoot,29081,Everton,Chelsea,3,0,2026-03-21 17:30:00,,None,Moisés Caicedo
+678534,70,BlockedShot,0.7609999847412109,0.555,0.024005679413676262,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Marc Cucurella,BallTouch,Moisés Caicedo
+679458,51,BlockedShot,0.745999984741211,0.5029999923706054,0.0202937014400959,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Enzo Fernández,Pass,Moisés Caicedo
+679473,83,MissedShots,0.745999984741211,0.37400001525878906,0.019464092329144478,Moisés Caicedo,h,9453,OpenPlay,2025,RightFoot,29100,Chelsea,Manchester United,0,1,2026-04-18 19:00:00,Enzo Fernández,Pass,Moisés Caicedo
+680119,88,BlockedShot,0.7380000305175781,0.55,0.01631888374686241,Moisés Caicedo,a,9453,OpenPlay,2025,RightFoot,29110,Brighton,Chelsea,3,0,2026-04-21 19:00:00,Trevoh Chalobah,Pass,Moisés Caicedo

@@ -1,0 +1,73 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+370572,16,MissedShots,0.960999984741211,0.49900001525878906,0.5280939936637878,Eric Garcia,a,8045,FromCorner,2019,RightFoot,11985,Brighton,Manchester City,0,5,2020-07-11 19:00:00,Riyad Mahrez,Cross,Eric Garcia
+370578,28,SavedShot,0.915,0.4540000152587891,0.07585380226373672,Eric Garcia,a,8045,FromCorner,2019,Head,11985,Brighton,Manchester City,0,5,2020-07-11 19:00:00,Kevin De Bruyne,Cross,Eric Garcia
+383117,33,MissedShots,0.6940000152587891,0.5359999847412109,0.013568200170993805,Eric Garcia,a,8045,OpenPlay,2020,RightFoot,14493,West Ham,Manchester City,1,1,2020-10-24 11:30:00,Kyle Walker,Pass,Eric Garcia
+423185,90,MissedShots,0.905,0.3579999923706055,0.06106850132346153,Eric Garcia,a,8045,OpenPlay,2020,RightFoot,14795,Brighton,Manchester City,3,2,2021-05-18 18:00:00,,Rebound,Eric Garcia
+438437,36,BlockedShot,0.7469999694824219,0.40700000762939453,0.02167999930679798,Eric Garcia,h,8045,OpenPlay,2021,RightFoot,17234,Barcelona,Real Madrid,1,2,2021-10-24 14:15:00,Sergio Busquets,Pass,Eric Garcia
+439940,17,SavedShot,0.9130000305175782,0.525,0.30578699707984924,Eric Garcia,h,8045,FromCorner,2021,Head,17252,Barcelona,Alaves,1,1,2021-10-30 19:00:00,Memphis Depay,Cross,Eric Garcia
+441128,15,SavedShot,0.9059999847412109,0.5279999923706055,0.05485149845480919,Eric Garcia,a,8045,FromCorner,2021,Head,17259,Celta Vigo,Barcelona,3,3,2021-11-06 15:15:00,Sergio Busquets,Pass,Eric Garcia
+452217,41,BlockedShot,0.68,0.54,0.01352940034121275,Eric Garcia,a,8045,OpenPlay,2021,RightFoot,17327,Granada,Barcelona,1,1,2022-01-08 17:30:00,Sergio Busquets,Pass,Eric Garcia
+469055,55,SavedShot,0.6790000152587891,0.35,0.012596700340509415,Eric Garcia,h,8045,OpenPlay,2021,RightFoot,17449,Barcelona,Cadiz,0,1,2022-04-18 19:00:00,Sergio Busquets,Pass,Eric Garcia
+469063,83,SavedShot,0.7709999847412109,0.38799999237060545,0.023135200142860413,Eric Garcia,h,8045,OpenPlay,2021,RightFoot,17449,Barcelona,Cadiz,0,1,2022-04-18 19:00:00,,Dispossessed,Eric Garcia
+482941,41,MissedShots,0.9380000305175781,0.505,0.07491829991340637,Eric Garcia,a,8045,FromCorner,2022,Head,18979,Real Sociedad,Barcelona,1,4,2022-08-21 20:00:00,Gavi,Aerial,Eric Garcia
+484634,51,BlockedShot,0.895,0.4779999923706055,0.11882799863815308,Eric Garcia,h,8045,FromCorner,2022,RightFoot,18988,Barcelona,Real Valladolid,4,0,2022-08-28 17:30:00,,Rebound,Eric Garcia
+486288,49,Goal,0.9690000152587891,0.48,0.5559809803962708,Eric Garcia,a,8045,FromCorner,2022,RightFoot,18995,Sevilla,Barcelona,0,3,2022-09-03 19:00:00,Jules Koundé,HeadPass,Eric Garcia
+510512,4,MissedShots,0.9269999694824219,0.47,0.11491599678993225,Eric Garcia,h,8045,FromCorner,2022,Head,19172,Barcelona,Cadiz,2,0,2023-02-19 20:00:00,Ferrán Torres,Cross,Eric Garcia
+518995,46,MissedShots,0.9280000305175782,0.43900001525878907,0.12637899816036224,Eric Garcia,h,8045,SetPiece,2022,Head,19232,Barcelona,Girona,0,0,2023-04-10 19:00:00,Raphinha,Cross,Eric Garcia
+528499,8,BlockedShot,0.7869999694824219,0.539000015258789,0.03616813197731972,Eric Garcia,a,8045,OpenPlay,2022,LeftFoot,19318,Real Valladolid,Barcelona,3,1,2023-05-23 20:00:00,,Rebound,Eric Garcia
+530955,23,BlockedShot,0.7780000305175782,0.465,0.032593563199043274,Eric Garcia,a,8045,OpenPlay,2022,RightFoot,19334,Celta Vigo,Barcelona,2,1,2023-06-04 18:00:00,Raphinha,Pass,Eric Garcia
+534021,79,MissedShots,0.904000015258789,0.455,0.07676322758197784,Eric Garcia,h,8045,FromCorner,2023,Head,22701,Barcelona,Cadiz,2,0,2023-08-20 17:30:00,Ilkay Gündogan,Cross,Eric Garcia
+538889,63,MissedShots,0.9059999847412109,0.4809999847412109,0.08330433070659637,Eric Garcia,h,8045,FromCorner,2023,Head,22739,Girona,Mallorca,5,3,2023-09-23 12:00:00,Aleix García,Cross,Eric Garcia
+540313,50,BlockedShot,0.9209999847412109,0.42700000762939455,0.04429319128394127,Eric Garcia,a,8045,FromCorner,2023,RightFoot,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,,Aerial,Eric Garcia
+540317,60,Goal,0.9480000305175781,0.5020000076293946,0.450829416513443,Eric Garcia,a,8045,FromCorner,2023,Head,22751,Villarreal,Girona,1,2,2023-09-27 17:00:00,Aleix García,Cross,Eric Garcia
+541427,15,SavedShot,0.895,0.5279999923706055,0.03464328870177269,Eric Garcia,h,8045,SetPiece,2023,Head,22760,Girona,Real Madrid,0,3,2023-09-30 16:30:00,,Aerial,Eric Garcia
+541439,49,MissedShots,0.970999984741211,0.4590000152587891,0.7069747447967529,Eric Garcia,h,8045,SetPiece,2023,RightFoot,22760,Girona,Real Madrid,0,3,2023-09-30 16:30:00,,Rebound,Eric Garcia
+544699,21,MissedShots,0.9680000305175781,0.415,0.09155511856079102,Eric Garcia,h,8045,FromCorner,2023,Head,22776,Girona,Almeria,5,2,2023-10-22 14:15:00,Aleix García,Cross,Eric Garcia
+544706,35,BlockedShot,0.7859999847412109,0.325,0.021660273894667625,Eric Garcia,h,8045,OpenPlay,2023,LeftFoot,22776,Girona,Almeria,5,2,2023-10-22 14:15:00,Yan Couto,Pass,Eric Garcia
+555859,35,BlockedShot,0.875,0.34700000762939454,0.058297157287597656,Eric Garcia,a,8045,OpenPlay,2023,RightFoot,22857,Real Betis,Girona,1,1,2023-12-21 18:00:00,,None,Eric Garcia
+564799,74,Goal,0.9469999694824218,0.514000015258789,0.5218019485473633,Eric Garcia,a,8045,SetPiece,2023,Head,22925,Athletic Club,Girona,3,2,2024-02-19 20:00:00,Aleix García,Cross,Eric Garcia
+567406,12,MissedShots,0.9369999694824219,0.46700000762939453,0.06798123568296432,Eric Garcia,a,8045,FromCorner,2023,Head,22950,Mallorca,Girona,1,0,2024-03-03 17:30:00,Aleix García,Aerial,Eric Garcia
+568331,15,BlockedShot,0.8880000305175781,0.42700000762939455,0.12250380218029022,Eric Garcia,h,8045,OpenPlay,2023,RightFoot,22958,Girona,Osasuna,2,0,2024-03-09 20:00:00,Portu,Pass,Eric Garcia
+575264,8,Goal,0.9319999694824219,0.504000015258789,0.4165547490119934,Eric Garcia,h,8045,FromCorner,2023,Head,23002,Girona,Cadiz,4,1,2024-04-20 19:00:00,Sávio,Cross,Eric Garcia
+579605,3,Goal,0.9290000152587891,0.5729999923706055,0.08344823867082596,Eric Garcia,a,8045,FromCorner,2023,Head,23030,Alaves,Girona,2,2,2024-05-10 19:00:00,Viktor Tsygankov,Cross,Eric Garcia
+579628,78,MissedShots,0.914000015258789,0.4640000152587891,0.037994228303432465,Eric Garcia,a,8045,FromCorner,2023,Head,23030,Alaves,Girona,2,2,2024-05-10 19:00:00,Aleix García,Aerial,Eric Garcia
+581030,64,MissedShots,0.945,0.5690000152587891,0.34318751096725464,Eric Garcia,h,8045,SetPiece,2023,Head,23036,Girona,Villarreal,0,1,2024-05-14 20:00:00,Aleix García,Cross,Eric Garcia
+583031,29,Goal,0.9369999694824219,0.46799999237060547,0.4020589292049408,Eric Garcia,h,8045,FromCorner,2023,Head,23058,Girona,Granada,7,0,2024-05-24 19:00:00,Viktor Tsygankov,Cross,Eric Garcia
+593219,34,BlockedShot,0.9109999847412109,0.5929999923706055,0.01634894870221615,Eric Garcia,a,8045,FromCorner,2024,Head,27037,Villarreal,Barcelona,1,5,2024-09-22 16:30:00,Pablo Torre,Aerial,Eric Garcia
+593220,34,SavedShot,0.975999984741211,0.5879999923706055,0.2388002574443817,Eric Garcia,a,8045,FromCorner,2024,Head,27037,Villarreal,Barcelona,1,5,2024-09-22 16:30:00,Lamine Yamal,Cross,Eric Garcia
+593517,77,MissedShots,0.960999984741211,0.495,0.5537927746772766,Eric Garcia,h,8045,SetPiece,2024,LeftFoot,27043,Barcelona,Getafe,1,0,2024-09-25 19:00:00,Pau Cubarsí,BallTouch,Eric Garcia
+594483,43,SavedShot,0.860999984741211,0.49900001525878906,0.03917114436626434,Eric Garcia,a,8045,FromCorner,2024,Head,27056,Osasuna,Barcelona,4,2,2024-09-28 19:00:00,Jules Koundé,HeadPass,Eric Garcia
+596215,52,BlockedShot,0.8880000305175781,0.4470000076293945,0.016786763444542885,Eric Garcia,a,8045,FromCorner,2024,Head,27064,Alaves,Barcelona,0,3,2024-10-06 14:15:00,Lamine Yamal,Aerial,Eric Garcia
+608578,83,SavedShot,0.8880000305175781,0.5220000076293946,0.08579098433256149,Eric Garcia,h,8045,FromCorner,2024,LeftFoot,27160,Barcelona,Atletico Madrid,1,2,2024-12-21 20:00:00,Ferrán Torres,None,Eric Garcia
+614181,29,MissedShots,0.9530000305175781,0.53,0.08407025784254074,Eric Garcia,h,8045,FromCorner,2024,Head,27184,Barcelona,Valencia,7,1,2025-01-26 20:00:00,Raphinha,Aerial,Eric Garcia
+616762,88,Goal,0.97,0.549000015258789,0.5237098932266235,Eric Garcia,a,8045,SetPiece,2024,Head,27206,Sevilla,Barcelona,1,4,2025-02-09 20:00:00,,None,Eric Garcia
+618771,1,SavedShot,0.8919999694824219,0.5620000076293945,0.07838329672813416,Eric Garcia,a,8045,SetPiece,2024,RightFoot,27226,Las Palmas,Barcelona,0,2,2025-02-22 20:00:00,Raphinha,Chipped,Eric Garcia
+624670,59,ShotOnPost,0.774000015258789,0.47900001525878905,0.029853692278265953,Eric Garcia,h,8045,OpenPlay,2024,RightFoot,27270,Barcelona,Girona,4,1,2025-03-30 15:15:00,,None,Eric Garcia
+629664,84,SavedShot,0.9169999694824219,0.46700000762939453,0.13275957107543945,Eric Garcia,h,8045,FromCorner,2024,RightFoot,27305,Barcelona,Mallorca,1,0,2025-04-22 19:30:00,Fermín López,Rebound,Eric Garcia
+629668,85,BlockedShot,0.899000015258789,0.36400001525878906,0.05758689343929291,Eric Garcia,h,8045,FromCorner,2024,RightFoot,27305,Barcelona,Mallorca,1,0,2025-04-22 19:30:00,Gavi,Pass,Eric Garcia
+633572,18,Goal,0.960999984741211,0.51,0.48532959818840027,Eric Garcia,h,8045,FromCorner,2024,Head,27324,Barcelona,Real Madrid,4,3,2025-05-11 14:15:00,Ferrán Torres,HeadPass,Eric Garcia
+635159,33,SavedShot,0.865,0.44799999237060545,0.01250739861279726,Eric Garcia,h,8045,FromCorner,2024,Head,27343,Barcelona,Villarreal,2,3,2025-05-18 17:00:00,Pedri,Aerial,Eric Garcia
+637897,70,SavedShot,0.889000015258789,0.49900001525878906,0.022545225918293,Eric Garcia,a,8045,OpenPlay,2025,Head,29160,Mallorca,Barcelona,0,3,2025-08-16 17:30:00,Frenkie de Jong,Aerial,Eric Garcia
+639230,56,SavedShot,0.9259999847412109,0.5070000076293946,0.11006762832403183,Eric Garcia,a,8045,OpenPlay,2025,Head,29171,Levante,Barcelona,2,3,2025-08-23 19:30:00,Dani Olmo,Chipped,Eric Garcia
+641237,77,MissedShots,0.9590000152587891,0.4540000152587891,0.26636093854904175,Eric Garcia,a,8045,FromCorner,2025,Head,29188,Rayo Vallecano,Barcelona,1,1,2025-08-31 19:30:00,Marcus Rashford,Aerial,Eric Garcia
+641243,90,MissedShots,0.9030000305175782,0.49599998474121093,0.26095864176750183,Eric Garcia,a,8045,FromCorner,2025,Head,29188,Rayo Vallecano,Barcelona,1,1,2025-08-31 19:30:00,Lamine Yamal,Cross,Eric Garcia
+642609,4,MissedShots,0.950999984741211,0.42900001525878906,0.11571172624826431,Eric Garcia,h,8045,FromCorner,2025,Head,29194,Barcelona,Valencia,6,0,2025-09-14 19:00:00,Roony Bardghji,Cross,Eric Garcia
+644321,55,Goal,0.9869999694824219,0.46599998474121096,0.9449723958969116,Eric Garcia,a,8045,FromCorner,2025,LeftFoot,29213,Real Oviedo,Barcelona,1,3,2025-09-25 19:30:00,,Rebound,Eric Garcia
+645562,93,BlockedShot,0.84,0.4829999923706055,0.048510245978832245,Eric Garcia,h,8045,FromCorner,2025,RightFoot,29220,Barcelona,Real Sociedad,2,1,2025-09-28 16:30:00,Ronald Araújo,BlockedPass,Eric Garcia
+646835,63,SavedShot,0.905,0.5029999923706054,0.0319252647459507,Eric Garcia,a,8045,FromCorner,2025,Head,29233,Sevilla,Barcelona,4,1,2025-10-05 14:15:00,Marcus Rashford,Aerial,Eric Garcia
+647683,33,MissedShots,0.7669999694824219,0.5309999847412109,0.031200986355543137,Eric Garcia,h,8045,OpenPlay,2025,RightFoot,29240,Barcelona,Girona,2,1,2025-10-18 14:15:00,,Tackle,Eric Garcia
+649681,62,BlockedShot,0.775,0.45,0.03242901340126991,Eric Garcia,a,8045,OpenPlay,2025,RightFoot,29254,Real Madrid,Barcelona,2,1,2025-10-26 15:15:00,Pedri,Pass,Eric Garcia
+655114,6,MissedShots,0.925,0.455,0.1102740690112114,Eric Garcia,h,8045,FromCorner,2025,Head,29294,Barcelona,Alaves,3,1,2025-11-29 15:15:00,Dani Olmo,Cross,Eric Garcia
+658329,21,MissedShots,0.725,0.664000015258789,0.014685487374663353,Eric Garcia,h,8045,OpenPlay,2025,RightFoot,29310,Barcelona,Osasuna,2,0,2025-12-13 17:30:00,Pedri,Pass,Eric Garcia
+658333,33,MissedShots,0.789000015258789,0.3629999923706055,0.02591949701309204,Eric Garcia,h,8045,OpenPlay,2025,LeftFoot,29310,Barcelona,Osasuna,2,0,2025-12-13 17:30:00,,None,Eric Garcia
+659742,48,BlockedShot,0.8640000152587891,0.37900001525878907,0.08484817296266556,Eric Garcia,a,8045,OpenPlay,2025,RightFoot,29325,Villarreal,Barcelona,0,2,2025-12-21 15:15:00,Lamine Yamal,Pass,Eric Garcia
+661213,70,BlockedShot,0.924000015258789,0.5620000076293945,0.08991997689008713,Eric Garcia,a,8045,FromCorner,2025,Head,29333,Espanyol,Barcelona,0,2,2026-01-03 20:00:00,Fermín López,Cross,Eric Garcia
+661214,70,SavedShot,0.965,0.5259999847412109,0.6747610569000244,Eric Garcia,a,8045,FromCorner,2025,RightFoot,29333,Espanyol,Barcelona,0,2,2026-01-03 20:00:00,,Rebound,Eric Garcia
+664352,48,MissedShots,0.9340000152587891,0.4490000152587891,0.1133589968085289,Eric Garcia,a,8045,FromCorner,2025,Head,29350,Real Sociedad,Barcelona,2,1,2026-01-18 20:00:00,Dani Olmo,Cross,Eric Garcia
+665329,25,BlockedShot,0.899000015258789,0.4209999847412109,0.05210484564304352,Eric Garcia,h,8045,FromCorner,2025,RightFoot,29361,Barcelona,Real Oviedo,3,0,2026-01-25 15:15:00,Raphinha,Cross,Eric Garcia
+666322,36,MissedShots,0.9330000305175781,0.41900001525878905,0.08443431556224823,Eric Garcia,a,8045,FromCorner,2025,Head,29373,Elche,Barcelona,1,3,2026-01-31 20:00:00,Frenkie de Jong,Cross,Eric Garcia
+669342,31,BlockedShot,0.8090000152587891,0.5229999923706055,0.04684999957680702,Eric Garcia,a,8045,SetPiece,2025,RightFoot,29395,Girona,Barcelona,2,1,2026-02-16 20:00:00,Jules Koundé,BallTouch,Eric Garcia
+669349,43,SavedShot,0.9330000305175781,0.534000015258789,0.05690731480717659,Eric Garcia,a,8045,FromCorner,2025,Head,29395,Girona,Barcelona,2,1,2026-02-16 20:00:00,Dani Olmo,BallTouch,Eric Garcia
+670273,30,BlockedShot,0.7030000305175781,0.445,0.0201788991689682,Eric Garcia,h,8045,OpenPlay,2025,RightFoot,29401,Barcelona,Levante,3,0,2026-02-22 15:15:00,Raphinha,Pass,Eric Garcia
+670278,51,MissedShots,0.8880000305175781,0.5270000076293946,0.06579115986824036,Eric Garcia,h,8045,FromCorner,2025,Head,29401,Barcelona,Levante,3,0,2026-02-22 15:15:00,Jules Koundé,Cross,Eric Garcia
+678019,39,SavedShot,0.7580000305175781,0.48900001525878906,0.019332079216837883,Eric Garcia,h,8045,OpenPlay,2025,RightFoot,29459,Barcelona,Espanyol,4,1,2026-04-11 16:30:00,,Rebound,Eric Garcia

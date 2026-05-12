@@ -1,0 +1,88 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+428681,73,BlockedShot,0.904000015258789,0.4779999923706055,0.0453914999961853,Marc Guehi,a,7603,SetPiece,2021,Head,16401,West Ham,Crystal Palace,2,2,2021-08-28 14:00:00,,Aerial,Marc Guehi
+428684,91,MissedShots,0.975,0.4879999923706055,0.7669309973716736,Marc Guehi,a,7603,SetPiece,2021,Head,16401,West Ham,Crystal Palace,2,2,2021-08-28 14:00:00,Conor Gallagher,Aerial,Marc Guehi
+437268,58,MissedShots,0.6980000305175781,0.655,0.011217400431632996,Marc Guehi,a,7603,OpenPlay,2021,RightFoot,16446,Arsenal,Crystal Palace,2,2,2021-10-18 19:00:00,Odsonne Edouard,Pass,Marc Guehi
+437758,25,SavedShot,0.8480000305175781,0.6969999694824218,0.02894500084221363,Marc Guehi,h,7603,OpenPlay,2021,LeftFoot,16460,Crystal Palace,Newcastle United,1,1,2021-10-23 14:00:00,,Rebound,Marc Guehi
+439668,51,MissedShots,0.9290000152587891,0.544000015258789,0.06200160086154938,Marc Guehi,a,7603,SetPiece,2021,Head,16470,Manchester City,Crystal Palace,0,2,2021-10-30 14:00:00,Conor Gallagher,Aerial,Marc Guehi
+442564,41,Goal,0.955,0.4779999923706055,0.14857099950313568,Marc Guehi,a,7603,FromCorner,2021,RightFoot,16487,Burnley,Crystal Palace,3,3,2021-11-20 15:00:00,,Rebound,Marc Guehi
+442565,44,SavedShot,0.91,0.5070000076293946,0.08708000183105469,Marc Guehi,a,7603,FromCorner,2021,RightFoot,16487,Burnley,Crystal Palace,3,3,2021-11-20 15:00:00,Luka Milivojevic,Cross,Marc Guehi
+444121,7,BlockedShot,0.8819999694824219,0.375,0.04770759865641594,Marc Guehi,h,7603,FromCorner,2021,LeftFoot,16501,Crystal Palace,Aston Villa,1,2,2021-11-27 15:00:00,Christian Benteke,BallTouch,Marc Guehi
+444136,94,Goal,0.9419999694824219,0.4620000076293945,0.5237280130386353,Marc Guehi,h,7603,SetPiece,2021,LeftFoot,16501,Crystal Palace,Aston Villa,1,2,2021-11-27 15:00:00,Cheikhou Kouyaté,Cross,Marc Guehi
+448504,26,BlockedShot,0.8419999694824218,0.5,0.025072500109672546,Marc Guehi,h,7603,FromCorner,2021,RightFoot,16531,Crystal Palace,Everton,3,1,2021-12-12 16:30:00,,Aerial,Marc Guehi
+450769,50,BlockedShot,0.9109999847412109,0.5929999923706055,0.055688001215457916,Marc Guehi,h,7603,FromCorner,2021,LeftFoot,16570,Crystal Palace,Norwich,3,0,2021-12-28 15:00:00,Will Hughes,Cross,Marc Guehi
+458284,38,BlockedShot,0.945,0.534000015258789,0.06994070112705231,Marc Guehi,h,7603,FromCorner,2021,Head,16629,Crystal Palace,Chelsea,0,1,2022-02-19 15:00:00,Michael Olise,Aerial,Marc Guehi
+469388,69,MissedShots,0.8880000305175781,0.485,0.028049800544977188,Marc Guehi,a,7603,FromCorner,2021,Head,16671,Newcastle United,Crystal Palace,1,0,2022-04-20 18:45:00,James McArthur,Chipped,Marc Guehi
+469390,73,BlockedShot,0.885,0.3729999923706055,0.011560100130736828,Marc Guehi,a,7603,FromCorner,2021,Head,16671,Newcastle United,Crystal Palace,1,0,2022-04-20 18:45:00,Tyrick Mitchell,Aerial,Marc Guehi
+471003,32,BlockedShot,0.9369999694824219,0.5729999923706055,0.10142800211906433,Marc Guehi,h,7603,SetPiece,2021,LeftFoot,16710,Crystal Palace,Leeds,0,0,2022-04-25 19:00:00,Wilfried Zaha,HeadPass,Marc Guehi
+473312,4,MissedShots,0.975999984741211,0.575999984741211,0.2846609950065613,Marc Guehi,h,7603,FromCorner,2021,Head,16730,Crystal Palace,Watford,1,0,2022-05-07 14:00:00,Michael Olise,Aerial,Marc Guehi
+473322,43,SavedShot,0.909000015258789,0.46700000762939453,0.07297410070896149,Marc Guehi,h,7603,FromCorner,2021,Head,16730,Crystal Palace,Watford,1,0,2022-05-07 14:00:00,Eberechi Eze,Cross,Marc Guehi
+476369,17,MissedShots,0.9290000152587891,0.524000015258789,0.058713801205158234,Marc Guehi,a,7603,FromCorner,2021,Head,16745,Aston Villa,Crystal Palace,1,1,2022-05-15 13:00:00,Jean-Philippe Mateta,None,Marc Guehi
+476379,80,MissedShots,0.9219999694824219,0.48700000762939455,0.062141500413417816,Marc Guehi,a,7603,SetPiece,2021,Head,16745,Aston Villa,Crystal Palace,1,1,2022-05-15 13:00:00,Joachim Andersen,Aerial,Marc Guehi
+479039,84,OwnGoal,0.045999999046325686,0.5470000076293945,0,Marc Guehi,h,7603,OpenPlay,2022,Head,18202,Crystal Palace,Arsenal,0,2,2022-08-05 19:00:00,,Dispossessed,Marc Guehi
+481885,54,BlockedShot,0.9419999694824219,0.395,0.04511589929461479,Marc Guehi,h,7603,FromCorner,2022,Head,18223,Crystal Palace,Aston Villa,3,1,2022-08-20 14:00:00,Eberechi Eze,Cross,Marc Guehi
+486006,72,SavedShot,0.9180000305175782,0.5479999923706055,0.0794105976819992,Marc Guehi,a,7603,FromCorner,2022,Head,18253,Newcastle United,Crystal Palace,0,0,2022-09-03 14:00:00,Michael Olise,Cross,Marc Guehi
+492856,29,MissedShots,0.914000015258789,0.555,0.09845150262117386,Marc Guehi,a,7603,SetPiece,2022,Head,18306,Leicester,Crystal Palace,0,0,2022-10-15 11:30:00,Eberechi Eze,Cross,Marc Guehi
+494282,15,MissedShots,0.919000015258789,0.46,0.038830000907182693,Marc Guehi,h,7603,FromCorner,2022,Head,18318,Crystal Palace,Wolverhampton Wanderers,2,1,2022-10-18 19:15:00,Michael Olise,Aerial,Marc Guehi
+501741,13,SavedShot,0.9169999694824219,0.47400001525878904,0.06637539714574814,Marc Guehi,a,7603,SetPiece,2022,OtherBodyPart,18372,Bournemouth,Crystal Palace,0,2,2022-12-31 15:00:00,Eberechi Eze,Aerial,Marc Guehi
+504341,74,SavedShot,0.9290000152587891,0.55,0.09658399969339371,Marc Guehi,h,7603,FromCorner,2022,Head,18270,Crystal Palace,Manchester United,1,1,2023-01-18 15:30:00,Michael Olise,Cross,Marc Guehi
+507142,74,SavedShot,0.9130000305175782,0.46099998474121096,0.07738830149173737,Marc Guehi,a,7603,FromCorner,2022,Head,18417,Manchester United,Crystal Palace,2,1,2023-02-04 15:00:00,Michael Olise,Cross,Marc Guehi
+511051,23,MissedShots,0.8930000305175781,0.52,0.15011200308799744,Marc Guehi,h,7603,SetPiece,2022,Head,18443,Crystal Palace,Liverpool,0,0,2023-02-25 19:45:00,Michael Olise,Cross,Marc Guehi
+518641,45,Goal,0.9690000152587891,0.46599998474121096,0.7423359751701355,Marc Guehi,a,7603,SetPiece,2022,RightFoot,18495,Leeds,Crystal Palace,1,5,2023-04-09 13:00:00,Jeffrey Schlupp,Rebound,Marc Guehi
+521943,74,SavedShot,0.955,0.5790000152587891,0.04143184423446655,Marc Guehi,a,7603,FromCorner,2022,Head,18527,Wolverhampton Wanderers,Crystal Palace,2,0,2023-04-25 18:30:00,Michael Olise,Aerial,Marc Guehi
+522573,27,MissedShots,0.9280000305175782,0.43400001525878906,0.08377351611852646,Marc Guehi,h,7603,FromCorner,2022,Head,18536,Crystal Palace,West Ham,4,3,2023-04-29 11:30:00,Wilfried Zaha,Cross,Marc Guehi
+526002,32,MissedShots,0.9159999847412109,0.600999984741211,0.02737116441130638,Marc Guehi,h,7603,OpenPlay,2022,Head,18556,Crystal Palace,Bournemouth,2,0,2023-05-13 14:00:00,Joel Ward,Aerial,Marc Guehi
+526004,36,BlockedShot,0.93,0.62,0.0368586964905262,Marc Guehi,h,7603,SetPiece,2022,Head,18556,Crystal Palace,Bournemouth,2,0,2023-05-13 14:00:00,Eberechi Eze,Cross,Marc Guehi
+529786,86,BlockedShot,0.9569999694824218,0.5359999847412109,0.0781831294298172,Marc Guehi,h,7603,FromCorner,2022,Head,18576,Crystal Palace,Nottingham Forest,1,1,2023-05-28 15:30:00,Michael Olise,Aerial,Marc Guehi
+532120,31,MissedShots,0.899000015258789,0.44599998474121094,0.04727578163146973,Marc Guehi,a,7603,FromCorner,2023,Head,22280,Sheffield United,Crystal Palace,0,1,2023-08-12 14:00:00,Eberechi Eze,Cross,Marc Guehi
+541169,10,MissedShots,0.9080000305175782,0.5629999923706055,0.08450391888618469,Marc Guehi,a,7603,SetPiece,2023,Head,21957,Manchester United,Crystal Palace,0,1,2023-09-30 14:00:00,Joachim Andersen,Cross,Marc Guehi
+544107,73,MissedShots,0.9009999847412109,0.4779999923706055,0.10167814791202545,Marc Guehi,a,7603,FromCorner,2023,RightFoot,21981,Newcastle United,Crystal Palace,4,0,2023-10-21 14:00:00,,None,Marc Guehi
+544106,73,BlockedShot,0.92,0.524000015258789,0.13448457419872284,Marc Guehi,a,7603,FromCorner,2023,LeftFoot,21981,Newcastle United,Crystal Palace,4,0,2023-10-21 14:00:00,Cheick Oumar Doucoure,Rebound,Marc Guehi
+545165,54,MissedShots,0.9330000305175781,0.504000015258789,0.1209515780210495,Marc Guehi,h,7603,FromCorner,2023,Head,21990,Crystal Palace,Tottenham,1,2,2023-10-27 19:00:00,Will Hughes,Cross,Marc Guehi
+594076,9,Goal,0.9569999694824218,0.5629999923706055,0.4970260262489319,Marc Guehi,a,7603,FromCorner,2024,RightFoot,26654,Everton,Crystal Palace,2,1,2024-09-28 14:00:00,Maxence Lacroix,HeadPass,Marc Guehi
+598875,34,SavedShot,0.9169999694824219,0.44599998474121094,0.05594401806592941,Marc Guehi,h,7603,SetPiece,2024,Head,26689,Crystal Palace,Tottenham,1,0,2024-10-27 14:00:00,Daniel Muñoz,HeadPass,Marc Guehi
+600323,31,BlockedShot,0.879000015258789,0.35900001525878905,0.011387227103114128,Marc Guehi,a,7603,FromCorner,2024,Head,26701,Wolverhampton Wanderers,Crystal Palace,2,2,2024-11-02 17:30:00,Daichi Kamada,Cross,Marc Guehi
+600344,76,Goal,0.980999984741211,0.4640000152587891,0.8746023774147034,Marc Guehi,a,7603,FromCorner,2024,LeftFoot,26701,Wolverhampton Wanderers,Crystal Palace,2,2,2024-11-02 17:30:00,Daniel Muñoz,Rebound,Marc Guehi
+601438,27,MissedShots,0.9519999694824218,0.40700000762939453,0.13181176781654358,Marc Guehi,h,7603,FromCorner,2024,Head,26706,Crystal Palace,Fulham,0,2,2024-11-09 15:00:00,Daichi Kamada,Aerial,Marc Guehi
+601452,64,SavedShot,0.78,0.720999984741211,0.01638934575021267,Marc Guehi,h,7603,OpenPlay,2024,RightFoot,26706,Crystal Palace,Fulham,0,2,2024-11-09 15:00:00,Justin Devenny,Pass,Marc Guehi
+604189,52,OwnGoal,0.00800000011920929,0.5179999923706055,0,Marc Guehi,h,7603,SetPiece,2024,LeftFoot,26725,Crystal Palace,Newcastle United,1,1,2024-11-30 15:00:00,,Foul,Marc Guehi
+604195,69,MissedShots,0.9330000305175781,0.57,0.08338551223278046,Marc Guehi,h,7603,FromCorner,2024,Head,26725,Crystal Palace,Newcastle United,1,1,2024-11-30 15:00:00,Justin Devenny,Cross,Marc Guehi
+604198,73,BlockedShot,0.9069999694824219,0.63,0.03260478749871254,Marc Guehi,h,7603,FromCorner,2024,Head,26725,Crystal Palace,Newcastle United,1,1,2024-11-30 15:00:00,,None,Marc Guehi
+605152,31,BlockedShot,0.9330000305175781,0.56,0.04140271991491318,Marc Guehi,a,7603,FromCorner,2024,Head,26737,Ipswich,Crystal Palace,0,1,2024-12-03 19:30:00,Eberechi Eze,Aerial,Marc Guehi
+607457,86,OwnGoal,0.02,0.5359999847412109,0,Marc Guehi,a,7603,FromCorner,2024,OtherBodyPart,26756,Brighton,Crystal Palace,1,3,2024-12-15 14:00:00,,Tackle,Marc Guehi
+611672,77,Goal,0.9369999694824219,0.565,0.39085251092910767,Marc Guehi,a,7603,SetPiece,2024,LeftFoot,26806,Leicester,Crystal Palace,0,2,2025-01-15 19:30:00,Eberechi Eze,Chipped,Marc Guehi
+617347,18,SavedShot,0.9009999847412109,0.4909999847412109,0.2682177424430847,Marc Guehi,h,7603,SetPiece,2024,Head,26844,Crystal Palace,Everton,1,2,2025-02-15 17:30:00,Maxence Lacroix,Cross,Marc Guehi
+625216,32,BlockedShot,0.8830000305175781,0.585,0.067343570291996,Marc Guehi,a,7603,OpenPlay,2024,RightFoot,26900,Southampton,Crystal Palace,1,1,2025-04-02 19:45:00,Ismaila Sarr,BallTouch,Marc Guehi
+628232,37,OwnGoal,0.049000000953674315,0.3870000076293945,0,Marc Guehi,a,7603,OpenPlay,2024,OtherBodyPart,26890,Newcastle United,Crystal Palace,5,0,2025-04-16 18:30:00,,Challenge,Marc Guehi
+629811,44,BlockedShot,0.8130000305175781,0.629000015258789,0.029915764927864075,Marc Guehi,a,7603,OpenPlay,2024,RightFoot,26933,Arsenal,Crystal Palace,2,2,2025-04-23 19:00:00,Daichi Kamada,Pass,Marc Guehi
+629817,64,SavedShot,0.950999984741211,0.5579999923706055,0.3998996913433075,Marc Guehi,a,7603,FromCorner,2024,Head,26933,Arsenal,Crystal Palace,2,2,2025-04-23 19:00:00,Daichi Kamada,Cross,Marc Guehi
+632388,4,BlockedShot,0.855,0.4109999847412109,0.06006252393126488,Marc Guehi,h,7603,OpenPlay,2024,LeftFoot,26949,Crystal Palace,Nottingham Forest,1,1,2025-05-05 19:00:00,,Rebound,Marc Guehi
+639281,46,ShotOnPost,0.9369999694824219,0.3970000076293945,0.24888570606708527,Marc Guehi,h,7603,SetPiece,2025,Head,28794,Crystal Palace,Nottingham Forest,1,1,2025-08-24 13:00:00,Adam Wharton,Chipped,Marc Guehi
+641129,67,Goal,0.8440000152587891,0.6940000152587891,0.05063970759510994,Marc Guehi,a,7603,OpenPlay,2025,RightFoot,28807,Aston Villa,Crystal Palace,0,3,2025-08-31 18:00:00,,None,Marc Guehi
+641711,92,MissedShots,0.905,0.555,0.02337864227592945,Marc Guehi,h,7603,FromCorner,2025,Head,28811,Crystal Palace,Sunderland,0,0,2025-09-13 14:00:00,,Aerial,Marc Guehi
+643065,36,BlockedShot,0.9669999694824218,0.45599998474121095,0.08119462430477142,Marc Guehi,a,7603,FromCorner,2025,Head,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,Daichi Kamada,Aerial,Marc Guehi
+646625,18,SavedShot,0.9430000305175781,0.45799999237060546,0.5758996605873108,Marc Guehi,a,7603,OpenPlay,2025,LeftFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,,None,Marc Guehi
+647574,28,BlockedShot,0.960999984741211,0.46700000762939453,0.08630041778087616,Marc Guehi,h,7603,FromCorner,2025,Head,28850,Crystal Palace,Bournemouth,3,3,2025-10-18 14:00:00,Adam Wharton,Aerial,Marc Guehi
+649477,9,BlockedShot,0.94,0.39,0.014898398891091347,Marc Guehi,a,7603,FromCorner,2025,Head,28859,Arsenal,Crystal Palace,1,0,2025-10-26 13:00:00,Adam Wharton,Aerial,Marc Guehi
+649492,79,MissedShots,0.8959999847412109,0.45,0.04626245051622391,Marc Guehi,a,7603,FromCorner,2025,Head,28859,Arsenal,Crystal Palace,1,0,2025-10-26 13:00:00,Will Hughes,Cross,Marc Guehi
+657595,86,Goal,0.9669999694824218,0.524000015258789,0.5149508714675903,Marc Guehi,a,7603,FromCorner,2025,Head,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Yeremi Pino,Aerial,Marc Guehi
+658534,85,BlockedShot,0.889000015258789,0.4909999847412109,0.07683029770851135,Marc Guehi,h,7603,OpenPlay,2025,RightFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,,None,Marc Guehi
+660439,78,MissedShots,0.9619999694824218,0.495,0.13677214086055756,Marc Guehi,h,7603,FromCorner,2025,Head,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Adam Wharton,Cross,Marc Guehi
+660707,30,SavedShot,0.960999984741211,0.57,0.5554289817810059,Marc Guehi,h,7603,OpenPlay,2025,LeftFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,,None,Marc Guehi
+660724,73,MissedShots,0.8809999847412109,0.5640000152587891,0.06415960192680359,Marc Guehi,h,7603,FromCorner,2025,RightFoot,28962,Crystal Palace,Fulham,1,1,2026-01-01 17:30:00,Maxence Lacroix,BallTouch,Marc Guehi
+661381,45,MissedShots,0.9590000152587891,0.5770000076293945,0.10189619660377502,Marc Guehi,a,7603,FromCorner,2025,Head,28968,Newcastle United,Crystal Palace,2,0,2026-01-04 15:00:00,Yeremi Pino,Cross,Marc Guehi
+661391,79,BlockedShot,0.794000015258789,0.6580000305175782,0.018719643354415894,Marc Guehi,a,7603,OpenPlay,2025,RightFoot,28968,Newcastle United,Crystal Palace,2,0,2026-01-04 15:00:00,,None,Marc Guehi
+664842,3,SavedShot,0.9359999847412109,0.605,0.01470867358148098,Marc Guehi,h,7603,FromCorner,2025,Head,29005,Manchester City,Wolverhampton Wanderers,2,0,2026-01-24 15:00:00,Bernardo Silva,Aerial,Marc Guehi
+664860,93,MissedShots,0.9069999694824219,0.529000015258789,0.025672387331724167,Marc Guehi,h,7603,FromCorner,2025,Head,29005,Manchester City,Wolverhampton Wanderers,2,0,2026-01-24 15:00:00,Phil Foden,Aerial,Marc Guehi
+666698,61,MissedShots,0.9309999847412109,0.46799999237060547,0.11187050491571426,Marc Guehi,a,7603,FromCorner,2025,Head,29016,Tottenham,Manchester City,2,2,2026-02-01 16:30:00,Mathis Cherki,Cross,Marc Guehi
+666705,81,BlockedShot,0.914000015258789,0.5070000076293946,0.08871933817863464,Marc Guehi,a,7603,SetPiece,2025,LeftFoot,29016,Tottenham,Manchester City,2,2,2026-02-01 16:30:00,Nico O&#039;Reilly,None,Marc Guehi
+666710,87,MissedShots,0.9269999694824219,0.519000015258789,0.049411840736866,Marc Guehi,a,7603,FromCorner,2025,Head,29016,Tottenham,Manchester City,2,2,2026-02-01 16:30:00,,Rebound,Marc Guehi
+666709,87,BlockedShot,0.945,0.5129999923706055,0.07595854997634888,Marc Guehi,a,7603,FromCorner,2025,Head,29016,Tottenham,Manchester City,2,2,2026-02-01 16:30:00,Tijjani Reijnders,Aerial,Marc Guehi
+667911,21,SavedShot,0.875,0.5259999847412109,0.040568310767412186,Marc Guehi,a,7603,FromCorner,2025,Head,29024,Liverpool,Manchester City,1,2,2026-02-08 16:30:00,Matheus Nunes,Cross,Marc Guehi
+671246,71,SavedShot,0.9590000152587891,0.47299999237060547,0.4852341115474701,Marc Guehi,a,7603,FromCorner,2025,Head,29053,Leeds,Manchester City,0,1,2026-02-28 17:30:00,Rodri,Rebound,Marc Guehi
+672272,85,MissedShots,0.9630000305175781,0.519000015258789,0.08942408114671707,Marc Guehi,h,7603,FromCorner,2025,Head,29064,Manchester City,Nottingham Forest,2,2,2026-03-04 19:30:00,Bernardo Silva,Aerial,Marc Guehi
+674182,67,MissedShots,0.9580000305175781,0.5890000152587891,0.07381779700517654,Marc Guehi,a,7603,FromCorner,2025,Head,29077,West Ham,Manchester City,1,1,2026-03-14 20:00:00,Bernardo Silva,Cross,Marc Guehi
+674192,94,MissedShots,0.894000015258789,0.5879999923706055,0.024663522839546204,Marc Guehi,a,7603,FromCorner,2025,Head,29077,West Ham,Manchester City,1,1,2026-03-14 20:00:00,Tijjani Reijnders,Cross,Marc Guehi
+674194,94,MissedShots,0.9580000305175781,0.5620000076293945,0.5419155359268188,Marc Guehi,a,7603,FromCorner,2025,RightFoot,29077,West Ham,Manchester City,1,1,2026-03-14 20:00:00,,Rebound,Marc Guehi
+678529,56,Goal,0.8830000305175781,0.39099998474121095,0.26536551117897034,Marc Guehi,a,7603,FromCorner,2025,RightFoot,29095,Chelsea,Manchester City,0,3,2026-04-12 15:30:00,Mathis Cherki,Pass,Marc Guehi
+679785,32,SavedShot,0.9019999694824219,0.545,0.02300960011780262,Marc Guehi,h,7603,FromCorner,2025,Head,29104,Manchester City,Arsenal,2,1,2026-04-19 15:30:00,Abduqodir Khusanov,Aerial,Marc Guehi
+683315,47,BlockedShot,0.9059999847412109,0.515,0.04631306231021881,Marc Guehi,a,7603,SetPiece,2025,Head,29123,Everton,Manchester City,3,3,2026-05-04 19:00:00,Bernardo Silva,Aerial,Marc Guehi

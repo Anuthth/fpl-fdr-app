@@ -1,0 +1,6 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+662444,45,SavedShot,0.9580000305175781,0.40200000762939453,0.020100891590118408,Jahmai Simpson-Pusey,a,13185,FromCorner,2025,Head,30364,FC Heidenheim,FC Cologne,2,2,2026-01-10 14:30:00,Alessio Castro-Montes,Aerial,Jahmai Simpson-Pusey
+662445,45,BlockedShot,0.950999984741211,0.35400001525878905,0.07108531892299652,Jahmai Simpson-Pusey,a,13185,FromCorner,2025,RightFoot,30364,FC Heidenheim,FC Cologne,2,2,2026-01-10 14:30:00,,Rebound,Jahmai Simpson-Pusey
+663117,94,BlockedShot,0.9230000305175782,0.455,0.045361973345279694,Jahmai Simpson-Pusey,h,13185,FromCorner,2025,Head,30370,FC Cologne,Bayern Munich,1,3,2026-01-14 19:30:00,Ísak Bergmann Jóhannesson,End,Jahmai Simpson-Pusey
+670659,35,MissedShots,0.935,0.5359999847412109,0.12166443467140198,Jahmai Simpson-Pusey,a,13185,FromCorner,2025,Head,30431,Augsburg,FC Cologne,2,0,2026-02-27 19:30:00,Gian-Luca Waldschmidt,Cross,Jahmai Simpson-Pusey
+670670,75,SavedShot,0.885,0.385,0.014238676056265831,Jahmai Simpson-Pusey,a,13185,FromCorner,2025,Head,30431,Augsburg,FC Cologne,2,0,2026-02-27 19:30:00,,Aerial,Jahmai Simpson-Pusey

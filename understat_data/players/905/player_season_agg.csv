@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,10,0,2,239,0.48428749293088913,0,0.17514710128307343,4,2015,Crystal Palace,1,0,0,0.48428749293088913,0.6829480901360512,0.08855319768190384,905,Marouane Chamakh
+season,AMC,18,2,11,1163,2.01311945496127,0,0.6836252976208925,18,2014,Crystal Palace,4,0,2,2.01311945496127,2.579960484057665,1.0949432915076613,905,Marouane Chamakh

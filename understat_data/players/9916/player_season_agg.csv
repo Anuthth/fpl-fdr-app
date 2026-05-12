@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,1,0,0,25,0,0,0,0,2025,St. Pauli,0,0,0,0,0.041828397661447525,0.041828397661447525,9916,Finley Stevens
+season,Sub,1,0,0,1,0,0,0,0,2024,St. Pauli,0,0,0,0,0.08271217346191406,0.08271217346191406,9916,Finley Stevens
+season,Sub,1,0,0,11,0,0,0.028888199478387833,1,2021,Brentford,0,0,0,0,0,0,9916,Finley Stevens

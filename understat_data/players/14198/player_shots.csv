@@ -1,0 +1,4 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+659786,89,SavedShot,0.755,0.34299999237060547,0.01579156517982483,Shea Lacey,a,14198,OpenPlay,2025,LeftFoot,28939,Aston Villa,Manchester United,2,1,2025-12-21 16:30:00,,TakeOn,Shea Lacey
+662155,84,ShotOnPost,0.7909999847412109,0.325,0.025017615407705307,Shea Lacey,a,14198,OpenPlay,2025,LeftFoot,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,Mason Mount,Pass,Shea Lacey
+662159,94,MissedShots,0.7180000305175781,0.40900001525878904,0.018491843715310097,Shea Lacey,a,14198,OpenPlay,2025,LeftFoot,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,Diogo Dalot,Pass,Shea Lacey

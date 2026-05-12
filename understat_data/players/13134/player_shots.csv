@@ -1,0 +1,9 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+597113,45,MissedShots,0.8640000152587891,0.67,0.06889019906520844,Ryan Manning,h,13134,OpenPlay,2024,LeftFoot,26678,Southampton,Leicester,2,3,2024-10-19 14:00:00,Kyle Walker-Peters,Pass,Ryan Manning
+603815,42,MissedShots,0.88,0.7090000152587891,0.04026070237159729,Ryan Manning,a,13134,OpenPlay,2024,LeftFoot,26723,Brighton,Southampton,1,1,2024-11-29 20:00:00,Yukinari Sugawara,Cross,Ryan Manning
+605828,8,BlockedShot,0.8930000305175781,0.6959999847412109,0.04303988441824913,Ryan Manning,a,13134,OpenPlay,2024,LeftFoot,26742,Aston Villa,Southampton,1,0,2024-12-07 15:00:00,Kyle Walker-Peters,Pass,Ryan Manning
+619431,76,BlockedShot,0.730999984741211,0.605,0.014194552786648273,Ryan Manning,a,13134,FromCorner,2024,LeftFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,,None,Ryan Manning
+619433,80,BlockedShot,0.909000015258789,0.6170000076293946,0.09579386562108994,Ryan Manning,a,13134,OpenPlay,2024,RightFoot,26869,Chelsea,Southampton,4,0,2025-02-25 20:15:00,Kamaldeen Sulemana,Pass,Ryan Manning
+628614,30,BlockedShot,0.8109999847412109,0.6530000305175782,0.02674490585923195,Ryan Manning,a,13134,SetPiece,2024,LeftFoot,26931,West Ham,Southampton,1,1,2025-04-19 14:00:00,Jack Stephens,Pass,Ryan Manning
+628617,37,SavedShot,0.7730000305175782,0.23200000762939454,0.04002302885055542,Ryan Manning,a,13134,DirectFreekick,2024,LeftFoot,26931,West Ham,Southampton,1,1,2025-04-19 14:00:00,,Standard,Ryan Manning
+631475,83,BlockedShot,0.745999984741211,0.7630000305175781,0.007836267352104187,Ryan Manning,a,13134,OpenPlay,2024,LeftFoot,26951,Leicester,Southampton,2,0,2025-05-03 14:00:00,Jay Robinson,Pass,Ryan Manning

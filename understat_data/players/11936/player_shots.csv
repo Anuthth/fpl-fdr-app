@@ -1,0 +1,147 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+534056,81,SavedShot,0.9730000305175781,0.3729999923706055,0.06916241347789764,Lorenzo Lucca,h,11936,FromCorner,2023,RightFoot,22311,Udinese,Juventus,0,3,2023-08-20 18:45:00,,Rebound,Lorenzo Lucca
+535673,44,SavedShot,0.9319999694824219,0.5459999847412109,0.05214109271764755,Lorenzo Lucca,a,11936,FromCorner,2023,Head,22323,Salernitana,Udinese,1,1,2023-08-28 16:30:00,Sandi Lovric,Aerial,Lorenzo Lucca
+536436,60,MissedShots,0.9619999694824218,0.46900001525878904,0.5893076062202454,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22327,Udinese,Frosinone,0,0,2023-09-02 16:30:00,Florian Thauvin,Chipped,Lorenzo Lucca
+538000,40,MissedShots,0.9119999694824219,0.4520000076293945,0.046560026705265045,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22338,Cagliari,Udinese,0,0,2023-09-17 10:30:00,Hassane Kamara,Aerial,Lorenzo Lucca
+538011,77,MissedShots,0.9109999847412109,0.515,0.054828207939863205,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22338,Cagliari,Udinese,0,0,2023-09-17 10:30:00,Florian Thauvin,Aerial,Lorenzo Lucca
+538012,78,SavedShot,0.915,0.505,0.37806934118270874,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22338,Cagliari,Udinese,0,0,2023-09-17 10:30:00,Florian Thauvin,Cross,Lorenzo Lucca
+539753,0,BlockedShot,0.7919999694824219,0.5529999923706055,0.04080776497721672,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22349,Udinese,Fiorentina,0,2,2023-09-24 13:00:00,Florian Thauvin,Pass,Lorenzo Lucca
+539757,3,BlockedShot,0.9580000305175781,0.4979999923706055,0.16286170482635498,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22349,Udinese,Fiorentina,0,2,2023-09-24 13:00:00,Florian Thauvin,Aerial,Lorenzo Lucca
+539772,64,MissedShots,0.9619999694824218,0.5790000152587891,0.6692864298820496,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22349,Udinese,Fiorentina,0,2,2023-09-24 13:00:00,Festy Ebosele,Pass,Lorenzo Lucca
+540435,30,MissedShots,0.889000015258789,0.5770000076293945,0.03833690658211708,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22361,Napoli,Udinese,4,1,2023-09-27 18:45:00,Hassane Kamara,Cross,Lorenzo Lucca
+541739,22,Goal,0.8869999694824219,0.43900001525878907,0.07408586889505386,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22370,Udinese,Genoa,2,2,2023-10-01 13:00:00,,None,Lorenzo Lucca
+541744,56,MissedShots,0.925,0.41,0.20744703710079193,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22370,Udinese,Genoa,2,2,2023-10-01 13:00:00,Walace,Cross,Lorenzo Lucca
+541752,77,MissedShots,0.9569999694824218,0.57,0.40985408425331116,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22370,Udinese,Genoa,2,2,2023-10-01 13:00:00,Sandi Lovric,Cross,Lorenzo Lucca
+542220,31,MissedShots,0.9390000152587891,0.515,0.4794777035713196,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22376,Empoli,Udinese,0,0,2023-10-06 16:30:00,Florian Thauvin,Cross,Lorenzo Lucca
+546068,65,Goal,0.9690000152587891,0.5590000152587891,0.386519193649292,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22399,Monza,Udinese,1,1,2023-10-29 14:00:00,Christian Kabasele,BallTouch,Lorenzo Lucca
+546070,71,SavedShot,0.8680000305175781,0.705,0.008144817315042019,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22399,Monza,Udinese,1,1,2023-10-29 14:00:00,Nehuén Pérez,Aerial,Lorenzo Lucca
+551698,29,Goal,0.94,0.5220000076293946,0.5301440954208374,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22441,Udinese,Verona,3,3,2023-12-03 14:00:00,Roberto Pereyra,Cross,Lorenzo Lucca
+551710,71,Goal,0.91,0.4620000076293945,0.1102650985121727,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22441,Udinese,Verona,3,3,2023-12-03 14:00:00,Florian Thauvin,Cross,Lorenzo Lucca
+553192,58,BlockedShot,0.8640000152587891,0.3579999923706055,0.03790508210659027,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22450,Inter,Udinese,4,0,2023-12-09 19:45:00,Jordan Zemura,Chipped,Lorenzo Lucca
+554846,35,Goal,0.93,0.49400001525878906,0.08979956060647964,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22464,Udinese,Sassuolo,2,2,2023-12-17 14:00:00,Roberto Pereyra,Chipped,Lorenzo Lucca
+556159,3,MissedShots,0.9519999694824218,0.44,0.12056073546409607,Lorenzo Lucca,a,11936,FromCorner,2023,Head,22468,Torino,Udinese,1,1,2023-12-23 14:00:00,Lazar Samardzic,Cross,Lorenzo Lucca
+556162,11,MissedShots,0.9640000152587891,0.6120000076293945,0.04663994163274765,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22468,Torino,Udinese,1,1,2023-12-23 14:00:00,Festy Ebosele,Cross,Lorenzo Lucca
+556171,32,BlockedShot,0.78,0.6220000076293946,0.027846762910485268,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22468,Torino,Udinese,1,1,2023-12-23 14:00:00,,BallRecovery,Lorenzo Lucca
+556173,40,MissedShots,0.899000015258789,0.500999984741211,0.09326372295618057,Lorenzo Lucca,a,11936,FromCorner,2023,RightFoot,22468,Torino,Udinese,1,1,2023-12-23 14:00:00,João Ferreira,Chipped,Lorenzo Lucca
+556918,29,MissedShots,0.9130000305175782,0.675,0.010340224020183086,Lorenzo Lucca,h,11936,FromCorner,2023,Head,22482,Udinese,Bologna,3,0,2023-12-30 14:00:00,Hassane Kamara,Cross,Lorenzo Lucca
+556923,41,MissedShots,0.9,0.3559999847412109,0.06297461688518524,Lorenzo Lucca,h,11936,SetPiece,2023,RightFoot,22482,Udinese,Bologna,3,0,2023-12-30 14:00:00,,Rebound,Lorenzo Lucca
+556925,47,Goal,0.8909999847412109,0.5470000076293945,0.3818131685256958,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22482,Udinese,Bologna,3,0,2023-12-30 14:00:00,Sandi Lovric,Rebound,Lorenzo Lucca
+557696,50,MissedShots,0.9359999847412109,0.41700000762939454,0.07638174295425415,Lorenzo Lucca,h,11936,FromCorner,2023,RightFoot,22493,Udinese,Lazio,1,2,2024-01-07 14:00:00,Sandi Lovric,Foul,Lorenzo Lucca
+558676,22,SavedShot,0.8069999694824219,0.545,0.1319601833820343,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22496,Fiorentina,Udinese,2,2,2024-01-14 17:00:00,Walace,Throughball,Lorenzo Lucca
+559143,67,SavedShot,0.914000015258789,0.43099998474121093,0.053752634674310684,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22513,Udinese,AC Milan,2,3,2024-01-20 19:45:00,Hassane Kamara,Aerial,Lorenzo Lucca
+559680,1,MissedShots,0.9080000305175782,0.5879999923706055,0.02757733315229416,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22515,Atalanta,Udinese,2,0,2024-01-27 14:00:00,Festy Ebosele,Aerial,Lorenzo Lucca
+561016,5,SavedShot,0.91,0.23100000381469726,0.026931297034025192,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,Roberto Pereyra,Pass,Lorenzo Lucca
+561017,8,SavedShot,0.960999984741211,0.3039999961853027,0.05660104751586914,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,,BallRecovery,Lorenzo Lucca
+561020,14,BlockedShot,0.9119999694824219,0.485,0.05675780400633812,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,Florian Thauvin,Aerial,Lorenzo Lucca
+561022,23,SavedShot,0.6880000305175781,0.524000015258789,0.010056599043309689,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,,None,Lorenzo Lucca
+561025,43,SavedShot,0.72,0.49700000762939456,0.019634360447525978,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,Walace,Pass,Lorenzo Lucca
+561026,44,MissedShots,0.8730000305175781,0.5159999847412109,0.013584353029727936,Lorenzo Lucca,h,11936,FromCorner,2023,Head,22527,Udinese,Monza,0,0,2024-02-03 14:00:00,Sandi Lovric,Aerial,Lorenzo Lucca
+563392,74,MissedShots,0.7959999847412109,0.6419999694824219,0.08491543680429459,Lorenzo Lucca,a,11936,DirectFreekick,2023,RightFoot,22538,Juventus,Udinese,0,1,2024-02-12 19:45:00,,Standard,Lorenzo Lucca
+564293,29,MissedShots,0.904000015258789,0.5129999923706055,0.30631664395332336,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22545,Udinese,Cagliari,1,1,2024-02-18 14:00:00,Florian Thauvin,Cross,Lorenzo Lucca
+564300,57,MissedShots,0.855,0.6530000305175782,0.10428003966808319,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22545,Udinese,Cagliari,1,1,2024-02-18 14:00:00,Florian Thauvin,Chipped,Lorenzo Lucca
+564302,71,SavedShot,0.89,0.7269999694824218,0.012785457074642181,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22545,Udinese,Cagliari,1,1,2024-02-18 14:00:00,Nehuén Pérez,Chipped,Lorenzo Lucca
+565413,24,BlockedShot,0.925,0.5420000076293945,0.0600423701107502,Lorenzo Lucca,a,11936,SetPiece,2023,Head,22558,Genoa,Udinese,2,0,2024-02-24 19:45:00,Sandi Lovric,Aerial,Lorenzo Lucca
+566357,17,SavedShot,0.894000015258789,0.5,0.355385422706604,Lorenzo Lucca,h,11936,OpenPlay,2023,LeftFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Martín Payero,Cross,Lorenzo Lucca
+566363,43,SavedShot,0.9130000305175782,0.33,0.008689166978001595,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Hassane Kamara,Aerial,Lorenzo Lucca
+566384,93,MissedShots,0.904000015258789,0.5379999923706055,0.02121700905263424,Lorenzo Lucca,h,11936,FromCorner,2023,Head,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Florian Thauvin,Aerial,Lorenzo Lucca
+568971,46,Goal,0.9480000305175781,0.4929999923706055,0.6454904675483704,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22583,Lazio,Udinese,1,2,2024-03-11 19:45:00,Hassane Kamara,Rebound,Lorenzo Lucca
+569277,37,MissedShots,0.9640000152587891,0.6459999847412109,0.04247336834669113,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22593,Udinese,Torino,0,2,2024-03-16 14:00:00,Florian Thauvin,Cross,Lorenzo Lucca
+569280,53,SavedShot,0.8019999694824219,0.47200000762939454,0.03343472257256508,Lorenzo Lucca,h,11936,OpenPlay,2023,LeftFoot,22593,Udinese,Torino,0,2,2024-03-16 14:00:00,,None,Lorenzo Lucca
+571628,14,MissedShots,0.9119999694824219,0.600999984741211,0.08391120284795761,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22597,Sassuolo,Udinese,1,1,2024-04-01 14:00:00,,None,Lorenzo Lucca
+571633,32,BlockedShot,0.9059999847412109,0.47200000762939454,0.11134254187345505,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22597,Sassuolo,Udinese,1,1,2024-04-01 14:00:00,Roberto Pereyra,Cross,Lorenzo Lucca
+571635,34,BlockedShot,0.8880000305175781,0.40900001525878904,0.06548401713371277,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22597,Sassuolo,Udinese,1,1,2024-04-01 14:00:00,Sandi Lovric,Cross,Lorenzo Lucca
+576324,8,MissedShots,0.9,0.4279999923706055,0.22139427065849304,Lorenzo Lucca,h,11936,OpenPlay,2023,Head,22621,Udinese,Roma,1,2,2024-04-14 16:00:00,Lazar Samardzic,Chipped,Lorenzo Lucca
+576334,50,SavedShot,0.7680000305175781,0.3170000076293945,0.025505371391773224,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22621,Udinese,Roma,1,2,2024-04-14 16:00:00,Lazar Samardzic,Pass,Lorenzo Lucca
+576345,80,SavedShot,0.905,0.6730000305175782,0.06338416785001755,Lorenzo Lucca,h,11936,SetPiece,2023,LeftFoot,22621,Udinese,Roma,1,2,2024-04-14 16:00:00,Roberto Pereyra,HeadPass,Lorenzo Lucca
+575210,25,SavedShot,0.919000015258789,0.49700000762939456,0.5118666291236877,Lorenzo Lucca,a,11936,FromCorner,2023,RightFoot,22628,Verona,Udinese,1,0,2024-04-20 18:45:00,,None,Lorenzo Lucca
+575218,48,MissedShots,0.86,0.46299999237060546,0.09220746159553528,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22628,Verona,Udinese,1,0,2024-04-20 18:45:00,Lazar Samardzic,Pass,Lorenzo Lucca
+577264,45,BlockedShot,0.8830000305175781,0.3629999923706055,0.11808807402849197,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22642,Bologna,Udinese,1,1,2024-04-28 13:00:00,Lazar Samardzic,Throughball,Lorenzo Lucca
+579409,33,BlockedShot,0.875,0.4420000076293945,0.115552619099617,Lorenzo Lucca,h,11936,OpenPlay,2023,RightFoot,22654,Udinese,Napoli,1,1,2024-05-06 18:45:00,Kingsley Ehizibue,LayOff,Lorenzo Lucca
+580839,35,Goal,0.914000015258789,0.5429999923706055,0.2654631733894348,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22661,Lecce,Udinese,0,2,2024-05-13 16:30:00,Martín Payero,Cross,Lorenzo Lucca
+580840,38,MissedShots,0.7709999847412109,0.4979999923706055,0.04049215465784073,Lorenzo Lucca,a,11936,OpenPlay,2023,RightFoot,22661,Lecce,Udinese,0,2,2024-05-13 16:30:00,Isaac Success,Pass,Lorenzo Lucca
+583563,50,MissedShots,0.91,0.46900001525878904,0.056595128029584885,Lorenzo Lucca,a,11936,OpenPlay,2023,Head,22678,Frosinone,Udinese,0,1,2024-05-26 18:45:00,Hassane Kamara,Aerial,Lorenzo Lucca
+591283,4,Goal,0.9209999847412109,0.5259999847412109,0.34016215801239014,Lorenzo Lucca,h,11936,OpenPlay,2024,Head,27373,Udinese,Lazio,2,1,2024-08-24 16:30:00,Florian Thauvin,Cross,Lorenzo Lucca
+591300,64,BlockedShot,0.7869999694824219,0.3659999847412109,0.03834788128733635,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27373,Udinese,Lazio,2,1,2024-08-24 16:30:00,,BallRecovery,Lorenzo Lucca
+590155,33,MissedShots,0.9059999847412109,0.5790000152587891,0.0940045490860939,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27391,Udinese,Como,1,0,2024-09-01 18:45:00,,None,Lorenzo Lucca
+591782,16,MissedShots,0.8959999847412109,0.42200000762939455,0.07424649596214294,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27400,Parma Calcio 1913,Udinese,2,3,2024-09-16 16:30:00,Kingsley Ehizibue,Cross,Lorenzo Lucca
+591791,45,ShotOnPost,0.8719999694824219,0.3170000076293945,0.09023405611515045,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27400,Parma Calcio 1913,Udinese,2,3,2024-09-16 16:30:00,Florian Thauvin,Throughball,Lorenzo Lucca
+591793,49,Goal,0.9359999847412109,0.5059999847412109,0.580552339553833,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27400,Parma Calcio 1913,Udinese,2,3,2024-09-16 16:30:00,Hassane Kamara,Aerial,Lorenzo Lucca
+593925,82,Goal,0.9080000305175782,0.385,0.24721753597259521,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27413,Udinese,Inter,2,3,2024-09-28 13:00:00,Brenner,TakeOn,Lorenzo Lucca
+595265,2,MissedShots,0.909000015258789,0.685,0.05125269666314125,Lorenzo Lucca,h,11936,FromCorner,2024,LeftFoot,27431,Udinese,Lecce,1,0,2024-10-05 13:00:00,,Rebound,Lorenzo Lucca
+598042,37,Goal,0.9359999847412109,0.5229999923706055,0.35501083731651306,Lorenzo Lucca,h,11936,FromCorner,2024,Head,27451,Udinese,Cagliari,2,0,2024-10-25 16:30:00,Hassane Kamara,Cross,Lorenzo Lucca
+599564,26,MissedShots,0.8680000305175781,0.5429999923706055,0.013866565190255642,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27461,Venezia,Udinese,3,2,2024-10-30 17:30:00,Kingsley Ehizibue,Aerial,Lorenzo Lucca
+599562,26,SavedShot,0.8119999694824219,0.485,0.07799199223518372,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27461,Venezia,Udinese,3,2,2024-10-30 17:30:00,Iker Bravo,Pass,Lorenzo Lucca
+599565,27,MissedShots,0.885,0.41400001525878904,0.12052766978740692,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27461,Venezia,Udinese,3,2,2024-10-30 17:30:00,Kingsley Ehizibue,Cross,Lorenzo Lucca
+599567,32,MissedShots,0.720999984741211,0.49,0.02027641050517559,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27461,Venezia,Udinese,3,2,2024-10-30 17:30:00,Iker Bravo,Pass,Lorenzo Lucca
+599581,74,SavedShot,0.8919999694824219,0.26,0.05622068792581558,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27461,Venezia,Udinese,3,2,2024-10-30 17:30:00,Jesper Karlström,Pass,Lorenzo Lucca
+600309,75,BlockedShot,0.8209999847412109,0.6459999847412109,0.0364668108522892,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27466,Udinese,Juventus,0,2,2024-11-02 17:00:00,Hassane Kamara,Pass,Lorenzo Lucca
+600314,82,ShotOnPost,0.9009999847412109,0.500999984741211,0.05203380808234215,Lorenzo Lucca,h,11936,OpenPlay,2024,Head,27466,Udinese,Juventus,0,2,2024-11-02 17:00:00,Hassane Kamara,Aerial,Lorenzo Lucca
+603720,64,BlockedShot,0.865999984741211,0.4490000152587891,0.07542587071657181,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27483,Empoli,Udinese,1,1,2024-11-25 17:00:00,Jurgen Ekkelenkamp,Pass,Lorenzo Lucca
+603722,71,BlockedShot,0.9640000152587891,0.36,0.0602765828371048,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27483,Empoli,Udinese,1,1,2024-11-25 17:00:00,,None,Lorenzo Lucca
+603726,81,BlockedShot,0.6919999694824219,0.539000015258789,0.011816104874014854,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27483,Empoli,Udinese,1,1,2024-11-25 17:00:00,Jesper Karlström,BallRecovery,Lorenzo Lucca
+603727,86,MissedShots,0.8680000305175781,0.4540000152587891,0.012318666093051434,Lorenzo Lucca,a,11936,FromCorner,2024,Head,27483,Empoli,Udinese,1,1,2024-11-25 17:00:00,Florian Thauvin,Aerial,Lorenzo Lucca
+603730,93,MissedShots,0.8390000152587891,0.600999984741211,0.061514582484960556,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27483,Empoli,Udinese,1,1,2024-11-25 17:00:00,Keinan Davis,BallTouch,Lorenzo Lucca
+606658,5,Goal,0.945,0.49599998474121093,0.5468999147415161,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27508,Monza,Udinese,1,2,2024-12-09 19:45:00,Jordan Zemura,Cross,Lorenzo Lucca
+606668,34,MissedShots,0.8809999847412109,0.644000015258789,0.11939762532711029,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27508,Monza,Udinese,1,2,2024-12-09 19:45:00,Jurgen Ekkelenkamp,Pass,Lorenzo Lucca
+606685,66,BlockedShot,0.889000015258789,0.3890000152587891,0.05787735804915428,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27508,Monza,Udinese,1,2,2024-12-09 19:45:00,Kingsley Ehizibue,Cross,Lorenzo Lucca
+606690,89,MissedShots,0.8730000305175781,0.3390000152587891,0.0889563113451004,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27508,Monza,Udinese,1,2,2024-12-09 19:45:00,Jordan Zemura,Pass,Lorenzo Lucca
+608982,47,MissedShots,0.904000015258789,0.534000015258789,0.05510616675019264,Lorenzo Lucca,a,11936,SetPiece,2024,Head,27523,Fiorentina,Udinese,1,2,2024-12-23 17:30:00,Christian Kabasele,HeadPass,Lorenzo Lucca
+608983,48,Goal,0.8980000305175782,0.39299999237060546,0.09267380088567734,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27523,Fiorentina,Udinese,1,2,2024-12-23 17:30:00,Jurgen Ekkelenkamp,Pass,Lorenzo Lucca
+608984,50,ShotOnPost,0.9159999847412109,0.46599998474121096,0.11577029526233673,Lorenzo Lucca,a,11936,FromCorner,2024,RightFoot,27523,Fiorentina,Udinese,1,2,2024-12-23 17:30:00,Thomas Thiesson Kristensen,HeadPass,Lorenzo Lucca
+609389,48,Goal,0.9359999847412109,0.5590000152587891,0.32115939259529114,Lorenzo Lucca,h,11936,FromCorner,2024,Head,27541,Udinese,Torino,2,2,2024-12-29 11:30:00,Florian Thauvin,Cross,Lorenzo Lucca
+609396,69,SavedShot,0.8080000305175781,0.5270000076293946,0.03230133280158043,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27541,Udinese,Torino,2,2,2024-12-29 11:30:00,Florian Thauvin,Cross,Lorenzo Lucca
+610128,54,SavedShot,0.8240000152587891,0.3170000076293945,0.03239608556032181,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27545,Verona,Udinese,0,0,2025-01-04 19:45:00,Jaka Bijol,Pass,Lorenzo Lucca
+610136,70,SavedShot,0.924000015258789,0.5359999847412109,0.0691622868180275,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27545,Verona,Udinese,0,0,2025-01-04 19:45:00,Thomas Thiesson Kristensen,Aerial,Lorenzo Lucca
+613812,37,Goal,0.8930000305175781,0.43599998474121093,0.2548026740550995,Lorenzo Lucca,h,11936,SetPiece,2024,RightFoot,27579,Udinese,Roma,1,2,2025-01-26 14:00:00,Sandi Lovric,Cross,Lorenzo Lucca
+614575,46,Goal,0.980999984741211,0.425,0.3680531680583954,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27583,Udinese,Venezia,3,2,2025-02-01 14:00:00,Hassane Kamara,Cross,Lorenzo Lucca
+614581,72,SavedShot,0.769000015258789,0.5509999847412109,0.09168417751789093,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27583,Udinese,Venezia,3,2,2025-02-01 14:00:00,Florian Thauvin,Chipped,Lorenzo Lucca
+616768,9,MissedShots,0.9569999694824218,0.53,0.5891684293746948,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27598,Napoli,Udinese,1,1,2025-02-09 19:45:00,Florian Thauvin,Cross,Lorenzo Lucca
+616781,53,BlockedShot,0.9180000305175782,0.6559999847412109,0.037806831300258636,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27598,Napoli,Udinese,1,1,2025-02-09 19:45:00,Jesper Karlström,Cross,Lorenzo Lucca
+617619,5,MissedShots,0.8830000305175781,0.5620000076293945,0.11048723012208939,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27604,Udinese,Empoli,3,0,2025-02-16 14:00:00,Arthur Atta,Pass,Lorenzo Lucca
+617637,58,ShotOnPost,0.9,0.445,0.07892359048128128,Lorenzo Lucca,h,11936,FromCorner,2024,RightFoot,27604,Udinese,Empoli,3,0,2025-02-16 14:00:00,Jurgen Ekkelenkamp,BallTouch,Lorenzo Lucca
+617642,64,SavedShot,0.8690000152587891,0.33,0.09438910335302353,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27604,Udinese,Empoli,3,0,2025-02-16 14:00:00,Sandi Lovric,Pass,Lorenzo Lucca
+618151,5,SavedShot,0.9159999847412109,0.35400001525878905,0.27772659063339233,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27615,Lecce,Udinese,0,1,2025-02-21 19:45:00,Sandi Lovric,Pass,Lorenzo Lucca
+618157,31,Goal,0.885,0.5,0.7612988352775574,Lorenzo Lucca,a,11936,Penalty,2024,RightFoot,27615,Lecce,Udinese,0,1,2025-02-21 19:45:00,,Standard,Lorenzo Lucca
+620260,49,MissedShots,0.924000015258789,0.3970000076293945,0.05585834011435509,Lorenzo Lucca,h,11936,FromCorner,2024,RightFoot,27631,Udinese,Parma Calcio 1913,1,0,2025-03-01 19:45:00,Sandi Lovric,Cross,Lorenzo Lucca
+620268,69,BlockedShot,0.904000015258789,0.41200000762939454,0.09178049862384796,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27631,Udinese,Parma Calcio 1913,1,0,2025-03-01 19:45:00,Oier Zarraga,Cross,Lorenzo Lucca
+620270,76,SavedShot,0.8819999694824219,0.655,0.3100017011165619,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27631,Udinese,Parma Calcio 1913,1,0,2025-03-01 19:45:00,Jesper Karlström,Pass,Lorenzo Lucca
+622205,3,MissedShots,0.874000015258789,0.5609999847412109,0.07850159704685211,Lorenzo Lucca,a,11936,FromCorner,2024,RightFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,Hassane Kamara,Rebound,Lorenzo Lucca
+622210,21,MissedShots,0.9330000305175781,0.5990000152587891,0.1120726689696312,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,,Rebound,Lorenzo Lucca
+622218,43,MissedShots,0.875,0.49400001525878906,0.0791051834821701,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,Thomas Thiesson Kristensen,Cross,Lorenzo Lucca
+622451,21,MissedShots,0.9269999694824219,0.44799999237060545,0.05519745498895645,Lorenzo Lucca,h,11936,OpenPlay,2024,Head,27650,Udinese,Verona,0,1,2025-03-15 14:00:00,Jordan Zemura,Aerial,Lorenzo Lucca
+622452,23,SavedShot,0.8830000305175781,0.515,0.03115752339363098,Lorenzo Lucca,h,11936,OpenPlay,2024,Head,27650,Udinese,Verona,0,1,2025-03-15 14:00:00,Martín Payero,Aerial,Lorenzo Lucca
+624795,36,SavedShot,0.904000015258789,0.5270000076293946,0.2957020401954651,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27655,Inter,Udinese,2,1,2025-03-30 17:00:00,Kingsley Ehizibue,Cross,Lorenzo Lucca
+624798,47,BlockedShot,0.8730000305175781,0.4759999847412109,0.07931118458509445,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27655,Inter,Udinese,2,1,2025-03-30 17:00:00,Jaka Bijol,BallRecovery,Lorenzo Lucca
+624800,48,BlockedShot,0.8730000305175781,0.5120000076293946,0.06558183580636978,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27655,Inter,Udinese,2,1,2025-03-30 17:00:00,Kingsley Ehizibue,Cross,Lorenzo Lucca
+624808,73,SavedShot,0.8690000152587891,0.519000015258789,0.13723546266555786,Lorenzo Lucca,a,11936,OpenPlay,2024,Head,27655,Inter,Udinese,2,1,2025-03-30 17:00:00,Rui Modesto,Cross,Lorenzo Lucca
+625332,46,MissedShots,0.9219999694824219,0.5509999847412109,0.47468021512031555,Lorenzo Lucca,a,11936,OpenPlay,2024,RightFoot,27667,Genoa,Udinese,1,0,2025-04-04 18:45:00,Arthur Atta,Pass,Lorenzo Lucca
+625335,62,SavedShot,0.860999984741211,0.425,0.008558185771107674,Lorenzo Lucca,a,11936,SetPiece,2024,Head,27667,Genoa,Udinese,1,0,2025-04-04 18:45:00,Oumar Solet,Aerial,Lorenzo Lucca
+626774,17,MissedShots,0.915,0.44599998474121094,0.07842466235160828,Lorenzo Lucca,h,11936,FromCorner,2024,RightFoot,27681,Udinese,AC Milan,0,4,2025-04-11 18:45:00,Sandi Lovric,Cross,Lorenzo Lucca
+626786,58,MissedShots,0.8630000305175781,0.5029999923706054,0.05356348305940628,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27681,Udinese,AC Milan,0,4,2025-04-11 18:45:00,Arthur Atta,Cross,Lorenzo Lucca
+626792,75,MissedShots,0.95,0.519000015258789,0.09121973067522049,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27681,Udinese,AC Milan,0,4,2025-04-11 18:45:00,,None,Lorenzo Lucca
+633307,58,SavedShot,0.8980000305175782,0.4209999847412109,0.048096220940351486,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27720,Udinese,Monza,1,2,2025-05-11 10:30:00,Hassane Kamara,Aerial,Lorenzo Lucca
+633310,74,Goal,0.8780000305175781,0.29,0.03656099736690521,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27720,Udinese,Monza,1,2,2025-05-11 10:30:00,Jesper Karlström,Chipped,Lorenzo Lucca
+633313,81,MissedShots,0.9130000305175782,0.46700000762939453,0.11733889579772949,Lorenzo Lucca,h,11936,OpenPlay,2024,Head,27720,Udinese,Monza,1,2,2025-05-11 10:30:00,Oumar Solet,Cross,Lorenzo Lucca
+633315,86,MissedShots,0.9180000305175782,0.43099998474121093,0.07133603096008301,Lorenzo Lucca,h,11936,FromCorner,2024,Head,27720,Udinese,Monza,1,2,2025-05-11 10:30:00,Jesper Karlström,Cross,Lorenzo Lucca
+636533,25,Goal,0.8859999847412109,0.5840000152587891,0.08968178927898407,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27741,Udinese,Fiorentina,2,3,2025-05-25 18:45:00,Oumar Solet,Dispossessed,Lorenzo Lucca
+636534,32,BlockedShot,0.8730000305175781,0.475,0.09268097579479218,Lorenzo Lucca,h,11936,OpenPlay,2024,RightFoot,27741,Udinese,Fiorentina,2,3,2025-05-25 18:45:00,Jaka Bijol,Cross,Lorenzo Lucca
+636551,60,BlockedShot,0.8869999694824219,0.44299999237060544,0.034047681838274,Lorenzo Lucca,h,11936,FromCorner,2024,Head,27741,Udinese,Fiorentina,2,3,2025-05-25 18:45:00,Arthur Atta,Cross,Lorenzo Lucca
+638986,54,SavedShot,0.965,0.5229999923706055,0.7368072271347046,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29845,Sassuolo,Napoli,0,2,2025-08-23 16:30:00,,Rebound,Lorenzo Lucca
+638988,59,BlockedShot,0.8019999694824219,0.3770000076293945,0.05209420248866081,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29845,Sassuolo,Napoli,0,2,2025-08-23 16:30:00,Kevin De Bruyne,Pass,Lorenzo Lucca
+640596,39,BlockedShot,0.9069999694824219,0.3139999961853027,0.0646107867360115,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29859,Napoli,Cagliari,1,0,2025-08-30 18:45:00,Amir Rrahmani,Pass,Lorenzo Lucca
+640599,42,SavedShot,0.8030000305175782,0.5540000152587891,0.046520572155714035,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29859,Napoli,Cagliari,1,0,2025-08-30 18:45:00,Leonardo Spinazzola,Pass,Lorenzo Lucca
+644096,81,Goal,0.92,0.34400001525878904,0.13483008742332458,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29883,Napoli,Pisa,3,2,2025-09-22 18:45:00,Scott McTominay,Throughball,Lorenzo Lucca
+646993,89,SavedShot,0.9680000305175781,0.669000015258789,0.28009742498397827,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29900,Napoli,Genoa,2,1,2025-10-05 16:00:00,Kevin De Bruyne,TakeOn,Lorenzo Lucca
+647771,26,BlockedShot,0.9119999694824219,0.509000015258789,0.06028027459979057,Lorenzo Lucca,a,11936,OpenPlay,2025,Head,29906,Torino,Napoli,1,0,2025-10-18 16:00:00,David Neres,Aerial,Lorenzo Lucca
+647773,29,SavedShot,0.909000015258789,0.5270000076293946,0.07601067423820496,Lorenzo Lucca,a,11936,FromCorner,2025,Head,29906,Torino,Napoli,1,0,2025-10-18 16:00:00,David Neres,Cross,Lorenzo Lucca
+647779,40,MissedShots,0.9619999694824218,0.395,0.10493960976600647,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29906,Torino,Napoli,1,0,2025-10-18 16:00:00,Billy Gilmour,Throughball,Lorenzo Lucca
+650060,3,BlockedShot,0.7280000305175781,0.46700000762939453,0.020722495391964912,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29931,Lecce,Napoli,0,1,2025-10-28 16:30:00,Noa Lang,Pass,Lorenzo Lucca
+650068,35,MissedShots,0.8959999847412109,0.4540000152587891,0.11472271382808685,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29931,Lecce,Napoli,0,1,2025-10-28 16:30:00,,Rebound,Lorenzo Lucca
+653967,91,BlockedShot,0.8619999694824219,0.6309999847412109,0.06293698400259018,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29960,Napoli,Atalanta,3,1,2025-11-22 19:45:00,Vanja Milinkovic-Savic,Pass,Lorenzo Lucca
+658611,92,ShotOnPost,0.9469999694824218,0.375,0.061009731143713,Lorenzo Lucca,a,11936,OpenPlay,2025,RightFoot,29993,Udinese,Napoli,1,0,2025-12-14 14:00:00,Rasmus Højlund,Cross,Lorenzo Lucca
+661877,79,BlockedShot,0.8880000305175781,0.6969999694824218,0.045400284230709076,Lorenzo Lucca,h,11936,OpenPlay,2025,LeftFoot,30029,Napoli,Verona,2,2,2026-01-07 17:30:00,Scott McTominay,Pass,Lorenzo Lucca
+663019,94,MissedShots,0.9080000305175782,0.6809999847412109,0.04655972495675087,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,30001,Napoli,Parma Calcio 1913,0,0,2026-01-14 17:30:00,,Rebound,Lorenzo Lucca
+666995,85,Goal,0.9319999694824219,0.4879999923706055,0.5543361306190491,Lorenzo Lucca,a,11936,OpenPlay,2025,Head,29023,Leeds,Nottingham Forest,3,1,2026-02-06 20:00:00,Omari Hutchinson,Aerial,Lorenzo Lucca
+668323,26,MissedShots,0.92,0.5279999923706055,0.05727006122469902,Lorenzo Lucca,h,11936,OpenPlay,2025,Head,29034,Nottingham Forest,Wolverhampton Wanderers,0,0,2026-02-11 19:30:00,Ola Aina,Aerial,Lorenzo Lucca
+668324,30,MissedShots,0.8859999847412109,0.45599998474121095,0.516549825668335,Lorenzo Lucca,h,11936,OpenPlay,2025,RightFoot,29034,Nottingham Forest,Wolverhampton Wanderers,0,0,2026-02-11 19:30:00,Callum Hudson-Odoi,Pass,Lorenzo Lucca
+684169,92,MissedShots,0.9180000305175782,0.5520000076293945,0.056352149695158005,Lorenzo Lucca,h,11936,OpenPlay,2025,Head,29134,Nottingham Forest,Newcastle United,1,1,2026-05-10 13:00:00,Omari Hutchinson,Aerial,Lorenzo Lucca

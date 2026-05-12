@@ -1,0 +1,3 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+535415,96,MissedShots,0.879000015258789,0.515,0.016498630866408348,Nick Pope,h,5552,SetPiece,2023,Head,22304,Newcastle United,Liverpool,1,2,2023-08-27 15:30:00,Kieran Trippier,Aerial,Nick Pope
+670040,94,SavedShot,0.9540000152587891,0.5309999847412109,0.13148732483386993,Nick Pope,a,5552,FromCorner,2025,Head,29043,Manchester City,Newcastle United,2,1,2026-02-21 20:00:00,Sandro Tonali,Cross,Nick Pope

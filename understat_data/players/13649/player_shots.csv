@@ -1,0 +1,18 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+656814,85,BlockedShot,0.899000015258789,0.435,0.11350106447935104,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,30334,Augsburg,Bayer Leverkusen,2,0,2025-12-06 14:30:00,Aleix García,Pass,Claudio Echeverri
+665684,83,BlockedShot,0.8080000305175781,0.705999984741211,0.07884574681520462,Claudio Echeverri,h,13649,DirectFreekick,2025,RightFoot,29365,Girona,Getafe,1,1,2026-01-26 20:00:00,,Standard,Claudio Echeverri
+665858,71,BlockedShot,0.845,0.5720000076293945,0.05614117532968521,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29375,Real Oviedo,Girona,1,0,2026-01-31 13:00:00,,TakeOn,Claudio Echeverri
+667855,46,MissedShots,0.715999984741211,0.49700000762939456,0.023793863132596016,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29386,Sevilla,Girona,1,1,2026-02-08 15:15:00,Daley Blind,Pass,Claudio Echeverri
+671986,79,SavedShot,0.8090000152587891,0.5640000152587891,0.0358264334499836,Claudio Echeverri,h,13649,FromCorner,2025,RightFoot,29415,Girona,Celta Vigo,1,2,2026-03-01 20:00:00,Azz-Eddine Ounahi,Pass,Claudio Echeverri
+672678,28,BlockedShot,0.8580000305175781,0.7090000152587891,0.036217041313648224,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29425,Levante,Girona,1,1,2026-03-07 15:15:00,Axel Witsel,Pass,Claudio Echeverri
+673697,76,BlockedShot,0.9130000305175782,0.37799999237060544,0.13320910930633545,Claudio Echeverri,h,13649,OpenPlay,2025,LeftFoot,29433,Girona,Athletic Club,3,0,2026-03-14 13:00:00,Azz-Eddine Ounahi,Pass,Claudio Echeverri
+673698,76,MissedShots,0.8859999847412109,0.32299999237060545,0.11617070436477661,Claudio Echeverri,h,13649,OpenPlay,2025,RightFoot,29433,Girona,Athletic Club,3,0,2026-03-14 13:00:00,,Rebound,Claudio Echeverri
+673705,91,Goal,0.9430000305175781,0.4229999923706055,0.5608841776847839,Claudio Echeverri,h,13649,OpenPlay,2025,RightFoot,29433,Girona,Athletic Club,3,0,2026-03-14 13:00:00,Viktor Tsygankov,Pass,Claudio Echeverri
+677532,16,MissedShots,0.8030000305175782,0.514000015258789,0.04767196625471115,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,Thomas Lemar,Pass,Claudio Echeverri
+677540,44,MissedShots,0.874000015258789,0.32299999237060545,0.07395098358392715,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,Thomas Lemar,TakeOn,Claudio Echeverri
+677541,46,BlockedShot,0.7909999847412109,0.5459999847412109,0.03863746300339699,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,,None,Claudio Echeverri
+677549,59,MissedShots,0.8480000305175781,0.26899999618530274,0.026816707104444504,Claudio Echeverri,a,13649,OpenPlay,2025,RightFoot,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,Viktor Tsygankov,Pass,Claudio Echeverri
+680121,6,BlockedShot,0.8580000305175781,0.4540000152587891,0.15785880386829376,Claudio Echeverri,h,13649,OpenPlay,2025,RightFoot,29485,Girona,Real Betis,2,3,2026-04-21 19:30:00,Viktor Tsygankov,TakeOn,Claudio Echeverri
+680124,15,BlockedShot,0.8340000152587891,0.3629999923706055,0.06566358357667923,Claudio Echeverri,h,13649,OpenPlay,2025,RightFoot,29485,Girona,Real Betis,2,3,2026-04-21 19:30:00,Fran Beltrán,Pass,Claudio Echeverri
+681188,48,MissedShots,0.7380000305175781,0.5170000076293946,0.06424932926893234,Claudio Echeverri,a,13649,DirectFreekick,2025,RightFoot,29472,Valencia,Girona,2,1,2026-04-25 16:30:00,,Standard,Claudio Echeverri
+681970,19,SavedShot,0.8640000152587891,0.575,0.35883304476737976,Claudio Echeverri,h,13649,OpenPlay,2025,RightFoot,29497,Girona,Mallorca,0,1,2026-05-01 19:00:00,Azz-Eddine Ounahi,Throughball,Claudio Echeverri

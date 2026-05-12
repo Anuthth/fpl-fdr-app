@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,1,0,0,90,0,0,0,0,2019,Mallorca,0,0,0,0,0,0,2587,Fabri
+season,GK,2,0,0,180,0,0,0,0,2018,Fulham,0,0,0,0,0.5434600114822388,0.5434600114822388,2587,Fabri
+season,GK,31,0,0,2790,0,0,0.017248699441552162,1,2014,Deportivo La Coruna,2,0,0,0,1.3468557018786669,1.3296070005744696,2587,Fabri

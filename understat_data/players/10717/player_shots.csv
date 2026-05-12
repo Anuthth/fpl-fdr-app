@@ -1,0 +1,142 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+542697,84,BlockedShot,0.8930000305175781,0.475,0.13450893759727478,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,21970,Fulham,Sheffield United,3,1,2023-10-07 14:00:00,Timothy Castagne,Pass,Rodrigo Muniz
+546123,67,SavedShot,0.9290000152587891,0.5540000152587891,0.11658655107021332,Rodrigo Muniz,a,10717,OpenPlay,2023,LeftFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,Antonee Robinson,Cross,Rodrigo Muniz
+546578,47,MissedShots,0.914000015258789,0.4329999923706055,0.020367562770843506,Rodrigo Muniz,h,10717,FromCorner,2023,Head,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,Andreas Pereira,Aerial,Rodrigo Muniz
+546586,64,MissedShots,0.9019999694824219,0.505,0.023510409519076347,Rodrigo Muniz,h,10717,FromCorner,2023,Head,21998,Fulham,Manchester United,0,1,2023-11-04 12:30:00,Andreas Pereira,Aerial,Rodrigo Muniz
+554330,89,MissedShots,0.9069999694824219,0.3920000076293945,0.05942419543862343,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22062,Newcastle United,Fulham,3,0,2023-12-16 15:00:00,Sasa Lukic,Chipped,Rodrigo Muniz
+556278,34,MissedShots,0.8869999694824219,0.3110000038146973,0.05221429094672203,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22067,Fulham,Burnley,0,2,2023-12-23 15:00:00,João Palhinha,Chipped,Rodrigo Muniz
+556286,48,MissedShots,0.875999984741211,0.610999984741211,0.05826602503657341,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22067,Fulham,Burnley,0,2,2023-12-23 15:00:00,Timothy Castagne,Cross,Rodrigo Muniz
+556531,15,BlockedShot,0.919000015258789,0.5779999923706055,0.1330386996269226,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22075,Bournemouth,Fulham,3,0,2023-12-26 15:00:00,Antonee Robinson,Pass,Rodrigo Muniz
+556532,27,BlockedShot,0.7230000305175781,0.695,0.009823856875300407,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22075,Bournemouth,Fulham,3,0,2023-12-26 15:00:00,Andreas Pereira,Aerial,Rodrigo Muniz
+556533,28,BlockedShot,0.884000015258789,0.4379999923706055,0.02455475553870201,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22075,Bournemouth,Fulham,3,0,2023-12-26 15:00:00,Antonee Robinson,Aerial,Rodrigo Muniz
+556543,69,SavedShot,0.9069999694824219,0.3160000038146973,0.03611236810684204,Rodrigo Muniz,a,10717,FromCorner,2023,RightFoot,22075,Bournemouth,Fulham,3,0,2023-12-26 15:00:00,Calvin Bassey,Chipped,Rodrigo Muniz
+560572,64,BlockedShot,0.8159999847412109,0.509000015258789,0.09052614122629166,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22106,Fulham,Everton,0,0,2024-01-30 19:45:00,Andreas Pereira,Pass,Rodrigo Muniz
+560579,90,SavedShot,0.919000015258789,0.4929999923706055,0.05778132751584053,Rodrigo Muniz,h,10717,OpenPlay,2023,Head,22106,Fulham,Everton,0,0,2024-01-30 19:45:00,Bobby Reid,Aerial,Rodrigo Muniz
+561226,20,Goal,0.8040000152587891,0.41900001525878905,0.17630136013031006,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22119,Burnley,Fulham,2,2,2024-02-03 15:00:00,Antonee Robinson,BallRecovery,Rodrigo Muniz
+561235,52,BlockedShot,0.9,0.3060000038146973,0.06522177159786224,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22119,Burnley,Fulham,2,2,2024-02-03 15:00:00,,BallRecovery,Rodrigo Muniz
+561238,59,SavedShot,0.875999984741211,0.3870000076293945,0.09158052504062653,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22119,Burnley,Fulham,2,2,2024-02-03 15:00:00,Bobby Reid,Cross,Rodrigo Muniz
+562485,35,Goal,0.9569999694824218,0.49200000762939455,0.14733350276947021,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22127,Fulham,Bournemouth,3,1,2024-02-10 15:00:00,Bobby Reid,HeadPass,Rodrigo Muniz
+562494,51,Goal,0.9680000305175781,0.4570000076293945,0.622107744216919,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22127,Fulham,Bournemouth,3,1,2024-02-10 15:00:00,Willian,Cross,Rodrigo Muniz
+563854,8,MissedShots,0.7380000305175781,0.5459999847412109,0.02172711305320263,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Antonee Robinson,Pass,Rodrigo Muniz
+563856,14,MissedShots,0.894000015258789,0.3189999961853027,0.0522073395550251,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Andreas Pereira,Chipped,Rodrigo Muniz
+563860,38,SavedShot,0.914000015258789,0.4540000152587891,0.040577735751867294,Rodrigo Muniz,h,10717,OpenPlay,2023,Head,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Willian,Aerial,Rodrigo Muniz
+563862,44,MissedShots,0.91,0.4570000076293945,0.06988564133644104,Rodrigo Muniz,h,10717,FromCorner,2023,Head,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+563871,62,Goal,0.945,0.595,0.27692532539367676,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Antonee Robinson,Cross,Rodrigo Muniz
+563873,68,MissedShots,0.9059999847412109,0.49400001525878906,0.10242126137018204,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Harry Wilson,Cross,Rodrigo Muniz
+563874,68,MissedShots,0.924000015258789,0.5659999847412109,0.0946594625711441,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,Harry Wilson,Cross,Rodrigo Muniz
+563878,87,MissedShots,0.9340000152587891,0.655,0.08212870359420776,Rodrigo Muniz,h,10717,OpenPlay,2023,LeftFoot,22138,Fulham,Aston Villa,1,2,2024-02-17 15:00:00,João Palhinha,TakeOn,Rodrigo Muniz
+565230,20,SavedShot,0.909000015258789,0.40099998474121096,0.02917848899960518,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+565233,27,BlockedShot,0.9059999847412109,0.425,0.04331484064459801,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+565236,32,ShotOnPost,0.88,0.43400001525878906,0.10979466885328293,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Alex Iwobi,Pass,Rodrigo Muniz
+565244,59,BlockedShot,0.865999984741211,0.5379999923706055,0.10919925570487976,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Alex Iwobi,Pass,Rodrigo Muniz
+565262,94,MissedShots,0.889000015258789,0.44799999237060545,0.03194507583975792,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22152,Manchester United,Fulham,1,2,2024-02-24 15:00:00,Timothy Castagne,Chipped,Rodrigo Muniz
+566602,31,Goal,0.9169999694824219,0.5270000076293946,0.3341553211212158,Rodrigo Muniz,h,10717,OpenPlay,2023,Head,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Harry Wilson,Cross,Rodrigo Muniz
+566611,60,MissedShots,0.9569999694824218,0.295,0.08453640341758728,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22158,Fulham,Brighton,3,0,2024-03-02 15:00:00,Timothy Castagne,Chipped,Rodrigo Muniz
+568097,24,SavedShot,0.8059999847412109,0.6029999923706054,0.04222282022237778,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Alex Iwobi,Pass,Rodrigo Muniz
+568099,34,BlockedShot,0.9119999694824219,0.66,0.049866292625665665,Rodrigo Muniz,a,10717,FromCorner,2023,RightFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Harrison Reed,Pass,Rodrigo Muniz
+568104,55,MissedShots,0.9059999847412109,0.5459999847412109,0.12097351998090744,Rodrigo Muniz,a,10717,SetPiece,2023,RightFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,,Rebound,Rodrigo Muniz
+568112,79,BlockedShot,0.94,0.5,0.11264727264642715,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,,Aerial,Rodrigo Muniz
+568110,79,MissedShots,0.9440000152587891,0.4109999847412109,0.05528640374541283,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,,Aerial,Rodrigo Muniz
+568116,83,BlockedShot,0.8619999694824219,0.525,0.0487167164683342,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Alex Iwobi,Cross,Rodrigo Muniz
+568117,84,MissedShots,0.889000015258789,0.4979999923706055,0.01662524603307247,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22174,Wolverhampton Wanderers,Fulham,2,1,2024-03-09 15:00:00,Willian,Aerial,Rodrigo Muniz
+569562,1,BlockedShot,0.8780000305175781,0.285,0.06966977566480637,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22180,Fulham,Tottenham,3,0,2024-03-16 17:30:00,Andreas Pereira,Pass,Rodrigo Muniz
+569573,41,Goal,0.9119999694824219,0.39299999237060546,0.2809586524963379,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22180,Fulham,Tottenham,3,0,2024-03-16 17:30:00,Antonee Robinson,Cross,Rodrigo Muniz
+569580,60,Goal,0.9819999694824219,0.49200000762939455,0.949984610080719,Rodrigo Muniz,h,10717,FromCorner,2023,RightFoot,22180,Fulham,Tottenham,3,0,2024-03-16 17:30:00,,Rebound,Rodrigo Muniz
+570777,37,SavedShot,0.914000015258789,0.5890000152587891,0.13015861809253693,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,,TakeOn,Rodrigo Muniz
+570778,37,MissedShots,0.9680000305175781,0.5929999923706055,0.12498415261507034,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,,Rebound,Rodrigo Muniz
+570783,46,BlockedShot,0.884000015258789,0.3940000152587891,0.044688694179058075,Rodrigo Muniz,a,10717,FromCorner,2023,RightFoot,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+570784,46,ShotOnPost,0.91,0.6659999847412109,0.011753525584936142,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+570799,92,Goal,0.889000015258789,0.555,0.08714758604764938,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Adama Traoré,Chipped,Rodrigo Muniz
+570800,101,SavedShot,0.904000015258789,0.4570000076293945,0.02064410410821438,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Willian,Aerial,Rodrigo Muniz
+570801,103,BlockedShot,0.8830000305175781,0.5429999923706055,0.031857654452323914,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22193,Sheffield United,Fulham,3,3,2024-03-30 15:00:00,Willian,Cross,Rodrigo Muniz
+571748,10,MissedShots,0.9919999694824219,0.6079999923706054,0.06130325794219971,Rodrigo Muniz,a,10717,OpenPlay,2023,LeftFoot,22198,Nottingham Forest,Fulham,3,1,2024-04-02 18:30:00,Andreas Pereira,Chipped,Rodrigo Muniz
+571757,44,MissedShots,0.9180000305175782,0.5479999923706055,0.1100475937128067,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22198,Nottingham Forest,Fulham,3,1,2024-04-02 18:30:00,Andreas Pereira,Cross,Rodrigo Muniz
+571771,74,MissedShots,0.925,0.585,0.06167519465088844,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22198,Nottingham Forest,Fulham,3,1,2024-04-02 18:30:00,Willian,Cross,Rodrigo Muniz
+571773,79,MissedShots,0.8640000152587891,0.4909999847412109,0.03434852510690689,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22198,Nottingham Forest,Fulham,3,1,2024-04-02 18:30:00,Antonee Robinson,Aerial,Rodrigo Muniz
+572414,6,MissedShots,0.8730000305175781,0.5329999923706055,0.0875907614827156,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22209,Fulham,Newcastle United,0,1,2024-04-06 14:00:00,Willian,Chipped,Rodrigo Muniz
+572423,38,SavedShot,0.8690000152587891,0.44,0.0977063849568367,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22209,Fulham,Newcastle United,0,1,2024-04-06 14:00:00,Andreas Pereira,Pass,Rodrigo Muniz
+572430,72,BlockedShot,0.93,0.38599998474121094,0.031734541058540344,Rodrigo Muniz,h,10717,FromCorner,2023,Head,22209,Fulham,Newcastle United,0,1,2024-04-06 14:00:00,Harry Wilson,Cross,Rodrigo Muniz
+574195,37,MissedShots,0.8830000305175781,0.5359999847412109,0.12523318827152252,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22224,West Ham,Fulham,0,2,2024-04-14 13:00:00,Alex Iwobi,Pass,Rodrigo Muniz
+574197,38,SavedShot,0.9490000152587891,0.5329999923706055,0.07534763962030411,Rodrigo Muniz,a,10717,FromCorner,2023,Head,22224,West Ham,Fulham,0,2,2024-04-14 13:00:00,Andreas Pereira,Aerial,Rodrigo Muniz
+574198,38,SavedShot,0.8059999847412109,0.3189999961853027,0.03291083872318268,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22224,West Ham,Fulham,0,2,2024-04-14 13:00:00,,Rebound,Rodrigo Muniz
+574205,45,SavedShot,0.91,0.4329999923706055,0.17185841500759125,Rodrigo Muniz,a,10717,OpenPlay,2023,RightFoot,22224,West Ham,Fulham,0,2,2024-04-14 13:00:00,Alex Iwobi,TakeOn,Rodrigo Muniz
+574212,74,BlockedShot,0.8980000305175782,0.5320000076293945,0.12676745653152466,Rodrigo Muniz,a,10717,OpenPlay,2023,LeftFoot,22224,West Ham,Fulham,0,2,2024-04-14 13:00:00,Sasa Lukic,Rebound,Rodrigo Muniz
+575644,37,MissedShots,0.8640000152587891,0.4370000076293945,0.056137606501579285,Rodrigo Muniz,h,10717,OpenPlay,2023,LeftFoot,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,Antonee Robinson,Cross,Rodrigo Muniz
+575645,40,SavedShot,0.955,0.3920000076293945,0.1089438647031784,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,João Palhinha,Pass,Rodrigo Muniz
+575647,46,BlockedShot,0.914000015258789,0.49,0.05503131449222565,Rodrigo Muniz,h,10717,OpenPlay,2023,Head,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,Alex Iwobi,Chipped,Rodrigo Muniz
+575655,82,BlockedShot,0.8869999694824219,0.544000015258789,0.08488842099905014,Rodrigo Muniz,h,10717,SetPiece,2023,RightFoot,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,Tom Cairney,Chipped,Rodrigo Muniz
+575658,88,MissedShots,0.980999984741211,0.395,0.292991042137146,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22229,Fulham,Liverpool,1,3,2024-04-21 15:30:00,,Rebound,Rodrigo Muniz
+576758,41,SavedShot,0.97,0.39799999237060546,0.30274882912635803,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22238,Fulham,Crystal Palace,1,1,2024-04-27 14:00:00,João Palhinha,Chipped,Rodrigo Muniz
+576762,51,Goal,0.9569999694824218,0.54,0.5343025326728821,Rodrigo Muniz,h,10717,OpenPlay,2023,Head,22238,Fulham,Crystal Palace,1,1,2024-04-27 14:00:00,Timothy Castagne,Cross,Rodrigo Muniz
+576768,74,MissedShots,0.8540000152587891,0.5120000076293946,0.05374625697731972,Rodrigo Muniz,h,10717,FromCorner,2023,RightFoot,22238,Fulham,Crystal Palace,1,1,2024-04-27 14:00:00,Sasa Lukic,BallTouch,Rodrigo Muniz
+578413,50,SavedShot,0.9269999694824219,0.5640000152587891,0.28787580132484436,Rodrigo Muniz,a,10717,OpenPlay,2023,Head,22246,Brentford,Fulham,0,0,2024-05-04 14:00:00,Alex Iwobi,Cross,Rodrigo Muniz
+579661,56,SavedShot,0.9159999847412109,0.4520000076293945,0.088624507188797,Rodrigo Muniz,h,10717,OpenPlay,2023,RightFoot,22258,Fulham,Manchester City,0,4,2024-05-11 11:30:00,,None,Rodrigo Muniz
+584629,13,BlockedShot,0.889000015258789,0.45599998474121095,0.03738508000969887,Rodrigo Muniz,a,10717,FromCorner,2024,Head,26602,Manchester United,Fulham,1,0,2024-08-16 19:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+584641,61,SavedShot,0.8630000305175781,0.48400001525878905,0.04453698918223381,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26602,Manchester United,Fulham,1,0,2024-08-16 19:00:00,,Aerial,Rodrigo Muniz
+586070,4,SavedShot,0.9430000305175781,0.4829999923706055,0.10870497673749924,Rodrigo Muniz,h,10717,OpenPlay,2024,Head,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Adama Traoré,HeadPass,Rodrigo Muniz
+586076,20,MissedShots,0.9209999847412109,0.4279999923706055,0.04928896948695183,Rodrigo Muniz,h,10717,OpenPlay,2024,Head,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Antonee Robinson,Aerial,Rodrigo Muniz
+586082,43,SavedShot,0.9119999694824219,0.47099998474121096,0.07972110062837601,Rodrigo Muniz,h,10717,FromCorner,2024,Head,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+586083,48,MissedShots,0.9159999847412109,0.46,0.14160194993019104,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Adama Traoré,Pass,Rodrigo Muniz
+586085,50,MissedShots,0.87,0.48,0.013467873446643353,Rodrigo Muniz,h,10717,FromCorner,2024,Head,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Andreas Pereira,Aerial,Rodrigo Muniz
+586087,60,MissedShots,0.850999984741211,0.48700000762939455,0.043298326432704926,Rodrigo Muniz,h,10717,FromCorner,2024,RightFoot,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+586088,65,MissedShots,0.8630000305175781,0.4829999923706055,0.012992199510335922,Rodrigo Muniz,h,10717,FromCorner,2024,Head,26614,Fulham,Leicester,2,1,2024-08-24 14:00:00,Andreas Pereira,Aerial,Rodrigo Muniz
+589221,33,SavedShot,0.9209999847412109,0.5020000076293946,0.37843525409698486,Rodrigo Muniz,a,10717,OpenPlay,2024,Head,26625,Ipswich,Fulham,1,1,2024-08-31 14:00:00,Adama Traoré,Cross,Rodrigo Muniz
+589222,36,MissedShots,0.9209999847412109,0.6509999847412109,0.06773661822080612,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26625,Ipswich,Fulham,1,1,2024-08-31 14:00:00,Alex Iwobi,Chipped,Rodrigo Muniz
+592467,89,SavedShot,0.89,0.6379999923706055,0.08098578453063965,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26646,Fulham,Newcastle United,3,1,2024-09-21 14:00:00,Antonee Robinson,Chipped,Rodrigo Muniz
+592469,93,MissedShots,0.82,0.46700000762939453,0.05848211050033569,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26646,Fulham,Newcastle United,3,1,2024-09-21 14:00:00,,None,Rodrigo Muniz
+595483,87,Goal,0.8930000305175781,0.48200000762939454,0.3371158540248871,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26664,Manchester City,Fulham,3,2,2024-10-05 14:00:00,Reiss Nelson,Pass,Rodrigo Muniz
+605394,12,MissedShots,0.874000015258789,0.4779999923706055,0.013394213281571865,Rodrigo Muniz,h,10717,FromCorner,2024,Head,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Harry Wilson,Aerial,Rodrigo Muniz
+605402,47,MissedShots,0.9330000305175781,0.49599998474121093,0.09744184464216232,Rodrigo Muniz,h,10717,OpenPlay,2024,Head,26736,Fulham,Brighton,3,1,2024-12-05 19:30:00,Antonee Robinson,Aerial,Rodrigo Muniz
+607120,75,Goal,0.960999984741211,0.5729999923706055,0.52396559715271,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26752,Liverpool,Fulham,2,2,2024-12-14 15:00:00,Antonee Robinson,Pass,Rodrigo Muniz
+608637,41,BlockedShot,0.899000015258789,0.5420000076293945,0.041094906628131866,Rodrigo Muniz,h,10717,OpenPlay,2024,Head,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,Antonee Robinson,Aerial,Rodrigo Muniz
+608638,48,BlockedShot,0.9009999847412109,0.44,0.12775175273418427,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26763,Fulham,Southampton,0,0,2024-12-22 14:00:00,Timothy Castagne,Pass,Rodrigo Muniz
+609101,76,SavedShot,0.9030000305175782,0.44799999237060545,0.030965503305196762,Rodrigo Muniz,a,10717,OpenPlay,2024,Head,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Antonee Robinson,Aerial,Rodrigo Muniz
+609107,94,Goal,0.8859999847412109,0.5890000152587891,0.4192582964897156,Rodrigo Muniz,a,10717,OpenPlay,2024,LeftFoot,26775,Chelsea,Fulham,1,2,2024-12-26 15:00:00,Sasa Lukic,Pass,Rodrigo Muniz
+610213,97,SavedShot,0.8909999847412109,0.24600000381469728,0.025088725611567497,Rodrigo Muniz,h,10717,SetPiece,2024,RightFoot,26796,Fulham,Ipswich,2,2,2025-01-05 14:00:00,Adama Traoré,Pass,Rodrigo Muniz
+612300,86,MissedShots,0.9619999694824218,0.5720000076293945,0.48439085483551025,Rodrigo Muniz,a,10717,OpenPlay,2024,LeftFoot,26817,Leicester,Fulham,0,2,2025-01-18 15:00:00,Sasa Lukic,Cross,Rodrigo Muniz
+614109,88,MissedShots,0.865,0.5359999847412109,0.047290392220020294,Rodrigo Muniz,h,10717,FromCorner,2024,RightFoot,26826,Fulham,Manchester United,0,1,2025-01-26 19:00:00,Timothy Castagne,Cross,Rodrigo Muniz
+614110,93,MissedShots,0.905,0.4620000076293945,0.08605136722326279,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26826,Fulham,Manchester United,0,1,2025-01-26 19:00:00,,None,Rodrigo Muniz
+614965,81,Goal,0.98,0.53,0.7233549356460571,Rodrigo Muniz,a,10717,SetPiece,2024,RightFoot,26839,Newcastle United,Fulham,1,2,2025-02-01 15:00:00,Andreas Pereira,Cross,Rodrigo Muniz
+617194,90,SavedShot,0.8530000305175781,0.42700000762939455,0.07816680520772934,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26845,Fulham,Nottingham Forest,2,1,2025-02-15 15:00:00,Willian,Pass,Rodrigo Muniz
+619447,25,BlockedShot,0.914000015258789,0.5540000152587891,0.1367240697145462,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,Ryan Sessegnon,Pass,Rodrigo Muniz
+619448,28,MissedShots,0.870999984741211,0.4809999847412109,0.020109226927161217,Rodrigo Muniz,a,10717,OpenPlay,2024,Head,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,Adama Traoré,Aerial,Rodrigo Muniz
+619453,46,Goal,0.8030000305175782,0.6379999923706055,0.3034801185131073,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26867,Wolverhampton Wanderers,Fulham,1,2,2025-02-25 19:30:00,Adama Traoré,Throughball,Rodrigo Muniz
+623247,77,Goal,0.8690000152587891,0.49599998474121093,0.372164249420166,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26886,Fulham,Tottenham,2,0,2025-03-16 13:30:00,Andreas Pereira,Pass,Rodrigo Muniz
+623252,90,SavedShot,0.9269999694824219,0.44799999237060545,0.05574508756399155,Rodrigo Muniz,h,10717,SetPiece,2024,Head,26886,Fulham,Tottenham,2,0,2025-03-16 13:30:00,Ryan Sessegnon,Aerial,Rodrigo Muniz
+625049,80,MissedShots,0.9540000152587891,0.46599998474121096,0.617826521396637,Rodrigo Muniz,a,10717,OpenPlay,2024,Head,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Alex Iwobi,Chipped,Rodrigo Muniz
+625052,93,Goal,0.8780000305175781,0.425,0.10085103660821915,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Ryan Sessegnon,Pass,Rodrigo Muniz
+625053,95,MissedShots,0.8619999694824219,0.5270000076293946,0.012893153354525566,Rodrigo Muniz,a,10717,FromCorner,2024,Head,26892,Arsenal,Fulham,2,1,2025-04-01 19:45:00,Andreas Pereira,Aerial,Rodrigo Muniz
+626242,4,MissedShots,0.9230000305175782,0.5329999923706055,0.5401355028152466,Rodrigo Muniz,h,10717,OpenPlay,2024,RightFoot,26906,Fulham,Liverpool,3,2,2025-04-06 13:00:00,Andreas Pereira,Pass,Rodrigo Muniz
+626251,36,Goal,0.9219999694824219,0.36400001525878906,0.3894210159778595,Rodrigo Muniz,h,10717,FromCorner,2024,RightFoot,26906,Fulham,Liverpool,3,2,2025-04-06 13:00:00,Alex Iwobi,TakeOn,Rodrigo Muniz
+628154,30,MissedShots,0.8669999694824219,0.315,0.041693903505802155,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,,BallRecovery,Rodrigo Muniz
+628159,31,SavedShot,0.85,0.500999984741211,0.06132103502750397,Rodrigo Muniz,a,10717,OpenPlay,2024,RightFoot,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,,None,Rodrigo Muniz
+628160,33,SavedShot,0.9519999694824218,0.41700000762939454,0.033988822251558304,Rodrigo Muniz,a,10717,FromCorner,2024,Head,26912,Bournemouth,Fulham,1,0,2025-04-14 19:00:00,Andreas Pereira,Aerial,Rodrigo Muniz
+638439,96,Goal,0.9490000152587891,0.5790000152587891,0.48536622524261475,Rodrigo Muniz,a,10717,FromCorner,2025,LeftFoot,28780,Brighton,Fulham,1,1,2025-08-16 14:00:00,,None,Rodrigo Muniz
+639499,40,MissedShots,0.9569999694824218,0.41900001525878905,0.250501811504364,Rodrigo Muniz,h,10717,FromCorner,2025,Head,28796,Fulham,Manchester United,1,1,2025-08-24 15:30:00,Sasa Lukic,Cross,Rodrigo Muniz
+639501,45,BlockedShot,0.905,0.34400001525878904,0.05955209583044052,Rodrigo Muniz,h,10717,FromCorner,2025,RightFoot,28796,Fulham,Manchester United,1,1,2025-08-24 15:30:00,,Rebound,Rodrigo Muniz
+639504,57,OwnGoal,0.05,0.46,0,Rodrigo Muniz,h,10717,FromCorner,2025,OtherBodyPart,28796,Fulham,Manchester United,1,1,2025-08-24 15:30:00,,Foul,Rodrigo Muniz
+639505,60,MissedShots,0.93,0.5320000076293945,0.05479348078370094,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,28796,Fulham,Manchester United,1,1,2025-08-24 15:30:00,Kenny Tete,Aerial,Rodrigo Muniz
+640088,47,MissedShots,0.8680000305175781,0.47200000762939454,0.03478805720806122,Rodrigo Muniz,a,10717,OpenPlay,2025,Head,28798,Chelsea,Fulham,2,0,2025-08-30 11:30:00,Sasa Lukic,Cross,Rodrigo Muniz
+641749,69,SavedShot,0.92,0.545,0.408113569021225,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,28813,Fulham,Leeds,1,0,2025-09-13 14:00:00,Sander Berge,Aerial,Rodrigo Muniz
+643412,15,MissedShots,0.894000015258789,0.55,0.04019144922494888,Rodrigo Muniz,h,10717,FromCorner,2025,Head,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,Harry Wilson,Cross,Rodrigo Muniz
+643417,30,MissedShots,0.9690000152587891,0.605999984741211,0.3472999036312103,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,28825,Fulham,Brentford,3,1,2025-09-20 19:00:00,,Rebound,Rodrigo Muniz
+650885,94,BlockedShot,0.8140000152587891,0.66,0.09459666162729263,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,28871,Fulham,Wolverhampton Wanderers,3,0,2025-11-01 15:00:00,Emile Smith-Rowe,BallRecovery,Rodrigo Muniz
+652271,59,SavedShot,0.8590000152587891,0.3,0.03907432407140732,Rodrigo Muniz,a,10717,OpenPlay,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,Joshua King,Pass,Rodrigo Muniz
+667324,79,MissedShots,0.8919999694824219,0.4640000152587891,0.060537539422512054,Rodrigo Muniz,h,10717,FromCorner,2025,RightFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Alex Iwobi,Cross,Rodrigo Muniz
+667327,86,MissedShots,0.914000015258789,0.5579999923706055,0.032217495143413544,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,Kenny Tete,Aerial,Rodrigo Muniz
+668306,68,MissedShots,0.9669999694824218,0.315,0.027997314929962158,Rodrigo Muniz,a,10717,OpenPlay,2025,RightFoot,29033,Manchester City,Fulham,3,0,2026-02-11 19:30:00,Kevin,Cross,Rodrigo Muniz
+671553,79,SavedShot,0.884000015258789,0.5929999923706055,0.09168354421854019,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,29052,Fulham,Tottenham,2,1,2026-03-01 14:00:00,Samuel Chukwueze,Chipped,Rodrigo Muniz
+672240,63,BlockedShot,0.9109999847412109,0.6129999923706054,0.02261222153902054,Rodrigo Muniz,h,10717,FromCorner,2025,Head,29062,Fulham,West Ham,0,1,2026-03-04 19:30:00,Alex Iwobi,Cross,Rodrigo Muniz
+672245,77,MissedShots,0.9009999847412109,0.5929999923706055,0.02181757614016533,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,29062,Fulham,West Ham,0,1,2026-03-04 19:30:00,Kenny Tete,Aerial,Rodrigo Muniz
+674459,64,BlockedShot,0.840999984741211,0.445,0.06284474581480026,Rodrigo Muniz,a,10717,OpenPlay,2025,RightFoot,29075,Nottingham Forest,Fulham,0,0,2026-03-15 14:00:00,,None,Rodrigo Muniz
+675288,14,MissedShots,0.815,0.5229999923706055,0.050677590072155,Rodrigo Muniz,h,10717,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Oscar Bobb,Chipped,Rodrigo Muniz
+675296,39,BlockedShot,0.875,0.43,0.08860038220882416,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,,Dispossessed,Rodrigo Muniz
+675300,51,MissedShots,0.8640000152587891,0.5420000076293945,0.1329282969236374,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,,Rebound,Rodrigo Muniz
+675301,57,MissedShots,0.9119999694824219,0.534000015258789,0.309573769569397,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Timothy Castagne,Cross,Rodrigo Muniz
+677953,6,MissedShots,0.8869999694824219,0.5920000076293945,0.07206762582063675,Rodrigo Muniz,a,10717,OpenPlay,2025,RightFoot,29097,Liverpool,Fulham,2,0,2026-04-11 16:30:00,Oscar Bobb,Cross,Rodrigo Muniz
+677971,59,BlockedShot,0.9130000305175782,0.29200000762939454,0.056933145970106125,Rodrigo Muniz,a,10717,OpenPlay,2025,RightFoot,29097,Liverpool,Fulham,2,0,2026-04-11 16:30:00,Timothy Castagne,Pass,Rodrigo Muniz
+677973,62,BlockedShot,0.9519999694824218,0.46799999237060547,0.4642801582813263,Rodrigo Muniz,a,10717,FromCorner,2025,Head,29097,Liverpool,Fulham,2,0,2026-04-11 16:30:00,Harry Wilson,Cross,Rodrigo Muniz
+680757,87,BlockedShot,0.8980000305175782,0.5359999847412109,0.12681695818901062,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,29112,Fulham,Aston Villa,1,0,2026-04-25 11:30:00,Joshua King,BallTouch,Rodrigo Muniz
+683682,28,MissedShots,0.9390000152587891,0.46900001525878904,0.4787878692150116,Rodrigo Muniz,h,10717,OpenPlay,2025,Head,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Timothy Castagne,Cross,Rodrigo Muniz
+683683,38,MissedShots,0.894000015258789,0.4809999847412109,0.08821334689855576,Rodrigo Muniz,h,10717,FromCorner,2025,RightFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Tom Cairney,HeadPass,Rodrigo Muniz
+683700,94,BlockedShot,0.9390000152587891,0.535,0.09603093564510345,Rodrigo Muniz,h,10717,OpenPlay,2025,RightFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,,None,Rodrigo Muniz

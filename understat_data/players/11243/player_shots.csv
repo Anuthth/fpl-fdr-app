@@ -1,0 +1,10 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+660214,75,BlockedShot,0.8159999847412109,0.49700000762939456,0.04435356333851814,Bashir Humphreys,h,11243,OpenPlay,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,Rebound,Bashir Humphreys
+660215,75,MissedShots,0.8569999694824219,0.49700000762939456,0.07445322722196579,Bashir Humphreys,h,11243,OpenPlay,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,Rebound,Bashir Humphreys
+664816,96,BlockedShot,0.8109999847412109,0.6220000076293946,0.03884991258382797,Bashir Humphreys,h,11243,OpenPlay,2025,RightFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,,None,Bashir Humphreys
+667294,67,MissedShots,0.7290000152587891,0.725,0.007867379114031792,Bashir Humphreys,h,11243,OpenPlay,2025,RightFoot,29021,Burnley,West Ham,0,2,2026-02-07 15:00:00,Lucas Pires,Pass,Bashir Humphreys
+668364,46,SavedShot,0.909000015258789,0.40700000762939453,0.0334099642932415,Bashir Humphreys,a,11243,FromCorner,2025,Head,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,Jaidon Anthony,Cross,Bashir Humphreys
+673834,23,BlockedShot,0.8880000305175781,0.555,0.01724688895046711,Bashir Humphreys,h,11243,FromCorner,2025,Head,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,,Aerial,Bashir Humphreys
+673837,27,BlockedShot,0.9619999694824218,0.5970000076293945,0.22853854298591614,Bashir Humphreys,h,11243,FromCorner,2025,LeftFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,James Ward-Prowse,Cross,Bashir Humphreys
+677872,27,BlockedShot,0.9259999847412109,0.5829999923706055,0.02047298103570938,Bashir Humphreys,h,11243,FromCorner,2025,Head,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,James Ward-Prowse,Aerial,Bashir Humphreys
+682008,67,SavedShot,0.9019999694824219,0.705,0.060942936688661575,Bashir Humphreys,a,11243,OpenPlay,2025,LeftFoot,29124,Leeds,Burnley,3,1,2026-05-01 19:00:00,Zian Flemming,Pass,Bashir Humphreys

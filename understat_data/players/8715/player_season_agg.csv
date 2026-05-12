@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,34,0,1,3060,0.05718810111284256,0,0,0,2022,Leeds,3,0,0,0.05718810111284256,1.4994192942976952,1.4994192942976952,8715,Illan Meslier
+season,GK,38,0,0,3396,0,0,0,0,2021,Leeds,2,0,0,0,4.664672617800534,4.664672617800534,8715,Illan Meslier
+season,GK,35,0,0,3150,0,0,0.042197298258543015,1,2020,Leeds,0,0,0,0,5.929297365248203,5.887099362909794,8715,Illan Meslier

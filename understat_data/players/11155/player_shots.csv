@@ -1,0 +1,32 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+501281,33,MissedShots,0.865999984741211,0.62,0.0847368985414505,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18368,Leeds,Manchester City,1,3,2022-12-28 20:00:00,Rodrigo,LayOff,Wilfried Gnonto
+501291,53,BlockedShot,0.8469999694824218,0.6419999694824219,0.050621699541807175,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18368,Leeds,Manchester City,1,3,2022-12-28 20:00:00,Brenden Aaronson,TakeOn,Wilfried Gnonto
+501680,2,MissedShots,0.7330000305175781,0.6759999847412109,0.018617799505591393,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18377,Newcastle United,Leeds,0,0,2022-12-31 15:00:00,Adam Forshaw,Pass,Wilfried Gnonto
+501683,10,BlockedShot,0.825,0.43900001525878907,0.05484290048480034,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18377,Newcastle United,Leeds,0,0,2022-12-31 15:00:00,,None,Wilfried Gnonto
+502485,27,Goal,0.8669999694824219,0.549000015258789,0.352728009223938,Wilfried Gnonto,h,11155,OpenPlay,2022,LeftFoot,18388,Leeds,West Ham,2,2,2023-01-04 19:45:00,Crysencio Summerville,Pass,Wilfried Gnonto
+502486,30,SavedShot,0.8619999694824219,0.715,0.044008299708366394,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18388,Leeds,West Ham,2,2,2023-01-04 19:45:00,Tyler Adams,Chipped,Wilfried Gnonto
+503426,44,BlockedShot,0.9430000305175781,0.5459999847412109,0.555184006690979,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18392,Aston Villa,Leeds,2,1,2023-01-13 20:00:00,,Rebound,Wilfried Gnonto
+503430,52,SavedShot,0.84,0.655,0.04786840081214905,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18392,Aston Villa,Leeds,2,1,2023-01-13 20:00:00,Brenden Aaronson,Pass,Wilfried Gnonto
+503440,74,BlockedShot,0.879000015258789,0.6140000152587891,0.1022849977016449,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18392,Aston Villa,Leeds,2,1,2023-01-13 20:00:00,Tyler Adams,TakeOn,Wilfried Gnonto
+504967,19,BlockedShot,0.7440000152587891,0.524000015258789,0.021319499239325523,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18406,Leeds,Brentford,0,0,2023-01-22 14:00:00,Marc Roca,Pass,Wilfried Gnonto
+504976,67,SavedShot,0.8830000305175781,0.295,0.047606900334358215,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18406,Leeds,Brentford,0,0,2023-01-22 14:00:00,Rodrigo,Pass,Wilfried Gnonto
+507588,42,SavedShot,0.8809999847412109,0.659000015258789,0.050475601106882095,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18419,Nottingham Forest,Leeds,1,0,2023-02-05 14:00:00,,None,Wilfried Gnonto
+508037,0,Goal,0.8230000305175781,0.6040000152587891,0.04308310151100159,Wilfried Gnonto,a,11155,OpenPlay,2022,RightFoot,18279,Manchester United,Leeds,2,2,2023-02-08 19:00:00,Patrick Bamford,Pass,Wilfried Gnonto
+508897,65,SavedShot,0.799000015258789,0.6659999847412109,0.029040999710559845,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18426,Leeds,Manchester United,0,2,2023-02-12 14:00:00,Júnior Firpo,Pass,Wilfried Gnonto
+508903,87,BlockedShot,0.9059999847412109,0.59,0.0528705008327961,Wilfried Gnonto,h,11155,FromCorner,2022,RightFoot,18426,Leeds,Manchester United,0,2,2023-02-12 14:00:00,Sam Greenwood,Cross,Wilfried Gnonto
+510838,7,BlockedShot,0.7919999694824219,0.674000015258789,0.025388099253177643,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18446,Leeds,Southampton,1,0,2023-02-25 15:00:00,Brenden Aaronson,Pass,Wilfried Gnonto
+510850,57,BlockedShot,0.8090000152587891,0.7569999694824219,0.013912100344896317,Wilfried Gnonto,h,11155,OpenPlay,2022,RightFoot,18446,Leeds,Southampton,1,0,2023-02-25 15:00:00,Weston McKennie,Chipped,Wilfried Gnonto
+520646,99,MissedShots,0.7969999694824219,0.3340000152587891,0.019270800054073334,Wilfried Gnonto,a,11155,FromCorner,2022,RightFoot,18517,Fulham,Leeds,2,1,2023-04-22 11:30:00,,None,Wilfried Gnonto
+523173,45,MissedShots,0.909000015258789,0.485,0.037849925458431244,Wilfried Gnonto,a,11155,OpenPlay,2022,Head,18533,Bournemouth,Leeds,4,1,2023-04-30 13:00:00,Luke Ayling,Aerial,Wilfried Gnonto
+523177,59,MissedShots,0.960999984741211,0.5820000076293945,0.05399115011096001,Wilfried Gnonto,a,11155,OpenPlay,2022,Head,18533,Bournemouth,Leeds,4,1,2023-04-30 13:00:00,Luke Ayling,HeadPass,Wilfried Gnonto
+523183,71,MissedShots,0.9059999847412109,0.6659999847412109,0.05642159283161163,Wilfried Gnonto,a,11155,FromCorner,2022,RightFoot,18533,Bournemouth,Leeds,4,1,2023-04-30 13:00:00,,Rebound,Wilfried Gnonto
+523181,71,SavedShot,0.8590000152587891,0.5359999847412109,0.07137322425842285,Wilfried Gnonto,a,11155,FromCorner,2022,RightFoot,18533,Bournemouth,Leeds,4,1,2023-04-30 13:00:00,,Rebound,Wilfried Gnonto
+638386,36,BlockedShot,0.7780000305175782,0.47900001525878905,0.03316649794578552,Wilfried Gnonto,h,11155,FromCorner,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,,Rebound,Wilfried Gnonto
+638388,43,MissedShots,0.7880000305175782,0.735,0.015106682665646076,Wilfried Gnonto,h,11155,OpenPlay,2025,LeftFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,Ao Tanaka,Pass,Wilfried Gnonto
+638390,54,MissedShots,0.9259999847412109,0.3890000152587891,0.08617589622735977,Wilfried Gnonto,h,11155,OpenPlay,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,,None,Wilfried Gnonto
+640390,37,BlockedShot,0.8030000305175782,0.72,0.024785464629530907,Wilfried Gnonto,h,11155,OpenPlay,2025,RightFoot,28803,Leeds,Newcastle United,0,0,2025-08-30 16:30:00,Gabriel Gudmundsson,Pass,Wilfried Gnonto
+640391,38,MissedShots,0.7530000305175781,0.73,0.008856137283146381,Wilfried Gnonto,h,11155,FromCorner,2025,RightFoot,28803,Leeds,Newcastle United,0,0,2025-08-30 16:30:00,Anton Stach,TakeOn,Wilfried Gnonto
+659580,77,BlockedShot,0.8819999694824219,0.6780000305175782,0.07105252146720886,Wilfried Gnonto,h,11155,OpenPlay,2025,RightFoot,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,,Dispossessed,Wilfried Gnonto
+663621,78,BlockedShot,0.7709999847412109,0.6759999847412109,0.04513538256287575,Wilfried Gnonto,h,11155,OpenPlay,2025,RightFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,Ilia Gruev,Pass,Wilfried Gnonto
+672125,81,MissedShots,0.845,0.6759999847412109,0.04055263102054596,Wilfried Gnonto,h,11155,OpenPlay,2025,RightFoot,29063,Leeds,Sunderland,0,1,2026-03-03 19:30:00,Pascal Struijk,Pass,Wilfried Gnonto
+680374,67,MissedShots,0.9490000152587891,0.3559999847412109,0.08033423870801926,Wilfried Gnonto,a,11155,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Lukas Nmecha,Pass,Wilfried Gnonto

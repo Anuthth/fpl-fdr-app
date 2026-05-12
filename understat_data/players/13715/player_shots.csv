@@ -1,0 +1,26 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+637687,6,MissedShots,0.9730000305175781,0.6120000076293945,0.024895744398236275,Dan Ballard,h,13715,FromCorner,2025,Head,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Granit Xhaka,Cross,Dan Ballard
+637693,43,SavedShot,0.9519999694824218,0.610999984741211,0.03819282352924347,Dan Ballard,h,13715,FromCorner,2025,Head,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Granit Xhaka,Cross,Dan Ballard
+637695,57,MissedShots,0.960999984741211,0.600999984741211,0.016691947355866432,Dan Ballard,h,13715,FromCorner,2025,Head,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,Trai Hume,Aerial,Dan Ballard
+637698,72,Goal,0.9069999694824219,0.5420000076293945,0.02813994511961937,Dan Ballard,h,13715,FromCorner,2025,Head,28781,Sunderland,West Ham,3,0,2025-08-16 14:00:00,,Aerial,Dan Ballard
+643614,46,MissedShots,0.8159999847412109,0.4379999923706055,0.007273717783391476,Dan Ballard,h,13715,SetPiece,2025,Head,28826,Sunderland,Aston Villa,1,1,2025-09-21 13:00:00,Granit Xhaka,Aerial,Dan Ballard
+644947,89,MissedShots,0.960999984741211,0.5679999923706055,0.537736713886261,Dan Ballard,a,13715,FromCorner,2025,RightFoot,28834,Nottingham Forest,Sunderland,0,1,2025-09-27 16:30:00,,None,Dan Ballard
+646160,51,MissedShots,0.9730000305175781,0.5790000152587891,0.2619534730911255,Dan Ballard,a,13715,FromCorner,2025,Head,28845,Manchester United,Sunderland,2,0,2025-10-04 14:00:00,Granit Xhaka,Cross,Dan Ballard
+647656,41,SavedShot,0.919000015258789,0.5579999923706055,0.07409484684467316,Dan Ballard,h,13715,FromCorner,2025,Head,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,Granit Xhaka,Cross,Dan Ballard
+648925,0,SavedShot,0.92,0.5720000076293945,0.2097024917602539,Dan Ballard,a,13715,SetPiece,2025,Head,28862,Chelsea,Sunderland,1,2,2025-10-25 14:00:00,Bertrand Traoré,Cross,Dan Ballard
+651851,43,MissedShots,0.945,0.5620000076293945,0.05100589245557785,Dan Ballard,h,13715,OpenPlay,2025,Head,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Nordi Mukiele,Aerial,Dan Ballard
+651858,73,BlockedShot,0.960999984741211,0.549000015258789,0.0748179629445076,Dan Ballard,h,13715,FromCorner,2025,Head,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Granit Xhaka,Aerial,Dan Ballard
+652425,35,Goal,0.924000015258789,0.4209999847412109,0.42257362604141235,Dan Ballard,h,13715,SetPiece,2025,RightFoot,28885,Sunderland,Arsenal,2,2,2025-11-08 17:30:00,Nordi Mukiele,HeadPass,Dan Ballard
+658561,44,MissedShots,0.9580000305175781,0.5690000152587891,0.41380420327186584,Dan Ballard,h,13715,OpenPlay,2025,Head,28936,Sunderland,Newcastle United,1,0,2025-12-14 14:00:00,Granit Xhaka,Aerial,Dan Ballard
+659295,31,SavedShot,0.9219999694824219,0.5320000076293945,0.059493254870176315,Dan Ballard,a,13715,SetPiece,2025,Head,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Enzo Le Fée,Aerial,Dan Ballard
+659297,42,SavedShot,0.894000015258789,0.47299999237060547,0.41122397780418396,Dan Ballard,a,13715,OpenPlay,2025,LeftFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,,None,Dan Ballard
+661944,37,BlockedShot,0.8469999694824218,0.4929999923706055,0.026230396702885628,Dan Ballard,a,13715,FromCorner,2025,RightFoot,28981,Brentford,Sunderland,3,0,2026-01-07 19:30:00,,Aerial,Dan Ballard
+663595,43,SavedShot,0.855,0.5159999847412109,0.02500615455210209,Dan Ballard,h,13715,SetPiece,2025,Head,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,Nordi Mukiele,Cross,Dan Ballard
+663604,89,SavedShot,0.970999984741211,0.4370000076293945,0.620896577835083,Dan Ballard,h,13715,OpenPlay,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,,Rebound,Dan Ballard
+664599,20,MissedShots,0.9259999847412109,0.63,0.010150081478059292,Dan Ballard,a,13715,SetPiece,2025,Head,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,Enzo Le Fée,Aerial,Dan Ballard
+666879,45,MissedShots,0.94,0.5120000076293946,0.1031804159283638,Dan Ballard,h,13715,SetPiece,2025,Head,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,,Aerial,Dan Ballard
+668416,92,MissedShots,0.905,0.46,0.08415517210960388,Dan Ballard,h,13715,OpenPlay,2025,Head,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Lutsharel Geertruida,Cross,Dan Ballard
+670882,77,MissedShots,0.9330000305175781,0.5579999923706055,0.09794063866138458,Dan Ballard,a,13715,FromCorner,2025,Head,29048,Bournemouth,Sunderland,1,1,2026-02-28 12:30:00,Enzo Le Fée,Cross,Dan Ballard
+672119,39,BlockedShot,0.9119999694824219,0.6129999923706054,0.01244693249464035,Dan Ballard,a,13715,FromCorner,2025,Head,29063,Leeds,Sunderland,0,1,2026-03-03 19:30:00,Enzo Le Fée,Aerial,Dan Ballard
+673875,44,BlockedShot,0.905,0.4909999847412109,0.032079849392175674,Dan Ballard,h,13715,FromCorner,2025,Head,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,Aerial,Dan Ballard
+680673,69,BlockedShot,0.924000015258789,0.5570000076293945,0.051748745143413544,Dan Ballard,h,13715,SetPiece,2025,Head,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,Trai Hume,Aerial,Dan Ballard

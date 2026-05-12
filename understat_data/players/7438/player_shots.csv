@@ -1,0 +1,106 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+492509,90,SavedShot,0.7869999694824219,0.759000015258789,0.014722299762070179,James Garner,h,7438,SetPiece,2022,RightFoot,18297,Everton,Manchester United,1,2,2022-10-09 18:00:00,Conor Coady,Pass,James Garner
+492512,94,BlockedShot,0.84,0.515,0.023650100454688072,James Garner,h,7438,OpenPlay,2022,RightFoot,18297,Everton,Manchester United,1,2,2022-10-09 18:00:00,,Aerial,James Garner
+517769,65,BlockedShot,0.8630000305175781,0.2929999923706055,0.01687929965555668,James Garner,a,7438,FromCorner,2022,RightFoot,18498,Manchester United,Everton,2,0,2023-04-08 11:30:00,,Aerial,James Garner
+519509,74,SavedShot,0.750999984741211,0.5170000076293946,0.012028800323605537,James Garner,h,7438,OpenPlay,2022,RightFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,Dwight McNeil,Rebound,James Garner
+519513,88,MissedShots,0.759000015258789,0.4809999847412109,0.017284899950027466,James Garner,h,7438,OpenPlay,2022,RightFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,Alex Iwobi,Pass,James Garner
+519514,94,MissedShots,0.8169999694824219,0.49,0.04725370183587074,James Garner,h,7438,SetPiece,2022,RightFoot,18504,Everton,Fulham,1,3,2023-04-15 14:00:00,,None,James Garner
+525470,47,BlockedShot,0.9159999847412109,0.53,0.596973180770874,James Garner,a,7438,OpenPlay,2022,RightFoot,18543,Brighton,Everton,1,5,2023-05-08 16:30:00,Dwight McNeil,Pass,James Garner
+527498,41,MissedShots,0.7480000305175781,0.47299999237060547,0.06298388540744781,James Garner,a,7438,DirectFreekick,2022,RightFoot,18571,Wolverhampton Wanderers,Everton,1,1,2023-05-20 14:00:00,,Standard,James Garner
+529799,47,SavedShot,0.805,0.37599998474121094,0.0365331806242466,James Garner,h,7438,OpenPlay,2022,RightFoot,18577,Everton,Bournemouth,1,0,2023-05-28 15:30:00,Alex Iwobi,Pass,James Garner
+533728,19,MissedShots,0.88,0.41900001525878905,0.027710627764463425,James Garner,a,7438,OpenPlay,2023,Head,22292,Aston Villa,Everton,4,0,2023-08-20 13:00:00,,None,James Garner
+534651,27,MissedShots,0.8080000305175781,0.48700000762939455,0.03461601212620735,James Garner,h,7438,FromCorner,2023,RightFoot,22299,Everton,Wolverhampton Wanderers,0,1,2023-08-26 14:00:00,,None,James Garner
+534661,52,SavedShot,0.86,0.3820000076293945,0.02331145480275154,James Garner,h,7438,SetPiece,2023,RightFoot,22299,Everton,Wolverhampton Wanderers,0,1,2023-08-26 14:00:00,,Aerial,James Garner
+539267,25,BlockedShot,0.750999984741211,0.5209999847412109,0.03133699297904968,James Garner,a,7438,OpenPlay,2023,RightFoot,21949,Brentford,Everton,1,3,2023-09-23 16:30:00,Idrissa Gueye,Pass,James Garner
+539289,80,MissedShots,0.74,0.25299999237060544,0.013220204040408134,James Garner,a,7438,OpenPlay,2023,RightFoot,21949,Brentford,Everton,1,3,2023-09-23 16:30:00,,None,James Garner
+541113,9,MissedShots,0.8519999694824218,0.37099998474121093,0.08045784384012222,James Garner,h,7438,OpenPlay,2023,LeftFoot,21956,Everton,Luton,1,2,2023-09-30 14:00:00,Abdoulaye Doucouré,Pass,James Garner
+541123,36,ShotOnPost,0.9540000152587891,0.4909999847412109,0.5602990984916687,James Garner,h,7438,OpenPlay,2023,Head,21956,Everton,Luton,1,2,2023-09-30 14:00:00,Dwight McNeil,Chipped,James Garner
+541124,39,MissedShots,0.8669999694824219,0.46599998474121096,0.027705883607268333,James Garner,h,7438,OpenPlay,2023,Head,21956,Everton,Luton,1,2,2023-09-30 14:00:00,Abdoulaye Doucouré,Aerial,James Garner
+541129,45,BlockedShot,0.8580000305175781,0.41,0.0269615538418293,James Garner,h,7438,SetPiece,2023,RightFoot,21956,Everton,Luton,1,2,2023-09-30 14:00:00,,Aerial,James Garner
+542638,7,Goal,0.83,0.5059999847412109,0.0660553053021431,James Garner,h,7438,OpenPlay,2023,RightFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,,BallRecovery,James Garner
+542646,32,MissedShots,0.759000015258789,0.34,0.02688891813158989,James Garner,h,7438,OpenPlay,2023,RightFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,James Tarkowski,Pass,James Garner
+542661,70,BlockedShot,0.7919999694824219,0.4809999847412109,0.03383195772767067,James Garner,h,7438,SetPiece,2023,LeftFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,Dwight McNeil,Pass,James Garner
+542667,75,SavedShot,0.775,0.6519999694824219,0.02634214423596859,James Garner,h,7438,OpenPlay,2023,RightFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,Amadou Onana,Pass,James Garner
+543733,54,MissedShots,0.7030000305175781,0.5209999847412109,0.009503540582954884,James Garner,a,7438,SetPiece,2023,RightFoot,21979,Liverpool,Everton,2,0,2023-10-21 11:30:00,,None,James Garner
+546910,23,MissedShots,0.7959999847412109,0.5520000076293945,0.11505609005689621,James Garner,h,7438,DirectFreekick,2023,RightFoot,21997,Everton,Brighton,1,1,2023-11-04 15:00:00,,Standard,James Garner
+548397,28,MissedShots,0.7809999847412109,0.5309999847412109,0.027473364025354385,James Garner,a,7438,OpenPlay,2023,RightFoot,22010,Crystal Palace,Everton,2,3,2023-11-11 15:00:00,,TakeOn,James Garner
+550504,80,MissedShots,0.7319999694824219,0.365,0.00954029057174921,James Garner,h,7438,OpenPlay,2023,RightFoot,22017,Everton,Manchester United,0,3,2023-11-26 16:30:00,,None,James Garner
+550506,87,BlockedShot,0.7769999694824219,0.6079999923706054,0.0254720076918602,James Garner,h,7438,OpenPlay,2023,RightFoot,22017,Everton,Manchester United,0,3,2023-11-26 16:30:00,Idrissa Gueye,Pass,James Garner
+551304,17,SavedShot,0.7180000305175781,0.4570000076293945,0.012735539115965366,James Garner,a,7438,OpenPlay,2023,RightFoot,22033,Nottingham Forest,Everton,0,1,2023-12-02 17:30:00,,None,James Garner
+554451,51,SavedShot,0.9269999694824219,0.870999984741211,0.04703516513109207,James Garner,a,7438,DirectFreekick,2023,RightFoot,22058,Burnley,Everton,0,2,2023-12-16 17:30:00,,Standard,James Garner
+556192,34,SavedShot,0.75,0.5220000076293946,0.014140491373836994,James Garner,a,7438,OpenPlay,2023,RightFoot,22071,Tottenham,Everton,2,1,2023-12-23 15:00:00,,None,James Garner
+556195,41,SavedShot,0.845999984741211,0.44599998474121094,0.06690238416194916,James Garner,a,7438,OpenPlay,2023,LeftFoot,22071,Tottenham,Everton,2,1,2023-12-23 15:00:00,,CornerAwarded,James Garner
+556201,61,ShotOnPost,0.919000015258789,0.34400001525878904,0.09277276694774628,James Garner,a,7438,OpenPlay,2023,RightFoot,22071,Tottenham,Everton,2,1,2023-12-23 15:00:00,Jack Harrison,Throughball,James Garner
+558424,9,BlockedShot,0.7830000305175782,0.6559999847412109,0.06936433166265488,James Garner,h,7438,DirectFreekick,2023,RightFoot,22098,Everton,Aston Villa,0,0,2024-01-14 14:00:00,,Standard,James Garner
+558434,44,SavedShot,0.8340000152587891,0.47400001525878904,0.06901340186595917,James Garner,h,7438,OpenPlay,2023,RightFoot,22098,Everton,Aston Villa,0,0,2024-01-14 14:00:00,Abdoulaye Doucouré,BlockedPass,James Garner
+560582,93,BlockedShot,0.815,0.5509999847412109,0.06143159046769142,James Garner,a,7438,OpenPlay,2023,LeftFoot,22106,Fulham,Everton,0,0,2024-01-30 19:45:00,Beto,Pass,James Garner
+564756,25,MissedShots,0.815,0.27100000381469724,0.06567121297121048,James Garner,h,7438,DirectFreekick,2023,RightFoot,22137,Everton,Crystal Palace,1,1,2024-02-19 20:00:00,,Standard,James Garner
+564763,54,MissedShots,0.855,0.6790000152587891,0.05037891864776611,James Garner,h,7438,OpenPlay,2023,RightFoot,22137,Everton,Crystal Palace,1,1,2024-02-19 20:00:00,Dwight McNeil,Pass,James Garner
+564777,82,SavedShot,0.865,0.45599998474121095,0.05938025191426277,James Garner,h,7438,OpenPlay,2023,RightFoot,22137,Everton,Crystal Palace,1,1,2024-02-19 20:00:00,Dominic Calvert-Lewin,HeadPass,James Garner
+566587,81,BlockedShot,0.7319999694824219,0.54,0.02217876724898815,James Garner,h,7438,OpenPlay,2023,RightFoot,22157,Everton,West Ham,1,3,2024-03-02 15:00:00,Amadou Onana,Pass,James Garner
+566592,89,BlockedShot,0.81,0.3340000152587891,0.031229009851813316,James Garner,h,7438,OpenPlay,2023,RightFoot,22157,Everton,West Ham,1,3,2024-03-02 15:00:00,Abdoulaye Doucouré,Pass,James Garner
+567762,24,SavedShot,0.7530000305175781,0.65,0.019669467583298683,James Garner,a,7438,OpenPlay,2023,RightFoot,22172,Manchester United,Everton,2,0,2024-03-09 12:30:00,Amadou Onana,Pass,James Garner
+571794,65,ShotOnPost,0.835,0.654000015258789,0.03907746076583862,James Garner,a,7438,OpenPlay,2023,RightFoot,22202,Newcastle United,Everton,1,1,2024-04-02 18:30:00,Vitalii Mykolenko,Pass,James Garner
+576932,33,BlockedShot,0.855999984741211,0.6819999694824219,0.033372391015291214,James Garner,h,7438,OpenPlay,2023,RightFoot,22237,Everton,Brentford,1,0,2024-04-27 16:30:00,,Rebound,James Garner
+576951,91,ShotOnPost,0.7669999694824219,0.8480000305175781,0.02905276045203209,James Garner,h,7438,DirectFreekick,2023,RightFoot,22237,Everton,Brentford,1,0,2024-04-27 16:30:00,,Standard,James Garner
+578136,18,BlockedShot,0.8119999694824219,0.48700000762939455,0.046274881809949875,James Garner,a,7438,OpenPlay,2023,LeftFoot,22252,Luton,Everton,1,1,2024-05-03 19:00:00,Jack Harrison,Pass,James Garner
+578143,47,MissedShots,0.87,0.5820000076293945,0.028079623356461525,James Garner,a,7438,FromCorner,2023,RightFoot,22252,Luton,Everton,1,1,2024-05-03 19:00:00,James Tarkowski,Aerial,James Garner
+579828,51,MissedShots,0.79,0.3509999847412109,0.040725842118263245,James Garner,h,7438,OpenPlay,2023,LeftFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,Seamus Coleman,BallRecovery,James Garner
+579829,52,BlockedShot,0.7769999694824219,0.31799999237060544,0.023620782420039177,James Garner,h,7438,OpenPlay,2023,RightFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,Abdoulaye Doucouré,Pass,James Garner
+579837,77,MissedShots,0.8169999694824219,0.26299999237060545,0.029458515346050262,James Garner,h,7438,OpenPlay,2023,RightFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,James Tarkowski,Pass,James Garner
+579843,96,MissedShots,0.870999984741211,0.4209999847412109,0.10747230052947998,James Garner,h,7438,OpenPlay,2023,LeftFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,Youssef Chermiti,Pass,James Garner
+592389,68,BlockedShot,0.7980000305175782,0.20799999237060546,0.016787100583314896,James Garner,a,7438,OpenPlay,2024,RightFoot,26644,Leicester,Everton,1,1,2024-09-21 14:00:00,Jack Harrison,Pass,James Garner
+595732,94,MissedShots,0.7219999694824218,0.47,0.04702986404299736,James Garner,h,7438,DirectFreekick,2024,RightFoot,26669,Everton,Newcastle United,0,0,2024-10-05 16:30:00,,Standard,James Garner
+614900,38,SavedShot,0.9540000152587891,0.6869999694824219,0.08654958754777908,James Garner,h,7438,OpenPlay,2024,LeftFoot,26836,Everton,Leicester,4,0,2025-02-01 15:00:00,Iliman Ndiaye,Pass,James Garner
+619523,3,MissedShots,0.695,0.4540000152587891,0.01436206791549921,James Garner,a,7438,OpenPlay,2024,RightFoot,26862,Brentford,Everton,1,1,2025-02-26 19:30:00,Carlos Alcaraz,Pass,James Garner
+619535,51,MissedShots,0.7719999694824219,0.4540000152587891,0.025716789066791534,James Garner,a,7438,OpenPlay,2024,RightFoot,26862,Brentford,Everton,1,1,2025-02-26 19:30:00,,Dispossessed,James Garner
+627190,24,SavedShot,0.8780000305175781,0.35400001525878905,0.08096835017204285,James Garner,a,7438,OpenPlay,2024,RightFoot,26920,Nottingham Forest,Everton,0,1,2025-04-12 14:00:00,Jack Harrison,Pass,James Garner
+627204,80,MissedShots,0.79,0.4209999847412109,0.034606315195560455,James Garner,a,7438,OpenPlay,2024,RightFoot,26920,Nottingham Forest,Everton,0,1,2025-04-12 14:00:00,,None,James Garner
+634855,28,BlockedShot,0.86,0.5570000076293945,0.08733271062374115,James Garner,h,7438,SetPiece,2024,RightFoot,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,Abdoulaye Doucouré,Pass,James Garner
+634859,55,SavedShot,0.9,0.3370000076293945,0.09729825705289841,James Garner,h,7438,OpenPlay,2024,RightFoot,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,Vitalii Mykolenko,Pass,James Garner
+634861,60,MissedShots,0.894000015258789,0.43599998474121093,0.0487428717315197,James Garner,h,7438,OpenPlay,2024,Head,26968,Everton,Southampton,2,0,2025-05-18 11:00:00,Ashley Young,Cross,James Garner
+636477,23,SavedShot,0.7619999694824219,0.659000015258789,0.018549516797065735,James Garner,a,7438,OpenPlay,2024,RightFoot,26973,Newcastle United,Everton,0,1,2025-05-25 15:00:00,,BallRecovery,James Garner
+636488,52,MissedShots,0.92,0.57,0.042233072221279144,James Garner,a,7438,FromCorner,2024,Head,26973,Newcastle United,Everton,0,1,2025-05-25 15:00:00,,None,James Garner
+638392,63,BlockedShot,0.6880000305175781,0.39799999237060546,0.032131776213645935,James Garner,a,7438,DirectFreekick,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,,Standard,James Garner
+639300,40,MissedShots,0.7730000305175782,0.6809999847412109,0.022522952407598495,James Garner,h,7438,OpenPlay,2025,RightFoot,28795,Everton,Brighton,2,0,2025-08-24 13:00:00,Kiernan Dewsbury-Hall,Pass,James Garner
+639302,51,Goal,0.769000015258789,0.6840000152587891,0.020522214472293854,James Garner,h,7438,OpenPlay,2025,RightFoot,28795,Everton,Brighton,2,0,2025-08-24 13:00:00,Jack Grealish,Pass,James Garner
+641736,89,BlockedShot,0.835999984741211,0.644000015258789,0.033003758639097214,James Garner,h,7438,FromCorner,2025,RightFoot,28812,Everton,Aston Villa,0,0,2025-09-13 14:00:00,Jack Grealish,Pass,James Garner
+642858,42,BlockedShot,0.8030000305175782,0.715999984741211,0.019569212570786476,James Garner,a,7438,FromCorner,2025,RightFoot,28818,Liverpool,Everton,2,1,2025-09-20 11:30:00,Jack Grealish,Pass,James Garner
+642866,79,MissedShots,0.7390000152587891,0.75,0.03387372940778732,James Garner,a,7438,DirectFreekick,2025,RightFoot,28818,Liverpool,Everton,2,1,2025-09-20 11:30:00,,Standard,James Garner
+645731,49,BlockedShot,0.884000015258789,0.3290000152587891,0.08038363605737686,James Garner,h,7438,OpenPlay,2025,RightFoot,28837,Everton,West Ham,1,1,2025-09-29 19:00:00,Iliman Ndiaye,Pass,James Garner
+645732,51,SavedShot,0.8440000152587891,0.5820000076293945,0.08670539408922195,James Garner,h,7438,OpenPlay,2025,RightFoot,28837,Everton,West Ham,1,1,2025-09-29 19:00:00,Jack Grealish,Pass,James Garner
+645735,57,SavedShot,0.855,0.30700000762939456,0.027368303388357162,James Garner,h,7438,FromCorner,2025,RightFoot,28837,Everton,West Ham,1,1,2025-09-29 19:00:00,,None,James Garner
+645742,82,MissedShots,0.7980000305175782,0.785,0.04392853006720543,James Garner,h,7438,DirectFreekick,2025,RightFoot,28837,Everton,West Ham,1,1,2025-09-29 19:00:00,,Standard,James Garner
+645745,89,SavedShot,0.8159999847412109,0.6029999923706054,0.03966496139764786,James Garner,h,7438,SetPiece,2025,RightFoot,28837,Everton,West Ham,1,1,2025-09-29 19:00:00,Jack Grealish,Pass,James Garner
+646641,89,MissedShots,0.850999984741211,0.4909999847412109,0.07216107845306396,James Garner,h,7438,OpenPlay,2025,LeftFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,,None,James Garner
+647639,60,BlockedShot,0.9059999847412109,0.625,0.06448057293891907,James Garner,a,7438,OpenPlay,2025,LeftFoot,28853,Manchester City,Everton,2,0,2025-10-18 14:00:00,,None,James Garner
+649808,23,MissedShots,0.6940000152587891,0.49200000762939455,0.014132481068372726,James Garner,h,7438,OpenPlay,2025,RightFoot,28863,Everton,Tottenham,0,3,2025-10-26 15:30:00,Jack Grealish,Pass,James Garner
+649817,67,MissedShots,0.855999984741211,0.6969999694824218,0.03287873417139053,James Garner,h,7438,SetPiece,2025,RightFoot,28863,Everton,Tottenham,0,3,2025-10-26 15:30:00,Jack Grealish,Pass,James Garner
+651838,0,MissedShots,0.735,0.47700000762939454,0.015835778787732124,James Garner,a,7438,OpenPlay,2025,LeftFoot,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,,None,James Garner
+652259,10,SavedShot,0.6880000305175781,0.5220000076293946,0.034093886613845825,James Garner,h,7438,DirectFreekick,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,,Standard,James Garner
+652262,27,BlockedShot,0.7830000305175782,0.6969999694824218,0.058566540479660034,James Garner,h,7438,DirectFreekick,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,,Standard,James Garner
+652266,45,BlockedShot,0.794000015258789,0.56,0.0386519581079483,James Garner,h,7438,OpenPlay,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,Jack Grealish,Pass,James Garner
+652276,90,MissedShots,0.7759999847412109,0.3029999923706055,0.05501439422369003,James Garner,h,7438,DirectFreekick,2025,RightFoot,28882,Everton,Fulham,2,0,2025-11-08 15:00:00,,Standard,James Garner
+655216,12,MissedShots,0.8590000152587891,0.65,0.04751009866595268,James Garner,h,7438,OpenPlay,2025,RightFoot,28902,Everton,Newcastle United,1,4,2025-11-29 17:30:00,,Rebound,James Garner
+656122,44,MissedShots,0.799000015258789,0.32099998474121094,0.017375491559505463,James Garner,a,7438,SetPiece,2025,RightFoot,28908,Bournemouth,Everton,0,1,2025-12-02 19:30:00,,None,James Garner
+656907,55,BlockedShot,0.735,0.43,0.05197998136281967,James Garner,h,7438,DirectFreekick,2025,RightFoot,28921,Everton,Nottingham Forest,3,0,2025-12-06 15:00:00,,Standard,James Garner
+656908,55,SavedShot,0.8490000152587891,0.534000015258789,0.083989717066288,James Garner,h,7438,SetPiece,2025,RightFoot,28921,Everton,Nottingham Forest,3,0,2025-12-06 15:00:00,Jack Grealish,Pass,James Garner
+658163,6,BlockedShot,0.815,0.644000015258789,0.04535868391394615,James Garner,a,7438,OpenPlay,2025,RightFoot,28931,Chelsea,Everton,2,0,2025-12-13 15:00:00,Vitalii Mykolenko,BallTouch,James Garner
+660203,48,MissedShots,0.805,0.509000015258789,0.018570957705378532,James Garner,a,7438,FromCorner,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,,Aerial,James Garner
+660587,1,MissedShots,0.7340000152587891,0.5229999923706055,0.01564742811024189,James Garner,a,7438,OpenPlay,2025,RightFoot,28965,Nottingham Forest,Everton,0,2,2025-12-30 19:30:00,,None,James Garner
+660590,18,Goal,0.894000015258789,0.3559999847412109,0.32835710048675537,James Garner,a,7438,OpenPlay,2025,RightFoot,28965,Nottingham Forest,Everton,0,2,2025-12-30 19:30:00,Dwight McNeil,Throughball,James Garner
+660607,72,MissedShots,0.7959999847412109,0.664000015258789,0.01763143390417099,James Garner,a,7438,SetPiece,2025,LeftFoot,28965,Nottingham Forest,Everton,0,2,2025-12-30 19:30:00,,TakeOn,James Garner
+660611,76,MissedShots,0.8030000305175782,0.715999984741211,0.02272418886423111,James Garner,a,7438,OpenPlay,2025,RightFoot,28965,Nottingham Forest,Everton,0,2,2025-12-30 19:30:00,Jack Grealish,Pass,James Garner
+661439,83,BlockedShot,0.9580000305175781,0.33299999237060546,0.07605370879173279,James Garner,h,7438,OpenPlay,2025,RightFoot,28974,Everton,Brentford,2,4,2026-01-04 15:00:00,Harrison Armstrong,Pass,James Garner
+661890,34,SavedShot,0.9259999847412109,0.669000015258789,0.07719473540782928,James Garner,h,7438,OpenPlay,2025,RightFoot,28978,Everton,Wolverhampton Wanderers,1,1,2026-01-07 19:30:00,,None,James Garner
+664177,52,MissedShots,0.6909999847412109,0.5670000076293945,0.011594993993639946,James Garner,a,7438,OpenPlay,2025,RightFoot,28988,Aston Villa,Everton,0,1,2026-01-18 16:30:00,Harrison Armstrong,Pass,James Garner
+665643,3,BlockedShot,0.78,0.47299999237060547,0.033189330250024796,James Garner,h,7438,OpenPlay,2025,RightFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,,None,James Garner
+665656,44,MissedShots,0.8959999847412109,0.6680000305175782,0.06454349309206009,James Garner,h,7438,OpenPlay,2025,LeftFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,Iliman Ndiaye,Pass,James Garner
+667298,7,SavedShot,0.9569999694824218,0.875,0.04800238087773323,James Garner,a,7438,DirectFreekick,2025,RightFoot,29022,Fulham,Everton,1,2,2026-02-07 15:00:00,,Standard,James Garner
+668182,29,SavedShot,0.6909999847412109,0.5929999923706055,0.03321364149451256,James Garner,h,7438,DirectFreekick,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,Standard,James Garner
+668198,74,MissedShots,0.8030000305175782,0.34599998474121096,0.021236516535282135,James Garner,h,7438,FromCorner,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,None,James Garner
+668202,86,MissedShots,0.875,0.4370000076293945,0.031229713931679726,James Garner,h,7438,FromCorner,2025,RightFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,,Aerial,James Garner
+670585,38,SavedShot,0.6880000305175781,0.5259999847412109,0.03405259549617767,James Garner,h,7438,DirectFreekick,2025,RightFoot,29042,Everton,Manchester United,0,1,2026-02-23 20:00:00,,Standard,James Garner
+675424,13,BlockedShot,0.8869999694824219,0.6170000076293946,0.09395147860050201,James Garner,h,7438,OpenPlay,2025,LeftFoot,29081,Everton,Chelsea,3,0,2026-03-21 17:30:00,Beto,Pass,James Garner
+679574,75,MissedShots,0.7130000305175781,0.5929999923706055,0.013998613692820072,James Garner,h,7438,OpenPlay,2025,RightFoot,29102,Everton,Liverpool,1,2,2026-04-19 13:00:00,Iliman Ndiaye,Pass,James Garner
+684072,52,SavedShot,0.7069999694824218,0.5059999847412109,0.04064643383026123,James Garner,a,7438,DirectFreekick,2025,RightFoot,29130,Crystal Palace,Everton,2,2,2026-05-10 13:00:00,,Standard,James Garner

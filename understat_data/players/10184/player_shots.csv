@@ -1,0 +1,14 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+605422,53,SavedShot,0.7859999847412109,0.37599998474121094,0.029445655643939972,Archie Gray,a,10184,OpenPlay,2024,LeftFoot,26732,Bournemouth,Tottenham,1,0,2024-12-05 20:15:00,Pape Sarr,Pass,Archie Gray
+612617,51,OwnGoal,0.04099999904632568,0.509000015258789,0,Archie Gray,a,10184,FromCorner,2024,RightFoot,26815,Everton,Tottenham,3,2,2025-01-19 14:00:00,,Clearance,Archie Gray
+655306,24,MissedShots,0.740999984741211,0.3029999923706055,0.015221820212900639,Archie Gray,h,10184,OpenPlay,2025,RightFoot,28906,Tottenham,Fulham,1,2,2025-11-29 20:00:00,Mohammed Kudus,Pass,Archie Gray
+658543,33,SavedShot,0.8530000305175781,0.585,0.05619550868868828,Archie Gray,a,10184,OpenPlay,2025,RightFoot,28935,Nottingham Forest,Tottenham,3,0,2025-12-14 14:00:00,,None,Archie Gray
+660433,41,Goal,0.965,0.5070000076293946,0.5604415535926819,Archie Gray,a,10184,FromCorner,2025,Head,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Richarlison,Rebound,Archie Gray
+660755,2,BlockedShot,0.85,0.624000015258789,0.07003919035196304,Archie Gray,a,10184,OpenPlay,2025,RightFoot,28959,Brentford,Tottenham,0,0,2026-01-01 20:00:00,Wilson Odobert,Pass,Archie Gray
+660758,31,BlockedShot,0.9219999694824219,0.4979999923706055,0.06566935777664185,Archie Gray,a,10184,OpenPlay,2025,Head,28959,Brentford,Tottenham,0,0,2026-01-01 20:00:00,Richarlison,Chipped,Archie Gray
+661409,57,MissedShots,0.870999984741211,0.5329999923706055,0.03613406419754028,Archie Gray,h,10184,SetPiece,2025,Head,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Wilson Odobert,Cross,Archie Gray
+668232,63,Goal,0.9640000152587891,0.5,0.5875789523124695,Archie Gray,h,10184,FromCorner,2025,RightFoot,29036,Tottenham,Newcastle United,1,2,2026-02-10 19:30:00,Pape Sarr,HeadPass,Archie Gray
+672341,47,BlockedShot,0.879000015258789,0.375,0.05087141692638397,Archie Gray,h,10184,OpenPlay,2025,LeftFoot,29066,Tottenham,Crystal Palace,1,3,2026-03-05 20:00:00,,Rebound,Archie Gray
+675926,55,BlockedShot,0.8240000152587891,0.5529999923706055,0.0563233345746994,Archie Gray,h,10184,OpenPlay,2025,RightFoot,29086,Tottenham,Nottingham Forest,0,3,2026-03-22 14:15:00,Mathys Tel,Pass,Archie Gray
+675927,55,MissedShots,0.815,0.5790000152587891,0.04398403316736221,Archie Gray,h,10184,OpenPlay,2025,LeftFoot,29086,Tottenham,Nottingham Forest,0,3,2026-03-22 14:15:00,,Rebound,Archie Gray
+679361,97,SavedShot,0.9490000152587891,0.28899999618530275,0.0460803247988224,Archie Gray,h,10184,OpenPlay,2025,RightFoot,29107,Tottenham,Brighton,2,2,2026-04-18 16:30:00,,None,Archie Gray

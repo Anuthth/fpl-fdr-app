@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,12,0,0,1080,0,0,0,0,2025,Wolverhampton Wanderers,0,0,0,0,0.31883866991847754,0.31883866991847754,978,Sam Johnstone
+season,GK,7,0,0,630,0,0,0.04906415939331055,1,2024,Wolverhampton Wanderers,0,0,0,0,1.1530965231359005,1.1530965231359005,978,Sam Johnstone
+season,GK,20,0,0,1800,0,0,0,0,2023,Crystal Palace,1,0,0,0,1.9733385294675827,1.9733385294675827,978,Sam Johnstone
+season,GK,9,0,0,810,0,0,0,0,2022,Crystal Palace,1,0,0,0,0.26689063757658005,0.26689063757658005,978,Sam Johnstone
+season,GK,37,0,0,3330,0,1,0.11011700332164764,1,2020,West Bromwich Albion,1,0,0,0,2.6272154795005918,2.517098476178944,978,Sam Johnstone

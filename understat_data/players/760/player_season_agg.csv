@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,DC,1,0,0,90,0,0,0,0,2016,Leicester,0,0,0,0,0,0,760,Marcin Wasilewski
+season,DC,4,0,1,300,0.02863599918782711,0,0,0,2015,Leicester,2,0,0,0.02863599918782711,0.12664209678769112,0.12664209678769112,760,Marcin Wasilewski
+season,DC,25,1,12,1985,1.421762079000473,1,0.8871919047087431,6,2014,Leicester,6,0,1,1.421762079000473,2.425548592582345,1.9854063969105482,760,Marcin Wasilewski

@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,9,0,0,761,0,0,0,0,2021,Crystal Palace,0,0,0,0,1.167527973651886,1.167527973651886,856,Jack Butland
+season,GK,1,0,0,90,0,0,0,0,2020,Crystal Palace,0,0,0,0,0,0,856,Jack Butland
+season,GK,35,0,0,3150,0,0,0.0240446999669075,1,2017,Stoke,0,0,0,0,1.536594396457076,1.5125495977699757,856,Jack Butland
+season,GK,5,0,0,450,0,0,0,0,2016,Stoke,0,0,0,0,1.2550198249518871,1.2550198249518871,856,Jack Butland
+season,GK,31,0,0,2790,0,0,0.02827339991927147,1,2015,Stoke,0,0,0,0,2.1044688941910863,2.076195095665753,856,Jack Butland
+season,GK,3,0,0,270,0,0,0,0,2014,Stoke,0,0,0,0,0.06753060221672058,0.06753060221672058,856,Jack Butland

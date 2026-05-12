@@ -1,0 +1,16 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+382468,27,MissedShots,0.8909999847412109,0.4779999923706055,0.017395200207829475,Florentino Luís,h,8969,FromCorner,2020,Head,15820,Monaco,Montpellier,1,1,2020-10-18 13:00:00,Sofiane Diop,Aerial,Florentino Luís
+461160,48,MissedShots,0.7440000152587891,0.5679999923706055,0.01943179965019226,Florentino Luís,a,8969,OpenPlay,2021,RightFoot,17401,Espanyol,Getafe,2,0,2022-03-05 15:15:00,,Tackle,Florentino Luís
+461161,64,BlockedShot,0.8080000305175781,0.34,0.02628210000693798,Florentino Luís,a,8969,SetPiece,2021,RightFoot,17401,Espanyol,Getafe,2,0,2022-03-05 15:15:00,Óscar Rodríguez,Pass,Florentino Luís
+461162,66,SavedShot,0.7530000305175781,0.68,0.012794800102710724,Florentino Luís,a,8969,OpenPlay,2021,RightFoot,17401,Espanyol,Getafe,2,0,2022-03-05 15:15:00,,BallRecovery,Florentino Luís
+647545,6,MissedShots,0.6980000305175781,0.5529999923706055,0.013716273009777069,Florentino Luís,h,8969,OpenPlay,2025,RightFoot,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Josh Cullen,Pass,Florentino Luís
+649536,61,BlockedShot,0.8,0.47900001525878905,0.04498454928398132,Florentino Luís,a,8969,OpenPlay,2025,LeftFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,,None,Florentino Luís
+650841,72,MissedShots,0.965999984741211,0.5079999923706054,0.5850650668144226,Florentino Luís,h,8969,SetPiece,2025,Head,28869,Burnley,Arsenal,0,2,2025-11-01 15:00:00,Maxime Estève,HeadPass,Florentino Luís
+652297,71,BlockedShot,0.7559999847412109,0.35200000762939454,0.01591072417795658,Florentino Luís,a,8969,OpenPlay,2025,RightFoot,28887,West Ham,Burnley,3,2,2025-11-08 15:00:00,Jaidon Anthony,Pass,Florentino Luís
+652302,80,SavedShot,0.9180000305175782,0.4209999847412109,0.19339396059513092,Florentino Luís,a,8969,OpenPlay,2025,Head,28887,West Ham,Burnley,3,2,2025-11-08 15:00:00,Kyle Walker,Cross,Florentino Luís
+660207,60,MissedShots,0.750999984741211,0.4809999847412109,0.03180055692791939,Florentino Luís,h,8969,FromCorner,2025,LeftFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,Kyle Walker,Pass,Florentino Luís
+660222,95,MissedShots,0.789000015258789,0.47400001525878904,0.02590043842792511,Florentino Luís,h,8969,FromCorner,2025,RightFoot,28950,Burnley,Everton,0,0,2025-12-27 15:00:00,Hjalmar Ekdal,Tackle,Florentino Luís
+663554,15,MissedShots,0.775,0.6170000076293946,0.01875794678926468,Florentino Luís,a,8969,OpenPlay,2025,LeftFoot,28992,Liverpool,Burnley,1,1,2026-01-17 15:00:00,,Rebound,Florentino Luís
+666878,42,BlockedShot,0.7340000152587891,0.26799999237060546,0.009475639089941978,Florentino Luís,a,8969,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Jaidon Anthony,BallTouch,Florentino Luís
+677875,45,MissedShots,0.78,0.4590000152587891,0.022660590708255768,Florentino Luís,h,8969,FromCorner,2025,RightFoot,29094,Burnley,Brighton,0,2,2026-04-11 14:00:00,,None,Florentino Luís
+684037,45,MissedShots,0.77,0.46799999237060547,0.020423226058483124,Florentino Luís,h,8969,FromCorner,2025,RightFoot,29129,Burnley,Aston Villa,2,2,2026-05-10 13:00:00,,None,Florentino Luís

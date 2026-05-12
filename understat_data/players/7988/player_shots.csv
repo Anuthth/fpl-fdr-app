@@ -1,0 +1,72 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+353569,83,MissedShots,0.7719999694824219,0.42700000762939455,0.028427399694919586,Billy Gilmour,h,7988,FromCorner,2019,RightFoot,11925,Chelsea,Everton,4,0,2020-03-08 14:00:00,Ross Barkley,Pass,Billy Gilmour
+420210,17,BlockedShot,0.8030000305175782,0.5329999923706055,0.051134299486875534,Billy Gilmour,a,7988,OpenPlay,2020,RightFoot,14781,Manchester City,Chelsea,1,2,2021-05-08 16:30:00,Timo Werner,Pass,Billy Gilmour
+428657,78,BlockedShot,0.8190000152587891,0.445,0.05175510048866272,Billy Gilmour,h,7988,OpenPlay,2021,LeftFoot,16398,Norwich,Leicester,1,2,2021-08-28 14:00:00,Joshua Sargent,Pass,Billy Gilmour
+445100,10,SavedShot,0.7709999847412109,0.6419999694824219,0.0644759014248848,Billy Gilmour,a,7988,DirectFreekick,2021,RightFoot,16513,Newcastle United,Norwich,1,1,2021-11-30 19:30:00,,Standard,Billy Gilmour
+446752,74,MissedShots,0.745999984741211,0.5840000152587891,0.012679100036621094,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16522,Tottenham,Norwich,3,0,2021-12-05 14:00:00,Brandon Williams,Pass,Billy Gilmour
+446754,80,MissedShots,0.7469999694824219,0.6559999847412109,0.013772199861705303,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16522,Tottenham,Norwich,3,0,2021-12-05 14:00:00,Brandon Williams,Pass,Billy Gilmour
+447879,81,BlockedShot,0.8130000305175781,0.4540000152587891,0.044577401131391525,Billy Gilmour,h,7988,OpenPlay,2021,RightFoot,16535,Norwich,Manchester United,0,1,2021-12-11 17:30:00,,None,Billy Gilmour
+447880,81,BlockedShot,0.8530000305175781,0.5309999847412109,0.06178219988942146,Billy Gilmour,h,7988,OpenPlay,2021,LeftFoot,16535,Norwich,Manchester United,0,1,2021-12-11 17:30:00,,Rebound,Billy Gilmour
+450584,58,BlockedShot,0.7519999694824219,0.6509999847412109,0.0157965999096632,Billy Gilmour,h,7988,OpenPlay,2021,RightFoot,16562,Norwich,Arsenal,0,5,2021-12-26 15:00:00,Kenny McLean,Pass,Billy Gilmour
+450764,45,BlockedShot,0.7090000152587891,0.654000015258789,0.009688709862530231,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16570,Crystal Palace,Norwich,3,0,2021-12-28 15:00:00,Ben Gibson,Pass,Billy Gilmour
+458318,66,BlockedShot,0.8080000305175781,0.500999984741211,0.130048006772995,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16631,Liverpool,Norwich,3,1,2022-02-19 15:00:00,Milot Rashica,LayOff,Billy Gilmour
+459380,10,BlockedShot,0.7919999694824219,0.40900001525878904,0.02560410089790821,Billy Gilmour,a,7988,OpenPlay,2021,LeftFoot,16644,Southampton,Norwich,2,0,2022-02-25 20:00:00,,Rebound,Billy Gilmour
+461103,1,MissedShots,0.9259999847412109,0.580999984741211,0.12445099651813507,Billy Gilmour,h,7988,OpenPlay,2021,LeftFoot,16652,Norwich,Brentford,1,3,2022-03-05 15:00:00,,Rebound,Billy Gilmour
+461110,28,SavedShot,0.749000015258789,0.6580000305175782,0.016522400081157684,Billy Gilmour,h,7988,OpenPlay,2021,RightFoot,16652,Norwich,Brentford,1,3,2022-03-05 15:00:00,Brandon Williams,Pass,Billy Gilmour
+465201,66,BlockedShot,0.9259999847412109,0.26799999237060546,0.03939799964427948,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16685,Brighton,Norwich,0,0,2022-04-02 14:00:00,,None,Billy Gilmour
+473988,25,BlockedShot,0.8769999694824219,0.5870000076293945,0.07395309954881668,Billy Gilmour,h,7988,SetPiece,2021,RightFoot,16726,Norwich,West Ham,0,4,2022-05-08 13:00:00,Sam Byram,Chipped,Billy Gilmour
+473999,83,MissedShots,0.745999984741211,0.5890000152587891,0.056740399450063705,Billy Gilmour,h,7988,DirectFreekick,2021,RightFoot,16726,Norwich,West Ham,0,4,2022-05-08 13:00:00,,Standard,Billy Gilmour
+475233,36,SavedShot,0.7519999694824219,0.515,0.02243800088763237,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16582,Leicester,Norwich,3,0,2022-05-11 18:45:00,Teemu Pukki,Pass,Billy Gilmour
+475234,38,MissedShots,0.78,0.51,0.015932399779558182,Billy Gilmour,a,7988,FromCorner,2021,RightFoot,16582,Leicester,Norwich,3,0,2022-05-11 18:45:00,,Aerial,Billy Gilmour
+475239,46,MissedShots,0.8180000305175781,0.4809999847412109,0.0603456012904644,Billy Gilmour,a,7988,OpenPlay,2021,RightFoot,16582,Leicester,Norwich,3,0,2022-05-11 18:45:00,Max Aarons,Pass,Billy Gilmour
+507157,30,BlockedShot,0.8419999694824218,0.49700000762939456,0.0752469003200531,Billy Gilmour,h,7988,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,Deniz Undav,Pass,Billy Gilmour
+507168,56,MissedShots,0.855,0.6170000076293946,0.05923600122332573,Billy Gilmour,h,7988,OpenPlay,2022,RightFoot,18414,Brighton,Bournemouth,1,0,2023-02-04 15:00:00,,None,Billy Gilmour
+522750,74,ShotOnPost,0.8119999694824219,0.46599998474121096,0.07843495160341263,Billy Gilmour,h,7988,OpenPlay,2022,RightFoot,18535,Brighton,Wolverhampton Wanderers,6,0,2023-04-29 14:00:00,Moisés Caicedo,Pass,Billy Gilmour
+525488,84,BlockedShot,0.7709999847412109,0.4490000152587891,0.0316787026822567,Billy Gilmour,h,7988,OpenPlay,2022,RightFoot,18543,Brighton,Everton,1,5,2023-05-08 16:30:00,Estupiñán,Pass,Billy Gilmour
+525490,88,BlockedShot,0.815,0.46,0.039782047271728516,Billy Gilmour,h,7988,FromCorner,2022,RightFoot,18543,Brighton,Everton,1,5,2023-05-08 16:30:00,Pascal Groß,Pass,Billy Gilmour
+528609,9,SavedShot,0.855,0.45799999237060546,0.08005336672067642,Billy Gilmour,h,7988,OpenPlay,2022,LeftFoot,18515,Brighton,Manchester City,1,1,2023-05-24 19:00:00,Danny Welbeck,BallTouch,Billy Gilmour
+532071,83,SavedShot,0.7780000305175782,0.3160000038146973,0.027275795117020607,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22278,Brighton,Luton,4,1,2023-08-12 14:00:00,,None,Billy Gilmour
+534780,14,MissedShots,0.7919999694824219,0.59,0.032214775681495667,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22301,Brighton,West Ham,1,3,2023-08-26 16:30:00,Estupiñán,Pass,Billy Gilmour
+534787,28,BlockedShot,0.8569999694824219,0.524000015258789,0.06393125653266907,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22301,Brighton,West Ham,1,3,2023-08-26 16:30:00,,None,Billy Gilmour
+536408,26,SavedShot,0.7430000305175781,0.59,0.014226137660443783,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,21931,Brighton,Newcastle United,3,1,2023-09-02 16:30:00,,Rebound,Billy Gilmour
+539587,38,MissedShots,0.4909999847412109,0.539000015258789,0.006862853188067675,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,21951,Brighton,Bournemouth,3,1,2023-09-24 13:00:00,,None,Billy Gilmour
+540872,86,MissedShots,0.7430000305175781,0.5840000152587891,0.008817111141979694,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,21955,Aston Villa,Brighton,6,1,2023-09-30 11:30:00,Kaoru Mitoma,HeadPass,Billy Gilmour
+546131,96,BlockedShot,0.8540000152587891,0.525,0.07251153886318207,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,21988,Brighton,Fulham,1,1,2023-10-29 14:00:00,,None,Billy Gilmour
+548864,46,SavedShot,0.7419999694824219,0.3870000076293945,0.01172659918665886,Billy Gilmour,h,7988,SetPiece,2023,RightFoot,22008,Brighton,Sheffield United,1,1,2023-11-12 14:00:00,,None,Billy Gilmour
+549761,12,MissedShots,0.7819999694824219,0.6580000305175782,0.01976425014436245,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22022,Nottingham Forest,Brighton,2,3,2023-11-25 15:00:00,Anssumane Fati,Pass,Billy Gilmour
+549762,17,SavedShot,0.85,0.4909999847412109,0.07578212022781372,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22022,Nottingham Forest,Brighton,2,3,2023-11-25 15:00:00,Pascal Groß,Pass,Billy Gilmour
+549767,32,MissedShots,0.8190000152587891,0.539000015258789,0.03966674953699112,Billy Gilmour,a,7988,FromCorner,2023,RightFoot,22022,Nottingham Forest,Brighton,2,3,2023-11-25 15:00:00,,None,Billy Gilmour
+551659,70,MissedShots,0.725,0.4979999923706055,0.011356782168149948,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22029,Chelsea,Brighton,3,2,2023-12-03 14:00:00,Kaoru Mitoma,Pass,Billy Gilmour
+552265,48,BlockedShot,0.7819999694824219,0.6129999923706054,0.02449927106499672,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22036,Brighton,Brentford,2,1,2023-12-06 19:30:00,Kaoru Mitoma,Pass,Billy Gilmour
+552877,47,BlockedShot,0.7440000152587891,0.539000015258789,0.018095044419169426,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22046,Brighton,Burnley,1,1,2023-12-09 15:00:00,,Dispossessed,Billy Gilmour
+552893,94,MissedShots,0.8240000152587891,0.585,0.019616277888417244,Billy Gilmour,h,7988,FromCorner,2023,RightFoot,22046,Brighton,Burnley,1,1,2023-12-09 15:00:00,,Aerial,Billy Gilmour
+555898,64,SavedShot,0.785,0.5259999847412109,0.03667673468589783,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22066,Crystal Palace,Brighton,1,1,2023-12-21 20:00:00,,Rebound,Billy Gilmour
+557307,67,BlockedShot,0.8130000305175781,0.5120000076293946,0.042992040514945984,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22093,West Ham,Brighton,0,0,2024-01-02 18:30:00,,Rebound,Billy Gilmour
+559529,87,BlockedShot,0.794000015258789,0.3129999923706055,0.019484734162688255,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22095,Brighton,Wolverhampton Wanderers,0,0,2024-01-22 19:45:00,Jack Hinshelwood,Pass,Billy Gilmour
+560603,47,MissedShots,0.7919999694824219,0.5840000152587891,0.024384384974837303,Billy Gilmour,a,7988,OpenPlay,2023,LeftFoot,22107,Luton,Brighton,4,0,2024-01-30 19:45:00,,None,Billy Gilmour
+561212,52,BlockedShot,0.7480000305175781,0.5179999923706055,0.015124881640076637,Billy Gilmour,h,7988,SetPiece,2023,RightFoot,22118,Brighton,Crystal Palace,4,1,2024-02-03 15:00:00,,Rebound,Billy Gilmour
+564342,56,BlockedShot,0.750999984741211,0.3920000076293945,0.015841035172343254,Billy Gilmour,a,7988,FromCorner,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,,None,Billy Gilmour
+564345,67,MissedShots,0.7659999847412109,0.36700000762939455,0.02593057043850422,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22143,Sheffield United,Brighton,0,5,2024-02-18 14:00:00,,BallRecovery,Billy Gilmour
+565198,69,BlockedShot,0.795,0.585,0.028906548395752907,Billy Gilmour,h,7988,OpenPlay,2023,RightFoot,22148,Brighton,Everton,1,1,2024-02-24 15:00:00,Facundo Buonanotte,Pass,Billy Gilmour
+577209,71,BlockedShot,0.845999984741211,0.6459999847412109,0.04723900556564331,Billy Gilmour,a,7988,OpenPlay,2023,RightFoot,22235,Bournemouth,Brighton,3,0,2024-04-28 13:00:00,João Pedro,Pass,Billy Gilmour
+579951,75,BlockedShot,0.7880000305175782,0.48900001525878906,0.02575773373246193,Billy Gilmour,a,7988,FromCorner,2023,RightFoot,22260,Newcastle United,Brighton,1,1,2024-05-11 14:00:00,,None,Billy Gilmour
+585861,76,BlockedShot,0.7780000305175782,0.42200000762939455,0.08454305678606033,Billy Gilmour,h,7988,DirectFreekick,2024,RightFoot,26612,Brighton,Manchester United,2,1,2024-08-24 11:30:00,,Standard,Billy Gilmour
+597432,69,MissedShots,0.7609999847412109,0.56,0.019479282200336456,Billy Gilmour,a,7988,OpenPlay,2024,RightFoot,27435,Empoli,Napoli,0,1,2024-10-20 10:30:00,Giovanni Simeone,TakeOn,Billy Gilmour
+598264,45,BlockedShot,0.7909999847412109,0.610999984741211,0.031268831342458725,Billy Gilmour,h,7988,OpenPlay,2024,LeftFoot,27448,Napoli,Lecce,1,0,2024-10-26 13:00:00,,None,Billy Gilmour
+620153,45,BlockedShot,0.725,0.505,0.015406728722155094,Billy Gilmour,h,7988,OpenPlay,2024,RightFoot,27629,Napoli,Inter,1,1,2025-03-01 17:00:00,,None,Billy Gilmour
+620154,46,BlockedShot,0.83,0.505,0.05306120216846466,Billy Gilmour,h,7988,OpenPlay,2024,RightFoot,27629,Napoli,Inter,1,1,2025-03-01 17:00:00,,None,Billy Gilmour
+620157,64,BlockedShot,0.7730000305175782,0.539000015258789,0.023614104837179184,Billy Gilmour,h,7988,OpenPlay,2024,LeftFoot,27629,Napoli,Inter,1,1,2025-03-01 17:00:00,Giacomo Raspadori,Pass,Billy Gilmour
+628127,37,MissedShots,0.8030000305175782,0.43599998474121093,0.06022980064153671,Billy Gilmour,h,7988,OpenPlay,2024,RightFoot,27680,Napoli,Empoli,3,0,2025-04-14 18:45:00,Mathías Olivera,Pass,Billy Gilmour
+633799,67,BlockedShot,0.8809999847412109,0.53,0.07036225497722626,Billy Gilmour,h,7988,FromCorner,2024,RightFoot,27718,Napoli,Genoa,2,2,2025-05-11 18:45:00,Romelu Lukaku,BallTouch,Billy Gilmour
+635508,19,BlockedShot,0.8040000152587891,0.4640000152587891,0.01768023520708084,Billy Gilmour,a,7988,OpenPlay,2024,RightFoot,27729,Parma Calcio 1913,Napoli,0,0,2025-05-18 18:45:00,,Aerial,Billy Gilmour
+635748,9,SavedShot,0.9180000305175782,0.36200000762939455,0.3359200358390808,Billy Gilmour,h,7988,OpenPlay,2024,RightFoot,27739,Napoli,Cagliari,2,0,2025-05-23 18:45:00,Leonardo Spinazzola,Pass,Billy Gilmour
+644076,38,Goal,0.8619999694824219,0.514000015258789,0.11373024433851242,Billy Gilmour,h,7988,OpenPlay,2025,LeftFoot,29883,Napoli,Pisa,3,2,2025-09-22 18:45:00,,TakeOn,Billy Gilmour
+645638,93,BlockedShot,0.8569999694824219,0.41900001525878905,0.05849117413163185,Billy Gilmour,a,7988,OpenPlay,2025,RightFoot,29889,AC Milan,Napoli,2,1,2025-09-28 18:45:00,,None,Billy Gilmour
+649066,20,MissedShots,0.815,0.3890000152587891,0.04248572513461113,Billy Gilmour,h,7988,OpenPlay,2025,RightFoot,29920,Napoli,Inter,3,1,2025-10-25 16:00:00,,None,Billy Gilmour
+650061,11,BlockedShot,0.7240000152587891,0.515,0.016142884269356728,Billy Gilmour,a,7988,OpenPlay,2025,RightFoot,29931,Lecce,Napoli,0,1,2025-10-28 16:30:00,,Dispossessed,Billy Gilmour
+650067,35,BlockedShot,0.8469999694824218,0.6530000305175782,0.055830396711826324,Billy Gilmour,a,7988,OpenPlay,2025,RightFoot,29931,Lecce,Napoli,0,1,2025-10-28 16:30:00,Eljif Elmas,Pass,Billy Gilmour
+669301,88,MissedShots,0.8569999694824219,0.37599998474121094,0.03706378862261772,Billy Gilmour,h,7988,FromCorner,2025,RightFoot,30089,Napoli,Roma,2,2,2026-02-15 19:45:00,Giovane,Cross,Billy Gilmour
+672423,71,SavedShot,0.765,0.4420000076293945,0.02484876476228237,Billy Gilmour,h,7988,OpenPlay,2025,RightFoot,30114,Napoli,Torino,2,1,2026-03-06 19:45:00,Rasmus Højlund,Pass,Billy Gilmour
+673972,16,MissedShots,0.860999984741211,0.5540000152587891,0.12860673666000366,Billy Gilmour,h,7988,OpenPlay,2025,RightFoot,30128,Napoli,Lecce,2,1,2026-03-14 17:00:00,Alisson Santos,Pass,Billy Gilmour
+674918,41,BlockedShot,0.8869999694824219,0.325,0.03900505229830742,Billy Gilmour,a,7988,FromCorner,2025,RightFoot,30136,Cagliari,Napoli,0,1,2026-03-20 17:30:00,Rasmus Højlund,Pass,Billy Gilmour
+680614,78,SavedShot,0.7869999694824219,0.47200000762939454,0.05579745024442673,Billy Gilmour,h,7988,OpenPlay,2025,RightFoot,30180,Napoli,Cremonese,4,0,2026-04-24 18:45:00,Miguel Gutiérrez,Pass,Billy Gilmour

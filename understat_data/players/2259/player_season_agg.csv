@@ -1,0 +1,7 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,14,0,0,1260,0,0,0.050901900976896286,1,2021,Elche,3,0,0,0,1.2149896081537008,1.1640876065939665,2259,Kiko Casilla
+season,GK,3,0,0,270,0,0,0,0,2020,Leeds,0,0,0,0,0.26956919580698013,0.26956919580698013,2259,Kiko Casilla
+season,GK,10,0,0,900,0,0,0,0,2017,Real Madrid,0,0,0,0,1.3708053948357701,1.3708053948357701,2259,Kiko Casilla
+season,GK,11,0,0,990,0,0,0,0,2016,Real Madrid,0,0,0,0,3.428795076906681,3.428795076906681,2259,Kiko Casilla
+season,GK,4,0,0,360,0,0,0,0,2015,Real Madrid,0,0,0,0,2.167167007923126,2.167167007923126,2259,Kiko Casilla
+season,GK,37,0,0,3279,0,0,0,0,2014,Espanyol,4,1,0,0,0.7865578886121511,0.7865578886121511,2259,Kiko Casilla

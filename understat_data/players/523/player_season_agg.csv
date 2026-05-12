@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,1,0,0,90,0,0,0,0,2018,Crystal Palace,0,0,0,0,0,0,523,Julian Speroni
+season,GK,11,0,0,990,0,0,0,0,2017,Crystal Palace,0,0,0,0,0.8597650863230228,0.8597650863230228,523,Julian Speroni
+season,GK,2,0,0,180,0,0,0,0,2015,Crystal Palace,0,0,0,0,0.09953469783067703,0.09953469783067703,523,Julian Speroni
+season,GK,36,0,0,3207,0,0,0,0,2014,Crystal Palace,1,0,0,0,2.2790353205055,2.2790353205055,523,Julian Speroni

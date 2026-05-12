@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,35,2,29,1409,6.92764007486403,0,0.47348521556705236,6,2024,Southampton,0,0,2,6.166471207514405,7.4672291576862335,1.9211225835606456,9912,Cameron Archer
+season,FW,29,4,41,1869,5.785084556788206,1,2.983854740858078,24,2023,Sheffield United,1,0,4,5.785084556788206,9.17532782163471,1.594775709323585,9912,Cameron Archer
+season,Sub,1,0,0,1,0,0,0,0,2023,Aston Villa,1,0,0,0,0,0,9912,Cameron Archer
+season,Sub,6,0,0,31,0,0,0,0,2022,Aston Villa,0,0,0,0,0,0,9912,Cameron Archer
+season,Sub,3,0,1,20,0.02824229933321476,0,0,0,2021,Aston Villa,0,0,0,0.02824229933321476,0.059728801250457764,0.031486500054597855,9912,Cameron Archer

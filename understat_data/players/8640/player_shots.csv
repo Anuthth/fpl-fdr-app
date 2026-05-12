@@ -1,0 +1,113 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+377741,91,Goal,0.8030000305175782,0.5220000076293946,0.041457999497652054,Adrien Truffert,h,8640,OpenPlay,2020,LeftFoot,14206,Rennes,Monaco,2,1,2020-09-19 19:00:00,Martin Terrier,Pass,Adrien Truffert
+386269,68,BlockedShot,0.8419999694824218,0.5209999847412109,0.05685289949178696,Adrien Truffert,a,8640,FromCorner,2020,LeftFoot,15846,Paris Saint Germain,Rennes,3,0,2020-11-07 20:00:00,,None,Adrien Truffert
+387064,90,MissedShots,0.799000015258789,0.66,0.026553399860858917,Adrien Truffert,h,8640,OpenPlay,2020,LeftFoot,15856,Rennes,Bordeaux,0,1,2020-11-20 18:00:00,,None,Adrien Truffert
+388500,58,BlockedShot,0.8719999694824219,0.655,0.01930299960076809,Adrien Truffert,a,8640,OpenPlay,2020,LeftFoot,15866,Strasbourg,Rennes,1,1,2020-11-27 20:00:00,,Aerial,Adrien Truffert
+390232,11,MissedShots,0.7269999694824218,0.6819999694824219,0.012883099727332592,Adrien Truffert,h,8640,FromCorner,2020,RightFoot,15885,Rennes,Lens,0,2,2020-12-05 16:00:00,,None,Adrien Truffert
+391937,21,SavedShot,0.8469999694824218,0.624000015258789,0.04251530021429062,Adrien Truffert,a,8640,FromCorner,2020,LeftFoot,15892,Nice,Rennes,0,1,2020-12-13 12:00:00,,None,Adrien Truffert
+391954,75,MissedShots,0.955999984741211,0.56,0.09401199966669083,Adrien Truffert,a,8640,OpenPlay,2020,Head,15892,Nice,Rennes,0,1,2020-12-13 12:00:00,Hamari Traore,Aerial,Adrien Truffert
+393445,75,BlockedShot,0.87,0.5829999923706055,0.05880120024085045,Adrien Truffert,h,8640,OpenPlay,2020,RightFoot,15897,Rennes,Marseille,2,1,2020-12-16 20:00:00,Hamari Traore,Cross,Adrien Truffert
+394650,19,BlockedShot,0.9059999847412109,0.6120000076293945,0.08174470067024231,Adrien Truffert,a,8640,OpenPlay,2020,RightFoot,15908,Lorient,Rennes,0,3,2020-12-20 16:00:00,Damien Da Silva,Chipped,Adrien Truffert
+394652,35,BlockedShot,0.805,0.5420000076293945,0.03795870020985603,Adrien Truffert,a,8640,SetPiece,2020,RightFoot,15908,Lorient,Rennes,0,3,2020-12-20 16:00:00,,None,Adrien Truffert
+400953,26,BlockedShot,0.9069999694824219,0.575,0.0785142034292221,Adrien Truffert,h,8640,OpenPlay,2020,RightFoot,15964,Rennes,Lille,0,1,2021-01-24 16:00:00,,None,Adrien Truffert
+403500,7,MissedShots,0.784000015258789,0.6329999923706054,0.019898900762200356,Adrien Truffert,a,8640,FromCorner,2020,LeftFoot,15992,Lens,Rennes,0,0,2021-02-06 20:00:00,,None,Adrien Truffert
+403509,70,MissedShots,0.8980000305175782,0.605999984741211,0.11187200248241425,Adrien Truffert,a,8640,OpenPlay,2020,RightFoot,15992,Lens,Rennes,0,0,2021-02-06 20:00:00,Martin Terrier,Cross,Adrien Truffert
+404691,76,SavedShot,0.7580000305175781,0.5729999923706055,0.017021799460053444,Adrien Truffert,h,8640,OpenPlay,2020,LeftFoot,16005,Rennes,Saint-Etienne,0,2,2021-02-14 14:00:00,,None,Adrien Truffert
+405853,59,BlockedShot,0.805,0.6609999847412109,0.015524299815297127,Adrien Truffert,a,8640,FromCorner,2020,LeftFoot,16009,Montpellier,Rennes,2,1,2021-02-21 12:00:00,,Aerial,Adrien Truffert
+406490,35,MissedShots,0.81,0.61,0.02683670073747635,Adrien Truffert,h,8640,SetPiece,2020,LeftFoot,16024,Rennes,Nice,1,2,2021-02-26 20:00:00,,Rebound,Adrien Truffert
+407919,91,MissedShots,0.8809999847412109,0.5429999923706055,0.04660459980368614,Adrien Truffert,a,8640,OpenPlay,2020,Head,16029,Lyon,Rennes,1,0,2021-03-03 18:00:00,Hamari Traore,Cross,Adrien Truffert
+411207,14,MissedShots,0.7390000152587891,0.645,0.014268799684941769,Adrien Truffert,a,8640,FromCorner,2020,LeftFoot,16049,Metz,Rennes,1,3,2021-03-20 12:00:00,,None,Adrien Truffert
+413065,69,BlockedShot,0.8430000305175781,0.565,0.0556102991104126,Adrien Truffert,a,8640,OpenPlay,2020,RightFoot,16057,Reims,Rennes,2,2,2021-04-04 13:00:00,,None,Adrien Truffert
+414161,0,MissedShots,0.8019999694824219,0.769000015258789,0.020090600475668907,Adrien Truffert,h,8640,OpenPlay,2020,LeftFoot,16073,Rennes,Nantes,1,0,2021-04-11 11:00:00,Steven N&#039;Zonzi,Pass,Adrien Truffert
+414162,23,BlockedShot,0.7169999694824218,0.6469999694824219,0.009294480085372925,Adrien Truffert,h,8640,SetPiece,2020,LeftFoot,16073,Rennes,Nantes,1,0,2021-04-11 11:00:00,,None,Adrien Truffert
+417743,56,BlockedShot,0.765,0.6819999694824219,0.018642200157046318,Adrien Truffert,h,8640,FromCorner,2020,LeftFoot,16091,Rennes,Dijon,5,1,2021-04-25 13:00:00,Flavien Tait,Pass,Adrien Truffert
+417744,56,MissedShots,0.7980000305175782,0.6730000305175782,0.01955839991569519,Adrien Truffert,h,8640,FromCorner,2020,LeftFoot,16091,Rennes,Dijon,5,1,2021-04-25 13:00:00,,None,Adrien Truffert
+422950,77,MissedShots,0.749000015258789,0.6090000152587891,0.020663300529122353,Adrien Truffert,a,8640,OpenPlay,2020,LeftFoot,16121,Monaco,Rennes,2,1,2021-05-16 19:00:00,Martin Terrier,Pass,Adrien Truffert
+436802,86,MissedShots,0.8159999847412109,0.7030000305175781,0.0392271988093853,Adrien Truffert,a,8640,OpenPlay,2021,LeftFoot,17917,Metz,Rennes,0,3,2021-10-17 13:00:00,Baptiste Santamaria,Pass,Adrien Truffert
+442079,75,Goal,0.8819999694824219,0.5920000076293945,0.5391740202903748,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,17950,Rennes,Lyon,4,1,2021-11-07 19:45:00,Flavien Tait,Throughball,Adrien Truffert
+442083,82,Goal,0.885,0.605999984741211,0.09325829893350601,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,17950,Rennes,Lyon,4,1,2021-11-07 19:45:00,Kamaldeen Sulemana,BallTouch,Adrien Truffert
+442874,47,MissedShots,0.85,0.76,0.07754579931497574,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,17957,Rennes,Montpellier,2,0,2021-11-20 20:00:00,Flavien Tait,Pass,Adrien Truffert
+442891,73,MissedShots,0.9369999694824219,0.6309999847412109,0.33105599880218506,Adrien Truffert,h,8640,OpenPlay,2021,RightFoot,17957,Rennes,Montpellier,2,0,2021-11-20 20:00:00,Flavien Tait,Chipped,Adrien Truffert
+444680,50,BlockedShot,0.8319999694824218,0.6719999694824219,0.040553100407123566,Adrien Truffert,a,8640,OpenPlay,2021,LeftFoot,17967,Lorient,Rennes,0,2,2021-11-28 14:00:00,Lovro Majer,Pass,Adrien Truffert
+445503,8,SavedShot,0.855,0.685,0.035909298807382584,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,17979,Rennes,Lille,1,2,2021-12-01 20:00:00,,Rebound,Adrien Truffert
+448362,77,MissedShots,0.8019999694824219,0.5990000152587891,0.03591969981789589,Adrien Truffert,h,8640,OpenPlay,2021,RightFoot,17993,Rennes,Nice,1,2,2021-12-12 14:00:00,,None,Adrien Truffert
+448363,81,BlockedShot,0.7269999694824218,0.5520000076293945,0.011186099611222744,Adrien Truffert,h,8640,SetPiece,2021,LeftFoot,17993,Rennes,Nice,1,2,2021-12-12 14:00:00,,None,Adrien Truffert
+450496,86,BlockedShot,0.7119999694824218,0.5029999923706054,0.01608950085937977,Adrien Truffert,a,8640,FromCorner,2021,LeftFoot,18007,Monaco,Rennes,2,1,2021-12-22 19:45:00,Serhou Guirassy,BallTouch,Adrien Truffert
+452304,10,MissedShots,0.7659999847412109,0.4179999923706055,0.04507509991526604,Adrien Truffert,a,8640,OpenPlay,2021,LeftFoot,18019,Lens,Rennes,1,0,2022-01-08 20:00:00,Gaetan Laborde,Pass,Adrien Truffert
+453517,68,Goal,0.909000015258789,0.47,0.555495023727417,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,18028,Rennes,Bordeaux,6,0,2022-01-16 12:00:00,Lovro Majer,Pass,Adrien Truffert
+453518,70,BlockedShot,0.8809999847412109,0.6990000152587891,0.25136798620224,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,18028,Rennes,Bordeaux,6,0,2022-01-16 12:00:00,Jéremy Doku,Pass,Adrien Truffert
+466806,62,MissedShots,0.86,0.6609999847412109,0.078084297478199,Adrien Truffert,a,8640,OpenPlay,2021,LeftFoot,18130,Reims,Rennes,2,3,2022-04-09 15:00:00,Martin Terrier,Pass,Adrien Truffert
+467871,88,BlockedShot,0.8059999847412109,0.3970000076293945,0.02826480008661747,Adrien Truffert,h,8640,FromCorner,2021,LeftFoot,18139,Rennes,Monaco,2,3,2022-04-15 19:00:00,,BallTouch,Adrien Truffert
+469518,20,BlockedShot,0.8090000152587891,0.62,0.03599739819765091,Adrien Truffert,a,8640,OpenPlay,2021,RightFoot,18150,Strasbourg,Rennes,2,1,2022-04-20 19:00:00,,None,Adrien Truffert
+470344,78,SavedShot,0.7659999847412109,0.635,0.021480899304151535,Adrien Truffert,h,8640,OpenPlay,2021,LeftFoot,18160,Rennes,Lorient,5,0,2022-04-24 11:00:00,,None,Adrien Truffert
+471930,46,BlockedShot,0.705,0.595999984741211,0.012837099842727184,Adrien Truffert,h,8640,FromCorner,2021,LeftFoot,18167,Rennes,Saint-Etienne,2,0,2022-04-30 19:00:00,,None,Adrien Truffert
+475253,30,BlockedShot,0.87,0.5320000076293945,0.11079700291156769,Adrien Truffert,a,8640,OpenPlay,2021,RightFoot,18172,Nantes,Rennes,2,1,2022-05-11 19:00:00,Benjamin Bourigeaud,Pass,Adrien Truffert
+479811,0,BlockedShot,0.8640000152587891,0.64,0.039629898965358734,Adrien Truffert,h,8640,OpenPlay,2022,LeftFoot,19656,Rennes,Lorient,0,1,2022-08-07 15:05:00,Martin Terrier,Chipped,Adrien Truffert
+482499,71,BlockedShot,0.775,0.6609999847412109,0.03038099966943264,Adrien Truffert,h,8640,OpenPlay,2022,LeftFoot,19676,Rennes,Ajaccio,2,1,2022-08-21 15:05:00,,None,Adrien Truffert
+484046,62,BlockedShot,0.8490000152587891,0.6959999847412109,0.03221509978175163,Adrien Truffert,a,8640,OpenPlay,2022,LeftFoot,19684,Lens,Rennes,2,1,2022-08-27 19:00:00,Martin Terrier,Pass,Adrien Truffert
+486670,67,MissedShots,0.8109999847412109,0.5020000076293946,0.037820201367139816,Adrien Truffert,a,8640,FromCorner,2022,LeftFoot,19707,Troyes,Rennes,1,1,2022-09-04 15:05:00,,None,Adrien Truffert
+489203,4,SavedShot,0.879000015258789,0.7030000305175781,0.04524470120668411,Adrien Truffert,a,8640,OpenPlay,2022,LeftFoot,19725,Marseille,Rennes,1,1,2022-09-18 13:00:00,Martin Terrier,Pass,Adrien Truffert
+493491,81,BlockedShot,0.7759999847412109,0.710999984741211,0.02396409958600998,Adrien Truffert,h,8640,OpenPlay,2022,LeftFoot,19755,Rennes,Lyon,3,2,2022-10-16 13:00:00,Martin Terrier,Pass,Adrien Truffert
+500392,62,SavedShot,0.8130000305175781,0.5609999847412109,0.06618630141019821,Adrien Truffert,h,8640,OpenPlay,2022,RightFoot,19797,Rennes,Toulouse,2,1,2022-11-12 20:00:00,Martin Terrier,Pass,Adrien Truffert
+508772,75,BlockedShot,0.8780000305175781,0.6120000076293945,0.05590609833598137,Adrien Truffert,a,8640,OpenPlay,2022,LeftFoot,19877,Toulouse,Rennes,3,1,2023-02-12 12:00:00,,None,Adrien Truffert
+510175,78,MissedShots,0.750999984741211,0.539000015258789,0.01751610077917576,Adrien Truffert,h,8640,FromCorner,2022,LeftFoot,19885,Rennes,Clermont Foot,2,0,2023-02-19 14:00:00,,None,Adrien Truffert
+510177,90,SavedShot,0.8480000305175781,0.57,0.10395199805498123,Adrien Truffert,h,8640,OpenPlay,2022,LeftFoot,19885,Rennes,Clermont Foot,2,0,2023-02-19 14:00:00,Warmed Omari,Chipped,Adrien Truffert
+535157,17,MissedShots,0.9309999847412109,0.5529999923706055,0.5117343068122864,Adrien Truffert,h,8640,OpenPlay,2023,RightFoot,23391,Rennes,Le Havre,2,2,2023-08-27 11:00:00,,Rebound,Adrien Truffert
+539862,29,MissedShots,0.8190000152587891,0.5479999923706055,0.05713462829589844,Adrien Truffert,a,8640,OpenPlay,2023,LeftFoot,23423,Montpellier,Rennes,0,0,2023-09-24 15:05:00,Ludovic Blas,Pass,Adrien Truffert
+539870,47,MissedShots,0.8119999694824219,0.5529999923706055,0.036021653562784195,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23423,Montpellier,Rennes,0,0,2023-09-24 15:05:00,,None,Adrien Truffert
+544482,25,SavedShot,0.755,0.51,0.018373357132077217,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23445,Lorient,Rennes,2,1,2023-10-22 11:00:00,,None,Adrien Truffert
+544483,26,SavedShot,0.7869999694824219,0.5070000076293946,0.041318874806165695,Adrien Truffert,a,8640,OpenPlay,2023,LeftFoot,23445,Lorient,Rennes,2,1,2023-10-22 11:00:00,Benjamin Bourigeaud,Pass,Adrien Truffert
+544493,64,MissedShots,0.7769999694824219,0.6359999847412109,0.022513551637530327,Adrien Truffert,a,8640,OpenPlay,2023,LeftFoot,23445,Lorient,Rennes,2,1,2023-10-22 11:00:00,,None,Adrien Truffert
+546230,22,Goal,0.805,0.6519999694824219,0.030206436291337013,Adrien Truffert,h,8640,OpenPlay,2023,RightFoot,23452,Rennes,Strasbourg,1,1,2023-10-29 16:05:00,,None,Adrien Truffert
+547679,23,SavedShot,0.8540000152587891,0.750999984741211,0.026322416961193085,Adrien Truffert,a,8640,OpenPlay,2023,RightFoot,23468,Nice,Rennes,2,0,2023-11-05 19:45:00,Nemanja Matic,Chipped,Adrien Truffert
+547682,32,BlockedShot,0.775,0.6969999694824218,0.0220001470297575,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23468,Nice,Rennes,2,0,2023-11-05 19:45:00,Nemanja Matic,Pass,Adrien Truffert
+550467,24,BlockedShot,0.8030000305175782,0.685,0.032854244112968445,Adrien Truffert,h,8640,OpenPlay,2023,LeftFoot,23481,Rennes,Reims,3,1,2023-11-26 16:05:00,Enzo Le Fée,Pass,Adrien Truffert
+552066,72,MissedShots,0.8030000305175782,0.6580000305175782,0.0216731745749712,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23489,Marseille,Rennes,2,0,2023-12-03 19:45:00,,None,Adrien Truffert
+555539,57,MissedShots,0.9340000152587891,0.57,0.10717832297086716,Adrien Truffert,a,8640,OpenPlay,2023,LeftFoot,23520,Clermont Foot,Rennes,1,3,2023-12-20 20:00:00,Guela Doué,Cross,Adrien Truffert
+555548,80,BlockedShot,0.7909999847412109,0.5170000076293946,0.017310254275798798,Adrien Truffert,a,8640,FromCorner,2023,RightFoot,23520,Clermont Foot,Rennes,1,3,2023-12-20 20:00:00,,Aerial,Adrien Truffert
+555551,87,MissedShots,0.8219999694824218,0.57,0.01825754903256893,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23520,Clermont Foot,Rennes,1,3,2023-12-20 20:00:00,Bertug Yildirim,HeadPass,Adrien Truffert
+559622,40,MissedShots,0.9,0.5820000076293945,0.05220674350857735,Adrien Truffert,a,8640,FromCorner,2023,LeftFoot,23537,Lyon,Rennes,2,3,2024-01-26 20:00:00,Benjamin Bourigeaud,Cross,Adrien Truffert
+573018,4,SavedShot,0.8080000305175781,0.5079999923706054,0.050866078585386276,Adrien Truffert,a,8640,OpenPlay,2023,RightFoot,23616,Monaco,Rennes,1,0,2024-04-07 15:05:00,Arnaud Kalimuendo Muinga,Pass,Adrien Truffert
+577427,71,BlockedShot,0.915,0.7609999847412109,0.030711986124515533,Adrien Truffert,h,8640,OpenPlay,2023,RightFoot,23643,Rennes,Brest,4,5,2024-04-28 15:05:00,Amine Gouiri,Pass,Adrien Truffert
+577434,87,BlockedShot,0.7609999847412109,0.705999984741211,0.014264966361224651,Adrien Truffert,h,8640,FromCorner,2023,LeftFoot,23643,Rennes,Brest,4,5,2024-04-28 15:05:00,,None,Adrien Truffert
+578698,79,SavedShot,0.8330000305175781,0.7319999694824219,0.017237143591046333,Adrien Truffert,a,8640,SetPiece,2023,LeftFoot,23657,Metz,Rennes,2,3,2024-05-04 17:00:00,,Rebound,Adrien Truffert
+582781,19,SavedShot,0.85,0.6090000152587891,0.11708679050207138,Adrien Truffert,a,8640,OpenPlay,2023,RightFoot,23672,Reims,Rennes,2,1,2024-05-19 19:00:00,Warmed Omari,Throughball,Adrien Truffert
+586802,16,MissedShots,0.8040000152587891,0.5209999847412109,0.03779727593064308,Adrien Truffert,a,8640,OpenPlay,2024,LeftFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,,Rebound,Adrien Truffert
+586807,43,SavedShot,0.8130000305175781,0.6990000152587891,0.024741636589169502,Adrien Truffert,a,8640,OpenPlay,2024,LeftFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,,None,Adrien Truffert
+586811,49,MissedShots,0.7319999694824219,0.4570000076293945,0.017346970736980438,Adrien Truffert,a,8640,OpenPlay,2024,RightFoot,28063,Strasbourg,Rennes,3,1,2024-08-25 15:00:00,Albert Grønbæk,LayOff,Adrien Truffert
+589965,59,BlockedShot,0.8669999694824219,0.7030000305175781,0.037094950675964355,Adrien Truffert,a,8640,OpenPlay,2024,RightFoot,28072,Reims,Rennes,2,1,2024-09-01 15:00:00,,Dispossessed,Adrien Truffert
+593743,8,BlockedShot,0.805,0.7,0.012595385313034058,Adrien Truffert,a,8640,OpenPlay,2024,RightFoot,28094,Paris Saint Germain,Rennes,3,1,2024-09-27 19:00:00,,Aerial,Adrien Truffert
+595905,50,SavedShot,0.705999984741211,0.6469999694824219,0.011252980679273605,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,,BallRecovery,Adrien Truffert
+595911,57,SavedShot,0.889000015258789,0.23799999237060546,0.026433777064085007,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Hans Hateboer,Pass,Adrien Truffert
+595914,65,BlockedShot,0.7730000305175782,0.355,0.024572812020778656,Adrien Truffert,h,8640,FromCorner,2024,LeftFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Ludovic Blas,Pass,Adrien Truffert
+595915,73,BlockedShot,0.735,0.7369999694824219,0.015758851543068886,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28103,Rennes,Monaco,1,2,2024-10-05 19:00:00,Azor Matusiwa,Pass,Adrien Truffert
+598122,40,MissedShots,0.7609999847412109,0.6419999694824219,0.01628001779317856,Adrien Truffert,h,8640,FromCorner,2024,LeftFoot,28123,Rennes,Le Havre,1,0,2024-10-25 18:45:00,,None,Adrien Truffert
+604299,76,SavedShot,0.905,0.605999984741211,0.09967996925115585,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28157,Rennes,Saint-Etienne,5,0,2024-11-30 16:00:00,,Rebound,Adrien Truffert
+609836,48,Goal,0.965,0.56,0.5714482069015503,Adrien Truffert,a,8640,OpenPlay,2024,LeftFoot,28191,Nice,Rennes,3,2,2025-01-03 20:00:00,,Rebound,Adrien Truffert
+610950,32,BlockedShot,0.8640000152587891,0.634000015258789,0.0748450830578804,Adrien Truffert,h,8640,OpenPlay,2024,RightFoot,28200,Rennes,Marseille,1,2,2025-01-11 20:00:00,Amine Gouiri,Pass,Adrien Truffert
+612468,43,MissedShots,0.874000015258789,0.685,0.07626406103372574,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28209,Rennes,Brest,1,2,2025-01-18 18:00:00,,None,Adrien Truffert
+613482,42,SavedShot,0.835999984741211,0.6830000305175781,0.03580351546406746,Adrien Truffert,a,8640,OpenPlay,2024,LeftFoot,28211,Monaco,Rennes,3,2,2025-01-25 16:00:00,Christopher Wooh,BallRecovery,Adrien Truffert
+615592,55,BlockedShot,0.8380000305175781,0.5929999923706055,0.06695489585399628,Adrien Truffert,h,8640,OpenPlay,2024,RightFoot,28226,Rennes,Strasbourg,1,0,2025-02-02 16:15:00,Jordan James,Pass,Adrien Truffert
+616318,83,BlockedShot,0.8730000305175781,0.590999984741211,0.10336973518133163,Adrien Truffert,a,8640,OpenPlay,2024,RightFoot,28232,Saint-Etienne,Rennes,0,2,2025-02-08 20:05:00,Kazeem Olaigbe,Pass,Adrien Truffert
+616321,93,SavedShot,0.8930000305175781,0.5409999847412109,0.512615442276001,Adrien Truffert,a,8640,OpenPlay,2024,LeftFoot,28232,Saint-Etienne,Rennes,0,2,2025-02-08 20:05:00,Mousa Al Tamari,Pass,Adrien Truffert
+618123,2,MissedShots,0.8969999694824219,0.545,0.034918077290058136,Adrien Truffert,h,8640,OpenPlay,2024,Head,28246,Rennes,Reims,1,0,2025-02-21 19:45:00,Hans Hateboer,Aerial,Adrien Truffert
+623001,33,SavedShot,0.8580000305175781,0.7340000152587891,0.05397682264447212,Adrien Truffert,a,8640,OpenPlay,2024,RightFoot,28278,Lens,Rennes,1,0,2025-03-15 20:05:00,Djaoui Cissé,Pass,Adrien Truffert
+628257,22,Goal,0.885,0.66,0.05778951942920685,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28317,Rennes,Nantes,2,1,2025-04-18 18:45:00,,None,Adrien Truffert
+631668,94,MissedShots,0.785,0.5229999923706055,0.016649886965751648,Adrien Truffert,a,8640,FromCorner,2024,LeftFoot,28327,Toulouse,Rennes,2,1,2025-05-03 17:00:00,,Aerial,Adrien Truffert
+633148,46,SavedShot,0.8690000152587891,0.669000015258789,0.0630774274468422,Adrien Truffert,h,8640,OpenPlay,2024,LeftFoot,28340,Rennes,Nice,2,0,2025-05-10 19:00:00,Ludovic Blas,Pass,Adrien Truffert
+640229,45,MissedShots,0.7040000152587891,0.49900001525878906,0.016705336049199104,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,28799,Tottenham,Bournemouth,0,1,2025-08-30 14:00:00,,None,Adrien Truffert
+645842,4,MissedShots,0.85,0.7,0.029585767537355423,Adrien Truffert,h,8640,OpenPlay,2025,RightFoot,28838,Bournemouth,Fulham,3,1,2025-10-03 19:00:00,Marcus Tavernier,TakeOn,Adrien Truffert
+649377,59,MissedShots,0.7819999694824219,0.7140000152587891,0.01791035756468773,Adrien Truffert,h,8640,OpenPlay,2025,LeftFoot,28858,Bournemouth,Nottingham Forest,2,0,2025-10-26 13:00:00,Antoine Semenyo,Pass,Adrien Truffert
+651647,65,MissedShots,0.8490000152587891,0.6790000152587891,0.017871005460619926,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,28873,Manchester City,Bournemouth,3,1,2025-11-02 16:30:00,Lewis Cook,Chipped,Adrien Truffert
+652707,57,BlockedShot,0.8880000305175781,0.5629999923706055,0.07273682206869125,Adrien Truffert,a,8640,FromCorner,2025,LeftFoot,28878,Aston Villa,Bournemouth,4,0,2025-11-09 14:00:00,Evanilson,Pass,Adrien Truffert
+655089,18,SavedShot,0.8430000305175781,0.6559999847412109,0.04674177244305611,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,28905,Sunderland,Bournemouth,3,2,2025-11-29 15:00:00,,None,Adrien Truffert
+656893,56,BlockedShot,0.845999984741211,0.5579999923706055,0.07498793303966522,Adrien Truffert,h,8640,SetPiece,2025,LeftFoot,28918,Bournemouth,Chelsea,0,0,2025-12-06 15:00:00,Antoine Semenyo,Pass,Adrien Truffert
+660570,38,BlockedShot,0.785,0.6359999847412109,0.0259231049567461,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,,None,Adrien Truffert
+660575,46,BlockedShot,0.8140000152587891,0.5259999847412109,0.05133781209588051,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,28961,Chelsea,Bournemouth,2,2,2025-12-30 19:30:00,,None,Adrien Truffert
+668192,54,MissedShots,0.71,0.675,0.01503780484199524,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,29032,Everton,Bournemouth,1,2,2026-02-10 19:30:00,Ryan Christie,Pass,Adrien Truffert
+669901,74,BlockedShot,0.7980000305175782,0.5940000152587891,0.016514431685209274,Adrien Truffert,a,8640,FromCorner,2025,LeftFoot,29047,West Ham,Bournemouth,0,0,2026-02-21 17:30:00,,Aerial,Adrien Truffert
+675066,35,SavedShot,0.8030000305175782,0.7030000305175781,0.014159798622131348,Adrien Truffert,h,8640,FromCorner,2025,LeftFoot,29078,Bournemouth,Manchester United,2,2,2026-03-20 20:00:00,,Aerial,Adrien Truffert
+679258,84,Goal,0.9830000305175781,0.524000015258789,0.9529035091400146,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,29105,Newcastle United,Bournemouth,1,2,2026-04-18 14:00:00,,Rebound,Adrien Truffert
+680359,31,SavedShot,0.7969999694824219,0.5940000152587891,0.04011714085936546,Adrien Truffert,h,8640,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,,Tackle,Adrien Truffert
+683687,47,SavedShot,0.7140000152587891,0.36900001525878906,0.02177872695028782,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,James Hill,BallRecovery,Adrien Truffert
+683697,76,BlockedShot,0.8769999694824219,0.495,0.5743787288665771,Adrien Truffert,a,8640,OpenPlay,2025,LeftFoot,29131,Fulham,Bournemouth,0,1,2026-05-09 14:00:00,Tyler Adams,BallTouch,Adrien Truffert

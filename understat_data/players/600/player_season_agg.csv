@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,25,0,0,2250,0,0,0.07264749705791473,1,2015,Everton,1,0,0,0,2.613373698666692,2.613373698666692,600,Tim Howard
+season,GK,32,0,0,2845,0,0,0.019439099356532097,1,2014,Everton,3,0,0,0,2.098499508574605,2.079060496762395,600,Tim Howard

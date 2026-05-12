@@ -1,0 +1,18 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+640535,51,BlockedShot,0.9019999694824219,0.51,0.07823160290718079,Vitor Reis,h,13380,FromCorner,2025,Head,29183,Girona,Sevilla,0,2,2025-08-30 17:30:00,Thomas Lemar,Cross,Vitor Reis
+640548,91,BlockedShot,0.9009999847412109,0.505,0.027078725397586823,Vitor Reis,h,13380,FromCorner,2025,Head,29183,Girona,Sevilla,0,2,2025-08-30 17:30:00,Portu,Aerial,Vitor Reis
+640552,93,MissedShots,0.705999984741211,0.615,0.00791599228978157,Vitor Reis,h,13380,OpenPlay,2025,RightFoot,29183,Girona,Sevilla,0,2,2025-08-30 17:30:00,,Rebound,Vitor Reis
+655948,70,MissedShots,0.93,0.40700000762939453,0.1584821343421936,Vitor Reis,h,13380,SetPiece,2025,Head,29290,Girona,Real Madrid,1,1,2025-11-30 20:00:00,Azz-Eddine Ounahi,Cross,Vitor Reis
+659676,22,MissedShots,0.9119999694824219,0.6029999923706054,0.07282660156488419,Vitor Reis,h,13380,SetPiece,2025,RightFoot,29324,Girona,Atletico Madrid,0,3,2025-12-21 13:00:00,,None,Vitor Reis
+665671,20,SavedShot,0.9309999847412109,0.4640000152587891,0.06212350353598595,Vitor Reis,h,13380,FromCorner,2025,Head,29365,Girona,Getafe,1,1,2026-01-26 20:00:00,Bryan Gil Salvatierra,Aerial,Vitor Reis
+665685,87,MissedShots,0.8490000152587891,0.5509999847412109,0.022557714954018593,Vitor Reis,h,13380,OpenPlay,2025,Head,29365,Girona,Getafe,1,1,2026-01-26 20:00:00,Daley Blind,Cross,Vitor Reis
+665686,93,Goal,0.925,0.4859999847412109,0.4147642254829407,Vitor Reis,h,13380,OpenPlay,2025,Head,29365,Girona,Getafe,1,1,2026-01-26 20:00:00,Álex Moreno,Cross,Vitor Reis
+670625,79,BlockedShot,0.95,0.54,0.07798100262880325,Vitor Reis,a,13380,FromCorner,2025,Head,29398,Alaves,Girona,2,2,2026-02-23 20:00:00,Viktor Tsygankov,Aerial,Vitor Reis
+671983,69,OwnGoal,0.055,0.5320000076293945,0,Vitor Reis,h,13380,OpenPlay,2025,LeftFoot,29415,Girona,Celta Vigo,1,2,2026-03-01 20:00:00,,None,Vitor Reis
+671990,91,MissedShots,0.9480000305175781,0.5309999847412109,0.12501133978366852,Vitor Reis,h,13380,OpenPlay,2025,LeftFoot,29415,Girona,Celta Vigo,1,2,2026-03-01 20:00:00,Azz-Eddine Ounahi,Pass,Vitor Reis
+672702,87,MissedShots,0.9019999694824219,0.5670000076293945,0.07705049961805344,Vitor Reis,a,13380,OpenPlay,2025,Head,29425,Levante,Girona,1,1,2026-03-07 15:15:00,Alejandro Francés,Cross,Vitor Reis
+672707,97,MissedShots,0.9159999847412109,0.539000015258789,0.34357523918151855,Vitor Reis,a,13380,OpenPlay,2025,Head,29425,Levante,Girona,1,1,2026-03-07 15:15:00,Iván Martín,Cross,Vitor Reis
+677401,28,MissedShots,0.9119999694824219,0.5479999923706055,0.054580334573984146,Vitor Reis,h,13380,FromCorner,2025,Head,29451,Girona,Villarreal,1,0,2026-04-06 19:00:00,Axel Witsel,Pass,Vitor Reis
+677553,72,BlockedShot,0.895,0.624000015258789,0.0947381779551506,Vitor Reis,a,13380,OpenPlay,2025,LeftFoot,29462,Real Madrid,Girona,1,1,2026-04-10 19:00:00,Iván Martín,Pass,Vitor Reis
+681198,93,BlockedShot,0.9269999694824219,0.539000015258789,0.08401411026716232,Vitor Reis,a,13380,OpenPlay,2025,LeftFoot,29472,Valencia,Girona,2,1,2026-04-25 16:30:00,,None,Vitor Reis
+681981,58,MissedShots,0.92,0.45,0.11010798811912537,Vitor Reis,h,13380,FromCorner,2025,RightFoot,29497,Girona,Mallorca,0,1,2026-05-01 19:00:00,Viktor Tsygankov,Pass,Vitor Reis

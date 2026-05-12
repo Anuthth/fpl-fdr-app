@@ -1,0 +1,5 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+662082,53,MissedShots,0.9530000305175781,0.535,0.1304832249879837,Jorrel Hato,a,13776,FromCorner,2025,Head,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,Enzo Fernández,Cross,Jorrel Hato
+662086,63,MissedShots,0.8630000305175781,0.5579999923706055,0.06574763357639313,Jorrel Hato,a,13776,FromCorner,2025,LeftFoot,28984,Fulham,Chelsea,2,1,2026-01-07 19:30:00,,None,Jorrel Hato
+669763,82,MissedShots,0.825999984741211,0.5479999923706055,0.07085926085710526,Jorrel Hato,h,13776,OpenPlay,2025,RightFoot,29040,Chelsea,Burnley,1,1,2026-02-21 15:00:00,,None,Jorrel Hato
+672216,47,MissedShots,0.9069999694824219,0.665,0.07121910154819489,Jorrel Hato,a,13776,OpenPlay,2025,RightFoot,29059,Aston Villa,Chelsea,1,4,2026-03-04 19:30:00,Alejandro Garnacho,Pass,Jorrel Hato

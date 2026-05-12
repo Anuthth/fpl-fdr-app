@@ -1,0 +1,4 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+656452,69,BlockedShot,0.9259999847412109,0.325,0.0906146690249443,Freddie Potts,a,13724,OpenPlay,2025,RightFoot,28915,Manchester United,West Ham,1,1,2025-12-04 20:00:00,,None,Freddie Potts
+658572,23,BlockedShot,0.8490000152587891,0.549000015258789,0.06834547221660614,Freddie Potts,h,13724,OpenPlay,2025,RightFoot,28937,West Ham,Aston Villa,2,3,2025-12-14 14:00:00,,None,Freddie Potts
+659330,46,SavedShot,0.8690000152587891,0.6,0.05367274582386017,Freddie Potts,a,13724,OpenPlay,2025,RightFoot,28944,Manchester City,West Ham,3,0,2025-12-20 15:00:00,,None,Freddie Potts

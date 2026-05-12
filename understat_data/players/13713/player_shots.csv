@@ -1,0 +1,34 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638865,50,BlockedShot,0.7930000305175782,0.34200000762939453,0.025854649022221565,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Habib Diarra,Pass,Trai Hume
+640273,45,BlockedShot,0.7780000305175782,0.44099998474121094,0.02939181961119175,Trai Hume,h,13713,OpenPlay,2025,LeftFoot,28801,Sunderland,Brentford,2,1,2025-08-30 14:00:00,,None,Trai Hume
+644926,47,MissedShots,0.7609999847412109,0.32099998474121094,0.021325044333934784,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28834,Nottingham Forest,Sunderland,0,1,2025-09-27 16:30:00,,None,Trai Hume
+646163,62,MissedShots,0.774000015258789,0.5790000152587891,0.019985053688287735,Trai Hume,a,13713,FromCorner,2025,RightFoot,28845,Manchester United,Sunderland,2,0,2025-10-04 14:00:00,,None,Trai Hume
+647651,13,BlockedShot,0.78,0.6,0.027222421020269394,Trai Hume,h,13713,OpenPlay,2025,RightFoot,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,Enzo Le Fée,Pass,Trai Hume
+647653,25,ShotOnPost,0.9640000152587891,0.59,0.3283000886440277,Trai Hume,h,13713,OpenPlay,2025,Head,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,Dan Ballard,HeadPass,Trai Hume
+651860,80,SavedShot,0.935,0.44099998474121094,0.061519380658864975,Trai Hume,h,13713,OpenPlay,2025,Head,28875,Sunderland,Everton,1,1,2025-11-03 20:00:00,Noah Sadiki,Aerial,Trai Hume
+656345,31,SavedShot,0.7280000305175781,0.4520000076293945,0.01662406511604786,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28914,Liverpool,Sunderland,1,1,2025-12-03 20:15:00,,BallRecovery,Trai Hume
+659306,52,MissedShots,0.7169999694824218,0.5770000076293945,0.015937604010105133,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28940,Brighton,Sunderland,0,0,2025-12-20 15:00:00,Enzo Le Fée,Pass,Trai Hume
+660773,21,MissedShots,0.8490000152587891,0.5640000152587891,0.10007953643798828,Trai Hume,h,13713,OpenPlay,2025,RightFoot,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,,TakeOn,Trai Hume
+660778,47,MissedShots,0.89,0.5279999923706055,0.18531356751918793,Trai Hume,h,13713,OpenPlay,2025,Head,28966,Sunderland,Manchester City,0,0,2026-01-01 20:00:00,Granit Xhaka,Cross,Trai Hume
+661404,36,MissedShots,0.7619999694824219,0.39299999237060546,0.02099074237048626,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,,None,Trai Hume
+661415,83,SavedShot,0.845,0.6719999694824219,0.04603342339396477,Trai Hume,a,13713,OpenPlay,2025,RightFoot,28969,Tottenham,Sunderland,1,1,2026-01-04 15:00:00,Brian Brobbey,Pass,Trai Hume
+663590,27,MissedShots,0.9290000152587891,0.500999984741211,0.11676178872585297,Trai Hume,h,13713,FromCorner,2025,Head,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,Enzo Le Fée,Cross,Trai Hume
+663597,50,SavedShot,0.915,0.4259999847412109,0.045227233320474625,Trai Hume,h,13713,OpenPlay,2025,Head,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,Reinildo,Aerial,Trai Hume
+663600,75,MissedShots,0.794000015258789,0.4229999923706055,0.03139617666602135,Trai Hume,h,13713,SetPiece,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,Dan Ballard,Pass,Trai Hume
+663601,77,SavedShot,0.8919999694824219,0.37200000762939456,0.31587913632392883,Trai Hume,h,13713,OpenPlay,2025,RightFoot,28995,Sunderland,Crystal Palace,2,1,2026-01-17 15:00:00,Brian Brobbey,Pass,Trai Hume
+664596,14,MissedShots,0.9640000152587891,0.37900001525878907,0.2514777183532715,Trai Hume,a,13713,OpenPlay,2025,Head,29007,West Ham,Sunderland,3,1,2026-01-24 12:30:00,Omar Alderete,Aerial,Trai Hume
+666888,82,BlockedShot,0.9109999847412109,0.47900001525878905,0.14195877313613892,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29011,Sunderland,Burnley,3,0,2026-02-02 20:00:00,Reinildo,Chipped,Trai Hume
+668400,49,MissedShots,0.735,0.49700000762939456,0.018552852794528008,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Nilson Angulo,Pass,Trai Hume
+668412,71,MissedShots,0.8869999694824219,0.4520000076293945,0.02298666536808014,Trai Hume,h,13713,OpenPlay,2025,Head,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,Reinildo,Aerial,Trai Hume
+668411,71,BlockedShot,0.89,0.43400001525878906,0.069193035364151,Trai Hume,h,13713,OpenPlay,2025,LeftFoot,29035,Sunderland,Liverpool,0,1,2026-02-11 20:15:00,,Dispossessed,Trai Hume
+670170,45,BlockedShot,0.8,0.42700000762939455,0.03260605037212372,Trai Hume,h,13713,FromCorner,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,Enzo Le Fée,Pass,Trai Hume
+670185,95,BlockedShot,0.9119999694824219,0.7090000152587891,0.03305503726005554,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29045,Sunderland,Fulham,1,3,2026-02-22 14:00:00,,None,Trai Hume
+673872,37,BlockedShot,0.7080000305175781,0.5170000076293946,0.014081386849284172,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,Dispossessed,Trai Hume
+673881,65,MissedShots,0.7730000305175782,0.39599998474121095,0.024757059291005135,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29076,Sunderland,Brighton,0,1,2026-03-14 15:00:00,,None,Trai Hume
+675721,56,MissedShots,0.9159999847412109,0.5259999847412109,0.11094090342521667,Trai Hume,a,13713,FromCorner,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,,None,Trai Hume
+675733,81,BlockedShot,0.7809999847412109,0.5790000152587891,0.03292279317975044,Trai Hume,a,13713,OpenPlay,2025,RightFoot,29085,Newcastle United,Sunderland,1,2,2026-03-22 12:00:00,Chris Rigg,BallTouch,Trai Hume
+679549,85,Goal,0.955,0.6919999694824219,0.27787861227989197,Trai Hume,a,13713,OpenPlay,2025,RightFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,,BallRecovery,Trai Hume
+680661,16,OwnGoal,0.01600000023841858,0.455,0,Trai Hume,h,13713,FromCorner,2025,Head,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,,CornerAwarded,Trai Hume
+680677,81,BlockedShot,0.8590000152587891,0.3129999923706055,0.056027330458164215,Trai Hume,h,13713,OpenPlay,2025,RightFoot,29115,Sunderland,Nottingham Forest,0,5,2026-04-24 19:00:00,Noah Sadiki,Pass,Trai Hume
+682353,66,BlockedShot,0.8469999694824218,0.47099998474121096,0.08557350933551788,Trai Hume,a,13713,OpenPlay,2025,RightFoot,29127,Wolverhampton Wanderers,Sunderland,1,1,2026-05-02 14:00:00,Brian Brobbey,Pass,Trai Hume
+683722,84,BlockedShot,0.7430000305175781,0.4879999923706055,0.017085205763578415,Trai Hume,h,13713,OpenPlay,2025,LeftFoot,29135,Sunderland,Manchester United,0,0,2026-05-09 14:00:00,,None,Trai Hume

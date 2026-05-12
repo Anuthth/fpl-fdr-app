@@ -1,0 +1,35 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+538504,77,MissedShots,0.7190000152587891,0.5629999923706055,0.017079956829547882,Máximo Perrone,a,11378,OpenPlay,2023,LeftFoot,22733,Sevilla,Las Palmas,1,0,2023-09-17 16:30:00,Jonathan Viera,Pass,Máximo Perrone
+538508,88,MissedShots,0.725,0.34900001525878904,0.016028692945837975,Máximo Perrone,a,11378,OpenPlay,2023,LeftFoot,22733,Sevilla,Las Palmas,1,0,2023-09-17 16:30:00,Jonathan Viera,Pass,Máximo Perrone
+540002,27,SavedShot,0.8690000152587891,0.4520000076293945,0.014933277852833271,Máximo Perrone,h,11378,SetPiece,2023,Head,22744,Las Palmas,Granada,1,0,2023-09-24 16:30:00,,Aerial,Máximo Perrone
+540361,84,MissedShots,0.749000015258789,0.31799999237060544,0.014826955273747444,Máximo Perrone,a,11378,OpenPlay,2023,LeftFoot,22753,Real Madrid,Las Palmas,2,0,2023-09-27 17:00:00,Julián Araujo,Pass,Máximo Perrone
+561289,53,MissedShots,0.775,0.5609999847412109,0.03589596226811409,Máximo Perrone,a,11378,FromCorner,2023,LeftFoot,22909,Granada,Las Palmas,1,1,2024-02-03 15:15:00,Alberto Moleiro,Pass,Máximo Perrone
+574830,64,SavedShot,0.88,0.7069999694824218,0.04465081915259361,Máximo Perrone,a,11378,OpenPlay,2023,LeftFoot,22997,Celta Vigo,Las Palmas,4,1,2024-04-20 12:00:00,Alberto Moleiro,Pass,Máximo Perrone
+578193,15,SavedShot,0.794000015258789,0.615,0.03162189945578575,Máximo Perrone,a,11378,OpenPlay,2023,LeftFoot,23023,Real Sociedad,Las Palmas,2,0,2024-05-04 12:00:00,,None,Máximo Perrone
+590156,39,MissedShots,0.8530000305175781,0.56,0.09418145567178726,Máximo Perrone,a,11378,OpenPlay,2024,LeftFoot,27391,Udinese,Como,1,0,2024-09-01 18:45:00,Luca Mazzitelli,Pass,Máximo Perrone
+594632,40,BlockedShot,0.7119999694824218,0.47200000762939454,0.01461931224912405,Máximo Perrone,h,11378,OpenPlay,2024,LeftFoot,27414,Como,Verona,3,2,2024-09-29 13:00:00,Nico Paz,Pass,Máximo Perrone
+596779,67,BlockedShot,0.8080000305175781,0.6140000152587891,0.026625795289874077,Máximo Perrone,h,11378,FromCorner,2024,LeftFoot,27436,Como,Parma Calcio 1913,1,1,2024-10-19 13:00:00,,None,Máximo Perrone
+598107,93,MissedShots,0.9619999694824218,0.505,0.5602182149887085,Máximo Perrone,a,11378,OpenPlay,2024,Head,27450,Torino,Como,1,0,2024-10-25 18:30:00,Marc-Oliver Kempf,Rebound,Máximo Perrone
+613209,48,MissedShots,0.855,0.6220000076293946,0.0770779475569725,Máximo Perrone,h,11378,OpenPlay,2024,LeftFoot,27581,Como,Atalanta,1,2,2025-01-25 14:00:00,Nico Paz,Pass,Máximo Perrone
+617539,29,MissedShots,0.71,0.49900001525878906,0.016038715839385986,Máximo Perrone,a,11378,OpenPlay,2024,LeftFoot,27611,Fiorentina,Como,0,2,2025-02-16 11:30:00,Lucas Da Cunha,Pass,Máximo Perrone
+624032,47,SavedShot,0.89,0.4420000076293945,0.1010466143488884,Máximo Perrone,h,11378,OpenPlay,2024,RightFoot,27652,Como,Empoli,1,1,2025-03-29 14:00:00,,Rebound,Máximo Perrone
+624041,86,MissedShots,0.789000015258789,0.34200000762939453,0.018939075991511345,Máximo Perrone,h,11378,OpenPlay,2024,LeftFoot,27652,Como,Empoli,1,1,2025-03-29 14:00:00,,Rebound,Máximo Perrone
+628364,29,MissedShots,0.7909999847412109,0.3820000076293945,0.021627401933073997,Máximo Perrone,a,11378,FromCorner,2024,LeftFoot,27688,Lecce,Como,0,3,2025-04-19 13:00:00,,None,Máximo Perrone
+632573,5,SavedShot,0.7619999694824219,0.3089999961853027,0.015357348136603832,Máximo Perrone,h,11378,OpenPlay,2024,LeftFoot,27713,Como,Cagliari,3,1,2025-05-10 13:00:00,Lucas Da Cunha,Pass,Máximo Perrone
+639572,76,MissedShots,0.894000015258789,0.6379999923706055,0.058420900255441666,Máximo Perrone,h,11378,OpenPlay,2025,LeftFoot,29849,Como,Lazio,2,0,2025-08-24 16:30:00,,Rebound,Máximo Perrone
+643872,20,MissedShots,0.9109999847412109,0.46599998474121096,0.31407275795936584,Máximo Perrone,a,11378,OpenPlay,2025,Head,29879,Fiorentina,Como,1,2,2025-09-21 16:00:00,Nicolas Kühn,Cross,Máximo Perrone
+646415,18,Goal,0.9169999694824219,0.2589999961853027,0.03473569452762604,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,29894,Atalanta,Como,1,1,2025-10-04 18:45:00,,None,Máximo Perrone
+654732,78,SavedShot,0.9259999847412109,0.38299999237060545,0.12234903872013092,Máximo Perrone,h,11378,OpenPlay,2025,LeftFoot,29966,Como,Sassuolo,2,0,2025-11-28 19:45:00,Jayden Addai,Chipped,Máximo Perrone
+657077,56,SavedShot,0.71,0.500999984741211,0.017533179372549057,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,29976,Inter,Como,4,0,2025-12-06 17:00:00,Diego Carlos,Pass,Máximo Perrone
+660872,46,SavedShot,0.9330000305175781,0.5359999847412109,0.5758531093597412,Máximo Perrone,h,11378,OpenPlay,2025,LeftFoot,30016,Como,Udinese,1,0,2026-01-03 11:30:00,Jesús Rodriguez,Pass,Máximo Perrone
+660875,58,BlockedShot,0.8090000152587891,0.63,0.04438791424036026,Máximo Perrone,h,11378,OpenPlay,2025,LeftFoot,30016,Como,Udinese,1,0,2026-01-03 11:30:00,Maxence Caqueret,Pass,Máximo Perrone
+661760,67,Goal,0.7909999847412109,0.44299999237060544,0.03858078271150589,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30031,Pisa,Como,0,3,2026-01-06 14:00:00,Maxence Caqueret,Pass,Máximo Perrone
+663197,73,MissedShots,0.7769999694824219,0.34799999237060547,0.020225342363119125,Máximo Perrone,h,11378,OpenPlay,2025,LeftFoot,29995,Como,AC Milan,1,3,2026-01-15 19:45:00,Nicolas Kühn,Pass,Máximo Perrone
+666462,36,BlockedShot,0.904000015258789,0.514000015258789,0.40249335765838623,Máximo Perrone,h,11378,OpenPlay,2025,RightFoot,30066,Como,Atalanta,0,0,2026-02-01 14:00:00,,Rebound,Máximo Perrone
+669673,38,MissedShots,0.7859999847412109,0.35700000762939454,0.037445951253175735,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30099,Juventus,Como,0,2,2026-02-21 14:00:00,,BallTouch,Máximo Perrone
+669685,80,MissedShots,0.754000015258789,0.44799999237060545,0.03790794312953949,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30099,Juventus,Como,0,2,2026-02-21 14:00:00,Jacobo Ramón,Pass,Máximo Perrone
+675705,80,Goal,0.9519999694824218,0.47,0.6384397745132446,Máximo Perrone,h,11378,OpenPlay,2025,RightFoot,30137,Como,Pisa,5,0,2026-03-22 11:30:00,Nicolas Kühn,Pass,Máximo Perrone
+677282,9,SavedShot,0.7469999694824219,0.42700000762939455,0.019896304234862328,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30152,Udinese,Como,0,0,2026-04-06 10:30:00,,BallRecovery,Máximo Perrone
+678682,50,SavedShot,0.81,0.4520000076293945,0.03852618858218193,Máximo Perrone,h,11378,OpenPlay,2025,RightFoot,30157,Como,Inter,3,4,2026-04-12 18:45:00,,Rebound,Máximo Perrone
+678861,72,BlockedShot,0.8159999847412109,0.4640000152587891,0.04718498885631561,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30170,Sassuolo,Como,2,1,2026-04-17 16:30:00,,Rebound,Máximo Perrone
+681434,53,BlockedShot,0.7659999847412109,0.325,0.019519008696079254,Máximo Perrone,a,11378,OpenPlay,2025,LeftFoot,30177,Genoa,Como,0,2,2026-04-26 13:00:00,Martin Baturina,Pass,Máximo Perrone

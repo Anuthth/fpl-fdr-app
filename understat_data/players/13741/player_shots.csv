@@ -1,0 +1,17 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+638821,45,MissedShots,0.884000015258789,0.5629999923706055,0.07650242745876312,Jhon Arias,a,13741,OpenPlay,2025,LeftFoot,28792,Bournemouth,Wolverhampton Wanderers,1,0,2025-08-23 14:00:00,Hugo Bueno,Cross,Jhon Arias
+640244,3,SavedShot,0.6780000305175782,0.4809999847412109,0.008969185873866081,Jhon Arias,h,13741,OpenPlay,2025,RightFoot,28800,Wolverhampton Wanderers,Everton,2,3,2025-08-30 14:00:00,Emmanuel Agbadou,TakeOn,Jhon Arias
+641672,90,BlockedShot,0.9390000152587891,0.325,0.062919020652771,Jhon Arias,a,13741,OpenPlay,2025,RightFoot,28809,Newcastle United,Wolverhampton Wanderers,1,0,2025-09-13 14:00:00,Fernando López,Pass,Jhon Arias
+645069,37,MissedShots,0.8080000305175781,0.2560000038146973,0.02225051261484623,Jhon Arias,a,13741,OpenPlay,2025,RightFoot,28835,Tottenham,Wolverhampton Wanderers,1,1,2025-09-27 19:00:00,Santiago Bueno,Pass,Jhon Arias
+645072,47,BlockedShot,0.765,0.639000015258789,0.03637189418077469,Jhon Arias,a,13741,OpenPlay,2025,LeftFoot,28835,Tottenham,Wolverhampton Wanderers,1,1,2025-09-27 19:00:00,,None,Jhon Arias
+646728,43,SavedShot,0.9369999694824219,0.8930000305175781,0.04229426756501198,Jhon Arias,h,13741,DirectFreekick,2025,RightFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,,Standard,Jhon Arias
+646730,55,MissedShots,0.9109999847412109,0.5309999847412109,0.1446666270494461,Jhon Arias,h,13741,OpenPlay,2025,RightFoot,28847,Wolverhampton Wanderers,Brighton,1,1,2025-10-05 13:00:00,Hugo Bueno,Pass,Jhon Arias
+647655,30,BlockedShot,0.9259999847412109,0.799000015258789,0.07222910970449448,Jhon Arias,a,13741,DirectFreekick,2025,RightFoot,28855,Sunderland,Wolverhampton Wanderers,2,0,2025-10-18 14:00:00,,Standard,Jhon Arias
+649523,6,MissedShots,0.990999984741211,0.4420000076293945,0.6477687358856201,Jhon Arias,h,13741,OpenPlay,2025,RightFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,,None,Jhon Arias
+649537,63,ShotOnPost,0.7759999847412109,0.669000015258789,0.0614829920232296,Jhon Arias,h,13741,DirectFreekick,2025,RightFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,,Standard,Jhon Arias
+653697,75,MissedShots,0.960999984741211,0.5279999923706055,0.6494839787483215,Jhon Arias,h,13741,OpenPlay,2025,LeftFoot,28897,Wolverhampton Wanderers,Crystal Palace,0,2,2025-11-22 15:00:00,David Møller Wolfe,Pass,Jhon Arias
+655574,9,BlockedShot,0.8719999694824219,0.585,0.060373663902282715,Jhon Arias,a,13741,OpenPlay,2025,RightFoot,28898,Aston Villa,Wolverhampton Wanderers,1,0,2025-11-30 14:05:00,David Møller Wolfe,Cross,Jhon Arias
+655584,45,BlockedShot,0.9769999694824218,0.37799999237060544,0.06917759031057358,Jhon Arias,a,13741,FromCorner,2025,RightFoot,28898,Aston Villa,Wolverhampton Wanderers,1,0,2025-11-30 14:05:00,Yerson Mosquera,Rebound,Jhon Arias
+656251,48,MissedShots,0.960999984741211,0.509000015258789,0.7204411029815674,Jhon Arias,h,13741,OpenPlay,2025,Head,28917,Wolverhampton Wanderers,Nottingham Forest,0,1,2025-12-03 19:30:00,Jackson Tchatchoua,Cross,Jhon Arias
+660699,78,BlockedShot,0.8019999694824219,0.46799999237060547,0.0486481711268425,Jhon Arias,a,13741,OpenPlay,2025,RightFoot,28964,Manchester United,Wolverhampton Wanderers,1,1,2025-12-30 20:15:00,Jackson Tchatchoua,Pass,Jhon Arias
+660977,3,Goal,0.93,0.5179999923706055,0.5695675015449524,Jhon Arias,h,13741,OpenPlay,2025,RightFoot,28970,Wolverhampton Wanderers,West Ham,3,0,2026-01-03 15:00:00,Hee-Chan Hwang,Pass,Jhon Arias

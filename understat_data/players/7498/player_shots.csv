@@ -1,0 +1,57 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+310911,87,BlockedShot,0.785,0.5709999847412109,0.035645898431539536,Lyle Foster,a,7498,OpenPlay,2019,RightFoot,12724,Metz,Monaco,3,0,2019-08-17 19:00:00,Gil Dias,Pass,Lyle Foster
+310912,88,BlockedShot,0.9269999694824219,0.345,0.23822300136089325,Lyle Foster,a,7498,OpenPlay,2019,RightFoot,12724,Metz,Monaco,3,0,2019-08-17 19:00:00,Aleksandr Golovin,Pass,Lyle Foster
+531934,28,MissedShots,0.87,0.750999984741211,0.01711176335811615,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,22275,Burnley,Manchester City,0,3,2023-08-11 19:00:00,,TakeOn,Lyle Foster
+531936,36,BlockedShot,0.86,0.455,0.09761640429496765,Lyle Foster,h,7498,OpenPlay,2023,RightFoot,22275,Burnley,Manchester City,0,3,2023-08-11 19:00:00,Luca Koleosho,Pass,Lyle Foster
+535193,46,Goal,0.9130000305175782,0.45299999237060545,0.07989275455474854,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,22302,Burnley,Aston Villa,1,3,2023-08-27 13:00:00,Johann Berg Gudmundsson,HeadPass,Lyle Foster
+536252,3,Goal,0.92,0.5320000076293945,0.4949325919151306,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,21929,Burnley,Tottenham,2,5,2023-09-02 14:00:00,Luca Koleosho,Pass,Lyle Foster
+536272,55,SavedShot,0.8680000305175781,0.42700000762939455,0.4399324953556061,Lyle Foster,h,7498,OpenPlay,2023,RightFoot,21929,Burnley,Tottenham,2,5,2023-09-02 14:00:00,Zeki Amdouni,Throughball,Lyle Foster
+538657,3,SavedShot,0.7609999847412109,0.664000015258789,0.015423067845404148,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,21944,Nottingham Forest,Burnley,1,1,2023-09-18 18:45:00,,None,Lyle Foster
+538676,90,MissedShots,0.9619999694824218,0.5690000152587891,0.37140172719955444,Lyle Foster,a,7498,FromCorner,2023,Head,21944,Nottingham Forest,Burnley,1,1,2023-09-18 18:45:00,Mike Trésor,Cross,Lyle Foster
+542181,15,MissedShots,0.7559999847412109,0.42700000762939455,0.019703246653079987,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22289,Luton,Burnley,1,2,2023-10-03 18:30:00,,None,Lyle Foster
+542191,46,Goal,0.835,0.4470000076293945,0.32988038659095764,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22289,Luton,Burnley,1,2,2023-10-03 18:30:00,Sander Berge,Throughball,Lyle Foster
+542635,93,MissedShots,0.8419999694824218,0.415,0.0786694809794426,Lyle Foster,h,7498,OpenPlay,2023,RightFoot,21967,Burnley,Chelsea,1,4,2023-10-07 14:00:00,Josh Brownhill,Pass,Lyle Foster
+554450,49,SavedShot,0.875999984741211,0.6969999694824218,0.053710322827100754,Lyle Foster,h,7498,OpenPlay,2023,RightFoot,22058,Burnley,Everton,0,2,2023-12-16 17:30:00,Hannes Delcroix,Pass,Lyle Foster
+554457,82,MissedShots,0.9080000305175782,0.544000015258789,0.0992659330368042,Lyle Foster,h,7498,SetPiece,2023,Head,22058,Burnley,Everton,0,2,2023-12-16 17:30:00,Josh Brownhill,Cross,Lyle Foster
+556282,44,BlockedShot,0.874000015258789,0.34200000762939453,0.09167341887950897,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22067,Fulham,Burnley,0,2,2023-12-23 15:00:00,Wilson Odobert,Pass,Lyle Foster
+557015,46,SavedShot,0.7419999694824219,0.5120000076293946,0.09653724730014801,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22085,Aston Villa,Burnley,3,2,2023-12-30 15:00:00,Vitinho,Throughball,Lyle Foster
+557019,59,MissedShots,0.874000015258789,0.42400001525878905,0.06578197330236435,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22085,Aston Villa,Burnley,3,2,2023-12-30 15:00:00,,None,Lyle Foster
+557026,70,Goal,0.8980000305175782,0.34200000762939453,0.059879180043935776,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22085,Aston Villa,Burnley,3,2,2023-12-30 15:00:00,Johann Berg Gudmundsson,HeadPass,Lyle Foster
+557860,7,MissedShots,0.7530000305175781,0.65,0.014870582148432732,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,22096,Burnley,Luton,1,1,2024-01-12 19:45:00,Zeki Amdouni,Pass,Lyle Foster
+557882,75,SavedShot,0.86,0.5029999923706054,0.06974107772111893,Lyle Foster,h,7498,SetPiece,2023,RightFoot,22096,Burnley,Luton,1,1,2024-01-12 19:45:00,Dara O&#039;Shea,HeadPass,Lyle Foster
+560698,42,MissedShots,0.86,0.675,0.036847639828920364,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22114,Manchester City,Burnley,3,1,2024-01-31 19:30:00,Johann Berg Gudmundsson,Chipped,Lyle Foster
+561221,4,BlockedShot,0.9269999694824219,0.36200000762939455,0.016410276293754578,Lyle Foster,h,7498,FromCorner,2023,Head,22119,Burnley,Fulham,2,2,2024-02-03 15:00:00,Josh Brownhill,Cross,Lyle Foster
+570727,56,SavedShot,0.9080000305175782,0.46299999237060546,0.40673545002937317,Lyle Foster,a,7498,OpenPlay,2023,Head,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,Josh Cullen,Aerial,Lyle Foster
+570728,56,BlockedShot,0.9540000152587891,0.5379999923706055,0.6241863369941711,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22188,Chelsea,Burnley,2,2,2024-03-30 15:00:00,,Rebound,Lyle Foster
+572396,20,MissedShots,0.91,0.31,0.05759120360016823,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22208,Everton,Burnley,1,0,2024-04-06 14:00:00,,TakeOn,Lyle Foster
+575039,19,SavedShot,0.9180000305175782,0.47400001525878904,0.13286463916301727,Lyle Foster,a,7498,FromCorner,2023,RightFoot,22232,Sheffield United,Burnley,1,4,2024-04-20 14:00:00,Vitinho,Rebound,Lyle Foster
+575043,29,SavedShot,0.8919999694824219,0.4520000076293945,0.053193315863609314,Lyle Foster,a,7498,OpenPlay,2023,Head,22232,Sheffield United,Burnley,1,4,2024-04-20 14:00:00,Lorenz Assignon,Cross,Lyle Foster
+575049,44,MissedShots,0.8640000152587891,0.4420000076293945,0.10994008183479309,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22232,Sheffield United,Burnley,1,4,2024-04-20 14:00:00,Josh Cullen,Cross,Lyle Foster
+575054,57,Goal,0.9019999694824219,0.5120000076293946,0.4460296630859375,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22232,Sheffield United,Burnley,1,4,2024-04-20 14:00:00,Lorenz Assignon,Pass,Lyle Foster
+576785,27,MissedShots,0.8540000152587891,0.5509999847412109,0.09338422119617462,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22239,Manchester United,Burnley,1,1,2024-04-27 14:00:00,Wilson Odobert,Pass,Lyle Foster
+576789,33,SavedShot,0.9080000305175782,0.5459999847412109,0.025541624054312706,Lyle Foster,a,7498,SetPiece,2023,Head,22239,Manchester United,Burnley,1,1,2024-04-27 14:00:00,Josh Cullen,Rebound,Lyle Foster
+576790,37,SavedShot,0.8830000305175781,0.36400001525878906,0.511885941028595,Lyle Foster,a,7498,OpenPlay,2023,RightFoot,22239,Manchester United,Burnley,1,1,2024-04-27 14:00:00,Sander Berge,Throughball,Lyle Foster
+578425,7,BlockedShot,0.9340000152587891,0.30700000762939456,0.05937880650162697,Lyle Foster,h,7498,OpenPlay,2023,RightFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,Lorenz Assignon,BallTouch,Lyle Foster
+578435,27,MissedShots,0.745999984741211,0.6090000152587891,0.01897762343287468,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,Josh Cullen,Pass,Lyle Foster
+578446,47,MissedShots,0.9490000152587891,0.5970000076293945,0.08090677112340927,Lyle Foster,h,7498,OpenPlay,2023,LeftFoot,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,,None,Lyle Foster
+578455,83,SavedShot,0.9419999694824219,0.534000015258789,0.438249796628952,Lyle Foster,h,7498,OpenPlay,2023,Head,22248,Burnley,Newcastle United,1,4,2024-05-04 14:00:00,Johann Berg Gudmundsson,Cross,Lyle Foster
+637715,26,BlockedShot,0.775,0.4129999923706055,0.13910795748233795,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Josh Cullen,Throughball,Lyle Foster
+637725,57,MissedShots,0.905,0.46299999237060546,0.12265605479478836,Lyle Foster,a,7498,OpenPlay,2025,LeftFoot,28782,Tottenham,Burnley,3,0,2025-08-16 14:00:00,Josh Laurent,Pass,Lyle Foster
+640306,54,Goal,0.935,0.5079999923706054,0.47157415747642517,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,28802,Manchester United,Burnley,3,2,2025-08-30 14:00:00,Jacob Bruun Larsen,Cross,Lyle Foster
+643146,44,BlockedShot,0.9209999847412109,0.2929999923706055,0.03489569202065468,Lyle Foster,h,7498,SetPiece,2025,RightFoot,28822,Burnley,Nottingham Forest,1,1,2025-09-20 14:00:00,Maxime Estève,Rebound,Lyle Foster
+644771,43,MissedShots,0.9130000305175782,0.5370000076293945,0.11199194192886353,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,Hjalmar Ekdal,HeadPass,Lyle Foster
+644774,46,BlockedShot,0.8159999847412109,0.6869999694824219,0.053459253162145615,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,Jaidon Anthony,Pass,Lyle Foster
+644777,55,BlockedShot,0.904000015258789,0.435,0.0722714439034462,Lyle Foster,a,7498,OpenPlay,2025,Head,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,Jaidon Anthony,Cross,Lyle Foster
+649545,94,Goal,0.865999984741211,0.5470000076293945,0.3645867705345154,Lyle Foster,a,7498,OpenPlay,2025,LeftFoot,28867,Wolverhampton Wanderers,Burnley,2,3,2025-10-26 13:00:00,Hannibal Mejbri,Throughball,Lyle Foster
+656235,59,BlockedShot,0.8630000305175781,0.4520000076293945,0.06410672515630722,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,28911,Burnley,Crystal Palace,0,1,2025-12-03 19:30:00,Jacob Bruun Larsen,Cross,Lyle Foster
+656237,61,BlockedShot,0.764000015258789,0.42,0.02458680048584938,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,28911,Burnley,Crystal Palace,0,1,2025-12-03 19:30:00,Maxime Estève,Pass,Lyle Foster
+656239,76,MissedShots,0.95,0.34,0.29172492027282715,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,28911,Burnley,Crystal Palace,0,1,2025-12-03 19:30:00,Marcus Edwards,Throughball,Lyle Foster
+656945,5,MissedShots,0.7369999694824219,0.580999984741211,0.01709320954978466,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,28925,Newcastle United,Burnley,2,1,2025-12-06 15:00:00,Armando Broja,BallTouch,Lyle Foster
+658312,41,MissedShots,0.815,0.30100000381469727,0.025354208424687386,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,28930,Burnley,Fulham,2,3,2025-12-13 17:30:00,Chimuanya Ugochukwu,Pass,Lyle Foster
+664810,75,SavedShot,0.8959999847412109,0.55,0.41303926706314087,Lyle Foster,h,7498,OpenPlay,2025,LeftFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,Jaidon Anthony,Pass,Lyle Foster
+664811,75,Goal,0.9,0.5079999923706054,0.38911712169647217,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,29001,Burnley,Tottenham,2,2,2026-01-24 15:00:00,,Rebound,Lyle Foster
+672095,1,MissedShots,0.86,0.3039999961853027,0.12546317279338837,Lyle Foster,a,7498,OpenPlay,2025,RightFoot,29061,Everton,Burnley,2,0,2026-03-03 19:30:00,Jaidon Anthony,TakeOn,Lyle Foster
+672113,97,SavedShot,0.9580000305175781,0.500999984741211,0.5720044374465942,Lyle Foster,a,7498,FromCorner,2025,RightFoot,29061,Everton,Burnley,2,0,2026-03-03 19:30:00,Lucas Pires,Aerial,Lyle Foster
+673836,26,BlockedShot,0.9530000305175781,0.385,0.11798448115587234,Lyle Foster,h,7498,OpenPlay,2025,RightFoot,29070,Burnley,Bournemouth,0,0,2026-03-14 15:00:00,Zian Flemming,Pass,Lyle Foster
+679588,64,SavedShot,0.93,0.610999984741211,0.08235380798578262,Lyle Foster,a,7498,OpenPlay,2025,LeftFoot,29106,Nottingham Forest,Burnley,4,1,2026-04-19 13:00:00,Jaidon Anthony,Cross,Lyle Foster
+680347,75,MissedShots,0.8340000152587891,0.40099998474121096,0.09881316125392914,Lyle Foster,h,7498,OpenPlay,2025,LeftFoot,29111,Burnley,Manchester City,0,1,2026-04-22 19:00:00,Josh Laurent,Pass,Lyle Foster

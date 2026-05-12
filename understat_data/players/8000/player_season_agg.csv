@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,23,0,7,1310,0.7337606139481068,3,1.4936000779271126,11,2025,Leeds,3,0,0,0.7337606139481068,3.584418125450611,2.230386760085821,8000,Ilia Gruev
+season,Sub,1,0,0,2,0,0,0,0,2023,Werder Bremen,0,0,0,0,0,0,8000,Ilia Gruev
+season,MC,31,0,6,1581,0.2761705769225955,0,0.8603825625032187,8,2022,Werder Bremen,3,0,0,0.2761705769225955,4.923180348239839,4.011659775860608,8000,Ilia Gruev
+season,Sub,1,0,0,1,0,0,0,0,2020,Werder Bremen,0,0,0,0,0,0,8000,Ilia Gruev

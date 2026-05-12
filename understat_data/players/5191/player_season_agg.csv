@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,9,0,0,744,0,0,0.051591694355010986,1,2024,Sevilla,2,0,0,0,0.34520370978862047,0.34520370978862047,5191,Álvaro Fernández
+season,GK,11,0,0,990,0,0,0.15149599313735962,1,2022,Espanyol,0,0,0,0,0.9482991993427277,0.796803206205368,5191,Álvaro Fernández
+season,GK,12,0,0,1080,0,0,0,0,2021,Brentford,0,0,0,0,0.34285609796643257,0.34285609796643257,5191,Álvaro Fernández
+season,GK,22,0,1,1980,0.026911599561572075,0,0.015956100076436996,1,2020,SD Huesca,0,0,0,0.026911599561572075,1.138697512447834,1.1227414086461067,5191,Álvaro Fernández
+season,Sub,1,0,0,43,0,0,0,0,2016,Osasuna,0,0,0,0,0,0,5191,Álvaro Fernández

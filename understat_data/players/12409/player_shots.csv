@@ -1,0 +1,52 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+565218,57,MissedShots,0.7880000305175782,0.5679999923706055,0.03643640875816345,Adam Wharton,h,12409,OpenPlay,2023,LeftFoot,22150,Crystal Palace,Burnley,3,0,2024-02-24 15:00:00,Jefferson Lerma,Pass,Adam Wharton
+566625,12,MissedShots,0.8569999694824219,0.3579999923706055,0.04172930493950844,Adam Wharton,a,12409,SetPiece,2023,LeftFoot,22164,Tottenham,Crystal Palace,3,1,2024-03-02 15:00:00,,Rebound,Adam Wharton
+570765,67,MissedShots,0.7390000152587891,0.5579999923706055,0.02409050241112709,Adam Wharton,a,12409,FromCorner,2023,LeftFoot,22192,Nottingham Forest,Crystal Palace,1,1,2024-03-30 15:00:00,Jefferson Lerma,Pass,Adam Wharton
+574167,51,BlockedShot,0.8440000152587891,0.44,0.09205175191164017,Adam Wharton,a,12409,OpenPlay,2023,LeftFoot,22220,Liverpool,Crystal Palace,0,1,2024-04-14 13:00:00,Michael Olise,Pass,Adam Wharton
+576262,7,BlockedShot,0.7519999694824219,0.590999984741211,0.02044839970767498,Adam Wharton,h,12409,OpenPlay,2023,RightFoot,22178,Crystal Palace,Newcastle United,2,0,2024-04-24 19:00:00,,BallRecovery,Adam Wharton
+576265,15,SavedShot,0.7180000305175781,0.6630000305175782,0.012205253355205059,Adam Wharton,h,12409,FromCorner,2023,LeftFoot,22178,Crystal Palace,Newcastle United,2,0,2024-04-24 19:00:00,,Aerial,Adam Wharton
+576269,31,BlockedShot,0.7819999694824219,0.33799999237060546,0.01540291216224432,Adam Wharton,h,12409,SetPiece,2023,LeftFoot,22178,Crystal Palace,Newcastle United,2,0,2024-04-24 19:00:00,,None,Adam Wharton
+576278,70,MissedShots,0.825,0.305,0.03133440017700195,Adam Wharton,h,12409,OpenPlay,2023,LeftFoot,22178,Crystal Palace,Newcastle United,2,0,2024-04-24 19:00:00,Daniel Muñoz,Pass,Adam Wharton
+576755,25,MissedShots,0.7709999847412109,0.365,0.021946994587779045,Adam Wharton,a,12409,OpenPlay,2023,LeftFoot,22238,Fulham,Crystal Palace,1,1,2024-04-27 14:00:00,Michael Olise,Pass,Adam Wharton
+579855,45,MissedShots,0.8019999694824219,0.51,0.05986568704247475,Adam Wharton,a,12409,OpenPlay,2023,LeftFoot,22264,Wolverhampton Wanderers,Crystal Palace,1,3,2024-05-11 14:00:00,Daniel Muñoz,Pass,Adam Wharton
+585161,49,BlockedShot,0.805,0.5679999923706055,0.04031260684132576,Adam Wharton,a,12409,FromCorner,2024,LeftFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Daichi Kamada,Pass,Adam Wharton
+585163,52,SavedShot,0.745,0.665,0.017279094085097313,Adam Wharton,a,12409,OpenPlay,2024,LeftFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Will Hughes,Pass,Adam Wharton
+585165,63,SavedShot,0.75,0.3340000152587891,0.01461444515734911,Adam Wharton,a,12409,OpenPlay,2024,LeftFoot,26609,Brentford,Crystal Palace,2,1,2024-08-18 13:00:00,Daichi Kamada,Pass,Adam Wharton
+586040,5,MissedShots,0.799000015258789,0.3390000152587891,0.019951067864894867,Adam Wharton,h,12409,FromCorner,2024,RightFoot,26613,Crystal Palace,West Ham,0,2,2024-08-24 14:00:00,,None,Adam Wharton
+589748,15,SavedShot,0.7880000305175782,0.34400001525878904,0.02049708180129528,Adam Wharton,a,12409,OpenPlay,2024,LeftFoot,26630,Chelsea,Crystal Palace,1,1,2024-09-01 12:30:00,Daichi Kamada,Pass,Adam Wharton
+594075,9,BlockedShot,0.78,0.3659999847412109,0.01689426600933075,Adam Wharton,a,12409,SetPiece,2024,RightFoot,26654,Everton,Crystal Palace,2,1,2024-09-28 14:00:00,,Rebound,Adam Wharton
+594085,42,SavedShot,0.715999984741211,0.49700000762939456,0.017959976568818092,Adam Wharton,a,12409,OpenPlay,2024,LeftFoot,26654,Everton,Crystal Palace,2,1,2024-09-28 14:00:00,,None,Adam Wharton
+598889,81,SavedShot,0.7369999694824219,0.46599998474121096,0.022600557655096054,Adam Wharton,h,12409,OpenPlay,2024,RightFoot,26689,Crystal Palace,Tottenham,1,0,2024-10-27 14:00:00,Will Hughes,Pass,Adam Wharton
+598890,82,MissedShots,0.815,0.4229999923706055,0.033696386963129044,Adam Wharton,h,12409,FromCorner,2024,LeftFoot,26689,Crystal Palace,Tottenham,1,0,2024-10-27 14:00:00,,None,Adam Wharton
+619512,58,MissedShots,0.8440000152587891,0.43,0.058867983520030975,Adam Wharton,h,12409,FromCorner,2024,LeftFoot,26868,Crystal Palace,Aston Villa,4,1,2025-02-25 19:30:00,,Rebound,Adam Wharton
+628569,18,MissedShots,0.830999984741211,0.385,0.04254777356982231,Adam Wharton,h,12409,SetPiece,2024,RightFoot,26924,Crystal Palace,Bournemouth,0,0,2025-04-19 14:00:00,,None,Adam Wharton
+629812,46,BlockedShot,0.6809999847412109,0.5179999923706055,0.010676956735551357,Adam Wharton,a,12409,OpenPlay,2024,LeftFoot,26933,Arsenal,Crystal Palace,2,2,2025-04-23 19:00:00,,None,Adam Wharton
+632387,4,MissedShots,0.8209999847412109,0.43,0.01986202597618103,Adam Wharton,h,12409,OpenPlay,2024,LeftFoot,26949,Crystal Palace,Nottingham Forest,1,1,2025-05-05 19:00:00,,Aerial,Adam Wharton
+643063,34,BlockedShot,0.7819999694824219,0.3970000076293945,0.023688603192567825,Adam Wharton,a,12409,OpenPlay,2025,LeftFoot,28819,West Ham,Crystal Palace,1,2,2025-09-20 14:00:00,Daichi Kamada,Pass,Adam Wharton
+644698,22,MissedShots,0.7480000305175781,0.585,0.019078325480222702,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28830,Crystal Palace,Liverpool,2,1,2025-09-27 14:00:00,,Rebound,Adam Wharton
+646643,91,BlockedShot,0.79,0.5709999847412109,0.038950271904468536,Adam Wharton,a,12409,OpenPlay,2025,LeftFoot,28843,Everton,Crystal Palace,2,1,2025-10-05 13:00:00,,BallRecovery,Adam Wharton
+647577,47,BlockedShot,0.8209999847412109,0.519000015258789,0.04258235543966293,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28850,Crystal Palace,Bournemouth,3,3,2025-10-18 14:00:00,,None,Adam Wharton
+649479,26,MissedShots,0.7180000305175781,0.53,0.013107347302138805,Adam Wharton,a,12409,OpenPlay,2025,LeftFoot,28859,Arsenal,Crystal Palace,1,0,2025-10-26 13:00:00,Yeremi Pino,LayOff,Adam Wharton
+652815,39,MissedShots,0.8080000305175781,0.4379999923706055,0.04540743678808212,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,,None,Adam Wharton
+653693,62,BlockedShot,0.815,0.5129999923706055,0.04427684098482132,Adam Wharton,a,12409,FromCorner,2025,LeftFoot,28897,Wolverhampton Wanderers,Crystal Palace,0,2,2025-11-22 15:00:00,Yeremi Pino,Pass,Adam Wharton
+656383,12,SavedShot,0.8519999694824218,0.4379999923706055,0.031122524291276932,Adam Wharton,h,12409,OpenPlay,2025,RightFoot,28901,Crystal Palace,Manchester United,1,2,2025-11-30 12:00:00,,Aerial,Adam Wharton
+657587,63,BlockedShot,0.7869999694824219,0.6790000152587891,0.02368534728884697,Adam Wharton,a,12409,OpenPlay,2025,LeftFoot,28922,Fulham,Crystal Palace,1,2,2025-12-07 16:30:00,Daichi Kamada,Pass,Adam Wharton
+658520,36,MissedShots,0.8009999847412109,0.30200000762939455,0.015822863206267357,Adam Wharton,h,12409,SetPiece,2025,RightFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,,None,Adam Wharton
+658523,48,ShotOnPost,0.8019999694824219,0.30700000762939456,0.03410417586565018,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,,TakeOn,Adam Wharton
+658527,58,MissedShots,0.855,0.600999984741211,0.10969722270965576,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28932,Crystal Palace,Manchester City,0,3,2025-12-14 14:00:00,Yeremi Pino,Pass,Adam Wharton
+659579,72,SavedShot,0.8369999694824218,0.495,0.04807203263044357,Adam Wharton,a,12409,FromCorner,2025,LeftFoot,28943,Leeds,Crystal Palace,4,1,2025-12-20 20:00:00,Yeremi Pino,Pass,Adam Wharton
+660429,34,SavedShot,0.87,0.2610000038146973,0.03443596512079239,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,,BallRecovery,Adam Wharton
+660434,45,BlockedShot,0.799000015258789,0.3659999847412109,0.02470478042960167,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Justin Devenny,Pass,Adam Wharton
+660444,94,BlockedShot,0.8119999694824219,0.49700000762939456,0.05616527795791626,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28952,Crystal Palace,Tottenham,0,1,2025-12-28 16:30:00,Will Hughes,Pass,Adam Wharton
+662052,52,BlockedShot,0.785,0.5640000152587891,0.024905463680624962,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,,Rebound,Adam Wharton
+662058,64,BlockedShot,0.855,0.375,0.05797696113586426,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,28983,Crystal Palace,Aston Villa,0,0,2026-01-07 19:30:00,Justin Devenny,Pass,Adam Wharton
+667688,32,MissedShots,0.7919999694824219,0.4329999923706055,0.02816067449748516,Adam Wharton,a,12409,SetPiece,2025,RightFoot,29020,Brighton,Crystal Palace,0,1,2026-02-08 14:00:00,,None,Adam Wharton
+668369,55,BlockedShot,0.7919999694824219,0.585999984741211,0.03313776105642319,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,,None,Adam Wharton
+668373,66,BlockedShot,0.7390000152587891,0.35900001525878905,0.015439771115779877,Adam Wharton,h,12409,OpenPlay,2025,LeftFoot,29031,Crystal Palace,Burnley,2,3,2026-02-11 19:30:00,Daniel Muñoz,Pass,Adam Wharton
+670201,45,MissedShots,0.9059999847412109,0.4929999923706055,0.04451354593038559,Adam Wharton,h,12409,FromCorner,2025,Head,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,,None,Adam Wharton
+672329,0,SavedShot,0.8869999694824219,0.42700000762939455,0.08563436567783356,Adam Wharton,a,12409,OpenPlay,2025,LeftFoot,29066,Tottenham,Crystal Palace,1,3,2026-03-05 20:00:00,,None,Adam Wharton
+672343,59,BlockedShot,0.8090000152587891,0.4329999923706055,0.05616768077015877,Adam Wharton,a,12409,OpenPlay,2025,RightFoot,29066,Tottenham,Crystal Palace,1,3,2026-03-05 20:00:00,Jørgen Strand Larsen,Pass,Adam Wharton
+674368,70,BlockedShot,0.7630000305175781,0.4570000076293945,0.014568326063454151,Adam Wharton,h,12409,FromCorner,2025,RightFoot,29072,Crystal Palace,Leeds,0,0,2026-03-15 14:00:00,,Aerial,Adam Wharton
+674370,76,BlockedShot,0.794000015258789,0.48200000762939454,0.01723918318748474,Adam Wharton,h,12409,FromCorner,2025,LeftFoot,29072,Crystal Palace,Leeds,0,0,2026-03-15 14:00:00,,Aerial,Adam Wharton
+684055,6,MissedShots,0.845,0.6309999847412109,0.04585832357406616,Adam Wharton,h,12409,SetPiece,2025,RightFoot,29130,Crystal Palace,Everton,2,2,2026-05-10 13:00:00,,None,Adam Wharton
+684081,89,ShotOnPost,0.7580000305175781,0.63,0.02047886699438095,Adam Wharton,h,12409,OpenPlay,2025,RightFoot,29130,Crystal Palace,Everton,2,2,2026-05-10 13:00:00,Jaydee Canvot,Pass,Adam Wharton

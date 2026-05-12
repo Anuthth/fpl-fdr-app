@@ -1,0 +1,18 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+372482,87,MissedShots,0.9590000152587891,0.41,0.07191500067710876,George Hirst,a,8563,FromCorner,2019,Head,12010,Tottenham,Leicester,3,0,2020-07-19 15:00:00,Demarai Gray,Cross,George Hirst
+372483,90,MissedShots,0.8130000305175781,0.27100000381469724,0.021223099902272224,George Hirst,a,8563,OpenPlay,2019,RightFoot,12010,Tottenham,Leicester,3,0,2020-07-19 15:00:00,Demarai Gray,Pass,George Hirst
+373850,90,SavedShot,0.905,0.6509999847412109,0.007464699912816286,George Hirst,h,8563,SetPiece,2019,Head,12018,Leicester,Manchester United,0,2,2020-07-26 15:00:00,Kasper Schmeichel,Aerial,George Hirst
+592362,80,MissedShots,0.905,0.519000015258789,0.04118742793798447,George Hirst,a,8563,OpenPlay,2024,Head,26643,Southampton,Ipswich,1,1,2024-09-21 14:00:00,Omari Hutchinson,Aerial,George Hirst
+592366,93,SavedShot,0.955,0.5070000076293946,0.48290765285491943,George Hirst,a,8563,OpenPlay,2024,Head,26643,Southampton,Ipswich,1,1,2024-09-21 14:00:00,Jack Clarke,Cross,George Hirst
+598460,30,Goal,0.904000015258789,0.36,0.3358561098575592,George Hirst,a,8563,OpenPlay,2024,RightFoot,26685,Brentford,Ipswich,4,3,2024-10-26 14:00:00,Conor Chaplin,Throughball,George Hirst
+613400,84,SavedShot,0.9059999847412109,0.4829999923706055,0.2919474244117737,George Hirst,a,8563,OpenPlay,2024,Head,26827,Liverpool,Ipswich,4,1,2025-01-25 15:00:00,Conor Townsend,Cross,George Hirst
+619610,82,MissedShots,0.9330000305175781,0.44599998474121094,0.04973426088690758,George Hirst,a,8563,FromCorner,2024,Head,26871,Manchester United,Ipswich,3,2,2025-02-26 19:30:00,,Aerial,George Hirst
+622649,92,Goal,0.8880000305175781,0.5259999847412109,0.0723053365945816,George Hirst,h,8563,OpenPlay,2024,Head,26887,Ipswich,Nottingham Forest,2,4,2025-03-15 15:00:00,Dara O&#039;Shea,Cross,George Hirst
+627645,53,MissedShots,0.9230000305175782,0.5520000076293945,0.3038318157196045,George Hirst,a,8563,OpenPlay,2024,Head,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Ben Johnson,Cross,George Hirst
+627644,53,MissedShots,0.8240000152587891,0.7019999694824218,0.03065354749560356,George Hirst,a,8563,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,Leif Davis,Pass,George Hirst
+629067,55,MissedShots,0.870999984741211,0.5770000076293945,0.050650082528591156,George Hirst,h,8563,OpenPlay,2024,RightFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,Sam Morsy,Chipped,George Hirst
+631452,78,Goal,0.975999984741211,0.5359999847412109,0.6070055961608887,George Hirst,a,8563,OpenPlay,2024,Head,26950,Everton,Ipswich,2,2,2025-05-03 14:00:00,,None,George Hirst
+632779,79,MissedShots,0.8109999847412109,0.5729999923706055,0.06842173635959625,George Hirst,h,8563,OpenPlay,2024,RightFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Jacob Greaves,Pass,George Hirst
+632783,93,SavedShot,0.9340000152587891,0.524000015258789,0.05751219764351845,George Hirst,h,8563,OpenPlay,2024,Head,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Omari Hutchinson,Aerial,George Hirst
+635071,17,MissedShots,0.925,0.48700000762939455,0.12624722719192505,George Hirst,a,8563,OpenPlay,2024,Head,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Sam Morsy,Cross,George Hirst
+635088,66,SavedShot,0.9669999694824218,0.345,0.23055119812488556,George Hirst,a,8563,OpenPlay,2024,RightFoot,26969,Leicester,Ipswich,2,0,2025-05-18 14:00:00,Sam Morsy,Chipped,George Hirst

@@ -1,0 +1,128 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+325455,81,BlockedShot,0.9,0.46700000762939453,0.10820099711418152,Lukas Nmecha,a,6544,OpenPlay,2019,RightFoot,12470,RasenBallsport Leipzig,Wolfsburg,1,1,2019-10-19 14:30:00,,Rebound,Lukas Nmecha
+327899,95,MissedShots,0.759000015258789,0.35200000762939454,0.022269999608397484,Lukas Nmecha,h,6544,OpenPlay,2019,RightFoot,12480,Wolfsburg,Augsburg,0,0,2019-10-27 14:30:00,Jérôme Roussillon,Pass,Lukas Nmecha
+329022,21,ShotOnPost,0.9469999694824218,0.3089999961853027,0.26153600215911865,Lukas Nmecha,a,6544,OpenPlay,2019,RightFoot,12484,Borussia Dortmund,Wolfsburg,3,0,2019-11-02 14:30:00,William,TakeOn,Lukas Nmecha
+426930,70,BlockedShot,0.8909999847412109,0.6020000076293945,0.06621160358190536,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17528,Hertha Berlin,Wolfsburg,1,2,2021-08-21 13:30:00,Kevin Mbabu,HeadPass,Lukas Nmecha
+426938,87,Goal,0.9259999847412109,0.46,0.14134499430656433,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17528,Hertha Berlin,Wolfsburg,1,2,2021-08-21 13:30:00,Josip Brekalo,Pass,Lukas Nmecha
+429648,9,Goal,0.8830000305175781,0.3320000076293945,0.2678520083427429,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17543,Greuther Fuerth,Wolfsburg,0,2,2021-09-11 13:30:00,Wout Weghorst,Pass,Lukas Nmecha
+429654,60,BlockedShot,0.845999984741211,0.32299999237060545,0.05616249889135361,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17543,Greuther Fuerth,Wolfsburg,0,2,2021-09-11 13:30:00,Bote Baku,Pass,Lukas Nmecha
+432160,47,SavedShot,0.9390000152587891,0.27899999618530275,0.035422198474407196,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17560,Wolfsburg,Eintracht Frankfurt,1,1,2021-09-19 17:30:00,Kevin Mbabu,Chipped,Lukas Nmecha
+436092,11,BlockedShot,0.95,0.590999984741211,0.10748200118541718,Lukas Nmecha,a,6544,OpenPlay,2021,Head,17584,Union Berlin,Wolfsburg,2,0,2021-10-16 13:30:00,Kevin Mbabu,Cross,Lukas Nmecha
+436094,23,MissedShots,0.735,0.47,0.01842319965362549,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17584,Union Berlin,Wolfsburg,2,0,2021-10-16 13:30:00,Gian-Luca Waldschmidt,BallRecovery,Lukas Nmecha
+437668,4,SavedShot,0.9030000305175782,0.4129999923706055,0.08525580167770386,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Aster Vranckx,Cross,Lukas Nmecha
+437673,28,SavedShot,0.9069999694824219,0.4209999847412109,0.028057999908924103,Lukas Nmecha,h,6544,OpenPlay,2021,Head,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Kevin Mbabu,Aerial,Lukas Nmecha
+437676,34,MissedShots,0.955999984741211,0.54,0.11619099974632263,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Paulo Otávio,Cross,Lukas Nmecha
+437678,35,ShotOnPost,0.88,0.6790000152587891,0.2625179886817932,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Maximilian Arnold,TakeOn,Lukas Nmecha
+437694,83,MissedShots,0.919000015258789,0.4329999923706055,0.08672430366277695,Lukas Nmecha,h,6544,OpenPlay,2021,Head,17594,Wolfsburg,Freiburg,0,2,2021-10-23 13:30:00,Maximilian Philipp,Cross,Lukas Nmecha
+439556,8,SavedShot,0.91,0.255,0.032709598541259766,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17603,Bayer Leverkusen,Wolfsburg,0,2,2021-10-30 13:30:00,Bote Baku,Pass,Lukas Nmecha
+439565,47,Goal,0.9540000152587891,0.475,0.6191409826278687,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17603,Bayer Leverkusen,Wolfsburg,0,2,2021-10-30 13:30:00,,None,Lukas Nmecha
+439566,50,SavedShot,0.9290000152587891,0.5409999847412109,0.4003399908542633,Lukas Nmecha,a,6544,OpenPlay,2021,Head,17603,Bayer Leverkusen,Wolfsburg,0,2,2021-10-30 13:30:00,Paulo Otávio,Cross,Lukas Nmecha
+439569,52,SavedShot,0.9159999847412109,0.644000015258789,0.4470739960670471,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17603,Bayer Leverkusen,Wolfsburg,0,2,2021-10-30 13:30:00,Yannick Gerhardt,Throughball,Lukas Nmecha
+440943,13,Goal,0.9369999694824219,0.6559999847412109,0.014448200352489948,Lukas Nmecha,h,6544,OpenPlay,2021,Head,17612,Wolfsburg,Augsburg,1,0,2021-11-06 14:30:00,Paulo Otávio,Cross,Lukas Nmecha
+440958,79,BlockedShot,0.855,0.32099998474121094,0.05973289906978607,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17612,Wolfsburg,Augsburg,1,0,2021-11-06 14:30:00,Wout Weghorst,Pass,Lukas Nmecha
+442487,28,SavedShot,0.91,0.47200000762939454,0.09173359721899033,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17615,Arminia Bielefeld,Wolfsburg,2,2,2021-11-20 14:30:00,Maximilian Arnold,Chipped,Lukas Nmecha
+442492,47,MissedShots,0.860999984741211,0.395,0.07127530127763748,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17615,Arminia Bielefeld,Wolfsburg,2,2,2021-11-20 14:30:00,Bote Baku,Pass,Lukas Nmecha
+442496,62,Goal,0.8780000305175781,0.33599998474121096,0.05386149883270264,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17615,Arminia Bielefeld,Wolfsburg,2,2,2021-11-20 14:30:00,Maximilian Philipp,Pass,Lukas Nmecha
+446110,18,BlockedShot,0.8430000305175781,0.6170000076293946,0.059172701090574265,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17635,Mainz 05,Wolfsburg,3,0,2021-12-04 14:30:00,Wout Weghorst,TakeOn,Lukas Nmecha
+446112,25,MissedShots,0.9690000152587891,0.5940000152587891,0.09868510067462921,Lukas Nmecha,a,6544,FromCorner,2021,RightFoot,17635,Mainz 05,Wolfsburg,3,0,2021-12-04 14:30:00,Josuha Guilavogui,HeadPass,Lukas Nmecha
+446124,65,MissedShots,0.8380000305175781,0.34799999237060547,0.04477259889245033,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17635,Mainz 05,Wolfsburg,3,0,2021-12-04 14:30:00,Wout Weghorst,Pass,Lukas Nmecha
+446128,86,MissedShots,0.909000015258789,0.41900001525878905,0.07565300166606903,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17635,Mainz 05,Wolfsburg,3,0,2021-12-04 14:30:00,,None,Lukas Nmecha
+447921,36,BlockedShot,0.879000015258789,0.40599998474121096,0.0891605019569397,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17648,Wolfsburg,VfB Stuttgart,0,2,2021-12-11 17:30:00,Renato Steffen,Pass,Lukas Nmecha
+447929,68,MissedShots,0.915,0.500999984741211,0.40334299206733704,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17648,Wolfsburg,VfB Stuttgart,0,2,2021-12-11 17:30:00,,None,Lukas Nmecha
+447930,72,MissedShots,0.879000015258789,0.5420000076293945,0.04242369905114174,Lukas Nmecha,h,6544,OpenPlay,2021,Head,17648,Wolfsburg,VfB Stuttgart,0,2,2021-12-11 17:30:00,Jérôme Roussillon,Cross,Lukas Nmecha
+447934,82,SavedShot,0.919000015258789,0.47299999237060547,0.323852002620697,Lukas Nmecha,h,6544,OpenPlay,2021,Head,17648,Wolfsburg,VfB Stuttgart,0,2,2021-12-11 17:30:00,Dodi Lukebakio,Cross,Lukas Nmecha
+447936,86,BlockedShot,0.755,0.3609999847412109,0.015562600456178188,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17648,Wolfsburg,VfB Stuttgart,0,2,2021-12-11 17:30:00,Dodi Lukebakio,Pass,Lukas Nmecha
+448807,7,Goal,0.8830000305175781,0.534000015258789,0.4597870111465454,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17658,Wolfsburg,FC Cologne,2,3,2021-12-14 19:30:00,Bote Baku,Pass,Lukas Nmecha
+448813,25,MissedShots,0.955,0.6630000305175782,0.07737410068511963,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17658,Wolfsburg,FC Cologne,2,3,2021-12-14 19:30:00,,None,Lukas Nmecha
+448818,38,MissedShots,0.855,0.6370000076293946,0.061417099088430405,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17658,Wolfsburg,FC Cologne,2,3,2021-12-14 19:30:00,Wout Weghorst,Pass,Lukas Nmecha
+448824,47,SavedShot,0.9,0.590999984741211,0.38241299986839294,Lukas Nmecha,h,6544,SetPiece,2021,RightFoot,17658,Wolfsburg,FC Cologne,2,3,2021-12-14 19:30:00,Bote Baku,Rebound,Lukas Nmecha
+460933,79,SavedShot,0.92,0.675,0.10031899809837341,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17738,Wolfsburg,Union Berlin,1,0,2022-03-05 14:30:00,Jonas Wind,Pass,Lukas Nmecha
+462476,66,MissedShots,0.924000015258789,0.30700000762939456,0.050285499542951584,Lukas Nmecha,a,6544,OpenPlay,2021,RightFoot,17744,Freiburg,Wolfsburg,3,2,2022-03-12 14:30:00,Maxence Lacroix,Pass,Lukas Nmecha
+464682,16,SavedShot,0.9059999847412109,0.3509999847412109,0.29269200563430786,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17756,Wolfsburg,Bayer Leverkusen,0,2,2022-03-20 16:30:00,Maxence Lacroix,Throughball,Lukas Nmecha
+464684,18,MissedShots,0.7859999847412109,0.35700000762939454,0.02825010009109974,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17756,Wolfsburg,Bayer Leverkusen,0,2,2022-03-20 16:30:00,Kevin Mbabu,Pass,Lukas Nmecha
+464691,44,MissedShots,0.8569999694824219,0.7630000305175781,0.026855099946260452,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17756,Wolfsburg,Bayer Leverkusen,0,2,2022-03-20 16:30:00,Jonas Wind,Pass,Lukas Nmecha
+464693,48,BlockedShot,0.8769999694824219,0.52,0.40360501408576965,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17756,Wolfsburg,Bayer Leverkusen,0,2,2022-03-20 16:30:00,Max Kruse,Throughball,Lukas Nmecha
+465839,23,SavedShot,0.8669999694824219,0.47,0.11654599756002426,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17760,Augsburg,Wolfsburg,3,0,2022-04-03 13:30:00,,TakeOn,Lukas Nmecha
+465858,74,MissedShots,0.9130000305175782,0.455,0.057151101529598236,Lukas Nmecha,a,6544,OpenPlay,2021,Head,17760,Augsburg,Wolfsburg,3,0,2022-04-03 13:30:00,Dodi Lukebakio,Aerial,Lukas Nmecha
+466629,10,Goal,0.9319999694824219,0.6659999847412109,0.0714918002486229,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17774,Wolfsburg,Arminia Bielefeld,4,0,2022-04-09 13:30:00,Yannick Gerhardt,Pass,Lukas Nmecha
+466634,37,Goal,0.9690000152587891,0.5159999847412109,0.5482680201530457,Lukas Nmecha,h,6544,FromCorner,2021,Head,17774,Wolfsburg,Arminia Bielefeld,4,0,2022-04-09 13:30:00,Yannick Gerhardt,HeadPass,Lukas Nmecha
+466637,50,MissedShots,0.88,0.519000015258789,0.4239180088043213,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17774,Wolfsburg,Arminia Bielefeld,4,0,2022-04-09 13:30:00,Jonas Wind,Pass,Lukas Nmecha
+466640,55,MissedShots,0.9209999847412109,0.40299999237060546,0.11327700316905975,Lukas Nmecha,h,6544,SetPiece,2021,RightFoot,17774,Wolfsburg,Arminia Bielefeld,4,0,2022-04-09 13:30:00,Maxence Lacroix,Pass,Lukas Nmecha
+468025,2,SavedShot,0.9490000152587891,0.5459999847412109,0.6056780219078064,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17785,Borussia Dortmund,Wolfsburg,6,1,2022-04-16 13:30:00,Jonas Wind,Pass,Lukas Nmecha
+469720,7,ShotOnPost,0.935,0.4259999847412109,0.10247500240802765,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17792,Wolfsburg,Mainz 05,5,0,2022-04-22 18:30:00,Bote Baku,Cross,Lukas Nmecha
+469724,28,SavedShot,0.879000015258789,0.5690000152587891,0.342739999294281,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17792,Wolfsburg,Mainz 05,5,0,2022-04-22 18:30:00,Jonas Wind,Pass,Lukas Nmecha
+469725,31,MissedShots,0.8209999847412109,0.4779999923706055,0.0951303020119667,Lukas Nmecha,h,6544,OpenPlay,2021,LeftFoot,17792,Wolfsburg,Mainz 05,5,0,2022-04-22 18:30:00,Jonas Wind,Pass,Lukas Nmecha
+471496,9,MissedShots,0.9519999694824218,0.4420000076293945,0.4518490135669708,Lukas Nmecha,a,6544,OpenPlay,2021,LeftFoot,17799,VfB Stuttgart,Wolfsburg,1,1,2022-04-30 13:30:00,Bote Baku,Cross,Lukas Nmecha
+475596,33,MissedShots,0.8130000305175781,0.46,0.046892501413822174,Lukas Nmecha,h,6544,OpenPlay,2021,RightFoot,17820,Wolfsburg,Bayern Munich,2,2,2022-05-14 13:30:00,Max Kruse,Pass,Lukas Nmecha
+479165,10,Goal,0.9419999694824219,0.33299999237060546,0.31834301352500916,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19345,Wolfsburg,Werder Bremen,2,2,2022-08-06 13:30:00,Patrick Wimmer,Throughball,Lukas Nmecha
+479180,83,BlockedShot,0.9080000305175782,0.5370000076293945,0.036441899836063385,Lukas Nmecha,h,6544,FromCorner,2022,Head,19345,Wolfsburg,Werder Bremen,2,2,2022-08-06 13:30:00,Max Kruse,Goal,Lukas Nmecha
+481026,3,BlockedShot,0.9230000305175782,0.645,0.09333120286464691,Lukas Nmecha,a,6544,OpenPlay,2022,LeftFoot,19359,Bayern Munich,Wolfsburg,2,0,2022-08-14 15:30:00,Omar Marmoush,Pass,Lukas Nmecha
+481041,48,SavedShot,0.955999984741211,0.43,0.12812499701976776,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19359,Bayern Munich,Wolfsburg,2,0,2022-08-14 15:30:00,Bote Baku,Pass,Lukas Nmecha
+481046,62,BlockedShot,0.9069999694824219,0.39,0.050912901759147644,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19359,Bayern Munich,Wolfsburg,2,0,2022-08-14 15:30:00,Bote Baku,Cross,Lukas Nmecha
+483570,56,SavedShot,0.925,0.40700000762939453,0.07861009985208511,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19370,RasenBallsport Leipzig,Wolfsburg,2,0,2022-08-27 13:30:00,Bote Baku,Cross,Lukas Nmecha
+485760,1,Goal,0.8730000305175781,0.37599998474121094,0.2685379981994629,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19382,Wolfsburg,FC Cologne,2,4,2022-09-03 13:30:00,Bartol Franjic,Pass,Lukas Nmecha
+485785,78,Goal,0.8880000305175781,0.4570000076293945,0.3384209871292114,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19382,Wolfsburg,FC Cologne,2,4,2022-09-03 13:30:00,Mattias Svanberg,Pass,Lukas Nmecha
+487471,36,MissedShots,0.8059999847412109,0.3729999923706055,0.03785720095038414,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19391,Eintracht Frankfurt,Wolfsburg,0,1,2022-09-10 13:30:00,Mattias Svanberg,Pass,Lukas Nmecha
+487474,41,MissedShots,0.9130000305175782,0.3820000076293945,0.30073899030685425,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19391,Eintracht Frankfurt,Wolfsburg,0,1,2022-09-10 13:30:00,Maximilian Arnold,Throughball,Lukas Nmecha
+487475,52,MissedShots,0.9130000305175782,0.3270000076293945,0.05510919913649559,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19391,Eintracht Frankfurt,Wolfsburg,0,1,2022-09-10 13:30:00,Bote Baku,Chipped,Lukas Nmecha
+489397,50,BlockedShot,0.8540000152587891,0.6759999847412109,0.04364730045199394,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19402,Union Berlin,Wolfsburg,2,0,2022-09-18 13:30:00,Bote Baku,Chipped,Lukas Nmecha
+493000,14,MissedShots,0.8590000152587891,0.28,0.03317809849977493,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19428,Wolfsburg,Borussia M.Gladbach,2,2,2022-10-15 13:30:00,Maximilian Arnold,Pass,Lukas Nmecha
+493010,52,BlockedShot,0.845,0.7230000305175781,0.029968200251460075,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19428,Wolfsburg,Borussia M.Gladbach,2,2,2022-10-15 13:30:00,Patrick Wimmer,TakeOn,Lukas Nmecha
+496342,11,MissedShots,0.905,0.46900001525878904,0.10940500348806381,Lukas Nmecha,h,6544,OpenPlay,2022,Head,19446,Wolfsburg,Bochum,4,0,2022-10-29 13:30:00,Jakub Kaminski,Cross,Lukas Nmecha
+496348,28,SavedShot,0.93,0.5,0.4498090147972107,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19446,Wolfsburg,Bochum,4,0,2022-10-29 13:30:00,Paulo Otávio,Cross,Lukas Nmecha
+496361,59,ShotOnPost,0.8730000305175781,0.5,0.35630398988723755,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19446,Wolfsburg,Bochum,4,0,2022-10-29 13:30:00,Felix Nmecha,Pass,Lukas Nmecha
+496363,67,MissedShots,0.8090000152587891,0.4759999847412109,0.058512598276138306,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19446,Wolfsburg,Bochum,4,0,2022-10-29 13:30:00,Omar Marmoush,HeadPass,Lukas Nmecha
+498014,45,MissedShots,0.769000015258789,0.22700000762939454,0.021995099261403084,Lukas Nmecha,a,6544,OpenPlay,2022,RightFoot,19451,Mainz 05,Wolfsburg,0,3,2022-11-05 14:30:00,Yannick Gerhardt,Pass,Lukas Nmecha
+498015,45,MissedShots,0.904000015258789,0.519000015258789,0.06388159841299057,Lukas Nmecha,a,6544,OpenPlay,2022,Head,19451,Mainz 05,Wolfsburg,0,3,2022-11-05 14:30:00,Yannick Gerhardt,Chipped,Lukas Nmecha
+499027,90,Goal,0.9580000305175781,0.4620000076293945,0.6577230095863342,Lukas Nmecha,h,6544,OpenPlay,2022,LeftFoot,19464,Wolfsburg,Borussia Dortmund,2,0,2022-11-08 17:30:00,Patrick Wimmer,Pass,Lukas Nmecha
+512867,92,MissedShots,0.7559999847412109,0.5829999923706055,0.022816399112343788,Lukas Nmecha,h,6544,OpenPlay,2022,RightFoot,19545,Wolfsburg,Eintracht Frankfurt,2,2,2023-03-05 16:30:00,,BallRecovery,Lukas Nmecha
+566872,82,Goal,0.9319999694824219,0.45799999237060546,0.1309233158826828,Lukas Nmecha,h,6544,SetPiece,2023,RightFoot,23274,Wolfsburg,VfB Stuttgart,2,3,2024-03-02 17:30:00,,Rebound,Lukas Nmecha
+600000,81,MissedShots,0.8969999694824219,0.4779999923706055,0.07872030884027481,Lukas Nmecha,h,6544,OpenPlay,2024,Head,27820,Wolfsburg,Augsburg,1,1,2024-11-02 14:30:00,Bence Dárdai,Cross,Lukas Nmecha
+602835,75,SavedShot,0.8490000152587891,0.475,0.30446675419807434,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27838,Wolfsburg,Union Berlin,1,0,2024-11-23 14:30:00,Jonas Wind,Chipped,Lukas Nmecha
+606825,91,MissedShots,0.8680000305175781,0.45599998474121095,0.037619348615407944,Lukas Nmecha,a,6544,OpenPlay,2024,Head,27862,Freiburg,Wolfsburg,3,2,2024-12-13 19:30:00,Bote Baku,Cross,Lukas Nmecha
+608838,48,SavedShot,0.8580000305175781,0.435,0.30404603481292725,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27874,Wolfsburg,Borussia Dortmund,1,3,2024-12-22 16:30:00,Bote Baku,Throughball,Lukas Nmecha
+608851,93,BlockedShot,0.9009999847412109,0.45599998474121095,0.07743742316961288,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27874,Wolfsburg,Borussia Dortmund,1,3,2024-12-22 16:30:00,,None,Lukas Nmecha
+611421,83,Goal,0.975999984741211,0.52,0.7584063410758972,Lukas Nmecha,h,6544,OpenPlay,2024,LeftFoot,27891,Wolfsburg,Borussia M.Gladbach,5,1,2025-01-14 19:30:00,Patrick Wimmer,Cross,Lukas Nmecha
+611422,86,Goal,0.9569999694824218,0.47400001525878904,0.8021087646484375,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27891,Wolfsburg,Borussia M.Gladbach,5,1,2025-01-14 19:30:00,Joakim Maehle,Pass,Lukas Nmecha
+613098,92,BlockedShot,0.9,0.4809999847412109,0.10360466688871384,Lukas Nmecha,h,6544,OpenPlay,2024,Head,27910,Wolfsburg,Holstein Kiel,2,2,2025-01-24 19:30:00,Joakim Maehle,Cross,Lukas Nmecha
+615511,87,BlockedShot,0.855,0.524000015258789,0.10123582929372787,Lukas Nmecha,a,6544,OpenPlay,2024,LeftFoot,27919,Eintracht Frankfurt,Wolfsburg,1,1,2025-02-02 14:30:00,Kevin Behrens,Pass,Lukas Nmecha
+624129,75,SavedShot,0.7669999694824219,0.5420000076293945,0.02873491309583187,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27981,Wolfsburg,FC Heidenheim,0,1,2025-03-29 14:30:00,Jakub Kaminski,Pass,Lukas Nmecha
+624130,76,SavedShot,0.9080000305175782,0.6480000305175782,0.2665979862213135,Lukas Nmecha,h,6544,OpenPlay,2024,LeftFoot,27981,Wolfsburg,FC Heidenheim,0,1,2025-03-29 14:30:00,Yannick Gerhardt,Pass,Lukas Nmecha
+624132,81,MissedShots,0.735999984741211,0.4159999847412109,0.016380872577428818,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,27981,Wolfsburg,FC Heidenheim,0,1,2025-03-29 14:30:00,Maximilian Arnold,TakeOn,Lukas Nmecha
+624133,87,MissedShots,0.9569999694824218,0.49700000762939456,0.4835243225097656,Lukas Nmecha,h,6544,OpenPlay,2024,Head,27981,Wolfsburg,FC Heidenheim,0,1,2025-03-29 14:30:00,Jakub Kaminski,HeadPass,Lukas Nmecha
+626511,87,MissedShots,0.89,0.48700000762939455,0.032384540885686874,Lukas Nmecha,a,6544,OpenPlay,2024,Head,27991,Union Berlin,Wolfsburg,1,0,2025-04-06 15:30:00,Maximilian Arnold,Aerial,Lukas Nmecha
+626770,92,MissedShots,0.914000015258789,0.48900001525878906,0.043245356529951096,Lukas Nmecha,h,6544,OpenPlay,2024,Head,27999,Wolfsburg,RasenBallsport Leipzig,2,3,2025-04-11 18:30:00,,None,Lukas Nmecha
+631576,11,SavedShot,0.9440000152587891,0.12300000190734864,0.015030100010335445,Lukas Nmecha,a,6544,OpenPlay,2024,RightFoot,28022,Borussia Dortmund,Wolfsburg,4,0,2025-05-03 16:30:00,Kilian Fischer,Chipped,Lukas Nmecha
+632466,82,BlockedShot,0.8090000152587891,0.629000015258789,0.06462927907705307,Lukas Nmecha,h,6544,OpenPlay,2024,RightFoot,28035,Wolfsburg,Hoffenheim,2,2,2025-05-09 18:30:00,Andreas Skov Olsen,Pass,Lukas Nmecha
+632468,92,BlockedShot,0.9269999694824219,0.5570000076293945,0.12093111127614975,Lukas Nmecha,h,6544,OpenPlay,2024,Head,28035,Wolfsburg,Hoffenheim,2,2,2025-05-09 18:30:00,Joakim Maehle,Cross,Lukas Nmecha
+634322,20,SavedShot,0.8630000305175781,0.519000015258789,0.3757787346839905,Lukas Nmecha,a,6544,OpenPlay,2024,RightFoot,28046,Borussia M.Gladbach,Wolfsburg,0,1,2025-05-17 13:30:00,Lovro Majer,BallRecovery,Lukas Nmecha
+634331,49,Goal,0.9309999847412109,0.48200000762939454,0.4620555341243744,Lukas Nmecha,a,6544,OpenPlay,2024,RightFoot,28046,Borussia M.Gladbach,Wolfsburg,0,1,2025-05-17 13:30:00,Mohammed Amoura,Cross,Lukas Nmecha
+638396,81,BlockedShot,0.860999984741211,0.6419999694824219,0.06670711189508438,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,Ao Tanaka,Pass,Lukas Nmecha
+638398,83,Goal,0.885,0.5,0.7611688375473022,Lukas Nmecha,h,6544,Penalty,2025,RightFoot,28787,Leeds,Everton,1,0,2025-08-18 19:00:00,,Standard,Lukas Nmecha
+640383,6,BlockedShot,0.8819999694824219,0.5790000152587891,0.0727955773472786,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,28803,Leeds,Newcastle United,0,0,2025-08-30 16:30:00,Anton Stach,Cross,Lukas Nmecha
+647555,65,SavedShot,0.9030000305175782,0.45,0.035416170954704285,Lukas Nmecha,a,6544,OpenPlay,2025,Head,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Gabriel Gudmundsson,Aerial,Lukas Nmecha
+647563,79,MissedShots,0.9590000152587891,0.529000015258789,0.663292646408081,Lukas Nmecha,a,6544,OpenPlay,2025,Head,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Gabriel Gudmundsson,Aerial,Lukas Nmecha
+650828,84,SavedShot,0.9469999694824218,0.3340000152587891,0.04481443762779236,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,28868,Brighton,Leeds,3,0,2025-11-01 15:00:00,Daniel James,Chipped,Lukas Nmecha
+652770,12,Goal,0.850999984741211,0.3189999961853027,0.047116369009017944,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,28884,Nottingham Forest,Leeds,3,1,2025-11-09 14:00:00,Brenden Aaronson,Pass,Lukas Nmecha
+652779,64,MissedShots,0.955999984741211,0.5020000076293946,0.09295449405908585,Lukas Nmecha,a,6544,FromCorner,2025,Head,28884,Nottingham Forest,Leeds,3,1,2025-11-09 14:00:00,,Rebound,Lukas Nmecha
+654122,7,Goal,0.965,0.48200000762939454,0.7571056485176086,Lukas Nmecha,h,6544,SetPiece,2025,LeftFoot,28893,Leeds,Aston Villa,1,2,2025-11-23 14:00:00,,Rebound,Lukas Nmecha
+655062,31,MissedShots,0.875999984741211,0.655,0.07404980808496475,Lukas Nmecha,a,6544,OpenPlay,2025,LeftFoot,28903,Manchester City,Leeds,3,2,2025-11-29 15:00:00,Wilfried Gnonto,Pass,Lukas Nmecha
+655074,67,Goal,0.9440000152587891,0.4979999923706055,0.6279779076576233,Lukas Nmecha,a,6544,SetPiece,2025,RightFoot,28903,Manchester City,Leeds,3,2,2025-11-29 15:00:00,,Rebound,Lukas Nmecha
+655073,67,SavedShot,0.885,0.5,0.7611688375473022,Lukas Nmecha,a,6544,Penalty,2025,RightFoot,28903,Manchester City,Leeds,3,2,2025-11-29 15:00:00,,Standard,Lukas Nmecha
+656331,47,MissedShots,0.8719999694824219,0.49400001525878906,0.03799530118703842,Lukas Nmecha,h,6544,OpenPlay,2025,Head,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,Gabriel Gudmundsson,Cross,Lukas Nmecha
+656332,47,SavedShot,0.9219999694824219,0.4570000076293945,0.44862058758735657,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,28913,Leeds,Chelsea,3,1,2025-12-03 20:15:00,Anton Stach,Cross,Lukas Nmecha
+662186,86,MissedShots,0.945,0.27299999237060546,0.06040814891457558,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,28986,Newcastle United,Leeds,4,3,2026-01-07 20:15:00,,BallRecovery,Lukas Nmecha
+662188,93,SavedShot,0.925,0.34,0.06449824571609497,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,28986,Newcastle United,Leeds,4,3,2026-01-07 20:15:00,,None,Lukas Nmecha
+663625,88,MissedShots,0.950999984741211,0.5940000152587891,0.02207423932850361,Lukas Nmecha,h,6544,FromCorner,2025,Head,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,James Justin,Aerial,Lukas Nmecha
+663626,90,Goal,0.9290000152587891,0.4879999923706055,0.4395431876182556,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,Ethan Ampadu,Cross,Lukas Nmecha
+663627,92,SavedShot,0.9109999847412109,0.6719999694824219,0.28813281655311584,Lukas Nmecha,h,6544,OpenPlay,2025,LeftFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,Brenden Aaronson,Pass,Lukas Nmecha
+668172,66,Goal,0.885,0.5,0.7611688375473022,Lukas Nmecha,a,6544,Penalty,2025,RightFoot,29030,Chelsea,Leeds,2,2,2026-02-10 19:30:00,,Standard,Lukas Nmecha
+669789,73,SavedShot,0.9109999847412109,0.5640000152587891,0.32460257411003113,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,29038,Aston Villa,Leeds,1,1,2026-02-21 15:00:00,Jayden Bogle,Cross,Lukas Nmecha
+675598,34,SavedShot,0.740999984741211,0.6580000305175782,0.016236228868365288,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,29083,Leeds,Brentford,0,0,2026-03-21 20:00:00,Pascal Struijk,Pass,Lukas Nmecha
+679236,100,BlockedShot,0.8880000305175781,0.5209999847412109,0.11799880862236023,Lukas Nmecha,h,6544,OpenPlay,2025,LeftFoot,29103,Leeds,Wolverhampton Wanderers,3,0,2026-04-18 14:00:00,Sean Longstaff,Pass,Lukas Nmecha
+680371,65,MissedShots,0.89,0.5920000076293945,0.06615686416625977,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Gabriel Gudmundsson,Cross,Lukas Nmecha
+680372,66,BlockedShot,0.9359999847412109,0.6790000152587891,0.07865459471940994,Lukas Nmecha,a,6544,OpenPlay,2025,LeftFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Brenden Aaronson,TakeOn,Lukas Nmecha
+680373,67,BlockedShot,0.924000015258789,0.405,0.07694705575704575,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Brenden Aaronson,BallTouch,Lukas Nmecha
+680383,92,ShotOnPost,0.93,0.495,0.4556431770324707,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,29108,Bournemouth,Leeds,2,2,2026-04-22 19:00:00,Wilfried Gnonto,Cross,Lukas Nmecha
+682010,73,SavedShot,0.9269999694824219,0.54,0.13811931014060974,Lukas Nmecha,h,6544,OpenPlay,2025,RightFoot,29124,Leeds,Burnley,3,1,2026-05-01 19:00:00,Jayden Bogle,Cross,Lukas Nmecha
+684819,74,SavedShot,0.8780000305175781,0.549000015258789,0.08473948389291763,Lukas Nmecha,a,6544,OpenPlay,2025,RightFoot,29136,Tottenham,Leeds,1,1,2026-05-11 19:00:00,,None,Lukas Nmecha

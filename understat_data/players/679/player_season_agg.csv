@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,FWL,27,2,17,1598,2.815946187824011,0,0.13176919892430305,5,2015,Aston Villa,0,0,1,2.054780151695013,3.5370405688881874,1.5768062099814415,679,Scott Sinclair
+season,Sub,9,1,7,456,1.0023591704666615,0,0.10503850132226944,2,2014,Aston Villa,0,0,1,1.0023591704666615,1.437374621629715,0.49952301383018494,679,Scott Sinclair
+season,Sub,2,0,0,2,0,0,0,0,2014,Manchester City,0,0,0,0,0,0,679,Scott Sinclair

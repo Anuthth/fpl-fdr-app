@@ -1,0 +1,20 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+584710,97,BlockedShot,0.79,0.605,0.0156412236392498,Jack Taylor,h,12754,FromCorner,2024,RightFoot,26603,Ipswich,Liverpool,0,2,2024-08-17 11:30:00,,Aerial,Jack Taylor
+594567,92,SavedShot,0.7669999694824219,0.45799999237060546,0.02697083353996277,Jack Taylor,h,12754,FromCorner,2024,RightFoot,26659,Ipswich,Aston Villa,2,2,2024-09-29 13:00:00,Leif Davis,Pass,Jack Taylor
+595515,93,MissedShots,0.7580000305175781,0.6580000305175782,0.013008230365812778,Jack Taylor,a,12754,OpenPlay,2024,RightFoot,26665,West Ham,Ipswich,4,1,2024-10-05 14:00:00,Leif Davis,Pass,Jack Taylor
+597153,89,SavedShot,0.7319999694824219,0.6569999694824219,0.010182155296206474,Jack Taylor,h,12754,OpenPlay,2024,RightFoot,26674,Ipswich,Everton,0,2,2024-10-19 14:00:00,Leif Davis,TakeOn,Jack Taylor
+597154,90,MissedShots,0.914000015258789,0.5129999923706055,0.12675441801548004,Jack Taylor,h,12754,OpenPlay,2024,Head,26674,Ipswich,Everton,0,2,2024-10-19 14:00:00,Omari Hutchinson,Cross,Jack Taylor
+604135,83,MissedShots,0.7530000305175781,0.7040000152587891,0.015013577416539192,Jack Taylor,a,12754,OpenPlay,2024,RightFoot,26728,Nottingham Forest,Ipswich,1,0,2024-11-30 15:00:00,Jack Clarke,Pass,Jack Taylor
+606267,3,BlockedShot,0.715999984741211,0.54,0.014725876040756702,Jack Taylor,h,12754,OpenPlay,2024,RightFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,Leif Davis,BallTouch,Jack Taylor
+606270,14,MissedShots,0.76,0.6990000152587891,0.014193174429237843,Jack Taylor,h,12754,FromCorner,2024,RightFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,,None,Jack Taylor
+606274,25,SavedShot,0.855,0.6669999694824219,0.03324175998568535,Jack Taylor,h,12754,FromCorner,2024,LeftFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,,None,Jack Taylor
+606298,85,BlockedShot,0.745999984741211,0.3870000076293945,0.00978710874915123,Jack Taylor,h,12754,SetPiece,2024,RightFoot,26750,Ipswich,Bournemouth,1,2,2024-12-08 14:00:00,,Aerial,Jack Taylor
+606990,93,Goal,0.9330000305175781,0.47400001525878904,0.059094805270433426,Jack Taylor,a,12754,FromCorner,2024,Head,26758,Wolverhampton Wanderers,Ipswich,1,2,2024-12-14 15:00:00,Jack Clarke,Aerial,Jack Taylor
+609280,89,BlockedShot,0.7180000305175781,0.6459999847412109,0.014481916092336178,Jack Taylor,a,12754,OpenPlay,2024,RightFoot,26773,Arsenal,Ipswich,1,0,2024-12-27 20:15:00,Jacob Greaves,Pass,Jack Taylor
+619608,72,MissedShots,0.8180000305175781,0.625999984741211,0.027203593403100967,Jack Taylor,a,12754,FromCorner,2024,RightFoot,26871,Manchester United,Ipswich,3,2,2025-02-26 19:30:00,Jaden Philogene-Bidace,Pass,Jack Taylor
+625133,80,MissedShots,0.735,0.485,0.01949102245271206,Jack Taylor,a,12754,OpenPlay,2024,RightFoot,26896,Bournemouth,Ipswich,1,2,2025-04-02 19:45:00,Jack Clarke,Pass,Jack Taylor
+627666,94,MissedShots,0.9580000305175781,0.315,0.054279327392578125,Jack Taylor,a,12754,OpenPlay,2024,RightFoot,26915,Chelsea,Ipswich,2,2,2025-04-13 13:00:00,,None,Jack Taylor
+629070,63,BlockedShot,0.9309999847412109,0.654000015258789,0.0589325986802578,Jack Taylor,h,12754,SetPiece,2024,RightFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,Cameron Burgess,Pass,Jack Taylor
+629080,93,MissedShots,0.7280000305175781,0.664000015258789,0.03865896910429001,Jack Taylor,h,12754,OpenPlay,2024,RightFoot,26927,Ipswich,Arsenal,0,4,2025-04-20 13:00:00,,TakeOn,Jack Taylor
+632761,28,BlockedShot,0.7180000305175781,0.48900001525878906,0.017556093633174896,Jack Taylor,h,12754,OpenPlay,2024,LeftFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Sam Morsy,Pass,Jack Taylor
+632764,38,MissedShots,0.7140000152587891,0.5729999923706055,0.016485603526234627,Jack Taylor,h,12754,OpenPlay,2024,RightFoot,26954,Ipswich,Brentford,0,1,2025-05-10 14:00:00,Julio Enciso,Pass,Jack Taylor

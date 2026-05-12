@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,2,0,0,9,0,0,0,0,2016,Burnley,0,0,0,0,0,0,1664,Lukas Jutkiewicz
+season,FW,25,0,36,964,2.712885083630681,2,2.159586887806654,13,2014,Burnley,1,0,0,2.712885083630681,5.238463964313269,0.4036131910979748,1664,Lukas Jutkiewicz

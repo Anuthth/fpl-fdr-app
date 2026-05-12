@@ -1,0 +1,3 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,MC,7,0,3,374,0.14500059932470322,0,0.015224199742078781,1,2015,Norwich,1,0,0,0.14500059932470322,0.38622619584202766,0.24410509504377842,797,Youssouf Mulumbu
+season,MC,17,0,12,900,0.47653509862720966,0,0.3007141947746277,5,2014,West Bromwich Albion,1,1,0,0.47653509862720966,1.8632659167051315,1.7142265252768993,797,Youssouf Mulumbu

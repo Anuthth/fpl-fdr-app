@@ -1,0 +1,115 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+429284,89,MissedShots,0.86,0.40400001525878904,0.3371869921684265,Amadou Onana,h,9667,OpenPlay,2021,RightFoot,17860,Lille,Montpellier,2,1,2021-08-29 15:00:00,Domagoj Bradaric,Pass,Amadou Onana
+448071,90,BlockedShot,0.919000015258789,0.6270000076293946,0.06653250008821487,Amadou Onana,h,9667,OpenPlay,2021,RightFoot,17995,Lille,Lyon,0,0,2021-12-12 12:00:00,Burak Yilmaz,Chipped,Amadou Onana
+454705,75,MissedShots,0.754000015258789,0.4470000076293945,0.020433999598026276,Amadou Onana,a,9667,OpenPlay,2021,RightFoot,18034,Brest,Lille,2,0,2022-01-22 16:00:00,,BallRecovery,Amadou Onana
+456392,7,MissedShots,0.905,0.4829999923706055,0.026904800906777382,Amadou Onana,h,9667,FromCorner,2021,Head,18044,Lille,Paris Saint Germain,1,5,2022-02-06 19:45:00,Jonathan Bamba,Aerial,Amadou Onana
+456394,10,SavedShot,0.8230000305175781,0.524000015258789,0.019414199516177177,Amadou Onana,h,9667,OpenPlay,2021,RightFoot,18044,Lille,Paris Saint Germain,1,5,2022-02-06 19:45:00,,Aerial,Amadou Onana
+461768,83,SavedShot,0.7919999694824219,0.41200000762939454,0.03434929996728897,Amadou Onana,h,9667,OpenPlay,2021,RightFoot,18087,Lille,Clermont Foot,4,0,2022-03-06 16:05:00,,None,Amadou Onana
+462254,47,MissedShots,0.9359999847412109,0.5279999923706055,0.5892869830131531,Amadou Onana,h,9667,OpenPlay,2021,Head,18095,Lille,Saint-Etienne,0,0,2022-03-11 20:00:00,Gabriel Gudmundsson,Cross,Amadou Onana
+464252,40,Goal,0.9740000152587891,0.45599998474121095,0.6835240125656128,Amadou Onana,a,9667,FromCorner,2021,RightFoot,18111,Nantes,Lille,0,1,2022-03-19 20:00:00,,Rebound,Amadou Onana
+465472,2,MissedShots,0.9830000305175781,0.509000015258789,0.9628390073776245,Amadou Onana,h,9667,SetPiece,2021,LeftFoot,18113,Lille,Bordeaux,0,0,2022-04-02 17:00:00,,Rebound,Amadou Onana
+465475,14,MissedShots,0.7190000152587891,0.595999984741211,0.01496409997344017,Amadou Onana,h,9667,OpenPlay,2021,LeftFoot,18113,Lille,Bordeaux,0,0,2022-04-02 17:00:00,Isaac Lihadji,Pass,Amadou Onana
+465487,69,BlockedShot,0.9019999694824219,0.41700000762939454,0.014943700283765793,Amadou Onana,h,9667,FromCorner,2021,Head,18113,Lille,Bordeaux,0,0,2022-04-02 17:00:00,Jonathan Bamba,Aerial,Amadou Onana
+465494,94,SavedShot,0.9069999694824219,0.5070000076293946,0.29701900482177734,Amadou Onana,h,9667,OpenPlay,2021,OtherBodyPart,18113,Lille,Bordeaux,0,0,2022-04-02 17:00:00,Hatem Ben Arfa,Chipped,Amadou Onana
+467356,91,MissedShots,0.889000015258789,0.5159999847412109,0.035128798335790634,Amadou Onana,a,9667,OpenPlay,2021,Head,18122,Angers,Lille,1,1,2022-04-10 13:00:00,Jonathan Bamba,Aerial,Amadou Onana
+469233,59,SavedShot,0.9380000305175781,0.3659999847412109,0.09831909835338593,Amadou Onana,a,9667,OpenPlay,2021,RightFoot,18149,Reims,Lille,2,1,2022-04-20 17:00:00,Mehmet Zeki Çelik,Pass,Amadou Onana
+476073,49,SavedShot,0.7669999694824219,0.4759999847412109,0.023709699511528015,Amadou Onana,a,9667,OpenPlay,2021,RightFoot,18187,Nice,Lille,1,3,2022-05-14 19:00:00,Jonathan Christian David,Pass,Amadou Onana
+480140,95,BlockedShot,0.9269999694824219,0.5420000076293945,0.08984590321779251,Amadou Onana,a,9667,OpenPlay,2022,LeftFoot,18212,Aston Villa,Everton,2,1,2022-08-13 11:30:00,Salomón Rondón,HeadPass,Amadou Onana
+481810,64,MissedShots,0.7280000305175781,0.605999984741211,0.013713600113987923,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18224,Everton,Nottingham Forest,1,1,2022-08-20 14:00:00,Demarai Gray,Pass,Amadou Onana
+484957,78,BlockedShot,0.9719999694824218,0.46599998474121096,0.48652300238609314,Amadou Onana,a,9667,FromCorner,2022,LeftFoot,18245,Leeds,Everton,1,1,2022-08-30 19:00:00,James Tarkowski,BallTouch,Amadou Onana
+485628,5,MissedShots,0.9490000152587891,0.6859999847412109,0.06101129949092865,Amadou Onana,h,9667,OpenPlay,2022,LeftFoot,18252,Everton,Liverpool,0,0,2022-09-03 11:30:00,Neal Maupay,Pass,Amadou Onana
+489337,11,MissedShots,0.93,0.5459999847412109,0.13018399477005005,Amadou Onana,h,9667,SetPiece,2022,Head,18277,Everton,West Ham,1,0,2022-09-18 13:15:00,Demarai Gray,Cross,Amadou Onana
+490125,56,MissedShots,0.924000015258789,0.51,0.3872300088405609,Amadou Onana,a,9667,OpenPlay,2022,Head,18290,Southampton,Everton,1,2,2022-10-01 14:00:00,Seamus Coleman,Cross,Amadou Onana
+492503,67,BlockedShot,0.740999984741211,0.735,0.012330099940299988,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18297,Everton,Manchester United,1,2,2022-10-09 18:00:00,,BallRecovery,Amadou Onana
+492505,70,MissedShots,0.9180000305175782,0.4279999923706055,0.020250799134373665,Amadou Onana,h,9667,FromCorner,2022,Head,18297,Everton,Manchester United,1,2,2022-10-09 18:00:00,Demarai Gray,Aerial,Amadou Onana
+492508,89,MissedShots,0.9169999694824219,0.49700000762939456,0.04853320121765137,Amadou Onana,h,9667,OpenPlay,2022,Head,18297,Everton,Manchester United,1,2,2022-10-09 18:00:00,Demarai Gray,Aerial,Amadou Onana
+493273,42,MissedShots,0.8730000305175781,0.5979999923706054,0.3518519997596741,Amadou Onana,a,9667,OpenPlay,2022,LeftFoot,18310,Tottenham,Everton,2,0,2022-10-15 16:30:00,,None,Amadou Onana
+495045,52,BlockedShot,0.82,0.6509999847412109,0.05251000076532364,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18324,Everton,Crystal Palace,3,0,2022-10-22 14:00:00,,BallRecovery,Amadou Onana
+496801,58,MissedShots,0.8769999694824219,0.36,0.061228398233652115,Amadou Onana,a,9667,SetPiece,2022,RightFoot,18337,Fulham,Everton,0,0,2022-10-29 16:30:00,James Tarkowski,HeadPass,Amadou Onana
+498270,40,MissedShots,0.92,0.495,0.04694090038537979,Amadou Onana,h,9667,FromCorner,2022,Head,18344,Everton,Leicester,0,2,2022-11-05 17:30:00,Dwight McNeil,Aerial,Amadou Onana
+498279,57,MissedShots,0.8690000152587891,0.5820000076293945,0.06729470193386078,Amadou Onana,h,9667,SetPiece,2022,RightFoot,18344,Everton,Leicester,0,2,2022-11-05 17:30:00,,None,Amadou Onana
+500199,32,MissedShots,0.8859999847412109,0.5420000076293945,0.03583189845085144,Amadou Onana,a,9667,OpenPlay,2022,Head,18352,Bournemouth,Everton,3,0,2022-11-12 15:00:00,Conor Coady,Aerial,Amadou Onana
+501728,67,BlockedShot,0.7269999694824218,0.5,0.016488200053572655,Amadou Onana,a,9667,OpenPlay,2022,RightFoot,18376,Manchester City,Everton,1,1,2022-12-31 15:00:00,Idrissa Gueye,Pass,Amadou Onana
+503605,24,MissedShots,0.7319999694824219,0.3370000076293945,0.018502000719308853,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18396,Everton,Southampton,1,2,2023-01-14 15:00:00,James Tarkowski,Pass,Amadou Onana
+503609,38,Goal,0.924000015258789,0.5320000076293945,0.10118299722671509,Amadou Onana,h,9667,FromCorner,2022,Head,18396,Everton,Southampton,1,2,2023-01-14 15:00:00,Demarai Gray,Cross,Amadou Onana
+503610,40,SavedShot,0.9340000152587891,0.6619999694824219,0.02344360016286373,Amadou Onana,h,9667,SetPiece,2022,Head,18396,Everton,Southampton,1,2,2023-01-14 15:00:00,Demarai Gray,Chipped,Amadou Onana
+506885,25,SavedShot,0.73,0.49700000762939456,0.01721380092203617,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18416,Everton,Arsenal,1,0,2023-02-04 12:30:00,Abdoulaye Doucouré,BallTouch,Amadou Onana
+509679,4,MissedShots,0.7680000305175781,0.615999984741211,0.01219560019671917,Amadou Onana,h,9667,OpenPlay,2022,LeftFoot,18436,Everton,Leeds,1,0,2023-02-18 15:00:00,,Aerial,Amadou Onana
+509683,29,MissedShots,0.8230000305175781,0.49700000762939456,0.0660594031214714,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18436,Everton,Leeds,1,0,2023-02-18 15:00:00,Idrissa Gueye,Pass,Amadou Onana
+509689,37,MissedShots,0.97,0.42900001525878906,0.05794069916009903,Amadou Onana,h,9667,FromCorner,2022,OtherBodyPart,18436,Everton,Leeds,1,0,2023-02-18 15:00:00,Alex Iwobi,Aerial,Amadou Onana
+510819,33,SavedShot,0.93,0.504000015258789,0.07241419702768326,Amadou Onana,h,9667,OpenPlay,2022,Head,18444,Everton,Aston Villa,0,2,2023-02-25 15:00:00,Vitalii Mykolenko,Aerial,Amadou Onana
+513468,19,MissedShots,0.905,0.5579999923706055,0.4401170015335083,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18464,Everton,Brentford,1,0,2023-03-11 15:00:00,,None,Amadou Onana
+513474,33,MissedShots,0.899000015258789,0.4759999847412109,0.11490900069475174,Amadou Onana,h,9667,FromCorner,2022,RightFoot,18464,Everton,Brentford,1,0,2023-03-11 15:00:00,,Rebound,Amadou Onana
+515205,67,MissedShots,0.904000015258789,0.4909999847412109,0.025441499426960945,Amadou Onana,a,9667,FromCorner,2022,Head,18476,Chelsea,Everton,2,2,2023-03-18 17:30:00,Demarai Gray,Aerial,Amadou Onana
+517366,16,BlockedShot,0.754000015258789,0.4759999847412109,0.021172400563955307,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18487,Everton,Tottenham,1,1,2023-04-03 19:00:00,,None,Amadou Onana
+517369,37,SavedShot,0.7119999694824218,0.4329999923706055,0.014630899764597416,Amadou Onana,h,9667,OpenPlay,2022,LeftFoot,18487,Everton,Tottenham,1,1,2023-04-03 19:00:00,Idrissa Gueye,Pass,Amadou Onana
+517372,51,SavedShot,0.774000015258789,0.345,0.0175378005951643,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18487,Everton,Tottenham,1,1,2023-04-03 19:00:00,Demarai Gray,Pass,Amadou Onana
+517745,10,MissedShots,0.94,0.500999984741211,0.13519999384880066,Amadou Onana,a,9667,SetPiece,2022,Head,18498,Manchester United,Everton,2,0,2023-04-08 11:30:00,Demarai Gray,Cross,Amadou Onana
+522324,63,MissedShots,0.755,0.674000015258789,0.015287371352314949,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18522,Everton,Newcastle United,1,4,2023-04-27 18:45:00,Dominic Calvert-Lewin,BallTouch,Amadou Onana
+529791,22,MissedShots,0.9330000305175781,0.39799999237060546,0.0343756265938282,Amadou Onana,h,9667,OpenPlay,2022,Head,18577,Everton,Bournemouth,1,0,2023-05-28 15:30:00,Dwight McNeil,Aerial,Amadou Onana
+529796,40,MissedShots,0.7069999694824218,0.5129999923706055,0.015343902632594109,Amadou Onana,h,9667,OpenPlay,2022,RightFoot,18577,Everton,Bournemouth,1,0,2023-05-28 15:30:00,Abdoulaye Doucouré,Pass,Amadou Onana
+532087,40,SavedShot,0.850999984741211,0.3,0.026149267330765724,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22279,Everton,Fulham,0,1,2023-08-12 14:00:00,Alex Iwobi,Chipped,Amadou Onana
+534649,7,BlockedShot,0.805,0.51,0.05111025273799896,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22299,Everton,Wolverhampton Wanderers,0,1,2023-08-26 14:00:00,,Dispossessed,Amadou Onana
+535945,13,BlockedShot,0.9109999847412109,0.5790000152587891,0.02660469524562359,Amadou Onana,a,9667,FromCorner,2023,Head,21926,Sheffield United,Everton,2,2,2023-09-02 11:30:00,Ashley Young,Goal,Amadou Onana
+539265,16,MissedShots,0.9,0.6609999847412109,0.007734175771474838,Amadou Onana,a,9667,SetPiece,2023,Head,21949,Brentford,Everton,1,3,2023-09-23 16:30:00,James Garner,Aerial,Amadou Onana
+539280,56,MissedShots,0.975999984741211,0.5790000152587891,0.05897397920489311,Amadou Onana,a,9667,SetPiece,2023,Head,21949,Brentford,Everton,1,3,2023-09-23 16:30:00,James Tarkowski,Aerial,Amadou Onana
+541115,14,MissedShots,0.8290000152587891,0.68,0.033691633492708206,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,21956,Everton,Luton,1,2,2023-09-30 14:00:00,Vitalii Mykolenko,Pass,Amadou Onana
+541125,39,MissedShots,0.750999984741211,0.3820000076293945,0.01421452034264803,Amadou Onana,h,9667,OpenPlay,2023,LeftFoot,21956,Everton,Luton,1,2,2023-09-30 14:00:00,Ashley Young,Pass,Amadou Onana
+541126,40,SavedShot,0.9540000152587891,0.5170000076293946,0.5853829383850098,Amadou Onana,h,9667,SetPiece,2023,RightFoot,21956,Everton,Luton,1,2,2023-09-30 14:00:00,James Garner,Chipped,Amadou Onana
+542653,46,MissedShots,0.9119999694824219,0.5309999847412109,0.12428011000156403,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,,None,Amadou Onana
+542665,74,BlockedShot,0.9730000305175781,0.6170000076293946,0.011679122224450111,Amadou Onana,h,9667,FromCorner,2023,Head,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,Dwight McNeil,Aerial,Amadou Onana
+542666,74,SavedShot,0.9730000305175781,0.62,0.07366886734962463,Amadou Onana,h,9667,FromCorner,2023,RightFoot,21969,Everton,Bournemouth,3,0,2023-10-07 14:00:00,,Rebound,Amadou Onana
+543720,25,MissedShots,0.42200000762939455,0.5220000076293946,0.006652131211012602,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,21979,Liverpool,Everton,2,0,2023-10-21 11:30:00,Dominic Calvert-Lewin,BallRecovery,Amadou Onana
+543738,75,MissedShots,0.750999984741211,0.6759999847412109,0.014172572642564774,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,21979,Liverpool,Everton,2,0,2023-10-21 11:30:00,Beto,Tackle,Amadou Onana
+545871,46,MissedShots,0.9169999694824219,0.4520000076293945,0.05121612176299095,Amadou Onana,a,9667,OpenPlay,2023,Head,21993,West Ham,Everton,0,1,2023-10-29 13:00:00,Dwight McNeil,Aerial,Amadou Onana
+554439,18,Goal,0.97,0.5259999847412109,0.5250668525695801,Amadou Onana,a,9667,FromCorner,2023,Head,22058,Burnley,Everton,0,2,2023-12-16 17:30:00,Dwight McNeil,Aerial,Amadou Onana
+556194,39,MissedShots,0.855999984741211,0.4179999923706055,0.07806877791881561,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,22071,Tottenham,Everton,2,1,2023-12-23 15:00:00,Dominic Calvert-Lewin,Pass,Amadou Onana
+556959,1,MissedShots,0.6559999847412109,0.6170000076293946,0.011064611375331879,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,22094,Wolverhampton Wanderers,Everton,3,0,2023-12-30 15:00:00,Dominic Calvert-Lewin,BallRecovery,Amadou Onana
+558447,96,MissedShots,0.7630000305175781,0.6229999923706054,0.02136622555553913,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22098,Everton,Aston Villa,0,0,2024-01-14 14:00:00,,BallRecovery,Amadou Onana
+564775,78,BlockedShot,0.7619999694824219,0.38799999237060545,0.011049247346818447,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22137,Everton,Crystal Palace,1,1,2024-02-19 20:00:00,,Aerial,Amadou Onana
+564778,83,Goal,0.965,0.549000015258789,0.4619665741920471,Amadou Onana,h,9667,FromCorner,2023,Head,22137,Everton,Crystal Palace,1,1,2024-02-19 20:00:00,Dwight McNeil,Cross,Amadou Onana
+566566,22,BlockedShot,0.6880000305175781,0.42700000762939455,0.009538056328892708,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22157,Everton,West Ham,1,3,2024-03-02 15:00:00,Abdoulaye Doucouré,None,Amadou Onana
+566590,85,MissedShots,0.7219999694824218,0.48700000762939455,0.014859612099826336,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22157,Everton,West Ham,1,3,2024-03-02 15:00:00,James Garner,Pass,Amadou Onana
+567763,24,MissedShots,0.8630000305175781,0.34700000762939454,0.04830984026193619,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,22172,Manchester United,Everton,2,0,2024-03-09 12:30:00,,Rebound,Amadou Onana
+567784,76,SavedShot,0.825999984741211,0.5370000076293945,0.051457084715366364,Amadou Onana,a,9667,SetPiece,2023,RightFoot,22172,Manchester United,Everton,2,0,2024-03-09 12:30:00,,None,Amadou Onana
+570694,71,MissedShots,0.7609999847412109,0.6719999694824219,0.015842242166399956,Amadou Onana,a,9667,OpenPlay,2023,RightFoot,22185,Bournemouth,Everton,2,1,2024-03-30 15:00:00,,None,Amadou Onana
+574591,49,MissedShots,0.9230000305175782,0.6029999923706054,0.03725789487361908,Amadou Onana,a,9667,FromCorner,2023,Head,22219,Chelsea,Everton,6,0,2024-04-15 19:00:00,Dwight McNeil,Cross,Amadou Onana
+578150,69,BlockedShot,0.9009999847412109,0.4809999847412109,0.07560017704963684,Amadou Onana,a,9667,FromCorner,2023,RightFoot,22252,Luton,Everton,1,1,2024-05-03 19:00:00,Jack Harrison,Cross,Amadou Onana
+579817,5,BlockedShot,0.7730000305175782,0.5570000076293945,0.028143346309661865,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,,None,Amadou Onana
+579826,50,BlockedShot,0.835999984741211,0.4420000076293945,0.07831696420907974,Amadou Onana,h,9667,OpenPlay,2023,RightFoot,22257,Everton,Sheffield United,1,0,2024-05-11 14:00:00,Idrissa Gueye,Pass,Amadou Onana
+584850,3,Goal,0.9730000305175781,0.5429999923706055,0.520675003528595,Amadou Onana,a,9667,FromCorner,2024,Head,26608,West Ham,Aston Villa,1,2,2024-08-17 16:30:00,Youri Tielemans,Cross,Amadou Onana
+586306,53,BlockedShot,0.8059999847412109,0.5029999923706054,0.05763914808630943,Amadou Onana,h,9667,OpenPlay,2024,RightFoot,26618,Aston Villa,Arsenal,0,2,2024-08-24 16:30:00,Morgan Rogers,Pass,Amadou Onana
+586309,57,MissedShots,0.894000015258789,0.500999984741211,0.054350513964891434,Amadou Onana,h,9667,FromCorner,2024,Head,26618,Aston Villa,Arsenal,0,2,2024-08-24 16:30:00,Youri Tielemans,Cross,Amadou Onana
+589236,23,BlockedShot,0.8669999694824219,0.39299999237060546,0.06682323664426804,Amadou Onana,a,9667,OpenPlay,2024,RightFoot,26626,Leicester,Aston Villa,1,2,2024-08-31 14:00:00,,None,Amadou Onana
+589238,27,Goal,0.955,0.5320000076293945,0.598831295967102,Amadou Onana,a,9667,SetPiece,2024,LeftFoot,26626,Leicester,Aston Villa,1,2,2024-08-31 14:00:00,Ollie Watkins,None,Amadou Onana
+589241,45,BlockedShot,0.8369999694824218,0.33299999237060546,0.054367758333683014,Amadou Onana,a,9667,OpenPlay,2024,RightFoot,26626,Leicester,Aston Villa,1,2,2024-08-31 14:00:00,,None,Amadou Onana
+598431,22,SavedShot,0.9580000305175781,0.43,0.37544137239456177,Amadou Onana,h,9667,SetPiece,2024,Head,26684,Aston Villa,Bournemouth,1,1,2024-10-26 14:00:00,Lucas Digne,Chipped,Amadou Onana
+598432,22,MissedShots,0.9580000305175781,0.5929999923706055,0.06712299585342407,Amadou Onana,h,9667,FromCorner,2024,Head,26684,Aston Villa,Bournemouth,1,1,2024-10-26 14:00:00,Youri Tielemans,Cross,Amadou Onana
+600554,29,ShotOnPost,0.919000015258789,0.44299999237060544,0.03504663705825806,Amadou Onana,a,9667,FromCorner,2024,Head,26700,Tottenham,Aston Villa,4,1,2024-11-03 14:00:00,Lucas Digne,Aerial,Amadou Onana
+600567,77,MissedShots,0.7709999847412109,0.32,0.021196279674768448,Amadou Onana,a,9667,OpenPlay,2024,LeftFoot,26700,Tottenham,Aston Villa,4,1,2024-11-03 14:00:00,Youri Tielemans,Pass,Amadou Onana
+601743,36,SavedShot,0.955,0.44599998474121094,0.1259995698928833,Amadou Onana,a,9667,FromCorner,2024,Head,26707,Liverpool,Aston Villa,2,0,2024-11-09 20:00:00,Lucas Digne,Cross,Amadou Onana
+608138,2,MissedShots,0.955,0.49900001525878906,0.4155847430229187,Amadou Onana,h,9667,FromCorner,2024,Head,26762,Aston Villa,Manchester City,2,1,2024-12-21 12:30:00,Youri Tielemans,Aerial,Amadou Onana
+611627,3,BlockedShot,0.749000015258789,0.4909999847412109,0.019710715860128403,Amadou Onana,a,9667,OpenPlay,2024,LeftFoot,26804,Everton,Aston Villa,0,1,2025-01-15 19:30:00,Youri Tielemans,Pass,Amadou Onana
+611629,6,MissedShots,0.7280000305175781,0.45099998474121095,0.017835460603237152,Amadou Onana,a,9667,OpenPlay,2024,RightFoot,26804,Everton,Aston Villa,0,1,2025-01-15 19:30:00,Youri Tielemans,Pass,Amadou Onana
+627169,46,SavedShot,0.7240000152587891,0.30700000762939456,0.013683890923857689,Amadou Onana,a,9667,OpenPlay,2024,RightFoot,26921,Southampton,Aston Villa,0,3,2025-04-12 14:00:00,Youri Tielemans,Pass,Amadou Onana
+628794,74,Goal,0.805,0.580999984741211,0.053990572690963745,Amadou Onana,h,9667,OpenPlay,2024,RightFoot,26922,Aston Villa,Newcastle United,4,1,2025-04-19 16:30:00,Morgan Rogers,Pass,Amadou Onana
+629591,43,MissedShots,0.9480000305175781,0.5029999923706054,0.07971290498971939,Amadou Onana,a,9667,FromCorner,2024,Head,26937,Manchester City,Aston Villa,2,1,2025-04-22 19:00:00,Marcus Rashford,Aerial,Amadou Onana
+638850,56,BlockedShot,0.8530000305175781,0.5479999923706055,0.08094324171543121,Amadou Onana,a,9667,OpenPlay,2025,RightFoot,28790,Brentford,Aston Villa,1,0,2025-08-23 14:00:00,Ollie Watkins,Pass,Amadou Onana
+638851,59,SavedShot,0.730999984741211,0.45099998474121095,0.01685994677245617,Amadou Onana,a,9667,OpenPlay,2025,LeftFoot,28790,Brentford,Aston Villa,1,0,2025-08-23 14:00:00,John McGinn,Pass,Amadou Onana
+652698,39,Goal,0.7709999847412109,0.610999984741211,0.03576555475592613,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,28878,Aston Villa,Bournemouth,4,0,2025-11-09 14:00:00,,None,Amadou Onana
+656274,59,Goal,0.9830000305175781,0.45799999237060546,0.5844365358352661,Amadou Onana,a,9667,FromCorner,2025,Head,28910,Brighton,Aston Villa,3,4,2025-12-03 19:30:00,Matthew Cash,Cross,Amadou Onana
+656277,68,MissedShots,0.7319999694824219,0.48900001525878906,0.021345781162381172,Amadou Onana,a,9667,OpenPlay,2025,LeftFoot,28910,Brighton,Aston Villa,3,4,2025-12-03 19:30:00,Boubacar Kamara,Pass,Amadou Onana
+668264,17,BlockedShot,0.73,0.6430000305175781,0.013804283924400806,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29028,Aston Villa,Brighton,1,0,2026-02-11 19:30:00,Emiliano Buendía,Pass,Amadou Onana
+668269,32,MissedShots,0.6980000305175781,0.5990000152587891,0.012020123191177845,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29028,Aston Villa,Brighton,1,0,2026-02-11 19:30:00,Douglas Luiz,Pass,Amadou Onana
+668273,48,MissedShots,0.710999984741211,0.40799999237060547,0.014520546421408653,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29028,Aston Villa,Brighton,1,0,2026-02-11 19:30:00,Douglas Luiz,Pass,Amadou Onana
+669781,45,SavedShot,0.9569999694824218,0.44799999237060545,0.524814248085022,Amadou Onana,h,9667,FromCorner,2025,RightFoot,29038,Aston Villa,Leeds,1,1,2026-02-21 15:00:00,Tyrone Mings,HeadPass,Amadou Onana
+670785,58,MissedShots,0.909000015258789,0.5070000076293946,0.07991933822631836,Amadou Onana,a,9667,FromCorner,2025,Head,29057,Wolverhampton Wanderers,Aston Villa,2,0,2026-02-27 20:00:00,Douglas Luiz,Cross,Amadou Onana
+670793,84,MissedShots,0.9309999847412109,0.40700000762939453,0.017309749498963356,Amadou Onana,a,9667,FromCorner,2025,Head,29057,Wolverhampton Wanderers,Aston Villa,2,0,2026-02-27 20:00:00,Matthew Cash,Aerial,Amadou Onana
+670797,96,BlockedShot,0.9480000305175781,0.40599998474121096,0.41089358925819397,Amadou Onana,a,9667,OpenPlay,2025,RightFoot,29057,Wolverhampton Wanderers,Aston Villa,2,0,2026-02-27 20:00:00,,Rebound,Amadou Onana
+674442,62,SavedShot,0.9019999694824219,0.41200000762939454,0.07376103848218918,Amadou Onana,a,9667,OpenPlay,2025,RightFoot,29074,Manchester United,Aston Villa,3,1,2026-03-15 14:00:00,,None,Amadou Onana
+675889,19,MissedShots,0.8959999847412109,0.46,0.2996743619441986,Amadou Onana,h,9667,OpenPlay,2025,Head,29079,Aston Villa,West Ham,2,0,2026-03-22 14:15:00,Jadon Sancho,Chipped,Amadou Onana
+675895,32,BlockedShot,0.8419999694824218,0.3559999847412109,0.06750617921352386,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29079,Aston Villa,West Ham,2,0,2026-03-22 14:15:00,Morgan Rogers,Pass,Amadou Onana
+675907,58,MissedShots,0.725999984741211,0.44400001525878907,0.01812560483813286,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29079,Aston Villa,West Ham,2,0,2026-03-22 14:15:00,John McGinn,Pass,Amadou Onana
+678277,60,SavedShot,0.74,0.4159999847412109,0.019457919523119926,Amadou Onana,a,9667,OpenPlay,2025,RightFoot,29089,Nottingham Forest,Aston Villa,1,1,2026-04-12 13:00:00,Morgan Rogers,Pass,Amadou Onana
+679535,14,ShotOnPost,0.95,0.48,0.46900129318237305,Amadou Onana,h,9667,FromCorner,2025,Head,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,John McGinn,Cross,Amadou Onana
+679537,33,BlockedShot,0.7280000305175781,0.3509999847412109,0.012364760041236877,Amadou Onana,h,9667,OpenPlay,2025,RightFoot,29098,Aston Villa,Sunderland,4,3,2026-04-19 13:00:00,John McGinn,Pass,Amadou Onana

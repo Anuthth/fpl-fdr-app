@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,5,0,0,450,0,0,0,0,2024,Bournemouth,0,0,0,0,0.5100627075880766,0.5100627075880766,7582,Mark Travers
+season,GK,4,0,0,360,0,0,0,0,2023,Bournemouth,0,0,0,0,0,0,7582,Mark Travers
+season,GK,12,0,0,1030,0,0,0,0,2022,Bournemouth,0,0,0,0,0.7557743489742279,0.7557743489742279,7582,Mark Travers
+season,GK,1,0,0,90,0,0,0,0,2019,Bournemouth,0,0,0,0,0.019804799929261208,0.019804799929261208,7582,Mark Travers
+season,GK,2,0,0,180,0,0,0,0,2018,Bournemouth,0,0,0,0,0.9676400125026703,0.9676400125026703,7582,Mark Travers

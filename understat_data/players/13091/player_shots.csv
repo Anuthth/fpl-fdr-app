@@ -1,0 +1,15 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+610228,1,SavedShot,0.9159999847412109,0.4209999847412109,0.0356941819190979,Jaydee Canvot,a,13091,SetPiece,2024,Head,28185,Lens,Toulouse,0,1,2025-01-05 14:00:00,,Aerial,Jaydee Canvot
+610235,26,BlockedShot,0.8780000305175781,0.3509999847412109,0.07182762026786804,Jaydee Canvot,a,13091,OpenPlay,2024,RightFoot,28185,Lens,Toulouse,0,1,2025-01-05 14:00:00,Djibril Sidibe,Pass,Jaydee Canvot
+611149,36,BlockedShot,0.784000015258789,0.4879999923706055,0.037522297352552414,Jaydee Canvot,h,13091,OpenPlay,2024,RightFoot,28192,Toulouse,Strasbourg,1,2,2025-01-12 16:15:00,Yann Gboho,Pass,Jaydee Canvot
+631645,6,MissedShots,0.899000015258789,0.5670000076293945,0.015511973761022091,Jaydee Canvot,h,13091,FromCorner,2024,Head,28327,Toulouse,Rennes,2,1,2025-05-03 17:00:00,Aron Dønnum,Aerial,Jaydee Canvot
+633169,49,MissedShots,0.9080000305175782,0.485,0.08118709176778793,Jaydee Canvot,h,13091,FromCorner,2024,Head,28342,Toulouse,Lens,1,1,2025-05-10 19:00:00,Aron Dønnum,Cross,Jaydee Canvot
+637911,46,MissedShots,0.794000015258789,0.41700000762939454,0.03192291781306267,Jaydee Canvot,a,13091,OpenPlay,2025,RightFoot,29541,Nice,Toulouse,0,1,2025-08-16 19:05:00,Noah Edjouma,Pass,Jaydee Canvot
+637915,52,MissedShots,0.8730000305175781,0.2989999961853027,0.06842903047800064,Jaydee Canvot,a,13091,OpenPlay,2025,RightFoot,29541,Nice,Toulouse,0,1,2025-08-16 19:05:00,Noah Edjouma,Pass,Jaydee Canvot
+652813,31,MissedShots,0.8769999694824219,0.47900001525878905,0.0723661407828331,Jaydee Canvot,h,13091,FromCorner,2025,RightFoot,28881,Crystal Palace,Brighton,0,0,2025-11-09 14:00:00,Ismaila Sarr,Pass,Jaydee Canvot
+670211,93,MissedShots,0.9519999694824218,0.509000015258789,0.6156824827194214,Jaydee Canvot,h,13091,FromCorner,2025,RightFoot,29041,Crystal Palace,Wolverhampton Wanderers,1,0,2026-02-22 14:00:00,Daichi Kamada,Rebound,Jaydee Canvot
+672348,89,MissedShots,0.970999984741211,0.5540000152587891,0.09002723544836044,Jaydee Canvot,a,13091,FromCorner,2025,Head,29066,Tottenham,Crystal Palace,1,3,2026-03-05 20:00:00,,None,Jaydee Canvot
+678342,36,MissedShots,0.9569999694824218,0.524000015258789,0.4157769978046417,Jaydee Canvot,h,13091,FromCorner,2025,Head,29096,Crystal Palace,Newcastle United,2,1,2026-04-12 13:00:00,Yeremi Pino,Aerial,Jaydee Canvot
+680004,89,MissedShots,0.7290000152587891,0.5829999923706055,0.018098419532179832,Jaydee Canvot,h,13091,OpenPlay,2025,RightFoot,29101,Crystal Palace,West Ham,0,0,2026-04-20 19:00:00,Maxence Lacroix,Pass,Jaydee Canvot
+684071,50,MissedShots,0.7319999694824219,0.545,0.016121651977300644,Jaydee Canvot,h,13091,OpenPlay,2025,RightFoot,29130,Crystal Palace,Everton,2,2,2026-05-10 13:00:00,,None,Jaydee Canvot
+684077,68,SavedShot,0.9419999694824219,0.4859999847412109,0.33775556087493896,Jaydee Canvot,h,13091,FromCorner,2025,Head,29130,Crystal Palace,Everton,2,2,2026-05-10 13:00:00,Daniel Muñoz,HeadPass,Jaydee Canvot

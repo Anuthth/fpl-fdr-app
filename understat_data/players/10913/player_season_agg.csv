@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,34,0,0,3060,0,0,0.31468600034713745,1,2024,Manchester United,0,0,0,0,5.308094757609069,4.993408787064254,10913,André Onana
+season,GK,38,0,0,3420,0,0,0.13173804059624672,3,2023,Manchester United,5,0,0,0,4.992942536249757,4.861204484477639,10913,André Onana
+season,GK,24,0,0,2160,0,0,0.09796197339892387,3,2022,Inter,1,0,0,0,5.456124410033226,5.393919620662928,10913,André Onana

@@ -1,0 +1,7 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+636448,27,MissedShots,0.9180000305175782,0.42700000762939455,0.03896466642618179,Ayden Heaven,h,13080,SetPiece,2024,Head,26974,Manchester United,Aston Villa,2,0,2025-05-25 15:00:00,,None,Ayden Heaven
+636452,46,BlockedShot,0.779000015258789,0.700999984741211,0.02114502340555191,Ayden Heaven,h,13080,OpenPlay,2024,RightFoot,26974,Manchester United,Aston Villa,2,0,2025-05-25 15:00:00,Bruno Fernandes,Pass,Ayden Heaven
+657815,18,MissedShots,0.870999984741211,0.44799999237060545,0.01559737790375948,Ayden Heaven,a,13080,OpenPlay,2025,Head,28927,Wolverhampton Wanderers,Manchester United,1,4,2025-12-08 20:00:00,Luke Shaw,Aerial,Ayden Heaven
+660690,52,BlockedShot,0.8490000152587891,0.39,0.07318644970655441,Ayden Heaven,h,13080,OpenPlay,2025,LeftFoot,28964,Manchester United,Wolverhampton Wanderers,1,1,2025-12-30 20:15:00,Jack Fletcher,Pass,Ayden Heaven
+662124,12,OwnGoal,0.058000001907348636,0.27600000381469725,0,Ayden Heaven,a,13080,OpenPlay,2025,LeftFoot,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,,None,Ayden Heaven
+662143,56,MissedShots,0.960999984741211,0.45,0.12626928091049194,Ayden Heaven,a,13080,FromCorner,2025,Head,28982,Burnley,Manchester United,2,2,2026-01-07 20:15:00,Bruno Fernandes,Cross,Ayden Heaven

@@ -1,0 +1,24 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+556563,40,MissedShots,0.9119999694824219,0.5029999923706054,0.035428375005722046,Jarell Quansah,a,10187,FromCorner,2023,Head,22079,Burnley,Liverpool,0,2,2023-12-26 17:30:00,Harvey Elliott,Aerial,Jarell Quansah
+562466,70,MissedShots,0.8619999694824219,0.5120000076293946,0.06334652751684189,Jarell Quansah,h,10187,FromCorner,2023,LeftFoot,22128,Liverpool,Burnley,3,1,2024-02-10 15:00:00,Virgil van Dijk,HeadPass,Jarell Quansah
+568721,79,SavedShot,0.8180000305175781,0.28,0.02444472722709179,Jarell Quansah,h,10187,OpenPlay,2023,RightFoot,22171,Liverpool,Manchester City,1,1,2024-03-10 15:45:00,Wataru Endo,Pass,Jarell Quansah
+580913,47,Goal,0.9159999847412109,0.43900001525878907,0.3022225499153137,Jarell Quansah,a,10187,SetPiece,2023,Head,22256,Aston Villa,Liverpool,3,3,2024-05-13 19:00:00,Harvey Elliott,Aerial,Jarell Quansah
+582026,39,Goal,0.9890000152587891,0.5120000076293946,0.9672112464904785,Jarell Quansah,h,10187,FromCorner,2023,RightFoot,22271,Liverpool,Wolverhampton Wanderers,2,0,2024-05-19 15:00:00,,Rebound,Jarell Quansah
+582030,49,SavedShot,0.955,0.4159999847412109,0.03403494134545326,Jarell Quansah,h,10187,FromCorner,2023,Head,22271,Liverpool,Wolverhampton Wanderers,2,0,2024-05-19 15:00:00,Harvey Elliott,Aerial,Jarell Quansah
+627692,87,BlockedShot,0.9219999694824219,0.5520000076293945,0.09152641892433167,Jarell Quansah,h,10187,FromCorner,2024,Head,26916,Liverpool,West Ham,2,1,2025-04-13 13:00:00,Luis Díaz,Cross,Jarell Quansah
+632098,55,OwnGoal,0.03200000047683716,0.5479999923706055,0,Jarell Quansah,a,10187,OpenPlay,2024,OtherBodyPart,26948,Chelsea,Liverpool,3,1,2025-05-04 15:30:00,,Clearance,Jarell Quansah
+638688,5,Goal,0.915,0.5170000076293946,0.3566838204860687,Jarell Quansah,h,10187,SetPiece,2025,Head,30226,Bayer Leverkusen,Hoffenheim,1,2,2025-08-23 13:30:00,Álex Grimaldo,Chipped,Jarell Quansah
+641290,18,SavedShot,0.955,0.514000015258789,0.08630641549825668,Jarell Quansah,h,10187,FromCorner,2025,Head,30242,Bayer Leverkusen,Eintracht Frankfurt,3,1,2025-09-12 18:30:00,Álex Grimaldo,Aerial,Jarell Quansah
+644611,6,SavedShot,0.9259999847412109,0.46799999237060547,0.36947381496429443,Jarell Quansah,a,10187,OpenPlay,2025,Head,30263,St. Pauli,Bayer Leverkusen,1,2,2025-09-27 13:30:00,Ben Seghir,Cross,Jarell Quansah
+653486,93,MissedShots,0.765,0.5170000076293946,0.027046391740441322,Jarell Quansah,a,10187,OpenPlay,2025,LeftFoot,30322,Wolfsburg,Bayer Leverkusen,1,3,2025-11-22 14:30:00,,None,Jarell Quansah
+665980,16,SavedShot,0.7780000305175782,0.3079999923706055,0.023934295400977135,Jarell Quansah,a,10187,OpenPlay,2025,LeftFoot,30397,Eintracht Frankfurt,Bayer Leverkusen,1,3,2026-01-31 14:30:00,Arthur,Pass,Jarell Quansah
+668606,12,Goal,0.96,0.4620000076293945,0.20460739731788635,Jarell Quansah,h,10187,FromCorner,2025,Head,30414,Bayer Leverkusen,St. Pauli,4,0,2026-02-14 14:30:00,Ernest Poku,Goal,Jarell Quansah
+671029,86,MissedShots,0.9180000305175782,0.46,0.03841535374522209,Jarell Quansah,h,10187,FromCorner,2025,Head,30432,Bayer Leverkusen,Mainz 05,1,1,2026-02-28 14:30:00,Álex Grimaldo,Aerial,Jarell Quansah
+671030,87,Goal,0.914000015258789,0.5359999847412109,0.6391046047210693,Jarell Quansah,h,10187,OpenPlay,2025,LeftFoot,30432,Bayer Leverkusen,Mainz 05,1,1,2026-02-28 14:30:00,Christian Kofane,Pass,Jarell Quansah
+673815,85,MissedShots,0.9690000152587891,0.505,0.739784836769104,Jarell Quansah,h,10187,OpenPlay,2025,RightFoot,30449,Bayer Leverkusen,Bayern Munich,1,1,2026-03-14 14:30:00,,Rebound,Jarell Quansah
+673817,89,BlockedShot,0.8169999694824219,0.3,0.027544064447283745,Jarell Quansah,h,10187,OpenPlay,2025,LeftFoot,30449,Bayer Leverkusen,Bayern Munich,1,1,2026-03-14 14:30:00,Ezequiél Fernández,Pass,Jarell Quansah
+673822,97,MissedShots,0.894000015258789,0.5109999847412109,0.03974257409572601,Jarell Quansah,h,10187,OpenPlay,2025,Head,30449,Bayer Leverkusen,Bayern Munich,1,1,2026-03-14 14:30:00,Nathan Tella,Aerial,Jarell Quansah
+675226,91,BlockedShot,0.8030000305175782,0.485,0.05216275900602341,Jarell Quansah,a,10187,OpenPlay,2025,RightFoot,30462,FC Heidenheim,Bayer Leverkusen,3,3,2026-03-21 14:30:00,Montrell Culbreath,Pass,Jarell Quansah
+680930,15,SavedShot,0.9330000305175781,0.38299999237060545,0.08069885522127151,Jarell Quansah,a,10187,OpenPlay,2025,LeftFoot,30496,FC Cologne,Bayer Leverkusen,1,2,2026-04-25 13:30:00,,None,Jarell Quansah
+682497,18,MissedShots,0.88,0.26299999237060545,0.157560795545578,Jarell Quansah,h,10187,OpenPlay,2025,RightFoot,30503,Bayer Leverkusen,RasenBallsport Leipzig,4,1,2026-05-02 16:30:00,Álex Grimaldo,Pass,Jarell Quansah
+682505,31,MissedShots,0.9780000305175781,0.45,0.5187241435050964,Jarell Quansah,h,10187,FromCorner,2025,Head,30503,Bayer Leverkusen,RasenBallsport Leipzig,4,1,2026-05-02 16:30:00,Álex Grimaldo,Cross,Jarell Quansah

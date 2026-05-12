@@ -1,0 +1,14 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+488699,9,SavedShot,0.8380000305175781,0.654000015258789,0.0414155013859272,Ilia Gruev,a,8000,OpenPlay,2022,LeftFoot,19398,Bayer Leverkusen,Werder Bremen,1,1,2022-09-17 13:30:00,Anthony Jung,Pass,Ilia Gruev
+488713,47,BlockedShot,0.8190000152587891,0.5059999847412109,0.06514869630336761,Ilia Gruev,a,8000,OpenPlay,2022,LeftFoot,19398,Bayer Leverkusen,Werder Bremen,1,1,2022-09-17 13:30:00,Niclas Füllkrug,Pass,Ilia Gruev
+510812,85,BlockedShot,0.7430000305175781,0.620999984741211,0.02083900012075901,Ilia Gruev,h,8000,OpenPlay,2022,LeftFoot,19539,Werder Bremen,Bochum,3,0,2023-02-25 14:30:00,Anthony Jung,Pass,Ilia Gruev
+512029,42,MissedShots,0.7169999694824218,0.4520000076293945,0.01478429976850748,Ilia Gruev,a,8000,OpenPlay,2022,LeftFoot,19547,Augsburg,Werder Bremen,2,1,2023-03-04 14:30:00,Niklas Schmidt,Pass,Ilia Gruev
+514590,43,MissedShots,0.745,0.4620000076293945,0.01875299960374832,Ilia Gruev,a,8000,OpenPlay,2022,LeftFoot,19563,Borussia M.Gladbach,Werder Bremen,2,2,2023-03-17 19:30:00,Niclas Füllkrug,Pass,Ilia Gruev
+527293,43,MissedShots,0.935,0.45599998474121095,0.11523027718067169,Ilia Gruev,h,8000,FromCorner,2022,LeftFoot,19638,Werder Bremen,FC Cologne,1,1,2023-05-20 13:30:00,Milos Veljkovic,HeadPass,Ilia Gruev
+663610,19,MissedShots,0.7809999847412109,0.27399999618530274,0.014994781464338303,Ilia Gruev,h,8000,OpenPlay,2025,LeftFoot,28991,Leeds,Fulham,1,0,2026-01-17 15:00:00,,None,Ilia Gruev
+665648,14,MissedShots,0.8190000152587891,0.5070000076293946,0.04110870510339737,Ilia Gruev,a,8000,FromCorner,2025,LeftFoot,29003,Everton,Leeds,1,1,2026-01-26 20:00:00,,None,Ilia Gruev
+666986,48,BlockedShot,0.8369999694824218,0.28700000762939454,0.03771241754293442,Ilia Gruev,h,8000,OpenPlay,2025,LeftFoot,29023,Leeds,Nottingham Forest,3,1,2026-02-06 20:00:00,Ethan Ampadu,BallRecovery,Ilia Gruev
+666990,65,SavedShot,0.9640000152587891,0.49900001525878906,0.5143994092941284,Ilia Gruev,h,8000,FromCorner,2025,Head,29023,Leeds,Nottingham Forest,3,1,2026-02-06 20:00:00,,None,Ilia Gruev
+669777,32,MissedShots,0.805,0.6120000076293945,0.038005050271749496,Ilia Gruev,a,8000,OpenPlay,2025,LeftFoot,29038,Aston Villa,Leeds,1,1,2026-02-21 15:00:00,Dominic Calvert-Lewin,Pass,Ilia Gruev
+669790,74,MissedShots,0.8240000152587891,0.6840000152587891,0.046270035207271576,Ilia Gruev,a,8000,OpenPlay,2025,LeftFoot,29038,Aston Villa,Leeds,1,1,2026-02-21 15:00:00,,None,Ilia Gruev
+678809,81,MissedShots,0.7530000305175781,0.67,0.0412701740860939,Ilia Gruev,a,8000,OpenPlay,2025,LeftFoot,29088,Manchester United,Leeds,1,2,2026-04-13 19:00:00,Brenden Aaronson,None,Ilia Gruev

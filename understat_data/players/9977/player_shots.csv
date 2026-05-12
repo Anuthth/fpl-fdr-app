@@ -1,0 +1,91 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+446600,88,SavedShot,0.9430000305175781,0.5209999847412109,0.5428940057754517,Loum Tchaouna,a,9977,OpenPlay,2021,Head,17983,Saint-Etienne,Rennes,0,5,2021-12-05 12:00:00,Gaetan Laborde,Cross,Loum Tchaouna
+464450,71,MissedShots,0.7719999694824219,0.3659999847412109,0.03718189895153046,Loum Tchaouna,h,9977,OpenPlay,2021,LeftFoot,18109,Rennes,Metz,6,1,2022-03-20 14:00:00,Benjamin Bourigeaud,Pass,Loum Tchaouna
+546660,29,MissedShots,0.7280000305175781,0.3970000076293945,0.009070044383406639,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22413,Salernitana,Napoli,0,2,2023-11-04 14:00:00,Boulaye Dia,Chipped,Loum Tchaouna
+547938,45,MissedShots,0.9369999694824219,0.375,0.1136859878897667,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22423,Sassuolo,Salernitana,2,2,2023-11-10 17:30:00,Chukwubuikem Ikwuemesi,Pass,Loum Tchaouna
+551800,74,MissedShots,0.7630000305175781,0.3029999923706055,0.01778005063533783,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22435,Fiorentina,Salernitana,3,0,2023-12-03 14:00:00,,TakeOn,Loum Tchaouna
+556038,54,MissedShots,0.825,0.74,0.04644317179918289,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22473,Salernitana,AC Milan,2,2,2023-12-22 19:45:00,Grigoris Kastanos,Pass,Loum Tchaouna
+556044,73,MissedShots,0.8809999847412109,0.46700000762939453,0.06512727588415146,Loum Tchaouna,h,9977,OpenPlay,2023,Head,22473,Salernitana,AC Milan,2,2,2023-12-22 19:45:00,Antonio Candreva,Cross,Loum Tchaouna
+557088,18,MissedShots,0.9180000305175782,0.47900001525878905,0.34177008271217346,Loum Tchaouna,a,9977,OpenPlay,2023,Head,22479,Verona,Salernitana,0,1,2023-12-30 17:00:00,Antonio Candreva,Cross,Loum Tchaouna
+557098,47,Goal,0.8169999694824219,0.3579999923706055,0.040364090353250504,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22479,Verona,Salernitana,0,1,2023-12-30 17:00:00,Grigoris Kastanos,Pass,Loum Tchaouna
+557960,15,SavedShot,0.8209999847412109,0.23299999237060548,0.021323680877685547,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22501,Napoli,Salernitana,2,1,2024-01-13 14:00:00,Antonio Candreva,Pass,Loum Tchaouna
+557978,81,MissedShots,0.6790000152587891,0.28899999618530275,0.01399254985153675,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22501,Napoli,Salernitana,2,1,2024-01-13 14:00:00,Norbert Gyömbér,Pass,Loum Tchaouna
+559408,64,BlockedShot,0.7959999847412109,0.6730000305175782,0.02808920107781887,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22509,Salernitana,Genoa,1,2,2024-01-21 17:00:00,Domagoj Bradaric,Pass,Loum Tchaouna
+560475,31,SavedShot,0.8530000305175781,0.3579999923706055,0.11110717803239822,Loum Tchaouna,h,9977,OpenPlay,2023,RightFoot,22524,Salernitana,Roma,1,2,2024-01-29 19:45:00,Antonio Candreva,Chipped,Loum Tchaouna
+565323,76,SavedShot,0.89,0.6880000305175781,0.08067149668931961,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22564,Salernitana,Monza,0,2,2024-02-24 17:00:00,Boulaye Dia,Pass,Loum Tchaouna
+565324,76,SavedShot,0.92,0.6459999847412109,0.12060154974460602,Loum Tchaouna,h,9977,OpenPlay,2023,RightFoot,22564,Salernitana,Monza,0,2,2024-02-24 17:00:00,,Rebound,Loum Tchaouna
+566353,6,MissedShots,0.9059999847412109,0.6969999694824218,0.049748826771974564,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,,None,Loum Tchaouna
+566354,7,MissedShots,0.8219999694824218,0.6609999847412109,0.08137986063957214,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,,BallTouch,Loum Tchaouna
+566356,9,Goal,0.8130000305175781,0.25,0.021799474954605103,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Giulio Maggiore,Pass,Loum Tchaouna
+566367,56,MissedShots,0.840999984741211,0.7530000305175781,0.025483448058366776,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Antonio Candreva,Pass,Loum Tchaouna
+566371,69,ShotOnPost,0.9130000305175782,0.37799999237060544,0.2975859045982361,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Antonio Candreva,Chipped,Loum Tchaouna
+566381,88,BlockedShot,0.9390000152587891,0.6459999847412109,0.014671621844172478,Loum Tchaouna,a,9977,OpenPlay,2023,Head,22574,Udinese,Salernitana,1,1,2024-03-02 14:00:00,Domagoj Bradaric,Cross,Loum Tchaouna
+567859,30,SavedShot,0.8040000152587891,0.2560000038146973,0.0184477586299181,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22576,Cagliari,Salernitana,4,2,2024-03-09 14:00:00,Giulio Maggiore,TakeOn,Loum Tchaouna
+569529,8,MissedShots,0.8780000305175781,0.3609999847412109,0.06253165751695633,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22594,Salernitana,Lecce,0,1,2024-03-16 17:00:00,,None,Loum Tchaouna
+569532,13,BlockedShot,0.8830000305175781,0.4779999923706055,0.09626995027065277,Loum Tchaouna,h,9977,FromCorner,2023,LeftFoot,22594,Salernitana,Lecce,0,1,2024-03-16 17:00:00,,Rebound,Loum Tchaouna
+569538,23,SavedShot,0.8680000305175781,0.36,0.038763564079999924,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22594,Salernitana,Lecce,0,1,2024-03-16 17:00:00,Domagoj Bradaric,Cross,Loum Tchaouna
+569549,46,MissedShots,0.909000015258789,0.41900001525878905,0.028776897117495537,Loum Tchaouna,h,9977,OpenPlay,2023,Head,22594,Salernitana,Lecce,0,1,2024-03-16 17:00:00,Domagoj Bradaric,Aerial,Loum Tchaouna
+571593,40,MissedShots,0.749000015258789,0.31799999237060544,0.016871003434062004,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22596,Bologna,Salernitana,3,0,2024-04-01 11:30:00,Toma Basic,Pass,Loum Tchaouna
+571599,58,MissedShots,0.8580000305175781,0.27600000381469725,0.029360221698880196,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22596,Bologna,Salernitana,3,0,2024-04-01 11:30:00,Antonio Candreva,Pass,Loum Tchaouna
+572082,0,BlockedShot,0.7069999694824218,0.425,0.012832245789468288,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22611,Salernitana,Sassuolo,2,2,2024-04-05 18:45:00,Iron Gomis,Pass,Loum Tchaouna
+573310,15,Goal,0.9330000305175781,0.46,0.3317625820636749,Loum Tchaouna,a,9977,OpenPlay,2023,Head,22615,Lazio,Salernitana,4,1,2024-04-12 18:45:00,Giulio Maggiore,Chipped,Loum Tchaouna
+573319,45,SavedShot,0.805,0.705,0.02515961043536663,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22615,Lazio,Salernitana,4,1,2024-04-12 18:45:00,Mateusz Legowski,Pass,Loum Tchaouna
+575691,53,BlockedShot,0.799000015258789,0.305,0.024167167022824287,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22631,Salernitana,Fiorentina,0,2,2024-04-21 16:00:00,Mateusz Legowski,Pass,Loum Tchaouna
+576491,11,SavedShot,0.7619999694824219,0.5840000152587891,0.024037165567278862,Loum Tchaouna,a,9977,OpenPlay,2023,RightFoot,22640,Frosinone,Salernitana,3,0,2024-04-26 18:45:00,Emanuel Vignato,Pass,Loum Tchaouna
+576494,24,BlockedShot,0.74,0.425,0.016347693279385567,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22640,Frosinone,Salernitana,3,0,2024-04-26 18:45:00,Toma Basic,BallTouch,Loum Tchaouna
+576499,30,MissedShots,0.7819999694824219,0.6619999694824219,0.04447060078382492,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22640,Frosinone,Salernitana,3,0,2024-04-26 18:45:00,Benoit Costil,Pass,Loum Tchaouna
+576512,81,MissedShots,0.7619999694824219,0.27799999237060546,0.011582320556044579,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22640,Frosinone,Salernitana,3,0,2024-04-26 18:45:00,Chukwubuikem Ikwuemesi,BallTouch,Loum Tchaouna
+576515,89,BlockedShot,0.8369999694824218,0.31799999237060544,0.03021164983510971,Loum Tchaouna,a,9977,FromCorner,2023,LeftFoot,22640,Frosinone,Salernitana,3,0,2024-04-26 18:45:00,Alessandro Zanoli,Pass,Loum Tchaouna
+579335,17,Goal,0.8909999847412109,0.37099998474121093,0.16202737390995026,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22647,Salernitana,Atalanta,1,2,2024-05-06 16:00:00,Emanuel Vignato,TakeOn,Loum Tchaouna
+579339,33,BlockedShot,0.9069999694824219,0.265,0.06948162615299225,Loum Tchaouna,h,9977,OpenPlay,2023,RightFoot,22647,Salernitana,Atalanta,1,2,2024-05-06 16:00:00,Chukwubuikem Ikwuemesi,Pass,Loum Tchaouna
+579343,46,SavedShot,0.7480000305175781,0.3559999847412109,0.020702432841062546,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22647,Salernitana,Atalanta,1,2,2024-05-06 16:00:00,Lassana Coulibaly,Pass,Loum Tchaouna
+579345,47,BlockedShot,0.720999984741211,0.5890000152587891,0.021251898258924484,Loum Tchaouna,h,9977,OpenPlay,2023,LeftFoot,22647,Salernitana,Atalanta,1,2,2024-05-06 16:00:00,Emanuel Vignato,Pass,Loum Tchaouna
+579357,87,MissedShots,0.9290000152587891,0.325,0.03149346262216568,Loum Tchaouna,h,9977,OpenPlay,2023,RightFoot,22647,Salernitana,Atalanta,1,2,2024-05-06 16:00:00,Shon Weissman,TakeOn,Loum Tchaouna
+580506,46,MissedShots,0.7369999694824219,0.34900001525878904,0.0233427993953228,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22660,Juventus,Salernitana,1,1,2024-05-12 16:00:00,Lassana Coulibaly,Pass,Loum Tchaouna
+583358,58,SavedShot,0.7569999694824219,0.39799999237060546,0.014941484667360783,Loum Tchaouna,a,9977,SetPiece,2023,LeftFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,,Rebound,Loum Tchaouna
+583362,68,MissedShots,0.785,0.710999984741211,0.019547617062926292,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Triantafyllos Pasalidis,Pass,Loum Tchaouna
+583369,88,SavedShot,0.8730000305175781,0.3609999847412109,0.06599324196577072,Loum Tchaouna,a,9977,OpenPlay,2023,LeftFoot,22682,AC Milan,Salernitana,3,3,2024-05-25 18:45:00,Andres Sfait,Pass,Loum Tchaouna
+585471,88,MissedShots,0.950999984741211,0.54,0.2727717459201813,Loum Tchaouna,h,9977,OpenPlay,2024,Head,27369,Lazio,Venezia,3,1,2024-08-18 18:45:00,Gaetano Castrovilli,BallTouch,Loum Tchaouna
+589628,10,SavedShot,0.9359999847412109,0.33599998474121096,0.07518210262060165,Loum Tchaouna,h,9977,OpenPlay,2024,Head,27387,Lazio,AC Milan,2,2,2024-08-31 18:45:00,Nuno Tavares,Cross,Loum Tchaouna
+591816,67,MissedShots,0.725999984741211,0.37,0.022644024342298508,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27396,Lazio,Verona,2,1,2024-09-16 18:45:00,Gaetano Castrovilli,Pass,Loum Tchaouna
+591817,73,SavedShot,0.710999984741211,0.5520000076293945,0.01808406598865986,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27396,Lazio,Verona,2,1,2024-09-16 18:45:00,,BallRecovery,Loum Tchaouna
+599216,80,MissedShots,0.9180000305175782,0.395,0.3092292547225952,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27447,Lazio,Genoa,3,0,2024-10-27 14:00:00,Pedro,Chipped,Loum Tchaouna
+599220,90,MissedShots,0.8069999694824219,0.44799999237060545,0.03235554322600365,Loum Tchaouna,h,9977,FromCorner,2024,LeftFoot,27447,Lazio,Genoa,3,0,2024-10-27 14:00:00,,None,Loum Tchaouna
+599712,94,Goal,0.8490000152587891,0.525,0.29877132177352905,Loum Tchaouna,a,9977,OpenPlay,2024,RightFoot,27454,Como,Lazio,1,5,2024-10-31 19:45:00,Manuel Lazzari,Pass,Loum Tchaouna
+603665,82,MissedShots,0.8090000152587891,0.33299999237060546,0.04685867577791214,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27486,Lazio,Bologna,3,0,2024-11-24 19:45:00,Matteo Guendouzi,Pass,Loum Tchaouna
+604764,64,MissedShots,0.9330000305175781,0.40700000762939453,0.08741456270217896,Loum Tchaouna,a,9977,SetPiece,2024,LeftFoot,27499,Parma Calcio 1913,Lazio,3,1,2024-12-01 14:00:00,Valentín Castellanos,HeadPass,Loum Tchaouna
+604765,71,SavedShot,0.9540000152587891,0.69,0.05435159057378769,Loum Tchaouna,a,9977,OpenPlay,2024,LeftFoot,27499,Parma Calcio 1913,Lazio,3,1,2024-12-01 14:00:00,Pedro,Pass,Loum Tchaouna
+604766,75,SavedShot,0.845,0.5540000152587891,0.043686337769031525,Loum Tchaouna,a,9977,SetPiece,2024,LeftFoot,27499,Parma Calcio 1913,Lazio,3,1,2024-12-01 14:00:00,Valentín Castellanos,Cross,Loum Tchaouna
+604770,84,MissedShots,0.9230000305175782,0.49700000762939456,0.42033374309539795,Loum Tchaouna,a,9977,OpenPlay,2024,LeftFoot,27499,Parma Calcio 1913,Lazio,3,1,2024-12-01 14:00:00,Luca Pellegrini,Cross,Loum Tchaouna
+607923,63,MissedShots,0.75,0.44299999237060544,0.020055294036865234,Loum Tchaouna,h,9977,OpenPlay,2024,RightFoot,27515,Lazio,Inter,0,6,2024-12-16 19:45:00,,Tackle,Loum Tchaouna
+607926,77,BlockedShot,0.8669999694824219,0.28200000762939453,0.040563471615314484,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27515,Lazio,Inter,0,6,2024-12-16 19:45:00,Nicolo Rovella,Pass,Loum Tchaouna
+609361,41,MissedShots,0.7569999694824219,0.40099998474121096,0.023429041728377342,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27535,Lazio,Atalanta,1,1,2024-12-28 19:45:00,Fisayo Dele-Bashiru,Pass,Loum Tchaouna
+610365,58,ShotOnPost,0.9309999847412109,0.43599998474121093,0.32995322346687317,Loum Tchaouna,a,9977,OpenPlay,2024,LeftFoot,27549,Roma,Lazio,2,0,2025-01-05 19:45:00,Boulaye Dia,HeadPass,Loum Tchaouna
+610371,85,BlockedShot,0.7659999847412109,0.43599998474121093,0.025660185143351555,Loum Tchaouna,a,9977,OpenPlay,2024,LeftFoot,27549,Roma,Lazio,2,0,2025-01-05 19:45:00,Nicolo Rovella,Pass,Loum Tchaouna
+610466,14,MissedShots,0.895,0.4809999847412109,0.08441538363695145,Loum Tchaouna,h,9977,SetPiece,2024,Head,27559,Lazio,Como,1,1,2025-01-10 19:45:00,Luca Pellegrini,Cross,Loum Tchaouna
+620726,25,MissedShots,0.725,0.664000015258789,0.031485095620155334,Loum Tchaouna,a,9977,OpenPlay,2024,RightFoot,27627,AC Milan,Lazio,1,2,2025-03-02 19:45:00,Mario Gila,Pass,Loum Tchaouna
+622212,29,BlockedShot,0.8519999694824218,0.285,0.025988614186644554,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,Gustav Isaksen,Pass,Loum Tchaouna
+622216,36,SavedShot,0.8619999694824219,0.29100000381469726,0.028952717781066895,Loum Tchaouna,h,9977,OpenPlay,2024,LeftFoot,27638,Lazio,Udinese,1,1,2025-03-10 19:45:00,Manuel Lazzari,Pass,Loum Tchaouna
+623299,85,SavedShot,0.845999984741211,0.34700000762939454,0.05692632496356964,Loum Tchaouna,a,9977,OpenPlay,2024,LeftFoot,27645,Bologna,Lazio,5,0,2025-03-16 14:00:00,Tijjani Noslin,Pass,Loum Tchaouna
+631031,78,SavedShot,0.874000015258789,0.39099998474121095,0.23520009219646454,Loum Tchaouna,h,9977,OpenPlay,2024,RightFoot,27698,Lazio,Parma Calcio 1913,2,2,2025-04-28 18:45:00,Luca Pellegrini,Cross,Loum Tchaouna
+638871,95,ShotOnPost,0.7869999694824219,0.4909999847412109,0.05401439964771271,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,28791,Burnley,Sunderland,2,0,2025-08-23 14:00:00,Zian Flemming,BlockedPass,Loum Tchaouna
+640310,65,SavedShot,0.9009999847412109,0.43200000762939456,0.07852376997470856,Loum Tchaouna,a,9977,OpenPlay,2025,LeftFoot,28802,Manchester United,Burnley,3,2,2025-08-30 14:00:00,,None,Loum Tchaouna
+643137,19,BlockedShot,0.89,0.46799999237060547,0.056749194860458374,Loum Tchaouna,h,9977,OpenPlay,2025,Head,28822,Burnley,Nottingham Forest,1,1,2025-09-20 14:00:00,Quilindschy Hartman,Cross,Loum Tchaouna
+643144,44,ShotOnPost,0.8,0.225,0.046683862805366516,Loum Tchaouna,h,9977,DirectFreekick,2025,LeftFoot,28822,Burnley,Nottingham Forest,1,1,2025-09-20 14:00:00,,Standard,Loum Tchaouna
+644767,29,BlockedShot,0.86,0.3970000076293945,0.07338956743478775,Loum Tchaouna,a,9977,OpenPlay,2025,LeftFoot,28833,Manchester City,Burnley,5,1,2025-09-27 14:00:00,Lyle Foster,Pass,Loum Tchaouna
+647556,67,Goal,0.7480000305175781,0.3240000152587891,0.02484741620719433,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,28849,Burnley,Leeds,2,0,2025-10-18 14:00:00,Florentino Luís,Pass,Loum Tchaouna
+652281,26,BlockedShot,0.735,0.485,0.031020179390907288,Loum Tchaouna,a,9977,OpenPlay,2025,LeftFoot,28887,West Ham,Burnley,3,2,2025-11-08 15:00:00,,None,Loum Tchaouna
+653359,6,BlockedShot,0.850999984741211,0.34700000762939454,0.10581129044294357,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,28891,Burnley,Chelsea,0,2,2025-11-22 12:30:00,Jaidon Anthony,Chipped,Loum Tchaouna
+653365,19,SavedShot,0.735,0.5229999923706055,0.019070232287049294,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,28891,Burnley,Chelsea,0,2,2025-11-22 12:30:00,Quilindschy Hartman,Pass,Loum Tchaouna
+660538,45,MissedShots,0.745999984741211,0.7230000305175781,0.015371954999864101,Loum Tchaouna,h,9977,OpenPlay,2025,RightFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Lucas Pires,Pass,Loum Tchaouna
+660539,49,MissedShots,0.7619999694824219,0.745999984741211,0.014432677067816257,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Lucas Pires,Pass,Loum Tchaouna
+660540,54,SavedShot,0.8209999847412109,0.5020000076293946,0.06070161610841751,Loum Tchaouna,h,9977,OpenPlay,2025,RightFoot,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Josh Laurent,Pass,Loum Tchaouna
+660545,67,MissedShots,0.9530000305175781,0.5970000076293945,0.2445697784423828,Loum Tchaouna,h,9977,OpenPlay,2025,Head,28960,Burnley,Newcastle United,1,3,2025-12-30 19:30:00,Marcus Edwards,Cross,Loum Tchaouna
+661009,66,BlockedShot,0.9580000305175781,0.65,0.02921495959162712,Loum Tchaouna,a,9977,FromCorner,2025,Head,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,,None,Loum Tchaouna
+661013,91,SavedShot,0.7180000305175781,0.4490000152587891,0.044413771480321884,Loum Tchaouna,a,9977,DirectFreekick,2025,LeftFoot,28973,Brighton,Burnley,2,0,2026-01-03 15:00:00,,Standard,Loum Tchaouna
+675310,89,SavedShot,0.9680000305175781,0.66,0.1024165228009224,Loum Tchaouna,a,9977,OpenPlay,2025,LeftFoot,29082,Fulham,Burnley,3,1,2026-03-21 15:00:00,Zian Flemming,Pass,Loum Tchaouna
+680340,50,BlockedShot,0.7319999694824219,0.26399999618530273,0.01054843794554472,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,29111,Burnley,Manchester City,0,1,2026-04-22 19:00:00,,None,Loum Tchaouna
+682009,70,Goal,0.895,0.38099998474121094,0.13179448246955872,Loum Tchaouna,a,9977,OpenPlay,2025,RightFoot,29124,Leeds,Burnley,3,1,2026-05-01 19:00:00,Jaidon Anthony,TakeOn,Loum Tchaouna
+684025,10,BlockedShot,0.7659999847412109,0.26600000381469724,0.014118267223238945,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,29129,Burnley,Aston Villa,2,2,2026-05-10 13:00:00,,Rebound,Loum Tchaouna
+684044,62,BlockedShot,0.75,0.3970000076293945,0.02311808243393898,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,29129,Burnley,Aston Villa,2,2,2026-05-10 13:00:00,Florentino Luís,Pass,Loum Tchaouna
+684045,62,SavedShot,0.7290000152587891,0.3029999923706055,0.014551741071045399,Loum Tchaouna,h,9977,OpenPlay,2025,LeftFoot,29129,Burnley,Aston Villa,2,2,2026-05-10 13:00:00,Hannibal Mejbri,Pass,Loum Tchaouna

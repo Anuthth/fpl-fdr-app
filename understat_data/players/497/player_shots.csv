@@ -1,0 +1,83 @@
+﻿id,minute,result,X,Y,xG,player,h_a,player_id,situation,season,shotType,match_id,h_team,a_team,h_goals,a_goals,date,player_assisted,lastAction,player_name
+23847,77,BlockedShot,0.7609999847412109,0.5829999923706055,0.01766590029001236,Francis Coquelin,h,497,FromCorner,2014,RightFoot,4525,Arsenal,Leicester,2,1,2015-02-10 19:45:00,,None,Francis Coquelin
+23795,37,MissedShots,0.81,0.685,0.01927199959754944,Francis Coquelin,a,497,SetPiece,2014,LeftFoot,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,,None,Francis Coquelin
+23817,88,MissedShots,0.705,0.4259999847412109,0.009383410215377808,Francis Coquelin,a,497,SetPiece,2014,RightFoot,4537,Crystal Palace,Arsenal,1,2,2015-02-21 15:00:00,,None,Francis Coquelin
+22841,80,MissedShots,0.7430000305175781,0.6020000076293945,0.015201199799776077,Francis Coquelin,a,497,FromCorner,2014,LeftFoot,4457,Burnley,Arsenal,0,1,2015-04-11 17:30:00,,None,Francis Coquelin
+21897,51,BlockedShot,0.7669999694824219,0.37099998474121093,0.022099899128079414,Francis Coquelin,h,497,OpenPlay,2014,RightFoot,4433,Arsenal,West Bromwich Albion,4,1,2015-05-24 15:00:00,,None,Francis Coquelin
+56380,61,MissedShots,0.7419999694824219,0.565,0.0127512002363801,Francis Coquelin,h,497,SetPiece,2015,LeftFoot,110,Arsenal,Liverpool,0,0,2015-08-24 23:00:00,,None,Francis Coquelin
+57632,37,MissedShots,0.759000015258789,0.47200000762939454,0.01838890090584755,Francis Coquelin,a,497,FromCorner,2015,RightFoot,111,Newcastle United,Arsenal,0,1,2015-08-29 15:45:00,,None,Francis Coquelin
+57786,29,BlockedShot,0.7080000305175781,0.5309999847412109,0.013910699635744095,Francis Coquelin,h,497,OpenPlay,2015,LeftFoot,122,Arsenal,Stoke,2,0,2015-09-12 18:00:00,Alexis Sánchez,Pass,Francis Coquelin
+57791,36,MissedShots,0.769000015258789,0.38599998474121094,0.01421360019594431,Francis Coquelin,h,497,FromCorner,2015,LeftFoot,122,Arsenal,Stoke,2,0,2015-09-12 18:00:00,,Aerial,Francis Coquelin
+59201,53,BlockedShot,0.755,0.6,0.013711200095713139,Francis Coquelin,h,497,FromCorner,2015,RightFoot,176,Arsenal,Everton,2,1,2015-10-24 20:30:00,,Aerial,Francis Coquelin
+60506,2,MissedShots,0.735,0.5209999847412109,0.014027300290763378,Francis Coquelin,h,497,OpenPlay,2015,RightFoot,355,Arsenal,Swansea,1,2,2016-03-02 23:45:00,,Rebound,Francis Coquelin
+60186,52,MissedShots,0.7430000305175781,0.47900001525878905,0.019833900034427643,Francis Coquelin,a,497,OpenPlay,2015,RightFoot,374,Everton,Arsenal,0,2,2016-03-19 16:45:00,,None,Francis Coquelin
+60970,20,BlockedShot,0.789000015258789,0.41700000762939454,0.04825960099697113,Francis Coquelin,h,497,OpenPlay,2015,RightFoot,385,Arsenal,Watford,4,0,2016-04-02 18:00:00,,None,Francis Coquelin
+113509,16,MissedShots,0.7619999694824219,0.45599998474121095,0.02410230040550232,Francis Coquelin,a,497,OpenPlay,2016,RightFoot,502,Hull,Arsenal,1,4,2016-09-17 18:00:00,,None,Francis Coquelin
+113520,39,BlockedShot,0.9019999694824219,0.46099998474121096,0.4208489954471588,Francis Coquelin,a,497,OpenPlay,2016,LeftFoot,502,Hull,Arsenal,1,4,2016-09-17 18:00:00,Theo Walcott,Pass,Francis Coquelin
+113534,87,MissedShots,0.8059999847412109,0.7269999694824218,0.016465699300169945,Francis Coquelin,a,497,FromCorner,2016,LeftFoot,502,Hull,Arsenal,1,4,2016-09-17 18:00:00,,None,Francis Coquelin
+114958,55,MissedShots,0.7269999694824218,0.43400001525878906,0.013478600420057774,Francis Coquelin,a,497,OpenPlay,2016,RightFoot,2677,Sunderland,Arsenal,1,4,2016-10-29 15:30:00,,Aerial,Francis Coquelin
+115065,26,BlockedShot,0.8130000305175781,0.475,0.03623940050601959,Francis Coquelin,h,497,OpenPlay,2016,RightFoot,2692,Arsenal,Tottenham,1,1,2016-11-06 16:00:00,Alexis Sánchez,Chipped,Francis Coquelin
+115501,22,MissedShots,0.7859999847412109,0.605,0.02885489910840988,Francis Coquelin,a,497,OpenPlay,2016,RightFoot,2697,Manchester United,Arsenal,1,1,2016-11-19 16:30:00,,None,Francis Coquelin
+116509,61,BlockedShot,0.735999984741211,0.49900001525878906,0.01551199983805418,Francis Coquelin,h,497,FromCorner,2016,LeftFoot,3118,Arsenal,Stoke,3,1,2016-12-10 19:00:00,,None,Francis Coquelin
+118149,88,SavedShot,0.905,0.649000015258789,0.06309559941291809,Francis Coquelin,h,497,OpenPlay,2016,LeftFoot,3358,Arsenal,Burnley,2,1,2017-01-22 17:15:00,,TakeOn,Francis Coquelin
+116342,17,MissedShots,0.8069999694824219,0.49700000762939456,0.01884710043668747,Francis Coquelin,a,497,FromCorner,2016,RightFoot,3370,Chelsea,Arsenal,3,1,2017-02-04 12:30:00,,Aerial,Francis Coquelin
+116346,37,BlockedShot,0.8230000305175781,0.500999984741211,0.04367769882082939,Francis Coquelin,a,497,FromCorner,2016,RightFoot,3370,Chelsea,Arsenal,3,1,2017-02-04 12:30:00,,None,Francis Coquelin
+117351,2,MissedShots,0.8130000305175781,0.4779999923706055,0.0371227003633976,Francis Coquelin,h,497,FromCorner,2016,RightFoot,3380,Arsenal,Hull,2,0,2017-02-11 12:30:00,,None,Francis Coquelin
+119466,4,SavedShot,0.769000015258789,0.445,0.019740799441933632,Francis Coquelin,a,497,FromCorner,2016,RightFoot,3401,Liverpool,Arsenal,3,1,2017-03-04 17:30:00,,None,Francis Coquelin
+120348,15,SavedShot,0.710999984741211,0.6519999694824219,0.011863400228321552,Francis Coquelin,h,497,OpenPlay,2016,RightFoot,3410,Arsenal,Leicester,1,0,2017-04-26 19:45:00,Mesut Özil,Pass,Francis Coquelin
+120354,41,BlockedShot,0.78,0.634000015258789,0.022358600050210953,Francis Coquelin,h,497,OpenPlay,2016,RightFoot,3410,Arsenal,Leicester,1,0,2017-04-26 19:45:00,Kieran Gibbs,Pass,Francis Coquelin
+159048,71,BlockedShot,0.8180000305175781,0.4809999847412109,0.08386419713497162,Francis Coquelin,h,497,OpenPlay,2017,RightFoot,7152,Arsenal,Bournemouth,3,0,2017-09-09 15:00:00,Mesut Özil,Pass,Francis Coquelin
+196586,79,Goal,0.97,0.610999984741211,0.03856689855456352,Francis Coquelin,a,497,FromCorner,2017,Head,8116,Malaga,Valencia,1,2,2018-02-17 19:45:00,Daniel Parejo,Cross,Francis Coquelin
+198039,17,SavedShot,0.6830000305175781,0.515,0.014701399952173233,Francis Coquelin,h,497,OpenPlay,2017,RightFoot,8119,Valencia,Real Sociedad,2,1,2018-02-25 17:30:00,,TakeOn,Francis Coquelin
+199562,76,SavedShot,0.914000015258789,0.41200000762939454,0.12747099995613098,Francis Coquelin,h,497,OpenPlay,2017,LeftFoot,8139,Valencia,Real Betis,2,0,2018-03-04 19:45:00,Gonçalo Guedes,Pass,Francis Coquelin
+200070,34,BlockedShot,0.85,0.4909999847412109,0.09038469940423965,Francis Coquelin,a,497,OpenPlay,2017,LeftFoot,8158,Sevilla,Valencia,0,2,2018-03-10 15:15:00,,None,Francis Coquelin
+258769,12,SavedShot,0.7809999847412109,0.705,0.018786100670695305,Francis Coquelin,h,497,OpenPlay,2018,RightFoot,10058,Valencia,Girona,0,1,2018-11-03 17:30:00,Gonçalo Guedes,Pass,Francis Coquelin
+259606,64,MissedShots,0.875,0.4520000076293945,0.05251169949769974,Francis Coquelin,a,497,SetPiece,2018,Head,10092,Real Madrid,Valencia,2,0,2018-12-01 19:45:00,Daniel Parejo,Cross,Francis Coquelin
+259803,68,MissedShots,0.95,0.39,0.01678140088915825,Francis Coquelin,h,497,FromCorner,2018,Head,10106,Valencia,Sevilla,1,1,2018-12-08 15:15:00,Daniel Parejo,Aerial,Francis Coquelin
+280392,2,SavedShot,0.7340000152587891,0.505,0.01765649951994419,Francis Coquelin,a,497,OpenPlay,2018,RightFoot,10154,Celta Vigo,Valencia,1,2,2019-01-19 19:45:00,Santi Mina,Pass,Francis Coquelin
+280561,60,SavedShot,0.9630000305175781,0.3160000038146973,0.04691909998655319,Francis Coquelin,h,497,OpenPlay,2018,RightFoot,10162,Valencia,Villarreal,3,0,2019-01-26 00:00:00,,Rebound,Francis Coquelin
+294474,48,MissedShots,0.9309999847412109,0.43400001525878906,0.09688679873943329,Francis Coquelin,h,497,FromCorner,2018,Head,10272,Valencia,Levante,3,1,2019-04-14 19:45:00,Daniel Parejo,Cross,Francis Coquelin
+296697,45,MissedShots,0.7680000305175781,0.6809999847412109,0.019274499267339706,Francis Coquelin,a,497,OpenPlay,2018,RightFoot,10295,Atletico Madrid,Valencia,3,2,2019-04-24 18:30:00,José Gayá,Pass,Francis Coquelin
+297691,72,MissedShots,0.710999984741211,0.72,0.009005519561469555,Francis Coquelin,h,497,OpenPlay,2018,RightFoot,10299,Valencia,Eibar,0,1,2019-04-28 11:00:00,,None,Francis Coquelin
+300266,6,MissedShots,0.755,0.47299999237060547,0.031603001058101654,Francis Coquelin,a,497,OpenPlay,2018,RightFoot,10314,SD Huesca,Valencia,2,6,2019-05-05 19:45:00,Santi Mina,Pass,Francis Coquelin
+316380,11,BlockedShot,0.7340000152587891,0.4470000076293945,0.014272299595177174,Francis Coquelin,h,497,OpenPlay,2019,RightFoot,12049,Valencia,Mallorca,2,0,2019-09-01 16:00:00,,None,Francis Coquelin
+316392,54,BlockedShot,0.9130000305175782,0.3840000152587891,0.029714999720454216,Francis Coquelin,h,497,FromCorner,2019,Head,12049,Valencia,Mallorca,2,0,2019-09-01 16:00:00,Daniel Parejo,Cross,Francis Coquelin
+321194,49,MissedShots,0.78,0.44299999237060544,0.031515300273895264,Francis Coquelin,h,497,OpenPlay,2019,RightFoot,12069,Valencia,Leganes,1,1,2019-09-22 14:00:00,,None,Francis Coquelin
+321935,18,MissedShots,0.9019999694824219,0.52,0.07587169855833054,Francis Coquelin,h,497,FromCorner,2019,Head,12076,Valencia,Getafe,3,3,2019-09-25 18:00:00,Daniel Parejo,Cross,Francis Coquelin
+321937,20,MissedShots,0.8630000305175781,0.31,0.09869629889726639,Francis Coquelin,h,497,OpenPlay,2019,RightFoot,12076,Valencia,Getafe,3,3,2019-09-25 18:00:00,Thierry Correia,Throughball,Francis Coquelin
+325685,11,MissedShots,0.8530000305175781,0.4229999923706055,0.05248520150780678,Francis Coquelin,a,497,FromCorner,2019,RightFoot,12105,Atletico Madrid,Valencia,1,1,2019-10-19 15:00:00,Daniel Parejo,Pass,Francis Coquelin
+355064,9,MissedShots,0.7580000305175781,0.28899999618530275,0.017031600698828697,Francis Coquelin,a,497,OpenPlay,2019,LeftFoot,12219,Mallorca,Valencia,4,1,2020-01-19 11:00:00,Daniel Wass,Pass,Francis Coquelin
+355818,30,SavedShot,0.7680000305175781,0.53,0.013383899815380573,Francis Coquelin,h,497,OpenPlay,2019,RightFoot,12231,Valencia,Barcelona,2,0,2020-01-25 15:00:00,,Aerial,Francis Coquelin
+364138,59,MissedShots,0.8590000152587891,0.5509999847412109,0.03511640056967735,Francis Coquelin,h,497,SetPiece,2019,Head,12300,Valencia,Levante,1,1,2020-06-12 20:00:00,Daniel Parejo,Cross,Francis Coquelin
+377556,52,MissedShots,0.8969999694824219,0.3659999847412109,0.04975049942731857,Francis Coquelin,h,497,OpenPlay,2020,RightFoot,14146,Villarreal,Eibar,2,1,2020-09-19 14:00:00,Gerard Moreno,Cross,Francis Coquelin
+379836,38,BlockedShot,0.8769999694824219,0.46299999237060546,0.03497600182890892,Francis Coquelin,a,497,FromCorner,2020,Head,14156,Barcelona,Villarreal,4,0,2020-09-27 19:00:00,Daniel Parejo,Cross,Francis Coquelin
+383958,50,BlockedShot,0.82,0.5570000076293945,0.05470310151576996,Francis Coquelin,a,497,OpenPlay,2020,RightFoot,14838,Cadiz,Villarreal,0,0,2020-10-25 15:00:00,,None,Francis Coquelin
+412233,81,BlockedShot,0.8069999694824219,0.504000015258789,0.06711559742689133,Francis Coquelin,a,497,OpenPlay,2020,RightFoot,15061,Granada,Villarreal,0,3,2021-04-03 12:00:00,Manu Trigueros,BallTouch,Francis Coquelin
+438041,31,Goal,0.8469999694824218,0.5790000152587891,0.07137080281972885,Francis Coquelin,a,497,OpenPlay,2021,RightFoot,17226,Athletic Club,Villarreal,2,1,2021-10-23 19:00:00,Arnaut Danjuma Groeneveld,Pass,Francis Coquelin
+439876,31,MissedShots,0.9569999694824218,0.38599998474121094,0.015360900200903416,Francis Coquelin,a,497,FromCorner,2021,Head,17247,Valencia,Villarreal,2,0,2021-10-30 16:30:00,Daniel Parejo,Aerial,Francis Coquelin
+439879,47,MissedShots,0.8669999694824219,0.41,0.05088869854807854,Francis Coquelin,a,497,OpenPlay,2021,RightFoot,17247,Valencia,Villarreal,2,0,2021-10-30 16:30:00,Estupiñán,Cross,Francis Coquelin
+441465,26,BlockedShot,0.879000015258789,0.6719999694824219,0.07111810147762299,Francis Coquelin,h,497,OpenPlay,2021,RightFoot,17265,Villarreal,Getafe,1,0,2021-11-07 13:00:00,Yeremi Pino,Pass,Francis Coquelin
+476788,42,Goal,0.8880000305175781,0.4129999923706055,0.046342700719833374,Francis Coquelin,h,497,FromCorner,2021,RightFoot,17505,Villarreal,Real Sociedad,1,2,2022-05-15 17:30:00,Daniel Parejo,Cross,Francis Coquelin
+486778,88,Goal,0.894000015258789,0.48200000762939454,0.10685999691486359,Francis Coquelin,h,497,OpenPlay,2022,RightFoot,18997,Villarreal,Elche,4,0,2022-09-04 16:30:00,,None,Francis Coquelin
+488290,71,MissedShots,0.755,0.4590000152587891,0.022299999371170998,Francis Coquelin,a,497,OpenPlay,2022,LeftFoot,19003,Real Betis,Villarreal,1,0,2022-09-11 19:00:00,Giovani Lo Celso,Pass,Francis Coquelin
+488295,89,BlockedShot,0.879000015258789,0.445,0.09760589897632599,Francis Coquelin,a,497,OpenPlay,2022,RightFoot,19003,Real Betis,Villarreal,1,0,2022-09-11 19:00:00,Samuel Chukwueze,Pass,Francis Coquelin
+489860,12,BlockedShot,0.8419999694824218,0.485,0.0709792971611023,Francis Coquelin,a,497,OpenPlay,2022,RightFoot,19023,Cadiz,Villarreal,0,0,2022-10-01 12:00:00,,Rebound,Francis Coquelin
+502692,4,ShotOnPost,0.93,0.575,0.35948801040649414,Francis Coquelin,h,497,OpenPlay,2022,LeftFoot,19121,Villarreal,Real Madrid,2,1,2023-01-07 15:15:00,Alberto Moreno,Cross,Francis Coquelin
+506492,83,BlockedShot,0.9769999694824218,0.3609999847412109,0.09909629821777344,Francis Coquelin,h,497,OpenPlay,2022,RightFoot,19151,Villarreal,Rayo Vallecano,0,1,2023-01-30 20:00:00,Samuel Chukwueze,Throughball,Francis Coquelin
+509163,27,BlockedShot,0.750999984741211,0.605999984741211,0.021512499079108238,Francis Coquelin,h,497,OpenPlay,2022,RightFoot,19168,Villarreal,Barcelona,0,1,2023-02-12 20:00:00,Álex Baena,Pass,Francis Coquelin
+571732,45,MissedShots,0.8369999694824218,0.5870000076293945,0.05247201398015022,Francis Coquelin,h,497,OpenPlay,2023,RightFoot,22982,Villarreal,Atletico Madrid,1,2,2024-04-01 19:00:00,,None,Francis Coquelin
+575572,36,BlockedShot,0.885,0.3970000076293945,0.03626225143671036,Francis Coquelin,a,497,SetPiece,2023,Head,22995,Almeria,Villarreal,1,2,2024-04-21 14:15:00,Álex Baena,Cross,Francis Coquelin
+579985,13,BlockedShot,0.8519999694824218,0.5479999923706055,0.07545696943998337,Francis Coquelin,h,497,FromCorner,2023,LeftFoot,23033,Villarreal,Sevilla,3,2,2024-05-11 14:15:00,Eric Bailly,Rebound,Francis Coquelin
+618921,89,MissedShots,0.7719999694824219,0.5940000152587891,0.0520532950758934,Francis Coquelin,h,497,OpenPlay,2024,LeftFoot,28250,Nantes,Lens,3,1,2025-02-23 14:00:00,,TakeOn,Francis Coquelin
+618926,94,MissedShots,0.9680000305175781,0.5459999847412109,0.6481482982635498,Francis Coquelin,h,497,OpenPlay,2024,RightFoot,28250,Nantes,Lens,3,1,2025-02-23 14:00:00,Marcus Coco,Pass,Francis Coquelin
+633101,16,MissedShots,0.8119999694824219,0.42200000762939455,0.046130143105983734,Francis Coquelin,a,497,OpenPlay,2024,RightFoot,28337,Auxerre,Nantes,1,1,2025-05-10 19:00:00,Matthis Abline,Pass,Francis Coquelin
+634649,5,MissedShots,0.950999984741211,0.46599998474121096,0.13174334168434143,Francis Coquelin,h,497,FromCorner,2024,Head,28347,Nantes,Montpellier,3,0,2025-05-17 19:00:00,Sorba Thomas,Cross,Francis Coquelin
+634654,27,BlockedShot,0.8719999694824219,0.3120000076293945,0.06422390043735504,Francis Coquelin,h,497,OpenPlay,2024,RightFoot,28347,Nantes,Montpellier,3,0,2025-05-17 19:00:00,Pedro Chirivella,Pass,Francis Coquelin
+634656,30,Goal,0.765,0.49900001525878906,0.039465390145778656,Francis Coquelin,h,497,OpenPlay,2024,RightFoot,28347,Nantes,Montpellier,3,0,2025-05-17 19:00:00,,None,Francis Coquelin
+634666,61,BlockedShot,0.8159999847412109,0.544000015258789,0.07078201323747635,Francis Coquelin,h,497,OpenPlay,2024,RightFoot,28347,Nantes,Montpellier,3,0,2025-05-17 19:00:00,,BallRecovery,Francis Coquelin
+639420,8,BlockedShot,0.84,0.36200000762939455,0.01823033019900322,Francis Coquelin,a,497,FromCorner,2025,RightFoot,29552,Strasbourg,Nantes,1,0,2025-08-24 15:15:00,Johann Lepenant,Chipped,Francis Coquelin
+640512,57,BlockedShot,0.76,0.6890000152587891,0.0226553026586771,Francis Coquelin,h,497,OpenPlay,2025,RightFoot,29558,Nantes,Auxerre,1,0,2025-08-30 17:00:00,Mostafa Mohamed,BallTouch,Francis Coquelin
+643203,74,SavedShot,0.7630000305175781,0.654000015258789,0.01872526854276657,Francis Coquelin,h,497,OpenPlay,2025,RightFoot,29581,Nantes,Rennes,2,2,2025-09-20 15:00:00,Louis Leroux,Pass,Francis Coquelin
+667609,98,MissedShots,0.8680000305175781,0.38099998474121094,0.05664018169045448,Francis Coquelin,h,497,OpenPlay,2025,RightFoot,29724,Nantes,Lyon,0,1,2026-02-08 14:00:00,,None,Francis Coquelin
+677084,16,MissedShots,0.79,0.4640000152587891,0.014286447316408157,Francis Coquelin,a,497,FromCorner,2025,RightFoot,29786,Metz,Nantes,0,0,2026-04-05 15:15:00,Mohamed Kaba,HeadPass,Francis Coquelin
+679723,31,MissedShots,0.74,0.40400001525878904,0.015306086279451847,Francis Coquelin,h,497,FromCorner,2025,RightFoot,29805,Nantes,Brest,1,1,2026-04-19 15:15:00,,None,Francis Coquelin

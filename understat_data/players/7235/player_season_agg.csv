@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,2,0,0,180,0,0,0,0,2024,Brighton,0,0,0,0,0.4078828990459442,0.4078828990459442,7235,Jason Steele
+season,GK,17,0,0,1530,0,0,0,0,2023,Brighton,0,0,0,0,3.745168898254633,3.745168898254633,7235,Jason Steele
+season,GK,15,0,0,1350,0,1,0.18881599605083466,1,2022,Brighton,1,0,0,0,2.5362304002046585,2.347414404153824,7235,Jason Steele
+season,GK,1,0,0,90,0,0,0,0,2021,Brighton,0,0,0,0,0,0,7235,Jason Steele

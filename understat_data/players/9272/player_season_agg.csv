@@ -1,0 +1,5 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,Sub,5,0,0,365,0,0,0,0,2025,Chelsea,0,0,0,0,1.312999188899994,1.312999188899994,9272,Filip Jorgensen
+season,GK,6,0,0,540,0,0,0,0,2024,Chelsea,0,0,0,0,1.4331071376800537,1.4331071376800537,9272,Filip Jorgensen
+season,GK,36,0,0,3240,0,0,0,0,2023,Villarreal,4,0,0,0,7.2877675741910934,7.2877675741910934,9272,Filip Jorgensen
+season,GK,2,0,0,180,0,0,0,0,2022,Villarreal,0,0,0,0,0.07956578768789768,0.07956578768789768,9272,Filip Jorgensen

@@ -1,0 +1,4 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,AMC,24,0,8,1047,0.36228069849312305,1,1.124371889512986,20,2021,Alaves,3,0,0,0.36228069849312305,1.236526696011424,0.5876366123557091,906,Manu García
+season,AMC,31,0,18,1858,0.6803550412878394,4,1.833706196397543,22,2018,Toulouse,1,1,0,0.6803550412878394,5.617507071234286,4.128118198364973,906,Manu García
+season,Sub,1,0,0,9,0,0,0,0,2015,Manchester City,0,0,0,0,0,0,906,Manu García

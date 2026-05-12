@@ -1,0 +1,6 @@
+﻿group_type,position,games,goals,shots,time,xG,assists,xA,key_passes,season,team,yellow,red,npg,npxG,xGChain,xGBuildup,player_id,player_name
+season,GK,20,0,0,1800,0,0,0,0,2025,Leeds,1,0,0,0,1.7090169936418533,1.7090169936418533,780,Karl Darlow
+season,GK,8,0,0,720,0,0,0,0,2021,Newcastle United,1,0,0,0,0.5584848849102855,0.5584848849102855,780,Karl Darlow
+season,GK,25,0,0,2250,0,0,0,0,2020,Newcastle United,2,0,0,0,0.9974315781146288,0.9974315781146288,780,Karl Darlow
+season,GK,10,0,0,900,0,0,0,0,2017,Newcastle United,0,0,0,0,0.27450203988701105,0.27450203988701105,780,Karl Darlow
+season,GK,9,0,0,810,0,0,0,0,2015,Newcastle United,0,0,0,0,0.15052959695458412,0.15052959695458412,780,Karl Darlow
